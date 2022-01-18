@@ -11,8 +11,8 @@ To install the project, sinply clone the the repo and them run `npm install` in 
 Run the terminal or command prompt and then run the following
 
 ```
-git clone https://github.com/UNDP-Data/DataViz-Template
-cd DataViz-Template
+git clone https://github.com/UNDP-Data/SDG-Accelerator.git
+cd SDG-Accelerator
 npm install
 ```
 ### Local Development
@@ -62,6 +62,13 @@ __Steps to integrating the visualization in the wordpress page is as follow:__
 5. You should then see the visualization in previews. _(If there is some problem do check the data file is linked correctly as WP might re-route it)_
 6. Once you are happy with the changes just publish the page and you should see it online
 
+## Pages and Components
+
+* __Header__: For the top part of all the pages.
+* __CurrentGaps__: Page for Current SDG Gaps.
+* __Priorities__: Page for SDG Priorities.
+* __Interlinkages__: Page for Taget Interlinkages.
+* __FutureScenarios__: Pages for Future Scenario.
 
 ## Available Scripts
 
@@ -74,11 +81,9 @@ Craco is used to add a cofiguration layer for CRA. The primary function is to st
 
 __Packages/Library Used__
 * __React__: React is used as MVC framework.
+* __Reacet-Router-Dom__: For routing.
 * __CRACO__: Craco is used to configure different scripts (See Available Scripts for more details)
-
-__Some Suggestions for Libraries__
 * __styled-components__: Utilises tagged template literals  and the power of CSS, allows to write actual CSS code to style the components in JS/TS.
 * __Various D3 Libraries__: Various D3 libraries are used for visualizations, adding interaction and reading the csv data file.
 * __react-dropdown-select__: Is a dropdown library used for creating different dropdowns.
-* __dom-to-image__: This is used to allow users to download images of various visualization views they create.
 * __lodash__: This is used for manipulating and iterating arrays and objects.
