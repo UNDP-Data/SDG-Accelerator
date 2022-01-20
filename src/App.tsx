@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import {
-  BrowserRouter as Router, Routes, Route,
-} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Header } from './Header';
 import { CurrentGaps } from './CurrentGaps';
 import { Priorities } from './Priorities';
@@ -19,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
     --black-200: #F7F7F7;
     --black-300: #EDEFF0;
     --blaxck-400: #E9ECF6;
+    --black-500: #A9B1B7;
     --black-700: #212121;
     --accent-red: #D12800;
     --accent-yellow: #FBC412;
@@ -39,7 +38,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-size: 1.6rem;
-    font-weight: 500;
     line-height: 2.4rem;
     margin: auto;
   }
@@ -113,10 +111,6 @@ h4 {
     margin: auto;
   }
 
-  a:hover {
-    font-weight: bold;
-  }
-
   .bold {
     font-weight: 700;
   }
@@ -130,38 +124,28 @@ const App = () => (
   <>
     <GlobalStyle />
     <Header />
-    <Router>
-      <Routes>
-        <Route
-          path='/'
-          element={<CurrentGaps />}
-        />
-      </Routes>
-      <Routes>
-        <Route
-          path='/sdg-priorities'
-          element={<Priorities />}
-        />
-      </Routes>
-      <Routes>
-        <Route
-          path='/target-interlinkages'
-          element={<Interlinkages />}
-        />
-      </Routes>
-      <Routes>
-        <Route
-          path='/future-scenarios'
-          element={<FutureScenariosList />}
-        />
-      </Routes>
-      <Routes>
-        <Route
-          path='/future-scenarios/:indicator'
-          element={<FutureScenariosViz />}
-        />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route
+        path='/'
+        element={<CurrentGaps />}
+      />
+      <Route
+        path='/sdg-priorities'
+        element={<Priorities />}
+      />
+      <Route
+        path='/target-interlinkages'
+        element={<Interlinkages />}
+      />
+      <Route
+        path='/future-scenarios'
+        element={<FutureScenariosList />}
+      />
+      <Route
+        path='/future-scenarios/:indicator'
+        element={<FutureScenariosViz />}
+      />
+    </Routes>
   </>
 );
 
