@@ -59,6 +59,7 @@ const GlobalStyle = createGlobalStyle`
   h3 {
     font-size: 2.5rem;
     line-height: 2.9rem;
+    font-weight: normal;
   }
 
   h5 {
