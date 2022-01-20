@@ -53,6 +53,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 2.9rem;
+    margin: 0;
   }
 
   h3 {
