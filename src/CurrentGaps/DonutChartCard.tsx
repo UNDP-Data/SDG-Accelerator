@@ -18,6 +18,7 @@ const RootEl = styled.div`
   width: calc(50% - 5rem);
   padding: 2rem;
   background-color: var(--black-200);
+  margin-bottom: 2rem;
 `;
 
 interface ColorProps {
