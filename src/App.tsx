@@ -22,9 +22,9 @@ const GlobalStyle = createGlobalStyle`
     --accent-red: #D12800;
     --accent-yellow: #FBC412;
     --accent-green: #59BA47;
-    --accent-red-light: rgba(255, 188, 183, 0.8);
-    --accent-yellow-light: rgba(255, 225, 126, 0.8);
-    --accent-green-light:rgba(184, 236, 182, 0.8);
+    --accent-red-light: rgba(255, 188, 183, 0.2);
+    --accent-yellow-light: rgba(255, 225, 126, 0.2);
+    --accent-green-light:rgba(184, 236, 182, 0.2);
   }
   
   html { 
@@ -68,11 +68,11 @@ const GlobalStyle = createGlobalStyle`
     line-height: 2.8rem;
   }
 
-h4 {
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 2.8rem;
-}
+  h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.8rem;
+  }
 
   a {
     text-decoration: none;
@@ -120,10 +120,50 @@ h4 {
   .italics {
     font-style: italic;
   }
+
+  .selectDropDown {
+    border: 0 !important;
+    font-weight: bold;
+    background-color: transparent !important;
+    text-decoration: underline;
+    color: var(--black-700) !important;
+    margin-left: 0.7rem;
+    padding-right: 1rem !important;
+    .react-dropdown-select-type-multi{
+      padding: 0 !important;
+    }
+
+    .react-dropdown-select-content {
+      height: auto !important;
+    }
+
+    .react-dropdown-select-option{
+      background-color: var(--black-700) !important;
+      color: var(--white) !important;
+      &:nth-of-type(n + 3) {
+        display: inline !important;
+      }
+      &:first-of-type{
+        margin-left: 0 !important;
+      }
+    }
+
+    .react-dropdown-select-dropdown-handle {
+      display: none !important;
+      width: 0 !important;
+      margin: 0 !important;
+      margin-top: 0.6rem !important;
+    }
+    .react-dropdown-select-dropdown {
+      font-size: 1.4rem;
+      font-weight: normal;
+      line-height: 2rem;
+    }
+  }
 `;
 
 const App = () => (
-  <>
+  <div>
     <GlobalStyle />
     <Header />
     <Routes>
@@ -148,7 +188,7 @@ const App = () => (
         element={<FutureScenariosViz />}
       />
     </Routes>
-  </>
+  </div>
 );
 
 export default App;

@@ -4,39 +4,39 @@ import {
 
 export const getSDGIcon = (SDGGoal: string, size: number) => {
   switch (SDGGoal) {
-    case 'SDG1':
+    case 'SDG 1':
       return <SDG1Icon size={size} />;
-    case 'SDG2':
+    case 'SDG 2':
       return <SDG2Icon size={size} />;
-    case 'SDG3':
+    case 'SDG 3':
       return <SDG3Icon size={size} />;
-    case 'SDG4':
+    case 'SDG 4':
       return <SDG4Icon size={size} />;
-    case 'SDG5':
+    case 'SDG 5':
       return <SDG5Icon size={size} />;
-    case 'SDG6':
+    case 'SDG 6':
       return <SDG6Icon size={size} />;
-    case 'SDG7':
+    case 'SDG 7':
       return <SDG7Icon size={size} />;
-    case 'SDG8':
+    case 'SDG 8':
       return <SDG8Icon size={size} />;
-    case 'SDG9':
+    case 'SDG 9':
       return <SDG9Icon size={size} />;
-    case 'SDG10':
+    case 'SDG 10':
       return <SDG10Icon size={size} />;
-    case 'SDG11':
+    case 'SDG 11':
       return <SDG11Icon size={size} />;
-    case 'SDG12':
+    case 'SDG 12':
       return <SDG12Icon size={size} />;
-    case 'SDG13':
+    case 'SDG 13':
       return <SDG13Icon size={size} />;
-    case 'SDG14':
+    case 'SDG 14':
       return <SDG14Icon size={size} />;
-    case 'SDG15':
+    case 'SDG 15':
       return <SDG15Icon size={size} />;
-    case 'SDG16':
+    case 'SDG 16':
       return <SDG16Icon size={size} />;
-    case 'SDG17':
+    case 'SDG 17':
       return <SDG17Icon size={size} />;
     default:
       return null;

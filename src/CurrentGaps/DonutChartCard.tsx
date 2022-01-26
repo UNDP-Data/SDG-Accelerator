@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { describeArc } from '../utils/getArc';
+import { SDGStatusListType } from '../Types';
 
 interface Props {
   title: string;
   centralText: string;
-  onTrack: number;
-  identifiedGap: number;
-  forReview: number;
+  selectedSDG: string;
+  data: SDGStatusListType[];
 }
 
 const ContentEl = styled.div`
@@ -58,10 +58,11 @@ export const DonutChartCard = (props: Props) => {
   const {
     title,
     centralText,
-    onTrack,
-    identifiedGap,
-    forReview,
+    selectedSDG,
+    data,
   } = props;
+
+  const outOfValue = selectedSDG === 'All SDG Status' ? data.length : data[data.findIndex((d) => d.Goal === selectedSDG.split(':')[0])].Targets.length;
 
   return (
     <RootEl>
@@ -69,22 +70,22 @@ export const DonutChartCard = (props: Props) => {
       <ContentEl>
         <svg width='50%' viewBox='0 0 275 275'>
           <path
-            d={describeArc(137.5, 137.5, 110, 0, 360 * (onTrack / (onTrack + identifiedGap + forReview)))}
+            d={describeArc(137.5, 137.5, 110, 0, 360 * (data.filter((d) => d.Status === 'On Track').length / (data.length)))}
             fill='none'
             strokeWidth={40}
-            style={{ stroke: 'var(--accent-green' }}
+            style={{ stroke: 'var(--accent-green)' }}
           />
           <path
-            d={describeArc(137.5, 137.5, 110, 360 * (onTrack / (onTrack + identifiedGap + forReview)), 360 * ((onTrack + identifiedGap) / (onTrack + identifiedGap + forReview)))}
+            d={describeArc(137.5, 137.5, 110, 360 * (data.filter((d) => d.Status === 'On Track').length / (data.length)), 360 * ((data.filter((d) => d.Status === 'On Track').length + data.filter((d) => d.Status === 'Identified Gap').length) / (data.length)))}
             fill='none'
             strokeWidth={40}
-            style={{ stroke: 'var(--accent-red' }}
+            style={{ stroke: 'var(--accent-red)' }}
           />
           <path
-            d={describeArc(137.5, 137.5, 110, 360 * ((onTrack + identifiedGap) / (onTrack + identifiedGap + forReview)), 360)}
+            d={describeArc(137.5, 137.5, 110, 360 * ((data.filter((d) => d.Status === 'On Track').length + data.filter((d) => d.Status === 'Identified Gap').length) / (data.length)), 360)}
             fill='none'
             strokeWidth={40}
-            style={{ stroke: 'var(--accent-yellow' }}
+            style={{ stroke: 'var(--accent-yellow)' }}
           />
           <text
             x={137.5}
@@ -95,7 +96,7 @@ export const DonutChartCard = (props: Props) => {
             fontSize='60px'
             dy={10}
           >
-            {onTrack + identifiedGap + forReview}
+            {data.length}
           </text>
           <text
             x={137.5}
@@ -115,12 +116,14 @@ export const DonutChartCard = (props: Props) => {
             <LegendText fill='var(--accent-green)'>
               On Track:
               {' '}
-              {onTrack}
+              {selectedSDG === 'All SDG Status'
+                ? data.filter((d) => d.Status === 'On Track').length
+                : data[data.findIndex((d) => d.Goal === selectedSDG.split(':')[0])].Targets.filter((d) => d.Status === 'On Track').length}
               {' '}
               <SubText>
                 out of
                 {' '}
-                {onTrack + identifiedGap + forReview}
+                {outOfValue}
               </SubText>
             </LegendText>
           </LegendEl>
@@ -129,12 +132,14 @@ export const DonutChartCard = (props: Props) => {
             <LegendText fill='var(--accent-red)'>
               Identified Gap:
               {' '}
-              {identifiedGap}
+              {selectedSDG === 'All SDG Status'
+                ? data.filter((d) => d.Status === 'Identified Gap').length
+                : data[data.findIndex((d) => d.Goal === selectedSDG.split(':')[0])].Targets.filter((d) => d.Status === 'Identified Gap').length}
               {' '}
               <SubText>
                 out of
                 {' '}
-                {onTrack + identifiedGap + forReview}
+                {outOfValue}
               </SubText>
             </LegendText>
           </LegendEl>
@@ -143,12 +148,14 @@ export const DonutChartCard = (props: Props) => {
             <LegendText fill='var(--accent-yellow)'>
               For Review:
               {' '}
-              {forReview}
+              {selectedSDG === 'All SDG Status'
+                ? data.filter((d) => d.Status === 'For Review').length
+                : data[data.findIndex((d) => d.Goal === selectedSDG.split(':')[0])].Targets.filter((d) => d.Status === 'For Review').length}
               {' '}
               <SubText>
                 out of
                 {' '}
-                {onTrack + identifiedGap + forReview}
+                {outOfValue}
               </SubText>
             </LegendText>
           </LegendEl>

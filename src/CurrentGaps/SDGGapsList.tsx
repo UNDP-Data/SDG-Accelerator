@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import { getSDGIcon } from '../utils/getSDGIcon';
+import { SDGStatusListType } from '../Types';
 
 interface Props {
-  onTrack: string[];
-  identifiedGap: string[];
-  forReview: string[];
+  data: SDGStatusListType[];
 }
 
 const RowEl = styled.div`
@@ -63,11 +62,11 @@ const SDGIconEl = styled.div`
 
 export const SDGGapsList = (props: Props) => {
   const {
-    onTrack,
-    identifiedGap,
-    forReview,
+    data,
   } = props;
-
+  const onTrack = data.filter((d) => d.Status === 'On Track');
+  const identifiedGap = data.filter((d) => d.Status === 'Identified Gap');
+  const forReview = data.filter((d) => d.Status === 'For Review');
   return (
     <RootEl>
       <RowEl>
@@ -81,7 +80,7 @@ export const SDGGapsList = (props: Props) => {
             <SubText>
               out of
               {' '}
-              {onTrack.length + identifiedGap.length + forReview.length}
+              {data.length}
             </SubText>
           </LegendText>
         </RowTitleEl>
@@ -89,7 +88,7 @@ export const SDGGapsList = (props: Props) => {
           {
             onTrack.map((d, i) => (
               <SDGIconEl key={i}>
-                {getSDGIcon(d, 60)}
+                {getSDGIcon(d.Goal, 60)}
               </SDGIconEl>
             ))
           }
@@ -106,7 +105,7 @@ export const SDGGapsList = (props: Props) => {
             <SubText>
               out of
               {' '}
-              {onTrack.length + identifiedGap.length + forReview.length}
+              {data.length}
             </SubText>
           </LegendText>
         </RowTitleEl>
@@ -114,7 +113,7 @@ export const SDGGapsList = (props: Props) => {
           {
             identifiedGap.map((d, i) => (
               <SDGIconEl key={i}>
-                {getSDGIcon(d, 60)}
+                {getSDGIcon(d.Goal, 60)}
               </SDGIconEl>
             ))
           }
@@ -131,7 +130,7 @@ export const SDGGapsList = (props: Props) => {
             <SubText>
               out of
               {' '}
-              {onTrack.length + identifiedGap.length + forReview.length}
+              {data.length}
             </SubText>
           </LegendText>
         </RowTitleEl>
@@ -139,7 +138,7 @@ export const SDGGapsList = (props: Props) => {
           {
             forReview.map((d, i) => (
               <SDGIconEl key={i}>
-                {getSDGIcon(d, 60)}
+                {getSDGIcon(d.Goal, 60)}
               </SDGIconEl>
             ))
           }
