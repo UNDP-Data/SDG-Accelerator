@@ -79,8 +79,9 @@ export const Header = () => (
         <button type='button' className='primary'>Learn More About the Diagnostic Process</button>
         <CardContainer>
           {
-            HEADERCARDOPTION.map((d) => (
+            HEADERCARDOPTION.map((d, i) => (
               <CardButton
+                key={i}
                 title={d.title}
                 body={d.body}
                 link={d.link}

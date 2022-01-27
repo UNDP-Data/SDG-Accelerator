@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import { Tooltip } from '../Components/LinkageTooltip';
-import { SDGStatusListType, LinkageDataType } from '../Types';
-
-const WorldSDGGap:SDGStatusListType[] = require('../Data/worldSdgGap.json');
-const LinkageData:LinkageDataType[] = require('../Data/linkages.json');
+import { SDGStatusListType, LinkageDataType, CountryListType } from '../Types';
 
 interface Props {
   selectedTarget: string;
   linkageType: 'tradeOffs' | 'synergies';
+  selectedCountry: string;
   // eslint-disable-next-line no-unused-vars
   setSelectedTarget: (d: string) => void;
+  worldSDGGap: SDGStatusListType[];
+  countrySDGGap: CountryListType[];
+  linkageData: LinkageDataType[];
+
 }
 
 interface HoverDataType {
@@ -23,11 +25,16 @@ export const InterlinkagesViz = (props: Props) => {
     selectedTarget,
     setSelectedTarget,
     linkageType,
+    selectedCountry,
+    worldSDGGap,
+    countrySDGGap,
+    linkageData,
   } = props;
   const [hoverData, setHoverData] = useState<HoverDataType | undefined>(undefined);
   const squareSize = 40;
-  const sourceTarget = selectedTarget !== 'All Targets' ? LinkageData[LinkageData.findIndex((d) => d.id === selectedTarget.split(':')[0])] : null;
-  const linkTargets = selectedTarget !== 'All Targets' ? LinkageData[LinkageData.findIndex((d) => d.id === selectedTarget.split(':')[0])][linkageType] : [];
+  const gaps = selectedCountry === 'World' ? worldSDGGap : countrySDGGap[countrySDGGap.findIndex((d) => d['Country or Area'] === selectedCountry)]['SDG Gap Data'];
+  const sourceTarget = selectedTarget !== 'All Targets' ? linkageData[linkageData.findIndex((d) => d.id === selectedTarget.split(':')[0])] : null;
+  const linkTargets = selectedTarget !== 'All Targets' ? linkageData[linkageData.findIndex((d) => d.id === selectedTarget.split(':')[0])][linkageType] : [];
   return (
     <>
       <svg width='100%' viewBox='0 0 1360 1000'>
@@ -442,7 +449,7 @@ export const InterlinkagesViz = (props: Props) => {
           ? linkTargets.map((el, k) => {
             const sourceX = (sourceTarget.coordinates[0] * 80) + squareSize / 2;
             const sourceY = (sourceTarget.coordinates[1] * 50) + squareSize / 2 + 50;
-            const destinationTarget = LinkageData[LinkageData.findIndex((link) => link.id === `Target ${el}`)];
+            const destinationTarget = linkageData[linkageData.findIndex((link) => link.id === `Target ${el}`)];
             const destinationX = (destinationTarget.coordinates[0] * 80) + squareSize / 2;
             const destinationY = (destinationTarget.coordinates[1] * 50) + squareSize / 2 + 50;
             return (
@@ -459,7 +466,7 @@ export const InterlinkagesViz = (props: Props) => {
       }
         <g>
           {
-          WorldSDGGap.map((goal, i) => (
+          gaps.map((goal, i) => (
             <g
               transform={`translate(${i * 80},50)`}
               key={i}
