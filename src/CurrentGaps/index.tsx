@@ -13,6 +13,7 @@ import { SectionTitle } from '../Components/SectionTitle';
 import { Banner } from '../Components/Banner';
 import SDGList from '../Data/SDGGoalList.json';
 import { CountryListType, SDGStatusListType } from '../Types';
+import { MapViz } from './MapViz';
 
 const CountrySDGGap:CountryListType[] = require('../Data/countrySDGGapData.json');
 const WorldSDGGap:SDGStatusListType[] = require('../Data/worldSdgGap.json');
@@ -173,6 +174,11 @@ export const CurrentGaps = () => {
                 </>
               )
         }
+        <MapViz
+          showMap={selectedCountry === 'World'}
+          data={CountrySDGGap}
+          selectedSDG={selectedSDG}
+        />
       </RootEl>
     </>
   );

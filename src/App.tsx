@@ -135,6 +135,12 @@ const GlobalStyle = createGlobalStyle`
 
     .react-dropdown-select-content {
       height: auto !important;
+      span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 50rem;
+      }
     }
 
     .react-dropdown-select-option{
@@ -155,6 +161,7 @@ const GlobalStyle = createGlobalStyle`
       margin-top: 0.6rem !important;
     }
     .react-dropdown-select-dropdown {
+      min-width: 20rem;
       font-size: 1.4rem;
       font-weight: normal;
       line-height: 2rem;
