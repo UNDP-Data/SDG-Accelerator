@@ -1,56 +1,22 @@
-export const SDGOptions = [
+export const HEADERCARDOPTION = [
   {
-    label: 'All SDG',
+    title: 'Current SDG Gaps',
+    body: 'View a current snapshot of SDG gaps globally and conduct a deep dive at the national level',
+    link: '/',
   },
   {
-    label: 'SDG 1: No Poverty',
+    title: 'SDG Priorities',
+    body: 'Scan reports and policy documents to identify national priority areas',
+    link: '/sdg-priorities',
   },
   {
-    label: 'SDG 2: Zero Hunger',
+    title: 'Target Interlinkages',
+    body: 'See how SDG targets are connected and affect one another',
+    link: '/target-interlinkages',
   },
   {
-    label: 'SDG 3: Good Health And Well Being',
-  },
-  {
-    label: 'SDG 4: Quality Education',
-  },
-  {
-    label: 'SDG 5: Gender Equality',
-  },
-  {
-    label: 'SDG 6: Clean Water And Sanitation',
-  },
-  {
-    label: 'SDG 7: Affordable And Clean Energy',
-  },
-  {
-    label: 'SDG 8: Decent Work And Economic Growth',
-  },
-  {
-    label: 'SDG 9: Industry, Innovation And Infrastructure',
-  },
-  {
-    label: 'SDG 10: Reduces Inequalities',
-  },
-  {
-    label: 'SDG 11: Sustainable Cities And Communities',
-  },
-  {
-    label: 'SDG 12: Responsible Consumption And Production',
-  },
-  {
-    label: 'SDG 13: Climate Action',
-  },
-  {
-    label: 'SDG 14: Life Below Water',
-  },
-  {
-    label: 'SDG 15: Life On Land',
-  },
-  {
-    label: 'SDG 16: Peace, Justice And Social Institutions',
-  },
-  {
-    label: 'SDG 17: Partnership ForThe Goals',
+    title: 'Future Scenarios',
+    body: 'Assess multidimensional effects of COVID-19 and policy decisions using scenario modeling',
+    link: '/future-scenarios',
   },
 ];
