@@ -5,16 +5,21 @@ interface Props {
   title: string;
   body: string;
   link: string;
+  cardWidth?: string;
 }
 
-const RootEl = styled.div`
+interface RootElProps {
+  cardWidth?: string;
+}
+
+const RootEl = styled.div<RootElProps>`
   background-color: var(--black-100);
   padding: 2rem;
   font-size: 1.6rem;
   color: var(--black-700);
   position: relative;
   flex-grow: 0;
-  flex-basis: 25%;
+  flex-basis: ${(props) => (props.cardWidth ? props.cardWidth : '100%')};
   margin: 0 1rem;
   &:first-of-type {
     margin-left: 0;
@@ -52,9 +57,10 @@ export const CardButton = (props: Props) => {
     title,
     body,
     link,
+    cardWidth,
   } = props;
   return (
-    <RootEl>
+    <RootEl cardWidth={cardWidth}>
       <Link to={link}>
         <LinkEl>
           <H2>

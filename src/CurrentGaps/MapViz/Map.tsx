@@ -173,7 +173,7 @@ export const Map = (props: Props) => {
                     >
                       {
                         d.properties.NAME === 'Antarctica' ? null
-                          : d.geometry.type === 'MultiPolygon' ? d.geometry.coordinates.map((el:any, j: any) => {
+                          : d.geometry.type === 'MultiPolygon' ? d.geometry.coordinates.map((el: any, j: any) => {
                             let masterPath = '';
                             el.forEach((geo: number[][]) => {
                               let path = ' M';
@@ -200,7 +200,7 @@ export const Map = (props: Props) => {
                                   }
                               />
                             );
-                          }) : d.geometry.coordinates.map((el:any, j: number) => {
+                          }) : d.geometry.coordinates.map((el: any, j: number) => {
                             let path = 'M';
                             el.forEach((c: number[], k: number) => {
                               const point = projection([c[0], c[1]]) as [number, number];

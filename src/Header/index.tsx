@@ -79,7 +79,14 @@ export const Header = () => (
         <button type='button' className='primary'>Learn More About the Diagnostic Process</button>
         <CardContainer>
           {
-            HEADERCARDOPTION.map((d) => <CardButton title={d.title} body={d.body} link={d.link} />)
+            HEADERCARDOPTION.map((d) => (
+              <CardButton
+                title={d.title}
+                body={d.body}
+                link={d.link}
+                cardWidth={`${100 / HEADERCARDOPTION.length}%`}
+              />
+            ))
           }
         </CardContainer>
       </div>

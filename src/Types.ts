@@ -49,3 +49,10 @@ export interface CountryListType {
 export interface DropdownOptionTypes {
   label: string;
 }
+
+export interface LinkageDataType {
+  id: string;
+  synergies: string[];
+  tradeOffs: string[];
+  coordinates: [number, number];
+}
