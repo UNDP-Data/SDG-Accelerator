@@ -8,6 +8,7 @@ import world from '../../Data/worldMap.json';
 import { getValue } from '../../utils/getValue';
 import { COLORSCALE } from '../../Constants';
 import { HoverDataType, CountryListTypeSDGPush } from '../../Types';
+import { GraphTooltip } from '../../Components/GraphTooltip';
 
 interface Props {
   year: number;
@@ -324,6 +325,15 @@ export const Map = (props: Props) => {
           }
         </FlexDiv>
       </ColorScaleEl>
+      {
+        hoverData
+          ? (
+            <GraphTooltip
+              data={hoverData}
+            />
+          )
+          : null
+      }
     </RootEl>
   );
 };

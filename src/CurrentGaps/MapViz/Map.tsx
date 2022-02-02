@@ -1,10 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { select } from 'd3-selection';
 import { geoEqualEarth } from 'd3-geo';
 import { zoom } from 'd3-zoom';
 import styled from 'styled-components';
 import world from '../../Data/worldMap.json';
-import { CountryListType } from '../../Types';
+import { CountryListType, HoverBasic } from '../../Types';
+import { BasicHoverTooltip } from '../../Components/BasicHoverTooltip';
 
 interface Props {
   data: CountryListType[];
@@ -67,6 +68,7 @@ export const Map = (props: Props) => {
   const width = 1280;
   const height = 720;
   const GraphRef = useRef(null);
+  const [hoverData, setHoverData] = useState<HoverBasic | undefined>(undefined);
   const map: any = world;
   const projection = geoEqualEarth().rotate([0, 0]).scale(265).translate([610, 380]);
   const mapSvg = useRef<SVGSVGElement>(null);
@@ -170,6 +172,23 @@ export const Map = (props: Props) => {
                   return (
                     <g
                       key={i}
+                      onMouseEnter={(event) => {
+                        setHoverData({
+                          country: d.properties.NAME,
+                          xPosition: event.clientX,
+                          yPosition: event.clientY,
+                        });
+                      }}
+                      onMouseMove={(event) => {
+                        setHoverData({
+                          country: d.properties.NAME,
+                          xPosition: event.clientX,
+                          yPosition: event.clientY,
+                        });
+                      }}
+                      onMouseLeave={() => {
+                        setHoverData(undefined);
+                      }}
                     >
                       {
                         d.properties.NAME === 'Antarctica' ? null
@@ -187,7 +206,8 @@ export const Map = (props: Props) => {
                             return (
                               <path
                                 key={j}
-                                opacity={1}
+                                opacity={hoverData
+                                  ? hoverData.country === d.properties.NAME ? 1 : 0.2 : 1}
                                 d={masterPath}
                                 stroke='#FAFAFA'
                                 strokeWidth={0.5}
@@ -210,7 +230,8 @@ export const Map = (props: Props) => {
                             return (
                               <path
                                 key={j}
-                                opacity={1}
+                                opacity={hoverData
+                                  ? hoverData.country === d.properties.NAME ? 1 : 0.2 : 1}
                                 d={path}
                                 stroke='#FAFAFA'
                                 strokeWidth={0.5}
@@ -231,6 +252,15 @@ export const Map = (props: Props) => {
               }
             </g>
           </svg>
+          {
+            hoverData
+              ? (
+                <BasicHoverTooltip
+                  data={hoverData}
+                />
+              )
+              : null
+          }
         </div>
       </FlexDiv>
     </>

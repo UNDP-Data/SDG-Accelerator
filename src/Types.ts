@@ -112,3 +112,9 @@ export interface PrioritiesDataType {
   priorityType: string;
   priorities: string[];
 }
+
+export interface HoverBasic {
+  country: string;
+  xPosition: number;
+  yPosition: number;
+}

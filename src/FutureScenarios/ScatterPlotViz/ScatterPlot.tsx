@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { scaleLinear } from 'd3-scale';
 import styled from 'styled-components';
 import { CountryListTypeSDGPush, ScatterHoverDataType } from '../../Types';
+import { ScatterPlotTooltip } from '../../Components/ScatterPlotTooltip';
 
 interface Props {
   year: number;
@@ -221,6 +222,56 @@ export const ScatterPlot = (props: Props) => {
                     {yAxis}
                   </text>
                 </g>
+                {
+                  hoverData
+                    ? (
+                      <g>
+                        <line
+                          x1={x(hoverData.withoutSDGPush.x) - 5}
+                          y1={y(hoverData.withoutSDGPush.y)}
+                          x2={0}
+                          y2={y(hoverData.withoutSDGPush.y)}
+                          stroke='#212121'
+                          strokeWidth={1}
+                          shapeRendering='crispEdge'
+                        />
+                        <line
+                          x1={x(hoverData.withoutSDGPush.x)}
+                          y1={y(hoverData.withoutSDGPush.y) + 5}
+                          x2={x(hoverData.withoutSDGPush.x)}
+                          y2={graphHeight}
+                          stroke='#212121'
+                          strokeWidth={1}
+                          shapeRendering='crispEdge'
+                        />
+                        <text
+                          x={0}
+                          y={y(hoverData.withoutSDGPush.y)}
+                          fill='#212121'
+                          fontSize={16}
+                          textAnchor='start'
+                          dx={2}
+                          dy={14}
+                          fontWeight={700}
+                        >
+                          {hoverData.withoutSDGPush.y.toFixed(1)}
+                        </text>
+                        <text
+                          x={x(hoverData.withoutSDGPush.x)}
+                          y={graphHeight}
+                          fill='#212121'
+                          fontSize={16}
+                          textAnchor='end'
+                          dy={-5}
+                          dx={-5}
+                          fontWeight={700}
+                        >
+                          {hoverData.withoutSDGPush.x.toFixed(1)}
+                        </text>
+                      </g>
+                    )
+                    : null
+                }
               </g>
             </svg>
           </DivHalf>
@@ -379,10 +430,69 @@ export const ScatterPlot = (props: Props) => {
                     {yAxis}
                   </text>
                 </g>
+                {
+                  hoverData
+                    ? (
+                      <g>
+                        <line
+                          x1={x(hoverData.withSDGPush.x) - 5}
+                          y1={y(hoverData.withSDGPush.y)}
+                          x2={0}
+                          y2={y(hoverData.withSDGPush.y)}
+                          stroke='#212121'
+                          strokeWidth={1}
+                          shapeRendering='crispEdge'
+                        />
+                        <line
+                          x1={x(hoverData.withSDGPush.x)}
+                          y1={y(hoverData.withSDGPush.y) + 5}
+                          x2={x(hoverData.withSDGPush.x)}
+                          y2={graphHeight}
+                          stroke='#212121'
+                          strokeWidth={1}
+                          shapeRendering='crispEdge'
+                        />
+                        <text
+                          x={0}
+                          y={y(hoverData.withSDGPush.y)}
+                          fill='#212121'
+                          fontSize={16}
+                          textAnchor='start'
+                          dx={2}
+                          dy={14}
+                          fontWeight={700}
+                        >
+                          {hoverData.withSDGPush.y.toFixed(1)}
+                        </text>
+                        <text
+                          x={x(hoverData.withSDGPush.x)}
+                          y={graphHeight}
+                          fill='#212121'
+                          fontSize={16}
+                          textAnchor='end'
+                          dy={-5}
+                          dx={-5}
+                          fontWeight={700}
+                        >
+                          {hoverData.withSDGPush.x.toFixed(1)}
+                        </text>
+                      </g>
+                    )
+                    : null
+                }
               </g>
             </svg>
           </DivHalf>
         </GraphDiv>
+        {
+        hoverData
+          ? (
+            <ScatterPlotTooltip
+              data={hoverData}
+            />
+          )
+          : null
+      }
       </>
     </RootEl>
   );

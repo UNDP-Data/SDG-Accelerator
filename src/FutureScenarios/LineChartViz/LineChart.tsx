@@ -5,6 +5,7 @@ import maxBy from 'lodash.maxby';
 import minBy from 'lodash.minby';
 import { useState } from 'react';
 import { HoverDataType, CountryListTypeSDGPush } from '../../Types';
+import { GraphTooltip } from '../../Components/GraphTooltip';
 
 interface Props {
   data: CountryListTypeSDGPush;
@@ -44,16 +45,17 @@ export const LineChart = (props: Props) => {
   const yTicks = y.ticks(5);
   const xTicks = x.ticks(5);
   return (
-    <SVG style={{ width: '100%' }} viewBox={`0 0 ${graphWidth + marginLeft + marginRight} ${graphHeight + marginTop + marginBottom}`}>
-      <g>
-        <path d={lineShapeWithPush(indicatorData.yearlyData as any) as string} fill='none' stroke='#59BA47' strokeWidth={2} shapeRendering='geometricPrecision' />
-        <path d={lineShapeWOPush(indicatorData.yearlyData as any) as string} fill='none' stroke='#D12800' strokeWidth={2} shapeRendering='geometricPrecision' />
-      </g>
-      {
+    <>
+      <SVG style={{ width: '100%' }} viewBox={`0 0 ${graphWidth + marginLeft + marginRight} ${graphHeight + marginTop + marginBottom}`}>
+        <g>
+          <path d={lineShapeWithPush(indicatorData.yearlyData as any) as string} fill='none' stroke='#59BA47' strokeWidth={2} shapeRendering='geometricPrecision' />
+          <path d={lineShapeWOPush(indicatorData.yearlyData as any) as string} fill='none' stroke='#D12800' strokeWidth={2} shapeRendering='geometricPrecision' />
+        </g>
+        {
         hoverData ? <line x1={x(hoverData.year)} x2={x(hoverData.year)} y1={y(0)} y2={marginTop} stroke='#212121' fill='none' /> : null
       }
-      <g>
-        {
+        <g>
+          {
           indicatorData.yearlyData.map((d, i) => (
             <g key={i}>
               <circle
@@ -148,58 +150,69 @@ export const LineChart = (props: Props) => {
             </g>
           ))
         }
-      </g>
-      <g>
-        {yTicks.map((d, i) => (
-          <g key={i}>
-            <line
-              x1={marginLeft}
-              y1={y(d)}
-              x2={graphWidth}
-              y2={y(d)}
-              stroke='#AAA'
-              strokeWidth={1}
-              opacity={d === 0 ? 0 : 1}
-              strokeDasharray='4 8'
-              shapeRendering='crispEdge'
-            />
+        </g>
+        <g>
+          {yTicks.map((d, i) => (
+            <g key={i}>
+              <line
+                x1={marginLeft}
+                y1={y(d)}
+                x2={graphWidth}
+                y2={y(d)}
+                stroke='#AAA'
+                strokeWidth={1}
+                opacity={d === 0 ? 0 : 1}
+                strokeDasharray='4 8'
+                shapeRendering='crispEdge'
+              />
+              <text
+                x={marginLeft}
+                y={y(d)}
+                fontSize='10px'
+                textAnchor='start'
+                dy='-5px'
+                fill='#919399'
+              >
+                {d}
+              </text>
+            </g>
+          ))}
+        </g>
+        <g>
+          <line
+            x1={marginLeft}
+            y1={y(0)}
+            x2={graphWidth}
+            y2={y(0)}
+            stroke='#212121'
+            strokeWidth={1}
+            shapeRendering='crispEdge'
+          />
+          {xTicks.map((d, i) => (
             <text
-              x={marginLeft}
-              y={y(d)}
+              key={i}
+              y={graphHeight + marginBottom + marginTop}
+              x={x(d)}
               fontSize='10px'
-              textAnchor='start'
-              dy='-5px'
-              fill='#919399'
+              textAnchor={d === minYear ? 'start' : d === maxYear ? 'end' : 'middle'}
+              dy='-15px'
+              fill='#212121'
             >
               {d}
             </text>
-          </g>
-        ))}
-      </g>
-      <g>
-        <line
-          x1={marginLeft}
-          y1={y(0)}
-          x2={graphWidth}
-          y2={y(0)}
-          stroke='#212121'
-          strokeWidth={1}
-          shapeRendering='crispEdge'
-        />
-        {xTicks.map((d, i) => (
-          <text
-            key={i}
-            y={graphHeight + marginBottom + marginTop}
-            x={x(d)}
-            fontSize='10px'
-            textAnchor={d === minYear ? 'start' : d === maxYear ? 'end' : 'middle'}
-            dy='-15px'
-            fill='#212121'
-          >
-            {d}
-          </text>
-        ))}
-      </g>
-    </SVG>
+          ))}
+        </g>
+      </SVG>
+
+      {
+        hoverData
+          ? (
+            <GraphTooltip
+              data={hoverData}
+            />
+          )
+          : null
+      }
+    </>
   );
 };
