@@ -73,7 +73,7 @@ export const DumbellChart = (props: Props) => {
           y={0}
           dy='30px'
           fontSize='14px'
-          color='#110848'
+          color='#212121'
           fontWeight={700}
         >
           Countries
@@ -84,7 +84,7 @@ export const DumbellChart = (props: Props) => {
             y={0}
             dy='30px'
             fontSize='14px'
-            color='#110848'
+            color='#212121'
             fontWeight={700}
           >
             SDG Push Difference
@@ -136,7 +136,7 @@ export const DumbellChart = (props: Props) => {
                       y={rowHeight / 2}
                       dy='3px'
                       fontSize='14px'
-                      color='#110848'
+                      color='#212121'
                     >
                       {d.country}
                     </text>

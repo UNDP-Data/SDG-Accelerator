@@ -155,12 +155,6 @@ const GlobalStyle = createGlobalStyle`
     .react-dropdown-select-option{
       background-color: var(--black-700) !important;
       color: var(--white) !important;
-      &:nth-of-type(n + 3) {
-        display: inline !important;
-      }
-      &:first-of-type{
-        margin-left: 0 !important;
-      }
     }
 
     .react-dropdown-select-dropdown-handle {
@@ -169,6 +163,41 @@ const GlobalStyle = createGlobalStyle`
       margin: 0 !important;
       margin-top: 0.6rem !important;
     }
+    .react-dropdown-select-dropdown {
+      min-width: 20rem;
+      font-size: 1.4rem;
+      font-weight: normal;
+      line-height: 2rem;
+    }
+  }
+
+  .countrySelectDropDown {
+    border: 1 solid var(--black-400) !important;
+    border-radius: 2rem !important;
+    font-weight: bold;
+    background-color: var(--white);
+    color: var(--black-700) !important;
+    margin-left: 0;
+    padding: 0 2rem !important;
+    .react-dropdown-select-type-multi{
+      padding: 0 !important;
+    }
+
+    .react-dropdown-select-content {
+      height: auto !important;
+      span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 50rem;
+      }
+    }
+
+    .react-dropdown-select-option{
+      background-color: var(--black-700) !important;
+      color: var(--white) !important;
+    }
+
     .react-dropdown-select-dropdown {
       min-width: 20rem;
       font-size: 1.4rem;

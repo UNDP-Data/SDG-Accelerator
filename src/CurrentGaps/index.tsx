@@ -77,7 +77,7 @@ export const CurrentGaps = () => {
             dropdownGap={2}
           />
           <IconEl>
-            <CaretDown size={24} color='#110848' />
+            <CaretDown size={24} color='#212121' />
           </IconEl>
           <SelectTitleText>in</SelectTitleText>
           <Select
@@ -92,7 +92,7 @@ export const CurrentGaps = () => {
             dropdownGap={2}
           />
           <IconEl>
-            <CaretDown size={24} color='#110848' />
+            <CaretDown size={24} color='#212121' />
           </IconEl>
         </FlexDiv>
         {

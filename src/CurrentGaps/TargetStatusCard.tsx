@@ -91,7 +91,7 @@ export const TargetStatusCard = (props: Props) => {
             dropdownGap={2}
           />
           <IconEl>
-            <CaretDown size={24} color='#110848' />
+            <CaretDown size={24} color='#212121' />
           </IconEl>
           <div>
             for

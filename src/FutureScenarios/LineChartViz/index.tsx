@@ -16,7 +16,6 @@ interface Props {
 const RootEl = styled.div`
   display: flex;
   margin: 7rem 0 0 0;
-  padding-bottom: 5rem;
 `;
 
 const LineEl = styled.div`
@@ -100,7 +99,7 @@ export const LineChartViz = (props: Props) => {
             dropdownGap={2}
           />
           <IconEl>
-            <CaretDown size={24} color='#110848' />
+            <CaretDown size={24} color='#212121' />
           </IconEl>
           <SelectTitleText>for</SelectTitleText>
           <Select
@@ -115,7 +114,7 @@ export const LineChartViz = (props: Props) => {
             dropdownGap={2}
           />
           <IconEl>
-            <CaretDown size={24} color='#110848' />
+            <CaretDown size={24} color='#212121' />
           </IconEl>
         </FlexDiv>
         <div>

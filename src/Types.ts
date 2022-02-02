@@ -107,3 +107,8 @@ export interface ScatterHoverDataType {
 export interface SelectOption {
   label: string;
 }
+
+export interface PrioritiesDataType {
+  priorityType: string;
+  priorities: string[];
+}
