@@ -1,8 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { PageTitle } from '../Components/PageTitle';
 import { FUTURESCENARIOINDICATORS } from '../Constants';
+import { MapViz } from './MapViz';
 import { getSDGIcon } from '../utils/getSDGIcon';
+import { LineChartViz } from './LineChartViz';
+import { ScatterPlotViz } from './ScatterPlotViz';
+import { DumbellChartViz } from './DumbellChartViz';
 
 const RootEl = styled.div`
   width: 128rem;
@@ -77,11 +81,37 @@ export const FutureScenariosList = () => (
   </div>
 );
 
-export const FutureScenariosViz = () => (
-  <div>
-    <PageTitle
-      title='Future Scenarios'
-      description='Using futures modelling, assess potential pathways for COVID-19 recovery through the SDG-Push scenario and projected progress towards SDG priority areas through targeted policy interventions.'
-    />
-  </div>
-);
+export const FutureScenariosViz = () => {
+  const params = useParams();
+  const defaultIndicator = FUTURESCENARIOINDICATORS[FUTURESCENARIOINDICATORS.findIndex((d) => d.ID === params.indicator)].Indicator;
+  const defaultRelatedIndicator = FUTURESCENARIOINDICATORS[FUTURESCENARIOINDICATORS.findIndex((d) => d.ID === params.indicator)].RelatedIndicator;
+  const indicatorOptions = FUTURESCENARIOINDICATORS.map((d) => ({ label: d.Indicator }));
+  return (
+    <div style={{ paddingBottom: '5rem' }}>
+      <PageTitle
+        title='Future Scenarios'
+        description='Using futures modelling, assess potential pathways for COVID-19 recovery through the SDG-Push scenario and projected progress towards SDG priority areas through targeted policy interventions.'
+      />
+      <RootEl>
+        <MapViz
+          pageIndicator={defaultIndicator}
+          indicatorOptions={indicatorOptions}
+        />
+        <LineChartViz
+          pageIndicator={defaultIndicator}
+          indicatorOptions={indicatorOptions}
+        />
+        <ScatterPlotViz
+          pageIndicator={defaultIndicator}
+          indicatorOptions={indicatorOptions}
+          defaultRelatedIndicator={defaultRelatedIndicator}
+        />
+        <DumbellChartViz
+          pageIndicator={defaultIndicator}
+          indicatorOptions={indicatorOptions}
+        />
+      </RootEl>
+    </div>
+
+  );
+};

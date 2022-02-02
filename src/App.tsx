@@ -11,13 +11,15 @@ const GlobalStyle = createGlobalStyle`
     --blue-bg: #E7F1FF;
     --white: #FFFFFF;
     --black-900: #000000;
-    --primary-blue: #006EB5;
+    --primary-blue: #0969FA;
+    --blue-medium: #018EFF;
     --navy: #082753;
     --black-100: #FAFAFA;
     --black-200: #F7F7F7;
     --black-300: #EDEFF0;
-    --blaxck-400: #E9ECF6;
+    --black-400: #E9ECF6;
     --black-500: #A9B1B7;
+    --black-550: #666666;
     --black-700: #212121;
     --accent-red: #D12800;
     --accent-yellow: #FBC412;
@@ -25,6 +27,12 @@ const GlobalStyle = createGlobalStyle`
     --accent-red-light: rgba(255, 188, 183, 0.2);
     --accent-yellow-light: rgba(255, 225, 126, 0.2);
     --accent-green-light:rgba(184, 236, 182, 0.2);
+    --blue-very-light: #F2F7FF;
+    --shadow:0px 10px 30px -10px rgb(9 105 250 / 15%);
+    --shadow-bottom: 0 10px 13px -3px rgb(9 105 250 / 5%);
+    --shadow-top: 0 -10px 13px -3px rgb(9 105 250 / 15%);
+    --shadow-right: 10px 0px 13px -3px rgb(9 105 250 / 5%);
+    --shadow-left: -10px 0px 13px -3px rgb(9 105 250 / 15%);
   }
   
   html { 
@@ -127,8 +135,9 @@ const GlobalStyle = createGlobalStyle`
     background-color: transparent !important;
     text-decoration: underline;
     color: var(--black-700) !important;
-    margin-left: 0.7rem;
-    padding-right: 1rem !important;
+    margin-left: 0;
+    padding-left: 0 !important;
+    padding-right: 1.2rem !important;
     .react-dropdown-select-type-multi{
       padding: 0 !important;
     }
@@ -166,6 +175,27 @@ const GlobalStyle = createGlobalStyle`
       font-weight: normal;
       line-height: 2rem;
     }
+  }
+
+  .horizontal-slider {
+    width: 100%;
+    margin: auto;
+    margin-top: -0.9rem;
+  }
+
+  .year-slider-track {
+    position: relative;
+    background: var(--black-400);
+  }
+
+  .year-slider-track.year-slider-track-0 {
+    background: var(--blue-medium);
+  }
+
+  .horizontal-slider .year-slider-track {
+    top: 2.2rem;
+    height: 0.5rem;
+    border-radius: 1rem;
   }
 `;
 

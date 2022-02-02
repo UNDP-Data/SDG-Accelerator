@@ -31,11 +31,17 @@ const FlexDiv = styled.div`
   font-size: 2.4rem;
   flex-wrap: wrap;
 `;
+
 const IconEl = styled.div`
   height: 2.4rem;
   margin-left: -1.5rem;
   margin-right: 1rem;
 `;
+
+const SelectTitleText = styled.div`
+  margin-right: 1rem;
+`;
+
 export const MapViz = (props: Props) => {
   const { data, selectedSDG, showMap } = props;
   const [selectedOption, setSelectedOption] = useState<string>(selectedSDG === 'All SDG Status' ? 'SDG 1: No Poverty' : selectedSDG);
@@ -61,7 +67,7 @@ export const MapViz = (props: Props) => {
       <TitleEl>
         <LineEl />
         <FlexDiv>
-          <div>Country Wide Gaps for</div>
+          <SelectTitleText>Country Wide Gaps for</SelectTitleText>
           <Select
             options={SDGOptionsAllSDG || SDGOptions}
             className='selectDropDown'

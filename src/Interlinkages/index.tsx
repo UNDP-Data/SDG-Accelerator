@@ -118,6 +118,11 @@ const HighestAccValueEl = styled.div`
   align-items: center;
   width: 33.33%;
 `;
+
+const SelectTitleText = styled.div`
+  margin-right: 1rem;
+`;
+
 export const Interlinkages = () => {
   const [selectedTarget, setSelectedTarget] = useState('All Targets');
   const [selectedCountry, setSelectedCountry] = useState('World');
@@ -183,7 +188,7 @@ export const Interlinkages = () => {
       <RootEl>
         <FlexDiv>
           <TitleEl>
-            <div>Target Linkages:</div>
+            <SelectTitleText>Target Linkages:</SelectTitleText>
             <Select
               options={countryOption}
               className='selectDropDown'
@@ -193,7 +198,6 @@ export const Interlinkages = () => {
               valueField='label'
               dropdownHeight='250px'
               dropdownPosition='auto'
-              searchable
               dropdownGap={2}
             />
             <IconEl>
@@ -265,12 +269,12 @@ export const Interlinkages = () => {
         </SummaryContainer>
         <FlexDiv>
           <TitleEl>
-            <div>
+            <SelectTitleText>
               Target Status and Interlinkages for
               {' '}
               <span className='bold'>{selectedCountry}</span>
               :
-            </div>
+            </SelectTitleText>
             <Select
               options={targetOptions}
               className='selectDropDown'
@@ -280,7 +284,6 @@ export const Interlinkages = () => {
               valueField='label'
               dropdownHeight='250px'
               dropdownPosition='auto'
-              searchable
               dropdownGap={2}
             />
             <IconEl>

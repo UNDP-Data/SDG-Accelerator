@@ -61,6 +61,10 @@ const ListBodyEl = styled.div`
   margin-top: 1.5rem;
 `;
 
+const SelectTitleText = styled.div`
+  margin-right: 1rem;
+`;
+
 export const TargetStatusCard = (props: Props) => {
   const {
     data,
@@ -74,7 +78,7 @@ export const TargetStatusCard = (props: Props) => {
     <RootEl>
       <TitleEl>
         <FlexDiv>
-          <div>Target Overview for</div>
+          <SelectTitleText>Target Overview for</SelectTitleText>
           <Select
             options={SDGOptions.slice(1, -1)}
             className='selectDropDown'
@@ -84,7 +88,6 @@ export const TargetStatusCard = (props: Props) => {
             valueField='label'
             dropdownHeight='250px'
             dropdownPosition='auto'
-            searchable
             dropdownGap={2}
           />
           <IconEl>

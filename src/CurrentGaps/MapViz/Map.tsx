@@ -3,7 +3,7 @@ import { select } from 'd3-selection';
 import { geoEqualEarth } from 'd3-geo';
 import { zoom } from 'd3-zoom';
 import styled from 'styled-components';
-import world from './worldMap.json';
+import world from '../../Data/worldMap.json';
 import { CountryListType } from '../../Types';
 
 interface Props {

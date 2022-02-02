@@ -35,6 +35,17 @@ export interface SDGListType {
   Targets: TargetListType[];
 }
 
+export interface IndicatorYearDataSDGPush {
+  year: number;
+  withSDGPush: number;
+  withoutSDGPush: number;
+}
+
+export interface IndicatorDataSDGPush {
+  Indicator: string;
+  yearlyData: IndicatorYearDataSDGPush[];
+}
+
 export interface CountryListType {
   'Alpha-3 code-1': string;
   'Country or Area': string;
@@ -44,6 +55,16 @@ export interface CountryListType {
   'Group 2': string;
   'Group 3': string;
   'SDG Gap Data': SDGStatusListType[];
+}
+export interface CountryListTypeSDGPush {
+  'Alpha-3 code-1': string;
+  'Country or Area': string;
+  'Alpha-2 code': string;
+  'Numeric code': string;
+  'Group 1': string;
+  'Group 2': string;
+  'Group 3': string;
+  Data: IndicatorDataSDGPush[];
 }
 
 export interface DropdownOptionTypes {
@@ -55,4 +76,34 @@ export interface LinkageDataType {
   synergies: string[];
   tradeOffs: string[];
   coordinates: [number, number];
+}
+
+export interface HoverDataType {
+  country: string;
+  xPosition: number;
+  yPosition: number;
+  withSDGPush?: number;
+  withoutSDGPush?: number;
+  year: number;
+}
+
+export interface ScatterHoverDataType {
+  country: string;
+  xPosition: number;
+  yPosition: number;
+  year: number;
+  indicatorX: string;
+  indicatorY: string;
+  withoutSDGPush: {
+    x: number;
+    y: number;
+  };
+  withSDGPush: {
+    x: number;
+    y: number;
+  };
+}
+
+export interface SelectOption {
+  label: string;
 }

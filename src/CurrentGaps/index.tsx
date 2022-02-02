@@ -42,6 +42,10 @@ const IconEl = styled.div`
   margin-right: 1rem;
 `;
 
+const SelectTitleText = styled.div`
+  margin-right: 1rem;
+`;
+
 export const CurrentGaps = () => {
   const [selectedSDG, setSelectedSDG] = useState('All SDG Status');
   const [selectedCountry, setSelectedCountry] = useState('World');
@@ -60,7 +64,7 @@ export const CurrentGaps = () => {
       />
       <RootEl>
         <FlexDiv>
-          <div>Status of</div>
+          <SelectTitleText>Status of</SelectTitleText>
           <Select
             options={SDGOptions}
             className='selectDropDown'
@@ -70,13 +74,12 @@ export const CurrentGaps = () => {
             valueField='label'
             dropdownHeight='250px'
             dropdownPosition='auto'
-            searchable
             dropdownGap={2}
           />
           <IconEl>
             <CaretDown size={24} color='#110848' />
           </IconEl>
-          <div>in</div>
+          <SelectTitleText>in</SelectTitleText>
           <Select
             options={countryOption}
             className='selectDropDown'
@@ -86,7 +89,6 @@ export const CurrentGaps = () => {
             valueField='label'
             dropdownHeight='250px'
             dropdownPosition='auto'
-            searchable
             dropdownGap={2}
           />
           <IconEl>
