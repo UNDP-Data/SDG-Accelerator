@@ -115,7 +115,7 @@ export const IndicatorStatusCard = (props: Props) => {
                         {
                           timeSeriesData
                             .filter((series: any) => series.indicator === el.Indicator.split(' ')[1])
-                            .map((series: any) => <LineChart data={series} />)
+                            .map((series: any, j: number) => <LineChart key={j} data={series} />)
                         }
                       </ChartEl>
                     </IndicatorListEl>

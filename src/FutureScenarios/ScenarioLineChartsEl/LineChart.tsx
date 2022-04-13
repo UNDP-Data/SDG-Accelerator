@@ -68,7 +68,7 @@ export const LineChart = (props: Props) => {
   const y = scaleLinear().domain([minParam as number, maxParam as number]).range([graphHeight, 0]).nice();
   const yearRange = range(minYearFiltered, maxYearFiltered + 1, 1);
   const lineShape1 = line()
-    .defined((d: any) => d.value)
+    .defined((d: any) => d.value !== null || d.value !== undefined)
     .x((d: any) => x(d.year))
     .y((d: any) => (d.value === '>95' ? y(95) : y(d.value)))
     .curve(curveMonotoneX);

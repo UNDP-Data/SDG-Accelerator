@@ -1,8 +1,8 @@
-import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { Spin, Tabs } from 'antd';
 import { useEffect, useState } from 'react';
 import { json } from 'd3-request';
+import { useParams } from 'react-router-dom';
 import { PageTitle } from '../Components/PageTitle';
 import { SDGGOALSFORFUTURESCENARIO } from '../Constants';
 import { ScenarioLineChartsEl } from './ScenarioLineChartsEl';
@@ -28,15 +28,13 @@ const ButtonDiv = styled.div`
 export const FutureScenariosList = () => {
   const [data, setData] = useState<any | ScenarioDataType[]>(undefined);
   const [selectedSDG, setSelectedSDG] = useState('SDG 1: No Poverty');
-
-  const params = useParams();
-  const countrySelected = params.country;
+  const countrySelected = useParams().country;
   useEffect(() => {
     json('../../data/ScenarioData/ScenarioData.json', (err: any, d: ScenarioDataType[]) => {
       if (err) throw err;
-      setData(d);
+      setData(d.filter((el: any) => el.country === countrySelected));
     });
-  }, []);
+  }, [countrySelected]);
   return (
     <>
       <Nav
@@ -58,21 +56,21 @@ export const FutureScenariosList = () => {
           </CardEl>
           <Tabs type='card' size='small' onChange={(key) => { setSelectedSDG(key); }}>
             {
-            SDGGOALSFORFUTURESCENARIO.map((d) => (
-              <Tabs.TabPane tab={d} key={d}>
-                {
-                  data
-                    ? (
-                      <ScenarioLineChartsEl
-                        data={data.filter((el: any) => el.country === countrySelected)}
-                        selectedSDG={selectedSDG}
-                      />
-                    )
-                    : <Spin size='large' />
-                }
-              </Tabs.TabPane>
-            ))
-          }
+              SDGGOALSFORFUTURESCENARIO.map((d) => (
+                <Tabs.TabPane tab={d} key={d}>
+                  {
+                    data || data?.length === 0
+                      ? (
+                        <ScenarioLineChartsEl
+                          data={data}
+                          selectedSDG={selectedSDG}
+                        />
+                      )
+                      : <Spin size='large' />
+                  }
+                </Tabs.TabPane>
+              ))
+            }
           </Tabs>
         </RootEl>
       </div>

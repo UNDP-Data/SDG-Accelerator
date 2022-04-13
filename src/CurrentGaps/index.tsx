@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { useParams } from 'react-router-dom';
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { PageTitle } from '../Components/PageTitle';
 import { DonutChartCard } from './DonutChartCard';
 import { SDGGapsList } from './SDGGapsList';
@@ -46,11 +46,9 @@ const H2 = styled.h2`
 
 export const CurrentGaps = () => {
   const [showPopUp, setShowPopUp] = useState(false);
-  const params = useParams();
-  const countrySelected = params.country;
   const SDGOptions = SDGList.map((d) => ({ label: `${d.Goal}: ${d['Goal Name']}` }));
   SDGOptions.unshift({ label: 'All SDG Status' });
-
+  const countrySelected = useParams().country;
   return (
     <>
       <Nav

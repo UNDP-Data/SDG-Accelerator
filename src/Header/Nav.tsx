@@ -1,6 +1,10 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/interactive-supports-focus */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import styled from 'styled-components';
 import { NavLink, useParams } from 'react-router-dom';
-import { Select } from 'antd';
+import { Menu, Dropdown } from 'antd';
+import { DownOutlined } from '@ant-design/icons';
 import { COUNTRYOPTION } from '../Constants';
 
 interface Props {
@@ -46,30 +50,40 @@ const NavEl = styled.div<NavElProps>`
 const NavContainer = styled.div`
   display: flex;
 `;
-
 export const Nav = (props: Props) => {
   const { pageURL } = props;
   const params = useParams();
+  const menu = (
+    <Menu>
+      {
+        COUNTRYOPTION.map((d, i) => (
+          <Menu.Item key={i}>
+            <NavLink
+              to={`../${d.code}${pageURL}`}
+            >
+              {d.countryName}
+            </NavLink>
+          </Menu.Item>
+        ))
+      }
+    </Menu>
+  );
+
   return (
     <NavBarEl>
       <ContainerEl>
         <div>
-          <Select
-            value={COUNTRYOPTION[COUNTRYOPTION.findIndex((d) => d.code === params.country)].countryName}
-            listHeight={400}
+          <Dropdown
+            overlay={menu}
+            arrow
+            trigger={['hover', 'click']}
           >
-            {
-              COUNTRYOPTION.map((d) => (
-                <Select.Option key={d.countryName}>
-                  <NavLink
-                    to={`../${COUNTRYOPTION[COUNTRYOPTION.findIndex((el) => el.countryName === d.countryName)].code}${pageURL}`}
-                  >
-                    {d.countryName}
-                  </NavLink>
-                </Select.Option>
-              ))
-            }
-          </Select>
+            <a role='menuitem' className='navCountry' onClick={(e) => e.preventDefault()}>
+              {COUNTRYOPTION[COUNTRYOPTION.findIndex((d) => d.code === params.country)].countryName}
+              {' '}
+              <DownOutlined />
+            </a>
+          </Dropdown>
         </div>
         <NavContainer>
           <NavEl>

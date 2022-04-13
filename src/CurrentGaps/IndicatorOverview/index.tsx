@@ -18,17 +18,18 @@ export const IndicatorOverview = () => {
       if (err) throw err;
       setData(d);
     });
-  }, []);
+  }, [countrySelected]);
   return (
     <>
       <Tabs type='card' size='small' onChange={(key) => { setSelectedSDG(key); }}>
         {
-          SDGGOALS.map((d) => (
+          SDGGOALS.map((d, i) => (
             <Tabs.TabPane tab={d} key={d}>
               {
                 data
                   ? (
                     <IndicatorStatusCard
+                      key={i}
                       data={CountrySDGGap[CountrySDGGap.findIndex((el) => el['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data']}
                       timeSeriesData={data}
                       selectedSDG={selectedSDG}

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useParams } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import { Header } from './Header';
 import { CurrentGaps } from './CurrentGaps';
@@ -250,6 +250,17 @@ const GlobalStyle = createGlobalStyle`
       color: var(--black-700) !important;
     }
   }
+
+  .navCountry{
+    font-size: 2.4rem;
+    color: var(--primary-blue) !important;
+    font-weight: bold;
+  }
+
+  .modalSelect{
+    font-size: 2.4rem;
+  }
+
   .homeDropDown{
     widht: 100%;
     .ant-select-selector {
@@ -303,7 +314,7 @@ const App = () => (
       />
       <Route
         path='/:country/sdg-priorities'
-        element={<Priorities />}
+        element={<Priorities country={useParams().country} />}
       />
       <Route
         path='/:country/future-scenarios'
