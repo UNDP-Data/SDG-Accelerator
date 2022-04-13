@@ -8,6 +8,7 @@ import range from 'lodash.range';
 import { useEffect, useRef, useState } from 'react';
 import { select } from 'd3-selection';
 import 'd3-transition';
+import { useInView } from 'react-intersection-observer';
 import { HoverDataType, ScenarioDataType } from '../../Types';
 import { GraphTooltip } from '../../Components/GraphTooltip';
 
@@ -30,6 +31,10 @@ const TitleEl = styled.div`
 
 export const LineChart = (props: Props) => {
   const { data } = props;
+
+  const { ref, inView } = useInView({
+    threshold: 0.33,
+  });
   const svgWidth = 1240;
   const svgHeight = 420;
   const margin = {
@@ -71,14 +76,16 @@ export const LineChart = (props: Props) => {
   const xTicks = x.ticks(maxYearFiltered - minYearFiltered > 10 ? 10 : maxYearFiltered - minYearFiltered === 0 ? 1 : maxYearFiltered - minYearFiltered);
 
   useEffect(() => {
-    const overlaySelect = select(overlayRect.current);
-    overlaySelect
-      .transition()
-      .duration(10000)
-      .attr('x', svgWidth + 20);
-  }, [svgHeight, svgWidth]);
+    if (inView) {
+      const overlaySelect = select(overlayRect.current);
+      overlaySelect
+        .transition()
+        .duration(10000)
+        .attr('x', svgWidth + 20);
+    }
+  }, [inView]);
   return (
-    <RootEl>
+    <RootEl ref={ref}>
       <TitleEl>{data[0].indicator}</TitleEl>
       <>
         <svg width='100%' height='100%' viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
@@ -94,36 +101,36 @@ export const LineChart = (props: Props) => {
             <g>
               <path d={lineShape1(data[0].data as any) as string} fill='none' stroke={lineColor[data[0].scenario]} strokeWidth={2} />
               {
-                data[0].data.map((d: any, i: number) => (
-                  <g
-                    key={i}
-                  >
-                    <circle
-                      cx={x(d.year)}
-                      cy={y(d.value)}
-                      r={4}
-                      fill={lineColor[data[0].scenario]}
-                    />
-                  </g>
-                ))
-              }
+                    data[0].data.map((d: any, i: number) => (
+                      <g
+                        key={i}
+                      >
+                        <circle
+                          cx={x(d.year)}
+                          cy={y(d.value)}
+                          r={4}
+                          fill={lineColor[data[0].scenario]}
+                        />
+                      </g>
+                    ))
+                  }
             </g>
             <g>
               <path d={lineShape1(data[1].data as any) as string} fill='none' stroke={lineColor[data[1].scenario]} strokeWidth={2} />
               {
-                data[1].data.map((d: any, i: number) => (
-                  <g
-                    key={i}
-                  >
-                    <circle
-                      cx={x(d.year)}
-                      cy={y(d.value)}
-                      r={4}
-                      fill={lineColor[data[1].scenario]}
-                    />
-                  </g>
-                ))
-              }
+                    data[1].data.map((d: any, i: number) => (
+                      <g
+                        key={i}
+                      >
+                        <circle
+                          cx={x(d.year)}
+                          cy={y(d.value)}
+                          r={4}
+                          fill={lineColor[data[1].scenario]}
+                        />
+                      </g>
+                    ))
+                  }
             </g>
             <rect
               ref={overlayRect}
@@ -145,99 +152,99 @@ export const LineChart = (props: Props) => {
             </text>
             <g>
               {
-                yTicks.map((d, i) => (
-                  <g key={i}>
-                    <line
-                      y1={y(d)}
-                      y2={y(d)}
-                      x1={0}
-                      x2={graphWidth}
-                      stroke='#AAA'
-                      strokeWidth={1}
-                      strokeDasharray='4,8'
-                      opacity={d === 0 ? 0 : 1}
-                    />
-                    <text
-                      x={0}
-                      y={y(d)}
-                      fill='#666'
-                      textAnchor='start'
-                      fontSize={12}
-                      dy={-3}
-                      opacity={d === 0 ? 0 : 1}
-                    >
-                      {Math.abs(d) < 1 ? d : format('~s')(d).replace('G', 'B')}
-                    </text>
-                  </g>
-                ))
-              }
+                    yTicks.map((d, i) => (
+                      <g key={i}>
+                        <line
+                          y1={y(d)}
+                          y2={y(d)}
+                          x1={0}
+                          x2={graphWidth}
+                          stroke='#AAA'
+                          strokeWidth={1}
+                          strokeDasharray='4,8'
+                          opacity={d === 0 ? 0 : 1}
+                        />
+                        <text
+                          x={0}
+                          y={y(d)}
+                          fill='#666'
+                          textAnchor='start'
+                          fontSize={12}
+                          dy={-3}
+                          opacity={d === 0 ? 0 : 1}
+                        >
+                          {Math.abs(d) < 1 ? d : format('~s')(d).replace('G', 'B')}
+                        </text>
+                      </g>
+                    ))
+                  }
             </g>
             <g>
               {
-                xTicks.map((d, i) => (
-                  <g key={i}>
-                    <text
-                      y={graphHeight}
-                      x={x(d)}
-                      fill='#AAA'
-                      textAnchor='middle'
-                      fontSize={12}
-                      dy={15}
-                    >
-                      {d}
-                    </text>
-                  </g>
-                ))
-              }
+                    xTicks.map((d, i) => (
+                      <g key={i}>
+                        <text
+                          y={graphHeight}
+                          x={x(d)}
+                          fill='#AAA'
+                          textAnchor='middle'
+                          fontSize={12}
+                          dy={15}
+                        >
+                          {d}
+                        </text>
+                      </g>
+                    ))
+                  }
             </g>
             {
-              yearRange.map((d, i) => (
-                <rect
-                  key={i}
-                  x={x(d) - 10}
-                  y={0}
-                  width={20}
-                  height={graphHeight}
-                  fill='#fff'
-                  opacity={0}
-                  onMouseEnter={(event) => {
-                    setHoverData({
-                      withSDGPush: data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data[data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data.findIndex((el) => el.year === d)].value,
-                      withoutSDGPush: data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data[data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data.findIndex((el) => el.year === d)].value,
-                      year: d,
-                      xPosition: event.clientX,
-                      yPosition: event.clientY,
-                    });
-                  }}
-                  onMouseMove={(event) => {
-                    setHoverData({
-                      withSDGPush: data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data[data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data.findIndex((el) => el.year === d)].value,
-                      withoutSDGPush: data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data[data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data.findIndex((el) => el.year === d)].value,
-                      year: d,
-                      xPosition: event.clientX,
-                      yPosition: event.clientY,
-                    });
-                  }}
-                  onMouseLeave={() => {
-                    setHoverData(undefined);
-                  }}
-                />
-              ))
-            }
+                  yearRange.map((d, i) => (
+                    <rect
+                      key={i}
+                      x={x(d) - 10}
+                      y={0}
+                      width={20}
+                      height={graphHeight}
+                      fill='#fff'
+                      opacity={0}
+                      onMouseEnter={(event) => {
+                        setHoverData({
+                          withSDGPush: data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data[data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data.findIndex((el) => el.year === d)].value,
+                          withoutSDGPush: data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data[data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data.findIndex((el) => el.year === d)].value,
+                          year: d,
+                          xPosition: event.clientX,
+                          yPosition: event.clientY,
+                        });
+                      }}
+                      onMouseMove={(event) => {
+                        setHoverData({
+                          withSDGPush: data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data[data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data.findIndex((el) => el.year === d)].value,
+                          withoutSDGPush: data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data[data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data.findIndex((el) => el.year === d)].value,
+                          year: d,
+                          xPosition: event.clientX,
+                          yPosition: event.clientY,
+                        });
+                      }}
+                      onMouseLeave={() => {
+                        setHoverData(undefined);
+                      }}
+                    />
+                  ))
+                }
             {
-              hoverData
-                ? (
-                  <line
-                    y1={0}
-                    y2={graphHeight}
-                    x1={x(hoverData.year)}
-                    x2={x(hoverData.year)}
-                    stroke='#212121'
-                    strokeDasharray='4 8'
-                    strokeWidth={1}
-                  />
-                ) : null
-            }
+                  hoverData
+                    ? (
+                      <line
+                        y1={0}
+                        y2={graphHeight}
+                        x1={x(hoverData.year)}
+                        x2={x(hoverData.year)}
+                        stroke='#212121'
+                        strokeDasharray='4 8'
+                        strokeWidth={1}
+                      />
+                    ) : null
+                }
           </g>
         </svg>
       </>
