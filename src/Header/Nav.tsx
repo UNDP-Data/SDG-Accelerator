@@ -55,7 +55,6 @@ export const Nav = (props: Props) => {
       <ContainerEl>
         <div>
           <Select
-            showSearch
             value={COUNTRYOPTION[COUNTRYOPTION.findIndex((d) => d.code === params.country)].countryName}
             listHeight={400}
           >

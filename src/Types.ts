@@ -79,7 +79,6 @@ export interface LinkageDataType {
 }
 
 export interface HoverDataType {
-  country: string;
   xPosition: number;
   yPosition: number;
   withSDGPush?: number;

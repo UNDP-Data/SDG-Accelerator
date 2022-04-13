@@ -25,23 +25,10 @@ const TooltipEl = styled.div<TooltipElProps>`
   z-index: 1000;
 `;
 
-const TooltipTitle = styled.div`
-  color: var(--white);  
-  background: var(--blue-medium);
-  width: 100%;
-  box-sizing: border-box;
-  padding: 1rem;
-  position: relative;
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 2.4rem;
-  border-radius: 1rem 1rem 0 0;
-`;
-
 const TooltipBodyContainer = styled.div`
   width: 100%;
   box-sizing: border-box;
-  padding: 1rem;
+  padding: 2rem;
   font-size: 1.4rem;
   line-height: 2rem;
   color: var(--black);
@@ -54,31 +41,29 @@ const YearEl = styled.div`
 
 const RowEl = styled.div`
   color: var(--black);
-  margin: 1rem 0;
+  margin: 2rem 0 0 0;
 `;
 
 const ValueEl = styled.div`
   font-size: 1.6rem;
+  margin-top: 0.3rem;
 `;
 
 export const GraphTooltip = (props: Props) => {
   const { data } = props;
   return (
     <TooltipEl x={data.xPosition > window.innerWidth / 2 ? data.xPosition - 240 : data.xPosition} y={data.yPosition}>
-      <TooltipTitle>
-        {data.country}
-      </TooltipTitle>
       <TooltipBodyContainer>
         <YearEl>
           Year:
           {' '}
           <span className='bold'>{data.year}</span>
         </YearEl>
-        <RowEl>
+        <RowEl style={{ color: '#ed4347' }}>
           <>Without SDG Push</>
           <ValueEl className='bold'>{data.withoutSDGPush}</ValueEl>
         </RowEl>
-        <RowEl>
+        <RowEl style={{ color: '#009788' }}>
           <>With SDG Push</>
           <ValueEl className='bold'>{data.withSDGPush}</ValueEl>
         </RowEl>

@@ -51,7 +51,6 @@ export const Header = () => (
                 key={i}
                 title={d.title}
                 body={d.body}
-                link={d.link}
                 cardWidth={`${100 / HEADERCARDOPTION.length}%`}
               />
             ))

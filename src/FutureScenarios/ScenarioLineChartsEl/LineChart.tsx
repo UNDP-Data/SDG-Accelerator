@@ -4,7 +4,12 @@ import { format } from 'd3-format';
 import max from 'lodash.max';
 import min from 'lodash.min';
 import { scaleLinear } from 'd3-scale';
-import { ScenarioDataType } from '../../Types';
+import range from 'lodash.range';
+import { useEffect, useRef, useState } from 'react';
+import { select } from 'd3-selection';
+import 'd3-transition';
+import { HoverDataType, ScenarioDataType } from '../../Types';
+import { GraphTooltip } from '../../Components/GraphTooltip';
 
 interface Props {
   data: ScenarioDataType[];
@@ -36,10 +41,13 @@ export const LineChart = (props: Props) => {
   const graphWidth = svgWidth - margin.left - margin.right;
   const graphHeight = svgHeight - margin.top - margin.bottom;
 
+  const overlayRect = useRef<SVGRectElement>(null);
   const lineColor = {
     "'COVID Baseline' scenario": '#ed4347',
     "'SDG Push' scenario": '#009788',
   };
+
+  const [hoverData, setHoverData] = useState<HoverDataType | undefined>(undefined);
 
   const minParamCOVIDBaseline = min(data[0].data.map((d) => d.value)) ? min(data[0].data.map((d) => d.value)) as number > 0 ? 0 : min(data[0].data.map((d) => d.value)) : 0;
   const minParamSDGPush = min(data[1].data.map((d) => d.value)) ? min(data[1].data.map((d) => d.value)) as number > 0 ? 0 : min(data[1].data.map((d) => d.value)) : 0;
@@ -53,6 +61,7 @@ export const LineChart = (props: Props) => {
   const maxYearFiltered: number = 2050;
   const x = scaleLinear().domain([minYearFiltered, maxYearFiltered]).range([0, graphWidth]);
   const y = scaleLinear().domain([minParam as number, maxParam as number]).range([graphHeight, 0]).nice();
+  const yearRange = range(minYearFiltered, maxYearFiltered + 1, 1);
   const lineShape1 = line()
     .defined((d: any) => d.value)
     .x((d: any) => x(d.year))
@@ -60,6 +69,14 @@ export const LineChart = (props: Props) => {
     .curve(curveMonotoneX);
   const yTicks = y.ticks(5);
   const xTicks = x.ticks(maxYearFiltered - minYearFiltered > 10 ? 10 : maxYearFiltered - minYearFiltered === 0 ? 1 : maxYearFiltered - minYearFiltered);
+
+  useEffect(() => {
+    const overlaySelect = select(overlayRect.current);
+    overlaySelect
+      .transition()
+      .duration(10000)
+      .attr('x', svgWidth + 20);
+  }, [svgHeight, svgWidth]);
   return (
     <RootEl>
       <TitleEl>{data[0].indicator}</TitleEl>
@@ -73,6 +90,48 @@ export const LineChart = (props: Props) => {
               x2={graphWidth + 15}
               stroke='#212121'
               strokeWidth={1}
+            />
+            <g>
+              <path d={lineShape1(data[0].data as any) as string} fill='none' stroke={lineColor[data[0].scenario]} strokeWidth={2} />
+              {
+                data[0].data.map((d: any, i: number) => (
+                  <g
+                    key={i}
+                  >
+                    <circle
+                      cx={x(d.year)}
+                      cy={y(d.value)}
+                      r={4}
+                      fill={lineColor[data[0].scenario]}
+                    />
+                  </g>
+                ))
+              }
+            </g>
+            <g>
+              <path d={lineShape1(data[1].data as any) as string} fill='none' stroke={lineColor[data[1].scenario]} strokeWidth={2} />
+              {
+                data[1].data.map((d: any, i: number) => (
+                  <g
+                    key={i}
+                  >
+                    <circle
+                      cx={x(d.year)}
+                      cy={y(d.value)}
+                      r={4}
+                      fill={lineColor[data[1].scenario]}
+                    />
+                  </g>
+                ))
+              }
+            </g>
+            <rect
+              ref={overlayRect}
+              width={svgWidth + 10}
+              height={svgHeight + 10}
+              x={-10}
+              y={-10}
+              fill='#FAFAFA'
             />
             <text
               x={0}
@@ -131,69 +190,60 @@ export const LineChart = (props: Props) => {
                 ))
               }
             </g>
-            <g>
-              <path d={lineShape1(data[0].data as any) as string} fill='none' stroke={lineColor[data[0].scenario]} strokeWidth={2} />
-              {
-                data[0].data.map((d: any, i: number) => (
-                  <g
-                    key={i}
-                  >
-                    <circle
-                      cx={x(d.year)}
-                      cy={y(d.value)}
-                      r={4}
-                      fill={lineColor[data[0].scenario]}
-                    />
-                    <text
-                      x={x(d.year)}
-                      y={y(d.value)}
-                      dy={-8}
-                      fontSize={12}
-                      textAnchor='middle'
-                      strokeWidth={0.25}
-                      stroke='#fff'
-                      fill={lineColor[data[0].scenario]}
-                      fontWeight='bold'
-                    >
-                      {d.value < 1 ? d.value : format('~s')(d.value)}
-                    </text>
-                  </g>
-                ))
-              }
-            </g>
-            <g>
-              <path d={lineShape1(data[1].data as any) as string} fill='none' stroke={lineColor[data[1].scenario]} strokeWidth={2} />
-              {
-                data[1].data.map((d: any, i: number) => (
-                  <g
-                    key={i}
-                  >
-                    <circle
-                      cx={x(d.year)}
-                      cy={y(d.value)}
-                      r={4}
-                      fill={lineColor[data[1].scenario]}
-                    />
-                    <text
-                      x={x(d.year)}
-                      y={y(d.value)}
-                      dy={-8}
-                      fontSize={12}
-                      textAnchor='middle'
-                      strokeWidth={0.25}
-                      stroke='#fff'
-                      fill={lineColor[data[1].scenario]}
-                      fontWeight='bold'
-                    >
-                      {d.value < 1 ? d.value : format('~s')(d.value)}
-                    </text>
-                  </g>
-                ))
-              }
-            </g>
+            {
+              yearRange.map((d, i) => (
+                <rect
+                  key={i}
+                  x={x(d) - 10}
+                  y={0}
+                  width={20}
+                  height={graphHeight}
+                  fill='#fff'
+                  opacity={0}
+                  onMouseEnter={(event) => {
+                    setHoverData({
+                      withSDGPush: data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data[data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data.findIndex((el) => el.year === d)].value,
+                      withoutSDGPush: data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data[data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data.findIndex((el) => el.year === d)].value,
+                      year: d,
+                      xPosition: event.clientX,
+                      yPosition: event.clientY,
+                    });
+                  }}
+                  onMouseMove={(event) => {
+                    setHoverData({
+                      withSDGPush: data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data[data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data.findIndex((el) => el.year === d)].value,
+                      withoutSDGPush: data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data[data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data.findIndex((el) => el.year === d)].value,
+                      year: d,
+                      xPosition: event.clientX,
+                      yPosition: event.clientY,
+                    });
+                  }}
+                  onMouseLeave={() => {
+                    setHoverData(undefined);
+                  }}
+                />
+              ))
+            }
+            {
+              hoverData
+                ? (
+                  <line
+                    y1={0}
+                    y2={graphHeight}
+                    x1={x(hoverData.year)}
+                    x2={x(hoverData.year)}
+                    stroke='#212121'
+                    strokeDasharray='4 8'
+                    strokeWidth={1}
+                  />
+                ) : null
+            }
           </g>
         </svg>
       </>
+      {
+        hoverData ? <GraphTooltip data={hoverData} /> : null
+      }
     </RootEl>
   );
 };

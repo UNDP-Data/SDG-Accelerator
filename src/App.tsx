@@ -5,6 +5,7 @@ import { Header } from './Header';
 import { CurrentGaps } from './CurrentGaps';
 import { Priorities } from './Priorities';
 import { FutureScenariosList } from './FutureScenarios';
+import { HomePage } from './HomePage';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -249,6 +250,42 @@ const GlobalStyle = createGlobalStyle`
       color: var(--black-700) !important;
     }
   }
+  .homeDropDown{
+    widht: 100%;
+    .ant-select-selector {
+      width: 47.2rem !important;
+      height: auto !important;
+      border: 0 !important;
+      padding: 1rem !important;
+      font-size: 2rem !important;
+      background-color: var(--black-200) !important;
+    }
+    .ant-select-selection-placeholder{
+      color: var(--black-700);
+    }
+    .ant-select-selection-item {
+      font-size: 2.4rem;
+      font-weight: 500 !important;
+      a {
+        color: var(--black-700) !important;
+      }
+    }
+    .ant-select-dropdown{
+      min-width: 20rem !important;
+    }
+    .ant-select-item-option-content {
+      a {
+        font-size: 1.6rem !important;
+        line-height: 3rem !important;
+        color: var(--black-700) !important;
+      }
+    }
+  }
+  .countryModal{
+    .ant-modal-footer{
+      display: none !important;
+    }
+  }
 `;
 
 const App = () => (
@@ -256,6 +293,10 @@ const App = () => (
     <GlobalStyle />
     <Header />
     <Routes>
+      <Route
+        path='/'
+        element={<HomePage />}
+      />
       <Route
         path='/:country/current-sdg-gaps'
         element={<CurrentGaps />}

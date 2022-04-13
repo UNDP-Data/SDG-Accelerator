@@ -10,11 +10,6 @@ export const HEADERCARDOPTION = [
     link: '/sdg-priorities',
   },
   {
-    title: 'Target Interlinkages',
-    body: 'See how SDG targets are connected and affect one another',
-    link: '/target-interlinkages',
-  },
-  {
     title: 'Future Scenarios',
     body: 'Assess multidimensional effects of COVID-19 and policy decisions using scenario modeling',
     link: '/future-scenarios',

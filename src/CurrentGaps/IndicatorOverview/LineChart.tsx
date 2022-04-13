@@ -66,7 +66,6 @@ export const LineChart = (props: Props) => {
     .curve(curveMonotoneX);
   const yTicks = y.ticks(5);
   const xTicks = x.ticks(maxYearFiltered - minYearFiltered > 10 ? 10 : maxYearFiltered - minYearFiltered === 0 ? 1 : maxYearFiltered - minYearFiltered);
-  console.log(Object.keys(data));
   return (
     <RootEl>
       <TitleEl>{data.seriesDescription}</TitleEl>
