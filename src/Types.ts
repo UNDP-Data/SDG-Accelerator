@@ -118,3 +118,13 @@ export interface HoverBasic {
   xPosition: number;
   yPosition: number;
 }
+
+export interface ScenarioDataType {
+  country: string;
+  scenario: "'COVID Baseline' scenario" | "'SDG Push' scenario";
+  indicator: string;
+  data: {
+      'year': number;
+      'value': number;
+    }[];
+}

@@ -1,6 +1,6 @@
 import { PrioritiesDataType } from '../Types';
 
-const SDGPriorities: PrioritiesDataType[] = require('../Data/SDGPriorities.json');
+const SDGPriorities: PrioritiesDataType[] = require('../Data/SDGPrioritiesIraq.json');
 
 export const PrioritiesViz = () => {
   const rowHeight = 25;
@@ -14,7 +14,7 @@ export const PrioritiesViz = () => {
 
   const x1 = 100;
   const x2 = 30;
-  const x3 = 125 + (SDGPriorities.length * 30);
+  const x3 = 175 + (SDGPriorities.length * 30);
   const x3Gap = 30;
   const x4 = 30;
   const paddingBetweenCategories = 20;
@@ -23,11 +23,11 @@ export const PrioritiesViz = () => {
   const cornerRadiusSmall = 10;
 
   const colorArray = [
-    '#D12800',
-    '#6A7E3F',
     '#AF5F68',
-    '#9368A1',
     '#00859B',
+    '#9368A1',
+    '#6A7E3F',
+    '#D12800',
   ];
 
   let prevHeight = headerRowHeight;

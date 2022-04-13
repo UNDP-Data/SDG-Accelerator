@@ -17,7 +17,7 @@ const RowEl = styled.div`
 `;
 
 const RootEl = styled.div`
-  width: calc(50% - 5rem);
+  width: calc(50% - 1rem);
   padding: 2rem;
   background-color: var(--black-200);
   margin-bottom: 2rem;

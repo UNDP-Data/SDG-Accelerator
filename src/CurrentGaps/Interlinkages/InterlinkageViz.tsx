@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Tooltip } from '../Components/LinkageTooltip';
-import { SDGStatusListType, LinkageDataType, CountryListType } from '../Types';
+import { Tooltip } from '../../Components/LinkageTooltip';
+import { SDGStatusListType, LinkageDataType, CountryListType } from '../../Types';
 
 interface Props {
   selectedTarget: string;
@@ -60,7 +60,7 @@ export const InterlinkagesViz = (props: Props) => {
             <path d='M29.1845 23.5952V15.0269H27.5181V13.7144H32.2815V15.0269H30.5856V23.5952H29.1845Z' fill='#F05562' />
             <path d='M34.3539 23.5952V19.3479L32.4368 13.7144H33.9115L35.0618 17.5782L36.2269 13.7144H37.7164L35.755 19.3479V23.5952H34.3539Z' fill='#F05562' />
           </g>
-          <g transform='translate(80,24)'>
+          <g transform='translate(80,16)'>
             <path d='M0 9.96934V8.70105L2.65455 1.40103H0.191713V0.088501H4.23255V1.22406L1.59274 8.55357H4.23255V9.96934H0Z' fill='#D3A029' />
             <path d='M9.65468 8.55357V9.96934H5.42212V0.088501H9.65468V1.38628H6.82314V4.30629H9.30074V5.64832H6.82314V8.55357H9.65468Z' fill='#D3A029' />
             <path d='M10.3792 9.96934V0.088501H12.8567C13.5056 0.088501 14.0513 0.314626 14.4937 0.76688C14.946 1.21914 15.1721 1.77463 15.1721 2.43336V3.3477C15.1721 4.26205 14.7837 4.96009 14.007 5.44185L15.5113 9.96934H14.007L12.6798 5.7368H11.7949V9.96934H10.3792ZM13.5204 4.17356C13.6088 4.06542 13.6678 3.94252 13.6973 3.80488C13.7367 3.66724 13.7563 3.51484 13.7563 3.3477V2.43336C13.7563 2.12857 13.6728 1.88278 13.5056 1.69598C13.3385 1.49935 13.1025 1.40103 12.7977 1.40103H11.7949V4.48326H12.783C13.078 4.48326 13.3237 4.38003 13.5204 4.17356H13.5204Z' fill='#D3A029' />
@@ -512,8 +512,8 @@ export const InterlinkagesViz = (props: Props) => {
                       x={squareSize / 2}
                       y={squareSize / 2}
                       dy={5}
-                      fontSize='16px'
-                      fontWeight={700}
+                      fontSize='13px'
+                      fontWeight={500}
                       fill='#212121'
                     >
                       {target.Target.split(' ')[1]}

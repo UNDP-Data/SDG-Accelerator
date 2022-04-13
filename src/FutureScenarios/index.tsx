@@ -1,12 +1,13 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import { Spin, Tabs } from 'antd';
+import { useEffect, useState } from 'react';
+import { json } from 'd3-request';
 import { PageTitle } from '../Components/PageTitle';
-import { FUTURESCENARIOINDICATORS } from '../Constants';
-import { MapViz } from './MapViz';
-import { getSDGIcon } from '../utils/getSDGIcon';
-import { LineChartViz } from './LineChartViz';
-import { ScatterPlotViz } from './ScatterPlotViz';
-import { DumbellChartViz } from './DumbellChartViz';
+import { SDGGOALSFORFUTURESCENARIO } from '../Constants';
+import { ScenarioLineChartsEl } from './ScenarioLineChartsEl';
+import { Nav } from '../Header/Nav';
+import { ScenarioDataType } from '../Types';
 
 const RootEl = styled.div`
   width: 128rem;
@@ -24,94 +25,57 @@ const ButtonDiv = styled.div`
   margin: 2rem 0 0 -0.5rem;
 `;
 
-const TitleEl = styled.div`
-  font-size: 2.4rem;
-  margin: 3rem 0 1rem 0;
-`;
+export const FutureScenariosList = () => {
+  const [data, setData] = useState<any | ScenarioDataType[]>(undefined);
+  const [selectedSDG, setSelectedSDG] = useState('SDG 1: No Poverty');
 
-const LinkEl = styled.div`
-  padding: 0 1rem 0 0;
-  height: 6.4rem;
-  margin: 2rem 0;
-  background-color: var(--black-200);
-  color: var(--black-700);
-  &:hover {
-    color: var(--primary-blue);
-  }
-  display: flex;
-  align-items: center;
-  font-size: 1.6rem;
-`;
-
-const LinkText = styled.div`
-  margin-left: 2rem;
-`;
-
-export const FutureScenariosList = () => (
-  <div>
-    <PageTitle
-      title='Future Scenarios'
-      description='Using futures modelling, assess potential pathways for COVID-19 recovery through the SDG-Push scenario and projected progress towards SDG priority areas through targeted policy interventions.'
-    />
-    <RootEl>
-      <CardEl>
-        <div className='bold'>Assessing impact on SDGs with or without SDG Push</div>
-        <br />
-        <>The Future Scenarios outlines projections based on SDG Priorities analyzed in the areas of Governance, Social Protection, Green Economy and Digital Disruption. UNDP’s flagship study, conducted with the Pardee Center for International Futures at the University of Denver, assesses the impact of three different COVID-19 scenarios on the SDGs, capturing the multidimensional effects of the pandemic over the next decades. The findings show that while COVID-19 can lead to severe long-term impacts, a set of ambitious but feasible integrated SDG investments can help the world exceed the development trajectory we were on before the pandemic. These SDG Investments, detailed in the ‘SDG Priorities’ page, are aimed at narrowing the gaps identified in the ‘Current SDG Gaps’ page. Their projected impact over the coming decades is visualized here as the “SDG Push” scenario.  </>
-        <ButtonDiv>
-          <button type='button' className='secondary'>Read More</button>
-        </ButtonDiv>
-      </CardEl>
-      <>
-        <TitleEl>
-          All Available Indicators
-        </TitleEl>
-        {
-          FUTURESCENARIOINDICATORS.map((d, i) => (
-            <Link to={`/future-scenarios/${d.ID}`} key={i}>
-              <LinkEl>
-                {getSDGIcon(d.Goal, 64)}
-                <LinkText>{d.Indicator}</LinkText>
-              </LinkEl>
-            </Link>
-          ))
-        }
-      </>
-    </RootEl>
-  </div>
-);
-
-export const FutureScenariosViz = () => {
   const params = useParams();
-  const defaultIndicator = FUTURESCENARIOINDICATORS[FUTURESCENARIOINDICATORS.findIndex((d) => d.ID === params.indicator)].Indicator;
-  const defaultRelatedIndicator = FUTURESCENARIOINDICATORS[FUTURESCENARIOINDICATORS.findIndex((d) => d.ID === params.indicator)].RelatedIndicator;
-  const indicatorOptions = FUTURESCENARIOINDICATORS.map((d) => ({ label: d.Indicator }));
+  const countrySelected = params.country;
+  useEffect(() => {
+    json('../../data/ScenarioData/ScenarioData.json', (err: any, d: ScenarioDataType[]) => {
+      if (err) throw err;
+      setData(d);
+    });
+  }, []);
   return (
-    <div style={{ paddingBottom: '5rem' }}>
-      <PageTitle
-        title='Future Scenarios'
-        description='Using futures modelling, assess potential pathways for COVID-19 recovery through the SDG-Push scenario and projected progress towards SDG priority areas through targeted policy interventions.'
+    <>
+      <Nav
+        pageURL='/future-scenarios'
       />
-      <RootEl>
-        <MapViz
-          pageIndicator={defaultIndicator}
-          indicatorOptions={indicatorOptions}
+      <div>
+        <PageTitle
+          title='Future Scenarios'
+          description='Using futures modelling, assess potential pathways for COVID-19 recovery through the SDG-Push scenario and projected progress towards SDG priority areas through targeted policy interventions.'
         />
-        <LineChartViz
-          pageIndicator={defaultIndicator}
-          indicatorOptions={indicatorOptions}
-        />
-        <ScatterPlotViz
-          pageIndicator={defaultIndicator}
-          indicatorOptions={indicatorOptions}
-          defaultRelatedIndicator={defaultRelatedIndicator}
-        />
-        <DumbellChartViz
-          pageIndicator={defaultIndicator}
-          indicatorOptions={indicatorOptions}
-        />
-      </RootEl>
-    </div>
-
+        <RootEl>
+          <CardEl>
+            <div className='bold'>Assessing impact on SDGs with or without SDG Push</div>
+            <br />
+            <>The Future Scenarios outlines projections based on SDG Priorities analyzed in the areas of Governance, Social Protection, Green Economy and Digital Disruption. UNDP’s flagship study, conducted with the Pardee Center for International Futures at the University of Denver, assesses the impact of three different COVID-19 scenarios on the SDGs, capturing the multidimensional effects of the pandemic over the next decades. The findings show that while COVID-19 can lead to severe long-term impacts, a set of ambitious but feasible integrated SDG investments can help the world exceed the development trajectory we were on before the pandemic. These SDG Investments, detailed in the ‘SDG Priorities’ page, are aimed at narrowing the gaps identified in the ‘Current SDG Gaps’ page. Their projected impact over the coming decades is visualized here as the “SDG Push” scenario.  </>
+            <ButtonDiv>
+              <button type='button' className='secondary'>Read More</button>
+            </ButtonDiv>
+          </CardEl>
+          <Tabs type='card' size='small' onChange={(key) => { setSelectedSDG(key); }}>
+            {
+            SDGGOALSFORFUTURESCENARIO.map((d) => (
+              <Tabs.TabPane tab={d} key={d}>
+                {
+                  data
+                    ? (
+                      <ScenarioLineChartsEl
+                        data={data.filter((el: any) => el.country === countrySelected)}
+                        selectedSDG={selectedSDG}
+                      />
+                    )
+                    : <Spin size='large' />
+                }
+              </Tabs.TabPane>
+            ))
+          }
+          </Tabs>
+        </RootEl>
+      </div>
+    </>
   );
 };

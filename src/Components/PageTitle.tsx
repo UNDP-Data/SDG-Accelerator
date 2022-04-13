@@ -35,13 +35,13 @@ export const PageTitle = (props: Props) => {
           />
         </IconEl>
         {
-        showPopUp
-          ? (
-            <Tooltip
-              text={description}
-            />
-          ) : null
-      }
+          showPopUp
+            ? (
+              <Tooltip
+                text={description}
+              />
+            ) : null
+        }
       </div>
     </RootEl>
   );

@@ -2,7 +2,7 @@ export const HEADERCARDOPTION = [
   {
     title: 'Current SDG Gaps',
     body: 'View a current snapshot of SDG gaps globally and conduct a deep dive at the national level',
-    link: '/',
+    link: '/current-sdg-gap',
   },
   {
     title: 'SDG Priorities',
@@ -120,4 +120,113 @@ export const FUTURESCENARIOINDICATORS = [
   },
 ];
 
+export const COUNTRYOPTION = [
+  {
+    code: 'IDN',
+    countryName: 'Indonesia',
+  },
+  {
+    code: 'IRQ',
+    countryName: 'Iraq',
+  },
+  {
+    code: 'MDA',
+    countryName: 'Republic of Moldova',
+  },
+  {
+    code: 'NAM',
+    countryName: 'Namibia',
+  },
+  {
+    code: 'PER',
+    countryName: 'Peru',
+  },
+  {
+    code: 'ZAF',
+    countryName: 'South Africa',
+  },
+];
+
 export const COLORSCALE = ['#ffeda0', '#feb24c', '#fc4e2a', '#bd0026', '#800026'];
+
+export const SDGGOALS = [
+  'SDG 1: No Poverty',
+  'SDG 2: Zero Hunger',
+  'SDG 3: Good Health and Well-being',
+  'SDG 4: Quality Education',
+  'SDG 5: Gender Equality',
+  'SDG 6: Clean Water and Sanitation',
+  'SDG 7: Affordable and Clean Energy',
+  'SDG 8: Decent Work and Economic Growth',
+  'SDG 9: Industry, Innovation and Infrastructure',
+  'SDG 10: Reduced Inequality',
+  'SDG 11: Sustainable Cities and Communities',
+  'SDG 12: Responsible Consumption and Production',
+  'SDG 13: Climate Action',
+  'SDG 14: Life Below Water',
+  'SDG 15: Life on Land',
+  'SDG 16: Peace and Justice Strong Institutions',
+  'SDG 17: Partnerships to achieve the Goal',
+];
+
+export const SDGGOALSFORFUTURESCENARIO = [
+  'SDG 1: No Poverty',
+  'SDG 2: Zero Hunger',
+  'SDG 3: Good Health and Well-being',
+  'SDG 4: Quality Education',
+  'SDG 6: Clean Water and Sanitation',
+];
+
+export const KEYSTOAVOID = [
+  'Reporting Type',
+  'series',
+  'goal',
+  'target',
+  'indicator',
+  'seriesDescription',
+  'values',
+];
+
+export const SCENARIOINDICATORBASEDONSDG = [
+  {
+    SDG: 'SDG 1: No Poverty',
+    indicators: [
+      'Poverty <$1.90 per day (number of people)',
+      'Poverty <$1.90 per day (percent of population)',
+      'Sex difference poverty headcount, age 25-34 (female minus male, number of people)',
+      'Female poverty headcount (number of people)',
+    ],
+  },
+  {
+    SDG: 'SDG 2: Zero Hunger',
+    indicators: [
+      'Malnourished children under 5 (number of children)',
+      'Malnourished children under 5 (percent)',
+      'Malnourished population (number of people)',
+      'Malnourished population (percent)',
+      'Stunted children under 5 (rate)',
+    ],
+  },
+  {
+    SDG: 'SDG 3: Good Health and Well-being',
+    indicators: [
+      'Children under 5 mortality (rate per 1000 live births)',
+      'Maternal mortality (ratio)',
+      'Neonatal mortality rate (number of neonatal deaths per 1000 live births)',
+    ],
+  },
+  {
+    SDG: 'SDG 4: Quality Education',
+    indicators: [
+      'Primary education gross completion rate (percent)',
+      'Secondary education gross completion rate (percent)',
+    ],
+  },
+  {
+    SDG: 'SDG 6: Clean Water and Sanitation',
+    indicators: [
+      'Improved sanitation access (percent)',
+      'Improved water access (percent)',
+    ],
+  },
+];

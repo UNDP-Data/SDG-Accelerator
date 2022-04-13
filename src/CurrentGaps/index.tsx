@@ -1,22 +1,18 @@
 import styled from 'styled-components';
-import Select from 'react-dropdown-select';
+import { useParams } from 'react-router-dom';
 import { useState } from 'react';
-import sortBy from 'lodash.sortby';
 import { PageTitle } from '../Components/PageTitle';
 import { DonutChartCard } from './DonutChartCard';
 import { SDGGapsList } from './SDGGapsList';
-import { TargetGapsList } from './TargetGapsList';
-import { TargetStatusCard } from './TargetStatusCard';
-import { IndicatorStatusCard } from './IndicatorStatusCard';
-import { CaretDown } from '../icons';
-import { SectionTitle } from '../Components/SectionTitle';
-import { Banner } from '../Components/Banner';
 import SDGList from '../Data/SDGGoalList.json';
-import { CountryListType, SDGStatusListType } from '../Types';
-import { MapViz } from './MapViz';
+import { CountryListType } from '../Types';
+import { Nav } from '../Header/Nav';
+import { Interlinkages } from './Interlinkages';
+import { InfoIcon } from '../icons';
+import { Tooltip } from '../Components/Tooltip';
+import { IndicatorOverview } from './IndicatorOverview';
 
 const CountrySDGGap:CountryListType[] = require('../Data/countrySDGGapData.json');
-const WorldSDGGap:SDGStatusListType[] = require('../Data/worldSdgGap.json');
 
 const RootEl = styled.div`
   width: 128rem;
@@ -30,157 +26,79 @@ const RowEl = styled.div`
   align-items: stretch;
 `;
 
-const FlexDiv = styled.div`
+const TitleEl = styled.div`
+  margin: 4rem 0 0 0;
   display: flex;
   align-items: center;
-  font-size: 2.4rem;
-  flex-wrap: wrap;
-`;
-const IconEl = styled.div`
-  height: 2.4rem;
-  margin-left: -1.5rem;
-  margin-right: 1rem;
 `;
 
-const SelectTitleText = styled.div`
-  margin-right: 1rem;
+const IconEl = styled.div`
+  margin-left: 1rem; 
+`;
+
+const IndicatorOverviewEl = styled.div`
+  margin-top: 5rem;
+`;
+
+const H2 = styled.h2`
+  margin-bottom: 2rem;
 `;
 
 export const CurrentGaps = () => {
-  const [selectedSDG, setSelectedSDG] = useState('All SDG Status');
-  const [selectedCountry, setSelectedCountry] = useState('World');
-
+  const [showPopUp, setShowPopUp] = useState(false);
+  const params = useParams();
+  const countrySelected = params.country;
   const SDGOptions = SDGList.map((d) => ({ label: `${d.Goal}: ${d['Goal Name']}` }));
   SDGOptions.unshift({ label: 'All SDG Status' });
 
-  const countryOption = sortBy(CountrySDGGap.map((d) => ({ label: d['Country or Area'] })), 'label');
-  countryOption.unshift({ label: 'World' });
-
   return (
     <>
+      <Nav
+        pageURL='/current-sdg-gaps'
+      />
       <PageTitle
         title='Current Gaps'
         description='Visualization of SDG gaps nationally allows for easy identification of where SDG goals are being left behind. Using up to date data, explore SDG progress in your country and which targets are at risk of not being met by 2030. These insights will be the basis for evidence-based, holistic dialogue at the national level.'
       />
       <RootEl>
-        <FlexDiv>
-          <SelectTitleText>Status of</SelectTitleText>
-          <Select
-            options={SDGOptions}
-            className='selectDropDown'
-            onChange={(el: any) => { setSelectedSDG(el[0].label); }}
-            values={[{ label: selectedSDG }]}
-            labelField='label'
-            valueField='label'
-            dropdownHeight='250px'
-            dropdownPosition='auto'
-            dropdownGap={2}
-          />
-          <IconEl>
-            <CaretDown size={24} color='#212121' />
-          </IconEl>
-          <SelectTitleText>in</SelectTitleText>
-          <Select
-            options={countryOption}
-            className='selectDropDown'
-            onChange={(el: any) => { setSelectedCountry(el[0].label); }}
-            values={[{ label: selectedCountry }]}
-            labelField='label'
-            valueField='label'
-            dropdownHeight='250px'
-            dropdownPosition='auto'
-            dropdownGap={2}
-          />
-          <IconEl>
-            <CaretDown size={24} color='#212121' />
-          </IconEl>
-        </FlexDiv>
-        {
-          selectedSDG !== 'All SDG Status' ? (
-            <Banner
-              color={selectedCountry === 'World'
-                ? WorldSDGGap[WorldSDGGap.findIndex((d) => d.Goal === selectedSDG.split(':')[0])].Status === 'Identified Gap' ? 'red'
-                  : WorldSDGGap[WorldSDGGap.findIndex((d) => d.Goal === selectedSDG.split(':')[0])].Status === 'On Track' ? 'green'
-                    : 'yellow'
-                : CountrySDGGap[CountrySDGGap.findIndex((d) => d['Country or Area'] === selectedCountry)]['SDG Gap Data'][CountrySDGGap[CountrySDGGap.findIndex((d) => d['Country or Area'] === selectedCountry)]['SDG Gap Data'].findIndex((d) => d.Goal === selectedSDG.split(':')[0])].Status === 'Identified Gap' ? 'red'
-                  : CountrySDGGap[CountrySDGGap.findIndex((d) => d['Country or Area'] === selectedCountry)]['SDG Gap Data'][CountrySDGGap[CountrySDGGap.findIndex((d) => d['Country or Area'] === selectedCountry)]['SDG Gap Data'].findIndex((d) => d.Goal === selectedSDG.split(':')[0])].Status === 'On Track' ? 'green'
-                    : 'yellow'}
-              content={(
-                <>
-                  <span className='bold'>{selectedCountry}</span>
-                  {' '}
-                  is
-                  {' '}
-                  <span className='bold'>
-                    {selectedCountry === 'World'
-                      ? WorldSDGGap[WorldSDGGap.findIndex((d) => d.Goal === selectedSDG.split(':')[0])].Status : CountrySDGGap[CountrySDGGap.findIndex((d) => d['Country or Area'] === selectedCountry)]['SDG Gap Data'][CountrySDGGap[CountrySDGGap.findIndex((d) => d['Country or Area'] === selectedCountry)]['SDG Gap Data'].findIndex((d) => d.Goal === selectedSDG.split(':')[0])].Status}
-                  </span>
-                  {' '}
-                  to achieve the
-                  {' '}
-                  <span className='bold'>{selectedSDG}</span>
-                </>
-            )}
-            />
-          ) : null
-        }
         <RowEl>
           <DonutChartCard
-            title={selectedSDG === 'All SDG Status' ? 'SDG Gaps Overview' : 'Target Gaps Overview'}
-            centralText={selectedSDG === 'All SDG Status' ? 'SDG Goals' : 'Targets'}
-            selectedSDG={selectedSDG}
-            data={selectedCountry === 'World' ? WorldSDGGap : CountrySDGGap[CountrySDGGap.findIndex((d) => d['Country or Area'] === selectedCountry)]['SDG Gap Data']}
+            title='SDG Gaps Overview'
+            centralText='All SDG Status'
+            selectedSDG='All SDG Status'
+            data={CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data']}
           />
-          {
-            selectedSDG === 'All SDG Status'
-              ? (
-                <SDGGapsList
-                  data={selectedCountry === 'World' ? WorldSDGGap : CountrySDGGap[CountrySDGGap.findIndex((d) => d['Country or Area'] === selectedCountry)]['SDG Gap Data']}
-                />
-              )
-              : (
-                <TargetGapsList
-                  selectedSDG={selectedSDG}
-                  data={selectedCountry === 'World' ? WorldSDGGap : CountrySDGGap[CountrySDGGap.findIndex((d) => d['Country or Area'] === selectedCountry)]['SDG Gap Data']}
-                />
-              )
-          }
+          <SDGGapsList
+            data={CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data']}
+          />
         </RowEl>
-        {
-            selectedSDG === 'All SDG Status'
-              ? (
-                <TargetStatusCard
-                  data={selectedCountry === 'World' ? WorldSDGGap : CountrySDGGap[CountrySDGGap.findIndex((d) => d['Country or Area'] === selectedCountry)]['SDG Gap Data']}
-                  country={selectedCountry}
-                  SDGOptions={SDGOptions}
-                  setSelectedSDG={setSelectedSDG}
+        <>
+          <TitleEl>
+            <h2>Target Overview</h2>
+            <div onMouseEnter={() => { setShowPopUp(true); }} onMouseLeave={() => { setShowPopUp(false); }}>
+              <IconEl>
+                <InfoIcon
+                  size={18}
                 />
-              ) : (
-                <>
-                  <SectionTitle title={(
-                    <>
-                      All Target from
-                      {' '}
-                      <span className='bold'>{selectedSDG}</span>
-                      {' '}
-                      for
-                      {' '}
-                      <span className='bold'>{selectedCountry}</span>
-                    </>
-                    )}
-                  />
-                  <IndicatorStatusCard
-                    data={selectedCountry === 'World' ? WorldSDGGap : CountrySDGGap[CountrySDGGap.findIndex((d) => d['Country or Area'] === selectedCountry)]['SDG Gap Data']}
-                    selectedSDG={selectedSDG}
-                  />
-                </>
-              )
-        }
-        <MapViz
-          showMap={selectedCountry === 'World'}
-          data={CountrySDGGap}
-          selectedSDG={selectedSDG}
-        />
+              </IconEl>
+              {
+                showPopUp
+                  ? (
+                    <Tooltip
+                      text='Identify which targets have the biggest effect on other SDG targets, and explore which targets to pursue which have the highest positive interlinkage (“synergy”) with other SDG targets. This is an exercise in understanding how we can speed development forward in a positive and sustainable manner based on the identified gaps and priorities.'
+                    />
+                  ) : null
+              }
+            </div>
+          </TitleEl>
+          <Interlinkages
+            selectedCountry={CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['Country or Area']}
+          />
+        </>
+        <IndicatorOverviewEl>
+          <H2>Indicator Overview</H2>
+          <IndicatorOverview />
+        </IndicatorOverviewEl>
       </RootEl>
     </>
   );

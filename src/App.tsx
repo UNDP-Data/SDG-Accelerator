@@ -1,10 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 import { Routes, Route } from 'react-router-dom';
+import 'antd/dist/antd.css';
 import { Header } from './Header';
 import { CurrentGaps } from './CurrentGaps';
 import { Priorities } from './Priorities';
-import { Interlinkages } from './Interlinkages';
-import { FutureScenariosList, FutureScenariosViz } from './FutureScenarios';
+import { FutureScenariosList } from './FutureScenarios';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -65,9 +65,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h3 {
-    font-size: 2.5rem;
-    line-height: 2.9rem;
-    font-weight: normal;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    font-weight: 500;
   }
 
   h5 {
@@ -226,6 +226,29 @@ const GlobalStyle = createGlobalStyle`
     height: 0.5rem;
     border-radius: 1rem;
   }
+
+  .ant-select-selector {
+    border: 0 !important;
+    padding-left: 0 !important;
+    background-color: var(--black-200) !important;
+  }
+  .ant-select-selection-item {
+    font-size: 2.4rem;
+    font-weight: 500 !important;
+    a {
+      color: var(--black-700) !important;
+    }
+  }
+  .ant-select-dropdown{
+    min-width: 20rem !important;
+  }
+  .ant-select-item-option-content {
+    a {
+      font-size: 1.6rem !important;
+      line-height: 3rem !important;
+      color: var(--black-700) !important;
+    }
+  }
 `;
 
 const App = () => (
@@ -234,24 +257,16 @@ const App = () => (
     <Header />
     <Routes>
       <Route
-        path='/'
+        path='/:country/current-sdg-gaps'
         element={<CurrentGaps />}
       />
       <Route
-        path='/sdg-priorities'
+        path='/:country/sdg-priorities'
         element={<Priorities />}
       />
       <Route
-        path='/target-interlinkages'
-        element={<Interlinkages />}
-      />
-      <Route
-        path='/future-scenarios'
+        path='/:country/future-scenarios'
         element={<FutureScenariosList />}
-      />
-      <Route
-        path='/future-scenarios/:indicator'
-        element={<FutureScenariosViz />}
       />
     </Routes>
   </div>

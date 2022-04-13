@@ -1,11 +1,7 @@
-import { useState } from 'react';
-import Select from 'react-dropdown-select';
 import styled from 'styled-components';
 import { PrioritiesViz } from './PrioritiesViz';
 import { PageTitle } from '../Components/PageTitle';
-import { CountryListTypeSDGPush } from '../Types';
-
-const SDGPushData: CountryListTypeSDGPush[] = require('../Data/countrySDGPush.json');
+import { Nav } from '../Header/Nav';
 
 const RootEl = styled.div`
   width: 128rem;
@@ -16,10 +12,6 @@ const DescriptionEl = styled.div`
   padding: 2rem;
   background-color: var(--black-200);
   margin: 0 0 4rem 0;
-`;
-
-const SelectEl = styled.div`
-  margin: 2rem 0;
 `;
 
 const FileAttachementEl = styled.div`
@@ -43,17 +35,14 @@ const FileAttacehmentButton = styled.div`
 `;
 
 const HR = styled.hr`
-  margin: 0;
+  margin: 2rem 0 0 0;
 `;
 
-export const Priorities = () => {
-  const [country, setCountry] = useState<string | undefined>(undefined);
-  const countryList = SDGPushData.map((d) => (
-    {
-      label: d['Country or Area'],
-    }
-  )).sort((a, b) => a.label.localeCompare(b.label));
-  return (
+export const Priorities = () => (
+  <>
+    <Nav
+      pageURL='/sdg-priorities'
+    />
     <div>
       <PageTitle
         title='SDG Priorities — How Do We Get There?'
@@ -64,45 +53,20 @@ export const Priorities = () => {
           <div>
             Determine priorities for your country based on analysis of relevant documentation. SDG Priorities represent areas which require urgent national attention and action based on SDG progress gaps and importance level prescribed by government and relevant national actors.
           </div>
-          <SelectEl>
-            <Select
-              options={countryList}
-              className='countrySelectDropDown'
-              onChange={(el: any) => { setCountry(el[0].label); }}
-              values={country ? [{ label: country }] : []}
-              labelField='label'
-              valueField='label'
-              dropdownHeight='250px'
-              dropdownPosition='auto'
-              searchable
-              dropdownGap={2}
-            />
-          </SelectEl>
-          {
-            country ? (
+          <>
+            <HR />
+            <FileAttachementEl>
               <>
-                <HR />
-                <FileAttachementEl>
-                  <>
-                    Complement the existing database of national planning documents and voluntary national reviews by uploading a relevant national resource such as a policy brief, assessment, development intervention proposal, etc. to analyse and identify SDG Priorities
-                  </>
-                  <FileAttacehmentButton>
-                    Attach a file
-                  </FileAttacehmentButton>
-                </FileAttachementEl>
+                Complement the existing database of national planning documents and voluntary national reviews by uploading a relevant national resource such as a policy brief, assessment, development intervention proposal, etc. to analyse and identify SDG Priorities
               </>
-            )
-              : null
-          }
+              <FileAttacehmentButton>
+                Attach a file
+              </FileAttacehmentButton>
+            </FileAttachementEl>
+          </>
         </DescriptionEl>
-        {
-          country ? (
-            <PrioritiesViz />
-          )
-            : null
-
-        }
+        <PrioritiesViz />
       </RootEl>
     </div>
-  );
-};
+  </>
+);

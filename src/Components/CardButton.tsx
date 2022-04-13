@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 interface Props {
@@ -59,9 +59,10 @@ export const CardButton = (props: Props) => {
     link,
     cardWidth,
   } = props;
+  const params = useParams();
   return (
     <RootEl cardWidth={cardWidth}>
-      <Link to={link}>
+      <Link to={`${params.country}${link}`}>
         <LinkEl>
           <H2>
             {title}

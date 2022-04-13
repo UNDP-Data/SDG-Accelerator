@@ -1,10 +1,12 @@
 import styled from 'styled-components';
-import { Tag } from '../Components/Tag';
-import { SDGStatusListType } from '../Types';
+import { Tag } from '../../Components/Tag';
+import { SDGStatusListType } from '../../Types';
+import { LineChart } from './LineChart';
 
 interface Props {
   selectedSDG: string;
   data: SDGStatusListType[];
+  timeSeriesData: any;
 }
 const RootEl = styled.div`
   margin-bottom: 2rem;
@@ -21,7 +23,9 @@ const TargetListEl = styled.div`
   margin: 2rem 0;
   font-size: 1.6rem;
   color: var(--black-700);
-  padding: 1.5rem 0;
+  &:first-of-type{
+    margin-top: 0;
+  }
 `;
 
 const ListHeadEl = styled.div`
@@ -56,10 +60,17 @@ const IndicatorListEl = styled.div`
   margin: 1rem 0;
 `;
 
+const ChartEl = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`;
+
 export const IndicatorStatusCard = (props: Props) => {
   const {
     data,
     selectedSDG,
+    timeSeriesData,
   } = props;
   return (
     <RootEl>
@@ -100,6 +111,13 @@ export const IndicatorStatusCard = (props: Props) => {
                       <ListBodyEl>
                         {el['Indicator Description']}
                       </ListBodyEl>
+                      <ChartEl>
+                        {
+                          timeSeriesData
+                            .filter((series: any) => series.indicator === el.Indicator.split(' ')[1])
+                            .map((series: any) => <LineChart data={series} />)
+                        }
+                      </ChartEl>
                     </IndicatorListEl>
                   ))
                 }
