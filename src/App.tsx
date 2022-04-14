@@ -297,6 +297,11 @@ const GlobalStyle = createGlobalStyle`
       display: none !important;
     }
   }
+  .SDGSelector{
+    .ant-select-selector{
+      background-color:#fff !important;
+    }
+  }
 `;
 
 const App = () => (

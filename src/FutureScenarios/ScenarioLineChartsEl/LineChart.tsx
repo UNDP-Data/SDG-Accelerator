@@ -101,19 +101,19 @@ export const LineChart = (props: Props) => {
             <g>
               <path d={lineShape1(data[0].data as any) as string} fill='none' stroke={lineColor[data[0].scenario]} strokeWidth={2} />
               {
-                    data[0].data.map((d: any, i: number) => (
-                      <g
-                        key={i}
-                      >
-                        <circle
-                          cx={x(d.year)}
-                          cy={y(d.value)}
-                          r={4}
-                          fill={lineColor[data[0].scenario]}
-                        />
-                      </g>
-                    ))
-                  }
+                data[0].data.map((d: any, i: number) => (
+                  <g
+                    key={i}
+                  >
+                    <circle
+                      cx={x(d.year)}
+                      cy={y(d.value)}
+                      r={4}
+                      fill={lineColor[data[0].scenario]}
+                    />
+                  </g>
+                ))
+              }
             </g>
             <g>
               <path d={lineShape1(data[1].data as any) as string} fill='none' stroke={lineColor[data[1].scenario]} strokeWidth={2} />
@@ -152,32 +152,32 @@ export const LineChart = (props: Props) => {
             </text>
             <g>
               {
-                    yTicks.map((d, i) => (
-                      <g key={i}>
-                        <line
-                          y1={y(d)}
-                          y2={y(d)}
-                          x1={0}
-                          x2={graphWidth}
-                          stroke='#AAA'
-                          strokeWidth={1}
-                          strokeDasharray='4,8'
-                          opacity={d === 0 ? 0 : 1}
-                        />
-                        <text
-                          x={0}
-                          y={y(d)}
-                          fill='#666'
-                          textAnchor='start'
-                          fontSize={12}
-                          dy={-3}
-                          opacity={d === 0 ? 0 : 1}
-                        >
-                          {Math.abs(d) < 1 ? d : format('~s')(d).replace('G', 'B')}
-                        </text>
-                      </g>
-                    ))
-                  }
+                yTicks.map((d, i) => (
+                  <g key={i}>
+                    <line
+                      y1={y(d)}
+                      y2={y(d)}
+                      x1={0}
+                      x2={graphWidth}
+                      stroke='#AAA'
+                      strokeWidth={1}
+                      strokeDasharray='4,8'
+                      opacity={d === 0 ? 0 : 1}
+                    />
+                    <text
+                      x={0}
+                      y={y(d)}
+                      fill='#666'
+                      textAnchor='start'
+                      fontSize={12}
+                      dy={-3}
+                      opacity={d === 0 ? 0 : 1}
+                    >
+                      {Math.abs(d) < 1 ? d : format('~s')(d).replace('G', 'B')}
+                    </text>
+                  </g>
+                ))
+              }
             </g>
             <g>
               {
@@ -198,53 +198,53 @@ export const LineChart = (props: Props) => {
                   }
             </g>
             {
-                  yearRange.map((d, i) => (
-                    <rect
-                      key={i}
-                      x={x(d) - 10}
-                      y={0}
-                      width={20}
-                      height={graphHeight}
-                      fill='#fff'
-                      opacity={0}
-                      onMouseEnter={(event) => {
-                        setHoverData({
-                          withSDGPush: data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data[data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data.findIndex((el) => el.year === d)].value,
-                          withoutSDGPush: data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data[data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data.findIndex((el) => el.year === d)].value,
-                          year: d,
-                          xPosition: event.clientX,
-                          yPosition: event.clientY,
-                        });
-                      }}
-                      onMouseMove={(event) => {
-                        setHoverData({
-                          withSDGPush: data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data[data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data.findIndex((el) => el.year === d)].value,
-                          withoutSDGPush: data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data[data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data.findIndex((el) => el.year === d)].value,
-                          year: d,
-                          xPosition: event.clientX,
-                          yPosition: event.clientY,
-                        });
-                      }}
-                      onMouseLeave={() => {
-                        setHoverData(undefined);
-                      }}
-                    />
-                  ))
-                }
+              yearRange.map((d, i) => (
+                <rect
+                  key={i}
+                  x={x(d) - 10}
+                  y={0}
+                  width={20}
+                  height={graphHeight}
+                  fill='#fff'
+                  opacity={0}
+                  onMouseEnter={(event) => {
+                    setHoverData({
+                      withSDGPush: data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data[data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data.findIndex((el) => el.year === d)].value,
+                      withoutSDGPush: data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data[data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data.findIndex((el) => el.year === d)].value,
+                      year: d,
+                      xPosition: event.clientX,
+                      yPosition: event.clientY,
+                    });
+                  }}
+                  onMouseMove={(event) => {
+                    setHoverData({
+                      withSDGPush: data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data[data[data.findIndex((el) => el.scenario === "'SDG Push' scenario")].data.findIndex((el) => el.year === d)].value,
+                      withoutSDGPush: data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data[data[data.findIndex((el) => el.scenario === "'COVID Baseline' scenario")].data.findIndex((el) => el.year === d)].value,
+                      year: d,
+                      xPosition: event.clientX,
+                      yPosition: event.clientY,
+                    });
+                  }}
+                  onMouseLeave={() => {
+                    setHoverData(undefined);
+                  }}
+                />
+              ))
+            }
             {
-                  hoverData
-                    ? (
-                      <line
-                        y1={0}
-                        y2={graphHeight}
-                        x1={x(hoverData.year)}
-                        x2={x(hoverData.year)}
-                        stroke='#212121'
-                        strokeDasharray='4 8'
-                        strokeWidth={1}
-                      />
-                    ) : null
-                }
+              hoverData
+                ? (
+                  <line
+                    y1={0}
+                    y2={graphHeight}
+                    x1={x(hoverData.year)}
+                    x2={x(hoverData.year)}
+                    stroke='#212121'
+                    strokeDasharray='4 8'
+                    strokeWidth={1}
+                  />
+                ) : null
+            }
           </g>
         </svg>
       </>

@@ -4,6 +4,8 @@ import { SDGStatusListType } from '../Types';
 
 interface Props {
   data: SDGStatusListType[];
+  setSelectedSDG: any;
+  divRef: any;
 }
 
 const RowEl = styled.div`
@@ -17,10 +19,7 @@ const RowEl = styled.div`
 `;
 
 const RootEl = styled.div`
-  width: calc(50% - 1rem);
-  padding: 2rem;
-  background-color: var(--black-200);
-  margin-bottom: 2rem;
+  padding: 4rem;
 `;
 
 interface ColorProps {
@@ -58,11 +57,20 @@ const RowBodyEl = styled.div`
 `;
 const SDGIconEl = styled.div`
   margin: 0.5rem 1rem 0.5rem 0;
+  cursor: pointer;
+`;
+
+const SubNote = styled.div`
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--black-600);
 `;
 
 export const SDGGapsList = (props: Props) => {
   const {
     data,
+    setSelectedSDG,
+    divRef,
   } = props;
   const onTrack = data.filter((d) => d.Status === 'On Track');
   const identifiedGap = data.filter((d) => d.Status === 'Identified Gap');
@@ -87,7 +95,7 @@ export const SDGGapsList = (props: Props) => {
         <RowBodyEl>
           {
             onTrack.map((d, i) => (
-              <SDGIconEl key={i}>
+              <SDGIconEl key={i} onClick={() => { setSelectedSDG(`${d.Goal}: ${d['Goal Name']}`); divRef.current.scrollIntoView({ behavior: 'smooth' }); }}>
                 {getSDGIcon(d.Goal, 60)}
               </SDGIconEl>
             ))
@@ -112,7 +120,7 @@ export const SDGGapsList = (props: Props) => {
         <RowBodyEl>
           {
             identifiedGap.map((d, i) => (
-              <SDGIconEl key={i}>
+              <SDGIconEl key={i} onClick={() => { setSelectedSDG(`${d.Goal}: ${d['Goal Name']}`); divRef.current.scrollIntoView({ behavior: 'smooth' }); }}>
                 {getSDGIcon(d.Goal, 60)}
               </SDGIconEl>
             ))
@@ -137,13 +145,16 @@ export const SDGGapsList = (props: Props) => {
         <RowBodyEl>
           {
             forReview.map((d, i) => (
-              <SDGIconEl key={i}>
+              <SDGIconEl key={i} onClick={() => { setSelectedSDG(`${d.Goal}: ${d['Goal Name']}`); divRef.current.scrollIntoView({ behavior: 'smooth' }); }}>
                 {getSDGIcon(d.Goal, 60)}
               </SDGIconEl>
             ))
           }
         </RowBodyEl>
       </RowEl>
+      <SubNote>
+        Click on the goal to explore further
+      </SubNote>
     </RootEl>
   );
 };

@@ -1,16 +1,19 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Select } from 'antd';
 import { PageTitle } from '../Components/PageTitle';
 import { DonutChartCard } from './DonutChartCard';
 import { SDGGapsList } from './SDGGapsList';
-import SDGList from '../Data/SDGGoalList.json';
 import { CountryListType } from '../Types';
 import { Nav } from '../Header/Nav';
 import { Interlinkages } from './Interlinkages';
 import { InfoIcon } from '../icons';
 import { Tooltip } from '../Components/Tooltip';
 import { IndicatorOverview } from './IndicatorOverview';
+import { getSDGIcon } from '../utils/getSDGIcon';
+import { COUNTRYOPTION, SDGGOALS } from '../Constants';
+import { Tag } from '../Components/Tag';
 
 const CountrySDGGap:CountryListType[] = require('../Data/countrySDGGapData.json');
 
@@ -22,7 +25,7 @@ const RootEl = styled.div`
 const RowEl = styled.div`
   margin-top: 2rem;
   display: flex;
-  justify-content: space-between;
+  background-color: var(--black-200);
   align-items: stretch;
 `;
 
@@ -44,11 +47,54 @@ const H2 = styled.h2`
   margin-bottom: 2rem;
 `;
 
+const SummaryEl = styled.div`
+  padding: 2rem;
+  background-color: var(--blue-bg);
+  border: 1px solid var(--primary-blue);
+  border-radius: 2px;
+  font-size: 2rem;
+`;
+
+const FlexDiv = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 2rem 0 4rem 0;
+`;
+
+const DropdownEl = styled.div`
+  margin-left: 2rem;
+`;
+
+interface ColorProps {
+  fill: string;
+}
+
+const TargetBox = styled.div<ColorProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-right: 1rem;
+  text-align: center;
+  background-color: ${(props) => props.fill};
+`;
+
+const TargetListEl = styled.div`
+  display: flex;
+  margin-bottom: 4rem;
+`;
+
 export const CurrentGaps = () => {
   const [showPopUp, setShowPopUp] = useState(false);
-  const SDGOptions = SDGList.map((d) => ({ label: `${d.Goal}: ${d['Goal Name']}` }));
-  SDGOptions.unshift({ label: 'All SDG Status' });
+  const [selectedSDG, setSelectedSDG] = useState('SDG 1: No Poverty');
+  const goalDetailDiv = useRef(null);
+
   const countrySelected = useParams().country;
+  const countryFullName = COUNTRYOPTION[COUNTRYOPTION.findIndex((d) => d.code === countrySelected)].countryName;
+  const selectedSDGData = CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data'][CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data'].findIndex((d) => d.Goal === selectedSDG.split(':')[0])];
   return (
     <>
       <Nav
@@ -59,15 +105,35 @@ export const CurrentGaps = () => {
         description='Visualization of SDG gaps nationally allows for easy identification of where SDG goals are being left behind. Using up to date data, explore SDG progress in your country and which targets are at risk of not being met by 2030. These insights will be the basis for evidence-based, holistic dialogue at the national level.'
       />
       <RootEl>
+        <SummaryEl>
+          For
+          {' '}
+          <span className='bold'>{countryFullName}</span>
+          , out of 17 SDG goals,
+          {' '}
+          <span className='bold'>
+            {CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data'].filter((d) => d.Status === 'On Track').length}
+            {' '}
+            are On Track,
+            {' '}
+            {CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data'].filter((d) => d.Status === 'Identified Gap').length}
+            {' '}
+            are Identified Gaps and,
+            {' '}
+            {CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data'].filter((d) => d.Status === 'For Review').length}
+            {' '}
+            are For Review
+          </span>
+        </SummaryEl>
         <RowEl>
           <DonutChartCard
-            title='SDG Gaps Overview'
             centralText='All SDG Status'
-            selectedSDG='All SDG Status'
             data={CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data']}
           />
           <SDGGapsList
             data={CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data']}
+            setSelectedSDG={setSelectedSDG}
+            divRef={goalDetailDiv}
           />
         </RowEl>
         <>
@@ -93,9 +159,47 @@ export const CurrentGaps = () => {
             selectedCountry={CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['Country or Area']}
           />
         </>
-        <IndicatorOverviewEl>
-          <H2>Indicator Overview</H2>
-          <IndicatorOverview />
+        <IndicatorOverviewEl ref={goalDetailDiv}>
+          <H2>SDG Overview</H2>
+          <FlexDiv>
+            {getSDGIcon(selectedSDG.split(':')[0], 80)}
+            <DropdownEl>
+              <Select
+                value={selectedSDG}
+                className='SDGSelector'
+                onChange={(d) => { setSelectedSDG(d); }}
+              >
+                {
+                  SDGGOALS.map((d, i) => (
+                    <Select.Option value={d} key={i}>
+                      {d}
+                    </Select.Option>
+                  ))
+                }
+              </Select>
+              <Tag
+                backgroundColor={selectedSDGData.Status === 'On Track' ? 'var(--accent-green)' : selectedSDGData.Status === 'Identified Gap' ? 'var(--accent-red)' : 'var(--accent-yellow)'}
+                text={selectedSDGData.Status}
+                fontColor={selectedSDGData.Status === 'For Review' ? 'var(--black)' : 'var(--white)'}
+                margin='0.5rem 0 0 0'
+              />
+            </DropdownEl>
+          </FlexDiv>
+          <h3>Status of Target</h3>
+          <TargetListEl>
+            {
+              selectedSDGData.Targets.map((d) => (
+                <TargetBox
+                  fill={d.Status === 'On Track' ? '#C5EFC4' : d.Status === 'Identified Gap' ? '#FEC8C4' : '#FEE697'}
+                >
+                  {d.Target.split(' ')[1]}
+                </TargetBox>
+              ))
+            }
+          </TargetListEl>
+          <IndicatorOverview
+            selectedSDG={selectedSDG}
+          />
         </IndicatorOverviewEl>
       </RootEl>
     </>
