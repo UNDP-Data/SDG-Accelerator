@@ -61,6 +61,9 @@ const FlexDiv = styled.div`
   margin: -2rem -2rem 2rem -2rem;
   padding: 2rem;
   background-color: var(--black-300);
+  position: sticky;
+  z-index: 100;
+  top: 5rem;
 `;
 
 const DropdownEl = styled.div`
