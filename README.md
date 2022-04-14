@@ -81,9 +81,9 @@ Craco is used to add a cofiguration layer for CRA. The primary function is to st
 
 __Packages/Library Used__
 * __React__: React is used as MVC framework.
-* __Reacet-Router-Dom__: For routing.
+* __React-Router-Dom__: For routing.
 * __CRACO__: Craco is used to configure different scripts (See Available Scripts for more details)
 * __styled-components__: Utilises tagged template literals  and the power of CSS, allows to write actual CSS code to style the components in JS/TS.
 * __Various D3 Libraries__: Various D3 libraries are used for visualizations, adding interaction and reading the csv data file.
-* __react-dropdown-select__: Is a dropdown library used for creating different dropdowns.
+* __antd__: Is used as a UI library.
 * __lodash__: This is used for manipulating and iterating arrays and objects.

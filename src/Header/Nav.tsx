@@ -77,6 +77,7 @@ export const Nav = (props: Props) => {
             overlay={menu}
             arrow
             trigger={['hover', 'click']}
+            className='countrySelect'
           >
             <a role='menuitem' className='navCountry' onClick={(e) => e.preventDefault()}>
               {COUNTRYOPTION[COUNTRYOPTION.findIndex((d) => d.code === params.country)].countryName}

@@ -8,7 +8,7 @@ import { SDGGapsList } from './SDGGapsList';
 import { CountryListType } from '../Types';
 import { Nav } from '../Header/Nav';
 import { Interlinkages } from './Interlinkages';
-import { InfoIcon } from '../icons';
+import { CaretDown, InfoIcon } from '../icons';
 import { Tooltip } from '../Components/Tooltip';
 import { IndicatorOverview } from './IndicatorOverview';
 import { getSDGIcon } from '../utils/getSDGIcon';
@@ -168,6 +168,7 @@ export const CurrentGaps = () => {
                 value={selectedSDG}
                 className='SDGSelector'
                 onChange={(d) => { setSelectedSDG(d); }}
+                suffixIcon={<div style={{ marginTop: '-0.2rem' }}><CaretDown size={24} /></div>}
               >
                 {
                   SDGGOALS.map((d, i) => (

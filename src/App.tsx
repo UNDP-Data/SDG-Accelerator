@@ -130,104 +130,6 @@ const GlobalStyle = createGlobalStyle`
     font-style: italic;
   }
 
-  .selectDropDown {
-    border: 0 !important;
-    font-weight: bold;
-    background-color: transparent !important;
-    text-decoration: underline;
-    color: var(--black-700) !important;
-    margin-left: 0;
-    padding-left: 0 !important;
-    padding-right: 1.2rem !important;
-    .react-dropdown-select-type-multi{
-      padding: 0 !important;
-    }
-
-    .react-dropdown-select-content {
-      height: auto !important;
-      span {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 50rem;
-      }
-    }
-
-    .react-dropdown-select-option{
-      background-color: var(--black-700) !important;
-      color: var(--white) !important;
-    }
-
-    .react-dropdown-select-dropdown-handle {
-      display: none !important;
-      width: 0 !important;
-      margin: 0 !important;
-      margin-top: 0.6rem !important;
-    }
-    .react-dropdown-select-dropdown {
-      min-width: 20rem;
-      font-size: 1.4rem;
-      font-weight: normal;
-      line-height: 2rem;
-    }
-  }
-
-  .countrySelectDropDown {
-    border: 1 solid var(--black-400) !important;
-    border-radius: 2rem !important;
-    font-weight: bold;
-    background-color: var(--white);
-    color: var(--black-700) !important;
-    margin-left: 0;
-    padding: 0 2rem !important;
-    .react-dropdown-select-type-multi{
-      padding: 0 !important;
-    }
-
-    .react-dropdown-select-content {
-      height: auto !important;
-      span {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 50rem;
-      }
-    }
-
-    .react-dropdown-select-option{
-      background-color: var(--black-700) !important;
-      color: var(--white) !important;
-    }
-
-    .react-dropdown-select-dropdown {
-      min-width: 20rem;
-      font-size: 1.4rem;
-      font-weight: normal;
-      line-height: 2rem;
-    }
-  }
-
-  .horizontal-slider {
-    width: 100%;
-    margin: auto;
-    margin-top: -0.9rem;
-  }
-
-  .year-slider-track {
-    position: relative;
-    background: var(--black-400);
-  }
-
-  .year-slider-track.year-slider-track-0 {
-    background: var(--blue-medium);
-  }
-
-  .horizontal-slider .year-slider-track {
-    top: 2.2rem;
-    height: 0.5rem;
-    border-radius: 1rem;
-  }
-
   .ant-select-selector {
     border: 0 !important;
     padding-left: 0 !important;
@@ -300,6 +202,38 @@ const GlobalStyle = createGlobalStyle`
   .SDGSelector{
     .ant-select-selector{
       background-color:#fff !important;
+    }
+    .ant-select-selection-item{
+      padding-right: 3rem !important;
+      font-weight: bold !important;
+    }
+  }
+  .countrySelect{
+    .ant-btn{
+      background-color: transparent;
+      border: 0 !important;
+      padding: 0 !important;
+    }
+    .anticon-down{
+      svg {
+        width: 1.5rem !important;
+        height: 1.5rem !important;
+      }
+    }
+  }
+  .targetSelector{
+    .ant-select-selector{
+      background-color: transparent !important;
+    }
+    .ant-select-selection-item{
+      max-width: 40rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 2rem;
+      font-weight: 700 !important;
+      padding-right: 3rem !important;
+      color: var(--primary-blue);
     }
   }
 `;

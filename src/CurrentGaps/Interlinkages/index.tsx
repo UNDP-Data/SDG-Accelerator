@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import Select from 'react-dropdown-select';
 import sortBy from 'lodash.sortby';
-import { Radio } from 'antd';
+import { Radio, Select } from 'antd';
 import { CountryListType, LinkageDataType, SDGStatusListType } from '../../Types';
 import { CaretDown } from '../../icons';
 import { InterlinkagesViz } from './InterlinkageViz';
@@ -50,12 +49,6 @@ const SubNoteDiv = styled.div`
   font-weight: normal;
   color: var(--black-500);
   font-style:italic;
-`;
-
-const IconEl = styled.div`
-  height: 2.4rem;
-  margin-left: -1.5rem;
-  margin-right: 1rem;
 `;
 
 const SummaryContainer = styled.div`
@@ -107,7 +100,7 @@ const HighestAccValueEl = styled.div`
 
 const H3 = styled.div`
   margin: 0 1rem 0 0;
-  font-weight: 500;
+  font-weight: 400;
 `;
 
 export const Interlinkages = (props: Props) => {
@@ -228,19 +221,15 @@ export const Interlinkages = (props: Props) => {
                   Target Status and Interlinkages:
                 </H3>
                 <Select
-                  options={targetOptions}
-                  className='selectDropDown'
-                  onChange={(el: any) => { setSelectedTarget(el[0].label); }}
-                  values={[{ label: selectedTarget }]}
-                  labelField='label'
-                  valueField='label'
-                  dropdownHeight='250px'
-                  dropdownPosition='auto'
-                  dropdownGap={2}
-                />
-                <IconEl>
-                  <CaretDown size={24} color='#212121' />
-                </IconEl>
+                  onChange={(el) => { setSelectedTarget(el); }}
+                  value={selectedTarget}
+                  className='targetSelector'
+                  suffixIcon={<div style={{ marginTop: '-0.2rem' }}><CaretDown size={24} color='#0969FA' /></div>}
+                >
+                  {
+                    targetOptions.map((d) => <Select.Option value={d.label}>{d.label}</Select.Option>)
+                  }
+                </Select>
               </TitleUnit>
               <SubNoteDiv>
                 Hover or click on the targeta to see the interlinkages
