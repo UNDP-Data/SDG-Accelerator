@@ -30,7 +30,9 @@ const FlexDiv = styled.div`
   font-size: 2rem;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin: -2rem -2rem 2rem -2rem;
+  padding: 2rem;
+  background-color: var(--black-300);
 `;
 
 const TitleEl = styled.div`
@@ -101,6 +103,11 @@ const HighestAccValueEl = styled.div`
 const H3 = styled.div`
   margin: 0 1rem 0 0;
   font-weight: 400;
+`;
+
+const ContainerEl = styled.div`
+  background-color: var(--black-200);
+  padding: 2rem;
 `;
 
 export const Interlinkages = (props: Props) => {
@@ -214,41 +221,43 @@ export const Interlinkages = (props: Props) => {
               </ValueContainer>
             </HighestAccCard>
           </SummaryContainer>
-          <FlexDiv>
-            <TitleEl>
-              <TitleUnit>
-                <H3>
-                  Target Status and Interlinkages:
-                </H3>
-                <Select
-                  onChange={(el) => { setSelectedTarget(el); }}
-                  value={selectedTarget}
-                  className='targetSelector'
-                  suffixIcon={<div style={{ marginTop: '-0.2rem' }}><CaretDown size={24} color='#0969FA' /></div>}
-                >
-                  {
-                    targetOptions.map((d) => <Select.Option value={d.label}>{d.label}</Select.Option>)
-                  }
-                </Select>
-              </TitleUnit>
-              <SubNoteDiv>
-                Hover or click on the targeta to see the interlinkages
-              </SubNoteDiv>
-            </TitleEl>
-            <Radio.Group onChange={(d) => { setLinkageTypes(d.target.value); }} value={linkageType} buttonStyle='solid' size='large'>
-              <Radio.Button value='synergies'>Synergies</Radio.Button>
-              <Radio.Button value='tradeOffs'>Trade Offs</Radio.Button>
-            </Radio.Group>
-          </FlexDiv>
-          <InterlinkagesViz
-            selectedTarget={selectedTarget}
-            setSelectedTarget={setSelectedTarget}
-            linkageType={linkageType}
-            selectedCountry={selectedCountry}
-            countrySDGGap={CountrySDGGap}
-            worldSDGGap={WorldSDGGap}
-            linkageData={LinkageData}
-          />
+          <ContainerEl>
+            <FlexDiv>
+              <TitleEl>
+                <TitleUnit>
+                  <H3>
+                    Target Status and Interlinkages:
+                  </H3>
+                  <Select
+                    onChange={(el) => { setSelectedTarget(el); }}
+                    value={selectedTarget}
+                    className='targetSelector'
+                    suffixIcon={<div style={{ marginTop: '-0.2rem' }}><CaretDown size={24} color='#0969FA' /></div>}
+                  >
+                    {
+                      targetOptions.map((d) => <Select.Option value={d.label}>{d.label}</Select.Option>)
+                    }
+                  </Select>
+                </TitleUnit>
+                <SubNoteDiv>
+                  Hover or click on the target to see the interlinkages
+                </SubNoteDiv>
+              </TitleEl>
+              <Radio.Group onChange={(d) => { setLinkageTypes(d.target.value); }} value={linkageType} buttonStyle='solid' size='large'>
+                <Radio.Button value='synergies'>Synergies</Radio.Button>
+                <Radio.Button value='tradeOffs'>Trade Offs</Radio.Button>
+              </Radio.Group>
+            </FlexDiv>
+            <InterlinkagesViz
+              selectedTarget={selectedTarget}
+              setSelectedTarget={setSelectedTarget}
+              linkageType={linkageType}
+              selectedCountry={selectedCountry}
+              countrySDGGap={CountrySDGGap}
+              worldSDGGap={WorldSDGGap}
+              linkageData={LinkageData}
+            />
+          </ContainerEl>
         </RootEl>
       </div>
     </>

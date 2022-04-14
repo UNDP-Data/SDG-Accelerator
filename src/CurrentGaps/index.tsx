@@ -58,7 +58,9 @@ const SummaryEl = styled.div`
 const FlexDiv = styled.div`
   display: flex;
   align-items: center;
-  margin: 2rem 0 4rem 0;
+  margin: -2rem -2rem 2rem -2rem;
+  padding: 2rem;
+  background-color: var(--black-300);
 `;
 
 const DropdownEl = styled.div`
@@ -84,7 +86,12 @@ const TargetBox = styled.div<ColorProps>`
 
 const TargetListEl = styled.div`
   display: flex;
-  margin-bottom: 4rem;
+`;
+
+const ContainerEl = styled.div`
+  background-color: var(--black-200);
+  padding: 2rem 2rem 0 2rem;
+
 `;
 
 export const CurrentGaps = () => {
@@ -161,46 +168,50 @@ export const CurrentGaps = () => {
         </>
         <IndicatorOverviewEl ref={goalDetailDiv}>
           <H2>SDG Overview</H2>
-          <FlexDiv>
-            {getSDGIcon(selectedSDG.split(':')[0], 80)}
-            <DropdownEl>
-              <Select
-                value={selectedSDG}
-                className='SDGSelector'
-                onChange={(d) => { setSelectedSDG(d); }}
-                suffixIcon={<div style={{ marginTop: '-0.2rem' }}><CaretDown size={24} /></div>}
-              >
+          <ContainerEl>
+            <FlexDiv>
+              {getSDGIcon(selectedSDG.split(':')[0], 80)}
+              <DropdownEl>
+                <Select
+                  value={selectedSDG}
+                  className='SDGSelector'
+                  onChange={(d) => { setSelectedSDG(d); }}
+                  suffixIcon={<div style={{ marginTop: '-0.2rem' }}><CaretDown size={24} /></div>}
+                >
+                  {
+                    SDGGOALS.map((d, i) => (
+                      <Select.Option value={d} key={i}>
+                        {d}
+                      </Select.Option>
+                    ))
+                  }
+                </Select>
+                <Tag
+                  backgroundColor={selectedSDGData.Status === 'On Track' ? 'var(--accent-green)' : selectedSDGData.Status === 'Identified Gap' ? 'var(--accent-red)' : 'var(--accent-yellow)'}
+                  text={selectedSDGData.Status}
+                  fontColor={selectedSDGData.Status === 'For Review' ? 'var(--black)' : 'var(--white)'}
+                  margin='0.5rem 0 0 0'
+                />
+              </DropdownEl>
+            </FlexDiv>
+            <SummaryEl style={{ marginBottom: '4rem' }}>
+              <h3>Status of Targets</h3>
+              <TargetListEl>
                 {
-                  SDGGOALS.map((d, i) => (
-                    <Select.Option value={d} key={i}>
-                      {d}
-                    </Select.Option>
+                  selectedSDGData.Targets.map((d) => (
+                    <TargetBox
+                      fill={d.Status === 'On Track' ? '#C5EFC4' : d.Status === 'Identified Gap' ? '#FEC8C4' : '#FEE697'}
+                    >
+                      {d.Target.split(' ')[1]}
+                    </TargetBox>
                   ))
                 }
-              </Select>
-              <Tag
-                backgroundColor={selectedSDGData.Status === 'On Track' ? 'var(--accent-green)' : selectedSDGData.Status === 'Identified Gap' ? 'var(--accent-red)' : 'var(--accent-yellow)'}
-                text={selectedSDGData.Status}
-                fontColor={selectedSDGData.Status === 'For Review' ? 'var(--black)' : 'var(--white)'}
-                margin='0.5rem 0 0 0'
-              />
-            </DropdownEl>
-          </FlexDiv>
-          <h3>Status of Target</h3>
-          <TargetListEl>
-            {
-              selectedSDGData.Targets.map((d) => (
-                <TargetBox
-                  fill={d.Status === 'On Track' ? '#C5EFC4' : d.Status === 'Identified Gap' ? '#FEC8C4' : '#FEE697'}
-                >
-                  {d.Target.split(' ')[1]}
-                </TargetBox>
-              ))
-            }
-          </TargetListEl>
-          <IndicatorOverview
-            selectedSDG={selectedSDG}
-          />
+              </TargetListEl>
+            </SummaryEl>
+            <IndicatorOverview
+              selectedSDG={selectedSDG}
+            />
+          </ContainerEl>
         </IndicatorOverviewEl>
       </RootEl>
     </>

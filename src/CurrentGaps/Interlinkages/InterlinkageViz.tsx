@@ -44,6 +44,7 @@ export const InterlinkagesViz = (props: Props) => {
           width={1360}
           height={1000}
           fill='#fff'
+          opacity={0}
           onClick={() => {
             setSelectedTarget('All Targets');
           }}

@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
     --navy: #082753;
     --black-100: #FAFAFA;
     --black-200: #F7F7F7;
+    --black-250: #F1F1F1;
     --black-300: #EDEFF0;
     --black-400: #E9ECF6;
     --black-500: #A9B1B7;
@@ -44,11 +45,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: "proxima-nova", "Helvetica Neue", "sans-serif";
     color: var(--black-700);
     background-color: var(--white);
-    margin: 0;
     padding: 0;
     font-size: 1.6rem;
     line-height: 2.4rem;
-    margin: auto;
+    margin: 0 auto;
   }
 
   h1 {
@@ -201,7 +201,7 @@ const GlobalStyle = createGlobalStyle`
   }
   .SDGSelector{
     .ant-select-selector{
-      background-color:#fff !important;
+      background-color:transparent !important;
     }
     .ant-select-selection-item{
       padding-right: 3rem !important;

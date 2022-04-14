@@ -15,7 +15,8 @@ const NavBarEl = styled.div`
   background-color: var(--black-100);
   border-bottom: 1px solid var(--black-500);
   z-index: 1000;
-  postion: absolute;
+  position: sticky;
+  top: 0px;
 `;
 
 const ContainerEl = styled.div`
