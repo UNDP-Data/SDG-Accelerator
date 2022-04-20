@@ -6,9 +6,19 @@ import min from 'lodash.min';
 import uniqBy from 'lodash.uniqby';
 import { scaleLinear } from 'd3-scale';
 import { KEYSTOAVOID } from '../../Constants';
+import { getYearsAndValues } from '../../utils/getYearsAndValues';
+import targetValues from '../../Data/targetValueForIndicators.json';
+import { getCAGR } from '../../utils/getCAGR';
 
 interface Props {
   data: any;
+}
+
+interface yearAndValueDataType {
+  baseYear: number;
+  baseValue: number;
+  finalYear: number;
+  finalValue: number;
 }
 
 const RootEl = styled.div`
@@ -36,6 +46,44 @@ const SubNote = styled.div`
   }
 `;
 
+interface StatusTagProps {
+  status: string;
+}
+
+const StatusTag = styled.div<StatusTagProps>`
+  font-size: 1.6rem;
+  display: flex;
+  width: fit-content;
+  font-weight: 500;
+  border-radius: 5rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  background-color: ${(props) => (props.status === 'Fair progress but acceleration needed'
+    ? 'var(--accent-yellow)'
+    : props.status === 'Limited or No Progress'
+      ? 'var(--accent-orange)'
+      : props.status === 'Deterioration'
+        ? 'var(--accent-red)'
+        : props.status === 'Insufficient Data'
+          ? 'var(--black-500)'
+          : 'var(--accent-green)')};
+  color: ${(props) => (props.status === 'Fair progress but acceleration needed' || props.status === 'Insufficient Data' ? 'var(--black-700)' : 'var(--white)')};
+`;
+
+const getStatus = (yearsAndValues: yearAndValueDataType, targetValue: number, type: string) => {
+  if (type === 'min') if (yearsAndValues.finalValue < targetValue) return 'Target Achieved';
+  if (type === 'max') if (yearsAndValues.finalValue > targetValue) return 'Target Achieved';
+  const CARGA = getCAGR(yearsAndValues.finalYear, yearsAndValues.baseYear, yearsAndValues.finalValue, yearsAndValues.baseValue);
+  const CARGT = getCAGR(2030, yearsAndValues.baseYear, targetValue, yearsAndValues.baseValue);
+  if (CARGA === null || CARGT === null) return 'Insufficient Data';
+  const CR = CARGA / CARGT;
+  if (Number.isNaN(CR)) return 'Insufficient Data';
+  if (CR >= 0.95) return 'On Track';
+  if (CR >= 0.5 && CR < 0.95) return 'Fair progress but acceleration needed';
+  if (CR >= -0.1 && CR < 0.5) return 'Limited or No Progress';
+  return 'Deterioration';
+};
+
 export const LineChart = (props: Props) => {
   const { data } = props;
   const svgWidth = 550;
@@ -50,6 +98,16 @@ export const LineChart = (props: Props) => {
   const graphHeight = svgHeight - margin.top - margin.bottom;
 
   const values = uniqBy(data.values, 'year').filter((d: any) => d.value !== null);
+
+  const targetValue = targetValues.findIndex((d) => d.indicator === data.indicator) !== -1 ? targetValues[targetValues.findIndex((d) => d.indicator === data.indicator)] : null;
+
+  const yearsAndValues = getYearsAndValues(values as any);
+
+  const status = targetValue === null
+    ? undefined
+    : yearsAndValues === null
+      ? 'Insufficient Data'
+      : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type);
 
   const minParam = min(values.map((d: any) => d.value)) ? min(values.map((d: any) => d.value)) as number > 0 ? 0 : min(values.map((d: any) => d.value)) : 0;
 
@@ -66,6 +124,7 @@ export const LineChart = (props: Props) => {
     .curve(curveMonotoneX);
   const yTicks = y.ticks(5);
   const xTicks = x.ticks(maxYearFiltered - minYearFiltered > 10 ? 10 : maxYearFiltered - minYearFiltered === 0 ? 1 : maxYearFiltered - minYearFiltered);
+
   return (
     <RootEl>
       <TitleEl>{data.seriesDescription}</TitleEl>
@@ -84,6 +143,14 @@ export const LineChart = (props: Props) => {
           })
         }
       </SubNote>
+      {
+        status
+          ? (
+            <StatusTag status={status}>
+              {status}
+            </StatusTag>
+          ) : null
+      }
       {
         values.length === 0 ? 'No Data Avalaiable'
           : (

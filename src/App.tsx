@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
     --black-550: #666666;
     --black-700: #212121;
     --accent-red: #D12800;
+    --accent-orange: #fb7712;
     --accent-yellow: #FBC412;
     --accent-green: #59BA47;
     --accent-red-light: rgba(255, 188, 183, 0.2);

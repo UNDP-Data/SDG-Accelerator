@@ -2,10 +2,10 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Spin } from 'antd';
 import { json } from 'd3-request';
-import { IndicatorStatusCard } from './IndicatorStatusCard';
-import { CountryListType } from '../../Types';
+import { TargetList } from './TargetList';
+import { SDGListType } from '../../Types';
 
-const CountrySDGGap:CountryListType[] = require('../../Data/countrySDGGapData.json');
+const SDGGoalList:SDGListType[] = require('../../Data/SDGGoalList.json');
 
 interface Props {
   selectedSDG : string;
@@ -27,8 +27,8 @@ export const IndicatorOverview = (props: Props) => {
       {
         data
           ? (
-            <IndicatorStatusCard
-              data={CountrySDGGap[CountrySDGGap.findIndex((el) => el['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data']}
+            <TargetList
+              data={SDGGoalList}
               timeSeriesData={data}
               selectedSDG={selectedSDG}
             />

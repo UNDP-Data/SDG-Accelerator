@@ -1,11 +1,12 @@
+import { useState } from 'react';
 import styled from 'styled-components';
-import { Tag } from '../../Components/Tag';
-import { SDGStatusListType } from '../../Types';
+import { IndicatorListType } from '../../Types';
 import { LineChart } from './LineChart';
 
 interface Props {
-  selectedSDG: string;
-  data: SDGStatusListType[];
+  targetNo: string;
+  targetDescription: string;
+  indicators: IndicatorListType[] ;
   timeSeriesData: any;
 }
 const RootEl = styled.div`
@@ -16,6 +17,7 @@ const TitleEl = styled.div`
   background-color: var(--black-300);
   border-bottom: 1px solid var(--black-400);
   padding: 1.5rem 2rem;
+  cursor: pointer;
 `;
 
 const TargetListEl = styled.div`
@@ -66,65 +68,68 @@ const ChartEl = styled.div`
   flex-wrap: wrap;
 `;
 
+const SubNote = styled.div`
+  font-size: 1.4rem;
+  font-style: italic;
+  margin: 1rem 0 0 0;
+  font-weight: 500;
+  color: var(--primary-blue);
+`;
+
 export const IndicatorStatusCard = (props: Props) => {
   const {
-    data,
-    selectedSDG,
+    targetNo,
+    targetDescription,
+    indicators,
     timeSeriesData,
   } = props;
+  const [isExpanded, setIsExpanded] = useState(false);
   return (
     <RootEl>
       <>
-        {
-          data[data.findIndex((d) => d.Goal === selectedSDG.split(':')[0])].Targets.map((d, i) => (
-            <TargetListEl key={i}>
-              <TitleEl>
-                <ListHeadEl>
-                  <H4>
-                    {d.Target}
-                  </H4>
-                  <Tag
-                    backgroundColor={d.Status === 'On Track' ? 'var(--accent-green)' : d.Status === 'Identified Gap' ? 'var(--accent-red)' : 'var(--accent-yellow)'}
-                    text={d.Status}
-                    fontColor={d.Status === 'For Review' ? 'var(--black)' : 'var(--white)'}
-                  />
-                </ListHeadEl>
-                <ListBodyEl>
-                  {d['Target Description']}
-                </ListBodyEl>
-              </TitleEl>
-              <BodyEl>
-                <IndicatorListTitle>All Indicators</IndicatorListTitle>
-                {
-                  d.Indicators.map((el, m) => (
-                    <IndicatorListEl key={m}>
-                      <ListHeadEl>
-                        <H4>
-                          {el.Indicator}
-                        </H4>
-                        <Tag
-                          backgroundColor={el.Status === 'On Track' ? 'var(--accent-green)' : el.Status === 'Identified Gap' ? 'var(--accent-red)' : 'var(--accent-yellow)'}
-                          text={el.Status}
-                          fontColor={el.Status === 'For Review' ? 'var(--black)' : 'var(--white)'}
-                        />
-                      </ListHeadEl>
-                      <ListBodyEl>
-                        {el['Indicator Description']}
-                      </ListBodyEl>
-                      <ChartEl>
-                        {
-                          timeSeriesData
-                            .filter((series: any) => series.indicator === el.Indicator.split(' ')[1])
-                            .map((series: any, j: number) => <LineChart key={j} data={series} />)
-                        }
-                      </ChartEl>
-                    </IndicatorListEl>
-                  ))
-                }
-              </BodyEl>
-            </TargetListEl>
-          ))
-        }
+        <TargetListEl>
+          <TitleEl onClick={() => { setIsExpanded(!isExpanded); }}>
+            <ListHeadEl>
+              <H4>
+                {targetNo}
+              </H4>
+            </ListHeadEl>
+            <ListBodyEl>
+              {targetDescription}
+            </ListBodyEl>
+            <SubNote>{isExpanded ? 'Click to Collapse' : 'Click to Expand and See All the Indicators'}</SubNote>
+          </TitleEl>
+          {
+            isExpanded
+              ? (
+                <BodyEl>
+                  <IndicatorListTitle>All Indicators</IndicatorListTitle>
+                  {
+                indicators.map((el, m) => (
+                  <IndicatorListEl key={m}>
+                    <ListHeadEl>
+                      <H4>
+                        {el.Indicator}
+                      </H4>
+                    </ListHeadEl>
+                    <ListBodyEl>
+                      {el['Indicator Description']}
+                    </ListBodyEl>
+                    <ChartEl>
+                      {
+                        timeSeriesData
+                          .filter((series: any) => series.indicator === el.Indicator.split(' ')[1])
+                          .map((series: any, j: number) => <LineChart key={j} data={series} />)
+                      }
+                    </ChartEl>
+                  </IndicatorListEl>
+                ))
+              }
+                </BodyEl>
+              )
+              : null
+          }
+        </TargetListEl>
       </>
     </RootEl>
   );

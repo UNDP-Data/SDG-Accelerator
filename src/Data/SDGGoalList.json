@@ -404,6 +404,10 @@
           {
             "Indicator": "Indicator 4.1.1",
             "Indicator Description": "Proportion of children and young people: (a) in grades 2/3; (b) at the end of primary; and (c) at the end of lower secondary achieving at least a minimum proficiency level in (i) reading and (ii) mathematics, by sex"
+          },
+          {
+            "Indicator": "Indicator 4.1.2",
+            "Indicator Description": "Completion rate (primary education, lower secondary education, upper secondary education)"
           }
         ]
       },
@@ -788,14 +792,6 @@
           {
             "Indicator": "Indicator 8.1.1",
             "Indicator Description": "Annual growth rate of real GDP per capita"
-          },
-          {
-            "Indicator": "Indicator 8.10.1",
-            "Indicator Description": "Number of commercial bank branches and automated teller machines (ATMs) per 100,000 adults"
-          },
-          {
-            "Indicator": "Indicator 8.10.2",
-            "Indicator Description": "Proportion of adults (15 years and older) with an account at a bank or other financial institution or with a mobile- money-service provider"
           }
         ]
       },
@@ -898,7 +894,16 @@
       {
         "Target": "Target 8.10",
         "Target Description": "Strengthen the capacity of domestic financial institutions to encourage and expand access to banking, insurance and financial services for all",
-        "Indicators": []
+        "Indicators": [
+          {
+            "Indicator": "Indicator 8.10.1",
+            "Indicator Description": "Number of commercial bank branches and automated teller machines (ATMs) per 100,000 adults"
+          },
+          {
+            "Indicator": "Indicator 8.10.2",
+            "Indicator Description": "Proportion of adults (15 years and older) with an account at a bank or other financial institution or with a mobile- money-service provider"
+          }
+        ]
       },
       {
         "Target": "Target 8.a",
@@ -1711,14 +1716,6 @@
           {
             "Indicator": "Indicator 16.1.4",
             "Indicator Description": "Proportion of population that feel safe walking alone around the area they live"
-          },
-          {
-            "Indicator": "Indicator 16.10.1",
-            "Indicator Description": "Number of verified cases of killing, kidnapping, enforced disappearance, arbitrary detention and torture of journalists, associated media personnel, trade unionists and human rights advocates in the previous 12 months"
-          },
-          {
-            "Indicator": "Indicator 16.10.2",
-            "Indicator Description": "Number of countries that adopt and implement constitutional, statutory and/or policy guarantees for public access to information"
           }
         ]
       },
@@ -1833,7 +1830,16 @@
       {
         "Target": "Target 16.10",
         "Target Description": "Ensure public access to information and protect fundamental freedoms, in accordance with national legislation and international agreements",
-        "Indicators": []
+        "Indicators": [
+          {
+            "Indicator": "Indicator 16.10.1",
+            "Indicator Description": "Number of verified cases of killing, kidnapping, enforced disappearance, arbitrary detention and torture of journalists, associated media personnel, trade unionists and human rights advocates in the previous 12 months"
+          },
+          {
+            "Indicator": "Indicator 16.10.2",
+            "Indicator Description": "Number of countries that adopt and implement constitutional, statutory and/or policy guarantees for public access to information"
+          }
+        ]
       },
       {
         "Target": "Target 16.a",
@@ -1872,10 +1878,6 @@
           {
             "Indicator": "Indicator 17.1.2",
             "Indicator Description": "Proportion of domestic budget funded by domestic taxes"
-          },
-          {
-            "Indicator": "Indicator 17.10.1",
-            "Indicator Description": "Worldwide weighted tariff- average"
           }
         ]
       },
@@ -1970,7 +1972,12 @@
       {
         "Target": "Target 17.10",
         "Target Description": "Promote a universal, rules-based, open, non-discriminatory and equitable multilateral trading system under the World Trade Organization, including through the conclusion of negotiations under its Doha Development Agenda",
-        "Indicators": []
+        "Indicators": [
+          {
+            "Indicator": "Indicator 17.10.1",
+            "Indicator Description": "Worldwide weighted tariff- average"
+          }
+        ]
       },
       {
         "Target": "Target 17.11",
