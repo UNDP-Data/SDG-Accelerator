@@ -5,9 +5,9 @@ export const HEADERCARDOPTION = [
     link: '/current-sdg-gap',
   },
   {
-    title: 'SDG Priorities',
+    title: 'Acceleration Oppurtunities',
     body: 'Scan reports and policy documents to identify national priority areas',
-    link: '/sdg-priorities',
+    link: '/acceleration-oppurtunities',
   },
   {
     title: 'Future Scenarios',

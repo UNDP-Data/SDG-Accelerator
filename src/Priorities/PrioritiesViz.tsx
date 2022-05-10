@@ -49,7 +49,7 @@ export const PrioritiesViz = () => {
           fontWeight={700}
           fill={Blue}
         >
-          SDG Priorites
+          Acceleration Oppurtunities
         </text>
         <circle
           cx={0}

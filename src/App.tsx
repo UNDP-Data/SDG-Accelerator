@@ -253,7 +253,7 @@ const App = () => (
         element={<CurrentGaps />}
       />
       <Route
-        path='/:country/sdg-priorities'
+        path='/:country/acceleration-oppurtunities'
         element={<Priorities country={useParams().country} />}
       />
       <Route

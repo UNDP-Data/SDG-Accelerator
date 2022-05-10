@@ -155,7 +155,7 @@ export const LineChart = (props: Props) => {
         values.length === 0 ? 'No Data Avalaiable'
           : (
             <>
-              <svg width='100%' height='100%' viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
+              <svg width='100%' viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
                 <g transform={`translate(${margin.left},${margin.top})`}>
                   <line
                     y1={y(0)}

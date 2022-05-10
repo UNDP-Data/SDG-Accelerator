@@ -43,13 +43,13 @@ export const FutureScenariosList = () => {
       <div>
         <PageTitle
           title='Future Scenarios'
-          description='Using futures modelling, assess potential pathways for COVID-19 recovery through the SDG-Push scenario and projected progress towards SDG priority areas through targeted policy interventions.'
+          description='Using futures modelling, assess potential pathways for COVID-19 recovery through the SDG-Push scenario and projected progress towards Acceleration Oppurtunities areas through targeted policy interventions.'
         />
         <RootEl>
           <CardEl>
             <div className='bold'>Assessing impact on SDGs with or without SDG Push</div>
             <br />
-            <>The Future Scenarios outlines projections based on SDG Priorities analyzed in the areas of Governance, Social Protection, Green Economy and Digital Disruption. UNDP’s flagship study, conducted with the Pardee Center for International Futures at the University of Denver, assesses the impact of three different COVID-19 scenarios on the SDGs, capturing the multidimensional effects of the pandemic over the next decades. The findings show that while COVID-19 can lead to severe long-term impacts, a set of ambitious but feasible integrated SDG investments can help the world exceed the development trajectory we were on before the pandemic. These SDG Investments, detailed in the ‘SDG Priorities’ page, are aimed at narrowing the gaps identified in the ‘Current SDG Gaps’ page. Their projected impact over the coming decades is visualized here as the “SDG Push” scenario.  </>
+            <>The Future Scenarios outlines projections based on Acceleration Oppurtunities analyzed in the areas of Governance, Social Protection, Green Economy and Digital Disruption. UNDP’s flagship study, conducted with the Pardee Center for International Futures at the University of Denver, assesses the impact of three different COVID-19 scenarios on the SDGs, capturing the multidimensional effects of the pandemic over the next decades. The findings show that while COVID-19 can lead to severe long-term impacts, a set of ambitious but feasible integrated SDG investments can help the world exceed the development trajectory we were on before the pandemic. These SDG Investments, detailed in the ‘Acceleration Oppurtunities’ page, are aimed at narrowing the gaps identified in the ‘Current SDG Gaps’ page. Their projected impact over the coming decades is visualized here as the “SDG Push” scenario.  </>
             <ButtonDiv>
               <button type='button' className='secondary'>Read More</button>
             </ButtonDiv>

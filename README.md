@@ -66,7 +66,7 @@ __Steps to integrating the visualization in the wordpress page is as follow:__
 
 * __Header__: For the top part of all the pages.
 * __CurrentGaps__: Page for Current SDG Gaps.
-* __Priorities__: Page for SDG Priorities.
+* __Priorities__: Page for Acceleration Oppurtunities.
 * __Interlinkages__: Page for Taget Interlinkages.
 * __FutureScenarios__: Pages for Future Scenario.
 
