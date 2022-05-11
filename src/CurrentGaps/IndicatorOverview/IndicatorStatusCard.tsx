@@ -105,26 +105,26 @@ export const IndicatorStatusCard = (props: Props) => {
                 <BodyEl>
                   <IndicatorListTitle>All Indicators</IndicatorListTitle>
                   {
-                indicators.map((el, m) => (
-                  <IndicatorListEl key={m}>
-                    <ListHeadEl>
-                      <H4>
-                        {el.Indicator}
-                      </H4>
-                    </ListHeadEl>
-                    <ListBodyEl>
-                      {el['Indicator Description']}
-                    </ListBodyEl>
-                    <ChartEl>
-                      {
-                        timeSeriesData
-                          .filter((series: any) => series.indicator === el.Indicator.split(' ')[1])
-                          .map((series: any, j: number) => <LineChart key={j} data={series} />)
-                      }
-                    </ChartEl>
-                  </IndicatorListEl>
-                ))
-              }
+                    indicators.map((el, m) => (
+                      <IndicatorListEl key={m}>
+                        <ListHeadEl>
+                          <H4>
+                            {el.Indicator}
+                          </H4>
+                        </ListHeadEl>
+                        <ListBodyEl>
+                          {el['Indicator Description']}
+                        </ListBodyEl>
+                        <ChartEl>
+                          {
+                            timeSeriesData
+                              .filter((series: any) => series.indicator === el.Indicator.split(' ')[1])
+                              .map((series: any, j: number) => <LineChart key={j} data={series} />)
+                          }
+                        </ChartEl>
+                      </IndicatorListEl>
+                    ))
+                  }
                 </BodyEl>
               )
               : null

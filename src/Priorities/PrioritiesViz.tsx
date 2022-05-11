@@ -49,7 +49,7 @@ export const PrioritiesViz = () => {
           fontWeight={700}
           fill={Blue}
         >
-          Acceleration Oppurtunities
+          Acceleration Opportunities
         </text>
         <circle
           cx={0}

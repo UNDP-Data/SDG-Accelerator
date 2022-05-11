@@ -102,14 +102,14 @@ export const Nav = (props: Props) => {
           </NavEl>
           <NavEl>
             <NavLink
-              to={`../${params.country}/acceleration-oppurtunities`}
+              to={`../${params.country}/acceleration-Opportunities`}
               style={({ isActive }) => ({
                 paddingBottom: isActive ? '8px' : '',
                 borderBottom: isActive ? '#006EB5 solid 3px' : '',
                 color: !isActive ? 'var(--primaty-blue)' : '',
               })}
             >
-              Acceleration Oppurtunities
+              Acceleration Opportunities
             </NavLink>
           </NavEl>
           <NavEl>

@@ -47,11 +47,11 @@ export const Priorities = (props: Props) => {
   return (
     <>
       <Nav
-        pageURL='/acceleration-oppurtunities'
+        pageURL='/acceleration-Opportunities'
       />
       <div>
         <PageTitle
-          title='Acceleration Oppurtunities — How Do We Get There?'
+          title='Acceleration Opportunities — How Do We Get There?'
           description='Scan reports and policy documents in the database and upload your own for run text analysis to identify national accelerators. Explore assumptions in the areas of Digital, Social Protection, Governance, Green Economy and other national priority areas.'
         />
         <RootEl>
@@ -61,13 +61,13 @@ export const Priorities = (props: Props) => {
               {' '}
               {country}
               {' '}
-              based on analysis of relevant documentation. Acceleration Oppurtunities represent areas which require urgent national attention and action based on SDG progress gaps and importance level prescribed by government and relevant national actors.
+              based on analysis of relevant documentation. Acceleration Opportunities represent areas which require urgent national attention and action based on SDG progress gaps and importance level prescribed by government and relevant national actors.
             </div>
             <>
               <HR />
               <FileAttachementEl>
                 <>
-                  Complement the existing database of national planning documents and voluntary national reviews by uploading a relevant national resource such as a policy brief, assessment, development intervention proposal, etc. to analyse and identify Acceleration Oppurtunities
+                  Complement the existing database of national planning documents and voluntary national reviews by uploading a relevant national resource such as a policy brief, assessment, development intervention proposal, etc. to analyse and identify Acceleration Opportunities
                 </>
                 <FileAttacehmentButton>
                   Attach a file
