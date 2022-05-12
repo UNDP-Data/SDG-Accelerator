@@ -1,15 +1,13 @@
 import { useState } from 'react';
 import { Tooltip } from '../../Components/LinkageTooltip';
-import { SDGStatusListType, LinkageDataType, CountryListType } from '../../Types';
+import { LinkageDataType } from '../../Types';
 
 interface Props {
   selectedTarget: string;
   linkageType: 'tradeOffs' | 'synergies';
-  selectedCountry: string;
   // eslint-disable-next-line no-unused-vars
   setSelectedTarget: (d: string) => void;
-  worldSDGGap: SDGStatusListType[];
-  countrySDGGap: CountryListType[];
+  data: any;
   linkageData: LinkageDataType[];
 
 }
@@ -25,14 +23,11 @@ export const InterlinkagesViz = (props: Props) => {
     selectedTarget,
     setSelectedTarget,
     linkageType,
-    selectedCountry,
-    worldSDGGap,
-    countrySDGGap,
+    data,
     linkageData,
   } = props;
   const [hoverData, setHoverData] = useState<HoverDataType | undefined>(undefined);
   const squareSize = 40;
-  const gaps = selectedCountry === 'World' ? worldSDGGap : countrySDGGap[countrySDGGap.findIndex((d) => d['Country or Area'] === selectedCountry)]['SDG Gap Data'];
   const sourceTarget = selectedTarget !== 'All Targets' ? linkageData[linkageData.findIndex((d) => d.id === selectedTarget.split(':')[0])] : null;
   const linkTargets = selectedTarget !== 'All Targets' ? linkageData[linkageData.findIndex((d) => d.id === selectedTarget.split(':')[0])][linkageType] : [];
   return (
@@ -467,64 +462,64 @@ export const InterlinkagesViz = (props: Props) => {
       }
         <g>
           {
-          gaps.map((goal, i) => (
-            <g
-              transform={`translate(${i * 80},50)`}
-              key={i}
-            >
-              {
-                goal.Targets.map((target, j) => (
-                  <g
-                    transform={`translate(0,${j * 50})`}
-                    key={j}
-                    onClick={() => {
-                      if (selectedTarget === `${target.Target}: ${target['Target Description']}`) setSelectedTarget('All Targets');
-                      else setSelectedTarget(`${target.Target}: ${target['Target Description']}`);
-                    }}
-                    opacity={selectedTarget === 'All Targets' || selectedTarget === `${target.Target}: ${target['Target Description']}` || linkTargets.indexOf(target.Target.split(' ')[1]) !== -1 ? 1 : 0.3}
-                    style={{ cursor: 'pointer' }}
-                    onMouseEnter={(event) => {
-                      setHoverData({
-                        text: target['Target Description'],
-                        xPosition: event.clientX,
-                        yPosition: event.clientY,
-                      });
-                    }}
-                    onMouseMove={(event) => {
-                      setHoverData({
-                        text: target['Target Description'],
-                        xPosition: event.clientX,
-                        yPosition: event.clientY,
-                      });
-                    }}
-                    onMouseLeave={() => {
-                      setHoverData(undefined);
-                    }}
-                  >
-                    <rect
-                      x={0}
-                      y={0}
-                      width={squareSize}
-                      height={squareSize}
-                      fill={target.Status === 'On Track' ? '#C5EFC4' : target.Status === 'Identified Gap' ? '#FEC8C4' : '#FEE697'}
-                    />
-                    <text
-                      textAnchor='middle'
-                      x={squareSize / 2}
-                      y={squareSize / 2}
-                      dy={5}
-                      fontSize='13px'
-                      fontWeight={500}
-                      fill='#212121'
+            data.map((goal: any, i: number) => (
+              <g
+                transform={`translate(${i * 80},50)`}
+                key={i}
+              >
+                {
+                  goal.Targets.map((target: any, j: number) => (
+                    <g
+                      transform={`translate(0,${j * 50})`}
+                      key={j}
+                      onClick={() => {
+                        if (selectedTarget === `${target.Target}: ${target['Target Description']}`) setSelectedTarget('All Targets');
+                        else setSelectedTarget(`${target.Target}: ${target['Target Description']}`);
+                      }}
+                      opacity={selectedTarget === 'All Targets' || selectedTarget === `${target.Target}: ${target['Target Description']}` || linkTargets.indexOf(target.Target.split(' ')[1]) !== -1 ? 1 : 0.3}
+                      style={{ cursor: 'pointer' }}
+                      onMouseEnter={(event) => {
+                        setHoverData({
+                          text: target['Target Description'],
+                          xPosition: event.clientX,
+                          yPosition: event.clientY,
+                        });
+                      }}
+                      onMouseMove={(event) => {
+                        setHoverData({
+                          text: target['Target Description'],
+                          xPosition: event.clientX,
+                          yPosition: event.clientY,
+                        });
+                      }}
+                      onMouseLeave={() => {
+                        setHoverData(undefined);
+                      }}
                     >
-                      {target.Target.split(' ')[1]}
-                    </text>
-                  </g>
-                ))
-              }
-            </g>
-          ))
-        }
+                      <rect
+                        x={0}
+                        y={0}
+                        width={squareSize}
+                        height={squareSize}
+                        fill={target.status === 'On Track' ? '#C5EFC4' : target.status === 'Identified Gap' ? '#FEC8C4' : target.status === 'For Review' ? '#FEE697' : '#CCC'}
+                      />
+                      <text
+                        textAnchor='middle'
+                        x={squareSize / 2}
+                        y={squareSize / 2}
+                        dy={5}
+                        fontSize='13px'
+                        fontWeight={500}
+                        fill='#212121'
+                      >
+                        {target.Target.split(' ')[1]}
+                      </text>
+                    </g>
+                  ))
+                }
+              </g>
+            ))
+          }
         </g>
       </svg>
       {

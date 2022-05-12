@@ -1,9 +1,9 @@
 import styled from 'styled-components';
+import SDGData from '../Data/SDGGoalList.json';
 import { getSDGIcon } from '../utils/getSDGIcon';
-import { SDGStatusListType } from '../Types';
 
 interface Props {
-  data: SDGStatusListType[];
+  data: any;
   setSelectedSDG: any;
   divRef: any;
 }
@@ -72,9 +72,10 @@ export const SDGGapsList = (props: Props) => {
     setSelectedSDG,
     divRef,
   } = props;
-  const onTrack = data.filter((d) => d.Status === 'On Track');
-  const identifiedGap = data.filter((d) => d.Status === 'Identified Gap');
-  const forReview = data.filter((d) => d.Status === 'For Review');
+  const SDGList = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17'];
+  const onTrack = data.filter((d: any) => d.status === 'On Track');
+  const identifiedGap = data.filter((d: any) => d.status === 'Identified Gap');
+  const forReview = data.filter((d: any) => d.status === 'For Review');
   return (
     <RootEl>
       <RowEl>
@@ -88,15 +89,15 @@ export const SDGGapsList = (props: Props) => {
             <SubText>
               out of
               {' '}
-              {data.length}
+              {17}
             </SubText>
           </LegendText>
         </RowTitleEl>
         <RowBodyEl>
           {
-            onTrack.map((d, i) => (
-              <SDGIconEl key={i} onClick={() => { setSelectedSDG(`${d.Goal}: ${d['Goal Name']}`); divRef.current.scrollIntoView({ behavior: 'smooth' }); }}>
-                {getSDGIcon(d.Goal, 60)}
+            onTrack.map((d: any, i: number) => (
+              <SDGIconEl key={i} onClick={() => { setSelectedSDG(`${SDGData[SDGData.findIndex((el) => el.Goal === `SDG ${d.goal}`)].Goal}: ${SDGData[SDGData.findIndex((el) => el.Goal === `SDG ${d.goal}`)]['Goal Name']}`); divRef.current.scrollIntoView({ behavior: 'smooth' }); }}>
+                {getSDGIcon(`SDG ${d.goal}`, 60)}
               </SDGIconEl>
             ))
           }
@@ -113,15 +114,15 @@ export const SDGGapsList = (props: Props) => {
             <SubText>
               out of
               {' '}
-              {data.length}
+              {17}
             </SubText>
           </LegendText>
         </RowTitleEl>
         <RowBodyEl>
           {
-            identifiedGap.map((d, i) => (
-              <SDGIconEl key={i} onClick={() => { setSelectedSDG(`${d.Goal}: ${d['Goal Name']}`); divRef.current.scrollIntoView({ behavior: 'smooth' }); }}>
-                {getSDGIcon(d.Goal, 60)}
+            identifiedGap.map((d: any, i: number) => (
+              <SDGIconEl key={i} onClick={() => { setSelectedSDG(`${SDGData[SDGData.findIndex((el) => el.Goal === `SDG ${d.goal}`)].Goal}: ${SDGData[SDGData.findIndex((el) => el.Goal === `SDG ${d.goal}`)]['Goal Name']}`); divRef.current.scrollIntoView({ behavior: 'smooth' }); }}>
+                {getSDGIcon(`SDG ${d.goal}`, 60)}
               </SDGIconEl>
             ))
           }
@@ -138,16 +139,45 @@ export const SDGGapsList = (props: Props) => {
             <SubText>
               out of
               {' '}
-              {data.length}
+              {17}
             </SubText>
           </LegendText>
         </RowTitleEl>
         <RowBodyEl>
           {
-            forReview.map((d, i) => (
-              <SDGIconEl key={i} onClick={() => { setSelectedSDG(`${d.Goal}: ${d['Goal Name']}`); divRef.current.scrollIntoView({ behavior: 'smooth' }); }}>
-                {getSDGIcon(d.Goal, 60)}
+            forReview.map((d: any, i: number) => (
+              <SDGIconEl key={i} onClick={() => { setSelectedSDG(`${SDGData[SDGData.findIndex((el) => el.Goal === `SDG ${d.goal}`)].Goal}: ${SDGData[SDGData.findIndex((el) => el.Goal === `SDG ${d.goal}`)]['Goal Name']}`); divRef.current.scrollIntoView({ behavior: 'smooth' }); }}>
+                {getSDGIcon(`SDG ${d.goal}`, 60)}
               </SDGIconEl>
+            ))
+          }
+        </RowBodyEl>
+      </RowEl>
+      <RowEl>
+        <RowTitleEl>
+          <LegendIcon fill='var(--black-550)' />
+          <LegendText fill='var(--black-550)'>
+            Gap Unidentified:
+            {' '}
+            {17 - data.length}
+            {' '}
+            <SubText>
+              out of
+              {' '}
+              {17}
+            </SubText>
+          </LegendText>
+        </RowTitleEl>
+        <RowBodyEl>
+          {
+            SDGList.map((d: any, i: number) => (
+              data.findIndex((e: any) => e.goal === d) === -1
+                ? (
+                  <SDGIconEl key={i} onClick={() => { setSelectedSDG(`${SDGData[SDGData.findIndex((el) => el.Goal === `SDG ${d}`)].Goal}: ${SDGData[SDGData.findIndex((el) => el.Goal === `SDG ${d}`)]['Goal Name']}`); divRef.current.scrollIntoView({ behavior: 'smooth' }); }}>
+                    {getSDGIcon(`SDG ${d}`, 60)}
+                  </SDGIconEl>
+                )
+                : null
             ))
           }
         </RowBodyEl>

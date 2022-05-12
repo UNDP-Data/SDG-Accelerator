@@ -8,6 +8,7 @@ interface Props {
   targetDescription: string;
   indicators: IndicatorListType[] ;
   timeSeriesData: any;
+  status: any;
 }
 const RootEl = styled.div`
   margin-bottom: 2rem;
@@ -76,12 +77,35 @@ const SubNote = styled.div`
   color: var(--primary-blue);
 `;
 
+interface StatusTagProps {
+  status?: string;
+}
+
+const StatusTag = styled.div<StatusTagProps>`
+  font-size: 1.6rem;
+  display: flex;
+  width: fit-content;
+  font-weight: 500;
+  border-radius: 5rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0 1rem 1rem;
+  background-color: ${(props) => (props.status === 'For Review'
+    ? 'var(--accent-yellow)'
+    : props.status === 'Identified Gap'
+      ? 'var(--accent-red)'
+      : props.status === undefined
+        ? 'var(--black-500)'
+        : 'var(--accent-green)')};
+  color: ${(props) => (props.status === 'For Review' || props.status === undefined ? 'var(--black-700)' : 'var(--white)')};
+`;
+
 export const IndicatorStatusCard = (props: Props) => {
   const {
     targetNo,
     targetDescription,
     indicators,
     timeSeriesData,
+    status,
   } = props;
   const [isExpanded, setIsExpanded] = useState(false);
   return (
@@ -93,6 +117,7 @@ export const IndicatorStatusCard = (props: Props) => {
               <H4>
                 {targetNo}
               </H4>
+              <StatusTag status={status}>{status || 'Gap Unidentified'}</StatusTag>
             </ListHeadEl>
             <ListBodyEl>
               {targetDescription}

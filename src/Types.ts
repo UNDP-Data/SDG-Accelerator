@@ -1,20 +1,17 @@
 export interface IndicatorStatusListType {
   Indicator: string;
   'Indicator Description': string;
-  Status: 'On Track' | 'Identified Gap' | 'For Review';
 }
 
 export interface TargetStatusListType {
   Target: string;
   'Target Description': string;
-  Status: 'On Track' | 'Identified Gap' | 'For Review';
   Indicators: IndicatorStatusListType[];
 }
 
 export interface SDGStatusListType {
   Goal: string;
   'Goal Name': string;
-  Status: 'On Track' | 'Identified Gap' | 'For Review';
   Targets: TargetStatusListType[];
 }
 
@@ -54,7 +51,6 @@ export interface CountryListType {
   'Group 1': string;
   'Group 2': string;
   'Group 3': string;
-  'SDG Gap Data': SDGStatusListType[];
 }
 export interface CountryListTypeSDGPush {
   'Alpha-3 code-1': string;

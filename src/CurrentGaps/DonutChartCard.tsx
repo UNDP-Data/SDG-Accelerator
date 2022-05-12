@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import { describeArc } from '../utils/getArc';
-import { SDGStatusListType } from '../Types';
 
 interface Props {
   centralText: string;
-  data: SDGStatusListType[];
+  data: any;
 }
 
 const ContentEl = styled.div`
@@ -21,28 +20,33 @@ export const DonutChartCard = (props: Props) => {
     centralText,
     data,
   } = props;
-
   return (
     <RootEl>
       <ContentEl>
         <svg width='340px' viewBox='0 0 360 360'>
           <path
-            d={describeArc(180, 180, 140, 0, 360 * (data.filter((d) => d.Status === 'On Track').length / (data.length)))}
+            d={describeArc(180, 180, 140, 0, 360 * (data.filter((d: any) => d.status === 'On Track').length / (17)))}
             fill='none'
             strokeWidth={60}
             style={{ stroke: 'var(--accent-green)' }}
           />
           <path
-            d={describeArc(180, 180, 140, 360 * (data.filter((d) => d.Status === 'On Track').length / (data.length)), 360 * ((data.filter((d) => d.Status === 'On Track').length + data.filter((d) => d.Status === 'Identified Gap').length) / (data.length)))}
+            d={describeArc(180, 180, 140, 360 * (data.filter((d: any) => d.status === 'On Track').length / (17)), 360 * ((data.filter((d: any) => d.status === 'On Track').length + data.filter((d: any) => d.status === 'Identified Gap').length) / (17)))}
             fill='none'
             strokeWidth={60}
             style={{ stroke: 'var(--accent-red)' }}
           />
           <path
-            d={describeArc(180, 180, 140, 360 * ((data.filter((d) => d.Status === 'On Track').length + data.filter((d) => d.Status === 'Identified Gap').length) / (data.length)), 360)}
+            d={describeArc(180, 180, 140, 360 * ((data.filter((d: any) => d.status === 'On Track').length + data.filter((d: any) => d.status === 'Identified Gap').length) / (17)), 360)}
             fill='none'
             strokeWidth={60}
             style={{ stroke: 'var(--accent-yellow)' }}
+          />
+          <path
+            d={describeArc(180, 180, 140, 360 * (data.length / 17), 360)}
+            fill='none'
+            strokeWidth={60}
+            style={{ stroke: 'var(--black-550)' }}
           />
           <text
             x={180}
@@ -53,7 +57,7 @@ export const DonutChartCard = (props: Props) => {
             fontSize='60px'
             dy={10}
           >
-            {data.length}
+            {17}
           </text>
           <text
             x={180}

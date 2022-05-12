@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import { SDGListType } from '../../Types';
 import { IndicatorStatusCard } from './IndicatorStatusCard';
 
 interface Props {
   selectedSDG: string;
-  data: SDGListType[];
+  data: any;
   timeSeriesData: any;
 }
 const RootEl = styled.div`
@@ -21,9 +20,10 @@ export const TargetList = (props: Props) => {
     <RootEl>
       <>
         {
-          data[data.findIndex((d) => d.Goal === selectedSDG.split(':')[0])].Targets.map((d, i) => (
+          data[data.findIndex((d: any) => d.Goal === selectedSDG.split(':')[0])].Targets.map((d: any, i: number) => (
             <IndicatorStatusCard
               key={i}
+              status={d.status}
               targetNo={d.Target}
               targetDescription={d['Target Description']}
               indicators={d.Indicators}

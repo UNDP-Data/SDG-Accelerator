@@ -1,11 +1,15 @@
 import styled from 'styled-components';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Select } from 'antd';
+import { json } from 'd3-request';
+import isEqual from 'lodash.isequal';
+import omit from 'lodash.omit';
+import uniqBy from 'lodash.uniqby';
 import { PageTitle } from '../Components/PageTitle';
 import { DonutChartCard } from './DonutChartCard';
 import { SDGGapsList } from './SDGGapsList';
-import { CountryListType } from '../Types';
+import { SDGStatusListType } from '../Types';
 import { Nav } from '../Header/Nav';
 import { Interlinkages } from './Interlinkages';
 import { CaretDown, InfoIcon } from '../icons';
@@ -14,8 +18,19 @@ import { IndicatorOverview } from './IndicatorOverview';
 import { getSDGIcon } from '../utils/getSDGIcon';
 import { COUNTRYOPTION, SDGGOALS } from '../Constants';
 import { Tag } from '../Components/Tag';
+import { getYearsAndValues } from '../utils/getYearsAndValues';
+import timeSeriesToUse from '../Data/timeSeriesToUse.json';
+import targetValues from '../Data/targetValueForIndicators.json';
+import { getCAGR } from '../utils/getCAGR';
 
-const CountrySDGGap:CountryListType[] = require('../Data/countrySDGGapData.json');
+const SDGList:SDGStatusListType[] = require('../Data/worldSdgGap.json');
+
+interface yearAndValueDataType {
+  baseYear: number;
+  baseValue: number;
+  finalYear: number;
+  finalValue: number;
+}
 
 const RootEl = styled.div`
   width: 128rem;
@@ -97,14 +112,201 @@ const ContainerEl = styled.div`
 
 `;
 
+const getStatus = (yearsAndValues: yearAndValueDataType, targetValue: number, type: string) => {
+  if (type === 'min') if (yearsAndValues.finalValue < targetValue) return 'Target Achieved';
+  if (type === 'max') if (yearsAndValues.finalValue > targetValue) return 'Target Achieved';
+  const CARGA = getCAGR(yearsAndValues.finalYear, yearsAndValues.baseYear, yearsAndValues.finalValue, yearsAndValues.baseValue);
+  const CARGT = getCAGR(2030, yearsAndValues.baseYear, targetValue, yearsAndValues.baseValue);
+  if (CARGA === null || CARGT === null) return 'Insufficient Data';
+  const CR = CARGA / CARGT;
+  if (Number.isNaN(CR)) return 'Insufficient Data';
+  if (CR >= 0.95) return 'On Track';
+  if (CR >= 0.5 && CR < 0.95) return 'Fair progress but acceleration needed';
+  if (CR >= -0.1 && CR < 0.5) return 'Limited or No Progress';
+  return 'Deterioration';
+};
+
 export const CurrentGaps = () => {
   const [showPopUp, setShowPopUp] = useState(false);
+  const [statuses, setStatuses] = useState<any>(undefined);
+  const [goalStatuses, setGoalStatuses] = useState<any>(undefined);
   const [selectedSDG, setSelectedSDG] = useState('SDG 1: No Poverty');
+  const [countryData, setCountryData] = useState<any>(undefined);
+
   const goalDetailDiv = useRef(null);
 
   const countrySelected = useParams().country;
   const countryFullName = COUNTRYOPTION[COUNTRYOPTION.findIndex((d) => d.code === countrySelected)].countryName;
-  const selectedSDGData = CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data'][CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data'].findIndex((d) => d.Goal === selectedSDG.split(':')[0])];
+
+  useEffect(() => {
+    json(`../../data/${countrySelected}.json`, (err: any, d: any[]) => {
+      if (err) throw err;
+      const filteredTimeseriesData:any = [];
+      d.forEach((el:any) => {
+        if (timeSeriesToUse.findIndex((el1) => isEqual(el1, omit(el, ['values']))) !== -1) filteredTimeseriesData.push(el);
+      });
+      setCountryData(filteredTimeseriesData);
+      const filteredTimeseriesDataWithStatus = filteredTimeseriesData.map((element: any) => {
+        const values = uniqBy(element.values, 'year').filter((el: any) => el.value !== null);
+
+        const targetValue = targetValues.findIndex((el) => el.indicator === element.indicator) !== -1 ? targetValues[targetValues.findIndex((el) => el.indicator === element.indicator)] : null;
+
+        const yearsAndValues = getYearsAndValues(values as any);
+        const status = targetValue === null
+          ? undefined
+          : yearsAndValues === null
+            ? 'Insufficient Data'
+            : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type);
+        return { ...element, status };
+      });
+      const allIndicators = uniqBy(filteredTimeseriesDataWithStatus.filter((el: any) => el.status), 'indicator').map((el: any) => el.indicator);
+      const indicatorsStatus = allIndicators.map((indicator: string) => {
+        const filtered = filteredTimeseriesDataWithStatus.filter((el: any) => el.indicator === indicator && el.status && el.status !== 'Insufficient Data');
+        if (filtered.length === 0) {
+          return {
+            indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: undefined,
+          };
+        }
+        let total = 0;
+        filtered.forEach((f: any) => {
+          switch (f.status) {
+            case 'Target Achieved':
+              total += 1;
+              break;
+            case 'On Track':
+              total += 1;
+              break;
+            case 'Fair progress but acceleration needed':
+              total += 2;
+              break;
+            case 'Limited or No Progress':
+              total += 3;
+              break;
+            case 'Deterioration':
+              total += 4;
+              break;
+            default:
+              // eslint-disable-next-line no-console
+              console.log(f);
+              break;
+          }
+        });
+        if (total / filtered.length < 1.5) {
+          return {
+            indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: 'On Track',
+          };
+        }
+        if (total / filtered.length > 2.499) {
+          return {
+            indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: 'Identified Gap',
+          };
+        }
+        return {
+          indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: 'For Review',
+        };
+      });
+      const allTargets = uniqBy(indicatorsStatus.filter((el: any) => el.status), 'target').map((el: any) => el.target);
+      const targetStatus = allTargets.map((target: string) => {
+        const filtered = indicatorsStatus.filter((el: any) => el.target === target && el.status && el.status !== 'Insufficient Data');
+        if (filtered.length === 0) {
+          return {
+            target, goal: target.split('.')[0], status: undefined,
+          };
+        }
+        let total = 0;
+        filtered.forEach((f: any) => {
+          switch (f.status) {
+            case 'On Track':
+              total += 1;
+              break;
+            case 'Identified Gap':
+              total += 3;
+              break;
+            case 'For Review':
+              total += 2;
+              break;
+            default:
+              // eslint-disable-next-line no-console
+              console.log(f);
+              break;
+          }
+        });
+        if (Math.round(total / filtered.length) === 1) {
+          return {
+            target, goal: target.split('.')[0], status: 'On Track',
+          };
+        }
+        if (Math.round(total / filtered.length) === 2) {
+          return {
+            target, goal: target.split('.')[0], status: 'Identified Gap',
+          };
+        }
+        return {
+          target, goal: target.split('.')[0], status: 'For Review',
+        };
+      });
+      const allGoals = uniqBy(targetStatus.filter((el: any) => el.status), 'goal').map((el: any) => el.goal);
+      const goalStatus = allGoals.map((goal: string) => {
+        const filtered = targetStatus.filter((el: any) => el.goal === goal && el.status && el.status !== 'Insufficient Data');
+        if (filtered.length === 0) {
+          return {
+            goal, status: undefined,
+          };
+        }
+        let total = 0;
+        filtered.forEach((f: any) => {
+          switch (f.status) {
+            case 'On Track':
+              total += 1;
+              break;
+            case 'Identified Gap':
+              total += 3;
+              break;
+            case 'For Review':
+              total += 2;
+              break;
+            default:
+              // eslint-disable-next-line no-console
+              console.log(f);
+              break;
+          }
+        });
+        if (Math.round(total / filtered.length) === 1) {
+          return {
+            goal, status: 'On Track',
+          };
+        }
+        if (Math.round(total / filtered.length) === 3) {
+          return {
+            goal, status: 'Identified Gap',
+          };
+        }
+        return {
+          goal, status: 'For Review',
+        };
+      });
+      const gaps = SDGList.map((el) => {
+        const targetGaps = el.Targets.map((target) => {
+          const indicatorGaps = target.Indicators.map((indicator) => ({ ...indicator, status: indicatorsStatus.findIndex((status) => `Indicator ${status.indicator}` === indicator.Indicator) === -1 ? undefined : indicatorsStatus[indicatorsStatus.findIndex((status) => `Indicator ${status.indicator}` === indicator.Indicator)].status }));
+          return ({
+            Target: target.Target,
+            'Target Description': target['Target Description'],
+            status: targetStatus.findIndex((status) => `Target ${status.target}` === target.Target) === -1 ? undefined : indicatorsStatus[targetStatus.findIndex((status) => `Target ${status.target}` === target.Target)].status,
+            Indicators: indicatorGaps,
+          });
+        });
+        return ({
+          Goal: el.Goal,
+          'Goal Name': el['Goal Name'],
+          status: goalStatus.findIndex((status) => `SDG ${status.goal}` === el.Goal) === -1 ? undefined : goalStatus[goalStatus.findIndex((status) => `SDG ${status.goal}` === el.Goal)].status,
+          Targets: targetGaps,
+        });
+      });
+      setStatuses(gaps);
+      setGoalStatuses(goalStatus);
+    });
+  }, [countrySelected]);
+
   return (
     <>
       <Nav
@@ -114,109 +316,117 @@ export const CurrentGaps = () => {
         title='Current Gaps'
         description='Visualization of SDG gaps nationally allows for easy identification of where SDG goals are being left behind. Using up to date data, explore SDG progress in your country and which targets are at risk of not being met by 2030. These insights will be the basis for evidence-based, holistic dialogue at the national level.'
       />
-      <RootEl>
-        <SummaryEl>
-          For
-          {' '}
-          <span className='bold'>{countryFullName}</span>
-          , out of 17 SDG goals,
-          {' '}
-          <span className='bold'>
-            {CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data'].filter((d) => d.Status === 'On Track').length}
-            {' '}
-            are On Track,
-            {' '}
-            {CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data'].filter((d) => d.Status === 'Identified Gap').length}
-            {' '}
-            are Identified Gaps and,
-            {' '}
-            {CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data'].filter((d) => d.Status === 'For Review').length}
-            {' '}
-            are For Review
-          </span>
-        </SummaryEl>
-        <RowEl>
-          <DonutChartCard
-            centralText='All SDG Status'
-            data={CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data']}
-          />
-          <SDGGapsList
-            data={CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['SDG Gap Data']}
-            setSelectedSDG={setSelectedSDG}
-            divRef={goalDetailDiv}
-          />
-        </RowEl>
-        <>
-          <TitleEl>
-            <h2>Target Overview</h2>
-            <div onMouseEnter={() => { setShowPopUp(true); }} onMouseLeave={() => { setShowPopUp(false); }}>
-              <IconEl>
-                <InfoIcon
-                  size={18}
+      {
+        goalStatuses && statuses && countryData
+          ? (
+            <RootEl>
+              <SummaryEl>
+                For
+                {' '}
+                <span className='bold'>{countryFullName}</span>
+                , out of 17 SDG goals,
+                {' '}
+                <span className='bold'>
+                  {goalStatuses.filter((d: any) => d.status === 'On Track').length}
+                  {' '}
+                  are On Track,
+                  {' '}
+                  {goalStatuses.filter((d: any) => d.status === 'Identified Gap').length}
+                  {' '}
+                  are Identified Gaps and,
+                  {' '}
+                  {goalStatuses.filter((d: any) => d.status === 'For Review').length}
+                  {' '}
+                  are For Review
+                </span>
+              </SummaryEl>
+              <RowEl>
+                <DonutChartCard
+                  centralText='All SDG Status'
+                  data={goalStatuses}
                 />
-              </IconEl>
-              {
-                showPopUp
-                  ? (
-                    <Tooltip
-                      text='Identify which targets have the biggest effect on other SDG targets, and explore which targets to pursue which have the highest positive interlinkage (“synergy”) with other SDG targets. This is an exercise in understanding how we can speed development forward in a positive and sustainable manner based on the identified gaps and priorities.'
-                    />
-                  ) : null
-              }
-            </div>
-          </TitleEl>
-          <Interlinkages
-            selectedCountry={CountrySDGGap[CountrySDGGap.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['Country or Area']}
-          />
-        </>
-        <IndicatorOverviewEl ref={goalDetailDiv}>
-          <H2>SDG Overview</H2>
-          <ContainerEl>
-            <FlexDiv>
-              {getSDGIcon(selectedSDG.split(':')[0], 80)}
-              <DropdownEl>
-                <Select
-                  value={selectedSDG}
-                  className='SDGSelector'
-                  onChange={(d) => { setSelectedSDG(d); }}
-                  suffixIcon={<div style={{ marginTop: '-0.2rem' }}><CaretDown size={24} /></div>}
-                >
-                  {
-                    SDGGOALS.map((d, i) => (
-                      <Select.Option value={d} key={i}>
-                        {d}
-                      </Select.Option>
-                    ))
-                  }
-                </Select>
-                <Tag
-                  backgroundColor={selectedSDGData.Status === 'On Track' ? 'var(--accent-green)' : selectedSDGData.Status === 'Identified Gap' ? 'var(--accent-red)' : 'var(--accent-yellow)'}
-                  text={selectedSDGData.Status}
-                  fontColor={selectedSDGData.Status === 'For Review' ? 'var(--black)' : 'var(--white)'}
-                  margin='0.5rem 0 0 0'
+                <SDGGapsList
+                  data={goalStatuses}
+                  setSelectedSDG={setSelectedSDG}
+                  divRef={goalDetailDiv}
                 />
-              </DropdownEl>
-            </FlexDiv>
-            <SummaryEl style={{ marginBottom: '4rem' }}>
-              <h3>Status of Targets</h3>
-              <TargetListEl>
-                {
-                  selectedSDGData.Targets.map((d) => (
-                    <TargetBox
-                      fill={d.Status === 'On Track' ? '#C5EFC4' : d.Status === 'Identified Gap' ? '#FEC8C4' : '#FEE697'}
-                    >
-                      {d.Target.split(' ')[1]}
-                    </TargetBox>
-                  ))
-                }
-              </TargetListEl>
-            </SummaryEl>
-            <IndicatorOverview
-              selectedSDG={selectedSDG}
-            />
-          </ContainerEl>
-        </IndicatorOverviewEl>
-      </RootEl>
+              </RowEl>
+              <>
+                <TitleEl>
+                  <h2>Target Overview</h2>
+                  <div onMouseEnter={() => { setShowPopUp(true); }} onMouseLeave={() => { setShowPopUp(false); }}>
+                    <IconEl>
+                      <InfoIcon
+                        size={18}
+                      />
+                    </IconEl>
+                    {
+                      showPopUp
+                        ? (
+                          <Tooltip
+                            text='Identify which targets have the biggest effect on other SDG targets, and explore which targets to pursue which have the highest positive interlinkage (“synergy”) with other SDG targets. This is an exercise in understanding how we can speed development forward in a positive and sustainable manner based on the identified gaps and priorities.'
+                          />
+                        ) : null
+                    }
+                  </div>
+                </TitleEl>
+                <Interlinkages
+                  data={statuses}
+                />
+              </>
+              <IndicatorOverviewEl ref={goalDetailDiv}>
+                <H2>SDG Overview</H2>
+                <ContainerEl>
+                  <FlexDiv>
+                    {getSDGIcon(selectedSDG.split(':')[0], 80)}
+                    <DropdownEl>
+                      <Select
+                        value={selectedSDG}
+                        className='SDGSelector'
+                        onChange={(d) => { setSelectedSDG(d); }}
+                        suffixIcon={<div style={{ marginTop: '-0.2rem' }}><CaretDown size={24} /></div>}
+                      >
+                        {
+                          SDGGOALS.map((d, i) => (
+                            <Select.Option value={d} key={i}>
+                              {d}
+                            </Select.Option>
+                          ))
+                        }
+                      </Select>
+                      <Tag
+                        backgroundColor={statuses[statuses.findIndex((d: any) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].status === 'On Track' ? 'var(--accent-green)' : statuses[statuses.findIndex((d: any) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].status === 'Identified Gap' ? 'var(--accent-red)' : statuses[statuses.findIndex((d: any) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].status === 'For Review' ? 'var(--accent-yellow)' : 'var(--black-550)'}
+                        text={statuses[statuses.findIndex((d: any) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].status}
+                        fontColor={statuses[statuses.findIndex((d: any) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].status === 'For Review' ? 'var(--black)' : 'var(--white)'}
+                        margin='0.5rem 0 0 0'
+                      />
+                    </DropdownEl>
+                  </FlexDiv>
+                  <SummaryEl style={{ marginBottom: '4rem' }}>
+                    <h3>Status of Targets</h3>
+                    <TargetListEl>
+                      {
+                        statuses[statuses.findIndex((d: any) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].Targets.map((d: any) => (
+                          <TargetBox
+                            fill={d.status === 'On Track' ? '#C5EFC4' : d.status === 'Identified Gap' ? '#FEC8C4' : d.status === 'For Review' ? '#FEE697' : '#AAA'}
+                          >
+                            {d.Target.split(' ')[1]}
+                          </TargetBox>
+                        ))
+                      }
+                    </TargetListEl>
+                  </SummaryEl>
+                  <IndicatorOverview
+                    selectedSDG={selectedSDG}
+                    data={statuses}
+                    countryData={countryData}
+                  />
+                </ContainerEl>
+              </IndicatorOverviewEl>
+            </RootEl>
+          )
+          : null
+      }
     </>
   );
 };
