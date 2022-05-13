@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Select } from 'antd';
+import { Select, Spin } from 'antd';
 import { json } from 'd3-request';
 import isEqual from 'lodash.isequal';
 import omit from 'lodash.omit';
@@ -23,7 +23,7 @@ import timeSeriesToUse from '../Data/timeSeriesToUse.json';
 import targetValues from '../Data/targetValueForIndicators.json';
 import { getCAGR } from '../utils/getCAGR';
 
-const SDGList:SDGStatusListType[] = require('../Data/worldSdgGap.json');
+const SDGList:SDGStatusListType[] = require('../Data/SDGGoalList.json');
 
 interface yearAndValueDataType {
   baseYear: number;
@@ -35,6 +35,7 @@ interface yearAndValueDataType {
 const RootEl = styled.div`
   width: 128rem;
   margin: 2rem auto 0 auto;
+  justify-content: center;
 `;
 
 const RowEl = styled.div`
@@ -139,6 +140,7 @@ export const CurrentGaps = () => {
   const countryFullName = COUNTRYOPTION[COUNTRYOPTION.findIndex((d) => d.code === countrySelected)].countryName;
 
   useEffect(() => {
+    setStatuses(undefined);
     json(`../../data/${countrySelected}.json`, (err: any, d: any[]) => {
       if (err) throw err;
       const filteredTimeseriesData:any = [];
@@ -291,7 +293,7 @@ export const CurrentGaps = () => {
           return ({
             Target: target.Target,
             'Target Description': target['Target Description'],
-            status: targetStatus.findIndex((status) => `Target ${status.target}` === target.Target) === -1 ? undefined : indicatorsStatus[targetStatus.findIndex((status) => `Target ${status.target}` === target.Target)].status,
+            status: targetStatus.findIndex((status) => `Target ${status.target}` === target.Target) === -1 ? undefined : targetStatus[targetStatus.findIndex((status) => `Target ${status.target}` === target.Target)].status,
             Indicators: indicatorGaps,
           });
         });
@@ -425,7 +427,11 @@ export const CurrentGaps = () => {
               </IndicatorOverviewEl>
             </RootEl>
           )
-          : null
+          : (
+            <RootEl>
+              <Spin size='large' />
+            </RootEl>
+          )
       }
     </>
   );
