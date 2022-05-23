@@ -1038,17 +1038,8 @@
     "goal": "6",
     "target": "6.2",
     "indicator": "6.2.1",
-    "series": "SH_SAN_HNDWSH",
-    "seriesDescription": "Proportion of population with basic handwashing facilities on premises, by urban/rural (%)",
-    "Reporting Type": "G",
-    "Location": "ALLAREA"
-  },
-  {
-    "goal": "6",
-    "target": "6.2",
-    "indicator": "6.2.1",
-    "series": "SH_SAN_DEFECT",
-    "seriesDescription": "Proportion of population practicing open defecation, by urban/rural (%)",
+    "series": "SH_SAN_SAFE",
+    "seriesDescription": "Proportion of population using safely managed sanitation services, by urban/rural (%)",
     "Reporting Type": "G",
     "Location": "ALLAREA"
   },
@@ -1419,6 +1410,40 @@
     "Reporting Type": "G",
     "Sex": "BOTHSEX",
     "Type of occupation": "_T"
+  },
+  {
+    "goal": "6",
+    "target": "6.1",
+    "indicator": "6.1.1",
+    "series": "SH_H2O_SAFE",
+    "seriesDescription": "Proportion of population using safely managed drinking water services, by urban/rural (%)",
+    "Reporting Type": "G",
+    "Location": "ALLAREA"
+  },
+  {
+    "goal": "6",
+    "target": "6.1",
+    "indicator": "6.1.1",
+    "series": "SH_H2O_SAFE",
+    "seriesDescription": "Proportion of population using safely managed drinking water services, by urban/rural (%)",
+    "Reporting Type": "G",
+    "Location": "URBAN"
+  },
+  {
+    "goal": "8",
+    "target": "8.1",
+    "indicator": "8.1.1",
+    "series": "NY_GDP_PCAP",
+    "seriesDescription": "Annual growth rate of real GDP per capita (%)",
+    "Reporting Type": "G"
+  },
+  {
+    "goal": "13",
+    "target": "13.2",
+    "indicator": "13.2.2",
+    "series": "EN_ATM_GHGT_NAIP",
+    "seriesDescription": "Total greenhouse gas emissions without LULUCF for non-Annex I Parties (Mt CO₂ equivalent)",
+    "Reporting Type": "G"
   },
   {
     "goal": "8",

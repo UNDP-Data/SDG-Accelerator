@@ -5,6 +5,7 @@ import max from 'lodash.max';
 import min from 'lodash.min';
 import uniqBy from 'lodash.uniqby';
 import { scaleLinear } from 'd3-scale';
+import meanBy from 'lodash.meanby';
 import { KEYSTOAVOID } from '../../Constants';
 import { getYearsAndValues } from '../../utils/getYearsAndValues';
 import targetValues from '../../Data/targetValueForIndicators.json';
@@ -102,12 +103,16 @@ export const LineChart = (props: Props) => {
   const targetValue = targetValues.findIndex((d) => d.indicator === data.indicator) !== -1 ? targetValues[targetValues.findIndex((d) => d.indicator === data.indicator)] : null;
 
   const yearsAndValues = getYearsAndValues(values as any);
-
-  const status = targetValue === null
-    ? undefined
-    : yearsAndValues === null
-      ? 'Insufficient Data'
-      : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type);
+  const status = data.indicator === '8.1.1'
+    ? meanBy(data.values.filter((val: any) => val.year > 2014), 'value') > 2 ? 'On Track'
+      : meanBy(data.values.filter((val: any) => val.year > 2014), 'value') > 1.5 ? 'Fair progress but acceleration needed'
+        : meanBy(data.values.filter((val: any) => val.year > 2014), 'value') > 1 ? 'Limited or No Progress'
+          : 'Deterioration'
+    : targetValue === null
+      ? undefined
+      : yearsAndValues === null
+        ? 'Insufficient Data'
+        : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type);
 
   const minParam = min(values.map((d: any) => d.value)) ? min(values.map((d: any) => d.value)) as number > 0 ? 0 : min(values.map((d: any) => d.value)) : 0;
 

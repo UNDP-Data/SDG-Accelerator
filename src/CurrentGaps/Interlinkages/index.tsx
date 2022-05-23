@@ -234,7 +234,7 @@ export const Interlinkages = (props: Props) => {
                     suffixIcon={<div style={{ marginTop: '-0.2rem' }}><CaretDown size={24} color='#0969FA' /></div>}
                   >
                     {
-                      targetOptions.map((d) => <Select.Option value={d.label}>{d.label}</Select.Option>)
+                      targetOptions.map((d, i) => <Select.Option key={i} value={d.label}>{d.label}</Select.Option>)
                     }
                   </Select>
                 </TitleUnit>

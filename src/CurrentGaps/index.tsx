@@ -6,6 +6,7 @@ import { json } from 'd3-request';
 import isEqual from 'lodash.isequal';
 import omit from 'lodash.omit';
 import uniqBy from 'lodash.uniqby';
+import meanBy from 'lodash.meanby';
 import { PageTitle } from '../Components/PageTitle';
 import { DonutChartCard } from './DonutChartCard';
 import { SDGGapsList } from './SDGGapsList';
@@ -154,11 +155,16 @@ export const CurrentGaps = () => {
         const targetValue = targetValues.findIndex((el) => el.indicator === element.indicator) !== -1 ? targetValues[targetValues.findIndex((el) => el.indicator === element.indicator)] : null;
 
         const yearsAndValues = getYearsAndValues(values as any);
-        const status = targetValue === null
-          ? undefined
-          : yearsAndValues === null
-            ? 'Insufficient Data'
-            : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type);
+        const status = element.indicator === '8.1.1'
+          ? meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 2 ? 'On Track'
+            : meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 1.5 ? 'Fair progress but acceleration needed'
+              : meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 1 ? 'Limited or No Progress'
+                : 'Deterioration'
+          : targetValue === null
+            ? undefined
+            : yearsAndValues === null
+              ? 'Insufficient Data'
+              : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type);
         return { ...element, status };
       });
       const allIndicators = uniqBy(filteredTimeseriesDataWithStatus.filter((el: any) => el.status), 'indicator').map((el: any) => el.indicator);
