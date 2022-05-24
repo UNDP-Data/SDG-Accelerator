@@ -137,7 +137,7 @@ export const CurrentGaps = () => {
 
   const goalDetailDiv = useRef(null);
 
-  const countrySelected = useParams().country;
+  const countrySelected = useParams().country || 'ZAF';
   const countryFullName = COUNTRYOPTION[COUNTRYOPTION.findIndex((d) => d.code === countrySelected)].countryName;
 
   useEffect(() => {

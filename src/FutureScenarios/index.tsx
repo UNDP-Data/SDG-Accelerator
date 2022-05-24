@@ -28,7 +28,7 @@ const ButtonDiv = styled.div`
 export const FutureScenariosList = () => {
   const [data, setData] = useState<any | ScenarioDataType[]>(undefined);
   const [selectedSDG, setSelectedSDG] = useState('SDG 1: No Poverty');
-  const countrySelected = useParams().country;
+  const countrySelected = useParams().country || 'ZAF';
   useEffect(() => {
     json('../../data/ScenarioData/ScenarioData.json', (err: any, d: ScenarioDataType[]) => {
       if (err) throw err;

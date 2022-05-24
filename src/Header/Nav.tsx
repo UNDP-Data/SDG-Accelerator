@@ -53,7 +53,7 @@ const NavContainer = styled.div`
 `;
 export const Nav = (props: Props) => {
   const { pageURL } = props;
-  const params = useParams();
+  const countrySelected = useParams().country || 'ZAF';
   const menu = (
     <Menu>
       {
@@ -81,7 +81,7 @@ export const Nav = (props: Props) => {
             className='countrySelect'
           >
             <a role='menuitem' className='navCountry' onClick={(e) => e.preventDefault()}>
-              {COUNTRYOPTION[COUNTRYOPTION.findIndex((d) => d.code === params.country)].countryName}
+              {COUNTRYOPTION[COUNTRYOPTION.findIndex((d) => d.code === countrySelected)].countryName}
               {' '}
               <DownOutlined />
             </a>
@@ -90,7 +90,7 @@ export const Nav = (props: Props) => {
         <NavContainer>
           <NavEl>
             <NavLink
-              to={`../${params.country}/current-sdg-gaps`}
+              to={`../${countrySelected}/current-sdg-gaps`}
               style={({ isActive }) => ({
                 paddingBottom: isActive ? '8px' : '',
                 borderBottom: isActive ? '#006EB5 solid 3px' : '',
@@ -102,7 +102,7 @@ export const Nav = (props: Props) => {
           </NavEl>
           <NavEl>
             <NavLink
-              to={`../${params.country}/acceleration-Opportunities`}
+              to={`../${countrySelected}/acceleration-Opportunities`}
               style={({ isActive }) => ({
                 paddingBottom: isActive ? '8px' : '',
                 borderBottom: isActive ? '#006EB5 solid 3px' : '',
@@ -114,7 +114,7 @@ export const Nav = (props: Props) => {
           </NavEl>
           <NavEl>
             <NavLink
-              to={`../${params.country}/future-scenarios`}
+              to={`../${countrySelected}/future-scenarios`}
               style={({ isActive }) => ({
                 paddingBottom: isActive ? '8px' : '',
                 borderBottom: isActive ? '#006EB5 solid 3px' : '',

@@ -5,7 +5,6 @@ import { Header } from './Header';
 import { CurrentGaps } from './CurrentGaps';
 import { Priorities } from './Priorities';
 import { FutureScenariosList } from './FutureScenarios';
-import { HomePage } from './HomePage';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -246,7 +245,7 @@ const App = () => (
     <Routes>
       <Route
         path='/'
-        element={<HomePage />}
+        element={<CurrentGaps />}
       />
       <Route
         path='/:country/current-sdg-gaps'
