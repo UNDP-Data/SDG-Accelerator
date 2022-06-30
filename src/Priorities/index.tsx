@@ -159,6 +159,9 @@ export const Priorities = (props: Props) => {
                       Showing results for
                       {' '}
                       <span className='bold'>{selectedFile.name}</span>
+                      .
+                      {' '}
+                      <span className='italics'>Click on the goal to see the priorities</span>
                     </FileSelectedBannerEl>
                 )
               : null

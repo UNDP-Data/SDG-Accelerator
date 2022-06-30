@@ -195,6 +195,15 @@ export const PrioritiesViz = (props: Props) => {
                   stroke={colorArray[parseInt(d.priorityType.split(' ')[1], 10)]}
                   strokeWidth={3}
                 />
+                <circle
+                  cx={0}
+                  cy={0}
+                  r={radiusFactor * d.priorities.length}
+                  fill={colorArray[parseInt(d.priorityType.split(' ')[1], 10)]}
+                  stroke={colorArray[parseInt(d.priorityType.split(' ')[1], 10)]}
+                  fillOpacity={0.25}
+                  strokeWidth={3}
+                />
               </g>
             </g>
           ))
