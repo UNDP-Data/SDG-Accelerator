@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import styled from 'styled-components';
 import axios from 'axios';
-import { Spin } from 'antd';
+import { Progress } from 'antd';
 import { useEffect, useState } from 'react';
 import { PrioritiesViz } from './PrioritiesViz';
 import { PageTitle } from '../Components/PageTitle';
@@ -73,6 +73,8 @@ const FileSelectedBannerEl = styled.div<FileSelectedBannerElProps>`
 export const Priorities = (props: Props) => {
   const { country } = props;
   const [selectedFile, setSelectedFile] = useState<any>(null);
+  const [intervalId, setIntervalId] = useState<any>(0);
+  const [progressValue, setProgressValue] = useState(0);
   const [error, setError] = useState<any>(null);
   const [data, setData] = useState<any>(null);
   useEffect(() => {
@@ -93,6 +95,27 @@ export const Priorities = (props: Props) => {
         });
     }
   }, [selectedFile]);
+
+  useEffect(() => {
+    if (selectedFile && !data && !error) {
+      let currentProgress = 0;
+      let step = 0.05;
+      const newIntervalId = setInterval(() => {
+        currentProgress += step;
+        let progress = Math.round((Math.atan(currentProgress) / (Math.PI / 2)) * 100 * 1000) / 1000;
+        if (progress > 99.8) {
+          progress = 99.9;
+        } else if (progress >= 90) {
+          step = 0.01;
+        }
+        setProgressValue(Math.round(progress));
+      }, 100);
+      setIntervalId(newIntervalId);
+    } else if (intervalId) {
+      clearInterval(intervalId);
+      setIntervalId(0);
+    }
+  }, [selectedFile, data, error]);
 
   const handleFileSelect = (event: any) => {
     setData(null);
@@ -150,9 +173,19 @@ export const Priorities = (props: Props) => {
                 )
                   : (
                     <FileSelectedBannerEl backgroundColor='var(--accent-yellow-light)' borderColor='var(--accent-yellow)'>
-                      Processing
-                      {' '}
-                      <span className='bold'>{selectedFile.name}</span>
+                      <div>
+                        Processing
+                        {' '}
+                        <span className='bold'>{selectedFile.name}</span>
+                      </div>
+                      <Progress
+                        strokeColor={{
+                          from: '#108ee9',
+                          to: '#87d068',
+                        }}
+                        percent={progressValue}
+                        status='active'
+                      />
                     </FileSelectedBannerEl>
                   ) : (
                     <FileSelectedBannerEl backgroundColor='var(--accent-green-light)' borderColor='var(--accent-green)'>
@@ -170,7 +203,7 @@ export const Priorities = (props: Props) => {
             selectedFile && !error ? (
               <>
                 {
-                  data ? <PrioritiesViz data={data} /> : <Spin size='large' />
+                  data ? <PrioritiesViz data={data} /> : null
                 }
               </>
             )
