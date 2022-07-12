@@ -146,7 +146,7 @@ export const Priorities = () => {
               <HR />
               <FileAttachementEl>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src='http://localhost:3000/img/vnr_thumbnail.png' alt='Access all data info' width='25%' style={{ maxWidth: '16rem', marginRight: '2rem' }} />
+                  <img src='https://raw.githubusercontent.com/UNDP-Data/SDG-Accelerator/main/public/img/vnr_thumbnail.png' alt='Access all data info' width='25%' style={{ maxWidth: '16rem', marginRight: '2rem' }} />
                   <div>
                     Complement the existing database of national planning documents and voluntary national reviews by uploading a relevant national resource such as a policy brief, assessment, development intervention proposal, etc. to analyse and identify Acceleration Opportunities
                     <br />

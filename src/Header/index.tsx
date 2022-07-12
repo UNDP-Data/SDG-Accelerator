@@ -7,7 +7,7 @@ const RootEl = styled.div`
   background-color: var(--blue-bg);
   margin-top: 11.5rem;
   padding: 5rem 3rem 3rem 3rem;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("http://localhost:3000/img/scoping.svg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("https://raw.githubusercontent.com/UNDP-Data/SDG-Accelerator/main/public/img/scoping.svg");
   background-position: top 0px right 0px;
   background-repeat: no-repeat;
 `;
@@ -97,7 +97,7 @@ export const Header = () => (
     <TopNavEl>
       <HeaderContainer>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <img src='http://localhost:3000/img/undp-logo-blue.4f32e17f.svg' alt='UNDP Logo' />
+          <img src='https://raw.githubusercontent.com/UNDP-Data/SDG-Accelerator/main/public/img/undp-logo-blue.4f32e17f.svg' alt='UNDP Logo' />
           <NavHead>
             The Diagnostic
             <br />
