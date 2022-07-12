@@ -3,13 +3,11 @@ import styled from 'styled-components';
 import axios from 'axios';
 import { Progress } from 'antd';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { PrioritiesViz } from './PrioritiesViz';
 import { PageTitle } from '../Components/PageTitle';
 import { Nav } from '../Header/Nav';
-
-interface Props {
-  country?: string;
-}
+import { COUNTRYOPTION } from '../Constants';
 
 const RootEl = styled.div`
   width: 128rem;
@@ -32,12 +30,13 @@ const FileAttachementEl = styled.div`
 `;
 
 const FileAttacehmentLabel = styled.label`
-  background-color: var(--white);
+  background-color: #fff;
   color: var(--black-700);
   border-radius: 3px;
   text-align: center;
   font-style: normal;
   font-size: 1.4rem;
+  font-weight: bold;
   margin-top: 1rem;
   padding: 1rem;
   border: 1px dashed var(--black-550); 
@@ -45,6 +44,7 @@ const FileAttacehmentLabel = styled.label`
   justify-content: center;
   display: flex;
   cursor: pointer;
+  align-items: center;
 `;
 
 const FileAttacehmentButton = styled.input`
@@ -70,8 +70,9 @@ const FileSelectedBannerEl = styled.div<FileSelectedBannerElProps>`
   border: ${(props) => `1px solid  ${props.borderColor}`};
 `;
 
-export const Priorities = (props: Props) => {
-  const { country } = props;
+export const Priorities = () => {
+  const countrySelected = useParams().country || 'ZAF';
+  const countryFullName = COUNTRYOPTION[COUNTRYOPTION.findIndex((d) => d.code === countrySelected)].countryName;
   const [selectedFile, setSelectedFile] = useState<any>(null);
   const [intervalId, setIntervalId] = useState<any>(0);
   const [progressValue, setProgressValue] = useState(0);
@@ -129,27 +130,36 @@ export const Priorities = (props: Props) => {
       />
       <div>
         <PageTitle
-          title='Acceleration Opportunities — How Do We Get There?'
+          title='Current Priorities — How Do We Get There?'
           description='Scan reports and policy documents in the database and upload your own for run text analysis to identify national accelerators. Explore assumptions in the areas of Digital, Social Protection, Governance, Green Economy and other national priority areas.'
         />
         <RootEl>
           <DescriptionEl>
             <div>
-              Determine priorities for your
+              Determine priorities for
               {' '}
-              {country}
+              <span className='bold'>{countryFullName}</span>
               {' '}
-              based on analysis of relevant documentation. Acceleration Opportunities represent areas which require urgent national attention and action based on SDG progress gaps and importance level prescribed by government and relevant national actors.
+              based on analysis of relevant documentation. Acceleration Opportunities represent areas which require urgent national attention and action based on SDG gaps and importance level prescribed by government and relevant national actors.
             </div>
             <>
               <HR />
               <FileAttachementEl>
-                <>
-                  Complement the existing database of national planning documents and voluntary national reviews by uploading a relevant national resource such as a policy brief, assessment, development intervention proposal, etc. to analyse and identify Acceleration Opportunities
-                </>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <img src='http://localhost:3000/img/vnr_thumbnail.png' alt='Access all data info' width='25%' style={{ maxWidth: '16rem', marginRight: '2rem' }} />
+                  <div>
+                    Complement the existing database of national planning documents and voluntary national reviews by uploading a relevant national resource such as a policy brief, assessment, development intervention proposal, etc. to analyse and identify Acceleration Opportunities
+                    <br />
+                    <br />
+                    The voluntary national reviews (VNRs) are regular and inclusive reviews conducted by member states on progress at the national and sub-national levels, which are country-led and country-driven. The VNRs aim to facilitate the sharing of experiences, including successes, challenges and lessons learned, with a view to accelerating the implementation of the 2030 Agenda.
+                    <br />
+                    <br />
+                    National development plans (NDP) aim to demonstrate national aspirations and, at times, craft a new vision for economic transformation. These plans are produced at regular intervals and are usually led by Finance, Economic or National Planning related ministries.
+                  </div>
+                </div>
                 <div>
                   <FileAttacehmentLabel htmlFor='file-upload' className='custom-file-upload'>
-                    Attach a File
+                    Click to Attach a File
                   </FileAttacehmentLabel>
                   <FileAttacehmentButton id='file-upload' type='file' onChange={handleFileSelect} />
                 </div>

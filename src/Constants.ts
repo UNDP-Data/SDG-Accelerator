@@ -1,16 +1,16 @@
 export const HEADERCARDOPTION = [
   {
-    title: 'Current SDG Gaps',
-    body: 'View a current snapshot of SDG gaps globally and conduct a deep dive at the national level',
+    title: 'Current Gaps',
+    body: 'Explore SDG progress in your country which which targets are at risk of not being met by 2030',
     link: '/current-sdg-gap',
   },
   {
-    title: 'Acceleration Opportunities',
+    title: 'Current Priorities',
     body: 'Scan reports and policy documents to identify national priority areas',
     link: '/acceleration-Opportunities',
   },
   {
-    title: 'Future Scenarios',
+    title: 'SDG Push',
     body: 'Assess multidimensional effects of COVID-19 and policy decisions using scenario modeling',
     link: '/future-scenarios',
   },

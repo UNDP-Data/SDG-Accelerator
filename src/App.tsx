@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { Routes, Route, useParams } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import { Header } from './Header';
 import { CurrentGaps } from './CurrentGaps';
@@ -253,7 +253,7 @@ const App = () => (
       />
       <Route
         path='/:country/acceleration-Opportunities'
-        element={<Priorities country={useParams().country} />}
+        element={<Priorities />}
       />
       <Route
         path='/:country/future-scenarios'

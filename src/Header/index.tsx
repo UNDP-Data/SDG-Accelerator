@@ -5,7 +5,11 @@ import { GIZLogo } from '../icons';
 
 const RootEl = styled.div`
   background-color: var(--blue-bg);
+  margin-top: 11.5rem;
   padding: 5rem 3rem 3rem 3rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("http://localhost:3000/img/scoping.svg");
+  background-position: top 0px right 0px;
+  background-repeat: no-repeat;
 `;
 
 const H5 = styled.h5`
@@ -23,27 +27,140 @@ const LogoEl = styled.div`
   display: flex;
   align-items: center;
   font-size: 1.4rem; 
-  margin: 1rem 0 3rem 0;
+  margin: 0;
   div {
     margin-right: 2rem;
   }
 `;
 
+const LogoUnit = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+`;
+
+const HeaderEl = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+`;
+
+const BetaEl = styled.div`
+  padding: 1rem;
+  background-color: rgba(9, 105, 250, 0.25);
+  color: var(--primary-blue);
+  margin-left: 1rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--primary-blue);
+  font-weight: bold;
+`;
+
+const H1 = styled.h1`
+  margin-bottom: 0;
+`;
+
+const TopNavEl = styled.section`
+  max-height: 11.5rem;
+  background-color: #fafafa;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 10%);
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+`;
+
+const HeaderContainer = styled.div`
+  padding: 0 1.2rem;
+  max-width: 100%;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+`;
+
+const NavHead = styled.div`
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-left: 2.4rem;
+`;
+
+const RightNav = styled.a`
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #55606e;
+  cursor: pointer;
+`;
+
 export const Header = () => (
   <>
+    <TopNavEl>
+      <HeaderContainer>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <img src='http://localhost:3000/img/undp-logo-blue.4f32e17f.svg' alt='UNDP Logo' />
+          <NavHead>
+            The Diagnostic
+            <br />
+            Simulator
+          </NavHead>
+        </div>
+        <RightNav href='https://data.undp.org/' target='_blank'>
+          Visit Data Futures Platform
+        </RightNav>
+      </HeaderContainer>
+    </TopNavEl>
     <RootEl>
       <div className='container'>
-        <h1>SDG Acceleration Simulator</h1>
+        <HeaderEl>
+          <H1>Diagnostic Simulator</H1>
+          <BetaEl>BETA</BetaEl>
+        </HeaderEl>
         <H5>
-          The Diagnostic Simulator provides policy insight on recovering better by assessing potential SDG acceleration pathways, gaps and key challenges, and alignment to current national priorities. The Simulator uses advanced machine learning to identify SDG gaps, priorities and potential pathways toward acceleration through an initial analysis of available national data and knowledge resources. Walk through a set of actionable accelerators unique for your country.
+          The Diagnostic Simulator is a key element of the
+          {' '}
+          <a href='https://sdgintegration.undp.org/sdg-acceleration-diagnostic' target='_blank' rel='noreferrer'>SDG Acceleration Diagnostic →</a>
+          , a process that combines analytical capabilities with qualitative methods to assess context, options, and bottlenecks to determine effective policy choices, investments and pathways. These gaps, priorities, interlinkages, and opportunities identified by the Simulator, lay the framework for the
+          {' '}
+          <a href='https://sdgintegration.undp.org/sdg-acceleration-diagnostic/scoping' target='_blank' rel='noreferrer'>scoping work →</a>
+          {' '}
+          of the Diagnostic.
+          <br />
+          <br />
+          Specifically, the Simulator focuses on
+          <ol>
+            <li>
+              <span className='bold'>Visualizing data</span>
+              {' '}
+              to easily identify SDG gaps, progress and interlinkages that allows for a holistic dialogue
+            </li>
+            <li>
+              Supporting faster real time learning and identification of priorities
+              {' '}
+              <span className='bold'>using advanced text-analytics</span>
+              ; and
+            </li>
+            <li>
+              Mapping the projected impact of the
+              {' '}
+              <span className='bold'>SDG Push scenarios</span>
+              {' '}
+              to provide an example of an ambitious set of actions that can accelerate SDG and national development goals
+            </li>
+          </ol>
         </H5>
-        <LogoEl>
-          <div>In Partnership with</div>
-          <GIZLogo
-            size={70}
-          />
-        </LogoEl>
-        <button type='button' className='primary'>Learn More About the Diagnostic Process</button>
+        <LogoUnit>
+          <div>
+            <a href='https://sdgintegration.undp.org/sdg-acceleration-diagnostic' target='_blank' rel='noreferrer'>
+              <button type='button' className='primary'>Learn More About the Diagnostic Process</button>
+            </a>
+          </div>
+          <LogoEl>
+            <div>In Partnership with</div>
+            <GIZLogo
+              size={60}
+            />
+          </LogoEl>
+        </LogoUnit>
         <CardContainer>
           {
             HEADERCARDOPTION.map((d, i) => (

@@ -14,9 +14,9 @@ interface Props {
 const NavBarEl = styled.div`
   background-color: var(--black-100);
   border-bottom: 1px solid var(--black-500);
-  z-index: 1000;
+  z-index: 8;
   position: sticky;
-  top: 0px;
+  top: 11.5rem;
 `;
 
 const ContainerEl = styled.div`
@@ -97,7 +97,7 @@ export const Nav = (props: Props) => {
                 color: !isActive ? 'var(--primaty-blue)' : '',
               })}
             >
-              Current SDG Gaps
+              Current Gaps
             </NavLink>
           </NavEl>
           <NavEl>
@@ -109,7 +109,7 @@ export const Nav = (props: Props) => {
                 color: !isActive ? 'var(--primaty-blue)' : '',
               })}
             >
-              Acceleration Opportunities
+              Current Priorities
             </NavLink>
           </NavEl>
           <NavEl>
@@ -121,7 +121,7 @@ export const Nav = (props: Props) => {
                 color: !isActive ? 'var(--primaty-blue)' : '',
               })}
             >
-              Future Scenarios
+              SDG Push
             </NavLink>
           </NavEl>
         </NavContainer>
