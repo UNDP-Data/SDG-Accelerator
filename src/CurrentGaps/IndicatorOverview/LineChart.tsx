@@ -8,7 +8,6 @@ import { scaleLinear } from 'd3-scale';
 import meanBy from 'lodash.meanby';
 import { KEYSTOAVOID } from '../../Constants';
 import { getYearsAndValues } from '../../utils/getYearsAndValues';
-import targetValues from '../../Data/targetValueForIndicators.json';
 import { getCAGR } from '../../utils/getCAGR';
 
 interface Props {
@@ -92,15 +91,14 @@ export const LineChart = (props: Props) => {
   const margin = {
     top: 20,
     bottom: 50,
-    left: 10,
-    right: 40,
+    left: 20,
+    right: 20,
   };
   const graphWidth = svgWidth - margin.left - margin.right;
   const graphHeight = svgHeight - margin.top - margin.bottom;
 
   const values = uniqBy(data.values, 'year').filter((d: any) => d.value !== null);
-
-  const targetValue = targetValues.findIndex((d) => d.indicator === data.indicator) !== -1 ? targetValues[targetValues.findIndex((d) => d.indicator === data.indicator)] : null;
+  const targetValue = data.targetfor2030 !== 0 ? data.targetfor2030 : null;
 
   const yearsAndValues = getYearsAndValues(values as any);
   const status = data.indicator === '8.1.1'
@@ -251,7 +249,7 @@ export const LineChart = (props: Props) => {
                             fill='#0969FA'
                             fontWeight='bold'
                           >
-                            {d.value < 1 ? d.value : format('~s')(d.value)}
+                            {d.value < 1 ? d.value : format('.2s')(d.value)}
                           </text>
                         </g>
                       ))

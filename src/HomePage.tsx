@@ -10,7 +10,7 @@ const menu = (
     {
       COUNTRYOPTION.map((d, i) => (
         <Menu.Item key={i}>
-          <a rel='noopener noreferrer' href={`../${d.code}/current-sdg-gaps`}>
+          <a rel='noopener noreferrer' href={`../current-sdg-gaps/${d.code}`}>
             {d.countryName}
           </a>
         </Menu.Item>

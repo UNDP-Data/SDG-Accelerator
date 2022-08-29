@@ -4,10 +4,11 @@ import axios from 'axios';
 import { Progress } from 'antd';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { PrioritiesViz } from './PrioritiesViz';
+// import { PrioritiesViz } from './PrioritiesViz';
 import { PageTitle } from '../Components/PageTitle';
 import { Nav } from '../Header/Nav';
 import { COUNTRYOPTION } from '../Constants';
+import { PrioritiesVizCard } from './PrioritiesVizCards';
 
 const RootEl = styled.div`
   width: 128rem;
@@ -126,7 +127,7 @@ export const Priorities = () => {
   return (
     <>
       <Nav
-        pageURL='/acceleration-Opportunities'
+        pageURL='acceleration-Opportunities'
       />
       <div>
         <PageTitle
@@ -213,7 +214,7 @@ export const Priorities = () => {
             selectedFile && !error ? (
               <>
                 {
-                  data ? <PrioritiesViz data={data} /> : null
+                  data ? <PrioritiesVizCard data={data} /> : null
                 }
               </>
             )

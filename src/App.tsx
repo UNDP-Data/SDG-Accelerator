@@ -244,19 +244,19 @@ const App = () => (
     <Header />
     <Routes>
       <Route
-        path='/'
+        path='/diagnostic-simulator'
         element={<CurrentGaps />}
       />
       <Route
-        path='/:country/current-sdg-gaps'
+        path='/diagnostic-simulator/current-sdg-gaps/:country'
         element={<CurrentGaps />}
       />
       <Route
-        path='/:country/acceleration-Opportunities'
+        path='/diagnostic-simulator/acceleration-Opportunities/:country'
         element={<Priorities />}
       />
       <Route
-        path='/:country/future-scenarios'
+        path='/diagnostic-simulator/future-scenarios/:country'
         element={<FutureScenariosList />}
       />
     </Routes>

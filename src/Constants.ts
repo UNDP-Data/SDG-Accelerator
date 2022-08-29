@@ -180,6 +180,7 @@ export const KEYSTOAVOID = [
   'indicator',
   'seriesDescription',
   'values',
+  'targetfor2030',
 ];
 
 export const SCENARIOINDICATORBASEDONSDG = [
@@ -225,3 +226,4 @@ export const SCENARIOINDICATORBASEDONSDG = [
     ],
   },
 ];
+export const DATASOURCELINK = process.env.NODE_ENV === 'production' ? 'https://data.undp.org/diagnostic-simulator' : '../..';

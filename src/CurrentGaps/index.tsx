@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Select, Spin } from 'antd';
 import { json } from 'd3-request';
+import { queue } from 'd3-queue';
 import isEqual from 'lodash.isequal';
 import omit from 'lodash.omit';
 import uniqBy from 'lodash.uniqby';
@@ -17,11 +18,9 @@ import { CaretDown, InfoIcon } from '../icons';
 import { Tooltip } from '../Components/Tooltip';
 import { IndicatorOverview } from './IndicatorOverview';
 import { getSDGIcon } from '../utils/getSDGIcon';
-import { COUNTRYOPTION, SDGGOALS } from '../Constants';
+import { COUNTRYOPTION, SDGGOALS, DATASOURCELINK } from '../Constants';
 import { Tag } from '../Components/Tag';
 import { getYearsAndValues } from '../utils/getYearsAndValues';
-import timeSeriesToUse from '../Data/timeSeriesToUse.json';
-import targetValues from '../Data/targetValueForIndicators.json';
 import { getCAGR } from '../utils/getCAGR';
 
 const SDGList:SDGStatusListType[] = require('../Data/SDGGoalList.json');
@@ -80,7 +79,7 @@ const FlexDiv = styled.div`
   background-color: var(--black-300);
   position: sticky;
   z-index: 100;
-  top: 5rem;
+  top: 16.5rem;
 `;
 
 const DropdownEl = styled.div`
@@ -141,184 +140,185 @@ export const CurrentGaps = () => {
   const countryFullName = COUNTRYOPTION[COUNTRYOPTION.findIndex((d) => d.code === countrySelected)].countryName;
 
   useEffect(() => {
-    setStatuses(undefined);
-    json(`../../data/${countrySelected}.json`, (err: any, d: any[]) => {
-      if (err) throw err;
-      const filteredTimeseriesData:any = [];
-      d.forEach((el:any) => {
-        if (timeSeriesToUse.findIndex((el1) => isEqual(el1, omit(el, ['values']))) !== -1) filteredTimeseriesData.push(el);
-      });
-      setCountryData(filteredTimeseriesData);
-      const filteredTimeseriesDataWithStatus = filteredTimeseriesData.map((element: any) => {
-        const values = uniqBy(element.values, 'year').filter((el: any) => el.value !== null);
+    setStatuses(undefined); queue()
+      .defer(json, `${DATASOURCELINK}/data/TimeSeriesData/${countrySelected}.json`)
+      .defer(json, `${DATASOURCELINK}/data/TimeSeriesToUse/${countrySelected}.json`)
+      .await((err: any, d: any, timeSeriesToUse: any) => {
+        if (err) throw err;
+        const filteredTimeseriesData:any = [];
+        d.forEach((el:any) => {
+          if (timeSeriesToUse.findIndex((el1: any) => isEqual(el1, omit(el, ['values', 'targetfor2030']))) !== -1 || el.series === '***') filteredTimeseriesData.push(el);
+        });
+        setCountryData(filteredTimeseriesData);
+        const filteredTimeseriesDataWithStatus = filteredTimeseriesData.map((element: any) => {
+          const values = uniqBy(element.values, 'year').filter((el: any) => el.value !== null);
 
-        const targetValue = targetValues.findIndex((el) => el.indicator === element.indicator) !== -1 ? targetValues[targetValues.findIndex((el) => el.indicator === element.indicator)] : null;
-
-        const yearsAndValues = getYearsAndValues(values as any);
-        const status = element.indicator === '8.1.1'
-          ? meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 2 ? 'On Track'
-            : meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 1.5 ? 'Fair progress but acceleration needed'
-              : meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 1 ? 'Limited or No Progress'
-                : 'Deterioration'
-          : targetValue === null
-            ? undefined
-            : yearsAndValues === null
-              ? 'Insufficient Data'
-              : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type);
-        return { ...element, status };
-      });
-      const allIndicators = uniqBy(filteredTimeseriesDataWithStatus.filter((el: any) => el.status), 'indicator').map((el: any) => el.indicator);
-      const indicatorsStatus = allIndicators.map((indicator: string) => {
-        const filtered = filteredTimeseriesDataWithStatus.filter((el: any) => el.indicator === indicator && el.status && el.status !== 'Insufficient Data');
-        if (filtered.length === 0) {
-          return {
-            indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: undefined,
-          };
-        }
-        let total = 0;
-        filtered.forEach((f: any) => {
-          switch (f.status) {
-            case 'Target Achieved':
-              total += 1;
-              break;
-            case 'On Track':
-              total += 1;
-              break;
-            case 'Fair progress but acceleration needed':
-              total += 2;
-              break;
-            case 'Limited or No Progress':
-              total += 3;
-              break;
-            case 'Deterioration':
-              total += 4;
-              break;
-            default:
-              // eslint-disable-next-line no-console
-              console.log(f);
-              break;
-          }
+          const targetValue = element.targetfor2030 !== 0 ? element.targetfor2030 : null;
+          const yearsAndValues = getYearsAndValues(values as any);
+          const status = element.indicator === '8.1.1'
+            ? meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 2 ? 'On Track'
+              : meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 1.5 ? 'Fair progress but acceleration needed'
+                : meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 1 ? 'Limited or No Progress'
+                  : 'Deterioration'
+            : targetValue === null
+              ? undefined
+              : yearsAndValues === null
+                ? 'Insufficient Data'
+                : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type);
+          return { ...element, status };
         });
-        if (total / filtered.length < 1.5) {
-          return {
-            indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: 'On Track',
-          };
-        }
-        if (total / filtered.length > 2.499) {
-          return {
-            indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: 'Identified Gap',
-          };
-        }
-        return {
-          indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: 'For Review',
-        };
-      });
-      const allTargets = uniqBy(indicatorsStatus.filter((el: any) => el.status), 'target').map((el: any) => el.target);
-      const targetStatus = allTargets.map((target: string) => {
-        const filtered = indicatorsStatus.filter((el: any) => el.target === target && el.status && el.status !== 'Insufficient Data');
-        if (filtered.length === 0) {
-          return {
-            target, goal: target.split('.')[0], status: undefined,
-          };
-        }
-        let total = 0;
-        filtered.forEach((f: any) => {
-          switch (f.status) {
-            case 'On Track':
-              total += 1;
-              break;
-            case 'Identified Gap':
-              total += 3;
-              break;
-            case 'For Review':
-              total += 2;
-              break;
-            default:
-              // eslint-disable-next-line no-console
-              console.log(f);
-              break;
+        const allIndicators = uniqBy(filteredTimeseriesDataWithStatus.filter((el: any) => el.status), 'indicator').map((el: any) => el.indicator);
+        const indicatorsStatus = allIndicators.map((indicator: string) => {
+          const filtered = filteredTimeseriesDataWithStatus.filter((el: any) => el.indicator === indicator && el.status && el.status !== 'Insufficient Data');
+          if (filtered.length === 0) {
+            return {
+              indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: undefined,
+            };
           }
-        });
-        if (Math.round(total / filtered.length) === 1) {
-          return {
-            target, goal: target.split('.')[0], status: 'On Track',
-          };
-        }
-        if (Math.round(total / filtered.length) === 2) {
-          return {
-            target, goal: target.split('.')[0], status: 'Identified Gap',
-          };
-        }
-        return {
-          target, goal: target.split('.')[0], status: 'For Review',
-        };
-      });
-      const allGoals = uniqBy(targetStatus.filter((el: any) => el.status), 'goal').map((el: any) => el.goal);
-      const goalStatus = allGoals.map((goal: string) => {
-        const filtered = targetStatus.filter((el: any) => el.goal === goal && el.status && el.status !== 'Insufficient Data');
-        if (filtered.length === 0) {
-          return {
-            goal, status: undefined,
-          };
-        }
-        let total = 0;
-        filtered.forEach((f: any) => {
-          switch (f.status) {
-            case 'On Track':
-              total += 1;
-              break;
-            case 'Identified Gap':
-              total += 3;
-              break;
-            case 'For Review':
-              total += 2;
-              break;
-            default:
+          let total = 0;
+          filtered.forEach((f: any) => {
+            switch (f.status) {
+              case 'Target Achieved':
+                total += 1;
+                break;
+              case 'On Track':
+                total += 1;
+                break;
+              case 'Fair progress but acceleration needed':
+                total += 2;
+                break;
+              case 'Limited or No Progress':
+                total += 3;
+                break;
+              case 'Deterioration':
+                total += 4;
+                break;
+              default:
               // eslint-disable-next-line no-console
-              console.log(f);
-              break;
+                console.log(f);
+                break;
+            }
+          });
+          if (total / filtered.length < 1.5) {
+            return {
+              indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: 'On Track',
+            };
           }
+          if (total / filtered.length > 2.499) {
+            return {
+              indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: 'Identified Gap',
+            };
+          }
+          return {
+            indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: 'For Review',
+          };
         });
-        if (Math.round(total / filtered.length) === 1) {
+        const allTargets = uniqBy(indicatorsStatus.filter((el: any) => el.status), 'target').map((el: any) => el.target);
+        const targetStatus = allTargets.map((target: string) => {
+          const filtered = indicatorsStatus.filter((el: any) => el.target === target && el.status && el.status !== 'Insufficient Data');
+          if (filtered.length === 0) {
+            return {
+              target, goal: target.split('.')[0], status: undefined,
+            };
+          }
+          let total = 0;
+          filtered.forEach((f: any) => {
+            switch (f.status) {
+              case 'On Track':
+                total += 1;
+                break;
+              case 'Identified Gap':
+                total += 3;
+                break;
+              case 'For Review':
+                total += 2;
+                break;
+              default:
+              // eslint-disable-next-line no-console
+                console.log(f);
+                break;
+            }
+          });
+          if (Math.round(total / filtered.length) === 1) {
+            return {
+              target, goal: target.split('.')[0], status: 'On Track',
+            };
+          }
+          if (Math.round(total / filtered.length) === 2) {
+            return {
+              target, goal: target.split('.')[0], status: 'Identified Gap',
+            };
+          }
           return {
-            goal, status: 'On Track',
+            target, goal: target.split('.')[0], status: 'For Review',
           };
-        }
-        if (Math.round(total / filtered.length) === 3) {
+        });
+        const allGoals = uniqBy(targetStatus.filter((el: any) => el.status), 'goal').map((el: any) => el.goal);
+        const goalStatus = allGoals.map((goal: string) => {
+          const filtered = targetStatus.filter((el: any) => el.goal === goal && el.status && el.status !== 'Insufficient Data');
+          if (filtered.length === 0) {
+            return {
+              goal, status: undefined,
+            };
+          }
+          let total = 0;
+          filtered.forEach((f: any) => {
+            switch (f.status) {
+              case 'On Track':
+                total += 1;
+                break;
+              case 'Identified Gap':
+                total += 3;
+                break;
+              case 'For Review':
+                total += 2;
+                break;
+              default:
+              // eslint-disable-next-line no-console
+                console.log(f);
+                break;
+            }
+          });
+          if (Math.round(total / filtered.length) === 1) {
+            return {
+              goal, status: 'On Track',
+            };
+          }
+          if (Math.round(total / filtered.length) === 3) {
+            return {
+              goal, status: 'Identified Gap',
+            };
+          }
           return {
-            goal, status: 'Identified Gap',
+            goal, status: 'For Review',
           };
-        }
-        return {
-          goal, status: 'For Review',
-        };
-      });
-      const gaps = SDGList.map((el) => {
-        const targetGaps = el.Targets.map((target) => {
-          const indicatorGaps = target.Indicators.map((indicator) => ({ ...indicator, status: indicatorsStatus.findIndex((status) => `Indicator ${status.indicator}` === indicator.Indicator) === -1 ? undefined : indicatorsStatus[indicatorsStatus.findIndex((status) => `Indicator ${status.indicator}` === indicator.Indicator)].status }));
+        });
+        const gaps = SDGList.map((el) => {
+          const targetGaps = el.Targets.map((target) => {
+            const indicatorGaps = target.Indicators.map((indicator) => ({ ...indicator, status: indicatorsStatus.findIndex((status) => `Indicator ${status.indicator}` === indicator.Indicator) === -1 ? undefined : indicatorsStatus[indicatorsStatus.findIndex((status) => `Indicator ${status.indicator}` === indicator.Indicator)].status }));
+            return ({
+              Target: target.Target,
+              'Target Description': target['Target Description'],
+              status: targetStatus.findIndex((status) => `Target ${status.target}` === target.Target) === -1 ? undefined : targetStatus[targetStatus.findIndex((status) => `Target ${status.target}` === target.Target)].status,
+              Indicators: indicatorGaps,
+            });
+          });
           return ({
-            Target: target.Target,
-            'Target Description': target['Target Description'],
-            status: targetStatus.findIndex((status) => `Target ${status.target}` === target.Target) === -1 ? undefined : targetStatus[targetStatus.findIndex((status) => `Target ${status.target}` === target.Target)].status,
-            Indicators: indicatorGaps,
+            Goal: el.Goal,
+            'Goal Name': el['Goal Name'],
+            status: goalStatus.findIndex((status) => `SDG ${status.goal}` === el.Goal) === -1 ? undefined : goalStatus[goalStatus.findIndex((status) => `SDG ${status.goal}` === el.Goal)].status,
+            Targets: targetGaps,
           });
         });
-        return ({
-          Goal: el.Goal,
-          'Goal Name': el['Goal Name'],
-          status: goalStatus.findIndex((status) => `SDG ${status.goal}` === el.Goal) === -1 ? undefined : goalStatus[goalStatus.findIndex((status) => `SDG ${status.goal}` === el.Goal)].status,
-          Targets: targetGaps,
-        });
+        setStatuses(gaps);
+        setGoalStatuses(goalStatus);
       });
-      setStatuses(gaps);
-      setGoalStatuses(goalStatus);
-    });
   }, [countrySelected]);
 
   return (
     <>
       <Nav
-        pageURL='/current-sdg-gaps'
+        pageURL='current-sdg-gaps'
       />
       <PageTitle
         title='Current Gaps'

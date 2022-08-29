@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { json } from 'd3-request';
 import { useParams } from 'react-router-dom';
 import { PageTitle } from '../Components/PageTitle';
-import { SDGGOALSFORFUTURESCENARIO } from '../Constants';
+import { DATASOURCELINK, SDGGOALSFORFUTURESCENARIO } from '../Constants';
 import { ScenarioLineChartsEl } from './ScenarioLineChartsEl';
 import { Nav } from '../Header/Nav';
 import { ScenarioDataType } from '../Types';
@@ -30,7 +30,7 @@ export const FutureScenariosList = () => {
   const [selectedSDG, setSelectedSDG] = useState('SDG 1: No Poverty');
   const countrySelected = useParams().country || 'ZAF';
   useEffect(() => {
-    json('../../data/ScenarioData/ScenarioData.json', (err: any, d: ScenarioDataType[]) => {
+    json(`${DATASOURCELINK}/data/ScenarioData/ScenarioData.json`, (err: any, d: ScenarioDataType[]) => {
       if (err) throw err;
       setData(d.filter((el: any) => el.country === countrySelected));
     });
@@ -38,7 +38,7 @@ export const FutureScenariosList = () => {
   return (
     <>
       <Nav
-        pageURL='/future-scenarios'
+        pageURL='future-scenarios'
       />
       <div>
         <PageTitle

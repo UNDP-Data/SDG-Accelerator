@@ -83,6 +83,7 @@ const NavHead = styled.div`
   font-size: 2rem;
   line-height: 3rem;
   margin-left: 2.4rem;
+  color: var(--navy);
 `;
 
 const RightNav = styled.a`
@@ -96,15 +97,17 @@ export const Header = () => (
   <>
     <TopNavEl>
       <HeaderContainer>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <img src='https://raw.githubusercontent.com/UNDP-Data/SDG-Accelerator/main/public/img/undp-logo-blue.4f32e17f.svg' alt='UNDP Logo' />
-          <NavHead>
-            The Diagnostic
-            <br />
-            Simulator
-          </NavHead>
-        </div>
-        <RightNav href='https://data.undp.org/' target='_blank'>
+        <a href='https://data.undp.org/' target='_blank' rel='noreferrer'>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <img src='https://raw.githubusercontent.com/UNDP-Data/SDG-Accelerator/main/public/img/undp-logo-blue.4f32e17f.svg' alt='UNDP Logo' />
+            <NavHead>
+              <span className='bold'>Data Futures</span>
+              <br />
+              <span style={{ color: '#999' }}>Platform</span>
+            </NavHead>
+          </div>
+        </a>
+        <RightNav href='https://data.undp.org/' target='_blank' rel='noreferrer'>
           Visit Data Futures Platform
         </RightNav>
       </HeaderContainer>
@@ -163,15 +166,15 @@ export const Header = () => (
         </LogoUnit>
         <CardContainer>
           {
-            HEADERCARDOPTION.map((d, i) => (
-              <CardButton
-                key={i}
-                title={d.title}
-                body={d.body}
-                cardWidth={`${100 / HEADERCARDOPTION.length}%`}
-              />
-            ))
-          }
+              HEADERCARDOPTION.map((d, i) => (
+                <CardButton
+                  key={i}
+                  title={d.title}
+                  body={d.body}
+                  cardWidth={`${100 / HEADERCARDOPTION.length}%`}
+                />
+              ))
+            }
         </CardContainer>
       </div>
     </RootEl>

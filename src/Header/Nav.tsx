@@ -60,7 +60,7 @@ export const Nav = (props: Props) => {
         COUNTRYOPTION.map((d, i) => (
           <Menu.Item key={i}>
             <NavLink
-              to={`../${d.code}${pageURL}`}
+              to={`../diagnostic-simulator/${pageURL}/${d.code}`}
             >
               {d.countryName}
             </NavLink>
@@ -90,7 +90,7 @@ export const Nav = (props: Props) => {
         <NavContainer>
           <NavEl>
             <NavLink
-              to={`../${countrySelected}/current-sdg-gaps`}
+              to={`../diagnostic-simulator/current-sdg-gaps/${countrySelected}`}
               style={({ isActive }) => ({
                 paddingBottom: isActive ? '8px' : '',
                 borderBottom: isActive ? '#006EB5 solid 3px' : '',
@@ -102,7 +102,7 @@ export const Nav = (props: Props) => {
           </NavEl>
           <NavEl>
             <NavLink
-              to={`../${countrySelected}/acceleration-Opportunities`}
+              to={`../diagnostic-simulator/acceleration-Opportunities/${countrySelected}`}
               style={({ isActive }) => ({
                 paddingBottom: isActive ? '8px' : '',
                 borderBottom: isActive ? '#006EB5 solid 3px' : '',
@@ -114,7 +114,7 @@ export const Nav = (props: Props) => {
           </NavEl>
           <NavEl>
             <NavLink
-              to={`../${countrySelected}/future-scenarios`}
+              to={`../diagnostic-simulator/future-scenarios/${countrySelected}`}
               style={({ isActive }) => ({
                 paddingBottom: isActive ? '8px' : '',
                 borderBottom: isActive ? '#006EB5 solid 3px' : '',
