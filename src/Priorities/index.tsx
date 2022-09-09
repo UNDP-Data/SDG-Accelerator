@@ -5,10 +5,18 @@ import { Progress } from 'antd';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 // import { PrioritiesViz } from './PrioritiesViz';
-import { PageTitle } from '../Components/PageTitle';
-import { Nav } from '../Header/Nav';
-import { COUNTRYOPTION } from '../Constants';
+import { json } from 'd3-request';
+import { queue } from 'd3-queue';
+import isEqual from 'lodash.isequal';
+import omit from 'lodash.omit';
+import uniqBy from 'lodash.uniqby';
+import meanBy from 'lodash.meanby';
+import { getYearsAndValues } from '../utils/getYearsAndValues';
 import { PrioritiesVizCard } from './PrioritiesVizCards';
+import { COUNTRYOPTION, DATASOURCELINK } from '../Constants';
+import { Nav } from '../Header/Nav';
+import { PageTitle } from '../Components/PageTitle';
+import { getStatus } from '../utils/getStatus';
 
 const RootEl = styled.div`
   width: 128rem;
@@ -77,6 +85,7 @@ export const Priorities = () => {
   const [selectedFile, setSelectedFile] = useState<any>(null);
   const [intervalId, setIntervalId] = useState<any>(0);
   const [progressValue, setProgressValue] = useState(0);
+  const [goalStatuses, setGoalStatuses] = useState<any>(undefined);
   const [error, setError] = useState<any>(null);
   const [data, setData] = useState<any>(null);
   useEffect(() => {
@@ -85,7 +94,7 @@ export const Priorities = () => {
       formData.append('file', selectedFile);
       axios({
         method: 'post',
-        url: 'https://undp.livedata.link/nlp/upload',
+        url: 'https://sdg-accelerator-api.azurewebsites.net/upload',
         data: formData,
         headers: { 'Content-Type': 'multipart/form-data' },
       })
@@ -118,6 +127,162 @@ export const Priorities = () => {
       setIntervalId(0);
     }
   }, [selectedFile, data, error]);
+  useEffect(() => {
+    queue()
+      .defer(json, `${DATASOURCELINK}/data/TimeSeriesData/${countrySelected}.json`)
+      .defer(json, `${DATASOURCELINK}/data/TimeSeriesToUse/${countrySelected}.json`)
+      .await((err: any, d: any, timeSeriesToUse: any) => {
+        if (err) throw err;
+        const filteredTimeseriesData:any = [];
+        d.forEach((el:any) => {
+          if (timeSeriesToUse.findIndex((el1: any) => isEqual(el1, omit(el, ['values', 'targetfor2030']))) !== -1 || el.series === '***') filteredTimeseriesData.push(el);
+        });
+        const filteredTimeseriesDataWithStatus = filteredTimeseriesData.map((element: any) => {
+          const values = uniqBy(element.values, 'year').filter((el: any) => el.value !== null);
+
+          const targetValue = element.targetfor2030 !== 0 ? element.targetfor2030 : null;
+          const yearsAndValues = getYearsAndValues(values as any);
+          const status = element.indicator === '8.1.1'
+            ? meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 2 ? 'On Track'
+              : meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 1.5 ? 'Fair progress but acceleration needed'
+                : meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 1 ? 'Limited or No Progress'
+                  : 'Deterioration'
+            : targetValue === null
+              ? undefined
+              : yearsAndValues === null
+                ? 'Insufficient Data'
+                : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type);
+          return { ...element, status };
+        });
+        const allIndicators = uniqBy(filteredTimeseriesDataWithStatus.filter((el: any) => el.status), 'indicator').map((el: any) => el.indicator);
+        const indicatorsStatus = allIndicators.map((indicator: string) => {
+          const filtered = filteredTimeseriesDataWithStatus.filter((el: any) => el.indicator === indicator && el.status && el.status !== 'Insufficient Data');
+          if (filtered.length === 0) {
+            return {
+              indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: undefined,
+            };
+          }
+          let total = 0;
+          filtered.forEach((f: any) => {
+            switch (f.status) {
+              case 'Target Achieved':
+                total += 1;
+                break;
+              case 'On Track':
+                total += 1;
+                break;
+              case 'Fair progress but acceleration needed':
+                total += 2;
+                break;
+              case 'Limited or No Progress':
+                total += 3;
+                break;
+              case 'Deterioration':
+                total += 4;
+                break;
+              default:
+              // eslint-disable-next-line no-console
+                console.log(f);
+                break;
+            }
+          });
+          if (total / filtered.length < 1.5) {
+            return {
+              indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: 'On Track',
+            };
+          }
+          if (total / filtered.length > 2.499) {
+            return {
+              indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: 'Identified Gap',
+            };
+          }
+          return {
+            indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: 'For Review',
+          };
+        });
+        const allTargets = uniqBy(indicatorsStatus.filter((el: any) => el.status), 'target').map((el: any) => el.target);
+        const targetStatus = allTargets.map((target: string) => {
+          const filtered = indicatorsStatus.filter((el: any) => el.target === target && el.status && el.status !== 'Insufficient Data');
+          if (filtered.length === 0) {
+            return {
+              target, goal: target.split('.')[0], status: undefined,
+            };
+          }
+          let total = 0;
+          filtered.forEach((f: any) => {
+            switch (f.status) {
+              case 'On Track':
+                total += 1;
+                break;
+              case 'Identified Gap':
+                total += 3;
+                break;
+              case 'For Review':
+                total += 2;
+                break;
+              default:
+              // eslint-disable-next-line no-console
+                console.log(f);
+                break;
+            }
+          });
+          if (Math.round(total / filtered.length) === 1) {
+            return {
+              target, goal: target.split('.')[0], status: 'On Track',
+            };
+          }
+          if (Math.round(total / filtered.length) === 2) {
+            return {
+              target, goal: target.split('.')[0], status: 'Identified Gap',
+            };
+          }
+          return {
+            target, goal: target.split('.')[0], status: 'For Review',
+          };
+        });
+        const allGoals = uniqBy(targetStatus.filter((el: any) => el.status), 'goal').map((el: any) => el.goal);
+        const goalStatus = allGoals.map((goal: string) => {
+          const filtered = targetStatus.filter((el: any) => el.goal === goal && el.status && el.status !== 'Insufficient Data');
+          if (filtered.length === 0) {
+            return {
+              goal, status: undefined,
+            };
+          }
+          let total = 0;
+          filtered.forEach((f: any) => {
+            switch (f.status) {
+              case 'On Track':
+                total += 1;
+                break;
+              case 'Identified Gap':
+                total += 3;
+                break;
+              case 'For Review':
+                total += 2;
+                break;
+              default:
+              // eslint-disable-next-line no-console
+                console.log(f);
+                break;
+            }
+          });
+          if (Math.round(total / filtered.length) === 1) {
+            return {
+              goal, status: 'On Track',
+            };
+          }
+          if (Math.round(total / filtered.length) === 3) {
+            return {
+              goal, status: 'Identified Gap',
+            };
+          }
+          return {
+            goal, status: 'For Review',
+          };
+        });
+        setGoalStatuses(goalStatus);
+      });
+  }, [countrySelected]);
 
   const handleFileSelect = (event: any) => {
     setData(null);
@@ -211,10 +376,10 @@ export const Priorities = () => {
               : null
           }
           {
-            selectedFile && !error ? (
+            selectedFile && goalStatuses && !error ? (
               <>
                 {
-                  data ? <PrioritiesVizCard data={data} /> : null
+                  data ? <PrioritiesVizCard data={data} statuses={goalStatuses} /> : null
                 }
               </>
             )

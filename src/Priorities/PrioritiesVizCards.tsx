@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { getSDGIconWOText } from '../utils/getSDGIconNoText';
 import { getSDGIconOnlyText } from '../utils/getSDGIconOnlyText';
-// import SDGGoalList from '../Data/SDGGoalList.json';
 
 interface Props {
   data: any;
+  statuses: any;
 }
 
 interface SDGCardProps {
@@ -20,36 +20,15 @@ const SDGCardEl = styled.div<SDGCardProps>`
   background-color: ${(props) => props.bgColor};
   color: #fff;
   width: calc(33.33% - 4rem);
-  margin: 2rem;
-  max-height: 50rem;
+  height: 42rem;
   overflow-y: auto;
+  cursor: pointer;
 `;
 
 const CardContainer = styled.div`
   display: flex;
+  gap: 2rem;
   flex-wrap: wrap;
-`;
-
-const PriorityDot = styled.div`
-  width: 1.6rem;
-  height: 1.6rem;
-  border-radius: 1.6rem;
-  background-color: #fff;
-  margin-right: 0.8rem;
-  margin-bottom: 0.8rem;
-`;
-
-const PriorityDotsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-const SubNote = styled.div`
-  font-size: 1.4rem;
-  font-style: italic;
-  color: #fff;
-  opacity: 0.7;
-  margin-top:0.8rem; 
 `;
 
 const HeadEl = styled.div`
@@ -57,14 +36,68 @@ const HeadEl = styled.div`
   margin-bottom: 1rem;
 `;
 
-export const PrioritiesVizCard = (props: Props) => {
-  const { data } = props;
-  const dataFormatted = sortBy(Object.keys(data), (d) => parseInt(d.split(' ')[1], 10)).map((d) => ({
-    priorityType: d,
-    priorities: data[d],
-  }));
-  const [selectedGoal, setSelectedGoal] = useState<string | null>(null);
+const TitleEl = styled.div`
+  font-size: 4.8rem;
+  font-weight: 700;
+  margin: 12rem 0 5rem 0;
+  text-align: center;
+`;
 
+interface MarginProps {
+  marginTop: string;
+  paddingBottom: string;
+}
+
+const StatusEl = styled.div<MarginProps>`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding-bottom: ${(props) => props.paddingBottom};
+  margin-top: ${(props) => props.marginTop};
+`;
+
+interface ColorProps {
+  fill: string;
+}
+
+const TagEl = styled.div<ColorProps>`
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  border-radius: 2rem;
+  color: ${(props) => (props.fill === 'On Track' ? 'var(--accent-green)' : props.fill === 'Identified Gap' ? 'var(--accent-red)' : props.fill === 'For Review' ? 'var(--accent-yellow)' : 'var(--black-550)')};
+`;
+
+const TagsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+`;
+
+const Tags = styled.div`
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  color: var(--black-700);
+`;
+
+const MoreEl = styled.div`
+  color: #fff;
+  font-size: 1.4rem;
+  font-style: italic;
+  cursor: pointer;
+`;
+
+export const PrioritiesVizCard = (props: Props) => {
+  const { data, statuses } = props;
+  const dataFormatted = sortBy(data, 'salience');
+  const [selectedGoal, setSelectedGoal] = useState<number | null>(null);
   const colorArray = [
     '#006EB5',
     '#e5243b',
@@ -87,37 +120,133 @@ export const PrioritiesVizCard = (props: Props) => {
   ];
   return (
     <>
+      <TitleEl>
+        High Priorities
+      </TitleEl>
       <CardContainer>
         {
-          dataFormatted.map((d, i) => (
-            <>
-              {
-                selectedGoal === d.priorityType ? (
-                  <SDGCardEl onClick={() => { setSelectedGoal(null); }} bgColor={colorArray[parseInt(d.priorityType.split(' ')[1], 10)]} key={i}>
-                    <HeadEl>
-                      Piorities for
-                      {' '}
-                      <span className='bold'>{d.priorityType}</span>
-                    </HeadEl>
-                    <ul>
-                      {
-                        d.priorities.map((el: string, ind: number) => <li key={ind}>{el}</li>)
-                      }
-                    </ul>
-                  </SDGCardEl>
-                )
-                  : (
-                    <SDGCardEl onClick={() => { setSelectedGoal(d.priorityType); }} bgColor={colorArray[parseInt(d.priorityType.split(' ')[1], 10)]} key={i}>
-                      {getSDGIconOnlyText(d.priorityType)}
-                      <PriorityDotsContainer>
+            dataFormatted.filter((d) => d.category === 'high').map((d, i) => (
+              <>
+                {
+                  selectedGoal === d.sdg ? (
+                    <SDGCardEl onClick={() => { setSelectedGoal(null); }} bgColor={colorArray[d.sdg - 1]} key={i}>
+                      <HeadEl>
+                        Key terms in the document for
+                        {' '}
+                        <span className='bold'>
+                          SDG
+                          {' '}
+                          {d.sdg}
+                        </span>
+                      </HeadEl>
+                      <TagsContainer>
                         {
-                          d.priorities.map((_el: string, ind: number) => <PriorityDot key={ind} />)
+                          d.features.map((el: string, ind: number) => <Tags key={ind}>{el}</Tags>)
                         }
-                      </PriorityDotsContainer>
-                      <SubNote>Click on the card to see the priorities</SubNote>
-                      {getSDGIconWOText(d.priorityType)}
+                      </TagsContainer>
+                    </SDGCardEl>
+                  ) : (
+                    <SDGCardEl onClick={() => { setSelectedGoal(d.sdg); }} bgColor={colorArray[d.sdg - 1]} key={i}>
+                      {getSDGIconOnlyText(`Goal ${d.sdg}`)}
+                      <StatusEl
+                        marginTop={d.sdg !== 16 && d.sdg !== 12 ? '-4rem' : '-1.5rem'}
+                        paddingBottom={d.sdg !== 16 && d.sdg !== 12 ? '3.7rem' : '1rem'}
+                      >
+                        <div>Current Status</div>
+                        <TagEl fill={statuses.findIndex((status: any) => status.goal === `${d.sdg}`) !== -1 ? statuses[statuses.findIndex((status: any) => status.goal === `${d.sdg}`)].status : 'Gap Unidentified'}>{statuses.findIndex((status: any) => status.goal === `${d.sdg}`) !== -1 ? statuses[statuses.findIndex((status: any) => status.goal === `${d.sdg}`)].status : 'Gap Unidentified'}</TagEl>
+                      </StatusEl>
+                      {getSDGIconWOText(`Goal ${d.sdg}`)}
+                      <MoreEl>Click on the card to see the related key terms</MoreEl>
                     </SDGCardEl>
                   )
+                }
+              </>
+            ))
+          }
+      </CardContainer>
+      <TitleEl>
+        Medium Priorities
+      </TitleEl>
+      <CardContainer>
+        {
+          dataFormatted.filter((d) => d.category === 'medium').map((d, i) => (
+            <>
+              {
+                selectedGoal === d.sdg ? (
+                  <SDGCardEl onClick={() => { setSelectedGoal(null); }} bgColor={colorArray[d.sdg - 1]} key={i}>
+                    <HeadEl>
+                      Key terms in the document for
+                      {' '}
+                      <span className='bold'>
+                        SDG
+                        {' '}
+                        {d.sdg}
+                      </span>
+                    </HeadEl>
+                    <TagsContainer>
+                      {
+                      d.features.map((el: string, ind: number) => <Tags key={ind}>{el}</Tags>)
+                    }
+                    </TagsContainer>
+                  </SDGCardEl>
+                ) : (
+                  <SDGCardEl onClick={() => { setSelectedGoal(d.sdg); }} bgColor={colorArray[d.sdg - 1]} key={i}>
+                    {getSDGIconOnlyText(`Goal ${d.sdg}`)}
+                    <StatusEl
+                      marginTop={d.sdg !== 16 && d.sdg !== 12 ? '-4rem' : '-1.5rem'}
+                      paddingBottom={d.sdg !== 16 && d.sdg !== 12 ? '3.7rem' : '1rem'}
+                    >
+                      <div>Current Status</div>
+                      <TagEl fill={statuses.findIndex((status: any) => status.goal === `${d.sdg}`) !== -1 ? statuses[statuses.findIndex((status: any) => status.goal === `${d.sdg}`)].status : 'Gap Unidentified'}>{statuses.findIndex((status: any) => status.goal === `${d.sdg}`) !== -1 ? statuses[statuses.findIndex((status: any) => status.goal === `${d.sdg}`)].status : 'Gap Unidentified'}</TagEl>
+                    </StatusEl>
+                    {getSDGIconWOText(`Goal ${d.sdg}`)}
+                    <MoreEl>Click on the card to see the related key terms</MoreEl>
+                  </SDGCardEl>
+                )
+              }
+            </>
+          ))
+        }
+      </CardContainer>
+      <TitleEl>
+        Low Priorities
+      </TitleEl>
+      <CardContainer>
+        {
+          dataFormatted.filter((d) => d.category === 'low').map((d, i) => (
+            <>
+              {
+                selectedGoal === d.sdg ? (
+                  <SDGCardEl onClick={() => { setSelectedGoal(null); }} bgColor={colorArray[d.sdg - 1]} key={i}>
+                    <HeadEl>
+                      Key terms in the document for
+                      {' '}
+                      <span className='bold'>
+                        SDG
+                        {' '}
+                        {d.sdg}
+                      </span>
+                    </HeadEl>
+                    <TagsContainer>
+                      {
+                        d.features.map((el: string, ind: number) => <Tags key={ind}>{el}</Tags>)
+                      }
+                    </TagsContainer>
+                  </SDGCardEl>
+                ) : (
+                  <SDGCardEl onClick={() => { setSelectedGoal(d.sdg); }} bgColor={colorArray[d.sdg - 1]} key={i}>
+                    {getSDGIconOnlyText(`Goal ${d.sdg}`)}
+                    <StatusEl
+                      marginTop={d.sdg !== 16 && d.sdg !== 12 ? '-4rem' : '-1.5rem'}
+                      paddingBottom={d.sdg !== 16 && d.sdg !== 12 ? '3.7rem' : '1rem'}
+                    >
+                      <div>Current Status</div>
+                      <TagEl fill={statuses.findIndex((status: any) => status.goal === `${d.sdg}`) !== -1 ? statuses[statuses.findIndex((status: any) => status.goal === `${d.sdg}`)].status : 'Gap Unidentified'}>{statuses.findIndex((status: any) => status.goal === `${d.sdg}`) !== -1 ? statuses[statuses.findIndex((status: any) => status.goal === `${d.sdg}`)].status : 'Gap Unidentified'}</TagEl>
+                    </StatusEl>
+                    {getSDGIconWOText(`Goal ${d.sdg}`)}
+                    <MoreEl>Click on the card to see the related key terms</MoreEl>
+                  </SDGCardEl>
+                )
               }
             </>
           ))

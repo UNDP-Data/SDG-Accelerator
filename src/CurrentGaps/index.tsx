@@ -21,16 +21,9 @@ import { getSDGIcon } from '../utils/getSDGIcon';
 import { COUNTRYOPTION, SDGGOALS, DATASOURCELINK } from '../Constants';
 import { Tag } from '../Components/Tag';
 import { getYearsAndValues } from '../utils/getYearsAndValues';
-import { getCAGR } from '../utils/getCAGR';
+import { getStatus } from '../utils/getStatus';
 
 const SDGList:SDGStatusListType[] = require('../Data/SDGGoalList.json');
-
-interface yearAndValueDataType {
-  baseYear: number;
-  baseValue: number;
-  finalYear: number;
-  finalValue: number;
-}
 
 const RootEl = styled.div`
   width: 128rem;
@@ -112,20 +105,6 @@ const ContainerEl = styled.div`
   padding: 2rem 2rem 0 2rem;
 
 `;
-
-const getStatus = (yearsAndValues: yearAndValueDataType, targetValue: number, type: string) => {
-  if (type === 'min') if (yearsAndValues.finalValue < targetValue) return 'Target Achieved';
-  if (type === 'max') if (yearsAndValues.finalValue > targetValue) return 'Target Achieved';
-  const CARGA = getCAGR(yearsAndValues.finalYear, yearsAndValues.baseYear, yearsAndValues.finalValue, yearsAndValues.baseValue);
-  const CARGT = getCAGR(2030, yearsAndValues.baseYear, targetValue, yearsAndValues.baseValue);
-  if (CARGA === null || CARGT === null) return 'Insufficient Data';
-  const CR = CARGA / CARGT;
-  if (Number.isNaN(CR)) return 'Insufficient Data';
-  if (CR >= 0.95) return 'On Track';
-  if (CR >= 0.5 && CR < 0.95) return 'Fair progress but acceleration needed';
-  if (CR >= -0.1 && CR < 0.5) return 'Limited or No Progress';
-  return 'Deterioration';
-};
 
 export const CurrentGaps = () => {
   const [showPopUp, setShowPopUp] = useState(false);
