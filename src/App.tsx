@@ -236,6 +236,53 @@ const GlobalStyle = createGlobalStyle`
       color: var(--primary-blue);
     }
   }
+
+  .undp-button:after {
+    transition: .2s ease;
+    background: url(https://design.undp.org/static/media/chevron-right-black.f618eac3.svg) no-repeat left center;
+    content: "";
+    height: 20px;
+    margin-left: 1.2rem;
+    width: 13px;
+  }
+
+  .undp-button:hover:after {
+    margin-left: 2rem;
+    margin-right: -0.8rem;
+  }
+
+  .ant-modal-wrap{
+    backdrop-filter: blur(18px);
+    background: rgba(247,247,247,.8);
+  }
+
+  .undp-modal .ant-modal-content {
+    padding: 2.4rem;
+    box-shadow: none;
+  }
+
+  .undp-modal .ant-modal-header {
+    display: none;
+  }
+
+  .undp-modal .ant-modal-footer {
+    display: none;
+  }
+
+  .ant-modal-close-x {
+    background: url(https://design.undp.org/static/media/times-circle.69b7dcd7.svg) no-repeat left center;
+    border: 0;
+    cursor: pointer;
+    font-size: 0;
+    height: 45px;    
+    margin-top: 2.8rem;
+    margin-right: 1.4rem;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.75rem;
+    width: 45px;
+    display: none;
+  }
 `;
 
 const App = () => (

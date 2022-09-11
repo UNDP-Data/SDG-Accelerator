@@ -1,10 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import styled from 'styled-components';
 import axios from 'axios';
-import { Progress } from 'antd';
+import { Modal, Progress, Spin } from 'antd';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-// import { PrioritiesViz } from './PrioritiesViz';
 import { json } from 'd3-request';
 import { queue } from 'd3-queue';
 import isEqual from 'lodash.isequal';
@@ -25,64 +24,68 @@ const RootEl = styled.div`
 `;
 
 const DescriptionEl = styled.div`
-  padding: 2rem 2rem 0 2rem;
-  background-color: var(--black-200);
   margin: 0 0 2rem 0;
 `;
 
-const FileAttachementEl = styled.div`
-  padding: 2rem 0;
-  font-size: 1.4rem;
-  line-height: 2rem;
-  color: var(--black-550);
-  font-style: italic;
-`;
-
-const FileAttacehmentLabel = styled.label`
-  background-color: #fff;
+const SubNote = styled.div`
+  font-size: 1.6rem;
+  line-height: 2.4rem;
   color: var(--black-700);
-  border-radius: 3px;
-  text-align: center;
-  font-style: normal;
-  font-size: 1.4rem;
-  font-weight: bold;
-  margin-top: 1rem;
-  padding: 1rem;
-  border: 1px dashed var(--black-550); 
-  width: 100%;
-  justify-content: center;
-  display: flex;
-  cursor: pointer;
-  align-items: center;
+  margin-top: 1.6rem;
 `;
 
 const FileAttacehmentButton = styled.input`
   display: none;
 `;
 
-const HR = styled.hr`
-  margin: 2rem 0 0 0;
+const FileSelectedBannerEl = styled.div`
+  width: 100%;
+  font-size: 3.2rem;
+  padding: 2rem;
+  margin: 0;
+  color: var(--black-700);
 `;
 
-interface FileSelectedBannerElProps {
-  backgroundColor: string;
-  borderColor: string;
-}
+const SummaryEl = styled.div`
+  padding: 4.8rem;
+  background-color: var(--black-200);
+  font-size: 3rem;
+  line-height: 4rem;
+  margin-bottom: 2rem;
+`;
 
-const FileSelectedBannerEl = styled.div<FileSelectedBannerElProps>`
-  width: 100%;
-  font-size: 1.6rem;
-  padding: 2rem;
-  margin: 0 0 2rem 0;
-  background-color: ${(props) => props.backgroundColor};
+const ButtonEl = styled.div`
   color: var(--black-700);
-  border: ${(props) => `1px solid  ${props.borderColor}`};
+  cursor: pointer;
+  justify-content: center;
+  padding: 0;
+  align-items: center;
+  display: flex;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+  line-height: 1;
+  text-transform: uppercase;
+  width: fit-content;
+  margin-top: 4.8rem;
+  &:hover{
+    animation: lineLoop-animation 2s linear infinite;
+  }
+  &:after {
+    transition: .2s ease;
+    background: url(https://design.undp.org/icons/chevron-right.svg) no-repeat left center;
+    content: "";
+    height: 20px;
+    margin-left: 0.75rem;
+    width: 13px;
+  }
 `;
 
 export const Priorities = () => {
   const countrySelected = useParams().country || 'ZAF';
   const countryFullName = COUNTRYOPTION[COUNTRYOPTION.findIndex((d) => d.code === countrySelected)].countryName;
   const [selectedFile, setSelectedFile] = useState<any>(null);
+  const [open, setOpen] = useState(false);
   const [intervalId, setIntervalId] = useState<any>(0);
   const [progressValue, setProgressValue] = useState(0);
   const [goalStatuses, setGoalStatuses] = useState<any>(undefined);
@@ -100,6 +103,7 @@ export const Priorities = () => {
       })
         .then((response: any) => {
           setData(response.data);
+          setOpen(false);
         })
         .catch((err) => {
           setError(err.message);
@@ -108,7 +112,7 @@ export const Priorities = () => {
   }, [selectedFile]);
 
   useEffect(() => {
-    if (selectedFile && !data && !error) {
+    if (selectedFile && open && !error) {
       let currentProgress = 0;
       let step = 0.05;
       const newIntervalId = setInterval(() => {
@@ -119,19 +123,21 @@ export const Priorities = () => {
         } else if (progress >= 90) {
           step = 0.01;
         }
-        setProgressValue(Math.round(progress));
+        setProgressValue(parseFloat(progress.toFixed(1)));
       }, 100);
       setIntervalId(newIntervalId);
     } else if (intervalId) {
       clearInterval(intervalId);
       setIntervalId(0);
     }
-  }, [selectedFile, data, error]);
+  }, [selectedFile, open, error]);
   useEffect(() => {
+    setSelectedFile(null);
     queue()
       .defer(json, `${DATASOURCELINK}/data/TimeSeriesData/${countrySelected}.json`)
       .defer(json, `${DATASOURCELINK}/data/TimeSeriesToUse/${countrySelected}.json`)
-      .await((err: any, d: any, timeSeriesToUse: any) => {
+      .defer(json, `${DATASOURCELINK}/data/PrioritiesData/${countrySelected}/data.json`)
+      .await((err: any, d: any, timeSeriesToUse: any, prioritiesData: any) => {
         if (err) throw err;
         const filteredTimeseriesData:any = [];
         d.forEach((el:any) => {
@@ -281,12 +287,14 @@ export const Priorities = () => {
           };
         });
         setGoalStatuses(goalStatus);
+        setData(prioritiesData);
       });
   }, [countrySelected]);
 
   const handleFileSelect = (event: any) => {
-    setData(null);
     setError(null);
+    setOpen(true);
+    setProgressValue(0);
     setSelectedFile(event.target.files[0]);
   };
   return (
@@ -301,90 +309,54 @@ export const Priorities = () => {
         />
         <RootEl>
           <DescriptionEl>
-            <div>
-              Determine priorities for
+            <SummaryEl>
+              Showing priorities for
               {' '}
               <span className='bold'>{countryFullName}</span>
               {' '}
-              based on analysis of relevant documentation. Acceleration Opportunities represent areas which require urgent national attention and action based on SDG gaps and importance level prescribed by government and relevant national actors.
-            </div>
-            <>
-              <HR />
-              <FileAttachementEl>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src='https://raw.githubusercontent.com/UNDP-Data/SDG-Accelerator/main/public/img/vnr_thumbnail.png' alt='Access all data info' width='25%' style={{ maxWidth: '16rem', marginRight: '2rem' }} />
-                  <div>
-                    Complement the existing database of national planning documents and voluntary national reviews by uploading a relevant national resource such as a policy brief, assessment, development intervention proposal, etc. to analyse and identify Acceleration Opportunities
-                    <br />
-                    <br />
-                    The voluntary national reviews (VNRs) are regular and inclusive reviews conducted by member states on progress at the national and sub-national levels, which are country-led and country-driven. The VNRs aim to facilitate the sharing of experiences, including successes, challenges and lessons learned, with a view to accelerating the implementation of the 2030 Agenda.
-                    <br />
-                    <br />
-                    National development plans (NDP) aim to demonstrate national aspirations and, at times, craft a new vision for economic transformation. These plans are produced at regular intervals and are usually led by Finance, Economic or National Planning related ministries.
-                  </div>
-                </div>
-                <div>
-                  <FileAttacehmentLabel htmlFor='file-upload' className='custom-file-upload'>
-                    Click to Attach a File
-                  </FileAttacehmentLabel>
-                  <FileAttacehmentButton id='file-upload' type='file' onChange={handleFileSelect} />
-                </div>
-              </FileAttachementEl>
-            </>
+              based on
+              {' '}
+              {
+                selectedFile ? <span className='bold'>{selectedFile.name}</span>
+                  : <a className='bold italics' href={`${DATASOURCELINK}/data/PrioritiesData/${countrySelected}/file.pdf`} target='_blank' rel='noreferrer'>most recently available VNRs</a>
+              }
+              <SubNote>
+                Acceleration Opportunities represent areas which require urgent national attention and action based on SDG gaps and importance level prescribed by government and relevant national actors.
+              </SubNote>
+
+              <label htmlFor='file-upload' className='custom-file-upload'>
+                <ButtonEl className='undp-button'>Upload and analyze another document</ButtonEl>
+              </label>
+              <FileAttacehmentButton id='file-upload' type='file' onChange={handleFileSelect} />
+            </SummaryEl>
+            {
+              !error ? goalStatuses && data ? <PrioritiesVizCard data={data} statuses={goalStatuses} /> : <Spin /> : null
+            }
           </DescriptionEl>
-          {
-            selectedFile
-              ? !data
-                ? error ? (
-                  <FileSelectedBannerEl backgroundColor='var(--accent-red-light)' borderColor='var(--accent-red)'>
-                    Error Processing
-                    {' '}
-                    <span className='bold'>{selectedFile.name}</span>
-                    :
-                    {' '}
-                    {error}
-                    {' '}
-                    (please check the file is pdf format and try again)
-                  </FileSelectedBannerEl>
-                )
-                  : (
-                    <FileSelectedBannerEl backgroundColor='var(--accent-yellow-light)' borderColor='var(--accent-yellow)'>
-                      <div>
-                        Processing
-                        {' '}
-                        <span className='bold'>{selectedFile.name}</span>
-                      </div>
-                      <Progress
-                        strokeColor={{
-                          from: '#108ee9',
-                          to: '#87d068',
-                        }}
-                        percent={progressValue}
-                        status='active'
-                      />
-                    </FileSelectedBannerEl>
-                  ) : (
-                    <FileSelectedBannerEl backgroundColor='var(--accent-green-light)' borderColor='var(--accent-green)'>
-                      Showing results for
-                      {' '}
-                      <span className='bold'>{selectedFile.name}</span>
-                      .
-                      {' '}
-                      <span className='italics'>Click on the goal to see the priorities</span>
-                    </FileSelectedBannerEl>
-                )
-              : null
-          }
-          {
-            selectedFile && goalStatuses && !error ? (
-              <>
-                {
-                  data ? <PrioritiesVizCard data={data} statuses={goalStatuses} /> : null
-                }
-              </>
-            )
-              : null
-          }
+          <Modal
+            title='Basic Modal'
+            visible={open}
+            width='75%'
+            onOk={() => { setOpen(true); }}
+            onCancel={() => setOpen(true)}
+            className='undp-modal'
+          >
+            <FileSelectedBannerEl>
+              <div>
+                Processing
+                {' '}
+                <span className='bold'>{selectedFile?.name}</span>
+              </div>
+              <Progress
+                strokeColor={{
+                  from: '#108ee9',
+                  to: '#87d068',
+                }}
+                percent={progressValue}
+                status='active'
+              />
+            </FileSelectedBannerEl>
+          </Modal>
         </RootEl>
       </div>
     </>

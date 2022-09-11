@@ -119,7 +119,8 @@ export const CurrentGaps = () => {
   const countryFullName = COUNTRYOPTION[COUNTRYOPTION.findIndex((d) => d.code === countrySelected)].countryName;
 
   useEffect(() => {
-    setStatuses(undefined); queue()
+    setStatuses(undefined);
+    queue()
       .defer(json, `${DATASOURCELINK}/data/TimeSeriesData/${countrySelected}.json`)
       .defer(json, `${DATASOURCELINK}/data/TimeSeriesToUse/${countrySelected}.json`)
       .await((err: any, d: any, timeSeriesToUse: any) => {
