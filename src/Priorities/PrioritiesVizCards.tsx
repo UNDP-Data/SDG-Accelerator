@@ -15,14 +15,12 @@ interface SDGCardProps {
 }
 
 const NoteEl = styled.div`
-  font-size: 1.6rem;
-  font-weight: bold;
+  font-size: 2rem;
   width: 100%;
   text-align: center;
-  background-color: var(--black-100);
-  border: 1px solid var(--black-550);
+  background-color: var(--black-200);
   color: var(--black-700);
-  padding: 1rem;
+  padding: 4.8rem;
   border-radius: 4px;
 `;
 
@@ -144,47 +142,48 @@ export const PrioritiesVizCard = (props: Props) => {
       </FirstTitleEl>
       <CardContainer>
         {
-            dataFormatted.filter((d) => d.category === 'high').map((d, i) => (
-              selectedGoal === d.sdg ? (
-                <SDGCardEl onClick={() => { setSelectedGoal(null); }} bgColor={colorArray[d.sdg - 1]} key={i}>
-                  <HeadEl>
-                    Key terms in the document for
+          dataFormatted.filter((d) => d.category === 'high').length > 0 ? dataFormatted.filter((d) => d.category === 'high').map((d, i) => (
+            selectedGoal === d.sdg ? (
+              <SDGCardEl onClick={() => { setSelectedGoal(null); }} bgColor={colorArray[d.sdg - 1]} key={i}>
+                <HeadEl>
+                  Key terms in the document for
+                  {' '}
+                  <span className='bold'>
+                    SDG
                     {' '}
-                    <span className='bold'>
-                      SDG
-                      {' '}
-                      {d.sdg}
-                    </span>
-                  </HeadEl>
-                  <TagsContainer>
-                    {
-                          d.features.map((el: string, ind: number) => <Tags key={ind}>{el}</Tags>)
-                        }
-                  </TagsContainer>
-                </SDGCardEl>
-              ) : (
-                <SDGCardEl onClick={() => { setSelectedGoal(d.sdg); }} bgColor={colorArray[d.sdg - 1]} key={i}>
-                  {getSDGIconOnlyText(`Goal ${d.sdg}`)}
-                  <StatusEl
-                    marginTop={d.sdg !== 16 && d.sdg !== 12 ? '-4rem' : '-1.5rem'}
-                    paddingBottom={d.sdg !== 16 && d.sdg !== 12 ? '3.7rem' : '1rem'}
-                  >
-                    <div>Current Status</div>
-                    <TagEl fill={statuses.findIndex((status: any) => status.goal === `${d.sdg}`) !== -1 ? statuses[statuses.findIndex((status: any) => status.goal === `${d.sdg}`)].status : 'Gap Unidentified'}>{statuses.findIndex((status: any) => status.goal === `${d.sdg}`) !== -1 ? statuses[statuses.findIndex((status: any) => status.goal === `${d.sdg}`)].status : 'Gap Unidentified'}</TagEl>
-                  </StatusEl>
-                  {getSDGIconWOText(`Goal ${d.sdg}`)}
-                  <MoreEl>Click on the card to see the related key terms</MoreEl>
-                </SDGCardEl>
-              )
-            ))
-          }
+                    {d.sdg}
+                  </span>
+                </HeadEl>
+                <TagsContainer>
+                  {
+                        d.features.map((el: string, ind: number) => <Tags key={ind}>{el}</Tags>)
+                      }
+                </TagsContainer>
+              </SDGCardEl>
+            ) : (
+              <SDGCardEl onClick={() => { setSelectedGoal(d.sdg); }} bgColor={colorArray[d.sdg - 1]} key={i}>
+                {getSDGIconOnlyText(`Goal ${d.sdg}`)}
+                <StatusEl
+                  marginTop={d.sdg !== 16 && d.sdg !== 12 ? '-4rem' : '-1.5rem'}
+                  paddingBottom={d.sdg !== 16 && d.sdg !== 12 ? '3.7rem' : '1rem'}
+                >
+                  <div>Current Status</div>
+                  <TagEl fill={statuses.findIndex((status: any) => status.goal === `${d.sdg}`) !== -1 ? statuses[statuses.findIndex((status: any) => status.goal === `${d.sdg}`)].status : 'Gap Unidentified'}>{statuses.findIndex((status: any) => status.goal === `${d.sdg}`) !== -1 ? statuses[statuses.findIndex((status: any) => status.goal === `${d.sdg}`)].status : 'Gap Unidentified'}</TagEl>
+                </StatusEl>
+                {getSDGIconWOText(`Goal ${d.sdg}`)}
+                <MoreEl>Click on the card to see the related key terms</MoreEl>
+              </SDGCardEl>
+            )
+          ))
+            : <NoteEl>No SDGs mentioned in the document are high priority</NoteEl>
+        }
       </CardContainer>
       <TitleEl>
         Medium Priorities
       </TitleEl>
       <CardContainer>
         {
-          dataFormatted.filter((d) => d.category === 'medium').map((d, i) => (selectedGoal === d.sdg ? (
+          dataFormatted.filter((d) => d.category === 'medium').length > 0 ? dataFormatted.filter((d) => d.category === 'medium').map((d, i) => (selectedGoal === d.sdg ? (
             <SDGCardEl onClick={() => { setSelectedGoal(null); }} bgColor={colorArray[d.sdg - 1]} key={i}>
               <HeadEl>
                 Key terms in the document for
@@ -215,6 +214,7 @@ export const PrioritiesVizCard = (props: Props) => {
               <MoreEl>Click on the card to see the related key terms</MoreEl>
             </SDGCardEl>
           )))
+            : <NoteEl>No SDGs mentioned in the document are medium priority</NoteEl>
         }
       </CardContainer>
       <TitleEl>
@@ -222,7 +222,7 @@ export const PrioritiesVizCard = (props: Props) => {
       </TitleEl>
       <CardContainer>
         {
-          dataFormatted.filter((d) => d.category === 'low').map((d, i) => (selectedGoal === d.sdg ? (
+          dataFormatted.filter((d) => d.category === 'low').length > 0 ? dataFormatted.filter((d) => d.category === 'low').map((d, i) => (selectedGoal === d.sdg ? (
             <SDGCardEl onClick={() => { setSelectedGoal(null); }} bgColor={colorArray[d.sdg - 1]} key={i}>
               <HeadEl>
                 Key terms in the document for
@@ -253,6 +253,7 @@ export const PrioritiesVizCard = (props: Props) => {
               <MoreEl>Click on the card to see the related key terms</MoreEl>
             </SDGCardEl>
           )))
+            : <NoteEl>No SDGs mentioned in the document are low priority</NoteEl>
         }
       </CardContainer>
       <TitleEl>

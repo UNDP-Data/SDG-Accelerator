@@ -1,7 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import styled from 'styled-components';
 import axios from 'axios';
-import { Modal, Progress, Spin } from 'antd';
+import {
+  Modal, Progress, Result, Spin,
+} from 'antd';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { json } from 'd3-request';
@@ -102,11 +104,13 @@ export const Priorities = () => {
         headers: { 'Content-Type': 'multipart/form-data' },
       })
         .then((response: any) => {
-          setData(response.data);
+          if (typeof response.data === 'string') setError('PDF File Required');
+          else setData(response.data);
           setOpen(false);
         })
         .catch((err) => {
           setError(err.message);
+          setOpen(false);
         });
     }
   }, [selectedFile]);
@@ -327,10 +331,22 @@ export const Priorities = () => {
               <label htmlFor='file-upload' className='custom-file-upload'>
                 <ButtonEl className='undp-button'>Upload and analyze another document</ButtonEl>
               </label>
-              <FileAttacehmentButton id='file-upload' type='file' onChange={handleFileSelect} />
+              <FileAttacehmentButton id='file-upload' accept='application/pdf' type='file' onChange={handleFileSelect} />
             </SummaryEl>
             {
-              !error ? goalStatuses && data ? <PrioritiesVizCard data={data} statuses={goalStatuses} /> : <Spin /> : null
+              !error ? goalStatuses && data ? <PrioritiesVizCard data={data} statuses={goalStatuses} />
+                : (
+                  <RootEl>
+                    <Spin size='large' />
+                  </RootEl>
+                )
+                : (
+                  <Result
+                    status={error === 'PDF File Required' ? 'error' : '500'}
+                    title='Analysis Failed'
+                    subTitle={error === 'PDF File Required' ? 'Please upload a PDF file, we are unable to analyze any other file formats' : 'Sorry, something went wrong. Please try again with a different document or after some time.'}
+                  />
+                )
             }
           </DescriptionEl>
           <Modal

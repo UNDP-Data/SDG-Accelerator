@@ -57,11 +57,11 @@ const H2 = styled.h2`
 `;
 
 const SummaryEl = styled.div`
-  padding: 2rem;
-  background-color: var(--blue-bg);
-  border: 1px solid var(--primary-blue);
-  border-radius: 2px;
-  font-size: 2rem;
+  padding: 4.8rem;
+  background-color: var(--black-200);
+  font-size: 3rem;
+  line-height: 4rem;
+  margin-bottom: 2rem;
 `;
 
 const FlexDiv = styled.div`
@@ -314,14 +314,20 @@ export const CurrentGaps = () => {
                 <span className='bold'>{countryFullName}</span>
                 , out of 17 SDG goals,
                 {' '}
-                <span className='bold'>
+                <span style={{ color: 'var(--accent-green)' }} className='bold'>
                   {goalStatuses.filter((d: any) => d.status === 'On Track').length}
                   {' '}
                   are On Track,
+                </span>
+                <span style={{ color: 'var(--accent-yellow)' }} className='bold'>
                   {' '}
                   {goalStatuses.filter((d: any) => d.status === 'Identified Gap').length}
                   {' '}
-                  are Identified Gaps and,
+                  are Identified Gaps
+                </span>
+                {' '}
+                and,
+                <span style={{ color: 'var(--accent-red)' }} className='bold'>
                   {' '}
                   {goalStatuses.filter((d: any) => d.status === 'For Review').length}
                   {' '}
