@@ -138,7 +138,9 @@ export const PrioritiesVizCard = (props: Props) => {
   return (
     <>
       <FirstTitleEl>
-        High Priorities
+        High Priorities (
+        {dataFormatted.filter((d) => d.category === 'high').length}
+        )
       </FirstTitleEl>
       <CardContainer>
         {
@@ -179,7 +181,9 @@ export const PrioritiesVizCard = (props: Props) => {
         }
       </CardContainer>
       <TitleEl>
-        Medium Priorities
+        Medium Priorities (
+        {dataFormatted.filter((d) => d.category === 'medium').length}
+        )
       </TitleEl>
       <CardContainer>
         {
@@ -196,8 +200,8 @@ export const PrioritiesVizCard = (props: Props) => {
               </HeadEl>
               <TagsContainer>
                 {
-                      d.features.map((el: string, ind: number) => <Tags key={ind}>{el}</Tags>)
-                    }
+                  d.features.map((el: string, ind: number) => <Tags key={ind}>{el}</Tags>)
+                }
               </TagsContainer>
             </SDGCardEl>
           ) : (
@@ -218,7 +222,9 @@ export const PrioritiesVizCard = (props: Props) => {
         }
       </CardContainer>
       <TitleEl>
-        Low Priorities
+        Low Priorities (
+        {dataFormatted.filter((d) => d.category === 'low').length}
+        )
       </TitleEl>
       <CardContainer>
         {
@@ -257,7 +263,9 @@ export const PrioritiesVizCard = (props: Props) => {
         }
       </CardContainer>
       <TitleEl>
-        No Mention
+        Not Covered (
+        {dataNoMention.length}
+        )
       </TitleEl>
       <CardContainer>
         {
@@ -273,7 +281,7 @@ export const PrioritiesVizCard = (props: Props) => {
               </StatusEl>
               {getSDGIconWOText(`Goal ${d.sdg}`)}
             </SDGCardEl>
-          )) : <NoteEl>All SDGs mentioned in the document</NoteEl>
+          )) : <NoteEl>All SDGs are covered in the document</NoteEl>
         }
       </CardContainer>
     </>

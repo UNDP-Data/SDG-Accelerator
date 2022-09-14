@@ -2,9 +2,9 @@
 import styled from 'styled-components';
 import axios from 'axios';
 import {
-  Modal, Progress, Result, Spin,
+  Modal, Progress, Radio, Result, Spin,
 } from 'antd';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { json } from 'd3-request';
 import { queue } from 'd3-queue';
@@ -14,7 +14,7 @@ import uniqBy from 'lodash.uniqby';
 import meanBy from 'lodash.meanby';
 import { getYearsAndValues } from '../utils/getYearsAndValues';
 import { PrioritiesVizCard } from './PrioritiesVizCards';
-import { COUNTRYOPTION, DATASOURCELINK } from '../Constants';
+import { COUNTRYOPTION, DATASOURCELINK, COUNTRY_VNR_YEAR } from '../Constants';
 import { Nav } from '../Header/Nav';
 import { PageTitle } from '../Components/PageTitle';
 import { getStatus } from '../utils/getStatus';
@@ -83,20 +83,103 @@ const ButtonEl = styled.div`
   }
 `;
 
+const PrimaryButtonEl = styled.div`
+  color: #fff;
+  cursor: pointer;
+  justify-content: center;
+  padding: 2.4rem;
+  align-items: center;
+  display: flex;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+  line-height: 1;
+  text-transform: uppercase;
+  width: fit-content;
+  margin-top: 2.4rem;
+  background-color: #d12800;
+  &:hover{
+    animation: lineLoop-animation 2s linear infinite;
+    background-color: #ee402d;
+  }
+  &:after {
+    transition: .2s ease;
+    background: url(https://design.undp.org/static/media/chevron-right-black.f618eac3.svg) no-repeat left center;
+    content: "";
+    height: 20px;
+    margin-left: 0.75rem;
+    width: 13px;
+  }
+`;
+
+const RadioEl = styled.div`
+  font-size: 1.6rem;
+  margin: 1.6rem 0;
+`;
+
+const ModalHeading = styled.div`
+  font-size: 2.5rem;
+  margin-bottom: 1.6rem;
+  margin-top: 0;
+`;
+
+const RadioContainer = styled.div`
+  display: flex;
+  gap: 4rem;
+  margin-top: 2rem;
+`;
+
+const HR = styled.hr`
+  border: 1px solid #000;
+  margin: 1rem 0;
+`;
+
+const UploadEl = styled.div`
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+`;
+
+const SelectedEl = styled.div`
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-top: 2.4rem;
+`;
+
+const granularityOptions = [
+  { label: 'Paragraph (recommended)', value: 'paragraph' },
+  { label: 'Sentence', value: 'sentence' },
+];
+const modelOptions = [
+  { label: 'Multi-Label (recommended)', value: 'multilabel' },
+  { label: 'Multi-Class', value: 'multiclass' },
+];
+
 export const Priorities = () => {
   const countrySelected = useParams().country || 'ZAF';
+  const fileInputRef = useRef<any>(null);
   const countryFullName = COUNTRYOPTION[COUNTRYOPTION.findIndex((d) => d.code === countrySelected)].countryName;
   const [selectedFile, setSelectedFile] = useState<any>(null);
-  const [open, setOpen] = useState(false);
+  const [selectedFileTemp, setSelectedFileTemp] = useState<any>(null);
+  const [selectedFileName, setSelectedFileName] = useState<string | null>(null);
+  const [selectedFileTempName, setSelectedFileTempName] = useState<string | null>(null);
+  const [openAnalyzeModal, setOpenAnalyzeModal] = useState(false);
+  const [openUploadModal, setOpenUploadModal] = useState(false);
   const [intervalId, setIntervalId] = useState<any>(0);
   const [progressValue, setProgressValue] = useState(0);
   const [goalStatuses, setGoalStatuses] = useState<any>(undefined);
   const [error, setError] = useState<any>(null);
   const [data, setData] = useState<any>(null);
+  const [selectedModel, setSelectedModel] = useState<'multiclass' | 'multilabel'>('multilabel');
+  const [selectedGranularity, setSelectedGranularity] = useState<'sentence' | 'paragraph'>('paragraph');
   useEffect(() => {
     if (selectedFile) {
+      setProgressValue(0);
+      setError(null);
       const formData = new FormData();
       formData.append('file', selectedFile);
+      formData.append('model', selectedModel);
+      formData.append('granularity', selectedGranularity);
       axios({
         method: 'post',
         url: 'https://sdg-accelerator-api.azurewebsites.net/upload',
@@ -106,17 +189,17 @@ export const Priorities = () => {
         .then((response: any) => {
           if (typeof response.data === 'string') setError('PDF File Required');
           else setData(response.data);
-          setOpen(false);
+          setOpenAnalyzeModal(false);
         })
         .catch((err) => {
           setError(err.message);
-          setOpen(false);
+          setOpenAnalyzeModal(false);
         });
     }
   }, [selectedFile]);
 
   useEffect(() => {
-    if (selectedFile && open && !error) {
+    if (selectedFile && openAnalyzeModal && !error) {
       let currentProgress = 0;
       let step = 0.05;
       const newIntervalId = setInterval(() => {
@@ -134,14 +217,17 @@ export const Priorities = () => {
       clearInterval(intervalId);
       setIntervalId(0);
     }
-  }, [selectedFile, open, error]);
+  }, [selectedFile, openAnalyzeModal, error]);
   useEffect(() => {
     setSelectedFile(null);
+    setSelectedFileTemp(null);
+    setSelectedFileName(null);
+    setSelectedFileTempName(null);
+    setData(null);
     queue()
       .defer(json, `${DATASOURCELINK}/data/TimeSeriesData/${countrySelected}.json`)
       .defer(json, `${DATASOURCELINK}/data/TimeSeriesToUse/${countrySelected}.json`)
-      .defer(json, `${DATASOURCELINK}/data/PrioritiesData/${countrySelected}/data.json`)
-      .await((err: any, d: any, timeSeriesToUse: any, prioritiesData: any) => {
+      .await((err: any, d: any, timeSeriesToUse: any) => {
         if (err) throw err;
         const filteredTimeseriesData:any = [];
         d.forEach((el:any) => {
@@ -291,15 +377,17 @@ export const Priorities = () => {
           };
         });
         setGoalStatuses(goalStatus);
-        setData(prioritiesData);
+        axios.get(`https://sdg-accelerator-api.azurewebsites.net/vnrs/${countrySelected.toLowerCase()}/${COUNTRY_VNR_YEAR[COUNTRY_VNR_YEAR.findIndex((c) => c.countryCode === countrySelected)].year}/multiclass/sentence`).then((res) => {
+          setData(res.data);
+        });
       });
   }, [countrySelected]);
 
   const handleFileSelect = (event: any) => {
-    setError(null);
-    setOpen(true);
-    setProgressValue(0);
-    setSelectedFile(event.target.files[0]);
+    if (event.target.files) {
+      setSelectedFileTemp(event.target.files[0]);
+      setSelectedFileTempName(event.target.files[0].name);
+    }
   };
   return (
     <>
@@ -321,17 +409,21 @@ export const Priorities = () => {
               based on
               {' '}
               {
-                selectedFile ? <span className='bold'>{selectedFile.name}</span>
-                  : <a className='bold italics' href={`${DATASOURCELINK}/data/PrioritiesData/${countrySelected}/file.pdf`} target='_blank' rel='noreferrer'>most recently available VNRs</a>
+                selectedFileName ? <span className='bold italics'>{selectedFileName}</span>
+                  : (
+                    <span className='bold italics'>
+                      {COUNTRY_VNR_YEAR[COUNTRY_VNR_YEAR.findIndex((c) => c.countryCode === countrySelected)].year}
+                      {' '}
+                      VNR
+                    </span>
+                  )
               }
               <SubNote>
                 Acceleration Opportunities represent areas which require urgent national attention and action based on SDG gaps and importance level prescribed by government and relevant national actors.
               </SubNote>
-
-              <label htmlFor='file-upload' className='custom-file-upload'>
-                <ButtonEl className='undp-button'>Upload and analyze another document</ButtonEl>
-              </label>
-              <FileAttacehmentButton id='file-upload' accept='application/pdf' type='file' onChange={handleFileSelect} />
+              {
+                data ? <ButtonEl onClick={() => { setOpenUploadModal(true); setSelectedFile(null); }} className='undp-button'>Upload and analyze another document</ButtonEl> : null
+              }
             </SummaryEl>
             {
               !error ? goalStatuses && data ? <PrioritiesVizCard data={data} statuses={goalStatuses} />
@@ -350,11 +442,67 @@ export const Priorities = () => {
             }
           </DescriptionEl>
           <Modal
-            title='Basic Modal'
-            visible={open}
+            title=''
+            visible={openUploadModal}
             width='75%'
-            onOk={() => { setOpen(true); }}
-            onCancel={() => setOpen(true)}
+            onOk={() => {
+              setOpenUploadModal(false);
+              setSelectedFileTemp(null);
+              setSelectedFileTempName(null);
+              if (fileInputRef.current) { fileInputRef.current.value = null; }
+            }}
+            onCancel={() => {
+              setOpenUploadModal(false);
+              setSelectedFileTemp(null);
+              setSelectedFileTempName(null);
+              if (fileInputRef.current) { fileInputRef.current.value = null; }
+            }}
+            className='undp-modal'
+          >
+            <ModalHeading>Upload and Analyze a document</ModalHeading>
+            <UploadEl>
+              <label htmlFor='file-upload' className='custom-file-upload'>
+                <PrimaryButtonEl>{selectedFileTempName ? 'Upload another document' : 'upload a document'}</PrimaryButtonEl>
+              </label>
+              {
+                selectedFileTempName ? <SelectedEl>{`Selected ${selectedFileTempName}`}</SelectedEl> : null
+              }
+              <FileAttacehmentButton ref={fileInputRef} id='file-upload' accept='application/pdf' type='file' onChange={handleFileSelect} />
+            </UploadEl>
+            <RadioContainer>
+              <RadioEl>
+                <div className='bold'>
+                  Choose Granularity
+                </div>
+                <Radio.Group options={granularityOptions} onChange={(e) => { setSelectedGranularity(e.target.value); }} value={selectedGranularity} />
+              </RadioEl>
+              <RadioEl>
+                <div className='bold'>
+                  Choose Model
+                </div>
+                <Radio.Group options={modelOptions} onChange={(e) => { setSelectedModel(e.target.value); }} value={selectedModel} />
+              </RadioEl>
+            </RadioContainer>
+            <HR />
+            <PrimaryButtonEl
+              onClick={() => {
+                setSelectedFileName(selectedFileTempName);
+                setSelectedFile(selectedFileTemp);
+                setSelectedFileTemp(null);
+                setSelectedFileTempName(null);
+                setOpenAnalyzeModal(true);
+                setOpenUploadModal(false);
+              }}
+            >
+              Analyze document
+            </PrimaryButtonEl>
+          </Modal>
+          <Modal
+            title=''
+            visible={openAnalyzeModal}
+            width='75%'
+            onOk={() => { setOpenAnalyzeModal(true); }}
+            onCancel={() => setOpenAnalyzeModal(true)}
             className='undp-modal'
           >
             <FileSelectedBannerEl>
@@ -362,6 +510,8 @@ export const Priorities = () => {
                 Processing
                 {' '}
                 <span className='bold'>{selectedFile?.name}</span>
+                {' '}
+                <span className='italics'>(this can take a few minutes)</span>
               </div>
               <Progress
                 strokeColor={{

@@ -226,4 +226,32 @@ export const SCENARIOINDICATORBASEDONSDG = [
     ],
   },
 ];
+
 export const DATASOURCELINK = process.env.NODE_ENV === 'production' ? 'https://data.undp.org/diagnostic-simulator' : '../..';
+
+export const COUNTRY_VNR_YEAR = [
+  {
+    countryCode: 'IDN',
+    year: 2021,
+  },
+  {
+    countryCode: 'IRQ',
+    year: 2021,
+  },
+  {
+    countryCode: 'MDA',
+    year: 2020,
+  },
+  {
+    countryCode: 'NAM',
+    year: 2021,
+  },
+  {
+    countryCode: 'PER',
+    year: 2017,
+  },
+  {
+    countryCode: 'ZAF',
+    year: 2019,
+  },
+];
