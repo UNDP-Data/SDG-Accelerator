@@ -32,6 +32,40 @@ export const InfoIcon = (props: IconProps) => {
   );
 };
 
+export const UploadIcon = (props: IconProps) => {
+  const {
+    size,
+    color,
+  } = props;
+  return (
+    <IconEl
+      height={size}
+    >
+      <svg width={size || '48'} height={size || '48'} viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <path d='M7 32V37.5C7 38.6046 7.89543 39.5 9 39.5H38.5C39.6046 39.5 40.5 38.6046 40.5 37.5V32' stroke={color || '#212121'} strokeWidth='2' strokeLinecap='round' />
+        <path d='M33 18.5L23.5 9M23.5 9L14 18.5M23.5 9L23.5 33.5' stroke={color || '#212121'} strokeWidth='2' strokeLinecap='round' />
+      </svg>
+    </IconEl>
+  );
+};
+
+export const CompareIcon = (props: IconProps) => {
+  const {
+    size,
+    color,
+  } = props;
+  return (
+    <IconEl
+      height={size}
+    >
+      <svg width={size || '48'} height={size || '48'} viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <path d='M16 27L25.5 17.5M25.5 17.5L16 8M25.5 17.5L7 17.5' stroke={color || '#212121'} strokeWidth='2' strokeLinecap='round' />
+        <path d='M31.5 21L22 30.5M22 30.5L31.5 40M22 30.5L40.5 30.5' stroke={color || '#212121'} strokeWidth='2' strokeLinecap='round' />
+      </svg>
+    </IconEl>
+  );
+};
+
 export const CaretDown = (props: IconProps) => {
   const { size, color } = props;
   return (

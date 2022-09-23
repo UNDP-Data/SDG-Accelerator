@@ -294,7 +294,6 @@ export const CurrentGaps = () => {
         setGoalStatuses(goalStatus);
       });
   }, [countrySelected]);
-
   return (
     <>
       <Nav
@@ -389,8 +388,16 @@ export const CurrentGaps = () => {
                         }
                       </Select>
                       <Tag
-                        backgroundColor={statuses[statuses.findIndex((d: any) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].status === 'On Track' ? 'var(--accent-green)' : statuses[statuses.findIndex((d: any) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].status === 'Identified Gap' ? 'var(--accent-red)' : statuses[statuses.findIndex((d: any) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].status === 'For Review' ? 'var(--accent-yellow)' : 'var(--black-550)'}
-                        text={statuses[statuses.findIndex((d: any) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].status}
+                        backgroundColor={
+                          statuses[statuses.findIndex((d: any) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].status === 'On Track'
+                            ? 'var(--accent-green)'
+                            : statuses[statuses.findIndex((d: any) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].status === 'Identified Gap'
+                              ? 'var(--accent-red)'
+                              : statuses[statuses.findIndex((d: any) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].status === 'For Review'
+                                ? 'var(--accent-yellow)'
+                                : 'var(--black-550)'
+                        }
+                        text={statuses[statuses.findIndex((d: any) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].status || 'Gap Unidentified'}
                         fontColor={statuses[statuses.findIndex((d: any) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].status === 'For Review' ? 'var(--black)' : 'var(--white)'}
                         margin='0.5rem 0 0 0'
                       />

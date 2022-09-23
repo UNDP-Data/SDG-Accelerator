@@ -147,21 +147,21 @@ export const COLORSCALE = ['#ffeda0', '#feb24c', '#fc4e2a', '#bd0026', '#800026'
 export const SDGGOALS = [
   'SDG 1: No Poverty',
   'SDG 2: Zero Hunger',
-  'SDG 3: Good Health And Well-being',
+  'SDG 3: Good Health And Well-Being',
   'SDG 4: Quality Education',
   'SDG 5: Gender Equality',
   'SDG 6: Clean Water And Sanitation',
   'SDG 7: Affordable And Clean Energy',
   'SDG 8: Decent Work And Economic Growth',
   'SDG 9: Industry, Innovation And Infrastructure',
-  'SDG 10: Reduced Inequality',
+  'SDG 10: Reduced Inequalities',
   'SDG 11: Sustainable Cities And Communities',
   'SDG 12: Responsible Consumption And Production',
   'SDG 13: Climate Action',
   'SDG 14: Life Below Water',
   'SDG 15: Life On Land',
-  'SDG 16: Peace And Justice Strong Institutions',
-  'SDG 17: Partnership For The Goal',
+  'SDG 16: Peace, Justice And Strong Institution',
+  'SDG 17: Partnership For The Goals',
 ];
 
 export const SDGGOALSFORFUTURESCENARIO = [
