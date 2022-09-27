@@ -62,7 +62,7 @@ export const LineChart = (props: Props) => {
   const maxParamSDGPush = max(data[1].data.map((d) => d.value)) ? max(data[1].data.map((d) => d.value)) : 0;
   const maxParam = maxParamSDGPush !== undefined && maxParamCOVIDBaseline !== undefined ? maxParamSDGPush > maxParamCOVIDBaseline ? maxParamSDGPush : maxParamCOVIDBaseline : 0;
 
-  const minYearFiltered: number = 2015;
+  const minYearFiltered: number = 2017;
   const maxYearFiltered: number = 2050;
   const x = scaleLinear().domain([minYearFiltered, maxYearFiltered]).range([0, graphWidth]);
   const y = scaleLinear().domain([minParam as number, maxParam as number]).range([graphHeight, 0]).nice();

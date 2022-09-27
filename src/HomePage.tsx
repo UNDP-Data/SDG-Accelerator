@@ -3,15 +3,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, Menu, Modal } from 'antd';
-import { COUNTRYOPTION } from './Constants';
+import CountryTaxonomy from './Data/countryTaxonomy.json';
 
 const menu = (
   <Menu>
     {
-      COUNTRYOPTION.map((d, i) => (
+      CountryTaxonomy.map((d, i) => (
         <Menu.Item key={i}>
-          <a rel='noopener noreferrer' href={`../current-sdg-gaps/${d.code}`}>
-            {d.countryName}
+          <a rel='noopener noreferrer' href={`../current-sdg-gaps/${d['Alpha-3 code-1']}`}>
+            {d['Country or Area']}
           </a>
         </Menu.Item>
       ))

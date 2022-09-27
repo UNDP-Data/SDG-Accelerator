@@ -115,7 +115,6 @@ export interface HoverBasic {
 }
 
 export interface ScenarioDataType {
-  country: string;
   scenario: "'COVID Baseline' scenario" | "'SDG Push' scenario";
   indicator: string;
   data: {

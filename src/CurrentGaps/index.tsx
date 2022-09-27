@@ -8,6 +8,8 @@ import isEqual from 'lodash.isequal';
 import omit from 'lodash.omit';
 import uniqBy from 'lodash.uniqby';
 import meanBy from 'lodash.meanby';
+import { FileImageTwoTone } from '@ant-design/icons';
+import domtoimage from 'dom-to-image';
 import { PageTitle } from '../Components/PageTitle';
 import { DonutChartCard } from './DonutChartCard';
 import { SDGGapsList } from './SDGGapsList';
@@ -18,10 +20,11 @@ import { CaretDown, InfoIcon } from '../icons';
 import { Tooltip } from '../Components/Tooltip';
 import { IndicatorOverview } from './IndicatorOverview';
 import { getSDGIcon } from '../utils/getSDGIcon';
-import { COUNTRYOPTION, SDGGOALS, DATASOURCELINK } from '../Constants';
+import { SDGGOALS, DATASOURCELINK } from '../Constants';
 import { Tag } from '../Components/Tag';
 import { getYearsAndValues } from '../utils/getYearsAndValues';
 import { getStatus } from '../utils/getStatus';
+import CountryTaxonomy from '../Data/countryTaxonomy.json';
 
 const SDGList:SDGStatusListType[] = require('../Data/SDGGoalList.json');
 
@@ -36,6 +39,10 @@ const RowEl = styled.div`
   display: flex;
   background-color: var(--black-200);
   align-items: stretch;
+`;
+
+const RowParentEl = styled.div`
+  background-color: var(--black-200);
 `;
 
 const TitleEl = styled.div`
@@ -103,7 +110,26 @@ const TargetListEl = styled.div`
 const ContainerEl = styled.div`
   background-color: var(--black-200);
   padding: 2rem 2rem 0 2rem;
+`;
 
+const DownLoadButton = styled.button`
+  background-color: transparent;
+  border: 0;
+  color: var(--black-550);
+  padding: 2rem;
+  margin: 0 0 2rem 2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  right:0;
+  align-items: center;
+  &:hover{
+    color: var(--primary-blue);
+  }
+  span {
+    margin-left: 0.5rem;
+  }
 `;
 
 export const CurrentGaps = () => {
@@ -114,9 +140,10 @@ export const CurrentGaps = () => {
   const [countryData, setCountryData] = useState<any>(undefined);
 
   const goalDetailDiv = useRef(null);
+  const GraphRef = useRef(null);
 
   const countrySelected = useParams().country || 'ZAF';
-  const countryFullName = COUNTRYOPTION[COUNTRYOPTION.findIndex((d) => d.code === countrySelected)].countryName;
+  const countryFullName = CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['Country or Area'];
 
   useEffect(() => {
     setStatuses(undefined);
@@ -127,13 +154,13 @@ export const CurrentGaps = () => {
         if (err) throw err;
         const filteredTimeseriesData:any = [];
         d.forEach((el:any) => {
-          if (timeSeriesToUse.findIndex((el1: any) => isEqual(el1, omit(el, ['values', 'targetfor2030']))) !== -1 || el.series === '***') filteredTimeseriesData.push(el);
+          if (timeSeriesToUse.findIndex((el1: any) => isEqual(el1, omit(el, ['values', 'targets']))) !== -1 || el.series === '***') filteredTimeseriesData.push(el);
         });
         setCountryData(filteredTimeseriesData);
         const filteredTimeseriesDataWithStatus = filteredTimeseriesData.map((element: any) => {
           const values = uniqBy(element.values, 'year').filter((el: any) => el.value !== null);
 
-          const targetValue = element.targetfor2030 !== 0 ? element.targetfor2030 : null;
+          const targetValue = element.targets !== 0 || element.targets !== null ? element.targets : null;
           const yearsAndValues = getYearsAndValues(values as any);
           const status = element.indicator === '8.1.1'
             ? meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 2 ? 'On Track'
@@ -333,17 +360,38 @@ export const CurrentGaps = () => {
                   are For Review
                 </span>
               </SummaryEl>
-              <RowEl>
-                <DonutChartCard
-                  centralText='All SDG Status'
-                  data={goalStatuses}
-                />
-                <SDGGapsList
-                  data={goalStatuses}
-                  setSelectedSDG={setSelectedSDG}
-                  divRef={goalDetailDiv}
-                />
-              </RowEl>
+              <RowParentEl>
+                <RowEl ref={GraphRef}>
+                  <DonutChartCard
+                    centralText='All SDG Status'
+                    data={goalStatuses}
+                  />
+                  <SDGGapsList
+                    data={goalStatuses}
+                    setSelectedSDG={setSelectedSDG}
+                    divRef={goalDetailDiv}
+                  />
+                </RowEl>
+                <DownLoadButton
+                  type='button'
+                  onClick={() => {
+                    if (GraphRef.current) {
+                      const node = GraphRef.current;
+                      domtoimage
+                        .toPng(node as any, { height: (node as any).scrollHeight })
+                        .then((dataUrl: any) => {
+                          const link = document.createElement('a');
+                          link.download = 'graph.png';
+                          link.href = dataUrl;
+                          link.click();
+                        });
+                    }
+                  }}
+                >
+                  Download Image
+                  <FileImageTwoTone style={{ fontSize: '18px' }} />
+                </DownLoadButton>
+              </RowParentEl>
               <>
                 <TitleEl>
                   <h2>Target Overview</h2>

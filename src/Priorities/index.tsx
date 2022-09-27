@@ -14,7 +14,7 @@ import uniqBy from 'lodash.uniqby';
 import meanBy from 'lodash.meanby';
 import { getYearsAndValues } from '../utils/getYearsAndValues';
 import { PrioritiesVizCard } from './PrioritiesVizCards';
-import { COUNTRYOPTION, DATASOURCELINK, COUNTRY_VNR_YEAR } from '../Constants';
+import { DATASOURCELINK } from '../Constants';
 import { Nav } from '../Header/Nav';
 import { PageTitle } from '../Components/PageTitle';
 import { getStatus } from '../utils/getStatus';
@@ -22,6 +22,7 @@ import { CompareIcon, UploadIcon } from '../icons';
 import { UploadModal } from './UploadModal';
 import { CompareModal } from './CompareModal';
 import { CompareTable } from './CompareTable';
+import CountryTaxonomy from '../Data/countryTaxonomy.json';
 
 const RootEl = styled.div`
   width: 128rem;
@@ -67,13 +68,14 @@ const ButtonEl = styled.div`
 
 export const Priorities = () => {
   const countrySelected = useParams().country || 'ZAF';
-  const countryFullName = COUNTRYOPTION[COUNTRYOPTION.findIndex((d) => d.code === countrySelected)].countryName;
+  const countryFullName = CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['Country or Area'];
   const [selectedFileName, setSelectedFileName] = useState<string>('');
   const [openUploadModal, setOpenUploadModal] = useState(false);
   const [openCompareModal, setOpenCompareModal] = useState(false);
   const [goalStatuses, setGoalStatuses] = useState<any>(undefined);
   const [error, setError] = useState<any>(null);
   const [data, setData] = useState<any>(null);
+  const [defaultVNR, setDefaultVNR] = useState<any>(null);
 
   useEffect(() => {
     setSelectedFileName('');
@@ -85,12 +87,12 @@ export const Priorities = () => {
         if (err) throw err;
         const filteredTimeseriesData:any = [];
         d.forEach((el:any) => {
-          if (timeSeriesToUse.findIndex((el1: any) => isEqual(el1, omit(el, ['values', 'targetfor2030']))) !== -1 || el.series === '***') filteredTimeseriesData.push(el);
+          if (timeSeriesToUse.findIndex((el1: any) => isEqual(el1, omit(el, ['values', 'targets']))) !== -1 || el.series === '***') filteredTimeseriesData.push(el);
         });
         const filteredTimeseriesDataWithStatus = filteredTimeseriesData.map((element: any) => {
           const values = uniqBy(element.values, 'year').filter((el: any) => el.value !== null);
 
-          const targetValue = element.targetfor2030 !== 0 ? element.targetfor2030 : null;
+          const targetValue = element.targets !== 0 || element.targets !== null ? element.targets : null;
           const yearsAndValues = getYearsAndValues(values as any);
           const status = element.indicator === '8.1.1'
             ? meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 2 ? 'On Track'
@@ -231,9 +233,22 @@ export const Priorities = () => {
           };
         });
         setGoalStatuses(goalStatus);
-        axios.get(`https://sdg-accelerator-api.azurewebsites.net/vnrs/${countrySelected.toLowerCase()}/${COUNTRY_VNR_YEAR[COUNTRY_VNR_YEAR.findIndex((c) => c.countryCode === countrySelected)].year}/multiclass/sentence`).then((res) => {
-          setData(res.data.sdgs);
-        });
+        axios.get('https://sdg-accelerator-api.azurewebsites.net/vnrs')
+          .then((response:any) => {
+            const indx = response.data.findIndex((country: any) => country.iso === countrySelected.toLowerCase());
+            if (indx !== -1) {
+              setDefaultVNR(response.data[indx]);
+              axios.get(`https://sdg-accelerator-api.azurewebsites.net/vnrs/${countrySelected.toLowerCase()}/${response.data[indx].year}/multiclass/sentence`)
+                .then((res) => {
+                  setData(res.data.sdgs);
+                })
+                .catch((errorFetchingVNR) => {
+                  setError(errorFetchingVNR.message);
+                });
+            } else {
+              setData('NA');
+            }
+          });
       });
   }, [countrySelected]);
   return (
@@ -253,51 +268,63 @@ export const Priorities = () => {
                 selectedFileName ? (
                   <>
                     {
-                    selectedFileName.split('____').length > 1 ? (
-                      <>
-                        Comparing priorities for
-                        {' '}
-                        <span className='bold'>{countryFullName}</span>
-                        {' '}
-                        based on
-                        {' '}
-                        <span className='bold italics'>
-                          {selectedFileName.split('____')[0]}
-                        </span>
-                        {' '}
-                        and
-                        <span className='bold italics'>
-                          {selectedFileName.split('____')[1]}
-                        </span>
-                      </>
-                    ) : (
-                      <>
-                        Showing priorities for
-                        {' '}
-                        <span className='bold'>{countryFullName}</span>
-                        {' '}
-                        based on
-                        {' '}
-                        <span className='bold italics'>
-                          {selectedFileName}
-                        </span>
-                      </>
-                    )
-                  }
+                      selectedFileName.split('____').length > 1 ? (
+                        <>
+                          Comparing priorities for
+                          {' '}
+                          <span className='bold'>{countryFullName}</span>
+                          {' '}
+                          based on
+                          {' '}
+                          <span className='bold italics'>
+                            {selectedFileName.split('____')[0]}
+                          </span>
+                          {' '}
+                          and
+                          <span className='bold italics'>
+                            {selectedFileName.split('____')[1]}
+                          </span>
+                        </>
+                      ) : (
+                        <>
+                          Showing priorities for
+                          {' '}
+                          <span className='bold'>{countryFullName}</span>
+                          {' '}
+                          based on
+                          {' '}
+                          <span className='bold italics'>
+                            {selectedFileName}
+                          </span>
+                        </>
+                      )
+                    }
                   </>
                 ) : (
                   <>
-                    Showing priorities for
-                    {' '}
-                    <span className='bold'>{countryFullName}</span>
-                    {' '}
-                    based on
-                    {' '}
-                    <span className='bold italics'>
-                      {COUNTRY_VNR_YEAR[COUNTRY_VNR_YEAR.findIndex((c) => c.countryCode === countrySelected)].year}
-                      {' '}
-                      VNR
-                    </span>
+                    {
+                      defaultVNR ? (
+                        <>
+                          Showing priorities for
+                          {' '}
+                          <span className='bold'>{countryFullName}</span>
+                          {' '}
+                          based on
+                          {' '}
+                          <span className='bold italics'>
+                            {defaultVNR.year}
+                            {' '}
+                            VNR
+                          </span>
+                        </>
+                      ) : (
+                        <>
+                          Showing priorities for
+                          {' '}
+                          <span className='bold'>{countryFullName}</span>
+                        </>
+                      )
+                    }
                   </>
                 )
               }
@@ -324,19 +351,20 @@ export const Priorities = () => {
               }
             </SummaryEl>
             {
-              !error ? goalStatuses && data ? data.mode === 'analyze' ? <PrioritiesVizCard data={data.data} statuses={goalStatuses} /> : data.mode === 'compare' ? <CompareTable data={data.data} statuses={goalStatuses} file1={selectedFileName.split('____')[0]} file2={selectedFileName.split('____')[1]} /> : <PrioritiesVizCard data={data} statuses={goalStatuses} />
-                : (
-                  <RootEl>
-                    <Spin size='large' />
-                  </RootEl>
-                )
-                : (
-                  <Result
-                    status={error === 'PDF File Required' ? 'error' : '500'}
-                    title='Analysis Failed'
-                    subTitle={error === 'PDF File Required' ? 'Please upload a PDF file, we are unable to analyze any other file formats' : 'Sorry, something went wrong. Please try again with a different document or after some time.'}
-                  />
-                )
+              data === 'NA' ? null
+                : !error ? goalStatuses && data ? data.mode === 'analyze' ? <PrioritiesVizCard data={data.data} statuses={goalStatuses} /> : data.mode === 'compare' ? <CompareTable data={data.data} statuses={goalStatuses} file1={selectedFileName.split('____')[0]} file2={selectedFileName.split('____')[1]} /> : <PrioritiesVizCard data={data} statuses={goalStatuses} />
+                  : (
+                    <RootEl>
+                      <Spin size='large' />
+                    </RootEl>
+                  )
+                  : (
+                    <Result
+                      status={error === 'PDF File Required' ? 'error' : '500'}
+                      title='Analysis Failed'
+                      subTitle={error === 'PDF File Required' ? 'Please upload a PDF file, we are unable to analyze any other file formats' : 'Sorry, something went wrong. Please try again with a different document or after some time.'}
+                    />
+                  )
             }
           </DescriptionEl>
           {

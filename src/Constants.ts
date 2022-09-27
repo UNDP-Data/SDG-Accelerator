@@ -115,33 +115,6 @@ export const FUTURESCENARIOINDICATORS = [
   },
 ];
 
-export const COUNTRYOPTION = [
-  {
-    code: 'IDN',
-    countryName: 'Indonesia',
-  },
-  {
-    code: 'IRQ',
-    countryName: 'Iraq',
-  },
-  {
-    code: 'MDA',
-    countryName: 'Republic of Moldova',
-  },
-  {
-    code: 'NAM',
-    countryName: 'Namibia',
-  },
-  {
-    code: 'PER',
-    countryName: 'Peru',
-  },
-  {
-    code: 'ZAF',
-    countryName: 'South Africa',
-  },
-];
-
 export const COLORSCALE = ['#ffeda0', '#feb24c', '#fc4e2a', '#bd0026', '#800026'];
 
 export const SDGGOALS = [
@@ -180,7 +153,7 @@ export const KEYSTOAVOID = [
   'indicator',
   'seriesDescription',
   'values',
-  'targetfor2030',
+  'targets',
 ];
 
 export const SCENARIOINDICATORBASEDONSDG = [
@@ -189,7 +162,6 @@ export const SCENARIOINDICATORBASEDONSDG = [
     indicators: [
       'Poverty <$1.90 per day (number of people)',
       'Poverty <$1.90 per day (percent of population)',
-      'Sex difference poverty headcount, age 25-34 (female minus male, number of people)',
       'Female poverty headcount (number of people)',
     ],
   },
@@ -228,30 +200,3 @@ export const SCENARIOINDICATORBASEDONSDG = [
 ];
 
 export const DATASOURCELINK = process.env.NODE_ENV === 'production' ? 'https://data.undp.org/diagnostic-simulator' : '../..';
-
-export const COUNTRY_VNR_YEAR = [
-  {
-    countryCode: 'IDN',
-    year: 2021,
-  },
-  {
-    countryCode: 'IRQ',
-    year: 2021,
-  },
-  {
-    countryCode: 'MDA',
-    year: 2020,
-  },
-  {
-    countryCode: 'NAM',
-    year: 2021,
-  },
-  {
-    countryCode: 'PER',
-    year: 2017,
-  },
-  {
-    countryCode: 'ZAF',
-    year: 2019,
-  },
-];

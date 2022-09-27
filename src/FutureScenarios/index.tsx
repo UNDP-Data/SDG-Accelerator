@@ -30,9 +30,9 @@ export const FutureScenariosList = () => {
   const [selectedSDG, setSelectedSDG] = useState('SDG 1: No Poverty');
   const countrySelected = useParams().country || 'ZAF';
   useEffect(() => {
-    json(`${DATASOURCELINK}/data/ScenarioData/ScenarioData.json`, (err: any, d: ScenarioDataType[]) => {
+    json(`${DATASOURCELINK}/data/ScenarioData/${countrySelected}.json`, (err: any, d: ScenarioDataType[]) => {
       if (err) throw err;
-      setData(d.filter((el: any) => el.country === countrySelected));
+      setData(d);
     });
   }, [countrySelected]);
   return (
