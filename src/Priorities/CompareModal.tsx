@@ -89,14 +89,35 @@ const HR = styled.hr`
 
 const UploadEl = styled.div`
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
+  border: 1px solid var(--black-500);
+  background-color: var(--black-100);
+  margin-top: 2rem;
+  border-radius: 0.3rem;
 `;
 
 const SelectedEl = styled.div`
-  font-size: 2.4rem;
+  font-size: 1.6rem;
+`;
+
+const UploadButtonEl = styled.div<DisabledProps>`
+  color: var(--black-700);
+  cursor:  ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  align-items: center;
+  display: flex;
+  font-size: 1.6rem;
+  line-height: 1;
   font-weight: bold;
-  margin-top: 2.4rem;
+  width: fit-content;
+  background-color: var(--black-400);
+  border-radius: 0.3rem 0 0 0.3rem;
+  border-right: 1px solid var(--black-500);
+  &:hover{
+    background-color: var(--black-500);
+  }
 `;
 
 const granularityOptions = [
@@ -150,14 +171,18 @@ export const CompareModal = (props: Props) => {
 
   const handleFile1Select = (event: any) => {
     if (event.target.files) {
-      setSelectedFile1(event.target.files[0]);
-      setSelectedFileName1(event.target.files[0].name);
+      if (event.target.files[0]) {
+        setSelectedFile1(event.target.files[0]);
+        setSelectedFileName1(event.target.files[0].name);
+      }
     }
   };
   const handleFile2Select = (event: any) => {
     if (event.target.files) {
-      setSelectedFile2(event.target.files[0]);
-      setSelectedFileName2(event.target.files[0].name);
+      if (event.target.files[0]) {
+        setSelectedFile2(event.target.files[0]);
+        setSelectedFileName2(event.target.files[0].name);
+      }
     }
   };
 
@@ -231,19 +256,31 @@ export const CompareModal = (props: Props) => {
         <ModalHeading>Compare 2 documents</ModalHeading>
         <UploadEl>
           <label htmlFor='file1-upload' className='custom-file-upload'>
-            <PrimaryButtonEl>Upload first document</PrimaryButtonEl>
+            <UploadButtonEl>Upload first document</UploadButtonEl>
           </label>
           {
-            selectedFileName1 !== '' ? <SelectedEl>{`Selected ${selectedFileName1}`}</SelectedEl> : null
+            selectedFileName1 !== '' ? (
+              <SelectedEl>
+                Selected
+                {' '}
+                <span className='bold'>{selectedFileName1}</span>
+              </SelectedEl>
+            ) : <SelectedEl style={{ opacity: '0.6' }}>No file selected</SelectedEl>
           }
           <FileAttacehmentButton ref={fileInputRef} id='file1-upload' accept='application/pdf' type='file' onChange={handleFile1Select} />
         </UploadEl>
         <UploadEl>
           <label htmlFor='file2-upload' className='custom-file-upload'>
-            <PrimaryButtonEl>Upload second document</PrimaryButtonEl>
+            <UploadButtonEl>Upload second document</UploadButtonEl>
           </label>
           {
-            selectedFileName2 !== '' ? <SelectedEl>{`Selected ${selectedFileName2}`}</SelectedEl> : null
+            selectedFileName2 !== '' ? (
+              <SelectedEl>
+                Selected
+                {' '}
+                <span className='bold'>{selectedFileName2}</span>
+              </SelectedEl>
+            ) : <SelectedEl style={{ opacity: '0.6' }}>No file selected</SelectedEl>
           }
           <FileAttacehmentButton ref={fileInputRef} id='file2-upload' accept='application/pdf' type='file' onChange={handleFile2Select} />
         </UploadEl>

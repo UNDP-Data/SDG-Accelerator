@@ -4,7 +4,7 @@
 import styled from 'styled-components';
 import { NavLink, useParams } from 'react-router-dom';
 import { useState } from 'react';
-import { Modal } from 'antd';
+import { Modal, Input } from 'antd';
 import sortBy from 'lodash.sortby';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 
@@ -75,6 +75,11 @@ const NavContainer = styled.div`
   display: flex;
 `;
 
+const SearchEl = styled.div`
+  width: 100%;
+  margin-bottom: 2rem;
+`;
+
 const ModalBody = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -84,7 +89,7 @@ const ModalBody = styled.div`
   } 
   a {
     color: var(--black-700);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     &:hover{
       font-weight: bold;
     }
@@ -102,7 +107,9 @@ export const Nav = (props: Props) => {
   const countrySelected = useParams().country || 'ZAF';
   const countryName = CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === countrySelected) !== -1 ? CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['Country or Area'] : 'NA';
   const [open, setOpen] = useState(false);
+  const [searchText, setSearchText] = useState<undefined | string>(undefined);
   const countrySorted = sortBy(CountryTaxonomy, 'Country or Area');
+  const countryFiltered = searchText === '' || !searchText ? countrySorted : countrySorted.filter((d) => d['Country or Area'].toLowerCase().includes(searchText.toLowerCase()));
   return (
     <>
       <NavBarEl>
@@ -157,7 +164,7 @@ export const Nav = (props: Props) => {
         <Modal
           title='Select a country'
           visible={open}
-          width='90%'
+          width='80%'
           onOk={() => {
             setOpen(false);
           }}
@@ -167,9 +174,12 @@ export const Nav = (props: Props) => {
           className='undp-modal'
         >
           <ModalHead>Select a country</ModalHead>
+          <SearchEl>
+            <Input.Search placeholder='Search a country' allowClear onChange={(value) => { setSearchText(value.target.value); }} />
+          </SearchEl>
           <ModalBody>
             {
-              countrySorted.map((d, i) => (
+              countryFiltered.map((d, i) => (
                 <div role='button' key={i} onClick={() => { setOpen(false); }}>
                   <NavLink
                     to={`../diagnostic-simulator/${pageURL}/${d['Alpha-3 code-1']}`}

@@ -34,6 +34,25 @@ interface DisabledProps {
   disabled?: boolean;
 }
 
+const UploadButtonEl = styled.div<DisabledProps>`
+  color: var(--black-700);
+  cursor:  ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  align-items: center;
+  display: flex;
+  font-size: 1.6rem;
+  line-height: 1;
+  font-weight: bold;
+  width: fit-content;
+  background-color: var(--black-400);
+  border-radius: 0.3rem 0 0 0.3rem;
+  border-right: 1px solid var(--black-500);
+  &:hover{
+    background-color: var(--black-500);
+  }
+`;
+
 const PrimaryButtonEl = styled.div<DisabledProps>`
   color: #fff;
   cursor:  ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
@@ -88,14 +107,16 @@ const HR = styled.hr`
 
 const UploadEl = styled.div`
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
+  border: 1px solid var(--black-500);
+  background-color: var(--black-100);
+  margin-top: 2rem;
+  border-radius: 0.3rem;
 `;
 
 const SelectedEl = styled.div`
-  font-size: 2.4rem;
-  font-weight: bold;
-  margin-top: 2.4rem;
+  font-size: 1.6rem;
 `;
 
 const granularityOptions = [
@@ -147,8 +168,10 @@ export const UploadModal = (props: Props) => {
 
   const handleFileSelect = (event: any) => {
     if (event.target.files) {
-      setSelectedFile(event.target.files[0]);
-      setSelectedFileName(event.target.files[0].name);
+      if (event.target.files[0]) {
+        setSelectedFile(event.target.files[0]);
+        setSelectedFileName(event.target.files[0].name);
+      }
     }
   };
 
@@ -204,10 +227,16 @@ export const UploadModal = (props: Props) => {
         <ModalHeading>Upload and Analyze a document</ModalHeading>
         <UploadEl>
           <label htmlFor='file-upload' className='custom-file-upload'>
-            <PrimaryButtonEl>{selectedFileName !== '' ? 'Upload another document' : 'Upload a document'}</PrimaryButtonEl>
+            <UploadButtonEl>{selectedFileName !== '' ? 'Upload another document' : 'Upload a document'}</UploadButtonEl>
           </label>
           {
-            selectedFileName !== '' ? <SelectedEl>{`Selected ${selectedFileName}`}</SelectedEl> : null
+            selectedFileName !== '' ? (
+              <SelectedEl>
+                Selected
+                {' '}
+                <span className='bold'>{selectedFileName}</span>
+              </SelectedEl>
+            ) : <SelectedEl style={{ opacity: '0.6' }}>No file selected</SelectedEl>
           }
           <FileAttacehmentButton ref={fileInputRef} id='file-upload' accept='application/pdf' type='file' onChange={handleFileSelect} />
         </UploadEl>
