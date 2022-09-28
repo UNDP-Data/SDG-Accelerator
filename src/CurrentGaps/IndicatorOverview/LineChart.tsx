@@ -92,8 +92,10 @@ const StatusTag = styled.div<StatusTagProps>`
         ? 'var(--accent-red)'
         : props.status === 'Insufficient Data'
           ? 'var(--black-500)'
-          : 'var(--accent-green)')};
-  color: ${(props) => (props.status === 'Fair progress but acceleration needed' || props.status === 'Insufficient Data' ? 'var(--black-700)' : 'var(--white)')};
+          : props.status === 'Target value unavailable'
+            ? 'var(--black-400)'
+            : 'var(--accent-green)')};
+  color: ${(props) => (props.status === 'Fair progress but acceleration needed' || props.status === 'Insufficient Data' || props.status === 'Target value unavailable' ? 'var(--black-700)' : 'var(--white)')};
 `;
 
 const getStatus = (yearsAndValues: yearAndValueDataType, targetValue: number, type: string) => {
@@ -128,7 +130,7 @@ export const LineChart = (props: Props) => {
   const MouseoverRectRef = useRef(null);
 
   const values = uniqBy(data.values, 'year').filter((d: any) => d.value !== null);
-  const targetValue = data.targets !== 0 || data.targets !== null ? data.targets : null;
+  const targetValue = data.targets ? data.targets : null;
 
   const yearsAndValues = getYearsAndValues(values as any);
   const status = data.indicator === '8.1.1'
@@ -137,7 +139,7 @@ export const LineChart = (props: Props) => {
         : meanBy(data.values.filter((val: any) => val.year > 2014), 'value') > 1 ? 'Limited or No Progress'
           : 'Deterioration'
     : targetValue === null
-      ? undefined
+      ? 'Target value unavailable'
       : yearsAndValues === null
         ? 'Insufficient Data'
         : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type);
@@ -155,11 +157,10 @@ export const LineChart = (props: Props) => {
 
   const minYearFiltered: number = min(values.map((d: any) => d.year)) ? min(values.map((d: any) => d.year)) as number : 2000;
   const maxYearFiltered: number = max(values.map((d: any) => d.year)) ? max(values.map((d: any) => d.year)) as number : 2020;
-
   const x = scaleLinear().domain([minYearFiltered, maxYearFiltered]).range([0, graphWidth]);
   const y = scaleLinear().domain([minParam as number, maxParam as number]).range([graphHeight, 0]).nice();
   const lineShape1 = line()
-    .defined((d: any) => d.value !== null || d.value !== undefined)
+    .defined((d: any) => d.value || d.value === 0)
     .x((d: any) => x(d.year))
     .y((d: any) => (typeof d.value === 'number' ? y(d.value) : y(parseInt(d.value.substring(1), 10))))
     .curve(curveMonotoneX);
@@ -172,7 +173,7 @@ export const LineChart = (props: Props) => {
       if (indx !== -1) {
         setHoverData({
           year: yr,
-          value: typeof data.values[indx].value === 'number' ? data.values[indx].value.toFixed(2) : data.values[indx].value,
+          value: typeof data.values[indx].value === 'number' ? format('~s')(data.values[indx].value).replace('G', 'B') : data.values[indx].value,
         });
       } else {
         setHoverData({
@@ -309,14 +310,11 @@ export const LineChart = (props: Props) => {
                               x={x(d.year)}
                               y={y(d.value)}
                               dy={-8}
-                              fontSize={values.length > 10 ? 11 : 12}
+                              fontSize={values.length > 10 ? values.length > 20 ? 0 : 11 : 12}
                               textAnchor='middle'
-                              strokeWidth={0.25}
-                              stroke='#fff'
-                              fill='#0969FA'
-                              fontWeight='bold'
+                              fill='#082753'
                             >
-                              {d.value < 1 ? (d.value).toFixed(2) : format('.2s')(d.value)}
+                              {typeof d.value === 'number' ? Math.abs(d.value) > 1 ? format('.2s')(d.value) : d.value > 0.009 ? d.value.toFixed(2) : d.value : d.value}
                             </text>
                           </g>
                         ))
@@ -374,9 +372,9 @@ export const LineChart = (props: Props) => {
                                 fill='#fff'
                                 opacity={0.8}
                                 y={0}
-                                x={x(hoverData.year) > graphWidth / 2 ? x(hoverData.year) - 75 : x(hoverData.year)}
+                                x={x(hoverData.year) > graphWidth / 2 ? x(hoverData.year) - ((`${hoverData.value}`.length + 6) * 7) - 3 : x(hoverData.year) + 2}
                                 height={20}
-                                width={75}
+                                width={(`${hoverData.value}`.length + 6) * 7}
                               />
                               <text
                                 fill='#666'
