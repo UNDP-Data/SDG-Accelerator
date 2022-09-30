@@ -47,9 +47,9 @@ const HeadEl = styled.div`
 `;
 
 const FirstTitleEl = styled.div`
-  font-size: 3.6rem;
+  font-size: 3rem;
   font-weight: 700;
-  line-height: 4.8rem;
+  line-height: 3.2rem;
   margin: 4rem 0 3rem 0;
 `;
 
@@ -57,6 +57,13 @@ const TitleEl = styled.div`
   font-size: 3.6rem;
   font-weight: 700;
   line-height: 4.8rem;
+  margin: 6rem 0 3rem 0;
+`;
+
+const SecondaryTitleEl = styled.div`
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 3.2rem;
   margin: 6rem 0 3rem 0;
 `;
 
@@ -111,6 +118,32 @@ const MoreEl = styled.div`
   cursor: pointer;
 `;
 
+const SubNote = styled.div`
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: var(--black-700);
+  margin-top: 1.6rem;
+`;
+
+const ColorKeyContainer = styled.div`
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+`;
+
+const ColorKeyEl = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--black-700);
+  font-size: 1.6rem;
+`;
+
+const ColorKeyBox = styled.div`
+  width: 1.6rem;
+  height: 1.6rem;
+`;
+
 export const PrioritiesVizCard = (props: Props) => {
   const { data, statuses } = props;
   const dataFormatted = sortBy(data, 'sdg').filter((d) => d.salience > 0);
@@ -137,6 +170,82 @@ export const PrioritiesVizCard = (props: Props) => {
   ];
   return (
     <>
+      <>
+        <TitleEl>
+          Relative Salience
+        </TitleEl>
+        <SubNote>
+          Relative Salience is a measure of the amount of text content linked to each SDG as compared to the Goal which is the most salient in the text. Relative Salience can help to understand which of the SDGs covered in the document( receive most attention and which ones are only briefly treated.
+        </SubNote>
+        <br />
+        <br />
+        <ColorKeyContainer>
+          <ColorKeyEl>
+            <ColorKeyBox style={{ backgroundColor: 'var(--accent-red' }} />
+            <div>High Priority</div>
+          </ColorKeyEl>
+          <ColorKeyEl>
+            <ColorKeyBox style={{ backgroundColor: 'var(--accent-yellow' }} />
+            <div>Medium Priority</div>
+          </ColorKeyEl>
+          <ColorKeyEl>
+            <ColorKeyBox style={{ backgroundColor: 'var(--accent-green' }} />
+            <div>Low Priority</div>
+          </ColorKeyEl>
+          <ColorKeyEl>
+            <ColorKeyBox style={{ backgroundColor: 'var(--black-550' }} />
+            <div>No Mention</div>
+          </ColorKeyEl>
+        </ColorKeyContainer>
+        <svg width='100%' viewBox='0 0 1280 420' style={{ marginBottom: '4rem' }}>
+          {
+            data.map((d:any, i: number) => (
+              <g
+                key={i}
+                transform={`translate(${i * 75},0)`}
+              >
+                <rect
+                  width={45}
+                  x={15}
+                  y={400 - (375 * d.salience)}
+                  height={375 * d.salience}
+                  fill={d.category === 'high' ? '#D12800' : d.category === 'medium' ? '#FBC412' : d.category === 'low' && d.salience !== 0 ? '#59BA47' : '#666666'}
+                />
+                <text
+                  x={37.5}
+                  y={400 - (375 * d.salience)}
+                  dy={-5}
+                  fill={d.category === 'high' ? '#D12800' : d.category === 'medium' ? '#FBC412' : d.category === 'low' && d.salience !== 0 ? '#59BA47' : '#666666'}
+                  fontSize={14}
+                  fontWeight='bold'
+                  textAnchor='middle'
+                >
+                  {(d.salience).toFixed(3)}
+                </text>
+                <text
+                  x={37.5}
+                  y={400}
+                  dy={20}
+                  fill='#212121'
+                  fontSize={16}
+                  textAnchor='middle'
+                >
+                  SDG
+                  {' '}
+                  {d.sdg}
+                </text>
+              </g>
+            ))
+          }
+        </svg>
+      </>
+      <hr />
+      <TitleEl>
+        SDGs by Priorities in the Document and Key Topics For Each SDG
+      </TitleEl>
+      <SubNote>
+        This show list of all the SDGs based on priorities. Click on the SDG card to see the key SDG topics covered in the document.
+      </SubNote>
       <FirstTitleEl>
         High Priorities (
         {dataFormatted.filter((d) => d.category === 'high').length}
@@ -180,11 +289,11 @@ export const PrioritiesVizCard = (props: Props) => {
             : <NoteEl>No SDGs mentioned in the document are high priority</NoteEl>
         }
       </CardContainer>
-      <TitleEl>
+      <SecondaryTitleEl>
         Medium Priorities (
         {dataFormatted.filter((d) => d.category === 'medium').length}
         )
-      </TitleEl>
+      </SecondaryTitleEl>
       <CardContainer>
         {
           dataFormatted.filter((d) => d.category === 'medium').length > 0 ? dataFormatted.filter((d) => d.category === 'medium').map((d, i) => (selectedGoal === d.sdg ? (
@@ -221,11 +330,11 @@ export const PrioritiesVizCard = (props: Props) => {
             : <NoteEl>No SDGs mentioned in the document are medium priority</NoteEl>
         }
       </CardContainer>
-      <TitleEl>
+      <SecondaryTitleEl>
         Low Priorities (
         {dataFormatted.filter((d) => d.category === 'low').length}
         )
-      </TitleEl>
+      </SecondaryTitleEl>
       <CardContainer>
         {
           dataFormatted.filter((d) => d.category === 'low').length > 0 ? dataFormatted.filter((d) => d.category === 'low').map((d, i) => (selectedGoal === d.sdg ? (

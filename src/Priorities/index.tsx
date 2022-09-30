@@ -238,7 +238,7 @@ export const Priorities = () => {
             const indx = response.data.findIndex((country: any) => country.iso === countrySelected.toLowerCase());
             if (indx !== -1) {
               setDefaultVNR(response.data[indx]);
-              axios.get(`https://sdg-accelerator-api.azurewebsites.net/vnrs/${countrySelected.toLowerCase()}/${response.data[indx].year}/multiclass/sentence`)
+              axios.get(`https://sdg-accelerator-api.azurewebsites.net/vnrs/${countrySelected.toLowerCase()}/${response.data[indx].year}/${response.data[indx].language}/multiclass/sentence`)
                 .then((res) => {
                   setData(res.data.sdgs);
                 })

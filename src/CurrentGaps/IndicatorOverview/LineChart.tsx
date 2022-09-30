@@ -173,7 +173,7 @@ export const LineChart = (props: Props) => {
       if (indx !== -1) {
         setHoverData({
           year: yr,
-          value: typeof data.values[indx].value === 'number' ? format('~s')(data.values[indx].value).replace('G', 'B') : data.values[indx].value,
+          value: typeof data.values[indx].value === 'number' ? Math.abs(data.values[indx].value) < 1 ? data.values[indx].value : data.values[indx].value > 1000 ? format('.2s')(data.values[indx].value).replace('G', 'B') : format('.3s')(data.values[indx].value) : data.values[indx].value,
         });
       } else {
         setHoverData({
@@ -185,241 +185,246 @@ export const LineChart = (props: Props) => {
     select(MouseoverRectRef.current)
       .on('mousemove', mousemove)
       .on('mouseleave', () => { setHoverData(null); });
-  }, []);
+  }, [data]);
   return (
-    <ParentEl>
-      <RootEl ref={GraphRef}>
-        <TitleEl>{data.seriesDescription}</TitleEl>
-        <SubNote>
-          {
-            Object.keys(data).map((d) => {
-              if (KEYSTOAVOID.indexOf(d) !== -1) return null;
-              return (
-                <div>
-                  {d}
-                  :
-                  {' '}
-                  <span className='bold'>{data[d]}</span>
-                </div>
-              );
-            })
-          }
-        </SubNote>
-        {
-          status
-            ? (
-              <StatusTag status={status}>
-                {status}
-              </StatusTag>
-            ) : null
-        }
-        {
-          values.length === 0 ? 'No Data Avalaiable'
-            : (
-              <>
-                <svg width='100%' viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
-                  <g transform={`translate(${margin.left},${margin.top})`}>
-                    <rect
-                      x={0}
-                      y={0}
-                      width={graphWidth}
-                      height={graphHeight}
-                      fill='#fff'
-                      opacity={0}
-                      ref={MouseoverRectRef}
-                    />
-                    <line
-                      y1={y(0)}
-                      y2={y(0)}
-                      x1={0 - margin.left}
-                      x2={graphWidth + margin.right}
-                      stroke='#212121'
-                      strokeWidth={1}
-                    />
-                    <text
-                      x={0 - margin.left + 2}
-                      y={y(0)}
-                      fill='#666'
-                      textAnchor='start'
-                      fontSize={12}
-                      dy={-3}
-                    >
-                      0
-                    </text>
-                    <g>
-                      {
-                        yTicks.map((d, i) => (
-                          <g key={i}>
-                            <line
-                              y1={y(d)}
-                              y2={y(d)}
-                              x1={0 - margin.left}
-                              x2={graphWidth + margin.right}
-                              stroke='#CCC'
-                              strokeWidth={1}
-                              strokeDasharray='4,8'
-                              opacity={d === 0 ? 0 : 1}
-                            />
-                            <text
-                              x={0 - margin.left + 2}
-                              y={y(d)}
-                              fill='#666'
-                              textAnchor='start'
-                              fontSize={12}
-                              dy={-3}
-                              opacity={d === 0 ? 0 : 1}
-                            >
-                              {Math.abs(d) < 1 ? d : format('~s')(d).replace('G', 'B')}
-                            </text>
-                          </g>
-                        ))
-                      }
-                    </g>
-                    <g>
-                      {
-                        xTicks.map((d, i) => (
-                          <g key={i}>
-                            <text
-                              y={graphHeight}
-                              x={x(d)}
-                              fill='#AAA'
-                              textAnchor='middle'
-                              fontSize={12}
-                              dy={15}
-                            >
-                              {d}
-                            </text>
-                          </g>
-                        ))
-                      }
-                    </g>
-                    <g>
-                      <path d={lineShape1(uniqBy(data.values, 'year') as any) as string} fill='none' stroke='#0969FA' strokeWidth={2} />
-                      {
-                        values.map((d: any, i: number) => (
-                          <g
-                            key={i}
+    <>
+      {values.length === 0 ? null
+        : (
+          <ParentEl>
+            <RootEl ref={GraphRef}>
+              <TitleEl>{data.seriesDescription}</TitleEl>
+              <SubNote>
+                {
+                  Object.keys(data).map((d) => {
+                    if (KEYSTOAVOID.indexOf(d) !== -1) return null;
+                    return (
+                      <div>
+                        {d}
+                        :
+                        {' '}
+                        <span className='bold'>{data[d]}</span>
+                      </div>
+                    );
+                  })
+                }
+              </SubNote>
+              {
+                status
+                  ? (
+                    <StatusTag status={status}>
+                      {status}
+                    </StatusTag>
+                  ) : null
+              }
+              {
+                values.length === 0 ? 'No Data Avalaiable'
+                  : (
+                    <>
+                      <svg width='100%' viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
+                        <g transform={`translate(${margin.left},${margin.top})`}>
+                          <line
+                            y1={y(0)}
+                            y2={y(0)}
+                            x1={0 - margin.left}
+                            x2={graphWidth + margin.right}
+                            stroke='#212121'
+                            strokeWidth={1}
+                          />
+                          <text
+                            x={0 - margin.left + 2}
+                            y={y(0)}
+                            fill='#666'
+                            textAnchor='start'
+                            fontSize={12}
+                            dy={-3}
                           >
-                            <circle
-                              cx={x(d.year)}
-                              cy={y(d.value)}
-                              r={4}
-                              fill='#0969FA'
-                            />
-                            <text
-                              x={x(d.year)}
-                              y={y(d.value)}
-                              dy={-8}
-                              fontSize={values.length > 10 ? values.length > 20 ? 0 : 11 : 12}
-                              textAnchor='middle'
-                              fill='#082753'
-                            >
-                              {typeof d.value === 'number' ? Math.abs(d.value) > 1 ? format('.2s')(d.value) : d.value > 0.009 ? d.value.toFixed(2) : d.value : d.value}
-                            </text>
-                          </g>
-                        ))
-                      }
-                      {
-                        data.targets ? (
+                            0
+                          </text>
                           <g>
-                            <line
-                              x1={0 - margin.left}
-                              x2={graphWidth + margin.right}
-                              y1={y(data.targets.targetValue)}
-                              y2={y(data.targets.targetValue)}
-                              stroke='#082753'
-                              strokeWidth={1}
-                            />
-                            <text
-                              fill='#082753'
-                              fontSize={14}
-                              y={y(data.targets.targetValue)}
-                              x={graphWidth + margin.right}
-                              fontWeight='bold'
-                              textAnchor='end'
-                              dy={-5}
-                            >
-                              Target
-                            </text>
-                            <text
-                              fill='#082753'
-                              fontSize={14}
-                              fontWeight='bold'
-                              y={y(data.targets.targetValue)}
-                              x={graphWidth + margin.right}
-                              textAnchor='end'
-                              dy={15}
-                            >
-                              {data.targets.targetValue}
-                            </text>
+                            {
+                              yTicks.map((d, i) => (
+                                <g key={i}>
+                                  <line
+                                    y1={y(d)}
+                                    y2={y(d)}
+                                    x1={0 - margin.left}
+                                    x2={graphWidth + margin.right}
+                                    stroke='#CCC'
+                                    strokeWidth={1}
+                                    strokeDasharray='4,8'
+                                    opacity={d === 0 ? 0 : 1}
+                                  />
+                                  <text
+                                    x={0 - margin.left + 2}
+                                    y={y(d)}
+                                    fill='#666'
+                                    textAnchor='start'
+                                    fontSize={12}
+                                    dy={-3}
+                                    opacity={d === 0 ? 0 : 1}
+                                  >
+                                    {Math.abs(d) < 1 ? d : format('~s')(d).replace('G', 'B')}
+                                  </text>
+                                </g>
+                              ))
+                            }
                           </g>
-                        )
-                          : null
-                      }
-                      {
-                        hoverData
-                          ? (
-                            <g>
-                              <line
-                                x1={x(hoverData.year)}
-                                x2={x(hoverData.year)}
-                                y1={0}
-                                y2={graphHeight}
-                                stroke='#666'
-                                strokeWidth={1}
-                              />
-                              <rect
-                                fill='#fff'
-                                opacity={0.8}
-                                y={0}
-                                x={x(hoverData.year) > graphWidth / 2 ? x(hoverData.year) - ((`${hoverData.value}`.length + 6) * 7) - 3 : x(hoverData.year) + 2}
-                                height={20}
-                                width={(`${hoverData.value}`.length + 6) * 7}
-                              />
-                              <text
-                                fill='#666'
-                                fontSize={12}
-                                y={0}
-                                x={x(hoverData.year)}
-                                textAnchor={x(hoverData.year) > graphWidth / 2 ? 'end' : 'start'}
-                                dx={x(hoverData.year) > graphWidth / 2 ? -3 : 3}
-                                dy={15}
-                              >
-                                {hoverData.year}
-                                :
-                                {' '}
-                                {hoverData.value}
-                              </text>
-                            </g>
-                          )
-                          : null
-                      }
-                    </g>
-                  </g>
-                </svg>
-              </>
-            )
-        }
-      </RootEl>
-      <DownLoadButton
-        type='button'
-        onClick={() => {
-          if (GraphRef.current) {
-            const node = GraphRef.current;
-            domtoimage
-              .toPng(node as any, { height: (node as any).scrollHeight })
-              .then((dataUrl: any) => {
-                const link = document.createElement('a');
-                link.download = 'graph.png';
-                link.href = dataUrl;
-                link.click();
-              });
-          }
-        }}
-      >
-        Download Image
-        <FileImageTwoTone style={{ fontSize: '18px' }} />
-      </DownLoadButton>
-    </ParentEl>
+                          <g>
+                            {
+                              xTicks.map((d, i) => (
+                                <g key={i}>
+                                  <text
+                                    y={graphHeight}
+                                    x={x(d)}
+                                    fill='#AAA'
+                                    textAnchor='middle'
+                                    fontSize={12}
+                                    dy={15}
+                                  >
+                                    {d}
+                                  </text>
+                                </g>
+                              ))
+                            }
+                          </g>
+                          <g>
+                            <path d={lineShape1(values as any) as string} fill='none' stroke='#0969FA' strokeWidth={2} />
+                            {
+                              values.map((d: any, i: number) => (
+                                <g
+                                  key={i}
+                                >
+                                  <circle
+                                    cx={x(d.year)}
+                                    cy={y(d.value)}
+                                    r={4}
+                                    fill='#0969FA'
+                                  />
+                                  <text
+                                    x={x(d.year)}
+                                    y={y(d.value)}
+                                    dy={-8}
+                                    fontSize={values.length > 10 ? values.length > 20 ? 0 : 11 : 12}
+                                    textAnchor='middle'
+                                    fill='#082753'
+                                  >
+                                    {typeof d.value === 'number' ? Math.abs(d.value) < 1 ? Math.abs(d.value) < 0.09 ? d.value.toFixed(3) : d.value.toFixed(2) : Math.abs(d.value) > 1000 ? format('.2s')(d.value).replace('G', 'B') : format('.3s')(d.value) : d.value}
+                                  </text>
+                                </g>
+                              ))
+                            }
+                            {
+                              data.targets ? (
+                                <g>
+                                  <line
+                                    x1={0 - margin.left}
+                                    x2={graphWidth + margin.right}
+                                    y1={y(data.targets.targetValue)}
+                                    y2={y(data.targets.targetValue)}
+                                    stroke='#59BA47'
+                                    strokeWidth={1}
+                                  />
+                                  <text
+                                    fill='#59BA47'
+                                    fontSize={14}
+                                    y={y(data.targets.targetValue)}
+                                    x={graphWidth + margin.right}
+                                    fontWeight='bold'
+                                    textAnchor='end'
+                                    dy={-5}
+                                  >
+                                    Target
+                                  </text>
+                                  <text
+                                    fill='#59BA47'
+                                    fontSize={14}
+                                    fontWeight='bold'
+                                    y={y(data.targets.targetValue)}
+                                    x={graphWidth + margin.right}
+                                    textAnchor='end'
+                                    dy={15}
+                                  >
+                                    {data.targets.targetValue}
+                                  </text>
+                                </g>
+                              )
+                                : null
+                            }
+                            {
+                              hoverData
+                                ? (
+                                  <g>
+                                    <line
+                                      x1={x(hoverData.year)}
+                                      x2={x(hoverData.year)}
+                                      y1={0}
+                                      y2={graphHeight}
+                                      stroke='#666'
+                                      strokeWidth={1}
+                                    />
+                                    <rect
+                                      fill='#fff'
+                                      opacity={0.8}
+                                      y={0}
+                                      x={x(hoverData.year) > graphWidth / 2 ? x(hoverData.year) - ((`${hoverData.value}`.length + 6) * 7) - 3 : x(hoverData.year) + 2}
+                                      height={20}
+                                      width={(`${hoverData.value}`.length + 6) * 7}
+                                    />
+                                    <text
+                                      fill='#666'
+                                      fontSize={12}
+                                      y={0}
+                                      x={x(hoverData.year)}
+                                      textAnchor={x(hoverData.year) > graphWidth / 2 ? 'end' : 'start'}
+                                      dx={x(hoverData.year) > graphWidth / 2 ? -3 : 3}
+                                      dy={15}
+                                    >
+                                      {hoverData.year}
+                                      :
+                                      {' '}
+                                      {hoverData.value === null ? 'NA' : hoverData.value}
+                                    </text>
+                                  </g>
+                                )
+                                : null
+                            }
+                            <rect
+                              x={0}
+                              y={0}
+                              width={graphWidth}
+                              height={graphHeight}
+                              fill='#fff'
+                              opacity={0}
+                              ref={MouseoverRectRef}
+                            />
+                          </g>
+                        </g>
+                      </svg>
+                    </>
+                  )
+              }
+            </RootEl>
+            <DownLoadButton
+              type='button'
+              onClick={() => {
+                if (GraphRef.current) {
+                  const node = GraphRef.current;
+                  domtoimage
+                    .toPng(node as any, { height: (node as any).scrollHeight })
+                    .then((dataUrl: any) => {
+                      const link = document.createElement('a');
+                      link.download = 'graph.png';
+                      link.href = dataUrl;
+                      link.click();
+                    });
+                }
+              }}
+            >
+              Download Image
+              <FileImageTwoTone style={{ fontSize: '18px' }} />
+            </DownLoadButton>
+          </ParentEl>
+        )}
+    </>
   );
 };
