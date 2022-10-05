@@ -175,7 +175,7 @@ export const PrioritiesVizCard = (props: Props) => {
           Relative Salience
         </TitleEl>
         <SubNote>
-          Relative Salience is a measure of the amount of text content linked to each SDG as compared to the Goal which is the most salient in the text. Relative Salience can help to understand which of the SDGs covered in the document( receive most attention and which ones are only briefly treated.
+          Relative Salience is a measure of the amount of text content linked to each SDG as compared to the Goal which is the most salient in the text. Relative Salience can help to understand which of the SDGs covered in the document receive most attention and which ones are only briefly treated.
         </SubNote>
         <br />
         <br />

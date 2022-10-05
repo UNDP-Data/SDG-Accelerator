@@ -251,7 +251,7 @@ export const CurrentGaps = () => {
               target, goal: target.split('.')[0], status: 'On Track',
             };
           }
-          if (Math.round(total / filtered.length) === 2) {
+          if (Math.round(total / filtered.length) === 3) {
             return {
               target, goal: target.split('.')[0], status: 'Identified Gap',
             };
@@ -345,7 +345,7 @@ export const CurrentGaps = () => {
                   {' '}
                   are On Track,
                 </span>
-                <span style={{ color: 'var(--accent-yellow)' }} className='bold'>
+                <span style={{ color: 'var(--accent-red)' }} className='bold'>
                   {' '}
                   {goalStatuses.filter((d: any) => d.status === 'Identified Gap').length}
                   {' '}
@@ -353,7 +353,7 @@ export const CurrentGaps = () => {
                 </span>
                 {' '}
                 and,
-                <span style={{ color: 'var(--accent-red)' }} className='bold'>
+                <span style={{ color: 'var(--accent-yellow)' }} className='bold'>
                   {' '}
                   {goalStatuses.filter((d: any) => d.status === 'For Review').length}
                   {' '}

@@ -183,7 +183,7 @@ export const Priorities = () => {
               target, goal: target.split('.')[0], status: 'On Track',
             };
           }
-          if (Math.round(total / filtered.length) === 2) {
+          if (Math.round(total / filtered.length) === 3) {
             return {
               target, goal: target.split('.')[0], status: 'Identified Gap',
             };
@@ -259,7 +259,7 @@ export const Priorities = () => {
       <div>
         <PageTitle
           title='Current Priorities — How Do We Get There?'
-          description='Scan reports and policy documents in the database and upload your own for run text analysis to identify national accelerators. Explore assumptions in the areas of Digital, Social Protection, Governance, Green Economy and other national priority areas.'
+          description='Scan reports and policy documents in the database and upload your own for run text analysis to identify national accelerators.'
         />
         <RootEl>
           <DescriptionEl>
