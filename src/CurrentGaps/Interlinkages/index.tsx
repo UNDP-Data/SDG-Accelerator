@@ -166,7 +166,7 @@ export const Interlinkages = (props: Props) => {
                         : targetStatus[targetStatus.findIndex((d) => d.target === TargetMostSynergies)].status === undefined ? 'var(--black-500)' : 'var(--accent-yellow)'
                   }
                   fontColor={
-                    targetStatus[targetStatus.findIndex((d) => d.target === TargetMostSynergies)].status !== 'For Review' && targetStatus[targetStatus.findIndex((d) => d.target === TargetMostSynergies)].status ? 'var(--white)' : 'var(--black)'
+                    targetStatus[targetStatus.findIndex((d) => d.target === TargetMostSynergies)].status === 'For Review' || !targetStatus[targetStatus.findIndex((d) => d.target === TargetMostSynergies)].status ? 'var(--black)' : 'var(--white)'
                   }
                   text={targetStatus[targetStatus.findIndex((d) => d.target === TargetMostSynergies)].status || 'Gap Unidentified'}
                 />
@@ -176,45 +176,45 @@ export const Interlinkages = (props: Props) => {
               <CardTitle>Top 3 Target Interlinkages with the highest acceleration potential</CardTitle>
               <ValueContainer>
                 <HighestAccValueEl>
-                  <ValueText>{sortBy(potential, ['identifiedGap', 'forReview']).reverse()[0].id.split(' ')[1]}</ValueText>
+                  <ValueText>{sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[0].id.split(' ')[1]}</ValueText>
                   <Tag
                     backgroundColor={
-                      targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[0].id)].status === 'On Track' ? 'var(--accent-green)'
-                        : targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[0].id)].status === 'Identified Gap' ? 'var(--accent-red)'
-                          : targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[0].id)].status === undefined ? 'var(--black-500)' : 'var(--accent-yellow)'
+                      targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[0].id)].status === 'On Track' ? 'var(--accent-green)'
+                        : targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[0].id)].status === 'Identified Gap' ? 'var(--accent-red)'
+                          : targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[0].id)].status === undefined ? 'var(--black-500)' : 'var(--accent-yellow)'
                     }
                     fontColor={
-                      targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[0].id)].status !== 'For Review' && targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[1].id)].status ? 'var(--white)' : 'var(--black)'
+                      targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[0].id)].status === 'For Review' || !targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[0].id)].status ? 'var(--black)' : 'var(--white)'
                     }
-                    text={targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[0].id)].status || 'Gap Unidentified'}
+                    text={targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[0].id)].status || 'Gap Unidentified'}
                   />
                 </HighestAccValueEl>
                 <HighestAccValueEl>
-                  <ValueText>{sortBy(potential, ['identifiedGap', 'forReview']).reverse()[1].id.split(' ')[1]}</ValueText>
+                  <ValueText>{sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[1].id.split(' ')[1]}</ValueText>
                   <Tag
                     backgroundColor={
-                      targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[1].id)].status === 'On Track' ? 'var(--accent-green)'
-                        : targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[1].id)].status === 'Identified Gap' ? 'var(--accent-red)'
-                          : targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[1].id)].status === undefined ? 'var(--black-500)' : 'var(--accent-yellow)'
+                      targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[1].id)].status === 'On Track' ? 'var(--accent-green)'
+                        : targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[1].id)].status === 'Identified Gap' ? 'var(--accent-red)'
+                          : targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[1].id)].status === undefined ? 'var(--black-500)' : 'var(--accent-yellow)'
                     }
                     fontColor={
-                      targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[1].id)].status !== 'For Review' && targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[1].id)].status ? 'var(--white)' : 'var(--black)'
+                      targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[1].id)].status === 'For Review' || !targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[1].id)].status ? 'var(--black)' : 'var(--white)'
                     }
-                    text={targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[1].id)].status || 'Gap Unidentified'}
+                    text={targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[1].id)].status || 'Gap Unidentified'}
                   />
                 </HighestAccValueEl>
                 <HighestAccValueEl>
-                  <ValueText>{sortBy(potential, ['identifiedGap', 'forReview']).reverse()[2].id.split(' ')[1]}</ValueText>
+                  <ValueText>{sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[2].id.split(' ')[1]}</ValueText>
                   <Tag
                     backgroundColor={
-                      targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[2].id)].status === 'On Track' ? 'var(--accent-green)'
-                        : targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[2].id)].status === 'Identified Gap' ? 'var(--accent-red)'
-                          : targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[2].id)].status === undefined ? 'var(--black-500)' : 'var(--accent-yellow)'
+                      targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[2].id)].status === 'On Track' ? 'var(--accent-green)'
+                        : targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[2].id)].status === 'Identified Gap' ? 'var(--accent-red)'
+                          : targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[2].id)].status === undefined ? 'var(--black-500)' : 'var(--accent-yellow)'
                     }
                     fontColor={
-                      targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[2].id)].status !== 'For Review' && targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[1].id)].status ? 'var(--white)' : 'var(--black)'
+                      targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[2].id)].status === 'For Review' || !targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[2].id)].status ? 'var(--black)' : 'var(--white)'
                     }
-                    text={targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, ['identifiedGap', 'forReview']).reverse()[2].id)].status || 'Gap Unidentified'}
+                    text={targetStatus[targetStatus.findIndex((d) => d.target === sortBy(potential, (el) => ((el.identifiedGap * 2) + el.forReview)).reverse()[2].id)].status || 'Gap Unidentified'}
                   />
                 </HighestAccValueEl>
               </ValueContainer>
@@ -239,7 +239,11 @@ export const Interlinkages = (props: Props) => {
                   </Select>
                 </TitleUnit>
                 <SubNoteDiv>
-                  Hover or click on the target to see the interlinkages
+                  Hover or click on the target to see the interlinkages.
+                  {' '}
+                  <a href='https://knowsdgs.jrc.ec.europa.eu/interlinkages-visualization' target='_blank' rel='noreferrer'>Click here</a>
+                  {' '}
+                  to see the source for the linkages
                 </SubNoteDiv>
               </TitleEl>
               <Radio.Group onChange={(d) => { setLinkageTypes(d.target.value); }} value={linkageType} buttonStyle='solid' size='large'>

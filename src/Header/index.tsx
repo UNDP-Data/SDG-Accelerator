@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { HEADERCARDOPTION } from '../Constants';
+import { DATASOURCELINK, HEADERCARDOPTION } from '../Constants';
 import { CardButton } from '../Components/CardButton';
 import { GIZLogo } from '../icons';
 
@@ -93,6 +93,11 @@ const RightNav = styled.a`
   cursor: pointer;
 `;
 
+const FlexDiv = styled.div`
+  display: flex;
+  gap: 2rem;
+`;
+
 export const Header = () => (
   <>
     <TopNavEl>
@@ -107,9 +112,14 @@ export const Header = () => (
             </NavHead>
           </div>
         </a>
-        <RightNav href='https://data.undp.org/' target='_blank' rel='noreferrer'>
-          Visit Data Futures Platform
-        </RightNav>
+        <FlexDiv>
+          <RightNav href={`${DATASOURCELINK}/data/Draft_Diagnostic Simulator Methodological Note & User Guide.pdf`} target='_blank' rel='noreferrer'>
+            Methodology
+          </RightNav>
+          <RightNav href='https://data.undp.org/' target='_blank' rel='noreferrer'>
+            Visit Data Futures Platform
+          </RightNav>
+        </FlexDiv>
       </HeaderContainer>
     </TopNavEl>
     <RootEl>

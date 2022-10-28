@@ -87,23 +87,23 @@ export const Priorities = () => {
         if (err) throw err;
         const filteredTimeseriesData:any = [];
         d.forEach((el:any) => {
-          if (timeSeriesToUse.findIndex((el1: any) => isEqual(el1, omit(el, ['values', 'targets']))) !== -1 || el.series === '***') filteredTimeseriesData.push(el);
+          if (timeSeriesToUse.findIndex((el1: any) => isEqual(el1, omit(el, ['values', 'targets', 'trendMethodology']))) !== -1 || el.series === '***') filteredTimeseriesData.push(el);
         });
         const filteredTimeseriesDataWithStatus = filteredTimeseriesData.map((element: any) => {
           const values = uniqBy(element.values, 'year').filter((el: any) => el.value !== null);
-
           const targetValue = element.targets !== 0 || element.targets !== null ? element.targets : null;
+          const trendMethodology = element.trendMethodology ? element.trendMethodology : 'CAGR';
           const yearsAndValues = getYearsAndValues(values as any);
           const status = element.indicator === '8.1.1'
             ? meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 2 ? 'On Track'
               : meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 1.5 ? 'Fair progress but acceleration needed'
                 : meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 1 ? 'Limited or No Progress'
                   : 'Deterioration'
-            : targetValue === null
+            : targetValue === null || trendMethodology === 'NA'
               ? undefined
               : yearsAndValues === null
                 ? 'Insufficient Data'
-                : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type);
+                : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type, trendMethodology);
           return { ...element, status };
         });
         const allIndicators = uniqBy(filteredTimeseriesDataWithStatus.filter((el: any) => el.status), 'indicator').map((el: any) => el.indicator);

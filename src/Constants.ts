@@ -154,6 +154,7 @@ export const KEYSTOAVOID = [
   'seriesDescription',
   'values',
   'targets',
+  'trendMethodology',
 ];
 
 export const SCENARIOINDICATORBASEDONSDG = [

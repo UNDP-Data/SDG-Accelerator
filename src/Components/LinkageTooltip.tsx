@@ -18,7 +18,7 @@ interface TooltipElProps {
 const TooltipEl = styled.div<TooltipElProps>`
   display: block;
   position: fixed;
-  z-index: 10;
+  z-index: 1000;
   border-radius: 1rem;
   font-size: 1.4rem;
   background-color: var(--white);
@@ -35,7 +35,7 @@ export const Tooltip = (props: Props) => {
     data,
   } = props;
   return (
-    <TooltipEl x={data.xPosition > window.innerWidth / 2 ? data.xPosition - 390 : data.xPosition} y={data.yPosition}>
+    <TooltipEl x={data.xPosition > window.innerWidth / 2 ? data.xPosition - 345 : data.xPosition} y={data.yPosition}>
       {data.text}
     </TooltipEl>
   );

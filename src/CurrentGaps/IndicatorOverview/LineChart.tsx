@@ -12,18 +12,12 @@ import { useEffect, useRef, useState } from 'react';
 import { pointer, select } from 'd3-selection';
 import { KEYSTOAVOID } from '../../Constants';
 import { getYearsAndValues } from '../../utils/getYearsAndValues';
-import { getCAGR } from '../../utils/getCAGR';
+import { getStatus } from '../../utils/getStatus';
 
 interface Props {
   data: any;
 }
 
-interface yearAndValueDataType {
-  baseYear: number;
-  baseValue: number;
-  finalYear: number;
-  finalValue: number;
-}
 const ParentEl = styled.div`
   margin: 1rem 0;
   width: calc(50% - 1rem);
@@ -98,20 +92,6 @@ const StatusTag = styled.div<StatusTagProps>`
   color: ${(props) => (props.status === 'Fair progress but acceleration needed' || props.status === 'Insufficient Data' || props.status === 'Target value unavailable' ? 'var(--black-700)' : 'var(--white)')};
 `;
 
-const getStatus = (yearsAndValues: yearAndValueDataType, targetValue: number, type: string) => {
-  if (type === 'min') if (yearsAndValues.finalValue < targetValue) return 'Target Achieved';
-  if (type === 'max') if (yearsAndValues.finalValue > targetValue) return 'Target Achieved';
-  const CARGA = getCAGR(yearsAndValues.finalYear, yearsAndValues.baseYear, yearsAndValues.finalValue, yearsAndValues.baseValue);
-  const CARGT = getCAGR(2030, yearsAndValues.baseYear, targetValue, yearsAndValues.baseValue);
-  if (CARGA === null || CARGT === null) return 'Insufficient Data';
-  const CR = CARGA / CARGT;
-  if (Number.isNaN(CR)) return 'Insufficient Data';
-  if (CR >= 0.95) return 'On Track';
-  if (CR >= 0.5 && CR < 0.95) return 'Fair progress but acceleration needed';
-  if (CR >= -0.1 && CR < 0.5) return 'Limited or No Progress';
-  return 'Deterioration';
-};
-
 export const LineChart = (props: Props) => {
   const { data } = props;
   const GraphRef = useRef(null);
@@ -142,7 +122,7 @@ export const LineChart = (props: Props) => {
       ? 'Target value unavailable'
       : yearsAndValues === null
         ? 'Insufficient Data'
-        : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type);
+        : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type, data.trendMethodology);
 
   const minParam = min(values.map((d: any) => d.value)) ? min(values.map((d: any) => d.value)) as number > 0 ? 0 : min(values.map((d: any) => d.value)) : 0;
 
@@ -208,14 +188,37 @@ export const LineChart = (props: Props) => {
                   })
                 }
               </SubNote>
-              {
-                status
-                  ? (
-                    <StatusTag status={status}>
-                      {status}
-                    </StatusTag>
-                  ) : null
-              }
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                {
+                  status
+                    ? (
+                      <StatusTag status={status}>
+                        {status}
+                      </StatusTag>
+                    ) : null
+                }
+                {
+                  data.trendMethodology === 'NA'
+                    ? (
+                      <StatusTag status='Insufficient Data'>
+                        Methodology Not Developed
+                      </StatusTag>
+                    ) : data.trendMethodology === 'AARR'
+                      ? (
+                        <StatusTag status='Insufficient Data'>
+                          Methodology:
+                          {'  '}
+                          <span className='bold'>AARR</span>
+                        </StatusTag>
+                      ) : (
+                        <StatusTag status='Insufficient Data'>
+                          Methodology:
+                          {' '}
+                          <span className='bold'>CAGR</span>
+                        </StatusTag>
+                      )
+                }
+              </div>
               {
                 values.length === 0 ? 'No Data Avalaiable'
                   : (

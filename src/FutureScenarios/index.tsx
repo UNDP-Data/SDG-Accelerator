@@ -51,7 +51,7 @@ export const FutureScenariosList = () => {
             <br />
             <>The Future Scenarios outlines projections based on Acceleration Opportunities analyzed in the areas of Governance, Social Protection, Green Economy and Digital Disruption. UNDP’s flagship study, conducted with the Pardee Center for International Futures at the University of Denver, assesses the impact of three different COVID-19 scenarios on the SDGs, capturing the multidimensional effects of the pandemic over the next decades. The findings show that while COVID-19 can lead to severe long-term impacts, a set of ambitious but feasible integrated SDG investments can help the world exceed the development trajectory we were on before the pandemic. These SDG Investments, detailed in the ‘Acceleration Opportunities’ page, are aimed at narrowing the gaps identified in the ‘Current SDG Gaps’ page. Their projected impact over the coming decades is visualized here as the “SDG Push” scenario.  </>
             <ButtonDiv>
-              <button type='button' className='secondary'>Read More</button>
+              <a href='https://data.undp.org/content/assessing-covid-impacts-on-the-sdgs/' target='_blank' rel='noreferrer' style={{ fontWeight: 'bold', textTransform: 'uppercase', color: 'var(--black' }}>Read More</a>
             </ButtonDiv>
           </CardEl>
           <Tabs type='card' size='small' onChange={(key) => { setSelectedSDG(key); }}>
