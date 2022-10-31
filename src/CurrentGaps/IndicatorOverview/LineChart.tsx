@@ -122,7 +122,7 @@ export const LineChart = (props: Props) => {
       ? 'Target value unavailable'
       : yearsAndValues === null
         ? 'Insufficient Data'
-        : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type, data.trendMethodology);
+        : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type, data.trendMethodology || 'CAGR');
 
   const minParam = min(values.map((d: any) => d.value)) ? min(values.map((d: any) => d.value)) as number > 0 ? 0 : min(values.map((d: any) => d.value)) : 0;
 
@@ -198,25 +198,26 @@ export const LineChart = (props: Props) => {
                     ) : null
                 }
                 {
-                  data.trendMethodology === 'NA'
-                    ? (
-                      <StatusTag status='Insufficient Data'>
-                        Methodology Not Developed
-                      </StatusTag>
-                    ) : data.trendMethodology === 'AARR'
+                  data.targets === 0 || data.indicator === '8.1.1' ? null
+                    : data.trendMethodology === 'NA'
                       ? (
                         <StatusTag status='Insufficient Data'>
-                          Methodology:
-                          {'  '}
-                          <span className='bold'>AARR</span>
+                          Methodology Not Developed
                         </StatusTag>
-                      ) : (
-                        <StatusTag status='Insufficient Data'>
-                          Methodology:
-                          {' '}
-                          <span className='bold'>CAGR</span>
-                        </StatusTag>
-                      )
+                      ) : data.trendMethodology === 'AARR'
+                        ? (
+                          <StatusTag status='Insufficient Data'>
+                            Methodology:
+                            {'  '}
+                            <span className='bold'>AARR</span>
+                          </StatusTag>
+                        ) : (
+                          <StatusTag status='Insufficient Data'>
+                            Methodology:
+                            {' '}
+                            <span className='bold'>CAGR</span>
+                          </StatusTag>
+                        )
                 }
               </div>
               {

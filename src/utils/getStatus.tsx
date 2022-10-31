@@ -9,7 +9,7 @@ interface yearAndValueDataType {
 }
 
 export const getStatus = (yearsAndValues: yearAndValueDataType, targetValue: number, type: string, trendMethodology: string) => {
-  if (trendMethodology === 'CAGR') {
+  if (trendMethodology === 'CAGR' || !trendMethodology) {
     if (type === 'min') if (yearsAndValues.finalValue < targetValue) return 'Target Achieved';
     if (type === 'max') if (yearsAndValues.finalValue > targetValue) return 'Target Achieved';
     const CARGA = getCAGR(yearsAndValues.finalYear, yearsAndValues.baseYear, yearsAndValues.finalValue, yearsAndValues.baseValue);

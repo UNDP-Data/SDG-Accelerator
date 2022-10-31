@@ -165,14 +165,15 @@ export const CurrentGaps = () => {
           const yearsAndValues = getYearsAndValues(values as any);
           const status = element.indicator === '8.1.1'
             ? meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 2 ? 'On Track'
-              : meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 1.5 ? 'Fair progress but acceleration needed'
-                : meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 1 ? 'Limited or No Progress'
-                  : 'Deterioration'
+              : element.values.filter((val: any) => val.year < 2015).length === 0 ? undefined
+                : meanBy(element.values.filter((val: any) => val.year > 2014), 'value') < meanBy(element.values.filter((val: any) => val.year < 2015), 'value') ? 'Deterioration'
+                  : meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 1.5 ? 'Fair progress but acceleration needed'
+                    : 'Limited or No Progress'
             : targetValue === null || trendMethodology === 'NA'
               ? undefined
               : yearsAndValues === null
                 ? 'Insufficient Data'
-                : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type, trendMethodology);
+                : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type, trendMethodology || 'CAGR');
           return { ...element, status };
         });
         const allIndicators = uniqBy(filteredTimeseriesDataWithStatus.filter((el: any) => el.status), 'indicator').map((el: any) => el.indicator);
