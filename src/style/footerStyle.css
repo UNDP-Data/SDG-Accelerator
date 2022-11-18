@@ -1,0 +1,34 @@
+.undp-footer {
+  height: auto;
+  font-family: var(--fontFamily);
+  background-color: var(--blue-600);
+  width: 100%;
+  padding: 3.25rem 0.75rem 3rem 0.75rem;
+  color: var(--white);
+}
+
+.undp-footer>div {
+  margin: 0 auto;
+  max-width: 83.33333%;
+}
+
+
+.undp-footer>p {
+  margin: 0 auto;
+  max-width: 83.33333%;
+}
+
+.undp-footer-right-link {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.undp-footer-link {
+  font-size: 1rem !important;
+  color: var(--white) !important;
+  text-decoration: none !important;
+}
+
+.undp-footer-link:hover{
+  opacity: 0.7;
+}

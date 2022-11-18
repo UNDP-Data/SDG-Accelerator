@@ -1,0 +1,166 @@
+.stat-card {
+  padding: 2rem;
+  background-color: var(--gray-200);
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--black);
+  transition: 300ms all;
+}
+
+.stat-card-long {
+  padding: 10rem 1rem 3rem 1rem;
+  background-color: var(--gray-700);
+  font-size: 1.25rem;
+  width: calc(25% - 1.5rem);
+  color: var(--white);
+  transition: 300ms all;
+}
+
+.stat-card:hover {
+  background-color: var(--light-yellow);
+}
+
+.stat-card:hover h2 {
+  color: var(--black);
+}
+
+.stat-card-long:hover h2 {
+  color: var(--white);
+}
+
+.stat-card h2 {
+  line-height: 1.09;
+  text-shadow: none;
+  -webkit-text-stroke: 2px var(--black);
+  color: var(--gray-200);
+  font-size: 5rem;
+  letter-spacing: .05rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+
+.stat-card h2.green-text {
+  -webkit-text-stroke: 2px var(--dark-green);  
+}
+.stat-card:hover h2.green-text {
+  color: var(--dark-green);
+}
+
+.stat-card h2.red-text {
+  -webkit-text-stroke: 2px var(--dark-red);  
+}
+.stat-card:hover h2.red-text {
+  color: var(--dark-red);
+}
+
+.stat-card h2.yellow-text {
+  -webkit-text-stroke: 2px var(--dark-yellow);
+}
+.stat-card:hover h2.yellow-text {
+  color: var(--dark-yellow);
+}
+
+
+
+.stat-card-long h2 {
+  line-height: 1.09;
+  text-shadow: none;
+  -webkit-text-stroke: 2px var(--white);
+  color: var(--gray-700);
+  font-size: 5rem;
+  letter-spacing: .05rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 48em) {
+  .stats-card.small h2 {
+    font-size: 4.375rem;
+  }
+}
+
+.stat-card h3 {
+  font-size: 4.375rem;
+  line-height: 1.09;
+  text-shadow: none;
+  -webkit-text-stroke: 2px var(--black);
+  color: var(--gray-200);
+  letter-spacing: .05rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+
+.stat-card-long h3 {
+  font-size: 4.375rem;
+  line-height: 1.09;
+  text-shadow: none;
+  -webkit-text-stroke: 2px var(--white);
+  color: var(--gray-700);
+  letter-spacing: .05rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 48em) {
+    .stats-card.small h3 {
+      font-size: 3.5rem;
+  }
+}
+
+.stat-card:hover h3 {
+  color: var(--black);
+}
+
+.stat-card-long:hover h3 {
+  color: var(--black);
+}
+
+.stat-card h4 {
+  line-height: 1.15;
+  color: var(--black);
+  font-size: 1.563rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.stat-card p {
+  line-height: 1.15;
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.stat-card-long h4 {
+  line-height: 1.15;
+  color: var(--white);
+  font-size: 1.563rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.stat-card-long p {
+  line-height: 1.15;
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.stat-card-long .sdg-icon-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-11);
+}
+
+.sdg-icon-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;  
+  align-content: flex-start;
+}
+
+.sdg-icon-container>div {
+  height: fit-content;
+}

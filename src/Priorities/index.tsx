@@ -1,381 +1,442 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import styled from 'styled-components';
 import axios from 'axios';
 import {
-  Result, Spin,
+  Modal,
+  Select, Tabs,
 } from 'antd';
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { json } from 'd3-request';
-import { queue } from 'd3-queue';
-import isEqual from 'lodash.isequal';
-import omit from 'lodash.omit';
-import uniqBy from 'lodash.uniqby';
-import meanBy from 'lodash.meanby';
-import { getYearsAndValues } from '../utils/getYearsAndValues';
-import { PrioritiesVizCard } from './PrioritiesVizCards';
-import { DATASOURCELINK } from '../Constants';
-import { Nav } from '../Header/Nav';
-import { PageTitle } from '../Components/PageTitle';
-import { getStatus } from '../utils/getStatus';
-import { CompareIcon, UploadIcon } from '../icons';
-import { UploadModal } from './UploadModal';
-import { CompareModal } from './CompareModal';
-import { CompareTable } from './CompareTable';
-import CountryTaxonomy from '../Data/countryTaxonomy.json';
+import { useEffect, useRef, useState } from 'react';
+import sortBy from 'lodash.sortby';
+import reverse from 'lodash.reverse';
+import { VNRAnalysis } from './VNRAnalysis';
+import { CompareAnalysis } from './CompareTable';
 
-const RootEl = styled.div`
-  width: 128rem;
-  margin: 2rem auto 5rem auto;
-  padding-bottom: 5rem;
+import '../style/tabStyle.css';
+import '../style/selectStyle.css';
+import '../style/modalStyle.css';
+import Background from './img/UNDP-hero-image.png';
+
+interface Props {
+  countrySelected: string;
+  countryFullName: string;
+  goalStatuses: any;
+}
+
+const HeroImageEl = styled.div`
+  background: url(${Background}) no-repeat center;
+  background-size: cover;
+  margin-top: 7.1875rem;
 `;
 
-const DescriptionEl = styled.div`
-  margin: 0 0 2rem 0;
+const UploadEl = styled.div`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border: 2px solid var(--gray-700);
+  background-color: var(--white);
 `;
 
-const SubNote = styled.div`
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  color: var(--black-700);
-  margin-top: 1.6rem;
+const SelectedEl = styled.div`
+  font-size: 1rem;
+  background-color: var(--gray-100);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
-const SummaryEl = styled.div`
-  padding: 4.8rem;
-  background-color: var(--black-200);
-  font-size: 3rem;
-  line-height: 4rem;
-  margin-bottom: 2rem;
-`;
-
-const ButtonEl = styled.div`
-  color: var(--black-700);
-  cursor: pointer;
+const UploadButtonEl = styled.div`
+  color: var(--black);
+  text-transform: uppercase;
+  cursor:  pointer;
   justify-content: center;
-  padding: 0;
+  padding: 1rem 0.75rem;
   align-items: center;
   display: flex;
-  font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: .03em;
+  font-size: 0.875rem;
   line-height: 1;
-  gap: 1rem;
-  text-transform: uppercase;
   width: fit-content;
-  margin-top: 3rem;
+  background-color: var(--gray-200);
+  font-weight: bold;
+  border-right: 2px solid var(--gray-400);
+  &:hover{
+    background-color: var(--gray-300);
+  }
 `;
 
-export const Priorities = () => {
-  const countrySelected = useParams().country || 'ZAF';
-  const countryFullName = CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === countrySelected)]['Country or Area'];
+const FileAttacehmentButton = styled.input`
+  display: none;
+`;
+
+export const Priorities = (props: Props) => {
+  const {
+    countrySelected,
+    countryFullName,
+    goalStatuses,
+  } = props;
+  const fileInputRef = useRef<any>(null);
   const [selectedFileName, setSelectedFileName] = useState<string>('');
-  const [openUploadModal, setOpenUploadModal] = useState(false);
-  const [openCompareModal, setOpenCompareModal] = useState(false);
-  const [goalStatuses, setGoalStatuses] = useState<any>(undefined);
+  const [loading, setLoading] = useState(false);
+  const [selectedFile, setSelectedFile] = useState<any>(null);
+  const [selectedCompareFileName1, setSelectedCompareFileName1] = useState<string>('');
+  const [selectedCompareFile1, setSelectedCompareFile1] = useState<any>(null);
+  const [selectedCompareFileName2, setSelectedCompareFileName2] = useState<string>('');
+  const [selectedCompareFile2, setSelectedCompareFile2] = useState<any>(null);
+  const [vnrYear, setVNRYear] = useState<null | number>(null);
+  const [selectYear, setSelectYear] = useState<null | number>(null);
   const [error, setError] = useState<any>(null);
   const [data, setData] = useState<any>(null);
-  const [defaultVNR, setDefaultVNR] = useState<any>(null);
+  const [countryVNRs, setCountryVNRs] = useState<any>(null);
+
+  const handleFileSelect = (event: any) => {
+    if (event.target.files) {
+      if (event.target.files[0]) {
+        setSelectedFile(event.target.files[0]);
+        setSelectedFileName(event.target.files[0].name);
+      }
+    }
+  };
+  const handleCompareFileSelect1 = (event: any) => {
+    if (event.target.files) {
+      if (event.target.files[0]) {
+        setSelectedCompareFile1(event.target.files[0]);
+        setSelectedCompareFileName1(event.target.files[0].name);
+      }
+    }
+  };
+  const handleCompareFileSelect2 = (event: any) => {
+    if (event.target.files) {
+      if (event.target.files[0]) {
+        setSelectedCompareFile2(event.target.files[0]);
+        setSelectedCompareFileName2(event.target.files[0].name);
+      }
+    }
+  };
+
+  const compareDocument = () => {
+    if (selectedCompareFile1 && selectedCompareFile2) {
+      const formData1 = new FormData();
+      formData1.append('file', selectedCompareFile1);
+      formData1.append('model', 'multilabel');
+      formData1.append('granularity', 'paragraph');
+      const formData2 = new FormData();
+      formData2.append('file', selectedCompareFile2);
+      formData2.append('model', 'multilabel');
+      formData2.append('granularity', 'paragraph');
+      axios({
+        method: 'post',
+        url: 'https://sdg-accelerator-api.azurewebsites.net/upload',
+        data: formData1,
+        headers: { 'Content-Type': 'multipart/form-data' },
+      })
+        .then((response1: any) => {
+          axios({
+            method: 'post',
+            url: 'https://sdg-accelerator-api.azurewebsites.net/upload',
+            data: formData2,
+            headers: { 'Content-Type': 'multipart/form-data' },
+          })
+            .then((response2: any) => {
+              if (typeof response2.data === 'string' || typeof response1.data === 'string') setError('PDF File Required');
+              else {
+                setData({ mode: 'compare', data: [response1.data.sdgs, response2.data.sdgs] });
+                setError(null);
+                setLoading(false);
+              }
+            })
+            .catch((err) => {
+              setError(err.message);
+            });
+        })
+        .catch((err) => {
+          setError(err.message);
+        });
+    }
+  };
+
+  const analyzeDocument = () => {
+    if (selectedFile) {
+      const formData = new FormData();
+      formData.append('file', selectedFile);
+      formData.append('model', 'multilabel');
+      formData.append('granularity', 'paragraph');
+      axios({
+        method: 'post',
+        url: 'https://sdg-accelerator-api.azurewebsites.net/upload',
+        data: formData,
+        headers: { 'Content-Type': 'multipart/form-data' },
+      })
+        .then((response: any) => {
+          if (typeof response.data === 'string') setError('PDF File Required');
+          else {
+            setData({ mode: 'analyze', data: response.data.sdgs });
+            setLoading(false);
+            setError(null);
+          }
+        })
+        .catch((err) => {
+          setError(err.message);
+        });
+    }
+  };
+
+  const analyzeVNR = () => {
+    if (selectYear) {
+      const { language } = countryVNRs[countryVNRs.findIndex((d: any) => d.year === selectYear)];
+      axios.get(`https://sdg-accelerator-api.azurewebsites.net/vnrs/${countrySelected.toLowerCase()}/${selectYear}/${language}/multiclass/sentence`)
+        .then((res) => {
+          setData(res.data.sdgs);
+          setVNRYear(selectYear);
+        })
+        .catch((errorFetchingVNR) => {
+          setError(errorFetchingVNR.message);
+        });
+    }
+  };
 
   useEffect(() => {
-    setSelectedFileName('');
-    setData(null);
-    queue()
-      .defer(json, `${DATASOURCELINK}/data/TimeSeriesData/${countrySelected}.json`)
-      .defer(json, `${DATASOURCELINK}/data/TimeSeriesToUse/${countrySelected}.json`)
-      .await((err: any, d: any, timeSeriesToUse: any) => {
-        if (err) throw err;
-        const filteredTimeseriesData:any = [];
-        d.forEach((el:any) => {
-          if (timeSeriesToUse.findIndex((el1: any) => isEqual(el1, omit(el, ['values', 'targets', 'trendMethodology']))) !== -1 || el.series === '***') filteredTimeseriesData.push(el);
-        });
-        const filteredTimeseriesDataWithStatus = filteredTimeseriesData.map((element: any) => {
-          const values = uniqBy(element.values, 'year').filter((el: any) => el.value !== null);
-          const targetValue = element.targets !== 0 || element.targets !== null ? element.targets : null;
-          const trendMethodology = element.trendMethodology ? element.trendMethodology : 'CAGR';
-          const yearsAndValues = getYearsAndValues(values as any);
-          const status = element.indicator === '8.1.1'
-            ? meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 2 ? 'On Track'
-              : element.values.filter((val: any) => val.year < 2015).length === 0 ? undefined
-                : meanBy(element.values.filter((val: any) => val.year > 2014), 'value') < meanBy(element.values.filter((val: any) => val.year < 2015), 'value') ? 'Deterioration'
-                  : meanBy(element.values.filter((val: any) => val.year > 2014), 'value') > 1.5 ? 'Fair progress but acceleration needed'
-                    : 'Limited or No Progress'
-            : targetValue === null || trendMethodology === 'NA'
-              ? undefined
-              : yearsAndValues === null
-                ? 'Insufficient Data'
-                : getStatus(yearsAndValues, targetValue.targetValue, targetValue.type, trendMethodology || 'CAGR');
-          return { ...element, status };
-        });
-        const allIndicators = uniqBy(filteredTimeseriesDataWithStatus.filter((el: any) => el.status), 'indicator').map((el: any) => el.indicator);
-        const indicatorsStatus = allIndicators.map((indicator: string) => {
-          const filtered = filteredTimeseriesDataWithStatus.filter((el: any) => el.indicator === indicator && el.status && el.status !== 'Insufficient Data');
-          if (filtered.length === 0) {
-            return {
-              indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: undefined,
-            };
-          }
-          let total = 0;
-          filtered.forEach((f: any) => {
-            switch (f.status) {
-              case 'Target Achieved':
-                total += 1;
-                break;
-              case 'On Track':
-                total += 1;
-                break;
-              case 'Fair progress but acceleration needed':
-                total += 2;
-                break;
-              case 'Limited or No Progress':
-                total += 3;
-                break;
-              case 'Deterioration':
-                total += 4;
-                break;
-              default:
-              // eslint-disable-next-line no-console
-                console.log(f);
-                break;
-            }
-          });
-          if (total / filtered.length < 1.5) {
-            return {
-              indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: 'On Track',
-            };
-          }
-          if (total / filtered.length > 2.499) {
-            return {
-              indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: 'Identified Gap',
-            };
-          }
-          return {
-            indicator, goal: indicator.split('.')[0], target: `${indicator.split('.')[0]}.${indicator.split('.')[1]}`, status: 'For Review',
-          };
-        });
-        const allTargets = uniqBy(indicatorsStatus.filter((el: any) => el.status), 'target').map((el: any) => el.target);
-        const targetStatus = allTargets.map((target: string) => {
-          const filtered = indicatorsStatus.filter((el: any) => el.target === target && el.status && el.status !== 'Insufficient Data');
-          if (filtered.length === 0) {
-            return {
-              target, goal: target.split('.')[0], status: undefined,
-            };
-          }
-          let total = 0;
-          filtered.forEach((f: any) => {
-            switch (f.status) {
-              case 'On Track':
-                total += 1;
-                break;
-              case 'Identified Gap':
-                total += 3;
-                break;
-              case 'For Review':
-                total += 2;
-                break;
-              default:
-              // eslint-disable-next-line no-console
-                console.log(f);
-                break;
-            }
-          });
-          if (Math.round(total / filtered.length) === 1) {
-            return {
-              target, goal: target.split('.')[0], status: 'On Track',
-            };
-          }
-          if (Math.round(total / filtered.length) === 3) {
-            return {
-              target, goal: target.split('.')[0], status: 'Identified Gap',
-            };
-          }
-          return {
-            target, goal: target.split('.')[0], status: 'For Review',
-          };
-        });
-        const allGoals = uniqBy(targetStatus.filter((el: any) => el.status), 'goal').map((el: any) => el.goal);
-        const goalStatus = allGoals.map((goal: string) => {
-          const filtered = targetStatus.filter((el: any) => el.goal === goal && el.status && el.status !== 'Insufficient Data');
-          if (filtered.length === 0) {
-            return {
-              goal, status: undefined,
-            };
-          }
-          let total = 0;
-          filtered.forEach((f: any) => {
-            switch (f.status) {
-              case 'On Track':
-                total += 1;
-                break;
-              case 'Identified Gap':
-                total += 3;
-                break;
-              case 'For Review':
-                total += 2;
-                break;
-              default:
-              // eslint-disable-next-line no-console
-                console.log(f);
-                break;
-            }
-          });
-          if (Math.round(total / filtered.length) === 1) {
-            return {
-              goal, status: 'On Track',
-            };
-          }
-          if (Math.round(total / filtered.length) === 3) {
-            return {
-              goal, status: 'Identified Gap',
-            };
-          }
-          return {
-            goal, status: 'For Review',
-          };
-        });
-        setGoalStatuses(goalStatus);
-        axios.get('https://sdg-accelerator-api.azurewebsites.net/vnrs')
-          .then((response:any) => {
-            const indx = response.data.findIndex((country: any) => country.iso === countrySelected.toLowerCase());
-            if (indx !== -1) {
-              setDefaultVNR(response.data[indx]);
-              axios.get(`https://sdg-accelerator-api.azurewebsites.net/vnrs/${countrySelected.toLowerCase()}/${response.data[indx].year}/${response.data[indx].language}/multiclass/sentence`)
-                .then((res) => {
-                  setData(res.data.sdgs);
-                })
-                .catch((errorFetchingVNR) => {
-                  setError(errorFetchingVNR.message);
-                });
-            } else {
-              setData('NA');
-            }
-          });
+    axios.get('https://sdg-accelerator-api.azurewebsites.net/vnrs')
+      .then((response:any) => {
+        const countryData = reverse(sortBy(response.data.filter((country: any) => country.iso === countrySelected.toLowerCase()), 'year'));
+        setCountryVNRs(countryData);
+        setVNRYear(countryData[0].year);
+        setSelectYear(countryData[0].year);
+        if (countryData.length > 0) {
+          axios.get(`https://sdg-accelerator-api.azurewebsites.net/vnrs/${countrySelected.toLowerCase()}/${countryData[0].year}/${countryData[0].language}/multiclass/sentence`)
+            .then((res) => {
+              setData(res.data.sdgs);
+            })
+            .catch((errorFetchingVNR) => {
+              setError(errorFetchingVNR.message);
+            });
+        } else {
+          setError('No VNRs');
+        }
       });
-  }, [countrySelected]);
+  }, []);
   return (
     <>
-      <Nav
-        pageURL='acceleration-Opportunities'
-      />
-      <div>
-        <PageTitle
-          title='Current Priorities — How Do We Get There?'
-          description='Scan reports and policy documents in the database and upload your own for run text analysis to identify national accelerators.'
-        />
-        <RootEl>
-          <DescriptionEl>
-            <SummaryEl>
-              {
-                selectedFileName ? (
-                  <>
-                    {
-                      selectedFileName.split('____').length > 1 ? (
-                        <>
-                          Comparing priorities for
-                          {' '}
-                          <span className='bold'>{countryFullName}</span>
-                          {' '}
-                          based on
-                          {' '}
-                          <span className='bold italics'>
-                            {selectedFileName.split('____')[0]}
-                          </span>
-                          {' '}
-                          and
-                          <span className='bold italics'>
-                            {selectedFileName.split('____')[1]}
-                          </span>
-                        </>
-                      ) : (
-                        <>
-                          Showing priorities for
-                          {' '}
-                          <span className='bold'>{countryFullName}</span>
-                          {' '}
-                          based on
-                          {' '}
-                          <span className='bold italics'>
-                            {selectedFileName}
-                          </span>
-                        </>
-                      )
-                    }
-                  </>
-                ) : (
-                  <>
-                    {
-                      defaultVNR ? (
-                        <>
-                          Showing priorities for
-                          {' '}
-                          <span className='bold'>{countryFullName}</span>
-                          {' '}
-                          based on
-                          {' '}
-                          <span className='bold italics'>
-                            {defaultVNR.year}
-                            {' '}
-                            VNR
-                          </span>
-                        </>
-                      ) : (
-                        <>
-                          Showing priorities for
-                          {' '}
-                          <span className='bold'>{countryFullName}</span>
-                        </>
-                      )
-                    }
-                  </>
-                )
-              }
-              <SubNote>
-                Acceleration Opportunities represent areas which require urgent national attention and action based on SDG gaps and importance level prescribed by government and relevant national actors.
-              </SubNote>
-              {
-                data ? (
-                  <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-                    <ButtonEl onClick={() => { setOpenUploadModal(true); }}>
-                      <div>Upload and analyze another document</div>
-                      <UploadIcon size={24} />
-                    </ButtonEl>
-                    <div style={{
-                      marginTop: '2.2rem', width: '1px', height: '24px', backgroundColor: 'var(--black-500)',
-                    }}
-                    />
-                    <ButtonEl onClick={() => { setOpenCompareModal(true); }}>
-                      <div>Compare mutiple document</div>
-                      <CompareIcon size={24} />
-                    </ButtonEl>
-                  </div>
-                ) : null
-              }
-            </SummaryEl>
-            {
-              data === 'NA' ? null
-                : !error ? goalStatuses && data ? data.mode === 'analyze' ? <PrioritiesVizCard data={data.data} statuses={goalStatuses} /> : data.mode === 'compare' ? <CompareTable data={data.data} statuses={goalStatuses} file1={selectedFileName.split('____')[0]} file2={selectedFileName.split('____')[1]} /> : <PrioritiesVizCard data={data} statuses={goalStatuses} />
-                  : (
-                    <RootEl>
-                      <Spin size='large' />
-                    </RootEl>
-                  )
-                  : (
-                    <Result
-                      status={error === 'PDF File Required' ? 'error' : '500'}
-                      title='Analysis Failed'
-                      subTitle={error === 'PDF File Required' ? 'Please upload a PDF file, we are unable to analyze any other file formats' : 'Sorry, something went wrong. Please try again with a different document or after some time.'}
-                    />
-                  )
-            }
-          </DescriptionEl>
-          {
-            openUploadModal ? <UploadModal state setData={setData} setError={setError} setFile={setSelectedFileName} setModalState={setOpenUploadModal} /> : <UploadModal state={false} setModalState={setOpenUploadModal} setData={setData} setError={setError} setFile={setSelectedFileName} />
-          }
-          {
-            openCompareModal ? <CompareModal state setData={setData} setError={setError} setFile={setSelectedFileName} setModalState={setOpenCompareModal} /> : <CompareModal state={false} setModalState={setOpenCompareModal} setData={setData} setError={setError} setFile={setSelectedFileName} />
-          }
-        </RootEl>
-      </div>
+      <HeroImageEl className='undp-hero-image'>
+        <div className='max-width-1440' style={{ backgroundColor: 'var(--white)', color: 'var(--black)', padding: 'var(--spacing-06)' }}>
+          <h1 className='undp-typography'>
+            Show Current Priorities For
+            {' '}
+            {countryFullName}
+          </h1>
+          <div className='margin-top-07'>
+            <Tabs
+              defaultActiveKey='vnrs'
+              className='undp-tabs'
+              items={[
+                {
+                  label: 'Analyze VNRs',
+                  key: 'vnrs',
+                  children: (
+                    <>
+                      <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
+                        Use a custom-built Natural Language Processing Tool, to analyze countries’ latest
+                        {' '}
+                        <a href='https://sustainabledevelopment.un.org/vnrs/' target='_blank' rel='noreferrer' className='undp-style'>Voluntary National Reviews</a>
+                        {' '}
+                        and discover which SDGs feature most prominently as a priority. Or upload your own document to compare its SDG relevance.
+                      </h5>
+                      {
+                        countryVNRs
+                          ? countryVNRs.length > 0
+                            ? (
+                              <>
+                                <div className='margin-top-07'>
+                                  <p className='label undp-typography'>Select year</p>
+                                  <Select
+                                    className='undp-select'
+                                    placeholder='Select Year'
+                                    value={selectYear}
+                                    onChange={(value) => { setSelectYear(value); }}
+                                  >
+                                    {
+                                      countryVNRs.map((d: any, i: number) => <Select.Option key={i} className='undp-select-option' value={d.year}>{d.year}</Select.Option>)
+                                    }
+                                  </Select>
+                                </div>
+                                <button
+                                  type='button'
+                                  className='margin-top-05 undp-button button-primary button-arrow margin-top-07'
+                                  onClick={() => {
+                                    analyzeVNR();
+                                  }}
+                                >
+                                  Analyze VNR
+                                </button>
+                              </>
+                            )
+                            : (
+                              <>
+                                <p className='undp-typography italics'>
+                                  No VNRs available for
+                                  {' '}
+                                  {countryFullName}
+                                </p>
+                                <button type='button' className='margin-top-05 undp-button button-primary button-arrow margin-top-07 disabled'>
+                                  Analyze VNR
+                                </button>
+                              </>
+                            )
+                          : (
+                            <div>
+                              <div className='undp-loader' style={{ margin: 'auto' }} />
+                            </div>
+                          )
+                      }
+                    </>
+                  ),
+                },
+                {
+                  label: 'Upload a document',
+                  key: 'upload',
+                  children: (
+                    <>
+                      <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
+                        Upload your own document, and use a custom-built Natural Language Processing Tool, to discover which SDGs feature most prominently as a priority
+                      </h5>
+                      <>
+                        <div className='margin-top-07'>
+                          <UploadEl>
+                            <label htmlFor='file-upload-analyze' className='custom-file-upload'>
+                              <UploadButtonEl style={{ width: '177.55px' }}>Upload a document</UploadButtonEl>
+                            </label>
+                            {
+                              selectedFileName !== '' ? (
+                                <SelectedEl>
+                                  Selected
+                                  {' '}
+                                  <span className='bold'>{selectedFileName}</span>
+                                </SelectedEl>
+                              ) : <SelectedEl style={{ opacity: '0.6' }}>No file selected</SelectedEl>
+                            }
+                            <FileAttacehmentButton ref={fileInputRef} id='file-upload-analyze' accept='application/pdf' type='file' onChange={handleFileSelect} />
+                          </UploadEl>
+                        </div>
+                        {
+                          selectedFileName !== ''
+                            ? (
+                              <button
+                                type='button'
+                                className='margin-top-05 undp-button button-primary button-arrow margin-top-07'
+                                onClick={() => {
+                                  setLoading(true);
+                                  analyzeDocument();
+                                }}
+                              >
+                                Analyze Document
+                              </button>
+                            )
+                            : (
+                              <button type='button' className='margin-top-05 undp-button button-primary button-arrow margin-top-07 disabled'>
+                                Analyze Document
+                              </button>
+                            )
+                        }
+                      </>
+                    </>
+                  ),
+                },
+                {
+                  label: 'Compare two document',
+                  key: 'compare',
+                  children: (
+                    <>
+                      <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
+                        Upload your own documents, and use a custom-built Natural Language Processing Tool, to compare which SDGs feature most prominently as a priority in each of the documents
+                      </h5>
+                      <>
+                        <div className='margin-top-07 flex-div'>
+                          <UploadEl style={{ width: 'calc(50% - 0.5rem)' }}>
+                            <label htmlFor='file-upload-doc1' className='custom-file-upload'>
+                              <UploadButtonEl style={{ width: '205.25px' }}>Upload first document</UploadButtonEl>
+                            </label>
+                            {
+                              selectedCompareFileName1 !== '' ? (
+                                <SelectedEl>
+                                  Selected
+                                  {' '}
+                                  <span className='bold'>{selectedCompareFileName1}</span>
+                                </SelectedEl>
+                              ) : <SelectedEl style={{ opacity: '0.6' }}>No file selected</SelectedEl>
+                            }
+                            <FileAttacehmentButton ref={fileInputRef} id='file-upload-doc1' accept='application/pdf' type='file' onChange={handleCompareFileSelect1} />
+                          </UploadEl>
+                          <UploadEl style={{ width: 'calc(50% - 0.5rem)' }}>
+                            <label htmlFor='file-upload-doc2' className='custom-file-upload'>
+                              <UploadButtonEl style={{ width: '225.11px' }}>Upload second document</UploadButtonEl>
+                            </label>
+                            {
+                              selectedCompareFileName2 !== '' ? (
+                                <SelectedEl>
+                                  Selected
+                                  {' '}
+                                  <span className='bold'>{selectedCompareFileName2}</span>
+                                </SelectedEl>
+                              ) : <SelectedEl style={{ opacity: '0.6' }}>No file selected</SelectedEl>
+                            }
+                            <FileAttacehmentButton ref={fileInputRef} id='file-upload-doc2' accept='application/pdf' type='file' onChange={handleCompareFileSelect2} />
+                          </UploadEl>
+                        </div>
+                        {
+                          selectedCompareFileName1 !== '' && selectedCompareFileName2 !== ''
+                            ? (
+                              <button
+                                type='button'
+                                className='margin-top-05 undp-button button-primary button-arrow margin-top-07'
+                                onClick={() => {
+                                  setLoading(true);
+                                  compareDocument();
+                                }}
+                              >
+                                Compare Documents
+                              </button>
+                            )
+                            : (
+                              <button type='button' className='margin-top-05 undp-button button-primary button-arrow margin-top-07 disabled'>
+                                Compare Documents
+                              </button>
+                            )
+                        }
+                      </>
+                    </>
+                  ),
+                },
+              ]}
+            />
+          </div>
+        </div>
+      </HeroImageEl>
+      {
+        data
+          ? data.mode !== 'compare'
+            ? (
+              <VNRAnalysis
+                data={data.mode === 'analyze' ? data.data : data}
+                goalStatuses={goalStatuses}
+                document={data.mode === 'analyze' ? selectedFileName : `VNR ${vnrYear}`}
+              />
+            ) : (
+              <CompareAnalysis
+                data={data.data}
+                goalStatuses={goalStatuses}
+                document={[selectedCompareFileName1, selectedCompareFileName2]}
+              />
+            )
+          : null
+      }
+      <Modal
+        className='undp-modal undp-loading-modal'
+        title='UNDP Modal'
+        open={loading}
+      >
+        <div style={{ margin: 'auto' }}>
+          <div className='undp-loader' style={{ margin: 'auto' }} />
+        </div>
+      </Modal>
     </>
   );
 };

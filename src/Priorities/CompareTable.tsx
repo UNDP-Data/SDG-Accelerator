@@ -1,109 +1,98 @@
-import styled from 'styled-components';
 import { getSDGIcon } from '../utils/getSDGIcon';
 import SDGGoalList from '../Data/SDGGoalList.json';
-import { Tag } from '../Components/Tag';
+
+import '../style/statCardStyle.css';
+import '../style/tableStyle.css';
 
 interface Props {
   data: any;
-  statuses: any;
-  file1: string;
-  file2: string;
+  goalStatuses: any;
+  document: [string, string];
 }
 
-const TableTitle = styled.div`
-  background-color: var(--black-100);
-  font-weight: bold;
-  display: flex;
-`;
-
-const TableRow = styled.div`
-  display: flex;
-  border-bottom: 1px solid var(--black-400);
-`;
-
-interface WidthProps {
-  width: string;
-}
-
-const TableHead = styled.div<WidthProps>`
-  width: ${(props) => `calc(${props.width})`};
-  flex-shrink: 0;
-  padding: 1rem 3rem;   
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-`;
-
-const Column = styled.div<WidthProps>`
-  width: ${(props) => `calc(${props.width})`};
-  flex-shrink: 0;
-  padding: 2rem;   
-  display: flex;
-  align-items: flex-start;
-`;
-
-interface ColorProps {
-  fill: string;
-}
-
-const TagEl = styled.div<ColorProps>`
-  padding: 0.5rem 1rem;
-  color: ${(props) => (props.fill === 'On Track' ? '#fff' : props.fill === 'Identified Gap' ? '#fff' : props.fill === 'For Review' ? 'var(--black-700)' : '#fff')};
-  font-size: 1.6rem;
-  font-weight: bold;
-  width: fit-content;
-  border-radius: 2rem;
-  background-color: ${(props) => (props.fill === 'On Track' ? 'var(--accent-green)' : props.fill === 'Identified Gap' ? 'var(--accent-red)' : props.fill === 'For Review' ? 'var(--accent-yellow)' : 'var(--black-550)')};
-`;
-
-export const CompareTable = (props: Props) => {
+export const CompareAnalysis = (props: Props) => {
   const {
-    data, statuses, file1, file2,
+    data, goalStatuses, document,
   } = props;
+  const dataDoc1WithStatuses = data[0].map((d: any) => ({ ...d, status: goalStatuses.filter((el: any) => `${el.goal}` === `${d.sdg}`)[0].status }));
+  const dataDoc2WithStatuses = data[1].map((d: any) => ({ ...d, status: goalStatuses.filter((el: any) => `${el.goal}` === `${d.sdg}`)[0].status }));
+  let similar = 0;
+  for (let i = 0; i < dataDoc1WithStatuses.length; i += 1) {
+    if (dataDoc1WithStatuses[i].category === dataDoc2WithStatuses[i].category) similar += 1;
+  }
   return (
     <>
-      <TableTitle>
-        <TableHead width='40%'>
-          SDGs
-        </TableHead>
-        <TableHead width='30%'>
-          {file1}
-        </TableHead>
-        <TableHead width='30%'>
-          {file2}
-        </TableHead>
-      </TableTitle>
-      {
-        data[0].map((d: any, i: number) => (
-          <TableRow key={i}>
-            <Column width='40%'>
-              {getSDGIcon(`SDG ${d.sdg}`, 80)}
-              <div style={{ marginLeft: '1rem' }}>
-                <div className='bold'>
-                  {SDGGoalList[SDGGoalList.findIndex((el) => el.Goal === `SDG ${d.sdg}`)]['Goal Name']}
+      <div className='max-width-1440 margin-top-13 margin-bottom-13'>
+        <h3 className='undp-typography bold'>
+          Comparing
+          {' '}
+          {document[0]}
+          {' '}
+          and
+          {' '}
+          {document[1]}
+        </h3>
+        <div className='flex-div margin-top-07 margin-bottom-07'>
+          <div style={{ width: 'calc(50% - 0.5rem)' }}>
+            <div className='stat-card'>
+              <h2>{similar}</h2>
+              <p>No. of SDGs with same priorities</p>
+            </div>
+          </div>
+          <div style={{ width: 'calc(50% - 0.5rem)' }}>
+            <div className='stat-card'>
+              <h2>{17 - similar}</h2>
+              <p>No. of SDGs with different priorities</p>
+            </div>
+          </div>
+        </div>
+        <h3 className='undp-typography bold'>
+          All SDGs
+        </h3>
+        <div className='margin-top-07'>
+          <div className='undp-table-head'>
+            <div style={{ width: '33.33%' }} className='undp-table-head-cell undp-sticky-head-column'>
+              SDGs
+            </div>
+            <div style={{ width: '33.33%' }} className='undp-table-head-cell undp-sticky-head-column'>
+              {document[0]}
+            </div>
+            <div style={{ width: '33.33%' }} className='undp-table-head-cell undp-sticky-head-column'>
+              {document[1]}
+            </div>
+          </div>
+          {
+            dataDoc1WithStatuses.map((d: any, i: number) => (
+              <div className='undp-table-row' key={i}>
+                <div style={{ width: '33.33%', backgroundColor: `${dataDoc2WithStatuses[i].category !== d.category ? 'var(--gray-300)' : 'var(--white)'}` }} className='undp-table-row-cell'>
+                  <div className='flex-div flex-vert-align-center'>
+                    {getSDGIcon(`SDG ${d.sdg}`, 72)}
+                    <div>
+                      <h6 className='undp-typography margin-bottom-02'>
+                        SDG
+                        {' '}
+                        {d.sdg}
+                        :
+                        {' '}
+                        {SDGGoalList[SDGGoalList.findIndex((el) => el.Goal === `SDG ${d.sdg}`)]['Goal Name']}
+                      </h6>
+                      <div key={i} className={`undp-chip undp-chip-small ${d.status === 'On Track' ? 'undp-chip-dark-green' : d.status === 'For Review' ? 'undp-chip-dark-yellow' : d.status === 'Identified Gap' ? 'undp-chip-dark-red' : 'undp-chip-dark-gray'}`}>
+                        {d.status}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <TagEl fill={statuses.findIndex((status: any) => status.goal === `${d.sdg}`) !== -1 ? statuses[statuses.findIndex((status: any) => status.goal === `${d.sdg}`)].status : 'Gap Unidentified'}>{statuses.findIndex((status: any) => status.goal === `${d.sdg}`) !== -1 ? statuses[statuses.findIndex((status: any) => status.goal === `${d.sdg}`)].status : 'Gap Unidentified'}</TagEl>
+                <div style={{ width: '33.33%', backgroundColor: `${dataDoc2WithStatuses[i].category !== d.category ? 'var(--gray-300)' : 'var(--white)'}` }} className='undp-table-row-cell'>
+                  {d.salience === 0 ? 'No mention' : d.category}
+                </div>
+                <div style={{ width: '33.33%', backgroundColor: `${dataDoc2WithStatuses[i].category !== d.category ? 'var(--gray-300)' : 'var(--white)'}` }} className='undp-table-row-cell'>
+                  {dataDoc2WithStatuses[i].salience === 0 ? 'No mention' : dataDoc2WithStatuses[i].category}
+                </div>
               </div>
-            </Column>
-            <Column width='30%'>
-              <Tag
-                backgroundColor={data[0][i].category === 'high' ? 'var(--accent-red)' : data[0][i].category === 'medium' ? 'var(--accent-yellow)' : data[0][i].category === 'low' && data[0][i].salience > 0 ? 'var(--accent-green)' : 'var(--black-550)'}
-                text={data[0][i].category === 'high' ? 'High priority' : data[0][i].category === 'medium' ? 'Medium priority' : data[0][i].category === 'low' && data[0][i].salience > 0 ? 'Low priority' : 'No mention'}
-                fontColor={data[0][i].category === 'medium' ? 'var(--black)' : 'var(--white)'}
-                margin='0 0 0 0'
-              />
-            </Column>
-            <Column width='30%'>
-              <Tag
-                backgroundColor={data[1][i].category === 'high' ? 'var(--accent-red)' : data[1][i].category === 'medium' ? 'var(--accent-yellow)' : data[1][i].category === 'low' && data[1][i].salience > 0 ? 'var(--accent-green)' : 'var(--black-550)'}
-                text={data[1][i].category === 'high' ? 'High priority' : data[1][i].category === 'medium' ? 'Medium priority' : data[1][i].category === 'low' && data[1][i].salience > 0 ? 'Low priority' : 'No mention'}
-                fontColor={data[1][i].category === 'medium' ? 'var(--black)' : 'var(--white)'}
-                margin='0 0 0 0'
-              />
-            </Column>
-          </TableRow>
-        ))
-      }
+            ))
+          }
+        </div>
+      </div>
     </>
   );
 };

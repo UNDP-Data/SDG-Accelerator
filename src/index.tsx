@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ScrollToTop } from './ScrollToTop';
 
 const getEl = (embedSelector: string) => {
   if (typeof embedSelector === 'string') {
@@ -21,6 +22,7 @@ const getEl = (embedSelector: string) => {
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <App />
     </BrowserRouter>
   </React.StrictMode>,

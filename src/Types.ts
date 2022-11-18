@@ -122,3 +122,21 @@ export interface ScenarioDataType {
       'value': number;
     }[];
 }
+
+export interface LinkageHoverDataType {
+  text: string;
+  title: string;
+  noOfSynergies: number;
+  noOfTradeOff: number;
+  xPosition: number;
+  yPosition: number;
+}
+
+export interface LiteratureDataType {
+  Publication: string;
+  Author: string;
+  Year: number;
+  Goals: string;
+  'Peer reviewed': boolean;
+  'Full reference': string | null;
+}
