@@ -15,7 +15,7 @@ interface Props {
 
 export const Header = (props: Props) => {
   const { country } = props;
-  const countryFullName = country ? CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === country)]['Country or Area'] : undefined;
+  const countryFullName = country && CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === country) !== -1 ? CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === country)]['Country or Area'] : undefined;
   const [searchText, setSearchText] = useState<string | null>(null);
   const [openHeaderCountryModal, setOpenHeaderCountryModal] = useState(false);
   return (

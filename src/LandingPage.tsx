@@ -1,4 +1,5 @@
 import {
+  NavLink,
   Route, Routes, useParams,
 } from 'react-router-dom';
 import uniqBy from 'lodash.uniqby';
@@ -8,6 +9,8 @@ import meanBy from 'lodash.meanby';
 import { useEffect, useState } from 'react';
 import { queue } from 'd3-queue';
 import { json } from 'd3-request';
+import { Select } from 'antd';
+import sortBy from 'lodash.sortby';
 import { Header } from './Header';
 import { CurrentGaps } from './CurrentGaps';
 import { HomePage } from './HomePage';
@@ -27,17 +30,23 @@ const SDGList:SDGStatusListType[] = require('./Data/SDGGoalList.json');
 
 export const LandingPage = () => {
   const countryCode = useParams().country || 'ZAF';
-  const countryFullName = CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === countryCode)]['Country or Area'];
+  const [selectedCountry, setSelectedCountry] = useState('Afghanistan');
+  const [error, setError] = useState <any>(null);
   const [statuses, setStatuses] = useState<any>(undefined);
   const [goalStatuses, setGoalStatuses] = useState<any>(undefined);
   const [countryData, setCountryData] = useState<any>(undefined);
+  const countryFullName = CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === countryCode) !== -1 ? CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === countryCode)]['Country or Area'] : '';
   useEffect(() => {
     setStatuses(undefined);
+    setError(undefined);
     queue()
       .defer(json, `${DATASOURCELINK}/data/TimeSeriesData/${countryCode}.json`)
       .defer(json, `${DATASOURCELINK}/data/TimeSeriesToUse/${countryCode}.json`)
       .await((err: any, d: any, timeSeriesToUse: any) => {
-        if (err) throw err;
+        if (err) {
+          setError(err);
+          return;
+        }
         const filteredTimeseriesData:any = [];
         d.forEach((el:any) => {
           if (timeSeriesToUse.findIndex((el1: any) => isEqual(el1, omit(el, ['values', 'targets', 'trendMethodology']))) !== -1 || el.series === '***') filteredTimeseriesData.push(el);
@@ -236,63 +245,100 @@ export const LandingPage = () => {
         country={countryCode}
       />
       {
-        statuses && countryData && goalStatuses
+        error
           ? (
-            <Routes>
-              <Route
-                path='/'
-                element={(
-                  <HomePage
-                    countryCode={countryCode}
-                    countryFullName={countryFullName}
-                  />
-                )}
-              />
-              <Route
-                path='/sdg-trends'
-                element={(
-                  <CurrentGaps
-                    statuses={statuses}
-                    countryData={countryData}
-                    goalStatuses={goalStatuses}
-                    countryFullName={countryFullName}
-                  />
-                )}
-              />
-              <Route
-                path='/synergies-and-tradeoffs'
-                element={(
-                  <Interlinkages
-                    data={statuses}
-                    countryFullName={countryFullName}
-                  />
-                )}
-              />
-              <Route
-                path='/current-priorities'
-                element={(
-                  <Priorities
-                    countrySelected={countryCode}
-                    goalStatuses={goalStatuses}
-                    countryFullName={countryFullName}
-                  />
-                )}
-              />
-              <Route
-                path='/future-scenarios'
-                element={(
-                  <FutureScenariosList
-                    countryCode={countryCode}
-                    countryFullName={countryFullName}
-                  />
-                )}
-              />
-            </Routes>
-          ) : (
-            <div style={{ margin: '10rem auto 3rem auto', minHeight: '30rem' }}>
-              <div className='undp-loader' style={{ margin: 'auto' }} />
+            <div className='max-width-1440 margin-top-13 margin-bottom-13' style={{ padding: 'var(--spacing-09)', backgroundColor: 'var(--gray-200)', borderTop: '1px solid var(--gray-400)' }}>
+              <div>
+                <p className='undp-typography'>
+                  It seems like we don&apos;t have the data for the country you have selected or there is an error in the URL.
+                  <br />
+                  <br />
+                  If we are missing data for your country/region, email us at
+                  {' '}
+                  <a href='mailto:data@undp.org' className='undp-style' target='_blank' rel='noreferrer'>data@undp.org</a>
+                </p>
+                <div className='flex-div margin-top-09'>
+                  <Select
+                    className='undp-select'
+                    placeholder='Select Country'
+                    showSearch
+                    value={selectedCountry}
+                    onChange={(value) => { setSelectedCountry(value); }}
+                    style={{ flexGrow: 1 }}
+                  >
+                    {
+                  sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
+                }
+                  </Select>
+                  <NavLink
+                    to={`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === selectedCountry)]['Alpha-3 code-1']}`}
+                    style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
+                  >
+                    <button type='button' className='undp-button button-primary button-arrow'>
+                      Explore Country Data
+                    </button>
+                  </NavLink>
+                </div>
+              </div>
             </div>
           )
+          : statuses && countryData && goalStatuses
+            ? (
+              <Routes>
+                <Route
+                  path='/'
+                  element={(
+                    <HomePage
+                      countryCode={countryCode}
+                      countryFullName={countryFullName}
+                    />
+                )}
+                />
+                <Route
+                  path='/sdg-trends'
+                  element={(
+                    <CurrentGaps
+                      statuses={statuses}
+                      countryData={countryData}
+                      goalStatuses={goalStatuses}
+                      countryFullName={countryFullName}
+                    />
+                )}
+                />
+                <Route
+                  path='/synergies-and-tradeoffs'
+                  element={(
+                    <Interlinkages
+                      data={statuses}
+                      countryFullName={countryFullName}
+                    />
+                )}
+                />
+                <Route
+                  path='/current-priorities'
+                  element={(
+                    <Priorities
+                      countrySelected={countryCode}
+                      goalStatuses={goalStatuses}
+                      countryFullName={countryFullName}
+                    />
+                )}
+                />
+                <Route
+                  path='/future-scenarios'
+                  element={(
+                    <FutureScenariosList
+                      countryCode={countryCode}
+                      countryFullName={countryFullName}
+                    />
+                )}
+                />
+              </Routes>
+            ) : (
+              <div style={{ margin: '10rem auto 3rem auto', minHeight: '30rem' }}>
+                <div className='undp-loader' style={{ margin: 'auto' }} />
+              </div>
+            )
       }
       <Footer />
     </>

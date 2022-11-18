@@ -239,6 +239,14 @@ a.undp-style.dark-bg {
   color: var(--white);
 }
 
+a.undp-style.dark-bg.red-underline {
+  background-image: linear-gradient(var(--dark-red), var(--dark-red)), linear-gradient(var(--dark-red), var(--dark-red));
+  background-position: 100% 100%, -30px 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 2px, 0 1px;
+  color: var(--white);
+}
+
 a.undp-style.dark-bg:hover {
   animation: lineLoop-animation-for-links 2s linear infinite;
   color: var(--white);

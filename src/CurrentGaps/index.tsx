@@ -89,7 +89,7 @@ export const CurrentGaps = (props: Props) => {
           <div className='undp-section-content'>
             Use this tool to get a country overview of which SDGs are on-track or lagging behind in reaching the 2030 targets. Powered by data, explore each of the 17 SDG and related 169 sub-targets trends through interactive, easy-to-use visualisations of the
             {' '}
-            <a href='https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%20refinement_Eng.pdf' style={{ color: 'var(--white)' }} target='_blank' rel='noreferrer' className='undp-style'>232 unique indicators</a>
+            <a href='https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%20refinement_Eng.pdf' target='_blank' rel='noreferrer' className='undp-style dark-bg red-underline'>232 unique indicators</a>
             .
           </div>
         </div>

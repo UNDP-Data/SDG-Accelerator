@@ -41,7 +41,7 @@ export const HomePage = (props: Props) => {
           <h5 className='undp-typography'>
             The SDG Push Diagnostic is a key element of the
             {' '}
-            <a href='https://sdgintegration.undp.org/sdg-acceleration-diagnostic' className='undp-style' target='_blank' style={{ color: 'var(--white)' }} rel='noreferrer'>SDG Push</a>
+            <a href='https://sdgintegration.undp.org/sdg-acceleration-diagnostic' className='undp-style dark-bg red-underline' target='_blank' rel='noreferrer'>SDG Push</a>
             , a process that combines analytical capabilities with qualitative methods to assess context, options, and bottlenecks to determine effective policy choices, investments and pathways.
           </h5>
         </div>
@@ -201,7 +201,7 @@ export const HomePage = (props: Props) => {
                   style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
                 >
                   <button type='button' className='undp-button button-primary button-arrow'>
-                    Explore Country
+                    Explore Country Data
                   </button>
                 </NavLink>
               </div>
@@ -219,15 +219,15 @@ export const HomePage = (props: Props) => {
             <br />
             Email
             {' '}
-            <a href='mailto:data@undp.org' className='undp-style' style={{ color: 'var(--white)' }} target='_blank' rel='noreferrer'>data@undp.org</a>
+            <a href='mailto:data@undp.org' className='undp-style dark-bg' target='_blank' rel='noreferrer'>data@undp.org</a>
             <br />
             <br />
             This tool is powered by the latest data available on
             {' '}
-            <a href={countryCode ? `https://unstats.un.org/sdgs/dataportal/countryprofiles/${countryCode}` : 'https://unstats.un.org/sdgs/dataportal'} className='undp-style' style={{ color: 'var(--white)' }} target='_blank' rel='noreferrer'>UNStats</a>
+            <a href={countryCode ? `https://unstats.un.org/sdgs/dataportal/countryprofiles/${countryCode}` : 'https://unstats.un.org/sdgs/dataportal'} className='undp-style dark-bg' target='_blank' rel='noreferrer'>UNStats</a>
             . The interlinkages visualization is powered by data available on
             {' '}
-            <a href='https://knowsdgs.jrc.ec.europa.eu/interlinkages-visualization' className='undp-style' style={{ color: 'var(--white)' }} target='_blank' rel='noreferrer'>KnowSDGs Platform by European Commission</a>
+            <a href='https://knowsdgs.jrc.ec.europa.eu/interlinkages-visualization' className='undp-style dark-bg' target='_blank' rel='noreferrer'>KnowSDGs Platform by European Commission</a>
             .
             <br />
             <br />

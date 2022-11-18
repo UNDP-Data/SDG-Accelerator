@@ -146,10 +146,12 @@ export const Priorities = (props: Props) => {
             })
             .catch((err) => {
               setError(err.message);
+              setLoading(false);
             });
         })
         .catch((err) => {
           setError(err.message);
+          setLoading(false);
         });
     }
   };
@@ -176,6 +178,7 @@ export const Priorities = (props: Props) => {
         })
         .catch((err) => {
           setError(err.message);
+          setLoading(false);
         });
     }
   };
@@ -187,6 +190,7 @@ export const Priorities = (props: Props) => {
         .then((res) => {
           setData(res.data.sdgs);
           setVNRYear(selectYear);
+          setError(null);
         })
         .catch((errorFetchingVNR) => {
           setError(errorFetchingVNR.message);
@@ -199,9 +203,9 @@ export const Priorities = (props: Props) => {
       .then((response:any) => {
         const countryData = reverse(sortBy(response.data.filter((country: any) => country.iso === countrySelected.toLowerCase()), 'year'));
         setCountryVNRs(countryData);
-        setVNRYear(countryData[0].year);
-        setSelectYear(countryData[0].year);
         if (countryData.length > 0) {
+          setVNRYear(countryData[0].year);
+          setSelectYear(countryData[0].year);
           axios.get(`https://sdg-accelerator-api.azurewebsites.net/vnrs/${countrySelected.toLowerCase()}/${countryData[0].year}/${countryData[0].language}/multiclass/sentence`)
             .then((res) => {
               setData(res.data.sdgs);
@@ -213,7 +217,7 @@ export const Priorities = (props: Props) => {
           setError('No VNRs');
         }
       });
-  }, []);
+  }, [countrySelected]);
   return (
     <>
       <HeroImageEl className='undp-hero-image'>
@@ -271,11 +275,13 @@ export const Priorities = (props: Props) => {
                             )
                             : (
                               <>
-                                <p className='undp-typography italics'>
-                                  No VNRs available for
-                                  {' '}
-                                  {countryFullName}
-                                </p>
+                                <div className='margin-top-07'>
+                                  <Select
+                                    className='undp-select'
+                                    placeholder='No VNRs Available'
+                                    disabled
+                                  />
+                                </div>
                                 <button type='button' className='margin-top-05 undp-button button-primary button-arrow margin-top-07 disabled'>
                                   Analyze VNR
                                 </button>
@@ -411,22 +417,45 @@ export const Priorities = (props: Props) => {
         </div>
       </HeroImageEl>
       {
-        data
-          ? data.mode !== 'compare'
-            ? (
-              <VNRAnalysis
-                data={data.mode === 'analyze' ? data.data : data}
-                goalStatuses={goalStatuses}
-                document={data.mode === 'analyze' ? selectedFileName : `VNR ${vnrYear}`}
-              />
-            ) : (
-              <CompareAnalysis
-                data={data.data}
-                goalStatuses={goalStatuses}
-                document={[selectedCompareFileName1, selectedCompareFileName2]}
-              />
-            )
-          : null
+        error
+          ? (
+            <div
+              className='margin-top-07 margin-bottom-13 max-width'
+              style={{
+                padding: 'var(--spacing-09)', backgroundColor: 'var(--gray-200)', width: '100%', textAlign: 'center',
+              }}
+            >
+              <h6 className='undp-typography margin-bottom-00' style={{ color: 'var(--dark-red)' }}>
+                {
+                  error === 'No VNRs' ? `We don't a VNR for ${countryFullName} available in our database. Plese try to upload a document and analyze it.`
+                    : (
+                      <>
+                        We are sorry! Something went wrong in the analysis.
+                        <br />
+                        <br />
+                        Please try again later after sometime and make sure you are uplaoding a PDF document
+                      </>
+                    )
+                }
+              </h6>
+            </div>
+          )
+          : data
+            ? data.mode !== 'compare'
+              ? (
+                <VNRAnalysis
+                  data={data.mode === 'analyze' ? data.data : data}
+                  goalStatuses={goalStatuses}
+                  document={data.mode === 'analyze' ? selectedFileName : `VNR ${vnrYear}`}
+                />
+              ) : (
+                <CompareAnalysis
+                  data={data.data}
+                  goalStatuses={goalStatuses}
+                  document={[selectedCompareFileName1, selectedCompareFileName2]}
+                />
+              )
+            : null
       }
       <Modal
         className='undp-modal undp-loading-modal'
