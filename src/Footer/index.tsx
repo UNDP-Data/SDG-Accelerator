@@ -8,7 +8,7 @@ import CountryTaxonomy from '../Data/countryTaxonomy.json';
 import '../style/modalStyle.css';
 import '../style/inputStyle.css';
 import '../style/footerStyle.css';
-import UNDPLogo from './img/logo.png';
+import UNDPLogo from '../img/logo.png';
 
 export const Footer = () => {
   const [searchText, setSearchText] = useState<string | null>(null);

@@ -4,7 +4,7 @@ import { json } from 'd3-request';
 import { DATASOURCELINK, SCENARIOINDICATORBASEDONSDG, SDGGOALSFORFUTURESCENARIO } from '../Constants';
 import { ScenarioDataType } from '../Types';
 
-import Background from './img/UNDP-hero-image.png';
+import Background from '../img/UNDP-hero-image.png';
 import { LineChart } from './LineChart';
 
 interface Props {

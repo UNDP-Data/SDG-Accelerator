@@ -200,6 +200,6 @@ export const SCENARIOINDICATORBASEDONSDG = [
   },
 ];
 
-export const DATASOURCELINK = process.env.NODE_ENV === 'production' ? 'https://data.undp.org/diagnostic-simulator' : '../..';
+export const DATASOURCELINK = process.env.NODE_ENV === 'production' ? 'https://data.undp.org/sdg-push-diagnostic' : '../..';
 
 export const SDG_ICON_SIZE = 70;

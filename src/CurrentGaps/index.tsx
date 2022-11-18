@@ -4,8 +4,7 @@ import { Select } from 'antd';
 import { getSDGIcon } from '../utils/getSDGIcon';
 import { SDGGOALS, SDG_ICON_SIZE } from '../Constants';
 import { SDGGapsData } from './SDGGapsData';
-import Background from './img/UNDP-hero-image.png';
-
+import Background from '../img/UNDP-hero-image.png';
 import '../style/statCardStyle.css';
 
 interface Props {

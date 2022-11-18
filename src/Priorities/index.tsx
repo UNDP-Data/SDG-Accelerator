@@ -15,7 +15,7 @@ import { CompareAnalysis } from './CompareTable';
 import '../style/tabStyle.css';
 import '../style/selectStyle.css';
 import '../style/modalStyle.css';
-import Background from './img/UNDP-hero-image.png';
+import Background from '../img/UNDP-hero-image.png';
 
 interface Props {
   countrySelected: string;

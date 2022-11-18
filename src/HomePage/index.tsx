@@ -5,12 +5,12 @@ import { Select } from 'antd';
 import sortBy from 'lodash.sortby';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 import '../style/heroSections.css';
-import SDGTrends from './img/01.png';
-import PrioritiesImg from './img/02.png';
-import FutureImg from './img/03.png';
-import InterlinkagesImg from './img/04.png';
-import Background from './img/UNDP-hero-image.png';
-import GIZLogo from './img/gizLogo.png';
+import SDGTrends from '../img/01.png';
+import PrioritiesImg from '../img/02.png';
+import FutureImg from '../img/03.png';
+import InterlinkagesImg from '../img/04.png';
+import Background from '../img/UNDP-hero-image.png';
+import GIZLogo from '../img/gizLogo.png';
 
 interface Props {
   countryCode?: string;
@@ -224,7 +224,7 @@ export const HomePage = (props: Props) => {
             <br />
             This tool is powered by the latest data available on
             {' '}
-            <a href={`https://unstats.un.org/sdgs/dataportal/countryprofiles/${countryCode}`} className='undp-style' style={{ color: 'var(--white)' }} target='_blank' rel='noreferrer'>UNStats</a>
+            <a href={countryCode ? `https://unstats.un.org/sdgs/dataportal/countryprofiles/${countryCode}` : 'https://unstats.un.org/sdgs/dataportal'} className='undp-style' style={{ color: 'var(--white)' }} target='_blank' rel='noreferrer'>UNStats</a>
             . The interlinkages visualization is powered by data available on
             {' '}
             <a href='https://knowsdgs.jrc.ec.europa.eu/interlinkages-visualization' className='undp-style' style={{ color: 'var(--white)' }} target='_blank' rel='noreferrer'>KnowSDGs Platform by European Commission</a>

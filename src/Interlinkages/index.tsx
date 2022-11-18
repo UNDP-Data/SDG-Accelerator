@@ -7,7 +7,7 @@ import { LinkageDataType, LiteratureDataType } from '../Types';
 import { InterlinkagesViz } from './InterlinkageViz';
 
 import '../style/radioStyle.css';
-import Background from './img/UNDP-hero-image.png';
+import Background from '../img/UNDP-hero-image.png';
 
 const LinkageData:LinkageDataType[] = require('../Data/linkages.json');
 const LiteratureData:LiteratureDataType[] = require('./Literature.json');
