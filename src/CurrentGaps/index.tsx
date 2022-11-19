@@ -6,6 +6,7 @@ import { SDGGOALS, SDG_ICON_SIZE } from '../Constants';
 import { SDGGapsData } from './SDGGapsData';
 import Background from '../img/UNDP-hero-image.png';
 import '../style/statCardStyle.css';
+import { describeArc } from '../utils/getArc';
 
 interface Props {
   goalStatuses: any;
@@ -20,14 +21,6 @@ const HeroImageEl = styled.div`
   margin-top: 7.1875rem;
 `;
 
-interface HeightProps {
-  height: number;
-}
-
-const SDGIconsEl = styled.div<HeightProps>`
-  height: ${(props) => `${props.height}px`};
-`;
-
 export const CurrentGaps = (props: Props) => {
   const {
     goalStatuses,
@@ -40,7 +33,6 @@ export const CurrentGaps = (props: Props) => {
   const identifiedGap = goalStatuses.filter((d: any) => d.status === 'Identified Gap');
   const forReview = goalStatuses.filter((d: any) => d.status === 'For Review');
   const gapsNA = goalStatuses.filter((d: any) => d.status === undefined);
-  const noOfRowForIcons = Math.ceil(Math.max(onTrack.length, identifiedGap.length, forReview.length, gapsNA.length) / 3);
   return (
     <>
       <HeroImageEl className='undp-hero-image'>
@@ -51,112 +43,192 @@ export const CurrentGaps = (props: Props) => {
             {countryFullName}
           </h1>
           <h5 className='undp-typography'>
-            For
+            Use this tool to get a country overview of which SDGs are on-track or lagging behind in reaching the 2030 targets. Powered by data, explore each of the 17 SDG and related 169 sub-targets trends through interactive, easy-to-use visualisations of the
             {' '}
-            <span className='bold'>{countryFullName}</span>
-            , out of 17 SDG goals,
-            {' '}
-            <span className='bold'>
-              {goalStatuses.filter((d: any) => d.status === 'On Track').length}
+            <a href='https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%20refinement_Eng.pdf' target='_blank' rel='noreferrer' className='undp-style dark-bg red-underline'>232 unique indicators</a>
+            .
+            <br />
+            <br />
+            <h3 className='undp-typography'>
+              For
               {' '}
-              are On Track,
-            </span>
-            <span className='bold'>
+              <span className='bold'>{countryFullName}</span>
+              , out of 17 SDG goals,
               {' '}
-              {goalStatuses.filter((d: any) => d.status === 'Identified Gap').length}
+              <span className='bold' style={{ color: 'var(--dark-green)' }}>
+                {goalStatuses.filter((d: any) => d.status === 'On Track').length}
+                {' '}
+                are On Track,
+              </span>
+              <span className='bold' style={{ color: 'var(--dark-yellow)' }}>
+                {' '}
+                {goalStatuses.filter((d: any) => d.status === 'For Review').length}
+                {' '}
+                are For Review
+              </span>
               {' '}
-              are Identified Gaps
-            </span>
-            {' '}
-            and,
-            <span className='bold'>
-              {' '}
-              {goalStatuses.filter((d: any) => d.status === 'For Review').length}
-              {' '}
-              are For Review
-            </span>
+              and,
+              <span className='bold' style={{ color: 'var(--dark-red)' }}>
+                {' '}
+                {goalStatuses.filter((d: any) => d.status === 'Identified Gap').length}
+                {' '}
+                are Identified Gaps
+              </span>
+            </h3>
           </h5>
           <button type='button' className='margin-top-09 undp-button button-primary button-arrow'>
             Download Report
           </button>
         </div>
       </HeroImageEl>
-      <div className='undp-hero-section-gray'>
-        <div className='max-width flex-div' style={{ padding: '0 1rem' }}>
-          <div className='undp-section-content'>
-            <h2 className='undp-typography'>SDG Trends</h2>
-          </div>
-          <div className='undp-section-content'>
-            Use this tool to get a country overview of which SDGs are on-track or lagging behind in reaching the 2030 targets. Powered by data, explore each of the 17 SDG and related 169 sub-targets trends through interactive, easy-to-use visualisations of the
-            {' '}
-            <a href='https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%20refinement_Eng.pdf' target='_blank' rel='noreferrer' className='undp-style dark-bg red-underline'>232 unique indicators</a>
-            .
-          </div>
-        </div>
-        <div className='flex-div max-width-1440' style={{ gap: '2rem' }}>
-          <div className='stat-card-long'>
-            <SDGIconsEl height={(noOfRowForIcons * SDG_ICON_SIZE) + ((noOfRowForIcons - 1) * 16)} className='sdg-icon-group'>
-              <div className='sdg-icon-container'>
-                {
-                  onTrack.map((d: any, i: number) => (
-                    <div key={i}>
-                      {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
-                    </div>
-                  ))
-                }
+      <div className=' margin-top-00' style={{ backgroundColor: 'var(--gray-200)', padding: 'var(--spacing-09)' }}>
+        <div className='max-width'>
+          <h2 className='undp-typography'>Current Gaps</h2>
+          <div className='flex-div margin-top-07' style={{ gap: '2rem' }}>
+            <div style={{ width: 'calc(40% - 1rem)' }}>
+              <svg width='calc(100% - 20px)' viewBox='0 0 360 360'>
+                <path
+                  d={describeArc(180, 180, 140, 0, 360 * (onTrack.length / (17)))}
+                  fill='none'
+                  strokeWidth={50}
+                  style={{ stroke: 'var(--dark-green)' }}
+                />
+                <path
+                  d={describeArc(180, 180, 140, 360 * (onTrack.length / (17)), 360 * ((onTrack.length + forReview.length) / (17)))}
+                  fill='none'
+                  strokeWidth={50}
+                  style={{ stroke: 'var(--dark-yellow)' }}
+                />
+                <path
+                  d={describeArc(180, 180, 140, 360 * ((onTrack.length + forReview.length) / (17)), 360 * ((onTrack.length + forReview.length + identifiedGap.length) / 17))}
+                  fill='none'
+                  strokeWidth={50}
+                  style={{ stroke: 'var(--dark-red)' }}
+                />
+                <path
+                  d={describeArc(180, 180, 140, 360 * ((onTrack.length + forReview.length + identifiedGap.length) / 17), 360)}
+                  fill='none'
+                  strokeWidth={50}
+                  style={{ stroke: 'var(--gray-600)' }}
+                />
+                <text
+                  x={180}
+                  y={180}
+                  textAnchor='middle'
+                  fontFamily='proxima-nova'
+                  fontWeight='bold'
+                  fontSize='60px'
+                  dy={10}
+                >
+                  {17}
+                </text>
+                <text
+                  x={180}
+                  y={180}
+                  textAnchor='middle'
+                  fontFamily='proxima-nova'
+                  fontWeight='bold'
+                  fontSize='20px'
+                  dy={35}
+                >
+                  SDGs
+                </text>
+              </svg>
+            </div>
+            <div style={{ width: 'calc(60% - 1rem)' }}>
+              <div className='margin-bottom-09'>
+                <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--dark-green)' }}>
+                  <span className='bold'>
+                    {onTrack.length > 0 ? onTrack.length : 'No'}
+                    {' '}
+                    {onTrack.length > 1 ? 'SDGs' : 'SDG'}
+                  </span>
+                  {' '}
+                  On Track
+                </h4>
+                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>The country is on track to fulfil the SDG by 2030</p>
+                <div className='sdg-icon-group'>
+                  <div className='sdg-icon-container'>
+                    {
+                      onTrack.map((d: any, i: number) => (
+                        <div key={i}>
+                          {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
+                        </div>
+                      ))
+                    }
+                  </div>
+                </div>
               </div>
-            </SDGIconsEl>
-            <h2 className='undp-typography'>{onTrack.length}</h2>
-            <h4 className='undp-typography'>On Track</h4>
-            <p className='undp-typography'>The country is on track to fulfil the SDG by 2030</p>
-          </div>
-          <div className='stat-card-long'>
-            <SDGIconsEl height={(noOfRowForIcons * SDG_ICON_SIZE) + ((noOfRowForIcons - 1) * 16)} className='sdg-icon-group'>
-              <div className='sdg-icon-container'>
-                {
-                  forReview.map((d: any, i: number) => (
-                    <div key={i}>
-                      {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
-                    </div>
-                  ))
-                }
+              <div className='margin-bottom-09'>
+                <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--dark-yellow)' }}>
+                  <span className='bold'>
+                    {forReview.length > 0 ? forReview.length : 'No'}
+                    {' '}
+                    {forReview.length > 1 ? 'SDGs' : 'SDG'}
+                  </span>
+                  {' '}
+                  For Review
+                </h4>
+                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>With current progress the country will miss the SDG by 2030 by a small margin</p>
+                <div className='sdg-icon-group'>
+                  <div className='sdg-icon-container'>
+                    {
+                      forReview.map((d: any, i: number) => (
+                        <div key={i}>
+                          {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
+                        </div>
+                      ))
+                    }
+                  </div>
+                </div>
               </div>
-            </SDGIconsEl>
-            <h2 className='undp-typography'>{forReview.length}</h2>
-            <h4 className='undp-typography'>For Review</h4>
-            <p className='undp-typography'>With current progress the country will miss the SDG by 2030 by a small margin</p>
-          </div>
-          <div className='stat-card-long'>
-            <SDGIconsEl height={(noOfRowForIcons * SDG_ICON_SIZE) + ((noOfRowForIcons - 1) * 16)} className='sdg-icon-group'>
-              <div className='sdg-icon-container'>
-                {
-                  identifiedGap.map((d: any, i: number) => (
-                    <div key={i}>
-                      {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
-                    </div>
-                  ))
-                }
+              <div className='margin-bottom-09'>
+                <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--dark-red)' }}>
+                  <span className='bold'>
+                    {identifiedGap.length}
+                    {' '}
+                    SDG
+                  </span>
+                  {' '}
+                  Identified Gaps
+                </h4>
+                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>With current progress the country will miss the SDG by 2030 by a large margin</p>
+                <div className='sdg-icon-group'>
+                  <div className='sdg-icon-container'>
+                    {
+                      identifiedGap.map((d: any, i: number) => (
+                        <div key={i}>
+                          {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
+                        </div>
+                      ))
+                    }
+                  </div>
+                </div>
               </div>
-            </SDGIconsEl>
-            <h2 className='undp-typography'>{identifiedGap.length}</h2>
-            <h4 className='undp-typography'>Identified Gaps</h4>
-            <p className='undp-typography'>With current progress the country will miss the SDG by 2030 by a large margin</p>
-          </div>
-          <div className='stat-card-long'>
-            <SDGIconsEl height={(noOfRowForIcons * SDG_ICON_SIZE) + ((noOfRowForIcons - 1) * 16)} className='sdg-icon-group'>
-              <div className='sdg-icon-container'>
-                {
-                  gapsNA.map((d: any, i: number) => (
-                    <div key={i}>
-                      {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
-                    </div>
-                  ))
-                }
+              <div>
+                <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--gray-600)' }}>
+                  <span className='bold'>
+                    {gapsNA.length}
+                    {' '}
+                    SDG
+                  </span>
+                  {' '}
+                  Gaps NA
+                </h4>
+                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>With current progress the country will miss the SDG by 2030 by a large margin</p>
+                <div className='sdg-icon-group'>
+                  <div className='sdg-icon-container'>
+                    {
+                      gapsNA.map((d: any, i: number) => (
+                        <div key={i}>
+                          {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
+                        </div>
+                      ))
+                    }
+                  </div>
+                </div>
               </div>
-            </SDGIconsEl>
-            <h2 className='undp-typography'>{gapsNA.length}</h2>
-            <h4 className='undp-typography'>Gaps NA</h4>
-            <p className='undp-typography'>Country doesn’t have enough data to identify the progress of the SDG</p>
+            </div>
           </div>
         </div>
       </div>

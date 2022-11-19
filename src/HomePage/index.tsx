@@ -44,23 +44,54 @@ export const HomePage = (props: Props) => {
             <a href='https://sdgintegration.undp.org/sdg-acceleration-diagnostic' className='undp-style dark-bg red-underline' target='_blank' rel='noreferrer'>SDG Push</a>
             , a process that combines analytical capabilities with qualitative methods to assess context, options, and bottlenecks to determine effective policy choices, investments and pathways.
           </h5>
+          {
+            countryCode ? null : (
+              <div className='flex-div margin-top-09'>
+                <Select
+                  className='undp-select'
+                  placeholder='Select Year'
+                  showSearch
+                  value={selectedCountry}
+                  onChange={(value) => { setSelectedCountry(value); }}
+                  style={{ flexGrow: 1 }}
+                >
+                  {
+                sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
+              }
+                </Select>
+                <NavLink
+                  to={`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === selectedCountry)]['Alpha-3 code-1']}`}
+                  style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
+                >
+                  <button type='button' className='undp-button button-primary button-arrow'>
+                    Explore Country Data
+                  </button>
+                </NavLink>
+              </div>
+            )
+          }
         </div>
       </HeroImageEl>
-      <div className='undp-hero-section-blue'>
-        <div className='max-width flex-div' style={{ padding: '0 1rem' }}>
-          <div className='undp-section-content'>
-            <h2 className='undp-typography'>What is SDG Push</h2>
-          </div>
-          <div className='undp-section-content'>
-            <span className='bold'>Despite these extremely challenging realities, the Sustainable Development Goals (SDGs) 2030 Agenda remains more relevant than ever.</span>
-            {' '}
-            It is the world’s first and only globally agreed systems agenda, designed for precisely the kinds of intersecting crises we face today. The latest SDG progress report shows virtually all the SDGs are moving in the reverse direction. As we reach the mid-point for achieving the SDGs, a refresh of our approach to achieving the SDGs is needed.
-            <br />
-            <br />
-            SDG Push provides a systems-level approach to generate evidence-based policy accelerators using the latest technologies and best practices in integrated analytics, sensemaking, sustainable finance and futures modelling.
-          </div>
-        </div>
-      </div>
+      {
+        countryCode ? null
+          : (
+            <div className='undp-hero-section-blue'>
+              <div className='max-width flex-div' style={{ padding: '0 1rem' }}>
+                <div className='undp-section-content'>
+                  <h2 className='undp-typography'>What is SDG Push</h2>
+                </div>
+                <div className='undp-section-content'>
+                  <span className='bold'>Despite these extremely challenging realities, the Sustainable Development Goals (SDGs) 2030 Agenda remains more relevant than ever.</span>
+                  {' '}
+                  It is the world’s first and only globally agreed systems agenda, designed for precisely the kinds of intersecting crises we face today. The latest SDG progress report shows virtually all the SDGs are moving in the reverse direction. As we reach the mid-point for achieving the SDGs, a refresh of our approach to achieving the SDGs is needed.
+                  <br />
+                  <br />
+                  SDG Push provides a systems-level approach to generate evidence-based policy accelerators using the latest technologies and best practices in integrated analytics, sensemaking, sustainable finance and futures modelling.
+                </div>
+              </div>
+            </div>
+          )
+      }
       <div className='margin-top-13 margin-bottom-13 max-width'>
         <div className='undp-section margin-bottom-13'>
           <div>

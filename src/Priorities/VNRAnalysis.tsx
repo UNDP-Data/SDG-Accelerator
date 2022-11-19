@@ -1,10 +1,14 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Modal } from 'antd';
 import styled from 'styled-components';
-import { SDG_ICON_SIZE } from '../Constants';
+import {
+  forceCollide, forceManyBody, forceSimulation, forceX, forceY,
+} from 'd3-force';
+import { SDGGOALS, SDG_COLOR_ARRAY, SDG_ICON_SIZE } from '../Constants';
 import { getSDGIcon } from '../utils/getSDGIcon';
+import { describeArc } from '../utils/getArc';
 
 import '../style/chipStyle.css';
 import '../style/tabStyle.css';
@@ -16,28 +20,33 @@ interface Props {
   document: string;
 }
 
-interface HeightProps {
-  height: number;
+interface SDGHoveredProps {
+  sdg: number;
+  xPosition: number;
+  yPosition: number;
 }
-
-const SDGIconsEl = styled.div<HeightProps>`
-  height: ${(props) => `${props.height}px`};
-`;
 
 const ColorKeyBox = styled.div`
   width: 1rem;
   height: 1rem;
 `;
+interface TooltipElProps {
+  x: number;
+  y: number;
+}
 
-const getSDGs = (priority: any, gaps: any) => {
-  const arr: string[] = [];
-  priority.forEach((d: any) => {
-    if (gaps.findIndex((el: any) => `${el.goal}` === `${d.sdg}`) !== -1) {
-      arr.push(`SDG ${d.sdg}`);
-    }
-  });
-  return arr;
-};
+const TooltipEl = styled.div<TooltipElProps>`
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  font-size: 1rem;
+  background-color: var(--gray-300);
+  word-wrap: break-word;
+  top: ${(props) => props.y - 17}px;
+  left: ${(props) => props.x}px;
+  transform: translate(-50%, -100%);
+  padding: 1rem;
+`;
 
 export const VNRAnalysis = (props: Props) => {
   const {
@@ -46,241 +55,361 @@ export const VNRAnalysis = (props: Props) => {
     goalStatuses,
   } = props;
   const [selectedSDG, setSelectedSDG] = useState<any>(null);
-  const dataWithStatuses = data.map((d: any) => ({ ...d, status: goalStatuses.filter((el: any) => `${el.goal}` === `${d.sdg}`)[0].status }));
+  const [hoveredSDG, setHoveredSDG] = useState<null | SDGHoveredProps>(null);
+  const [nodeData, setNodeData] = useState<any>(null);
+  const dataWithStatuses = data.map((d: any) => ({ ...d, category: d.salience === 0 ? 'No Mention' : d.category.charAt(0).toUpperCase() + d.category.slice(1), status: goalStatuses.filter((el: any) => `${el.goal}` === `${d.sdg}`)[0].status ? goalStatuses.filter((el: any) => `${el.goal}` === `${d.sdg}`)[0].status : 'Gap NA' }));
   const medium = data.filter((d: any) => d.category === 'medium');
   const low = data.filter((d: any) => d.category === 'low' && d.salience !== 0);
   const high = data.filter((d: any) => d.category === 'high');
   const noMetion = data.filter((d: any) => d.salience === 0);
-  const onTrack = goalStatuses.filter((d: any) => d.status === 'On Track');
-  const identifiedGap = goalStatuses.filter((d: any) => d.status === 'Identified Gap');
-  const forReview = goalStatuses.filter((d: any) => d.status === 'For Review');
-  const noOfRowForIcons = Math.ceil(Math.max(high.length, medium.length, low.length, noMetion.length) / 3);
-  const prioritiesBasedOnGaps = {
-    high: {
-      onTrack: getSDGs(high, onTrack),
-      identifiedGap: getSDGs(high, identifiedGap),
-      forReview: getSDGs(high, forReview),
-    },
-    medium: {
-      onTrack: getSDGs(medium, onTrack),
-      identifiedGap: getSDGs(medium, identifiedGap),
-      forReview: getSDGs(medium, forReview),
-    },
-    low: {
-      onTrack: getSDGs(low, onTrack),
-      identifiedGap: getSDGs(low, identifiedGap),
-      forReview: getSDGs(low, forReview),
-    },
-    noMetion: {
-      onTrack: getSDGs(noMetion, onTrack),
-      identifiedGap: getSDGs(noMetion, identifiedGap),
-      forReview: getSDGs(noMetion, forReview),
-    },
-  };
+  const gridSize = 780;
+  const margin = 20;
+  const cellSize = (gridSize - margin) / 4;
+  const nodeRadius = 15;
+  const statusArray = ['Identified Gap', 'For Review', 'On Track', 'Gap NA'];
+  const priorityArray = ['High', 'Medium', 'Low', 'No Mention'];
+  useEffect(() => {
+    setNodeData(null);
+    const dataTemp = JSON.parse(JSON.stringify(dataWithStatuses));
+    forceSimulation(dataTemp)
+      .force('charge', forceManyBody().strength(2.25))
+      // .force('center', d3.forceCenter(centre.x, centre.y))
+      .force('y', forceX().strength(1).x((d: any) => (priorityArray.indexOf(d.category) * cellSize + (cellSize / 2))))
+      .force('x', forceY().strength(1).y((d: any) => (statusArray.indexOf(d.status) * cellSize + (cellSize / 2))))
+      .force('collision', forceCollide().radius(nodeRadius + 1))
+      .tick(100)
+      .on('end', () => { setNodeData(dataTemp); });
+  }, [document]);
   return (
     <>
-      <div className='undp-hero-section-gray'>
-        <h2 className='undp-typography' style={{ textAlign: 'center' }}>
-          Current Priorities Based on
-          {' '}
-          {document}
-        </h2>
-        <div className='flex-div max-width-1440' style={{ gap: '2rem' }}>
-          <div className='stat-card-long'>
-            <SDGIconsEl height={(noOfRowForIcons * SDG_ICON_SIZE) + ((noOfRowForIcons - 1) * 16)} className='sdg-icon-group'>
-              <div className='sdg-icon-container'>
-                {
-                  high.map((d: any, i: number) => (
-                    <div key={i} onClick={() => { setSelectedSDG(d); }} style={{ cursor: 'pointer' }}>
-                      {getSDGIcon(`SDG ${d.sdg}`, SDG_ICON_SIZE)}
-                    </div>
-                  ))
-                }
+      <div className=' margin-top-00' style={{ backgroundColor: 'var(--gray-200)', padding: 'var(--spacing-13)' }}>
+        <div className='max-width-1440'>
+          <h2 className='undp-typography'>
+            Current Priorities Based on
+            {' '}
+            {document}
+          </h2>
+          <div className='flex-div margin-top-07' style={{ gap: '2rem' }}>
+            <div style={{ width: 'calc(40% - 1rem)' }}>
+              <svg width='calc(100% - 20px)' viewBox='0 0 360 360'>
+                <path
+                  d={describeArc(180, 180, 140, 0, 360 * (high.length / (17)))}
+                  fill='none'
+                  strokeWidth={50}
+                  style={{ stroke: 'var(--blue-700)' }}
+                />
+                <path
+                  d={describeArc(180, 180, 140, 360 * (high.length / (17)), 360 * ((high.length + medium.length) / (17)))}
+                  fill='none'
+                  strokeWidth={50}
+                  style={{ stroke: 'var(--blue-400)' }}
+                />
+                <path
+                  d={describeArc(180, 180, 140, 360 * ((high.length + medium.length) / (17)), 360 * ((high.length + medium.length + low.length) / 17))}
+                  fill='none'
+                  strokeWidth={50}
+                  style={{ stroke: 'var(--blue-200)' }}
+                />
+                <path
+                  d={describeArc(180, 180, 140, 360 * ((high.length + medium.length + low.length) / 17), 360)}
+                  fill='none'
+                  strokeWidth={50}
+                  style={{ stroke: 'var(--gray-400)' }}
+                />
+                <text
+                  x={180}
+                  y={180}
+                  textAnchor='middle'
+                  fontFamily='proxima-nova'
+                  fontWeight='bold'
+                  fontSize='60px'
+                  dy={10}
+                >
+                  {17}
+                </text>
+                <text
+                  x={180}
+                  y={180}
+                  textAnchor='middle'
+                  fontFamily='proxima-nova'
+                  fontWeight='bold'
+                  fontSize='20px'
+                  dy={35}
+                >
+                  SDGs
+                </text>
+              </svg>
+            </div>
+            <div style={{ width: 'calc(60% - 1rem)' }}>
+              <div className='margin-bottom-09'>
+                <h4 className='undp-typography margin-bottom-03' style={{ color: 'var(--blue-700)' }}>
+                  <span className='bold'>
+                    {high.length > 0 ? high.length : 'No'}
+                    {' '}
+                    {high.length > 1 ? 'SDGs' : 'SDG'}
+                  </span>
+                  {' '}
+                  High Priority
+                </h4>
+                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Click on the icons to see key features for the SDG</p>
+                <div className='sdg-icon-group'>
+                  <div className='sdg-icon-container'>
+                    {
+                      high.map((d: any, i: number) => (
+                        <div key={i} onClick={() => { setSelectedSDG(d); }} style={{ cursor: 'pointer' }}>
+                          {getSDGIcon(`SDG ${d.sdg}`, SDG_ICON_SIZE)}
+                        </div>
+                      ))
+                    }
+                  </div>
+                </div>
               </div>
-            </SDGIconsEl>
-            <h2 className='undp-typography'>{high.length}</h2>
-            <h4 className='undp-typography'>High Priority</h4>
-            <p className='undp-typography margin-top-07'>High priority SDGs based on gaps</p>
-            <h6 className='undp-typography margin-top-05'>On Track</h6>
-            <div className='flex-div flex-wrap' style={{ gap: '0.5rem' }}>
-              {
-                prioritiesBasedOnGaps.high.onTrack.length > 0
-                  ? prioritiesBasedOnGaps.high.onTrack.map((d: any, i: number) => (
-                    <div key={i} className='undp-chip undp-chip-small undp-chip-dark-green'>
-                      {d}
-                    </div>
-                  )) : <div className='small-font italics' style={{ opacity: '0.6' }}>No SDGs</div>
-              }
-            </div>
-            <h6 className='undp-typography margin-top-09'>For Review</h6>
-            <div className='flex-div flex-wrap' style={{ gap: '0.5rem' }}>
-              {
-                prioritiesBasedOnGaps.high.forReview.length > 0
-                  ? prioritiesBasedOnGaps.high.forReview.map((d: any, i: number) => (
-                    <div key={i} className='undp-chip undp-chip-small undp-chip-dark-yellow'>
-                      {d}
-                    </div>
-                  )) : <div className='small-font italics' style={{ opacity: '0.6' }}>No SDGs</div>
-              }
-            </div>
-            <h6 className='undp-typography margin-top-09'>Identified Gap</h6>
-            <div className='flex-div flex-wrap' style={{ gap: '0.5rem' }}>
-              {
-                prioritiesBasedOnGaps.high.identifiedGap.length > 0
-                  ? prioritiesBasedOnGaps.high.identifiedGap.map((d: any, i: number) => (
-                    <div key={i} className='undp-chip undp-chip-small undp-chip-dark-red'>
-                      {d}
-                    </div>
-                  )) : <div className='small-font italics' style={{ opacity: '0.6' }}>No SDGs</div>
-              }
+              <div className='margin-bottom-09'>
+                <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--blue-400)' }}>
+                  <span className='bold'>
+                    {medium.length > 0 ? medium.length : 'No'}
+                    {' '}
+                    {medium.length > 1 ? 'SDGs' : 'SDG'}
+                  </span>
+                  {' '}
+                  Medium Priority
+                </h4>
+                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Click on the icons to see key features for the SDG</p>
+                <div className='sdg-icon-group'>
+                  <div className='sdg-icon-container'>
+                    {
+                      medium.map((d: any, i: number) => (
+                        <div key={i} onClick={() => { setSelectedSDG(d); }} style={{ cursor: 'pointer' }}>
+                          {getSDGIcon(`SDG ${d.sdg}`, SDG_ICON_SIZE)}
+                        </div>
+                      ))
+                    }
+                  </div>
+                </div>
+              </div>
+              <div className='margin-bottom-09'>
+                <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--blue-200)' }}>
+                  <span className='bold'>
+                    {low.length > 0 ? low.length : 'No'}
+                    {' '}
+                    {low.length > 1 ? 'SDGs' : 'SDG'}
+                  </span>
+                  {' '}
+                  Low Priority
+                </h4>
+                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Click on the icons to see key features for the SDG</p>
+                <div className='sdg-icon-group'>
+                  <div className='sdg-icon-container'>
+                    {
+                      low.map((d: any, i: number) => (
+                        <div key={i} onClick={() => { setSelectedSDG(d); }} style={{ cursor: 'pointer' }}>
+                          {getSDGIcon(`SDG ${d.sdg}`, SDG_ICON_SIZE)}
+                        </div>
+                      ))
+                    }
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--gray-400)' }}>
+                  <span className='bold'>
+                    {noMetion.length > 0 ? noMetion.length : 'No'}
+                    {' '}
+                    {noMetion.length > 1 ? 'SDGs' : 'SDG'}
+                  </span>
+                  {' '}
+                  Not Mentioned
+                </h4>
+                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Click on the icons to see key features for the SDG</p>
+                <div className='sdg-icon-group'>
+                  <div className='sdg-icon-container'>
+                    {
+                      noMetion.map((d: any, i: number) => (
+                        <div key={i} onClick={() => { setSelectedSDG(d); }} style={{ cursor: 'pointer' }}>
+                          {getSDGIcon(`SDG ${d.sdg}`, SDG_ICON_SIZE)}
+                        </div>
+                      ))
+                    }
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className='stat-card-long'>
-            <SDGIconsEl height={(noOfRowForIcons * SDG_ICON_SIZE) + ((noOfRowForIcons - 1) * 16)} className='sdg-icon-group'>
-              <div className='sdg-icon-container'>
-                {
-                  medium.map((d: any, i: number) => (
-                    <div key={i} onClick={() => { setSelectedSDG(d); }} style={{ cursor: 'pointer' }}>
-                      {getSDGIcon(`SDG ${d.sdg}`, SDG_ICON_SIZE)}
-                    </div>
-                  ))
-                }
-              </div>
-            </SDGIconsEl>
-            <h2 className='undp-typography'>{medium.length}</h2>
-            <h4 className='undp-typography'>Medium Priority</h4>
-            <p className='undp-typography margin-top-07'>Medium priority SDGs based on gaps</p>
-            <h6 className='undp-typography margin-top-05'>On Track</h6>
-            <div className='flex-div flex-wrap' style={{ gap: '0.5rem' }}>
-              {
-                prioritiesBasedOnGaps.medium.onTrack.length > 0
-                  ? prioritiesBasedOnGaps.medium.onTrack.map((d: any, i: number) => (
-                    <div key={i} className='undp-chip undp-chip-small undp-chip-dark-green'>
-                      {d}
-                    </div>
-                  )) : <div className='small-font italics' style={{ opacity: '0.6' }}>No SDGs</div>
-              }
-            </div>
-            <h6 className='undp-typography margin-top-09'>For Review</h6>
-            <div className='flex-div flex-wrap' style={{ gap: '0.5rem' }}>
-              {
-                prioritiesBasedOnGaps.medium.forReview.length > 0
-                  ? prioritiesBasedOnGaps.medium.forReview.map((d: any, i: number) => (
-                    <div key={i} className='undp-chip undp-chip-small undp-chip-dark-yellow'>
-                      {d}
-                    </div>
-                  )) : <div className='small-font italics' style={{ opacity: '0.6' }}>No SDGs</div>
-              }
-            </div>
-            <h6 className='undp-typography margin-top-09'>Identified Gap</h6>
-            <div className='flex-div flex-wrap' style={{ gap: '0.5rem' }}>
-              {
-                prioritiesBasedOnGaps.medium.identifiedGap.length > 0
-                  ? prioritiesBasedOnGaps.medium.identifiedGap.map((d: any, i: number) => (
-                    <div key={i} className='undp-chip undp-chip-small undp-chip-dark-red'>
-                      {d}
-                    </div>
-                  )) : <div className='small-font italics' style={{ opacity: '0.6' }}>No SDGs</div>
-              }
-            </div>
+        </div>
+      </div>
+      <div className=' margin-top-13 max-width-1440 flex-div' style={{ gap: '2rem' }}>
+        <div className='flex-div margin-top-07' style={{ gap: '2rem', width: '100%' }}>
+          <div style={{ width: 'calc(66.67% - 1rem)' }}>
+            {
+              nodeData
+                ? (
+                  <svg width='calc(100% - 20px)' viewBox={`0 0 ${gridSize + 1} ${gridSize + 1}`}>
+                    {
+                      priorityArray.map((d, i) => (
+                        <text
+                          key={i}
+                          fontSize={14}
+                          dy={10}
+                          y={0}
+                          x={(i * cellSize) + margin + (cellSize / 2)}
+                          textAnchor='middle'
+                          fontWeight='bold'
+                          style={{ fill: `${d === 'High' ? 'var(--blue-700)' : d === 'Medium' ? 'var(--blue-400)' : d === 'Low' ? 'var(--blue-200)' : 'var(--gray-400)'}` }}
+                        >
+                          { d === 'No Mention'.toUpperCase() ? d : `${d} Priority`.toUpperCase()}
+                        </text>
+                      ))
+                    }
+                    {
+                      statusArray.map((d, i) => (
+                        <g
+                          transform={`translate(0,${(i * cellSize) + margin + (cellSize / 2)})`}
+                        >
+                          <text
+                            fontSize={14}
+                            x={0}
+                            y={0}
+                            dy={14}
+                            transform='rotate(-90)'
+                            fontWeight='bold'
+                            textAnchor='middle'
+                            style={{ fill: `${d === 'Identified Gap' ? 'var(--dark-red)' : d === 'On Track' ? 'var(--dark-green)' : d === 'For Review' ? 'var(--dark-yellow)' : 'var(--gray-500)'}` }}
+                          >
+                            {d.toUpperCase()}
+                          </text>
+                        </g>
+                      ))
+                    }
+                    <g transform={`translate(${margin}, ${margin})`}>
+                      <rect
+                        x={0}
+                        y={0}
+                        width={cellSize * 4}
+                        height={cellSize * 4}
+                        fillOpacity={0}
+                        stroke='#EDEFF0'
+                        strokeWidth={0.5}
+                      />
+                      <rect
+                        x={0}
+                        y={0}
+                        width={cellSize * 4}
+                        height={cellSize}
+                        fillOpacity={0.25}
+                        fill='#EDEFF0'
+                      />
+                      <rect
+                        y={cellSize * 2}
+                        x={0}
+                        width={cellSize * 4}
+                        height={cellSize}
+                        fillOpacity={0.25}
+                        fill='#EDEFF0'
+                      />
+                      <rect
+                        x={0}
+                        y={0}
+                        height={cellSize * 4}
+                        width={cellSize}
+                        fillOpacity={0.25}
+                        fill='#EDEFF0'
+                      />
+                      <rect
+                        x={cellSize * 2}
+                        y={0}
+                        height={cellSize * 4}
+                        width={cellSize}
+                        fillOpacity={0.25}
+                        fill='#EDEFF0'
+                      />
+                      {
+                        priorityArray.map((_d, i) => (
+                          <g key={i}>
+                            {
+                              statusArray.map((_l, j) => (
+                                <rect
+                                  key={j}
+                                  x={i * cellSize}
+                                  y={j * cellSize}
+                                  width={cellSize}
+                                  height={cellSize}
+                                  fillOpacity={0}
+                                  fill='#fff'
+                                  stroke='#EDEFF0'
+                                  strokeWidth={1}
+                                />
+                              ))
+                            }
+                          </g>
+                        ))
+                      }
+                      <rect
+                        x={0}
+                        y={0}
+                        width={cellSize * 4}
+                        height={cellSize * 4}
+                        fillOpacity={0}
+                        stroke='#EDEFF0'
+                        strokeWidth={1}
+                      />
+                      {
+                        nodeData.map((d: any, i: number) => (
+                          <g
+                            key={i}
+                            transform={`translate(${d.x},${d.y})`}
+                            style={{ cursor: 'default' }}
+                            onMouseEnter={(event) => {
+                              setHoveredSDG({
+                                sdg: d.sdg,
+                                xPosition: event.clientX,
+                                yPosition: event.clientY,
+                              });
+                            }}
+                            onMouseLeave={() => { setHoveredSDG(null); }}
+                          >
+                            <circle
+                              cx={0}
+                              cy={0}
+                              r={nodeRadius}
+                              fill={SDG_COLOR_ARRAY[d.sdg - 1]}
+                            />
+                            <text
+                              fontSize={12}
+                              x={0}
+                              y={0}
+                              dy={3}
+                              textAnchor='middle'
+                              fill='#fff'
+                            >
+                              {d.sdg}
+                            </text>
+                          </g>
+                        ))
+                      }
+                    </g>
+                  </svg>
+                )
+                : (
+                  <div style={{
+                    width: '100%', height: '780px', backgroundColor: 'var(--gray-100)', paddingTop: '360px',
+                  }}
+                  >
+                    <div className='undp-loader' style={{ margin: 'auto' }} />
+                  </div>
+                )
+            }
           </div>
-          <div className='stat-card-long'>
-            <SDGIconsEl height={(noOfRowForIcons * SDG_ICON_SIZE) + ((noOfRowForIcons - 1) * 16)} className='sdg-icon-group'>
-              <div className='sdg-icon-container'>
-                {
-                  low.map((d: any, i: number) => (
-                    <div key={i} onClick={() => { setSelectedSDG(d); }} style={{ cursor: 'pointer' }}>
-                      {getSDGIcon(`SDG ${d.sdg}`, SDG_ICON_SIZE)}
-                    </div>
-                  ))
-                }
-              </div>
-            </SDGIconsEl>
-            <h2 className='undp-typography'>{low.length}</h2>
-            <h4 className='undp-typography'>Low Priority</h4>
-            <p className='undp-typography margin-top-07'>Low priority SDGs based on gaps</p>
-            <h6 className='undp-typography margin-top-05'>On Track</h6>
-            <div className='flex-div flex-wrap' style={{ gap: '0.5rem' }}>
-              {
-                prioritiesBasedOnGaps.low.onTrack.length > 0
-                  ? prioritiesBasedOnGaps.low.onTrack.map((d: any, i: number) => (
-                    <div key={i} className='undp-chip undp-chip-small undp-chip-dark-green'>
-                      {d}
-                    </div>
-                  )) : <div className='small-font italics' style={{ opacity: '0.6' }}>No SDGs</div>
-              }
-            </div>
-            <h6 className='undp-typography margin-top-09'>For Review</h6>
-            <div className='flex-div flex-wrap' style={{ gap: '0.5rem' }}>
-              {
-                prioritiesBasedOnGaps.low.forReview.length > 0
-                  ? prioritiesBasedOnGaps.low.forReview.map((d: any, i: number) => (
-                    <div key={i} className='undp-chip undp-chip-small undp-chip-dark-yellow'>
-                      {d}
-                    </div>
-                  )) : <div className='small-font italics' style={{ opacity: '0.6' }}>No SDGs</div>
-              }
-            </div>
-            <h6 className='undp-typography margin-top-09'>Identified Gap</h6>
-            <div className='flex-div flex-wrap' style={{ gap: '0.5rem' }}>
-              {
-                prioritiesBasedOnGaps.low.identifiedGap.length > 0
-                  ? prioritiesBasedOnGaps.low.identifiedGap.map((d: any, i: number) => (
-                    <div key={i} className='undp-chip undp-chip-small undp-chip-dark-red'>
-                      {d}
-                    </div>
-                  )) : <div className='small-font italics' style={{ opacity: '0.6' }}>No SDGs</div>
-              }
-            </div>
-          </div>
-          <div className='stat-card-long'>
-            <SDGIconsEl height={(noOfRowForIcons * SDG_ICON_SIZE) + ((noOfRowForIcons - 1) * 16)} className='sdg-icon-group'>
-              <div className='sdg-icon-container'>
-                {
-                  noMetion.map((d: any, i: number) => (
-                    <div key={i}>
-                      {getSDGIcon(`SDG ${d.sdg}`, SDG_ICON_SIZE)}
-                    </div>
-                  ))
-                }
-              </div>
-            </SDGIconsEl>
-            <h2 className='undp-typography'>{noMetion.length}</h2>
-            <h4 className='undp-typography'>No Mention</h4>
-            <p className='undp-typography margin-top-07'>Not mentioned SDGs based on gaps</p>
-            <h6 className='undp-typography margin-top-05'>On Track</h6>
-            <div className='flex-div flex-wrap' style={{ gap: '0.5rem' }}>
-              {
-                prioritiesBasedOnGaps.noMetion.onTrack.length > 0
-                  ? prioritiesBasedOnGaps.noMetion.onTrack.map((d: any, i: number) => (
-                    <div key={i} className='undp-chip undp-chip-small undp-chip-dark-green'>
-                      {d}
-                    </div>
-                  )) : <div className='small-font italics' style={{ opacity: '0.6' }}>No SDGs</div>
-              }
-            </div>
-            <h6 className='undp-typography margin-top-09'>For Review</h6>
-            <div className='flex-div flex-wrap' style={{ gap: '0.5rem' }}>
-              {
-                prioritiesBasedOnGaps.noMetion.forReview.length > 0
-                  ? prioritiesBasedOnGaps.noMetion.forReview.map((d: any, i: number) => (
-                    <div key={i} className='undp-chip undp-chip-small undp-chip-dark-yellow'>
-                      {d}
-                    </div>
-                  )) : <div className='small-font italics' style={{ opacity: '0.6' }}>No SDGs</div>
-              }
-            </div>
-            <h6 className='undp-typography margin-top-09'>Identified Gap</h6>
-            <div className='flex-div flex-wrap' style={{ gap: '0.5rem' }}>
-              {
-                prioritiesBasedOnGaps.noMetion.identifiedGap.length > 0
-                  ? prioritiesBasedOnGaps.noMetion.identifiedGap.map((d: any, i: number) => (
-                    <div key={i} className='undp-chip undp-chip-small undp-chip-dark-red'>
-                      {d}
-                    </div>
-                  )) : <div className='small-font italics' style={{ opacity: '0.6' }}>No SDGs</div>
-              }
-            </div>
+          <div style={{ width: 'calc(33.33% - 1rem)' }}>
+            <h2 className='undp-typography'>
+              Current Priorities Based on
+              {' '}
+              {document}
+              {' '}
+              and SDG gaps
+            </h2>
+            <p className='undp-typography'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in nisi vestibulum, ultricies mi vel, efficitur purus. Vivamus ipsum nisl, rhoncus eget egestas a, pulvinar in dolor. Vivamus ut egestas nunc. Suspendisse nec rhoncus mauris. Proin malesuada ligula quis est porta hendrerit.
+            </p>
           </div>
         </div>
       </div>
@@ -422,6 +551,18 @@ export const VNRAnalysis = (props: Props) => {
           }
         </svg>
       </div>
+      {
+        hoveredSDG ? (
+          <TooltipEl x={hoveredSDG.xPosition} y={hoveredSDG.yPosition}>
+            <h6 className='undp-typography margin-bottom-01'>
+              SDG
+              {' '}
+              {hoveredSDG.sdg}
+            </h6>
+            <p className='undp-typography margin-bottom-00'>{SDGGOALS[hoveredSDG.sdg - 1].split(': ')[1]}</p>
+          </TooltipEl>
+        ) : null
+      }
       {
         selectedSDG
           ? (
