@@ -73,7 +73,6 @@ export const VNRAnalysis = (props: Props) => {
     const dataTemp = JSON.parse(JSON.stringify(dataWithStatuses));
     forceSimulation(dataTemp)
       .force('charge', forceManyBody().strength(2.25))
-      // .force('center', d3.forceCenter(centre.x, centre.y))
       .force('y', forceX().strength(1).x((d: any) => (priorityArray.indexOf(d.category) * cellSize + (cellSize / 2))))
       .force('x', forceY().strength(1).y((d: any) => (statusArray.indexOf(d.status) * cellSize + (cellSize / 2))))
       .force('collision', forceCollide().radius(nodeRadius + 1))
@@ -401,7 +400,7 @@ export const VNRAnalysis = (props: Props) => {
           </div>
           <div style={{ width: 'calc(33.33% - 1rem)' }}>
             <h2 className='undp-typography'>
-              Current Priorities Based on
+              Comparing SDG national priorities based on
               {' '}
               {document}
               {' '}

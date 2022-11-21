@@ -8,6 +8,7 @@ import { InterlinkagesViz } from './InterlinkageViz';
 
 import '../style/radioStyle.css';
 import Background from '../img/UNDP-hero-image.png';
+import { NetworkGraph } from './NetworkGraph';
 
 const LinkageData:LinkageDataType[] = require('../Data/linkages.json');
 const LiteratureData:LiteratureDataType[] = require('./Literature.json');
@@ -111,6 +112,12 @@ export const Interlinkages = (props: Props) => {
           selectedTarget={selectedTarget}
           setSelectedTarget={setSelectedTarget}
           linkageType={linkageType}
+          data={data}
+          linkageData={LinkageData}
+        />
+      </div>
+      <div className='margin-top-13 max-width-1440 margin-bottom-13'>
+        <NetworkGraph
           data={data}
           linkageData={LinkageData}
         />

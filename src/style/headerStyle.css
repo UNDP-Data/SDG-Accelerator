@@ -81,3 +81,11 @@
   letter-spacing: 0.03em;
   text-decoration: none;
 }
+
+.header-link-active {
+  color: var(--blue-600) !important;
+}
+
+.header-link:hover {
+  color: var(--blue-400) !important;
+}
