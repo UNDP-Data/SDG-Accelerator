@@ -13,7 +13,7 @@ interface Props {
 }
 
 const HeroImageEl = styled.div`
-  background: url(${Background}) no-repeat center;
+background: url(${Background}) rgba(0, 0, 0, 0.3) no-repeat center;
   background-size: cover;
   margin-top: 7.1875rem;
 `;
@@ -39,12 +39,11 @@ export const FutureScenariosList = (props: Props) => {
           </h1>
           <h5 className='undp-typography'>
             Assessing impact on SDGs with or without SDG Push. The Future Scenarios outlines projections based on Acceleration Opportunities analyzed in the areas of Governance, Social Protection, Green Economy and Digital Disruption.
+            {' '}
+            <a href='https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%20refinement_Eng.pdf' target='_blank' rel='noreferrer' className='undp-style dark-bg red-underline'>UNDP&apos;s flagship publication</a>
+            {' '}
+            presents one such scenario at the global level that can put us back on track to recover better.
           </h5>
-          <a href='https://data.undp.org/wp-content/uploads/2021/04/Leaving-No-One-Behind-COVID-impact-on-the-SDGs-second-flagship-2.pdf' target='_blank' rel='noreferrer' style={{ color: 'var(--white)', textDecoration: 'none' }}>
-            <button type='button' className='margin-top-09 undp-button button-primary button-arrow'>
-              Read Report
-            </button>
-          </a>
         </div>
       </HeroImageEl>
       <div className='undp-hero-section-gray'>

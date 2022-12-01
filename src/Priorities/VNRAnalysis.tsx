@@ -407,7 +407,22 @@ export const VNRAnalysis = (props: Props) => {
               and SDG gaps
             </h2>
             <p className='undp-typography'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in nisi vestibulum, ultricies mi vel, efficitur purus. Vivamus ipsum nisl, rhoncus eget egestas a, pulvinar in dolor. Vivamus ut egestas nunc. Suspendisse nec rhoncus mauris. Proin malesuada ligula quis est porta hendrerit.
+              This matrix maps the SDGs along two parameters
+              <br />
+              1. their current trend status and
+              <br />
+              2. their priority status as identified in the
+              {' '}
+              {document}
+              .
+              <br />
+              <br />
+              Understanding which SDGs are off-track but potentially a low priority can provide an insightful starting point for further investigation
+              <br />
+              <br />
+              <span className='italics small-font'>
+                Disclaimer: The current priorities identified in the VNRs may not reflect the actual and complete priorities of the government. They are starting point for further research.
+              </span>
             </p>
           </div>
         </div>

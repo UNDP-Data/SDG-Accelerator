@@ -42,7 +42,7 @@ export const HomePage = (props: Props) => {
             The SDG Push Diagnostic is a key element of the
             {' '}
             <a href='https://sdgintegration.undp.org/sdg-acceleration-diagnostic' className='undp-style dark-bg red-underline' target='_blank' rel='noreferrer'>SDG Push</a>
-            , a process that combines analytical capabilities with qualitative methods to assess context, options, and bottlenecks to determine effective policy choices, investments and pathways.
+            , a process that reimagines and recalibrates how we determine, interrogate and advance development interventions that put countries on more stable footing.
           </h5>
           {
             countryCode ? null : (
@@ -56,8 +56,8 @@ export const HomePage = (props: Props) => {
                   style={{ flexGrow: 1 }}
                 >
                   {
-                sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
-              }
+                    sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
+                  }
                 </Select>
                 <NavLink
                   to={`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === selectedCountry)]['Alpha-3 code-1']}`}
@@ -78,15 +78,13 @@ export const HomePage = (props: Props) => {
             <div className='undp-hero-section-blue'>
               <div className='max-width flex-div' style={{ padding: '0 1rem' }}>
                 <div className='undp-section-content'>
-                  <h2 className='undp-typography'>What is SDG Push</h2>
+                  <h2 className='undp-typography'>How does the SDG Push Diagnostic work?</h2>
                 </div>
                 <div className='undp-section-content'>
-                  <span className='bold'>Despite these extremely challenging realities, the Sustainable Development Goals (SDGs) 2030 Agenda remains more relevant than ever.</span>
-                  {' '}
-                  It is the world’s first and only globally agreed systems agenda, designed for precisely the kinds of intersecting crises we face today. The latest SDG progress report shows virtually all the SDGs are moving in the reverse direction. As we reach the mid-point for achieving the SDGs, a refresh of our approach to achieving the SDGs is needed.
+                  The SDG Push Diagnostic provides a dynamic visualization of the development landscape. It integrates multiple data sources and digital innovation to establish a rapid landscape analysis – SDG trends, current priorities, potential futures, and interlinkages.
                   <br />
                   <br />
-                  SDG Push provides a systems-level approach to generate evidence-based policy accelerators using the latest technologies and best practices in integrated analytics, sensemaking, sustainable finance and futures modelling.
+                  Use the custom built tools below, to establish a rapid baseline with data-powered visualizations, a natural language processing tool, futures scenarios and mapping interlinkages.
                 </div>
               </div>
             </div>
@@ -97,13 +95,13 @@ export const HomePage = (props: Props) => {
           <div>
             <h4 className='undp-typography margin-top-09'>SDG Trends</h4>
             <p className='undp-typography large-font'>
-              Use this tool to get a country overview of which SDGs are on-track or lagging behind in reaching the 2030 targets.
-              <br />
-              <br />
-              Powered by data, explore each of the 17 SDG and related 169 sub-targets trends through interactive, easy-to-use visualisations of the
+              Progress on the 17 SDGs are tracked through 169 sub-targets, which in turn are measured using
               {' '}
               <a href='https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%20refinement_Eng.pdf' target='_blank' rel='noreferrer' className='undp-style'>232 unique indicators</a>
               .
+              <br />
+              <br />
+              Understanding how countries perform against these provides a comprehensive assessment of the current trends and the baseline landscape against which to build the SDG Push.
             </p>
             {
               countryCode ? (
@@ -115,7 +113,22 @@ export const HomePage = (props: Props) => {
                     Explore SDG Trends
                   </button>
                 </NavLink>
-              ) : null
+              ) : (
+                <>
+                  <p className='label margin-top-07'>Select a country to see their SDG trends</p>
+                  <Select
+                    style={{ width: '100%' }}
+                    className='undp-select'
+                    placeholder='Select Country'
+                    showSearch
+                    onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
+                  >
+                    {
+                      sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
+                    }
+                  </Select>
+                </>
+              )
             }
           </div>
           <div>
@@ -129,14 +142,11 @@ export const HomePage = (props: Props) => {
           <div>
             <h4 className='undp-typography margin-top-09'>Current Priorities</h4>
             <p className='undp-typography large-font'>
-              Use a custom-built Natural Language Processing Tool, to analyze countries’ latest
+              Documents such as National Development Plans and
               {' '}
-              <a href='https://sustainabledevelopment.un.org/vnrs/' target='_blank' rel='noreferrer' className='undp-style'>Voluntary National Reviews</a>
+              <a href='https://sustainabledevelopment.un.org/vnrs/' target='_blank' rel='noreferrer' className='undp-style'>Voluntary National Reviews (VNRs)</a>
               {' '}
-              and discover which SDGs feature most prominently as a priority.
-              <br />
-              <br />
-              Or upload your own document to compare its SDG relevance.
+              indicates priorities of the government that can be mapped to the SDGs.   These priorities are important as we develop the SDG Push interventions by country.
             </p>
             {
               countryCode ? (
@@ -148,7 +158,22 @@ export const HomePage = (props: Props) => {
                     Explore Current Priorities
                   </button>
                 </NavLink>
-              ) : null
+              ) : (
+                <>
+                  <p className='label margin-top-07'>Select a country to see their priorities</p>
+                  <Select
+                    style={{ width: '100%' }}
+                    className='undp-select'
+                    placeholder='Select Country'
+                    showSearch
+                    onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/current-priorities`, '_self'); }}
+                  >
+                    {
+                      sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
+                    }
+                  </Select>
+                </>
+              )
             }
           </div>
         </div>
@@ -156,13 +181,11 @@ export const HomePage = (props: Props) => {
           <div>
             <h4 className='undp-typography margin-top-09'>Future Scenarios</h4>
             <p className='undp-typography large-font'>
-              Use interactive visualisations to simulate ambitious yet feasible set of SDG accelerators across governance, social protection, green recovery, and digitalization for your country of interest.
-              <br />
-              <br />
-              Based in the recent
+              In the SDG Push we will be identifying accelerators.
               {' '}
-              <a href='https://data.undp.org/wp-content/uploads/2021/04/Leaving-No-One-Behind-COVID-impact-on-the-SDGs-second-flagship-2.pdf' target='_blank' className='undp-style' rel='noreferrer'>flagship publication</a>
-              , explore future trajectories and scenarios that can put us back on track to recover better from the COVID-19 pandemic
+              <a href='https://data.undp.org/wp-content/uploads/2021/04/Leaving-No-One-Behind-COVID-impact-on-the-SDGs-second-flagship-2.pdf' target='_blank' className='undp-style' rel='noreferrer'>UNDP&apos;s flagship publication</a>
+              {' '}
+              presents one such scenario at the global level that can put us back on track to recover better.
             </p>
             {
               countryCode ? (
@@ -174,7 +197,22 @@ export const HomePage = (props: Props) => {
                     Explore Future Scenarios
                   </button>
                 </NavLink>
-              ) : null
+              ) : (
+                <>
+                  <p className='label margin-top-07'>Select a country to see their future scenarios</p>
+                  <Select
+                    style={{ width: '100%' }}
+                    className='undp-select'
+                    placeholder='Select Country'
+                    showSearch
+                    onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/future-scenarios`, '_self'); }}
+                  >
+                    {
+                      sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
+                    }
+                  </Select>
+                </>
+              )
             }
           </div>
           <div>
@@ -203,7 +241,22 @@ export const HomePage = (props: Props) => {
                     Explore Interlinkages
                   </button>
                 </NavLink>
-              ) : null
+              ) : (
+                <>
+                  <p className='label margin-top-07'>Select a country to see their linkages</p>
+                  <Select
+                    style={{ width: '100%' }}
+                    className='undp-select'
+                    placeholder='Select Country'
+                    showSearch
+                    onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/synergies-and-tradeoffs`, '_self'); }}
+                  >
+                    {
+                      sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
+                    }
+                  </Select>
+                </>
+              )
             }
           </div>
         </div>

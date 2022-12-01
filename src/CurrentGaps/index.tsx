@@ -16,8 +16,9 @@ interface Props {
 }
 
 const HeroImageEl = styled.div`
-  background: url(${Background}) no-repeat center;
+  background: url(${Background}) rgba(0, 0, 0, 0.3) no-repeat center;
   background-size: cover;
+  background-blend-mode: multiply;
   margin-top: 7.1875rem;
 `;
 
@@ -43,10 +44,10 @@ export const CurrentGaps = (props: Props) => {
             {countryFullName}
           </h1>
           <h5 className='undp-typography'>
-            Use this tool to get a country overview of which SDGs are on-track or lagging behind in reaching the 2030 targets. Powered by data, explore each of the 17 SDG and related 169 sub-targets trends through interactive, easy-to-use visualisations of the
+            Progress on the 17 SDGs are tracked through 169 sub-targets, which in turn are measured using
             {' '}
             <a href='https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%20refinement_Eng.pdf' target='_blank' rel='noreferrer' className='undp-style dark-bg red-underline'>232 unique indicators</a>
-            .
+            . Understanding how countries perform against these provides a comprehensive assessment of the current trends and the baseline landscape against which to build the SDG Push.
             <br />
             <br />
             <h3 className='undp-typography'>
@@ -215,7 +216,7 @@ export const CurrentGaps = (props: Props) => {
                   {' '}
                   Gaps NA
                 </h4>
-                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>With current progress the country will miss the SDG by 2030 by a large margin</p>
+                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Country doesn’t have enough data to identify the progress of the SDG</p>
                 <div className='sdg-icon-group'>
                   <div className='sdg-icon-container'>
                     {

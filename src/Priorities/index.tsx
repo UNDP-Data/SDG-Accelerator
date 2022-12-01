@@ -24,7 +24,7 @@ interface Props {
 }
 
 const HeroImageEl = styled.div`
-  background: url(${Background}) no-repeat center;
+  background: url(${Background}) rgba(0, 0, 0, 0.3) no-repeat center;
   background-size: cover;
   margin-top: 7.1875rem;
 `;
@@ -238,11 +238,11 @@ export const Priorities = (props: Props) => {
                   children: (
                     <>
                       <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-                        Use a custom-built Natural Language Processing Tool, to analyze countries’ latest
+                        Documents such as
                         {' '}
-                        <a href='https://sustainabledevelopment.un.org/vnrs/' target='_blank' rel='noreferrer' className='undp-style'>Voluntary National Reviews</a>
+                        <a href='https://sustainabledevelopment.un.org/vnrs/' target='_blank' rel='noreferrer' className='undp-style'>Voluntary National Reviews (VNRs)</a>
                         {' '}
-                        and discover which SDGs feature most prominently as a priority. Or upload your own document to compare its SDG relevance.
+                        indicates priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.
                       </h5>
                       {
                         countryVNRs
@@ -302,7 +302,7 @@ export const Priorities = (props: Props) => {
                   children: (
                     <>
                       <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-                        Upload your own document, and use a custom-built Natural Language Processing Tool, to discover which SDGs feature most prominently as a priority
+                        Documents such as National Development Plans indicates priorities of the government that can be mapped to the SDGs. Upload a development plan, to discover which SDGs feature most prominently as a priority
                       </h5>
                       <>
                         <div className='margin-top-07'>
@@ -352,7 +352,7 @@ export const Priorities = (props: Props) => {
                   children: (
                     <>
                       <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-                        Upload your own documents, and use a custom-built Natural Language Processing Tool, to compare which SDGs feature most prominently as a priority in each of the documents
+                        Upload your mutiple documents, and to compare which SDGs feature most prominently as a priority in each of the documents
                       </h5>
                       <>
                         <div className='margin-top-07 flex-div'>

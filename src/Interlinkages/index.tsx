@@ -24,7 +24,7 @@ interface TargetStatusType {
 }
 
 const HeroImageEl = styled.div`
-  background: url(${Background}) no-repeat center;
+background: url(${Background}) rgba(0, 0, 0, 0.3) no-repeat center;
   background-size: cover;
   margin-top: 7.1875rem;
 `;
@@ -79,7 +79,7 @@ export const Interlinkages = (props: Props) => {
             The SDGs do not exist in silos, understanding how the goals are interconnected, both positively and negatively, is essential to understanding the mechanisms for achieving the targets.
             <br />
             <br />
-            Identifying the most interlinked and strongest SDGs is important for acceleration. Thus, important to interrogate the interlinkages at the national level.
+            Examine how the 169 targets are interconnected and how this relates to the SDGs that are not on track to reach the 2030 goals.
           </div>
         </div>
       </div>

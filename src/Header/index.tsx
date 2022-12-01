@@ -8,6 +8,7 @@ import CountryTaxonomy from '../Data/countryTaxonomy.json';
 import '../style/headerStyle.css';
 import '../style/modalStyle.css';
 import '../style/inputStyle.css';
+import GlobeBlue from '../img/globe-icon.svg';
 
 interface Props {
   country?: string;
@@ -82,7 +83,7 @@ export const Header = (props: Props) => {
                 width: '347px', height: '24px', justifyContent: 'flex-end', textAlign: 'right',
               }}
               >
-                <img style={{ cursor: 'pointer' }} onClick={() => { setOpenHeaderCountryModal(true); }} src='https://www.undp.org/themes/custom/undpglobal/design-system/images/globe-icon.svg' alt='Global Icon' />
+                <img style={{ cursor: 'pointer' }} onClick={() => { setOpenHeaderCountryModal(true); }} src={GlobeBlue} alt='Global Icon' />
               </div>
             </div>
           </div>
