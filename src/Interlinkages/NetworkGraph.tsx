@@ -129,7 +129,7 @@ export const NetworkGraph = (props: Props) => {
             <h3 className='undp-typography bold margin-bottom-00'>Network Approach for Linkages</h3>
           </div>
           <p className='undp-typography small-font'>
-            See the interlinkages through a systems lens, identifying the targets that are Off-Track and For-Review and how they are interconnected. This is a starting point to connect the scoping to the Dialogue by mapping out interconnected priorities.
+            See the interlinkages through a systems lens, identifying the targets that are Off-Track and For-Review and how they are interconnected. This is a starting point to connect the Scoping to the Dialogue by mapping out interconnected priorities.
           </p>
           <div className='margin-top-07'>
             <p className='label undp-typography'>Select Target</p>

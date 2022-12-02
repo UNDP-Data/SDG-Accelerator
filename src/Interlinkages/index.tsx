@@ -66,7 +66,7 @@ export const Interlinkages = (props: Props) => {
             {countryFullName}
           </h1>
           <h5 className='undp-typography'>
-            Examine how the 169 targets are interconnected and how this relates to the SDGs that are not on track to reach the 2030 goals .
+            Examine how the 169 targets are interconnected and how this relates to the SDGs that are not on track to reach the 2030 goals.
           </h5>
         </div>
       </HeroImageEl>
@@ -95,10 +95,10 @@ export const Interlinkages = (props: Props) => {
           The synergies and tradeoffs are global, which means they are the same for all countries as mapped by the
           {' '}
           <a className='undp-style' target='_blank' href='https://knowsdgs.jrc.ec.europa.eu/interlinkages-visualization' rel='noreferrer'>KnowSDGs Platform by European Commission</a>
-          . The interlinkages of specific targets on a dis-aggregated level as provided by the
+          . This is based on the current
           {' '}
-          <span className='link-button' onClick={() => { setLiteratureModal(true); }} style={{ cursor: 'pointer' }}>literature (click here to see the list of literature)</span>
-          .
+          <span className='link-button' onClick={() => { setLiteratureModal(true); }} style={{ cursor: 'pointer' }}>literature on SDG interlinkages (read more here)</span>
+          . This methodology can be adapted to the national context.
           <br />
           <br />
           The traffic light colouring of the targets is customised based on each countries data on the SDGs. Targets are greyed out because of lack of data, however, the information on interlinkages still applies.

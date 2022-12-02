@@ -25,11 +25,6 @@ interface SDGHoveredProps {
   xPosition: number;
   yPosition: number;
 }
-
-const ColorKeyBox = styled.div`
-  width: 1rem;
-  height: 1rem;
-`;
 interface TooltipElProps {
   x: number;
   y: number;
@@ -62,7 +57,7 @@ export const VNRAnalysis = (props: Props) => {
   const low = data.filter((d: any) => d.category === 'low' && d.salience !== 0);
   const high = data.filter((d: any) => d.category === 'high');
   const noMetion = data.filter((d: any) => d.salience === 0);
-  const gridSize = 780;
+  const gridSize = 600;
   const margin = 20;
   const cellSize = (gridSize - margin) / 4;
   const nodeRadius = 15;
@@ -236,9 +231,9 @@ export const VNRAnalysis = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className=' margin-top-13 max-width-1440 flex-div' style={{ gap: '2rem' }}>
+      <div className=' margin-top-13 max-width-1440 flex-div margin-bottom-13' style={{ gap: '2rem' }}>
         <div className='flex-div margin-top-07' style={{ gap: '2rem', width: '100%' }}>
-          <div style={{ width: 'calc(66.67% - 1rem)' }}>
+          <div style={{ width: 'calc(50% - 1rem)' }}>
             {
               nodeData
                 ? (
@@ -398,7 +393,7 @@ export const VNRAnalysis = (props: Props) => {
                 )
             }
           </div>
-          <div style={{ width: 'calc(33.33% - 1rem)' }}>
+          <div style={{ width: 'calc(50% - 1rem)' }}>
             <h2 className='undp-typography'>
               Comparing SDG national priorities based on
               {' '}
@@ -417,153 +412,19 @@ export const VNRAnalysis = (props: Props) => {
               .
               <br />
               <br />
-              Understanding which SDGs are off-track but potentially a low priority can provide an insightful starting point for further investigation
+              Understanding which SDGs are off-track but potentially a low priority can provide an insightful starting point for national dialogues.
               <br />
               <br />
               <span className='italics small-font'>
-                Disclaimer: The current priorities identified in the VNRs may not reflect the actual and complete priorities of the government. They are starting point for further research.
+                Disclaimer: The current priorities identified in the
+                {' '}
+                {document}
+                {' '}
+                may not reflect the actual and complete priorities of the government. They are starting point for further discussion.
               </span>
             </p>
           </div>
         </div>
-      </div>
-      <div className='max-width-1440 margin-top-13 margin-bottom-13'>
-        <h3 className='undp-typography bold'>
-          Relative Salience Based on
-          {' '}
-          {document}
-        </h3>
-        <p className='undp-typography'>
-          Relative Salience is a measure of the amount of text content linked to each SDG as compared to the Goal, which is the most salient in the text. Relative Salience can help to understand which of the SDGs covered in the document receive most attention and which ones are only briefly treated.
-        </p>
-        <div className='flex-div flex-vert-align-center' style={{ gap: '2rem' }}>
-          <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem' }}>
-            <ColorKeyBox style={{ backgroundColor: 'var(--dark-green' }} />
-            <p className='small-font'>On track</p>
-          </div>
-          <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem' }}>
-            <ColorKeyBox style={{ backgroundColor: 'var(--dark-yellow' }} />
-            <p className='small-font'>For review</p>
-          </div>
-          <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem' }}>
-            <ColorKeyBox style={{ backgroundColor: 'var(--dark-red' }} />
-            <p className='small-font'>Identified gap</p>
-          </div>
-          <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem' }}>
-            <ColorKeyBox style={{ backgroundColor: 'var(--gray-400' }} />
-            <p className='small-font'>Gaps NA</p>
-          </div>
-        </div>
-        <svg width='100%' viewBox='0 0 1280 430' style={{ marginBottom: '4rem' }}>
-          <rect
-            x={0}
-            width={1280}
-            y={400 - (375 * 0.25)}
-            height={(375 * 0.25) + 10}
-            fill='#F7F7F7'
-          />
-          <rect
-            x={0}
-            width={1280}
-            y={0}
-            height={(375 * 0.25) + 10}
-            fill='#F7F7F7'
-          />
-          <g
-            transform={`translate(0,${((375 * 0.25) + 10) / 2})`}
-          >
-            <text
-              fontSize={12}
-              x={0}
-              y={0}
-              dy={12}
-              transform='rotate(-90)'
-              textAnchor='middle'
-              fill='#55606E'
-            >
-              High Priority
-            </text>
-          </g>
-          <g
-            transform='translate(0,210)'
-          >
-            <text
-              fontSize={12}
-              x={0}
-              y={0}
-              dy={12}
-              transform='rotate(-90)'
-              textAnchor='middle'
-              fill='#55606E'
-            >
-              Medium Priority
-            </text>
-          </g>
-          <g
-            transform={`translate(0,${(400 - (375 * 0.125))})`}
-          >
-            <text
-              fontSize={12}
-              x={0}
-              y={0}
-              dy={12}
-              transform='rotate(-90)'
-              textAnchor='middle'
-              fill='#55606E'
-            >
-              Low Priority
-            </text>
-          </g>
-          {
-            dataWithStatuses.map((d:any, i: number) => (
-              <g
-                key={i}
-                transform={`translate(${i * 75},10)`}
-              >
-                <circle
-                  cx={37.5}
-                  r={15}
-                  cy={400 - (375 * d.salience)}
-                  fill={d.status === 'On Track' ? '#59BA47' : d.status === 'For Review' ? '#FBC412' : d.status === 'Identified Gap' ? '#D12800' : '#A9B1B7'}
-                />
-                <line
-                  strokeWidth={2}
-                  width={45}
-                  x1={37.5}
-                  x2={37.5}
-                  y1={400 - (375 * d.salience)}
-                  y2={400}
-                  stroke={d.status === 'On Track' ? '#59BA47' : d.status === 'For Review' ? '#FBC412' : d.status === 'Identified Gap' ? '#D12800' : '#A9B1B7'}
-                />
-                <text
-                  x={37.5}
-                  y={400 - (375 * d.salience)}
-                  dy={-20}
-                  fill={d.status === 'On Track' ? '#59BA47' : d.status === 'For Review' ? '#FBC412' : d.status === 'Identified Gap' ? '#D12800' : '#A9B1B7'}
-                  fontSize={12}
-                  textAnchor='middle'
-                >
-                  {(d.salience).toFixed(3)}
-                </text>
-                <text
-                  x={37.5}
-                  y={400}
-                  dy={20}
-                  fill='#212121'
-                  fontSize={16}
-                  textAnchor='middle'
-                >
-                  SDG
-                  {' '}
-                  {d.sdg}
-                </text>
-                {
-
-                }
-              </g>
-            ))
-          }
-        </svg>
       </div>
       {
         hoveredSDG ? (

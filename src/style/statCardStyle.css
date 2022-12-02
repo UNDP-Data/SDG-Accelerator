@@ -5,6 +5,8 @@
   cursor: pointer;
   color: var(--black);
   transition: 300ms all;
+  min-width: 15rem !important;
+  flex-grow: 1;
 }
 
 .stat-card-long {

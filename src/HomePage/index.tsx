@@ -39,10 +39,11 @@ export const HomePage = (props: Props) => {
             }
           </h1>
           <h5 className='undp-typography'>
-            The SDG Push Diagnostic is a key element of the
+            The
             {' '}
             <a href='https://sdgintegration.undp.org/sdg-acceleration-diagnostic' className='undp-style dark-bg red-underline' target='_blank' rel='noreferrer'>SDG Push</a>
-            , a process that reimagines and recalibrates how we determine, interrogate and advance development interventions that put countries on more stable footing.
+            {' '}
+            reimagines and recalibrates how we determine, interrogate and advance development interventions that put countries on more stable footing. The SDG Push Diagnostic is a key element of the SDG Push.
           </h5>
           {
             countryCode ? null : (
@@ -78,7 +79,7 @@ export const HomePage = (props: Props) => {
             <div className='undp-hero-section-blue'>
               <div className='max-width flex-div' style={{ padding: '0 1rem' }}>
                 <div className='undp-section-content'>
-                  <h2 className='undp-typography'>How does the SDG Push Diagnostic work?</h2>
+                  <h2 className='undp-typography'>What does the SDG Push Diagnostic do?</h2>
                 </div>
                 <div className='undp-section-content'>
                   The SDG Push Diagnostic provides a dynamic visualization of the development landscape. It integrates multiple data sources and digital innovation to establish a rapid landscape analysis – SDG trends, current priorities, potential futures, and interlinkages.
@@ -93,7 +94,7 @@ export const HomePage = (props: Props) => {
       <div className='margin-top-13 margin-bottom-13 max-width'>
         <div className='undp-section margin-bottom-13'>
           <div>
-            <h4 className='undp-typography margin-top-09'>SDG Trends</h4>
+            <h4 className='undp-typography margin-top-05'>SDG Trends</h4>
             <p className='undp-typography large-font'>
               Progress on the 17 SDGs are tracked through 169 sub-targets, which in turn are measured using
               {' '}
@@ -115,7 +116,7 @@ export const HomePage = (props: Props) => {
                 </NavLink>
               ) : (
                 <>
-                  <p className='label margin-top-07'>Select a country to see their SDG trends</p>
+                  <p className='label margin-top-07'>Select a country to explore their SDG trends</p>
                   <Select
                     style={{ width: '100%' }}
                     className='undp-select'
@@ -140,13 +141,16 @@ export const HomePage = (props: Props) => {
             <img alt='Future Scenarios' src={PrioritiesImg} style={{ width: '100%' }} />
           </div>
           <div>
-            <h4 className='undp-typography margin-top-09'>Current Priorities</h4>
+            <h4 className='undp-typography margin-top-05'>Current Priorities</h4>
             <p className='undp-typography large-font'>
               Documents such as National Development Plans and
               {' '}
               <a href='https://sustainabledevelopment.un.org/vnrs/' target='_blank' rel='noreferrer' className='undp-style'>Voluntary National Reviews (VNRs)</a>
               {' '}
-              indicates priorities of the government that can be mapped to the SDGs.   These priorities are important as we develop the SDG Push interventions by country.
+              indicates priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.
+              <br />
+              <br />
+              Explore the analysis of these priorities using Machine Learning by country.
             </p>
             {
               countryCode ? (
@@ -160,7 +164,7 @@ export const HomePage = (props: Props) => {
                 </NavLink>
               ) : (
                 <>
-                  <p className='label margin-top-07'>Select a country to see their priorities</p>
+                  <p className='label margin-top-07'>Select a country to analyze their current priorities</p>
                   <Select
                     style={{ width: '100%' }}
                     className='undp-select'
@@ -179,13 +183,13 @@ export const HomePage = (props: Props) => {
         </div>
         <div className='undp-section margin-bottom-13'>
           <div>
-            <h4 className='undp-typography margin-top-09'>Future Scenarios</h4>
+            <h4 className='undp-typography margin-top-05'>Future Scenarios</h4>
             <p className='undp-typography large-font'>
               In the SDG Push we will be identifying accelerators.
               {' '}
               <a href='https://data.undp.org/wp-content/uploads/2021/04/Leaving-No-One-Behind-COVID-impact-on-the-SDGs-second-flagship-2.pdf' target='_blank' className='undp-style' rel='noreferrer'>UNDP&apos;s flagship publication</a>
               {' '}
-              presents one such scenario at the global level that can put us back on track to recover better.
+              presents one such scenario (governance, social protection, green economy, and digitalisation) at the global level that can put us back on track to recover better.
             </p>
             {
               countryCode ? (
@@ -199,7 +203,7 @@ export const HomePage = (props: Props) => {
                 </NavLink>
               ) : (
                 <>
-                  <p className='label margin-top-07'>Select a country to see their future scenarios</p>
+                  <p className='label margin-top-07'>Select a country to explore their future scenarios</p>
                   <Select
                     style={{ width: '100%' }}
                     className='undp-select'
@@ -224,7 +228,7 @@ export const HomePage = (props: Props) => {
             <img alt='sinterlinkages' src={InterlinkagesImg} style={{ width: '100%' }} />
           </div>
           <div>
-            <h4 className='undp-typography margin-top-09'>SDG Interlinkages</h4>
+            <h4 className='undp-typography margin-top-05'>SDG Interlinkages</h4>
             <p className='undp-typography large-font'>
               The SDGs do not exist in silos, understanding how the goals are interconnected, both positively and negatively, is essential to understanding the mechanisms for achieving the targets.
               <br />
@@ -243,7 +247,7 @@ export const HomePage = (props: Props) => {
                 </NavLink>
               ) : (
                 <>
-                  <p className='label margin-top-07'>Select a country to see their linkages</p>
+                  <p className='label margin-top-07'>Select a country to explore their SDG interlinkages</p>
                   <Select
                     style={{ width: '100%' }}
                     className='undp-select'
@@ -266,7 +270,7 @@ export const HomePage = (props: Props) => {
           <div style={{ padding: 'var(--spacing-09) 1rem', backgroundColor: 'var(--gray-200)', borderTop: '1px solid var(--gray-400)' }}>
             <div className='max-width'>
               <h2 className='undp-typography'>Select a country</h2>
-              <p className='undp-typography large-font'>Select a country and use this tool to get country overview of which SDGs are on-track or lagging behind, analyze the countries&apos; latest VNRs, simulate ambitious yet feasible set of SDG accelerators and understanding how the goals are interconnected</p>
+              <p className='undp-typography large-font'>Select a country and use this tool to get country overview of which SDGs are on-track or lagging behind, analyze the countries&apos; latest VNRs (or upload your own reports), simulate ambitious yet feasible set of SDG accelerators and understanding how the goals are interconnected</p>
               <div className='flex-div'>
                 <Select
                   className='undp-select'

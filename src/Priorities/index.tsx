@@ -243,6 +243,9 @@ export const Priorities = (props: Props) => {
                         <a href='https://sustainabledevelopment.un.org/vnrs/' target='_blank' rel='noreferrer' className='undp-style'>Voluntary National Reviews (VNRs)</a>
                         {' '}
                         indicates priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.
+                        <br />
+                        <br />
+                        Explore the analysis of these priorities using Machine Learning.
                       </h5>
                       {
                         countryVNRs
@@ -302,7 +305,10 @@ export const Priorities = (props: Props) => {
                   children: (
                     <>
                       <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-                        Documents such as National Development Plans indicates priorities of the government that can be mapped to the SDGs. Upload a development plan, to discover which SDGs feature most prominently as a priority
+                        Documents such as National Development Plans indicates priorities of the government that can be mapped to the SDGs. Upload a development plan, to discover which SDGs feature most prominently as a priority.
+                        <br />
+                        <br />
+                        Explore the analysis of these priorities using Machine Learning.
                       </h5>
                       <>
                         <div className='margin-top-07'>
@@ -352,7 +358,7 @@ export const Priorities = (props: Props) => {
                   children: (
                     <>
                       <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-                        Upload your mutiple documents, and to compare which SDGs feature most prominently as a priority in each of the documents
+                        Upload multiple documents, and compare which SDGs feature most prominently as a priority in each of the documents.
                       </h5>
                       <>
                         <div className='margin-top-07 flex-div'>

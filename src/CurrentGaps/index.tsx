@@ -47,7 +47,10 @@ export const CurrentGaps = (props: Props) => {
             Progress on the 17 SDGs are tracked through 169 sub-targets, which in turn are measured using
             {' '}
             <a href='https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%20refinement_Eng.pdf' target='_blank' rel='noreferrer' className='undp-style dark-bg red-underline'>232 unique indicators</a>
-            . Understanding how countries perform against these provides a comprehensive assessment of the current trends and the baseline landscape against which to build the SDG Push.
+            .
+            <br />
+            <br />
+            Understanding how countries perform against these provides a comprehensive assessment of the current trends and the baseline landscape against which to build the SDG Push.
             <br />
             <br />
             <h3 className='undp-typography'>

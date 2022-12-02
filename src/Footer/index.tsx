@@ -22,12 +22,12 @@ export const Footer = () => {
     <>
       <div>
         <footer>
-          <div style={{ borderTop: '1px solid var(--gray-400)', padding: 'var(--spacing-09) 0', backgroundColor: 'var(--gray-100)' }}>
-            <div className='flex-div flex-space-between' style={{ padding: '0 0.75rem', maxWidth: '83.33333%', margin: 'auto' }}>
-              <h6 className='undp-typography'>This platform is powered by data and methodology from</h6>
+          <div className='flex-hor-align-center' style={{ borderTop: '1px solid var(--gray-400)', padding: 'var(--spacing-09) 0', backgroundColor: 'var(--gray-100)' }}>
+            <div style={{ padding: '0 0.75rem', maxWidth: '83.33333%', margin: 'auto' }}>
+              <h6 className='undp-typography' style={{ textAlign: 'center' }}>This platform is powered by data and methodology from</h6>
             </div>
             <div
-              className='flex-div flew-wrap margin-top-03'
+              className='flex-div flew-wrap margin-top-05 flex-hor-align-center'
               style={{
                 padding: '0 0.75rem', maxWidth: '83.33333%', margin: 'auto', gap: '2.5rem',
               }}
