@@ -420,7 +420,7 @@ export const VNRAnalysis = (props: Props) => {
                 {' '}
                 {document}
                 {' '}
-                may not reflect the actual and complete priorities of the government. They are starting point for further discussion.
+                may not reflect the actual and complete priorities of the government. They are a starting point for further discussion.
               </span>
             </p>
           </div>

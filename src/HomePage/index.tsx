@@ -147,7 +147,7 @@ export const HomePage = (props: Props) => {
               {' '}
               <a href='https://sustainabledevelopment.un.org/vnrs/' target='_blank' rel='noreferrer' className='undp-style'>Voluntary National Reviews (VNRs)</a>
               {' '}
-              indicates priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.
+              indicate priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.
               <br />
               <br />
               Explore the analysis of these priorities using Machine Learning by country.
@@ -185,7 +185,7 @@ export const HomePage = (props: Props) => {
           <div>
             <h4 className='undp-typography margin-top-05'>Future Scenarios</h4>
             <p className='undp-typography large-font'>
-              In the SDG Push we will be identifying accelerators.
+              In the SDG Push we will be identifying potential accelerators.
               {' '}
               <a href='https://data.undp.org/wp-content/uploads/2021/04/Leaving-No-One-Behind-COVID-impact-on-the-SDGs-second-flagship-2.pdf' target='_blank' className='undp-style' rel='noreferrer'>UNDP&apos;s flagship publication</a>
               {' '}
@@ -230,7 +230,7 @@ export const HomePage = (props: Props) => {
           <div>
             <h4 className='undp-typography margin-top-05'>SDG Interlinkages</h4>
             <p className='undp-typography large-font'>
-              The SDGs do not exist in silos, understanding how the goals are interconnected, both positively and negatively, is essential to understanding the mechanisms for achieving the targets.
+              The SDGs do not exist in silos. Understanding the interactions across social, economic, political, health and environmental developments is essential to move the needle on the SDGs.
               <br />
               <br />
               Examine how the 169 targets are interconnected and how this relates to the SDGs that are not on track to reach the 2030 goals.
@@ -270,7 +270,9 @@ export const HomePage = (props: Props) => {
           <div style={{ padding: 'var(--spacing-09) 1rem', backgroundColor: 'var(--gray-200)', borderTop: '1px solid var(--gray-400)' }}>
             <div className='max-width'>
               <h2 className='undp-typography'>Select a country</h2>
-              <p className='undp-typography large-font'>Select a country and use this tool to get country overview of which SDGs are on-track or lagging behind, analyze the countries&apos; latest VNRs (or upload your own reports), simulate ambitious yet feasible set of SDG accelerators and understanding how the goals are interconnected</p>
+              <p className='undp-typography large-font'>
+                Select a country and use this tool to get country overview of which SDGs are on-track or lagging behind, analyze the countries&apos; latest VNRs (or upload your own reports), simulate ambitious yet feasible set of SDG accelerators and understanding how the goals are interconnected
+              </p>
               <div className='flex-div'>
                 <Select
                   className='undp-select'
