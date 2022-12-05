@@ -1,14 +1,18 @@
 import { useState } from 'react';
 import uniq from 'lodash.uniq';
 import { Tooltip } from './LinkageTooltip';
-import { LinkageDataType, LinkageHoverDataType } from '../Types';
+import {
+  LinkageDataType, LinkageHoverDataType, SDGSListType, TargetStatusWithDetailsType,
+} from '../Types';
+
+const SDGList:SDGSListType[] = require('../Data/SDGGoalList.json');
 
 interface Props {
   selectedTarget: string;
   linkageType: 'tradeOffs' | 'synergies';
   // eslint-disable-next-line no-unused-vars
-  setSelectedTarget: (d: string) => void;
-  data: any;
+  setSelectedTarget: (_d: string) => void;
+  data: TargetStatusWithDetailsType[];
   linkageData: LinkageDataType[];
 
 }
@@ -457,13 +461,13 @@ export const InterlinkagesViz = (props: Props) => {
         }
         <g>
           {
-            data.map((goal: any, i: number) => (
+            SDGList.map((goal, i) => (
               <g
                 transform={`translate(${i * 80},50)`}
                 key={i}
               >
                 {
-                  goal.Targets.map((target: any, j: number) => (
+                  goal.Targets.map((target, j) => (
                     <g
                       transform={`translate(0,${j * 50})`}
                       key={j}
@@ -502,7 +506,17 @@ export const InterlinkagesViz = (props: Props) => {
                         y={0}
                         width={squareSize}
                         height={squareSize}
-                        fill={target.status === 'On Track' ? '#C5EFC4' : target.status === 'Identified Gap' ? '#FEC8C4' : target.status === 'For Review' ? '#FEE697' : '#CCC'}
+                        fill={
+                          data.findIndex((d) => d.target === target.Target) === -1
+                            ? '#CCC'
+                            : data[data.findIndex((d) => d.target === target.Target)].status === 'On Track'
+                              ? '#C5EFC4'
+                              : data[data.findIndex((d) => d.target === target.Target)].status === 'Identified Gap'
+                                ? '#FEC8C4'
+                                : data[data.findIndex((d) => d.target === target.Target)].status === 'For Review'
+                                  ? '#FEE697'
+                                  : '#CCC'
+                        }
                       />
                       <text
                         textAnchor='middle'

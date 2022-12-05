@@ -3,7 +3,9 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { Modal, Radio } from 'antd';
-import { LinkageDataType, LiteratureDataType } from '../Types';
+import {
+  LinkageDataType, LiteratureDataType, SDGSListType, TargetStatusType, TargetStatusWithDetailsType,
+} from '../Types';
 import { InterlinkagesViz } from './InterlinkageViz';
 
 import '../style/radioStyle.css';
@@ -13,14 +15,11 @@ import { NetworkGraph } from './NetworkGraph';
 const LinkageData:LinkageDataType[] = require('../Data/linkages.json');
 const LiteratureData:LiteratureDataType[] = require('./Literature.json');
 
-interface Props {
-  data: any;
-  countryFullName: string;
-}
+const SDGList:SDGSListType[] = require('../Data/SDGGoalList.json');
 
-interface TargetStatusType {
-  target: string;
-  status: 'On Track' | 'Identified Gap' | 'For Review' | undefined;
+interface Props {
+  targetStatuses: TargetStatusType[];
+  countryFullName: string;
 }
 
 const HeroImageEl = styled.div`
@@ -30,29 +29,27 @@ background: url(${Background}) rgba(0, 0, 0, 0.3) no-repeat center;
 `;
 
 export const Interlinkages = (props: Props) => {
-  const { data, countryFullName } = props;
+  const { targetStatuses, countryFullName } = props;
   const [selectedTarget, setSelectedTarget] = useState('All Targets');
   const [literatureModal, setLiteratureModal] = useState(false);
   const [linkageType, setLinkageTypes] = useState<'synergies' | 'tradeOffs'>('synergies');
   const targetOptions = [{ label: 'All Targets' }];
-
-  data.forEach((goal: any) => {
-    goal.Targets.forEach((target: any) => {
-      targetOptions.push({ label: `${target.Target}: ${target['Target Description']}` });
-    });
-  });
   let TargetMostSynergies = '';
   let mostSynergies = 0;
   LinkageData.forEach((d) => {
     TargetMostSynergies = d.synergies.length > mostSynergies ? d.id : TargetMostSynergies;
     mostSynergies = d.synergies.length > mostSynergies ? d.synergies.length : mostSynergies;
   });
-  const targetStatus: TargetStatusType[] = [];
-  data.forEach((goal: any) => {
-    goal.Targets.forEach((target: any) => {
+  const targetStatus: TargetStatusWithDetailsType[] = [];
+  SDGList.forEach((goal) => {
+    goal.Targets.forEach((target) => {
+      const status = targetStatuses.findIndex((el) => `Target ${el.target}` === target.Target) !== -1 ? targetStatuses[targetStatuses.findIndex((el) => `Target ${el.target}` === target.Target)].status : null;
+      targetOptions.push({ label: `${target.Target}: ${target['Target Description']}` });
       targetStatus.push({
+        goal: goal.Goal,
         target: target.Target,
-        status: target.status,
+        description: target['Target Description'],
+        status,
       });
     });
   });
@@ -112,13 +109,13 @@ export const Interlinkages = (props: Props) => {
           selectedTarget={selectedTarget}
           setSelectedTarget={setSelectedTarget}
           linkageType={linkageType}
-          data={data}
+          data={targetStatus}
           linkageData={LinkageData}
         />
       </div>
       <div className='margin-top-13 max-width-1440 margin-bottom-13'>
         <NetworkGraph
-          data={data}
+          data={targetStatus}
           linkageData={LinkageData}
         />
       </div>

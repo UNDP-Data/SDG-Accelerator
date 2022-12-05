@@ -9,6 +9,7 @@ import {
 import { SDGGOALS, SDG_COLOR_ARRAY, SDG_ICON_SIZE } from '../Constants';
 import { getSDGIcon } from '../utils/getSDGIcon';
 import { describeArc } from '../utils/getArc';
+import { GoalStatusType } from '../Types';
 
 import '../style/chipStyle.css';
 import '../style/tabStyle.css';
@@ -16,7 +17,7 @@ import '../style/selectStyle.css';
 
 interface Props {
   data: any;
-  goalStatuses: any;
+  goalStatuses: GoalStatusType[];
   document: string;
 }
 
@@ -52,7 +53,7 @@ export const VNRAnalysis = (props: Props) => {
   const [selectedSDG, setSelectedSDG] = useState<any>(null);
   const [hoveredSDG, setHoveredSDG] = useState<null | SDGHoveredProps>(null);
   const [nodeData, setNodeData] = useState<any>(null);
-  const dataWithStatuses = data.map((d: any) => ({ ...d, category: d.salience === 0 ? 'No Mention' : d.category.charAt(0).toUpperCase() + d.category.slice(1), status: goalStatuses.filter((el: any) => `${el.goal}` === `${d.sdg}`)[0].status ? goalStatuses.filter((el: any) => `${el.goal}` === `${d.sdg}`)[0].status : 'Gap NA' }));
+  const dataWithStatuses = data.map((d: any) => ({ ...d, category: d.salience === 0 ? 'No Mention' : d.category.charAt(0).toUpperCase() + d.category.slice(1), status: goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status ? goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status : 'Gap NA' }));
   const medium = data.filter((d: any) => d.category === 'medium');
   const low = data.filter((d: any) => d.category === 'low' && d.salience !== 0);
   const high = data.filter((d: any) => d.category === 'high');

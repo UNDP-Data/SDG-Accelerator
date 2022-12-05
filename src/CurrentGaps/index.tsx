@@ -1,16 +1,18 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import { Select } from 'antd';
+import sortBy from 'lodash.sortby';
 import { getSDGIcon } from '../utils/getSDGIcon';
-import { SDGGOALS, SDG_ICON_SIZE } from '../Constants';
+import { SDGGOALS, SDG_ICON_SIZE, TargetIndicatorCount } from '../Constants';
 import { SDGGapsData } from './SDGGapsData';
 import Background from '../img/UNDP-hero-image.png';
 import '../style/statCardStyle.css';
 import { describeArc } from '../utils/getArc';
+import { GoalStatusType, StatusesType } from '../Types';
 
 interface Props {
-  goalStatuses: any;
-  statuses: any;
+  goalStatuses: GoalStatusType[];
+  statuses: StatusesType;
   countryData: any;
   countryFullName: string;
 }
@@ -30,10 +32,10 @@ export const CurrentGaps = (props: Props) => {
     countryFullName,
   } = props;
   const [selectedSDG, setSelectedSDG] = useState('SDG 1: No Poverty');
-  const onTrack = goalStatuses.filter((d: any) => d.status === 'On Track');
-  const identifiedGap = goalStatuses.filter((d: any) => d.status === 'Identified Gap');
-  const forReview = goalStatuses.filter((d: any) => d.status === 'For Review');
-  const gapsNA = goalStatuses.filter((d: any) => d.status === undefined);
+  const onTrack = sortBy(goalStatuses.filter((d: any) => d.status === 'On Track'), 'goal');
+  const identifiedGap = sortBy(goalStatuses.filter((d: any) => d.status === 'Identified Gap'), 'goal');
+  const forReview = sortBy(goalStatuses.filter((d: any) => d.status === 'For Review'), 'goal');
+  const gapsNA = sortBy(goalStatuses.filter((d: any) => !d.status), 'goal');
   return (
     <>
       <HeroImageEl className='undp-hero-image'>
@@ -272,7 +274,7 @@ export const CurrentGaps = (props: Props) => {
           <div style={{ width: 'calc(33.33% - 0.667rem)' }}>
             <div className='stat-card'>
               <h2>
-                {goalStatuses[goalStatuses.findIndex((d: any) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].noOfTargets}
+                {TargetIndicatorCount[TargetIndicatorCount.findIndex((d) => `SDG ${d.sdg}` === selectedSDG.split(':')[0])].noOfTargets}
               </h2>
               <p>No. of Targets</p>
             </div>
@@ -280,7 +282,7 @@ export const CurrentGaps = (props: Props) => {
           <div style={{ width: 'calc(33.33% - 0.667rem)' }}>
             <div className='stat-card'>
               <h2>
-                {goalStatuses[goalStatuses.findIndex((d: any) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].noOfIndicators}
+                {TargetIndicatorCount[TargetIndicatorCount.findIndex((d) => `SDG ${d.sdg}` === selectedSDG.split(':')[0])].noOfIndicators}
               </h2>
               <p>No. of indicators</p>
             </div>
@@ -288,7 +290,7 @@ export const CurrentGaps = (props: Props) => {
           <div style={{ width: 'calc(33.33% - 0.667rem)' }}>
             <div className='stat-card'>
               <h2>
-                {goalStatuses[goalStatuses.findIndex((d: any) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].noOfIndicatorWithDataAndMethodology}
+                {goalStatuses[goalStatuses.findIndex((d) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].noOfIndicatorsWithData}
               </h2>
               <p>No. of indicators with methodology and data</p>
             </div>

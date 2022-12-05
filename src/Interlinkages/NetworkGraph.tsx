@@ -4,10 +4,10 @@ import {
 } from 'd3-force';
 import uniq from 'lodash.uniq';
 import { useEffect, useState } from 'react';
-import { LinkageDataType } from '../Types';
+import { LinkageDataType, TargetStatusWithDetailsType } from '../Types';
 
 interface Props {
-  data: any;
+  data: TargetStatusWithDetailsType[];
   linkageData: LinkageDataType[];
 }
 
@@ -35,34 +35,20 @@ export const NetworkGraph = (props: Props) => {
   const width = 720;
   const height = 400;
   const radiusScale = 4;
-  const targetStatusForSelect: TargetProps[] = [];
-  data.forEach((d: any) => {
-    d.Targets.forEach((target: any) => {
-      if (target.status === 'For Review' || target.status === 'Identified Gap') {
-        targetStatusForSelect.push({
-          id: target.Target,
-          description: target['Target Description'],
-          status: target.status,
-          sdg: parseInt(d.Goal.split(' ')[1], 10),
-        });
-      }
-    });
-  });
+  const targetStatusForSelect: TargetProps[] = data.filter((d) => d.status === 'For Review' || d.status === 'Identified Gap').map((d) => ({
+    id: d.target,
+    description: d.description,
+    status: d.status as 'For Review' | 'Identified Gap',
+    sdg: parseInt(d.goal, 10),
+  }));
   useEffect(() => {
     setNetworkData(null);
-    const targetStatus: TargetProps[] = [];
-    data.forEach((d: any) => {
-      d.Targets.forEach((target: any) => {
-        if (target.status === 'For Review' || target.status === 'Identified Gap') {
-          targetStatus.push({
-            id: target.Target,
-            description: target['Target Description'],
-            status: target.status,
-            sdg: parseInt(d.Goal.split(' ')[1], 10),
-          });
-        }
-      });
-    });
+    const targetStatus: TargetProps[] = data.filter((d) => d.status === 'For Review' || d.status === 'Identified Gap').map((d) => ({
+      id: d.target,
+      description: d.description,
+      status: d.status as 'For Review' | 'Identified Gap',
+      sdg: parseInt(d.goal, 10),
+    }));
     const linkageDataFiltered = linkageData.map((d) => {
       const synergies = uniq(d.synergies.map((el) => `Target ${el}`).filter((el) => targetStatus.findIndex((el1) => el1.id === el) !== -1));
       const tradeOffs = uniq(d.tradeOffs.map((el) => `Target ${el}`).filter((el) => targetStatus.findIndex((el1) => el1.id === el) !== -1));

@@ -16,11 +16,12 @@ import '../style/tabStyle.css';
 import '../style/selectStyle.css';
 import '../style/modalStyle.css';
 import Background from '../img/UNDP-hero-image.png';
+import { GoalStatusType } from '../Types';
 
 interface Props {
   countrySelected: string;
   countryFullName: string;
-  goalStatuses: any;
+  goalStatuses: GoalStatusType[];
 }
 
 const HeroImageEl = styled.div`

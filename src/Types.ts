@@ -1,20 +1,3 @@
-export interface IndicatorStatusListType {
-  Indicator: string;
-  'Indicator Description': string;
-}
-
-export interface TargetStatusListType {
-  Target: string;
-  'Target Description': string;
-  Indicators: IndicatorStatusListType[];
-}
-
-export interface SDGStatusListType {
-  Goal: string;
-  'Goal Name': string;
-  Targets: TargetStatusListType[];
-}
-
 export interface IndicatorListType {
   Indicator: string;
   'Indicator Description': string;
@@ -26,7 +9,7 @@ export interface TargetListType {
   Indicators: IndicatorListType[];
 }
 
-export interface SDGListType {
+export interface SDGSListType {
   Goal: string;
   'Goal Name': string;
   Targets: TargetListType[];
@@ -139,4 +122,40 @@ export interface LiteratureDataType {
   Goals: string;
   'Peer reviewed': boolean;
   'Full reference': string | null;
+}
+
+export interface IndicatorStatusType {
+  goal: string;
+  target: string;
+  indicator: string;
+  status: 'On Track' | 'Identified Gap' | 'For Review' | null;
+}
+export interface TargetStatusType {
+  goal: string;
+  target: string;
+  status: 'On Track' | 'Identified Gap' | 'For Review' | null;
+}
+
+export interface TargetStatusWithDetailsType extends TargetStatusType {
+  description: string;
+}
+
+export interface GoalStatusType {
+  goal: number;
+  noOfIndicatorsWithData: number;
+  status: 'On Track' | 'Identified Gap' | 'For Review' | null;
+}
+
+export interface CountryDataType {
+  countryCode: string;
+  goalStatus: GoalStatusType[];
+  targetStatus: TargetStatusType[];
+  indicatorStatus: IndicatorStatusType[];
+  tsData: any;
+}
+
+export interface StatusesType {
+  goalStatus: GoalStatusType[];
+  targetStatus: TargetStatusType[];
+  indicatorStatus: IndicatorStatusType[];
 }

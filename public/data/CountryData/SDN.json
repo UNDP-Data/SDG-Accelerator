@@ -1,0 +1,321 @@
+{
+  "countryCode": "SDN",
+  "goalStatus": [
+    {
+      "goal": 12,
+      "noOfIndicatorsWithData": 1,
+      "status": "On Track"
+    },
+    {
+      "goal": 8,
+      "noOfIndicatorsWithData": 0,
+      "status": null
+    },
+    {
+      "goal": 5,
+      "noOfIndicatorsWithData": 0,
+      "status": null
+    },
+    {
+      "goal": 9,
+      "noOfIndicatorsWithData": 0,
+      "status": null
+    }
+  ],
+  "targetStatus": [
+    {
+      "goal": "12",
+      "target": "12.2",
+      "status": "On Track"
+    },
+    {
+      "goal": "8",
+      "target": "8.4",
+      "status": null
+    },
+    {
+      "goal": "5",
+      "target": "5.5",
+      "status": null
+    },
+    {
+      "goal": "8",
+      "target": "8.1",
+      "status": null
+    },
+    {
+      "goal": "9",
+      "target": "9.1",
+      "status": null
+    }
+  ],
+  "indicatorStatus": [
+    {
+      "goal": "12",
+      "target": "12.2",
+      "indicator": "12.2.2",
+      "status": "On Track"
+    },
+    {
+      "goal": "8",
+      "target": "8.4",
+      "indicator": "8.4.2",
+      "status": null
+    },
+    {
+      "goal": "5",
+      "target": "5.5",
+      "indicator": "5.5.1",
+      "status": null
+    },
+    {
+      "goal": "8",
+      "target": "8.1",
+      "indicator": "8.1.1",
+      "status": null
+    },
+    {
+      "goal": "9",
+      "target": "9.1",
+      "indicator": "9.1.2",
+      "status": null
+    }
+  ],
+  "tsData": [
+    {
+      "Type of product": "MEO",
+      "Reporting Type": "G",
+      "series": "EN_MAT_DOMCMPG",
+      "goal": "12",
+      "target": "12.2",
+      "indicator": "12.2.2",
+      "seriesDescription": "Domestic material consumption per unit of GDP, by type of raw material (kilograms per constant 2015 United States dollars)",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 0.00498
+        },
+        {
+          "year": 2001.0,
+          "value": 0.00474
+        },
+        {
+          "year": 2002.0,
+          "value": 0.00791
+        },
+        {
+          "year": 2003.0,
+          "value": 0.00718
+        },
+        {
+          "year": 2004.0,
+          "value": 0.01019
+        },
+        {
+          "year": 2005.0,
+          "value": 0.01645
+        },
+        {
+          "year": 2006.0,
+          "value": 0.01739
+        },
+        {
+          "year": 2007.0,
+          "value": 0.00498
+        }
+      ],
+      "methodology": {
+        "targetValue": 0.5,
+        "normativeDirection": "decrease",
+        "trendMethodology": "CAGRR",
+        "baseYear": 2007.0
+      },
+      "status": "Target Achieved"
+    },
+    {
+      "Type of product": "MEO",
+      "Reporting Type": "G",
+      "series": "EN_MAT_DOMCMPG",
+      "goal": "8",
+      "target": "8.4",
+      "indicator": "8.4.2",
+      "seriesDescription": "Domestic material consumption per unit of GDP, by type of raw material (kilograms per constant 2015 United States dollars)",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 0.00498
+        },
+        {
+          "year": 2001.0,
+          "value": 0.00474
+        },
+        {
+          "year": 2002.0,
+          "value": 0.00791
+        },
+        {
+          "year": 2003.0,
+          "value": 0.00718
+        },
+        {
+          "year": 2004.0,
+          "value": 0.01019
+        },
+        {
+          "year": 2005.0,
+          "value": 0.01645
+        },
+        {
+          "year": 2006.0,
+          "value": 0.01739
+        },
+        {
+          "year": 2007.0,
+          "value": 0.00498
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Sex": "FEMALE",
+      "Reporting Type": "G",
+      "series": "SG_GEN_PARL",
+      "goal": "5",
+      "target": "5.5",
+      "indicator": "5.5.1",
+      "seriesDescription": "Proportion of seats held by women in national parliaments (% of total number of seats)",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 8.75
+        },
+        {
+          "year": 2001.0,
+          "value": 8.75
+        },
+        {
+          "year": 2002.0,
+          "value": 9.72
+        },
+        {
+          "year": 2003.0,
+          "value": 9.72
+        },
+        {
+          "year": 2004.0,
+          "value": 9.72
+        },
+        {
+          "year": 2005.0,
+          "value": 9.72
+        },
+        {
+          "year": 2006.0,
+          "value": 14.67
+        },
+        {
+          "year": 2007.0,
+          "value": 17.78
+        },
+        {
+          "year": 2008.0,
+          "value": 18.06
+        },
+        {
+          "year": 2009.0,
+          "value": 18.06
+        },
+        {
+          "year": 2010.0,
+          "value": 18.92
+        },
+        {
+          "year": 2011.0,
+          "value": 25.56
+        }
+      ],
+      "methodology": {
+        "targetValue": 50,
+        "normativeDirection": "increase",
+        "trendMethodology": "CAGRR",
+        "baseYear": 2011.0
+      },
+      "status": "Insufficient Data"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "NY_GDP_PCAP",
+      "goal": "8",
+      "target": "8.1",
+      "indicator": "8.1.1",
+      "seriesDescription": "Annual growth rate of real GDP per capita (%)",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 5.42683
+        },
+        {
+          "year": 2001.0,
+          "value": 7.76469
+        },
+        {
+          "year": 2002.0,
+          "value": 3.07254
+        },
+        {
+          "year": 2003.0,
+          "value": 4.42948
+        },
+        {
+          "year": 2004.0,
+          "value": 2.2781
+        },
+        {
+          "year": 2005.0,
+          "value": 6.04093
+        },
+        {
+          "year": 2006.0,
+          "value": 3.6208
+        },
+        {
+          "year": 2007.0,
+          "value": 2.89105
+        },
+        {
+          "year": 2008.0,
+          "value": -0.56145
+        },
+        {
+          "year": 2009.0,
+          "value": 5.72842
+        },
+        {
+          "year": 2010.0,
+          "value": 3.91662
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Reporting Type": "G",
+      "Mode of transportation": "SEA",
+      "series": "IS_RDP_PORFVOL",
+      "goal": "9",
+      "target": "9.1",
+      "indicator": "9.1.2",
+      "seriesDescription": "Container port traffic, maritime transport (twenty-foot equivalent units - TEUs)",
+      "values": [
+        {
+          "year": 2010.0,
+          "value": 430000.0
+        },
+        {
+          "year": 2011.0,
+          "value": 430000.0
+        }
+      ],
+      "status": "Methodology Unavailable"
+    }
+  ]
+}

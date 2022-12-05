@@ -153,8 +153,8 @@ export const KEYSTOAVOID = [
   'indicator',
   'seriesDescription',
   'values',
-  'targets',
-  'trendMethodology',
+  'methodology',
+  'status',
 ];
 
 export const SCENARIOINDICATORBASEDONSDG = [
@@ -223,3 +223,91 @@ export const SDG_COLOR_ARRAY = [
 export const DATASOURCELINK = process.env.NODE_ENV === 'production' ? 'https://data.undp.org/sdg-push-diagnostic' : '../..';
 
 export const SDG_ICON_SIZE = 64;
+
+export const TargetIndicatorCount = [
+  {
+    sdg: 1,
+    noOfTargets: 7,
+    noOfIndicators: 13,
+  },
+  {
+    sdg: 2,
+    noOfTargets: 8,
+    noOfIndicators: 14,
+  },
+  {
+    sdg: 3,
+    noOfTargets: 13,
+    noOfIndicators: 26,
+  },
+  {
+    sdg: 4,
+    noOfTargets: 10,
+    noOfIndicators: 12,
+  },
+  {
+    sdg: 5,
+    noOfTargets: 9,
+    noOfIndicators: 14,
+  },
+  {
+    sdg: 6,
+    noOfTargets: 8,
+    noOfIndicators: 11,
+  },
+  {
+    sdg: 7,
+    noOfTargets: 5,
+    noOfIndicators: 6,
+  },
+  {
+    sdg: 8,
+    noOfTargets: 12,
+    noOfIndicators: 17,
+  },
+  {
+    sdg: 9,
+    noOfTargets: 8,
+    noOfIndicators: 12,
+  },
+  {
+    sdg: 10,
+    noOfTargets: 10,
+    noOfIndicators: 12,
+  },
+  {
+    sdg: 11,
+    noOfTargets: 10,
+    noOfIndicators: 15,
+  },
+  {
+    sdg: 12,
+    noOfTargets: 11,
+    noOfIndicators: 13,
+  },
+  {
+    sdg: 13,
+    noOfTargets: 5,
+    noOfIndicators: 9,
+  },
+  {
+    sdg: 14,
+    noOfTargets: 10,
+    noOfIndicators: 10,
+  },
+  {
+    sdg: 15,
+    noOfTargets: 12,
+    noOfIndicators: 14,
+  },
+  {
+    sdg: 16,
+    noOfTargets: 12,
+    noOfIndicators: 23,
+  },
+  {
+    sdg: 17,
+    noOfTargets: 19,
+    noOfIndicators: 25,
+  },
+];

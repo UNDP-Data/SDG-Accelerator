@@ -1,0 +1,1832 @@
+{
+  "countryCode": "BLM",
+  "goalStatus": [
+    {
+      "goal": 1,
+      "noOfIndicatorsWithData": 0,
+      "status": null
+    },
+    {
+      "goal": 10,
+      "noOfIndicatorsWithData": 0,
+      "status": null
+    },
+    {
+      "goal": 11,
+      "noOfIndicatorsWithData": 0,
+      "status": null
+    },
+    {
+      "goal": 7,
+      "noOfIndicatorsWithData": 0,
+      "status": null
+    },
+    {
+      "goal": 12,
+      "noOfIndicatorsWithData": 0,
+      "status": null
+    },
+    {
+      "goal": 14,
+      "noOfIndicatorsWithData": 1,
+      "status": "Identified Gap"
+    },
+    {
+      "goal": 15,
+      "noOfIndicatorsWithData": 3,
+      "status": "Identified Gap"
+    },
+    {
+      "goal": 17,
+      "noOfIndicatorsWithData": 0,
+      "status": null
+    },
+    {
+      "goal": 3,
+      "noOfIndicatorsWithData": 0,
+      "status": null
+    },
+    {
+      "goal": 6,
+      "noOfIndicatorsWithData": 1,
+      "status": "On Track"
+    },
+    {
+      "goal": 9,
+      "noOfIndicatorsWithData": 0,
+      "status": null
+    }
+  ],
+  "targetStatus": [
+    {
+      "goal": "1",
+      "target": "1.4",
+      "status": null
+    },
+    {
+      "goal": "10",
+      "target": "10.7",
+      "status": null
+    },
+    {
+      "goal": "11",
+      "target": "11.a",
+      "status": null
+    },
+    {
+      "goal": "7",
+      "target": "7.b",
+      "status": null
+    },
+    {
+      "goal": "12",
+      "target": "12.a",
+      "status": null
+    },
+    {
+      "goal": "14",
+      "target": "14.1",
+      "status": null
+    },
+    {
+      "goal": "14",
+      "target": "14.5",
+      "status": "Identified Gap"
+    },
+    {
+      "goal": "15",
+      "target": "15.1",
+      "status": "Identified Gap"
+    },
+    {
+      "goal": "15",
+      "target": "15.2",
+      "status": null
+    },
+    {
+      "goal": "15",
+      "target": "15.4",
+      "status": null
+    },
+    {
+      "goal": "15",
+      "target": "15.5",
+      "status": "Identified Gap"
+    },
+    {
+      "goal": "15",
+      "target": "15.6",
+      "status": "For Review"
+    },
+    {
+      "goal": "17",
+      "target": "17.19",
+      "status": null
+    },
+    {
+      "goal": "3",
+      "target": "3.7",
+      "status": null
+    },
+    {
+      "goal": "6",
+      "target": "6.1",
+      "status": "On Track"
+    },
+    {
+      "goal": "9",
+      "target": "9.1",
+      "status": null
+    }
+  ],
+  "indicatorStatus": [
+    {
+      "goal": "1",
+      "target": "1.4",
+      "indicator": "1.4.1",
+      "status": null
+    },
+    {
+      "goal": "10",
+      "target": "10.7",
+      "indicator": "10.7.4",
+      "status": null
+    },
+    {
+      "goal": "11",
+      "target": "11.a",
+      "indicator": "11.a.1",
+      "status": null
+    },
+    {
+      "goal": "7",
+      "target": "7.b",
+      "indicator": "7.b.1",
+      "status": null
+    },
+    {
+      "goal": "12",
+      "target": "12.a",
+      "indicator": "12.a.1",
+      "status": null
+    },
+    {
+      "goal": "14",
+      "target": "14.1",
+      "indicator": "14.1.1",
+      "status": null
+    },
+    {
+      "goal": "14",
+      "target": "14.5",
+      "indicator": "14.5.1",
+      "status": "Identified Gap"
+    },
+    {
+      "goal": "15",
+      "target": "15.1",
+      "indicator": "15.1.1",
+      "status": "Identified Gap"
+    },
+    {
+      "goal": "15",
+      "target": "15.1",
+      "indicator": "15.1.2",
+      "status": null
+    },
+    {
+      "goal": "15",
+      "target": "15.2",
+      "indicator": "15.2.1",
+      "status": null
+    },
+    {
+      "goal": "15",
+      "target": "15.4",
+      "indicator": "15.4.1",
+      "status": null
+    },
+    {
+      "goal": "15",
+      "target": "15.5",
+      "indicator": "15.5.1",
+      "status": "Identified Gap"
+    },
+    {
+      "goal": "15",
+      "target": "15.6",
+      "indicator": "15.6.1",
+      "status": "For Review"
+    },
+    {
+      "goal": "17",
+      "target": "17.19",
+      "indicator": "17.19.2",
+      "status": null
+    },
+    {
+      "goal": "3",
+      "target": "3.7",
+      "indicator": "3.7.2",
+      "status": null
+    },
+    {
+      "goal": "6",
+      "target": "6.1",
+      "indicator": "6.1.1",
+      "status": "On Track"
+    },
+    {
+      "goal": "9",
+      "target": "9.1",
+      "indicator": "9.1.2",
+      "status": null
+    }
+  ],
+  "tsData": [
+    {
+      "Location": "ALLAREA",
+      "Reporting Type": "G",
+      "series": "SP_ACS_BSRVH2O",
+      "goal": "1",
+      "target": "1.4",
+      "indicator": "1.4.1",
+      "seriesDescription": "Proportion of population using basic drinking water services, by location (%)",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 99.0
+        },
+        {
+          "year": 2001.0,
+          "value": 99.0
+        },
+        {
+          "year": 2002.0,
+          "value": 99.0
+        },
+        {
+          "year": 2003.0,
+          "value": 99.0
+        },
+        {
+          "year": 2004.0,
+          "value": 99.0
+        },
+        {
+          "year": 2005.0,
+          "value": 99.0
+        },
+        {
+          "year": 2006.0,
+          "value": 99.0
+        },
+        {
+          "year": 2007.0,
+          "value": 100.0
+        },
+        {
+          "year": 2008.0,
+          "value": 100.0
+        },
+        {
+          "year": 2009.0,
+          "value": 100.0
+        },
+        {
+          "year": 2010.0,
+          "value": 100.0
+        },
+        {
+          "year": 2011.0,
+          "value": 100.0
+        },
+        {
+          "year": 2012.0,
+          "value": 100.0
+        },
+        {
+          "year": 2013.0,
+          "value": 100.0
+        },
+        {
+          "year": 2014.0,
+          "value": 100.0
+        },
+        {
+          "year": 2015.0,
+          "value": 100.0
+        },
+        {
+          "year": 2016.0,
+          "value": 100.0
+        },
+        {
+          "year": 2017.0,
+          "value": 100.0
+        },
+        {
+          "year": 2018.0,
+          "value": 100.0
+        },
+        {
+          "year": 2019.0,
+          "value": 100.0
+        },
+        {
+          "year": 2020.0,
+          "value": 100.0
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Location": "ALLAREA",
+      "Reporting Type": "G",
+      "series": "SP_ACS_BSRVSAN",
+      "goal": "1",
+      "target": "1.4",
+      "indicator": "1.4.1",
+      "seriesDescription": "Proportion of population using basic sanitation services, by location (%)",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 99.0
+        },
+        {
+          "year": 2001.0,
+          "value": 99.0
+        },
+        {
+          "year": 2002.0,
+          "value": 99.0
+        },
+        {
+          "year": 2003.0,
+          "value": 99.0
+        },
+        {
+          "year": 2004.0,
+          "value": 99.0
+        },
+        {
+          "year": 2005.0,
+          "value": 99.0
+        },
+        {
+          "year": 2006.0,
+          "value": 99.0
+        },
+        {
+          "year": 2007.0,
+          "value": 99.0
+        },
+        {
+          "year": 2008.0,
+          "value": 99.0
+        },
+        {
+          "year": 2009.0,
+          "value": 99.0
+        },
+        {
+          "year": 2010.0,
+          "value": 100.0
+        },
+        {
+          "year": 2011.0,
+          "value": 100.0
+        },
+        {
+          "year": 2012.0,
+          "value": 100.0
+        },
+        {
+          "year": 2013.0,
+          "value": 100.0
+        },
+        {
+          "year": 2014.0,
+          "value": 100.0
+        },
+        {
+          "year": 2015.0,
+          "value": 100.0
+        },
+        {
+          "year": 2016.0,
+          "value": 100.0
+        },
+        {
+          "year": 2017.0,
+          "value": 100.0
+        },
+        {
+          "year": 2018.0,
+          "value": 100.0
+        },
+        {
+          "year": 2019.0,
+          "value": 100.0
+        },
+        {
+          "year": 2020.0,
+          "value": 100.0
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "SM_POP_REFG_OR",
+      "goal": "10",
+      "target": "10.7",
+      "indicator": "10.7.4",
+      "seriesDescription": "Number of refugees per 100,000 population, by country of origin (per 100,000 population)",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 0.0
+        },
+        {
+          "year": 2001.0,
+          "value": 0.0
+        },
+        {
+          "year": 2002.0,
+          "value": 0.0
+        },
+        {
+          "year": 2003.0,
+          "value": 0.0
+        },
+        {
+          "year": 2004.0,
+          "value": 0.0
+        },
+        {
+          "year": 2005.0,
+          "value": 0.0
+        },
+        {
+          "year": 2006.0,
+          "value": 0.0
+        },
+        {
+          "year": 2007.0,
+          "value": 0.0
+        },
+        {
+          "year": 2008.0,
+          "value": 0.0
+        },
+        {
+          "year": 2009.0,
+          "value": 0.0
+        },
+        {
+          "year": 2010.0,
+          "value": 0.0
+        },
+        {
+          "year": 2011.0,
+          "value": 0.0
+        },
+        {
+          "year": 2012.0,
+          "value": 0.0
+        },
+        {
+          "year": 2013.0,
+          "value": 0.0
+        },
+        {
+          "year": 2014.0,
+          "value": 0.0
+        },
+        {
+          "year": 2015.0,
+          "value": 0.0
+        },
+        {
+          "year": 2016.0,
+          "value": 0.0
+        },
+        {
+          "year": 2017.0,
+          "value": 0.0
+        },
+        {
+          "year": 2018.0,
+          "value": 0.0
+        },
+        {
+          "year": 2019.0,
+          "value": 0.0
+        },
+        {
+          "year": 2020.0,
+          "value": 0.0
+        },
+        {
+          "year": 2021.0,
+          "value": 0.0
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "SD_CPA_UPRDP",
+      "goal": "11",
+      "target": "11.a",
+      "indicator": "11.a.1",
+      "seriesDescription": "Countries that have national urban policies or regional development plans that respond to population dynamics; ensure balanced territorial development; and increase local fiscal space (1 = YES; 0 = NO)",
+      "values": [
+        {
+          "year": 2020.0,
+          "value": 0.0
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Reporting Type": "G",
+      "Type of renewable technology": "SOLAR",
+      "series": "EG_EGY_RNEW",
+      "goal": "7",
+      "target": "7.b",
+      "indicator": "7.b.1",
+      "seriesDescription": "Installed renewable\u00a0electricity-generating capacity (watts per capita)",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 0.0
+        },
+        {
+          "year": 2001.0,
+          "value": 0.0
+        },
+        {
+          "year": 2002.0,
+          "value": 0.0
+        },
+        {
+          "year": 2003.0,
+          "value": 0.0
+        },
+        {
+          "year": 2004.0,
+          "value": 0.0
+        },
+        {
+          "year": 2005.0,
+          "value": 0.0
+        },
+        {
+          "year": 2006.0,
+          "value": 0.0
+        },
+        {
+          "year": 2007.0,
+          "value": 0.0
+        },
+        {
+          "year": 2008.0,
+          "value": 0.0
+        },
+        {
+          "year": 2009.0,
+          "value": 0.0
+        },
+        {
+          "year": 2010.0,
+          "value": 0.0
+        },
+        {
+          "year": 2011.0,
+          "value": 0.0
+        },
+        {
+          "year": 2012.0,
+          "value": 0.0
+        },
+        {
+          "year": 2013.0,
+          "value": 0.0
+        },
+        {
+          "year": 2014.0,
+          "value": 0.0
+        },
+        {
+          "year": 2015.0,
+          "value": 0.0
+        },
+        {
+          "year": 2016.0,
+          "value": 2.463
+        },
+        {
+          "year": 2017.0,
+          "value": 2.452
+        },
+        {
+          "year": 2018.0,
+          "value": 2.443
+        },
+        {
+          "year": 2019.0,
+          "value": 2.436
+        },
+        {
+          "year": 2020.0,
+          "value": 2.428
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Reporting Type": "G",
+      "Type of renewable technology": "SOLAR",
+      "series": "EG_EGY_RNEW",
+      "goal": "12",
+      "target": "12.a",
+      "indicator": "12.a.1",
+      "seriesDescription": "Installed renewable\u00a0electricity-generating capacity (watts per capita)",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 0.0
+        },
+        {
+          "year": 2001.0,
+          "value": 0.0
+        },
+        {
+          "year": 2002.0,
+          "value": 0.0
+        },
+        {
+          "year": 2003.0,
+          "value": 0.0
+        },
+        {
+          "year": 2004.0,
+          "value": 0.0
+        },
+        {
+          "year": 2005.0,
+          "value": 0.0
+        },
+        {
+          "year": 2006.0,
+          "value": 0.0
+        },
+        {
+          "year": 2007.0,
+          "value": 0.0
+        },
+        {
+          "year": 2008.0,
+          "value": 0.0
+        },
+        {
+          "year": 2009.0,
+          "value": 0.0
+        },
+        {
+          "year": 2010.0,
+          "value": 0.0
+        },
+        {
+          "year": 2011.0,
+          "value": 0.0
+        },
+        {
+          "year": 2012.0,
+          "value": 0.0
+        },
+        {
+          "year": 2013.0,
+          "value": 0.0
+        },
+        {
+          "year": 2014.0,
+          "value": 0.0
+        },
+        {
+          "year": 2015.0,
+          "value": 0.0
+        },
+        {
+          "year": 2016.0,
+          "value": 2.463
+        },
+        {
+          "year": 2017.0,
+          "value": 2.452
+        },
+        {
+          "year": 2018.0,
+          "value": 2.443
+        },
+        {
+          "year": 2019.0,
+          "value": 2.436
+        },
+        {
+          "year": 2020.0,
+          "value": 2.428
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "EN_MAR_CHLDEV",
+      "goal": "14",
+      "target": "14.1",
+      "indicator": "14.1.1",
+      "seriesDescription": "Chlorophyll-a deviations, remote sensing (%)",
+      "values": [
+        {
+          "year": 2006.0,
+          "value": 0.4902
+        },
+        {
+          "year": 2007.0,
+          "value": 7.02614
+        },
+        {
+          "year": 2008.0,
+          "value": 9.80392
+        },
+        {
+          "year": 2009.0,
+          "value": 46.44608
+        },
+        {
+          "year": 2010.0,
+          "value": 17.35294
+        },
+        {
+          "year": 2011.0,
+          "value": 0.4902
+        },
+        {
+          "year": 2012.0,
+          "value": 0.49181
+        },
+        {
+          "year": 2013.0,
+          "value": 1.60038
+        },
+        {
+          "year": 2014.0,
+          "value": 0.7365
+        },
+        {
+          "year": 2015.0,
+          "value": 4.4239
+        },
+        {
+          "year": 2016.0,
+          "value": 0.49261
+        },
+        {
+          "year": 2017.0,
+          "value": 2.32843
+        },
+        {
+          "year": 2018.0,
+          "value": 0.4902
+        },
+        {
+          "year": 2019.0,
+          "value": 0.73529
+        },
+        {
+          "year": 2020.0,
+          "value": 0.4902
+        },
+        {
+          "year": 2021.0,
+          "value": 6.27451
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Reporting Type": "G",
+      "Frequency of Chlorophyll-a concentration": "High",
+      "series": "EN_MAR_CHLANM",
+      "goal": "14",
+      "target": "14.1",
+      "indicator": "14.1.1",
+      "seriesDescription": "Chlorophyll-a anomaly, remote sensing (%)",
+      "values": [
+        {
+          "year": 2018.0,
+          "value": 0.30121
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "EN_MAR_BEALITSQ",
+      "goal": "14",
+      "target": "14.1",
+      "indicator": "14.1.1",
+      "seriesDescription": "Beach litter per square kilometer (Number)",
+      "values": [
+        {
+          "year": 2017.0,
+          "value": 805407.73767
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "ER_MRN_MPA",
+      "goal": "14",
+      "target": "14.5",
+      "indicator": "14.5.1",
+      "seriesDescription": "Average proportion of Marine Key Biodiversity Areas (KBAs) covered by protected areas (%)",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 25.72719
+        },
+        {
+          "year": 2001.0,
+          "value": 25.72719
+        },
+        {
+          "year": 2002.0,
+          "value": 25.72719
+        },
+        {
+          "year": 2003.0,
+          "value": 25.72719
+        },
+        {
+          "year": 2004.0,
+          "value": 25.72719
+        },
+        {
+          "year": 2005.0,
+          "value": 25.72719
+        },
+        {
+          "year": 2006.0,
+          "value": 25.72719
+        },
+        {
+          "year": 2007.0,
+          "value": 25.77059
+        },
+        {
+          "year": 2008.0,
+          "value": 25.77059
+        },
+        {
+          "year": 2009.0,
+          "value": 25.77059
+        },
+        {
+          "year": 2010.0,
+          "value": 75.70499
+        },
+        {
+          "year": 2011.0,
+          "value": 75.70499
+        },
+        {
+          "year": 2012.0,
+          "value": 75.70499
+        },
+        {
+          "year": 2013.0,
+          "value": 75.70499
+        },
+        {
+          "year": 2014.0,
+          "value": 75.70499
+        },
+        {
+          "year": 2015.0,
+          "value": 75.70499
+        },
+        {
+          "year": 2016.0,
+          "value": 75.70499
+        },
+        {
+          "year": 2017.0,
+          "value": 75.70499
+        },
+        {
+          "year": 2018.0,
+          "value": 75.70499
+        },
+        {
+          "year": 2019.0,
+          "value": 75.70499
+        },
+        {
+          "year": 2020.0,
+          "value": 75.70499
+        },
+        {
+          "year": 2021.0,
+          "value": 75.70499
+        }
+      ],
+      "methodology": {
+        "targetValue": 83,
+        "normativeDirection": "increase",
+        "trendMethodology": "CAGRR",
+        "baseYear": 2015.0
+      },
+      "status": "Limited or No Progress"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "AG_LND_FRST",
+      "goal": "15",
+      "target": "15.1",
+      "indicator": "15.1.1",
+      "seriesDescription": "Forest area as a proportion of total land area (%)",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 8.5
+        },
+        {
+          "year": 2010.0,
+          "value": 8.5
+        },
+        {
+          "year": 2015.0,
+          "value": 8.5
+        },
+        {
+          "year": 2016.0,
+          "value": 8.5
+        },
+        {
+          "year": 2017.0,
+          "value": 8.5
+        },
+        {
+          "year": 2018.0,
+          "value": 8.5
+        },
+        {
+          "year": 2019.0,
+          "value": 8.5
+        },
+        {
+          "year": 2020.0,
+          "value": 8.5
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "not decrease",
+        "trendMethodology": "CAGRA",
+        "baseYear": 2015.0
+      },
+      "status": "Limited or No Progress"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "ER_PTD_FRHWTR",
+      "goal": "15",
+      "target": "15.1",
+      "indicator": "15.1.2",
+      "seriesDescription": "Average proportion of Freshwater Key Biodiversity Areas (KBAs) covered by protected areas (%)",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 0.0
+        },
+        {
+          "year": 2001.0,
+          "value": 0.0
+        },
+        {
+          "year": 2002.0,
+          "value": 0.0
+        },
+        {
+          "year": 2003.0,
+          "value": 0.0
+        },
+        {
+          "year": 2004.0,
+          "value": 0.0
+        },
+        {
+          "year": 2005.0,
+          "value": 0.0
+        },
+        {
+          "year": 2006.0,
+          "value": 0.0
+        },
+        {
+          "year": 2007.0,
+          "value": 0.0
+        },
+        {
+          "year": 2008.0,
+          "value": 0.0
+        },
+        {
+          "year": 2009.0,
+          "value": 0.0
+        },
+        {
+          "year": 2010.0,
+          "value": 0.0
+        },
+        {
+          "year": 2011.0,
+          "value": 0.0
+        },
+        {
+          "year": 2012.0,
+          "value": 0.0
+        },
+        {
+          "year": 2013.0,
+          "value": 0.0
+        },
+        {
+          "year": 2014.0,
+          "value": 0.0
+        },
+        {
+          "year": 2015.0,
+          "value": 0.0
+        },
+        {
+          "year": 2016.0,
+          "value": 0.0
+        },
+        {
+          "year": 2017.0,
+          "value": 0.0
+        },
+        {
+          "year": 2018.0,
+          "value": 0.0
+        },
+        {
+          "year": 2019.0,
+          "value": 0.0
+        },
+        {
+          "year": 2020.0,
+          "value": 0.0
+        },
+        {
+          "year": 2021.0,
+          "value": 0.0
+        }
+      ],
+      "methodology": {
+        "targetValue": 83,
+        "normativeDirection": "increase",
+        "trendMethodology": "CAGRR",
+        "baseYear": 2015.0
+      },
+      "status": "Insufficient Data"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "ER_PTD_TERR",
+      "goal": "15",
+      "target": "15.1",
+      "indicator": "15.1.2",
+      "seriesDescription": "Average proportion of Terrestrial Key Biodiversity Areas (KBAs) covered by protected areas (%)",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 17.70453
+        },
+        {
+          "year": 2001.0,
+          "value": 17.70453
+        },
+        {
+          "year": 2002.0,
+          "value": 17.70453
+        },
+        {
+          "year": 2003.0,
+          "value": 17.70453
+        },
+        {
+          "year": 2004.0,
+          "value": 17.70453
+        },
+        {
+          "year": 2005.0,
+          "value": 17.70453
+        },
+        {
+          "year": 2006.0,
+          "value": 17.70453
+        },
+        {
+          "year": 2007.0,
+          "value": 17.73347
+        },
+        {
+          "year": 2008.0,
+          "value": 17.73347
+        },
+        {
+          "year": 2009.0,
+          "value": 17.73347
+        },
+        {
+          "year": 2010.0,
+          "value": 51.70431
+        },
+        {
+          "year": 2011.0,
+          "value": 51.70431
+        },
+        {
+          "year": 2012.0,
+          "value": 51.70431
+        },
+        {
+          "year": 2013.0,
+          "value": 51.70431
+        },
+        {
+          "year": 2014.0,
+          "value": 51.70431
+        },
+        {
+          "year": 2015.0,
+          "value": 51.70431
+        },
+        {
+          "year": 2016.0,
+          "value": 51.70431
+        },
+        {
+          "year": 2017.0,
+          "value": 51.70431
+        },
+        {
+          "year": 2018.0,
+          "value": 51.70431
+        },
+        {
+          "year": 2019.0,
+          "value": 51.70431
+        },
+        {
+          "year": 2020.0,
+          "value": 51.70431
+        },
+        {
+          "year": 2021.0,
+          "value": 51.70431
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "AG_LND_FRSTCHG",
+      "goal": "15",
+      "target": "15.2",
+      "indicator": "15.2.1",
+      "seriesDescription": "Annual forest area change rate (%)",
+      "values": [
+        {
+          "year": 2010.0,
+          "value": 0.0
+        },
+        {
+          "year": 2020.0,
+          "value": 0.0
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "AG_LND_FRSTMGT",
+      "goal": "15",
+      "target": "15.2",
+      "indicator": "15.2.1",
+      "seriesDescription": "Proportion of forest area with a long-term management plan (%)",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 0.0
+        },
+        {
+          "year": 2010.0,
+          "value": 0.0
+        },
+        {
+          "year": 2015.0,
+          "value": 0.0
+        },
+        {
+          "year": 2016.0,
+          "value": 0.0
+        },
+        {
+          "year": 2017.0,
+          "value": 0.0
+        },
+        {
+          "year": 2018.0,
+          "value": 0.0
+        },
+        {
+          "year": 2019.0,
+          "value": 0.0
+        },
+        {
+          "year": 2020.0,
+          "value": 0.0
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "AG_LND_FRSTPRCT",
+      "goal": "15",
+      "target": "15.2",
+      "indicator": "15.2.1",
+      "seriesDescription": "Proportion of forest area within legally established protected areas (%)",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 0.0
+        },
+        {
+          "year": 2010.0,
+          "value": 0.0
+        },
+        {
+          "year": 2015.0,
+          "value": 0.0
+        },
+        {
+          "year": 2016.0,
+          "value": 0.0
+        },
+        {
+          "year": 2017.0,
+          "value": 0.0
+        },
+        {
+          "year": 2018.0,
+          "value": 0.0
+        },
+        {
+          "year": 2019.0,
+          "value": 0.0
+        },
+        {
+          "year": 2020.0,
+          "value": 0.0
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "ER_PTD_MTN",
+      "goal": "15",
+      "target": "15.4",
+      "indicator": "15.4.1",
+      "seriesDescription": "Average proportion of Mountain Key Biodiversity Areas (KBAs) covered by protected areas (%)",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 0.0
+        },
+        {
+          "year": 2001.0,
+          "value": 0.0
+        },
+        {
+          "year": 2002.0,
+          "value": 0.0
+        },
+        {
+          "year": 2003.0,
+          "value": 0.0
+        },
+        {
+          "year": 2004.0,
+          "value": 0.0
+        },
+        {
+          "year": 2005.0,
+          "value": 0.0
+        },
+        {
+          "year": 2006.0,
+          "value": 0.0
+        },
+        {
+          "year": 2007.0,
+          "value": 0.0
+        },
+        {
+          "year": 2008.0,
+          "value": 0.0
+        },
+        {
+          "year": 2009.0,
+          "value": 0.0
+        },
+        {
+          "year": 2010.0,
+          "value": 0.0
+        },
+        {
+          "year": 2011.0,
+          "value": 0.0
+        },
+        {
+          "year": 2012.0,
+          "value": 0.0
+        },
+        {
+          "year": 2013.0,
+          "value": 0.0
+        },
+        {
+          "year": 2014.0,
+          "value": 0.0
+        },
+        {
+          "year": 2015.0,
+          "value": 0.0
+        },
+        {
+          "year": 2016.0,
+          "value": 0.0
+        },
+        {
+          "year": 2017.0,
+          "value": 0.0
+        },
+        {
+          "year": 2018.0,
+          "value": 0.0
+        },
+        {
+          "year": 2019.0,
+          "value": 0.0
+        },
+        {
+          "year": 2020.0,
+          "value": 0.0
+        },
+        {
+          "year": 2021.0,
+          "value": 0.0
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "ER_RSK_LST",
+      "goal": "15",
+      "target": "15.5",
+      "indicator": "15.5.1",
+      "seriesDescription": "Red List Index",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 0.9848
+        },
+        {
+          "year": 2001.0,
+          "value": 0.98512
+        },
+        {
+          "year": 2002.0,
+          "value": 0.98545
+        },
+        {
+          "year": 2003.0,
+          "value": 0.98577
+        },
+        {
+          "year": 2004.0,
+          "value": 0.98609
+        },
+        {
+          "year": 2005.0,
+          "value": 0.98641
+        },
+        {
+          "year": 2006.0,
+          "value": 0.98673
+        },
+        {
+          "year": 2007.0,
+          "value": 0.98705
+        },
+        {
+          "year": 2008.0,
+          "value": 0.98737
+        },
+        {
+          "year": 2009.0,
+          "value": 0.98756
+        },
+        {
+          "year": 2010.0,
+          "value": 0.98789
+        },
+        {
+          "year": 2011.0,
+          "value": 0.98819
+        },
+        {
+          "year": 2012.0,
+          "value": 0.98852
+        },
+        {
+          "year": 2013.0,
+          "value": 0.98891
+        },
+        {
+          "year": 2014.0,
+          "value": 0.98921
+        },
+        {
+          "year": 2015.0,
+          "value": 0.98945
+        },
+        {
+          "year": 2016.0,
+          "value": 0.98987
+        },
+        {
+          "year": 2017.0,
+          "value": 0.99011
+        },
+        {
+          "year": 2018.0,
+          "value": 0.99055
+        },
+        {
+          "year": 2019.0,
+          "value": 0.9908
+        },
+        {
+          "year": 2020.0,
+          "value": 0.99102
+        },
+        {
+          "year": 2021.0,
+          "value": 0.99135
+        }
+      ],
+      "methodology": {
+        "targetValue": 1,
+        "normativeDirection": "increase",
+        "trendMethodology": "CAGRR",
+        "baseYear": 2015.0
+      },
+      "status": "Limited or No Progress"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "ER_CBD_SMTA",
+      "goal": "15",
+      "target": "15.6",
+      "indicator": "15.6.1",
+      "seriesDescription": "Total reported number of Standard Material Transfer Agreements (SMTAs) transferring plant genetic resources for food and agriculture to the country (number)",
+      "values": [
+        {
+          "year": 2012.0,
+          "value": 0.0
+        },
+        {
+          "year": 2013.0,
+          "value": 0.0
+        },
+        {
+          "year": 2014.0,
+          "value": 0.0
+        },
+        {
+          "year": 2015.0,
+          "value": 0.0
+        },
+        {
+          "year": 2016.0,
+          "value": 0.0
+        },
+        {
+          "year": 2017.0,
+          "value": 0.0
+        },
+        {
+          "year": 2018.0,
+          "value": 0.0
+        },
+        {
+          "year": 2019.0,
+          "value": 0.0
+        },
+        {
+          "year": 2020.0,
+          "value": 0.0
+        },
+        {
+          "year": 2021.0,
+          "value": 0.0
+        }
+      ],
+      "methodology": {
+        "value": 1,
+        "trendMethodology": "Binary",
+        "baseYear": 2015.0
+      },
+      "status": "Target Not Achieved"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "ER_CBD_ORSPGRFA",
+      "goal": "15",
+      "target": "15.6",
+      "indicator": "15.6.1",
+      "seriesDescription": "Countries that have legislative, administrative and policy framework or measures reported through the Online Reporting System on Compliance  of the International Treaty on Plant Genetic Resources for Food and Agriculture (PGRFA) (1 = YES; 0 = NO)",
+      "values": [
+        {
+          "year": 2016.0,
+          "value": 0.0
+        },
+        {
+          "year": 2017.0,
+          "value": 0.0
+        },
+        {
+          "year": 2018.0,
+          "value": 0.0
+        },
+        {
+          "year": 2019.0,
+          "value": 0.0
+        },
+        {
+          "year": 2020.0,
+          "value": 0.0
+        },
+        {
+          "year": 2021.0,
+          "value": 0.0
+        }
+      ],
+      "methodology": {
+        "value": 1,
+        "trendMethodology": "Binary",
+        "baseYear": 2016.0
+      },
+      "status": "Target Not Achieved"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "ER_CBD_PTYPGRFA",
+      "goal": "15",
+      "target": "15.6",
+      "indicator": "15.6.1",
+      "seriesDescription": "Countries that are contracting Parties to the International Treaty on Plant Genetic Resources for Food and Agriculture (PGRFA) (1 = YES; 0 = NO)",
+      "values": [
+        {
+          "year": 2012.0,
+          "value": 0.0
+        },
+        {
+          "year": 2013.0,
+          "value": 0.0
+        },
+        {
+          "year": 2014.0,
+          "value": 0.0
+        },
+        {
+          "year": 2015.0,
+          "value": 0.0
+        },
+        {
+          "year": 2016.0,
+          "value": 0.0
+        },
+        {
+          "year": 2017.0,
+          "value": 0.0
+        },
+        {
+          "year": 2018.0,
+          "value": 0.0
+        },
+        {
+          "year": 2019.0,
+          "value": 0.0
+        },
+        {
+          "year": 2020.0,
+          "value": 0.0
+        },
+        {
+          "year": 2021.0,
+          "value": 0.0
+        }
+      ],
+      "methodology": {
+        "value": 1,
+        "trendMethodology": "Binary",
+        "baseYear": 2015.0
+      },
+      "status": "Target Not Achieved"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "SG_REG_DETH75N",
+      "goal": "17",
+      "target": "17.19",
+      "indicator": "17.19.2",
+      "seriesDescription": "Countries with death registration data that are at least 75 percent complete (1 = YES; 0 = NO)",
+      "values": [
+        {
+          "year": 2018.0,
+          "value": 1.0
+        },
+        {
+          "year": 2019.0,
+          "value": 1.0
+        },
+        {
+          "year": 2020.0,
+          "value": 1.0
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Age": "10-14",
+      "Sex": "FEMALE",
+      "Reporting Type": "G",
+      "series": "SP_DYN_ADKL",
+      "goal": "3",
+      "target": "3.7",
+      "indicator": "3.7.2",
+      "seriesDescription": "Adolescent birth rate (per 1,000 women aged 15-19 and 10-14 years)",
+      "values": [
+        {
+          "year": 2012.0,
+          "value": 0.0
+        }
+      ],
+      "status": "Methodology Unavailable"
+    },
+    {
+      "Location": "ALLAREA",
+      "Reporting Type": "G",
+      "series": "SH_H2O_SAFE",
+      "goal": "6",
+      "target": "6.1",
+      "indicator": "6.1.1",
+      "seriesDescription": "Proportion of population using safely managed drinking water services, by urban/rural (%)",
+      "values": [
+        {
+          "year": 2000.0,
+          "value": 99.0
+        },
+        {
+          "year": 2001.0,
+          "value": 99.0
+        },
+        {
+          "year": 2002.0,
+          "value": 99.0
+        },
+        {
+          "year": 2003.0,
+          "value": 99.0
+        },
+        {
+          "year": 2004.0,
+          "value": 99.0
+        },
+        {
+          "year": 2005.0,
+          "value": 99.0
+        },
+        {
+          "year": 2006.0,
+          "value": 99.0
+        },
+        {
+          "year": 2007.0,
+          "value": 99.0
+        },
+        {
+          "year": 2008.0,
+          "value": 99.0
+        },
+        {
+          "year": 2009.0,
+          "value": 99.0
+        },
+        {
+          "year": 2010.0,
+          "value": 100.0
+        },
+        {
+          "year": 2011.0,
+          "value": 100.0
+        },
+        {
+          "year": 2012.0,
+          "value": 100.0
+        },
+        {
+          "year": 2013.0,
+          "value": 100.0
+        },
+        {
+          "year": 2014.0,
+          "value": 100.0
+        },
+        {
+          "year": 2015.0,
+          "value": 100.0
+        },
+        {
+          "year": 2016.0,
+          "value": 100.0
+        },
+        {
+          "year": 2017.0,
+          "value": 100.0
+        },
+        {
+          "year": 2018.0,
+          "value": 100.0
+        },
+        {
+          "year": 2019.0,
+          "value": 100.0
+        },
+        {
+          "year": 2020.0,
+          "value": 100.0
+        }
+      ],
+      "methodology": {
+        "targetValue": 99,
+        "normativeDirection": "increase",
+        "trendMethodology": "CAGRR",
+        "baseYear": 2015.0
+      },
+      "status": "Target Achieved"
+    },
+    {
+      "Mode of transportation": "ROA",
+      "Reporting Type": "G",
+      "series": "IS_RDP_PFVOL",
+      "goal": "9",
+      "target": "9.1",
+      "indicator": "9.1.2",
+      "seriesDescription": "Passenger volume (passenger kilometres), by mode of transport",
+      "values": [
+        {
+          "year": 2018.0,
+          "value": 0.0
+        },
+        {
+          "year": 2019.0,
+          "value": 0.0
+        }
+      ],
+      "status": "Methodology Unavailable"
+    }
+  ]
+}

@@ -1,12 +1,13 @@
 import { getSDGIcon } from '../utils/getSDGIcon';
 import SDGGoalList from '../Data/SDGGoalList.json';
+import { GoalStatusType } from '../Types';
 
 import '../style/statCardStyle.css';
 import '../style/tableStyle.css';
 
 interface Props {
   data: any;
-  goalStatuses: any;
+  goalStatuses: GoalStatusType[];
   document: [string, string];
 }
 
@@ -14,8 +15,8 @@ export const CompareAnalysis = (props: Props) => {
   const {
     data, goalStatuses, document,
   } = props;
-  const dataDoc1WithStatuses = data[0].map((d: any) => ({ ...d, status: goalStatuses.filter((el: any) => `${el.goal}` === `${d.sdg}`)[0].status }));
-  const dataDoc2WithStatuses = data[1].map((d: any) => ({ ...d, status: goalStatuses.filter((el: any) => `${el.goal}` === `${d.sdg}`)[0].status }));
+  const dataDoc1WithStatuses = data[0].map((d: any) => ({ ...d, status: goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status || 'Gaps NA' }));
+  const dataDoc2WithStatuses = data[1].map((d: any) => ({ ...d, status: goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status || 'Gaps NA' }));
   let similar = 0;
   for (let i = 0; i < dataDoc1WithStatuses.length; i += 1) {
     if (dataDoc1WithStatuses[i].category === dataDoc2WithStatuses[i].category) similar += 1;

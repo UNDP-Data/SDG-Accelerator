@@ -57,6 +57,7 @@ export const LineChart = (props: Props) => {
         setHoverData({
           year: yr,
           value: typeof data.values[indx].value === 'number' ? Math.abs(data.values[indx].value) < 1 ? data.values[indx].value : data.values[indx].value > 1000 ? format('.2s')(data.values[indx].value).replace('G', 'B') : format('.3s')(data.values[indx].value) : data.values[indx].value,
+          label: data.values[indx].label,
         });
       } else {
         setHoverData({
@@ -221,7 +222,7 @@ export const LineChart = (props: Props) => {
                               {hoverData.year}
                               :
                               {' '}
-                              {hoverData.value === null ? 'NA' : hoverData.value}
+                              {hoverData.label ? hoverData.label : hoverData.value === null ? 'NA' : hoverData.value}
                             </text>
                           </g>
                         )
@@ -239,7 +240,33 @@ export const LineChart = (props: Props) => {
                   </g>
                 </g>
               </svg>
-              <a style={{ fontSize: '0.875rem', opacity: 0.7 }} href={`https://unstats.un.org/sdgs/dataportal/countryprofiles/${countryCode}`} className='undp-style margin-top-05' target='_blank' rel='noreferrer'>Data Source: UNStats</a>
+              <div className='flex-div margin-top-05 margin-bottom-05'>
+                {
+                  data.methodology
+                    ? data.methodology.targetValue ? (
+                      <div style={{ fontSize: '0.875rem', opacity: 0.7 }}>
+                        Target value:
+                        {' '}
+                        {data.methodology.targetValue}
+                      </div>
+                    ) : null
+                    : null
+                }
+                {
+                  data.methodology
+                    ? data.methodology.baseYear ? (
+                      <div style={{ fontSize: '0.875rem', opacity: 0.7 }}>
+                        Base year:
+                        {' '}
+                        {data.methodology.baseYear}
+                      </div>
+                    ) : null
+                    : null
+                }
+              </div>
+              {
+                data.series === '***' ? <div style={{ fontSize: '0.875rem', opacity: 0.7 }}>Data Source: Country office</div> : <a style={{ fontSize: '0.875rem', opacity: 0.7 }} href={`https://unstats.un.org/sdgs/dataportal/countryprofiles/${countryCode}`} className='undp-style margin-top-05' target='_blank' rel='noreferrer'>Data Source: UNStats</a>
+              }
             </>
           )
       }
