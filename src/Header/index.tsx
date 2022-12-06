@@ -16,6 +16,7 @@ interface Props {
 
 export const Header = (props: Props) => {
   const { country } = props;
+  const [showMenu, setShowMenu] = useState(false);
   const countryFullName = country && CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === country) !== -1 ? CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === country)]['Country or Area'] : undefined;
   const [searchText, setSearchText] = useState<string | null>(null);
   const [openHeaderCountryModal, setOpenHeaderCountryModal] = useState(false);
@@ -79,14 +80,94 @@ export const Header = (props: Props) => {
                     </div>
                   ) : null
               }
-              <div style={{
-                width: '347px', height: '24px', justifyContent: 'flex-end', textAlign: 'right',
-              }}
-              >
-                <img style={{ cursor: 'pointer' }} onClick={() => { setOpenHeaderCountryModal(true); }} src={GlobeBlue} alt='Global Icon' />
+              <div className='flex-div nav-top-right'>
+                {
+                  country
+                    ? (
+                      <button
+                        type='button'
+                        className={showMenu ? 'undp-menu-hamburger is-active' : 'undp-menu-hamburger'}
+                        aria-label='menu-icon'
+                        onClick={() => { setShowMenu(!showMenu); }}
+                      >
+                        <span className='undp-hamburger-line undp-line-top' />
+                        <span className='undp-hamburger-line undp-line-middle' />
+                        <span className='undp-hamburger-line undp-line-bottom' />
+                        Nav Toggle
+                      </button>
+                    ) : null
+                }
+                <div style={{
+                  height: '24px', justifyContent: 'flex-end', textAlign: 'right',
+                }}
+                >
+                  <img style={{ cursor: 'pointer' }} onClick={() => { setOpenHeaderCountryModal(true); }} src={GlobeBlue} alt='Global Icon' />
+                </div>
               </div>
             </div>
           </div>
+          {
+            country ? (
+              <div className={showMenu ? 'undp-mobile-nav mobile-nav-show' : 'undp-mobile-nav'}>
+                <div>
+                  <NavLink
+                    className='undp-button button-tertiary button-arrow header-link'
+                    onClick={() => (setShowMenu(false))}
+                    to={`../sdg-push-diagnostic/${country}/sdg-trends`}
+                    style={{
+                      color: 'var(--black)',
+                      backgroundColor: 'transparent',
+                      justifyContent: 'flex-start',
+                    }}
+                  >
+                    SDG Trends
+                  </NavLink>
+                </div>
+                <div>
+                  <NavLink
+                    className='undp-button button-tertiary button-arrow header-link'
+                    onClick={() => (setShowMenu(false))}
+                    to={`../sdg-push-diagnostic/${country}/current-priorities`}
+                    style={{
+                      color: 'var(--black)',
+                      backgroundColor: 'transparent',
+                      justifyContent: 'flex-start',
+                    }}
+                  >
+                    Current Priorities
+                  </NavLink>
+                </div>
+                <div>
+                  <NavLink
+                    className='undp-button button-tertiary button-arrow header-link'
+                    onClick={() => (setShowMenu(false))}
+                    to={`../sdg-push-diagnostic/${country}/future-scenarios`}
+                    style={{
+                      color: 'var(--black)',
+                      backgroundColor: 'transparent',
+                      justifyContent: 'flex-start',
+                    }}
+                  >
+                    Future Scenarios
+                  </NavLink>
+                </div>
+                <div>
+                  <NavLink
+                    className='undp-button button-tertiary button-arrow header-link'
+                    onClick={() => (setShowMenu(false))}
+                    to={`../sdg-push-diagnostic/${country}/synergies-and-tradeoffs`}
+                    style={{
+                      color: 'var(--black)',
+                      backgroundColor: 'transparent',
+                      justifyContent: 'flex-start',
+                    }}
+                  >
+                    SDG Interlinkages
+                  </NavLink>
+                </div>
+              </div>
+            ) : null
+          }
         </header>
       </div>
       <Modal
