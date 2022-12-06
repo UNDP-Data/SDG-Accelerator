@@ -10,9 +10,11 @@ import { SDGGOALS, SDG_COLOR_ARRAY, SDG_ICON_SIZE } from '../Constants';
 import { getSDGIcon } from '../utils/getSDGIcon';
 import { describeArc } from '../utils/getArc';
 import { GoalStatusType } from '../Types';
+import { SalienceGraph } from './SalienceGraph';
 
 import '../style/chipStyle.css';
 import '../style/tabStyle.css';
+import '../style/buttonStyle.css';
 import '../style/selectStyle.css';
 
 interface Props {
@@ -44,6 +46,17 @@ const TooltipEl = styled.div<TooltipElProps>`
   padding: 1rem;
 `;
 
+interface WidthProps {
+  width: string;
+}
+
+const GraphContainer = styled.div<WidthProps>`
+  width: ${(props) => props.width};
+  @media (max-width: 720px) {
+    width: 100%;
+  }
+`;
+
 export const VNRAnalysis = (props: Props) => {
   const {
     data,
@@ -53,7 +66,8 @@ export const VNRAnalysis = (props: Props) => {
   const [selectedSDG, setSelectedSDG] = useState<any>(null);
   const [hoveredSDG, setHoveredSDG] = useState<null | SDGHoveredProps>(null);
   const [nodeData, setNodeData] = useState<any>(null);
-  const dataWithStatuses = data.map((d: any) => ({ ...d, category: d.salience === 0 ? 'No Mention' : d.category.charAt(0).toUpperCase() + d.category.slice(1), status: goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status ? goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status : 'Gap NA' }));
+  const [showSalienceGraph, setShowSalienceGraph] = useState(false);
+  const dataWithStatuses = data.map((d: any) => ({ ...d, category: d.salience === 0 ? 'No Mention' : d.category.charAt(0).toUpperCase() + d.category.slice(1), status: goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status || 'Gaps NA' }));
   const medium = data.filter((d: any) => d.category === 'medium');
   const low = data.filter((d: any) => d.category === 'low' && d.salience !== 0);
   const high = data.filter((d: any) => d.category === 'high');
@@ -62,7 +76,7 @@ export const VNRAnalysis = (props: Props) => {
   const margin = 20;
   const cellSize = (gridSize - margin) / 4;
   const nodeRadius = 15;
-  const statusArray = ['Identified Gap', 'For Review', 'On Track', 'Gap NA'];
+  const statusArray = ['Identified Gap', 'For Review', 'On Track', 'Gaps NA'];
   const priorityArray = ['High', 'Medium', 'Low', 'No Mention'];
   useEffect(() => {
     setNodeData(null);
@@ -84,8 +98,8 @@ export const VNRAnalysis = (props: Props) => {
             {' '}
             {document}
           </h2>
-          <div className='flex-div margin-top-07' style={{ gap: '2rem' }}>
-            <div style={{ width: 'calc(40% - 1rem)' }}>
+          <div className='flex-div margin-top-07 flex-wrap' style={{ gap: '2rem' }}>
+            <GraphContainer width='calc(40% - 1rem)'>
               <svg width='calc(100% - 20px)' viewBox='0 0 360 360'>
                 <path
                   d={describeArc(180, 180, 140, 0, 360 * (high.length / (17)))}
@@ -134,8 +148,8 @@ export const VNRAnalysis = (props: Props) => {
                   SDGs
                 </text>
               </svg>
-            </div>
-            <div style={{ width: 'calc(60% - 1rem)' }}>
+            </GraphContainer>
+            <GraphContainer width='calc(60% - 1rem)'>
               <div className='margin-bottom-09'>
                 <h4 className='undp-typography margin-bottom-03' style={{ color: 'var(--blue-700)' }}>
                   <span className='bold'>
@@ -228,13 +242,13 @@ export const VNRAnalysis = (props: Props) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </GraphContainer>
           </div>
         </div>
       </div>
-      <div className=' margin-top-13 max-width-1440 flex-div margin-bottom-13' style={{ gap: '2rem' }}>
-        <div className='flex-div margin-top-07' style={{ gap: '2rem', width: '100%' }}>
-          <div style={{ width: 'calc(50% - 1rem)' }}>
+      <div className=' margin-top-13 max-width-1440 flex-div margin-bottom-13' style={{ gap: '2rem', padding: '0 1rem' }}>
+        <div className='flex-div margin-top-07 flex-wrap' style={{ gap: '2rem', width: '100%' }}>
+          <GraphContainer width='calc(50% - 1rem)'>
             {
               nodeData
                 ? (
@@ -259,6 +273,7 @@ export const VNRAnalysis = (props: Props) => {
                       statusArray.map((d, i) => (
                         <g
                           transform={`translate(0,${(i * cellSize) + margin + (cellSize / 2)})`}
+                          key={i}
                         >
                           <text
                             fontSize={14}
@@ -393,8 +408,8 @@ export const VNRAnalysis = (props: Props) => {
                   </div>
                 )
             }
-          </div>
-          <div style={{ width: 'calc(50% - 1rem)' }}>
+          </GraphContainer>
+          <GraphContainer width='calc(50% - 1rem)'>
             <h2 className='undp-typography'>
               Comparing SDG national priorities based on
               {' '}
@@ -424,8 +439,21 @@ export const VNRAnalysis = (props: Props) => {
                 may not reflect the actual and complete priorities of the government. They are a starting point for further discussion.
               </span>
             </p>
-          </div>
+          </GraphContainer>
         </div>
+      </div>
+      {
+        showSalienceGraph
+          ? (
+            <SalienceGraph
+              data={data}
+              document={document}
+              goalStatuses={goalStatuses}
+            />
+          ) : null
+      }
+      <div className='max-width-1440 margin-bottom-13' style={{ padding: '0 1rem' }}>
+        <button type='button' className='undp-button button-primary' onClick={() => { setShowSalienceGraph(!showSalienceGraph); }}>{showSalienceGraph ? 'Hide Salience Graph' : 'Show Salience Graph'}</button>
       </div>
       {
         hoveredSDG ? (

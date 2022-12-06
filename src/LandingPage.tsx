@@ -33,8 +33,15 @@ export const LandingPage = () => {
     json(`${DATASOURCELINK}/data/CountryData/${countryCode}.json`, (err: any, d: CountryDataType) => {
       if (err) { setError(err); }
       setCountryData(d.tsData);
+      const SDGs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+      const goalStatus = SDGs.map((sdg) => (d.goalStatus.findIndex((g) => g.goal === sdg) !== -1 ? d.goalStatus[d.goalStatus.findIndex((g) => g.goal === sdg)]
+        : {
+          goal: sdg,
+          noOfIndicatorsWithData: 0,
+          status: null,
+        }));
       setStatuses({
-        goalStatus: d.goalStatus,
+        goalStatus,
         targetStatus: d.targetStatus,
         indicatorStatus: d.indicatorStatus,
       });

@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Select } from 'antd';
 import sortBy from 'lodash.sortby';
+import { json } from 'd3-request';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 import '../style/heroSections.css';
 import SDGTrends from '../img/01.png';
@@ -11,6 +12,11 @@ import FutureImg from '../img/03.png';
 import InterlinkagesImg from '../img/04.png';
 import Background from '../img/UNDP-hero-image.png';
 import GIZLogo from '../img/gizLogo.png';
+import { DATASOURCELINK } from '../Constants';
+import { CountryGoalStatusType, SDGSListType } from '../Types';
+import { GlobalTrendViz } from './GlobalTrendViz';
+
+const SDGList:SDGSListType[] = require('../Data/SDGGoalList.json');
 
 interface Props {
   countryCode?: string;
@@ -23,12 +29,27 @@ const HeroImageEl = styled.div`
   margin-top: 7.1875rem;
 `;
 
+const H2 = styled.h2`;
+  margin-bottom: var(--spacing-05);
+  @media (max-width: 720px) {
+    margin-bottom: var(--spacing-11) !important;
+  }
+`;
+
 export const HomePage = (props: Props) => {
   const {
     countryCode,
     countryFullName,
   } = props;
-  const [selectedCountry, setSelectedCountry] = useState('Afghanistan');
+  const [selectedGoal, setSelectedGoal] = useState('SDG 1');
+  const [allCountriesData, setAllCountriesData] = useState<CountryGoalStatusType[] | undefined>(undefined);
+
+  useEffect(() => {
+    json(`${DATASOURCELINK}/data/AllCountryGoalStatus.json`, (err: any, d: CountryGoalStatusType[]) => {
+      if (err) { throw err; }
+      setAllCountriesData(d);
+    });
+  }, []);
   return (
     <>
       <HeroImageEl className='undp-hero-image'>
@@ -50,24 +71,15 @@ export const HomePage = (props: Props) => {
               <div className='flex-div margin-top-09'>
                 <Select
                   className='undp-select'
-                  placeholder='Select Year'
+                  placeholder='Select a country'
                   showSearch
-                  value={selectedCountry}
-                  onChange={(value) => { setSelectedCountry(value); }}
+                  onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
                   style={{ flexGrow: 1 }}
                 >
                   {
                     sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
                   }
                 </Select>
-                <NavLink
-                  to={`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === selectedCountry)]['Alpha-3 code-1']}`}
-                  style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
-                >
-                  <button type='button' className='undp-button button-primary button-arrow'>
-                    Explore Country Data
-                  </button>
-                </NavLink>
               </div>
             )
           }
@@ -77,7 +89,7 @@ export const HomePage = (props: Props) => {
         countryCode ? null
           : (
             <div className='undp-hero-section-blue'>
-              <div className='max-width flex-div' style={{ padding: '0 1rem' }}>
+              <div className='max-width flex-div flex-wrap' style={{ padding: '0 1rem' }}>
                 <div className='undp-section-content'>
                   <h2 className='undp-typography'>What does the SDG Push Diagnostic do?</h2>
                 </div>
@@ -91,8 +103,48 @@ export const HomePage = (props: Props) => {
             </div>
           )
       }
+      {
+        countryCode ? null
+          : (
+            <div className='max-width margin-top-13' style={{ padding: '0rem 1rem' }}>
+              <h2 className='undp-typography margin-bottom-05'>Global SDG Trends</h2>
+              <p className='undp-typography large-font margin-bottom-09'>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dolor nisl, gravida in urna et, congue placerat sem. Aenean interdum nisl non ipsum dapibus scelerisque. Vestibulum congue libero sit amet interdum aliquet. Nunc feugiat placerat arcu, quis tincidunt felis volutpat sit amet. Praesent tempor facilisis dictum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis nisi sem, vestibulum eget eleifend vitae,
+              </p>
+              <Select
+                className='undp-select'
+                placeholder='Select Year'
+                showSearch
+                value={selectedGoal}
+                onChange={(value) => { setSelectedGoal(value); }}
+                style={{ flexGrow: 1 }}
+              >
+                {
+                  SDGList.map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d.Goal}>{`${d.Goal}: ${d['Goal Name']}`}</Select.Option>)
+                }
+              </Select>
+              {
+                allCountriesData
+                  ? (
+                    <GlobalTrendViz
+                      goal={selectedGoal}
+                      data={allCountriesData}
+                    />
+                  ) : (
+                    <div style={{
+                      width: '100%', height: '400px', backgroundColor: 'var(--gray-100)', paddingTop: '150px',
+                    }}
+                    >
+                      <div className='undp-loader' style={{ margin: 'auto' }} />
+                    </div>
+                  )
+              }
+            </div>
+          )
+      }
       <div className='margin-top-13 margin-bottom-13 max-width'>
-        <div className='undp-section margin-bottom-13'>
+        <H2 className='undp-typography' style={{ padding: '0rem 1rem' }}>SDG push Diagnostics Features</H2>
+        <div className='undp-section margin-bottom-13 image-right'>
           <div>
             <h4 className='undp-typography margin-top-05'>SDG Trends</h4>
             <p className='undp-typography large-font'>
@@ -136,7 +188,7 @@ export const HomePage = (props: Props) => {
             <img alt='sgd trends' src={SDGTrends} style={{ width: '100%' }} />
           </div>
         </div>
-        <div className='undp-section margin-bottom-13'>
+        <div className='undp-section margin-bottom-13 image-left'>
           <div>
             <img alt='Future Scenarios' src={PrioritiesImg} style={{ width: '100%' }} />
           </div>
@@ -181,7 +233,7 @@ export const HomePage = (props: Props) => {
             }
           </div>
         </div>
-        <div className='undp-section margin-bottom-13'>
+        <div className='undp-section margin-bottom-13 image-right'>
           <div>
             <h4 className='undp-typography margin-top-05'>Future Scenarios</h4>
             <p className='undp-typography large-font'>
@@ -223,7 +275,7 @@ export const HomePage = (props: Props) => {
             <img alt='future scenarios' src={FutureImg} style={{ width: '100%' }} />
           </div>
         </div>
-        <div className='undp-section'>
+        <div className='undp-section image-left'>
           <div>
             <img alt='sinterlinkages' src={InterlinkagesImg} style={{ width: '100%' }} />
           </div>
@@ -276,31 +328,22 @@ export const HomePage = (props: Props) => {
               <div className='flex-div'>
                 <Select
                   className='undp-select'
-                  placeholder='Select Year'
                   showSearch
-                  value={selectedCountry}
-                  onChange={(value) => { setSelectedCountry(value); }}
+                  placeholder='Select a country'
+                  onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
                   style={{ flexGrow: 1 }}
                 >
                   {
                     sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
                   }
                 </Select>
-                <NavLink
-                  to={`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === selectedCountry)]['Alpha-3 code-1']}`}
-                  style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
-                >
-                  <button type='button' className='undp-button button-primary button-arrow'>
-                    Explore Country Data
-                  </button>
-                </NavLink>
               </div>
             </div>
           </div>
         )
       }
       <div className='undp-hero-section-gray'>
-        <div className='max-width flex-div' style={{ padding: '0 1rem' }}>
+        <div className='max-width flex-div flex-wrap' style={{ padding: '0 1rem' }}>
           <div className='undp-section-content'>
             <h2 className='undp-typography'>Get in touch</h2>
           </div>

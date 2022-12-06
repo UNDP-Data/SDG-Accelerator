@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { GoalStatusType } from '../Types';
 
 import '../style/chipStyle.css';
 import '../style/tabStyle.css';
@@ -6,6 +7,7 @@ import '../style/selectStyle.css';
 
 interface Props {
   data: any;
+  goalStatuses: GoalStatusType[];
   document: string;
 }
 
@@ -14,14 +16,15 @@ const ColorKeyBox = styled.div`
   height: 1rem;
 `;
 
-export const VNRAnalysis = (props: Props) => {
+export const SalienceGraph = (props: Props) => {
   const {
     data,
+    goalStatuses,
     document,
   } = props;
   return (
     <>
-      <div className='max-width-1440 margin-top-13 margin-bottom-13'>
+      <div className='max-width-1440 margin-top-13' style={{ padding: '0 1rem' }}>
         <h3 className='undp-typography bold'>
           Relative Salience Based on
           {' '}
@@ -30,22 +33,22 @@ export const VNRAnalysis = (props: Props) => {
         <p className='undp-typography'>
           Relative Salience is a measure of the amount of text content linked to each SDG as compared to the Goal, which is the most salient in the text. Relative Salience can help to understand which of the SDGs covered in the document receive most attention and which ones are only briefly treated.
         </p>
-        <div className='flex-div flex-vert-align-center' style={{ gap: '2rem' }}>
+        <div className='flex-div flex-vert-align-center flex-wrap margin-bottom-05' style={{ gap: '1rem' }}>
           <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem' }}>
             <ColorKeyBox style={{ backgroundColor: 'var(--dark-green' }} />
-            <p className='small-font'>On track</p>
+            <p className='small-font margin-top-00 margin-bottom-00'>On track</p>
           </div>
           <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem' }}>
             <ColorKeyBox style={{ backgroundColor: 'var(--dark-yellow' }} />
-            <p className='small-font'>For review</p>
+            <p className='small-font margin-top-00 margin-bottom-00'>For review</p>
           </div>
           <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem' }}>
             <ColorKeyBox style={{ backgroundColor: 'var(--dark-red' }} />
-            <p className='small-font'>Identified gap</p>
+            <p className='small-font margin-top-00 margin-bottom-00'>Identified gap</p>
           </div>
           <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem' }}>
             <ColorKeyBox style={{ backgroundColor: 'var(--gray-400' }} />
-            <p className='small-font'>Gaps NA</p>
+            <p className='small-font margin-top-00 margin-bottom-00'>Gaps NA</p>
           </div>
         </div>
         <svg width='100%' viewBox='0 0 1280 430' style={{ marginBottom: '4rem' }}>
@@ -118,7 +121,9 @@ export const VNRAnalysis = (props: Props) => {
                   cx={37.5}
                   r={15}
                   cy={400 - (375 * d.salience)}
-                  fill={d.status === 'On Track' ? '#59BA47' : d.status === 'For Review' ? '#FBC412' : d.status === 'Identified Gap' ? '#D12800' : '#A9B1B7'}
+                  style={{
+                    fill: goalStatuses.findIndex((el) => el.goal === d.sdg) !== -1 ? goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'On Track' ? 'var(--dark-green)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'For Review' ? 'var(--dark-yellow)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'Identified Gap' ? 'var(--dark-red)' : 'var(--gray-500)' : 'var(--gray-500)',
+                  }}
                 />
                 <line
                   strokeWidth={2}
@@ -127,13 +132,17 @@ export const VNRAnalysis = (props: Props) => {
                   x2={37.5}
                   y1={400 - (375 * d.salience)}
                   y2={400}
-                  stroke={d.status === 'On Track' ? '#59BA47' : d.status === 'For Review' ? '#FBC412' : d.status === 'Identified Gap' ? '#D12800' : '#A9B1B7'}
+                  style={{
+                    stroke: goalStatuses.findIndex((el) => el.goal === d.sdg) !== -1 ? goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'On Track' ? 'var(--dark-green)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'For Review' ? 'var(--dark-yellow)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'Identified Gap' ? 'var(--dark-red)' : 'var(--gray-500)' : 'var(--gray-500)',
+                  }}
                 />
                 <text
                   x={37.5}
                   y={400 - (375 * d.salience)}
                   dy={-20}
-                  fill={d.status === 'On Track' ? '#59BA47' : d.status === 'For Review' ? '#FBC412' : d.status === 'Identified Gap' ? '#D12800' : '#A9B1B7'}
+                  style={{
+                    fill: goalStatuses.findIndex((el) => el.goal === d.sdg) !== -1 ? goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'On Track' ? 'var(--dark-green)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'For Review' ? 'var(--dark-yellow)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'Identified Gap' ? 'var(--dark-red)' : 'var(--gray-500)' : 'var(--gray-500)',
+                  }}
                   fontSize={12}
                   textAnchor='middle'
                 >

@@ -27,7 +27,7 @@ export const Footer = () => {
               <h6 className='undp-typography' style={{ textAlign: 'center' }}>This platform is powered by data and methodology from</h6>
             </div>
             <div
-              className='flex-div flew-wrap margin-top-05 flex-hor-align-center'
+              className='flex-div flex-wrap margin-top-05 flex-hor-align-center'
               style={{
                 padding: '0 0.75rem', maxWidth: '83.33333%', margin: 'auto', gap: '2.5rem',
               }}
@@ -39,7 +39,7 @@ export const Footer = () => {
             </div>
           </div>
           <div className='undp-footer'>
-            <div className='flex-div flex-space-between margin-bottom-07' style={{ padding: '0 0.75rem var(--spacing-09) 0.75rem', borderBottom: '1px solid var(--white)' }}>
+            <div className='flex-div flex-space-between margin-bottom-07 flex-wrap' style={{ padding: '0 0.75rem var(--spacing-09) 0.75rem', borderBottom: '1px solid var(--white)' }}>
               <div className='flex-div flex-vert-align-center' style={{ margin: 0 }}>
                 <img alt='undp logo' src={UNDPLogo} style={{ width: '72px' }} />
                 <h5 className='undp-typography margin-bottom-00'>
@@ -48,8 +48,8 @@ export const Footer = () => {
                   Data Futures Platform
                 </h5>
               </div>
-              <div>
-                <div className='margin-bottom-05' style={{ textAlign: 'right' }}>
+              <div className='undp-footer-right-container'>
+                <div className='margin-bottom-05'>
                   <img style={{ cursor: 'pointer' }} onClick={() => { setOpenCountryModal(true); }} src={GlobeWhite} alt='icon-global' width='24px' height='24px' />
                 </div>
                 <div className='margin-bottom-03 '>

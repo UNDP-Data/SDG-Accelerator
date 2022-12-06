@@ -13,7 +13,7 @@ interface Props {
 }
 
 const HeroImageEl = styled.div`
-background: url(${Background}) rgba(0, 0, 0, 0.3) no-repeat center;
+  background: url(${Background}) rgba(0, 0, 0, 0.3) no-repeat center;
   background-size: cover;
   margin-top: 7.1875rem;
 `;
@@ -47,7 +47,7 @@ export const FutureScenariosList = (props: Props) => {
         </div>
       </HeroImageEl>
       <div className='undp-hero-section-gray'>
-        <div className='max-width flex-div' style={{ padding: '0 1rem' }}>
+        <div className='max-width flex-div flex-wrap' style={{ padding: '0 1rem' }}>
           <div className='undp-section-content'>
             <h2 className='undp-typography'>SDG Push Scenario</h2>
           </div>
@@ -65,12 +65,12 @@ export const FutureScenariosList = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className='margin-top-13 max-width-1440'>
+      <div className='margin-top-13 max-width-1440' style={{ padding: '0 1rem' }}>
         <h3 className='undp-typography bold margin-bottom-07'>Future Scenarios</h3>
         {
           data ? (
             <>
-              <div className='flex-div margin-bottom-09'>
+              <div className='flex-div margin-bottom-09 flex-wrap'>
                 {
                   SDGGOALSFORFUTURESCENARIO.map((d, i) => (
                     <button

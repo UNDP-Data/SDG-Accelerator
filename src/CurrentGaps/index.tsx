@@ -24,6 +24,23 @@ const HeroImageEl = styled.div`
   margin-top: 7.1875rem;
 `;
 
+const StatCardsContainer = styled.div`
+  width: 'calc(33.33% - 0.667rem)';
+  min-width: 15rem !important;
+  flex-grow: 1;
+`;
+
+interface WidthProps {
+  width: string;
+}
+
+const GraphContainer = styled.div<WidthProps>`
+  width: ${(props) => props.width};
+  @media (max-width: 720px) {
+    width: 100%;
+  }
+`;
+
 export const CurrentGaps = (props: Props) => {
   const {
     goalStatuses,
@@ -90,9 +107,15 @@ export const CurrentGaps = (props: Props) => {
       <div className=' margin-top-00' style={{ backgroundColor: 'var(--gray-200)', padding: 'var(--spacing-09)' }}>
         <div className='max-width'>
           <h2 className='undp-typography'>Current Gaps</h2>
-          <div className='flex-div margin-top-07' style={{ gap: '2rem' }}>
-            <div style={{ width: 'calc(40% - 1rem)' }}>
-              <svg width='calc(100% - 20px)' viewBox='0 0 360 360'>
+          <div className='flex-div margin-top-07 flex-wrap' style={{ gap: '2rem' }}>
+            <GraphContainer width='calc(40% - 1rem)'>
+              <svg
+                width='calc(100% - 20px)'
+                style={{
+                  maxWidth: '360px', margin: '0 auto', display: 'flex', justifyContent: 'center',
+                }}
+                viewBox='0 0 360 360'
+              >
                 <path
                   d={describeArc(180, 180, 140, 0, 360 * (onTrack.length / (17)))}
                   fill='none'
@@ -140,8 +163,8 @@ export const CurrentGaps = (props: Props) => {
                   SDGs
                 </text>
               </svg>
-            </div>
-            <div style={{ width: 'calc(60% - 1rem)' }}>
+            </GraphContainer>
+            <GraphContainer width='calc(60% - 1rem)'>
               <div className='margin-bottom-09'>
                 <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--dark-green)' }}>
                   <span className='bold'>
@@ -234,11 +257,11 @@ export const CurrentGaps = (props: Props) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </GraphContainer>
           </div>
         </div>
       </div>
-      <div className='margin-top-13 max-width-1440'>
+      <div className='margin-top-13 max-width-1440' style={{ padding: '0 1rem' }}>
         <Select
           value={selectedSDG}
           className='sdg-select'
@@ -271,30 +294,30 @@ export const CurrentGaps = (props: Props) => {
               <p>SDG Trend</p>
             </div>
           </div>
-          <div style={{ width: 'calc(33.33% - 0.667rem)' }}>
+          <StatCardsContainer>
             <div className='stat-card'>
               <h2>
                 {TargetIndicatorCount[TargetIndicatorCount.findIndex((d) => `SDG ${d.sdg}` === selectedSDG.split(':')[0])].noOfTargets}
               </h2>
               <p>No. of Targets</p>
             </div>
-          </div>
-          <div style={{ width: 'calc(33.33% - 0.667rem)' }}>
+          </StatCardsContainer>
+          <StatCardsContainer>
             <div className='stat-card'>
               <h2>
                 {TargetIndicatorCount[TargetIndicatorCount.findIndex((d) => `SDG ${d.sdg}` === selectedSDG.split(':')[0])].noOfIndicators}
               </h2>
               <p>No. of indicators</p>
             </div>
-          </div>
-          <div style={{ width: 'calc(33.33% - 0.667rem)' }}>
+          </StatCardsContainer>
+          <StatCardsContainer>
             <div className='stat-card'>
               <h2>
                 {goalStatuses[goalStatuses.findIndex((d) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].noOfIndicatorsWithData}
               </h2>
               <p>No. of indicators with methodology and data</p>
             </div>
-          </div>
+          </StatCardsContainer>
         </div>
         <SDGGapsData
           statusData={statuses}

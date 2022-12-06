@@ -291,7 +291,16 @@ a.undp-style:focus-visible {
 }
 
 .large-font {
-  font-size: 1.25rem !important;
+  font-size: 1rem !important;
+}
+
+@media (min-width: 48em) {
+  .karge-font {
+    font-size: 1.25rem !important;
+  }
+  .small-font {
+    font-size: 0.875rem !important;
+  }
 }
 
 .label {

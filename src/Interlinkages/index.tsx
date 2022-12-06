@@ -68,7 +68,7 @@ export const Interlinkages = (props: Props) => {
         </div>
       </HeroImageEl>
       <div className='undp-hero-section-gray'>
-        <div className='max-width flex-div' style={{ padding: '0 1rem' }}>
+        <div className='max-width flex-div flex-wrap' style={{ padding: '0 1rem' }}>
           <div className='undp-section-content'>
             <h2 className='undp-typography'>Synergies and Tradeoffs</h2>
           </div>
@@ -80,7 +80,7 @@ export const Interlinkages = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className='margin-top-13 max-width-1440'>
+      <div className='margin-top-13 max-width-1440' style={{ padding: '0 1rem' }}>
         <div className='flex-div flex-space-between flex-vert-align-center margin-bottom-05'>
           <h3 className='undp-typography bold'>Interlinkages Visualization</h3>
           <Radio.Group onChange={(d) => { setLinkageTypes(d.target.value); }} value={linkageType}>
@@ -104,7 +104,7 @@ export const Interlinkages = (props: Props) => {
           <span className='italics'>Click on the target to see the interlinkages</span>
         </p>
       </div>
-      <div className='margin-top-07 max-width-1440 margin-bottom-13'>
+      <div className='margin-top-07 max-width-1440 margin-bottom-13' style={{ padding: '0 1rem' }}>
         <InterlinkagesViz
           selectedTarget={selectedTarget}
           setSelectedTarget={setSelectedTarget}
@@ -113,7 +113,7 @@ export const Interlinkages = (props: Props) => {
           linkageData={LinkageData}
         />
       </div>
-      <div className='margin-top-13 max-width-1440 margin-bottom-13'>
+      <div className='margin-top-13 max-width-1440 margin-bottom-13' style={{ padding: '0 1rem' }}>
         <NetworkGraph
           data={targetStatus}
           linkageData={LinkageData}

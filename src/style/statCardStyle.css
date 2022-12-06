@@ -5,8 +5,6 @@
   cursor: pointer;
   color: var(--black);
   transition: 300ms all;
-  min-width: 15rem !important;
-  flex-grow: 1;
 }
 
 .stat-card-long {
@@ -19,7 +17,7 @@
 }
 
 .stat-card:hover {
-  background-color: var(--light-yellow);
+  background-color: var(--gray-300);
 }
 
 .stat-card:hover h2 {

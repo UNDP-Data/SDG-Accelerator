@@ -23,6 +23,23 @@
   justify-content: flex-end;
 }
 
+.undp-footer-right-container>div {
+  text-align: right;
+}
+
+@media (max-width: 680px) { 
+  .undp-footer-right-container{
+    width: 100%;
+    margin-top: var(--spacing-09);
+  }
+  .undp-footer-right-link {
+    justify-content: flex-start;
+  }
+  .undp-footer-right-container>div {
+    text-align: left;
+  }
+}
+
 .undp-footer-link {
   font-size: 1rem !important;
   color: var(--white) !important;

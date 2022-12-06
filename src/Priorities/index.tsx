@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import {
   Modal,
+  Radio,
   Select, Tabs,
 } from 'antd';
 import { useEffect, useRef, useState } from 'react';
@@ -11,12 +12,15 @@ import sortBy from 'lodash.sortby';
 import reverse from 'lodash.reverse';
 import { VNRAnalysis } from './VNRAnalysis';
 import { CompareAnalysis } from './CompareTable';
+import { GoalStatusType } from '../Types';
 
 import '../style/tabStyle.css';
 import '../style/selectStyle.css';
 import '../style/modalStyle.css';
+import '../style/radioStyle.css';
 import Background from '../img/UNDP-hero-image.png';
-import { GoalStatusType } from '../Types';
+import ChevronRight from '../img/chevron-small-right.svg';
+import ChevronDown from '../img/chevron-small-down.svg';
 
 interface Props {
   countrySelected: string;
@@ -30,12 +34,32 @@ const HeroImageEl = styled.div`
   margin-top: 7.1875rem;
 `;
 
-const UploadEl = styled.div`
+interface WidthProps {
+  width: string;
+}
+
+const UploadEl = styled.div<WidthProps>`
   display: flex;
   gap: 1rem;
   align-items: center;
   border: 2px solid var(--gray-700);
   background-color: var(--white);
+  width: ${(props) => props.width};
+  @media (max-width: 1172px) {
+    width: 100%;
+  }
+`;
+
+const Button = styled.button`
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  opacity: 0.7;
+  &:hover {
+    opacity: 0.9;
+  }
 `;
 
 const SelectedEl = styled.div`
@@ -77,17 +101,23 @@ export const Priorities = (props: Props) => {
   } = props;
   const fileInputRef = useRef<any>(null);
   const [selectedFileName, setSelectedFileName] = useState<string>('');
+  const [selectedFileNameAnalyzed, setSelectedFileNameAnalyzed] = useState<string>('');
   const [loading, setLoading] = useState(false);
   const [selectedFile, setSelectedFile] = useState<any>(null);
   const [selectedCompareFileName1, setSelectedCompareFileName1] = useState<string>('');
+  const [selectedCompareFileName1Analyzed, setSelectedCompareFileName1Analyzed] = useState<string>('');
   const [selectedCompareFile1, setSelectedCompareFile1] = useState<any>(null);
   const [selectedCompareFileName2, setSelectedCompareFileName2] = useState<string>('');
+  const [selectedCompareFileName2Analyzed, setSelectedCompareFileName2Analyzed] = useState<string>('');
   const [selectedCompareFile2, setSelectedCompareFile2] = useState<any>(null);
   const [vnrYear, setVNRYear] = useState<null | number>(null);
   const [selectYear, setSelectYear] = useState<null | number>(null);
   const [error, setError] = useState<any>(null);
   const [data, setData] = useState<any>(null);
   const [countryVNRs, setCountryVNRs] = useState<any>(null);
+  const [showAdvanceSettings, setShowAdvancedSettings] = useState(false);
+  const [model, setModel] = useState<'multiclass' | 'multilabel'>('multilabel');
+  const [granularity, setGranularity] = useState<'sentence' | 'paragraph'>('paragraph');
 
   const handleFileSelect = (event: any) => {
     if (event.target.files) {
@@ -118,12 +148,12 @@ export const Priorities = (props: Props) => {
     if (selectedCompareFile1 && selectedCompareFile2) {
       const formData1 = new FormData();
       formData1.append('file', selectedCompareFile1);
-      formData1.append('model', 'multilabel');
-      formData1.append('granularity', 'paragraph');
+      formData1.append('model', model);
+      formData1.append('granularity', granularity);
       const formData2 = new FormData();
       formData2.append('file', selectedCompareFile2);
-      formData2.append('model', 'multilabel');
-      formData2.append('granularity', 'paragraph');
+      formData2.append('model', model);
+      formData2.append('granularity', granularity);
       axios({
         method: 'post',
         url: 'https://sdg-accelerator-api.azurewebsites.net/upload',
@@ -140,6 +170,8 @@ export const Priorities = (props: Props) => {
             .then((response2: any) => {
               if (typeof response2.data === 'string' || typeof response1.data === 'string') setError('PDF File Required');
               else {
+                setSelectedCompareFileName1Analyzed(selectedCompareFileName1);
+                setSelectedCompareFileName2Analyzed(selectedCompareFileName2);
                 setData({ mode: 'compare', data: [response1.data.sdgs, response2.data.sdgs] });
                 setError(null);
                 setLoading(false);
@@ -161,8 +193,8 @@ export const Priorities = (props: Props) => {
     if (selectedFile) {
       const formData = new FormData();
       formData.append('file', selectedFile);
-      formData.append('model', 'multilabel');
-      formData.append('granularity', 'paragraph');
+      formData.append('model', model);
+      formData.append('granularity', granularity);
       axios({
         method: 'post',
         url: 'https://sdg-accelerator-api.azurewebsites.net/upload',
@@ -172,6 +204,7 @@ export const Priorities = (props: Props) => {
         .then((response: any) => {
           if (typeof response.data === 'string') setError('PDF File Required');
           else {
+            setSelectedFileNameAnalyzed(selectedFileName);
             setData({ mode: 'analyze', data: response.data.sdgs });
             setLoading(false);
             setError(null);
@@ -187,7 +220,7 @@ export const Priorities = (props: Props) => {
   const analyzeVNR = () => {
     if (selectYear) {
       const { language } = countryVNRs[countryVNRs.findIndex((d: any) => d.year === selectYear)];
-      axios.get(`https://sdg-accelerator-api.azurewebsites.net/vnrs/${countrySelected.toLowerCase()}/${selectYear}/${language}/multiclass/sentence`)
+      axios.get(`https://sdg-accelerator-api.azurewebsites.net/vnrs/${countrySelected.toLowerCase()}/${selectYear}/${language}/${model}/${granularity}`)
         .then((res) => {
           setData(res.data.sdgs);
           setVNRYear(selectYear);
@@ -232,6 +265,11 @@ export const Priorities = (props: Props) => {
             <Tabs
               defaultActiveKey='vnrs'
               className='undp-tabs'
+              onChange={() => {
+                setShowAdvancedSettings(false);
+                setModel('multiclass');
+                setGranularity('sentence');
+              }}
               items={[
                 {
                   label: 'Analyze VNRs',
@@ -265,6 +303,40 @@ export const Priorities = (props: Props) => {
                                       countryVNRs.map((d: any, i: number) => <Select.Option key={i} className='undp-select-option' value={d.year}>{d.year}</Select.Option>)
                                     }
                                   </Select>
+                                </div>
+                                <div className='margin-top-07'>
+                                  <Button
+                                    role='button'
+                                    className='flex-div flex-vert-align-center margin-bottom-05'
+                                    style={{ gap: '0.25rem' }}
+                                    onClick={() => { setShowAdvancedSettings(!showAdvanceSettings); }}
+                                  >
+                                    {
+                                      showAdvanceSettings ? <img alt='chevron-down' src={ChevronDown} style={{ width: '14px' }} />
+                                        : <img alt='chevron-right' src={ChevronRight} style={{ width: '14px', padding: '0 2px' }} />
+                                    }
+                                    <h6 className='undp-typography margin-bottom-00' style={{ color: 'var(--gray-600)' }}>Advanced Settings</h6>
+                                  </Button>
+                                  {
+                                    showAdvanceSettings ? (
+                                      <div className='flex-div flex-space-between'>
+                                        <div style={{ width: 'calc(50% - 1rem)' }}>
+                                          <p className='label'>Machine learning Model</p>
+                                          <Radio.Group value={model} onChange={(target) => { setModel(target.target.value); }}>
+                                            <Radio className='undp-radio' value='multilabel'>Multi-label (recommended)</Radio>
+                                            <Radio className='undp-radio' value='multiclass'>Multi-class</Radio>
+                                          </Radio.Group>
+                                        </div>
+                                        <div style={{ width: 'calc(50% - 1rem)' }}>
+                                          <p className='label'>Granularity</p>
+                                          <Radio.Group value={granularity} onChange={(target) => { setGranularity(target.target.value); }}>
+                                            <Radio className='undp-radio' value='paragraph'>Paragraph (recommended)</Radio>
+                                            <Radio className='undp-radio' value='sentence'>Sentence</Radio>
+                                          </Radio.Group>
+                                        </div>
+                                      </div>
+                                    ) : null
+                                  }
                                 </div>
                                 <button
                                   type='button'
@@ -313,7 +385,7 @@ export const Priorities = (props: Props) => {
                       </h5>
                       <>
                         <div className='margin-top-07'>
-                          <UploadEl>
+                          <UploadEl width='100%'>
                             <label htmlFor='file-upload-analyze' className='custom-file-upload'>
                               <UploadButtonEl style={{ width: '177.55px' }}>Upload a document</UploadButtonEl>
                             </label>
@@ -328,6 +400,40 @@ export const Priorities = (props: Props) => {
                             }
                             <FileAttacehmentButton ref={fileInputRef} id='file-upload-analyze' accept='application/pdf' type='file' onChange={handleFileSelect} />
                           </UploadEl>
+                        </div>
+                        <div className='margin-top-07'>
+                          <Button
+                            role='button'
+                            className='flex-div flex-vert-align-center margin-bottom-05'
+                            style={{ gap: '0.25rem' }}
+                            onClick={() => { setShowAdvancedSettings(!showAdvanceSettings); }}
+                          >
+                            {
+                              showAdvanceSettings ? <img alt='chevron-down' src={ChevronDown} style={{ width: '14px' }} />
+                                : <img alt='chevron-right' src={ChevronRight} style={{ width: '14px', padding: '0 2px' }} />
+                            }
+                            <h6 className='undp-typography margin-bottom-00' style={{ color: 'var(--gray-600)' }}>Advanced Settings</h6>
+                          </Button>
+                          {
+                            showAdvanceSettings ? (
+                              <div className='flex-div flex-space-between'>
+                                <div style={{ width: 'calc(50% - 1rem)' }}>
+                                  <p className='label'>Machine learning Model</p>
+                                  <Radio.Group value={model} onChange={(target) => { setModel(target.target.value); }}>
+                                    <Radio className='undp-radio' value='multilabel'>Multi-label (recommended)</Radio>
+                                    <Radio className='undp-radio' value='multiclass'>Multi-class</Radio>
+                                  </Radio.Group>
+                                </div>
+                                <div style={{ width: 'calc(50% - 1rem)' }}>
+                                  <p className='label'>Granularity</p>
+                                  <Radio.Group value={granularity} onChange={(target) => { setGranularity(target.target.value); }}>
+                                    <Radio className='undp-radio' value='paragraph'>Paragraph (recommended)</Radio>
+                                    <Radio className='undp-radio' value='sentence'>Sentence</Radio>
+                                  </Radio.Group>
+                                </div>
+                              </div>
+                            ) : null
+                          }
                         </div>
                         {
                           selectedFileName !== ''
@@ -362,8 +468,8 @@ export const Priorities = (props: Props) => {
                         Upload multiple documents, and compare which SDGs feature most prominently as a priority in each of the documents.
                       </h5>
                       <>
-                        <div className='margin-top-07 flex-div'>
-                          <UploadEl style={{ width: 'calc(50% - 0.5rem)' }}>
+                        <div className='margin-top-07 flex-div flex-wrap'>
+                          <UploadEl width='calc(50% - 0.5rem)'>
                             <label htmlFor='file-upload-doc1' className='custom-file-upload'>
                               <UploadButtonEl style={{ width: '205.25px' }}>Upload first document</UploadButtonEl>
                             </label>
@@ -378,7 +484,7 @@ export const Priorities = (props: Props) => {
                             }
                             <FileAttacehmentButton ref={fileInputRef} id='file-upload-doc1' accept='application/pdf' type='file' onChange={handleCompareFileSelect1} />
                           </UploadEl>
-                          <UploadEl style={{ width: 'calc(50% - 0.5rem)' }}>
+                          <UploadEl width='calc(50% - 0.5rem)'>
                             <label htmlFor='file-upload-doc2' className='custom-file-upload'>
                               <UploadButtonEl style={{ width: '225.11px' }}>Upload second document</UploadButtonEl>
                             </label>
@@ -393,6 +499,40 @@ export const Priorities = (props: Props) => {
                             }
                             <FileAttacehmentButton ref={fileInputRef} id='file-upload-doc2' accept='application/pdf' type='file' onChange={handleCompareFileSelect2} />
                           </UploadEl>
+                        </div>
+                        <div className='margin-top-07'>
+                          <Button
+                            role='button'
+                            className='flex-div flex-vert-align-center margin-bottom-05'
+                            style={{ gap: '0.25rem' }}
+                            onClick={() => { setShowAdvancedSettings(!showAdvanceSettings); }}
+                          >
+                            {
+                              showAdvanceSettings ? <img alt='chevron-down' src={ChevronDown} style={{ width: '14px' }} />
+                                : <img alt='chevron-right' src={ChevronRight} style={{ width: '14px', padding: '0 2px' }} />
+                            }
+                            <h6 className='undp-typography margin-bottom-00' style={{ color: 'var(--gray-600)' }}>Advanced Settings</h6>
+                          </Button>
+                          {
+                            showAdvanceSettings ? (
+                              <div className='flex-div flex-space-between'>
+                                <div style={{ width: 'calc(50% - 1rem)' }}>
+                                  <p className='label'>Machine learning Model</p>
+                                  <Radio.Group value={model} onChange={(target) => { setModel(target.target.value); }}>
+                                    <Radio className='undp-radio' value='multilabel'>Multi-label (recommended)</Radio>
+                                    <Radio className='undp-radio' value='multiclass'>Multi-class</Radio>
+                                  </Radio.Group>
+                                </div>
+                                <div style={{ width: 'calc(50% - 1rem)' }}>
+                                  <p className='label'>Granularity</p>
+                                  <Radio.Group value={granularity} onChange={(target) => { setGranularity(target.target.value); }}>
+                                    <Radio className='undp-radio' value='paragraph'>Paragraph (recommended)</Radio>
+                                    <Radio className='undp-radio' value='sentence'>Sentence</Radio>
+                                  </Radio.Group>
+                                </div>
+                              </div>
+                            ) : null
+                          }
                         </div>
                         {
                           selectedCompareFileName1 !== '' && selectedCompareFileName2 !== ''
@@ -453,13 +593,13 @@ export const Priorities = (props: Props) => {
                 <VNRAnalysis
                   data={data.mode === 'analyze' ? data.data : data}
                   goalStatuses={goalStatuses}
-                  document={data.mode === 'analyze' ? selectedFileName : `VNR ${vnrYear}`}
+                  document={data.mode === 'analyze' ? selectedFileNameAnalyzed : `VNR ${vnrYear}`}
                 />
               ) : (
                 <CompareAnalysis
                   data={data.data}
                   goalStatuses={goalStatuses}
-                  document={[selectedCompareFileName1, selectedCompareFileName2]}
+                  document={[selectedCompareFileName1Analyzed, selectedCompareFileName2Analyzed]}
                 />
               )
             : null

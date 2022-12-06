@@ -4,6 +4,7 @@ import {
 } from 'd3-force';
 import uniq from 'lodash.uniq';
 import { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { LinkageDataType, TargetStatusWithDetailsType } from '../Types';
 
 interface Props {
@@ -23,6 +24,17 @@ interface SynergiesLinkProps {
   target: string;
   value: number;
 }
+
+interface WidthProps {
+  width: string;
+}
+
+const GraphContainer = styled.div<WidthProps>`
+  width: ${(props) => props.width};
+  @media (max-width: 960px) {
+    width: 100%;
+  }
+`;
 
 export const NetworkGraph = (props: Props) => {
   const {
@@ -109,8 +121,8 @@ export const NetworkGraph = (props: Props) => {
   }, [data]);
   return (
     <>
-      <div className='flex-div flex-space-between'>
-        <div style={{ width: 'calc(33.33% - 1rem' }}>
+      <div className='flex-div flex-space-between flex-wrap'>
+        <GraphContainer width='calc(33.33% - 1rem)'>
           <div className='flex-div flex-space-between flex-vert-align-center margin-bottom-03'>
             <h3 className='undp-typography bold margin-bottom-00'>Network Approach for Linkages</h3>
           </div>
@@ -149,11 +161,11 @@ export const NetworkGraph = (props: Props) => {
               </p>
             ) : null
           }
-        </div>
+        </GraphContainer>
         {
           networkData
             ? (
-              <div style={{ width: 'calc(66.67% - 1rem' }}>
+              <GraphContainer width='calc(66.67% - 1rem)'>
                 <svg width='100%' viewBox={`0 0 ${width + 40} ${height + 40}`}>
                   <rect
                     x={0}
@@ -247,15 +259,17 @@ export const NetworkGraph = (props: Props) => {
                     }
                   </g>
                 </svg>
-              </div>
+              </GraphContainer>
             )
             : (
-              <div style={{
-                width: 'calc(66.67% - 1rem', height: '400px', backgroundColor: 'var(--gray-100)', paddingTop: '150px',
-              }}
+              <GraphContainer
+                width='calc(66.67% - 1rem)'
+                style={{
+                  height: '400px', backgroundColor: 'var(--gray-100)', paddingTop: '150px',
+                }}
               >
                 <div className='undp-loader' style={{ margin: 'auto' }} />
-              </div>
+              </GraphContainer>
             )
         }
       </div>
