@@ -220,7 +220,7 @@ export const VNRAnalysis = (props: Props) => {
                 </div>
               </div>
               <div>
-                <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--gray-400)' }}>
+                <h4 className='undp-typography margin-bottom-03' style={{ color: 'var(--gray-400)' }}>
                   <span className='bold'>
                     {noMetion.length > 0 ? noMetion.length : 'No'}
                     {' '}
@@ -229,12 +229,11 @@ export const VNRAnalysis = (props: Props) => {
                   {' '}
                   Not Mentioned
                 </h4>
-                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Click on the icons to see key features for the SDG</p>
                 <div className='sdg-icon-group'>
                   <div className='sdg-icon-container'>
                     {
                       noMetion.map((d: any, i: number) => (
-                        <div key={i} onClick={() => { setSelectedSDG(d); }} style={{ cursor: 'pointer' }}>
+                        <div key={i}>
                           {getSDGIcon(`SDG ${d.sdg}`, SDG_ICON_SIZE)}
                         </div>
                       ))
@@ -479,7 +478,9 @@ export const VNRAnalysis = (props: Props) => {
             >
               <div className='flex-div flex-wrap margin-top-09' style={{ width: '0.75vw', minWidth: '40rem', maxWidth: '60rem' }}>
                 {
-                  selectedSDG.features.map((d: any, i: number) => <div key={i} className='undp-chip'>{d}</div>)
+                  selectedSDG.features.length > 0
+                    ? selectedSDG.features.map((d: any, i: number) => <div key={i} className='undp-chip'>{d}</div>)
+                    : 'No words/phrases available'
                 }
               </div>
             </Modal>

@@ -18,12 +18,12 @@ export const SDGGapsData = (props: Props) => {
     countryData,
     selectedSDG,
   } = props;
-  const targets = SDGList[SDGList.findIndex((d: any) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].Targets;
+  const targets = SDGList[SDGList.findIndex((d) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].Targets;
   const [selectedTarget, setSelectedTarget] = useState(targets[0]);
   const [selectedIndicator, setSelectedIndicator] = useState(targets[0].Indicators[0]);
   const [selectedIndicatorTS, setSelectedIndicatorTS] = useState(countryData.filter((d: any) => d.indicator === targets[0].Indicators[0].Indicator.split(' ')[1]));
   useEffect(() => {
-    const targetsUpdated = SDGList[SDGList.findIndex((d: any) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].Targets;
+    const targetsUpdated = SDGList[SDGList.findIndex((d) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].Targets;
     setSelectedTarget(targetsUpdated[0]);
     setSelectedIndicator(targetsUpdated[0].Indicators[0]);
     setSelectedIndicatorTS((countryData.filter((d: any) => d.indicator === targetsUpdated[0].Indicators[0].Indicator.split(' ')[1])));
@@ -86,12 +86,12 @@ export const SDGGapsData = (props: Props) => {
         </p>
         <div className='flex-div margin-bottom-07'>
           {
-            selectedTarget.Indicators.map((d: any, i: number) => (
+            selectedTarget.Indicators.map((d, i: number) => (
               <button
                 type='button'
                 className={`undp-tab-radio ${d.Indicator === selectedIndicator.Indicator ? 'selected' : ''}`}
                 key={i}
-                onClick={() => { setSelectedIndicator(d); setSelectedIndicatorTS((countryData.filter((el: any) => el.indicator === d.Indicators.split(' ')[1]))); }}
+                onClick={() => { setSelectedIndicator(d); setSelectedIndicatorTS((countryData.filter((el: any) => el.indicator === d.Indicator.split(' ')[1]))); }}
               >
                 {d.Indicator}
               </button>

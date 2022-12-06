@@ -72,33 +72,33 @@ export const CurrentGaps = (props: Props) => {
             Understanding how countries perform against these provides a comprehensive assessment of the current trends and the baseline landscape against which to build the SDG Push.
             <br />
             <br />
-            <h3 className='undp-typography'>
-              For
-              {' '}
-              <span className='bold'>{countryFullName}</span>
-              , out of 17 SDG goals,
-              {' '}
-              <span className='bold' style={{ color: 'var(--dark-green)' }}>
-                {goalStatuses.filter((d: any) => d.status === 'On Track').length}
-                {' '}
-                are On Track,
-              </span>
-              <span className='bold' style={{ color: 'var(--dark-yellow)' }}>
-                {' '}
-                {goalStatuses.filter((d: any) => d.status === 'For Review').length}
-                {' '}
-                are For Review
-              </span>
-              {' '}
-              and,
-              <span className='bold' style={{ color: 'var(--dark-red)' }}>
-                {' '}
-                {goalStatuses.filter((d: any) => d.status === 'Identified Gap').length}
-                {' '}
-                are Identified Gaps
-              </span>
-            </h3>
           </h5>
+          <h3 className='undp-typography'>
+            For
+            {' '}
+            <span className='bold'>{countryFullName}</span>
+            , out of 17 SDG goals,
+            {' '}
+            <span className='bold' style={{ color: 'var(--dark-green)' }}>
+              {goalStatuses.filter((d: any) => d.status === 'On Track').length}
+              {' '}
+              are On Track,
+            </span>
+            <span className='bold' style={{ color: 'var(--dark-yellow)' }}>
+              {' '}
+              {goalStatuses.filter((d: any) => d.status === 'For Review').length}
+              {' '}
+              are For Review
+            </span>
+            {' '}
+            and,
+            <span className='bold' style={{ color: 'var(--dark-red)' }}>
+              {' '}
+              {goalStatuses.filter((d: any) => d.status === 'Identified Gap').length}
+              {' '}
+              are Identified Gaps
+            </span>
+          </h3>
           <button type='button' className='margin-top-09 undp-button button-primary button-arrow'>
             Download Report
           </button>
