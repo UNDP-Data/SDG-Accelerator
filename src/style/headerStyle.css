@@ -90,9 +90,27 @@
   color: var(--blue-400) !important;
 }
 
+.nav-top-left {
+  width: 20%;
+  min-width: 15rem;
+}
+
 .nav-top-right {
-  width: '347px';
-  justify-content: 'flex-end';
+  width: 20%;
+  justify-content: flex-end;
+}
+
+
+@media (max-width: 72rem) {
+  .undp-nav-div{
+    gap:3.5rem;
+  }
+}
+
+@media (max-width: 81.25rem) {
+  .nav-top-right{
+    width: auto;
+  }
 }
 
 .undp-menu-hamburger {

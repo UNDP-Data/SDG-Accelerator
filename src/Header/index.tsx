@@ -26,7 +26,7 @@ export const Header = (props: Props) => {
         <header className='undp-country-header'>
           <div className='undp-header-bg flex-space-between'>
             <div className='flex-div flex-vert-align-center flex-space-between'>
-              <div className='flex-div flex-vert-align-center'>
+              <div className='flex-div flex-vert-align-center nav-top-left'>
                 <img src='https://design.undp.org/static/media/undp-logo-blue.4f32e17f.svg' alt='UNDP Logo' />
                 <div className='undp-site-title'>
                   {
