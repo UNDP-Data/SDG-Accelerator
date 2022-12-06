@@ -48,7 +48,7 @@
     },
     {
       "goal": 14,
-      "noOfIndicatorsWithData": 2,
+      "noOfIndicatorsWithData": 3,
       "status": "For Review"
     },
     {
@@ -271,7 +271,7 @@
     {
       "goal": "14",
       "target": "14.6",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "14",
@@ -955,7 +955,7 @@
       "goal": "14",
       "target": "14.6",
       "indicator": "14.6.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "14",
@@ -6484,7 +6484,13 @@
           "value": 3.0
         }
       ],
-      "status": "Methodology Unavailable"
+      "methodology": {
+        "targetValue": 5,
+        "normativeDirection": "increase",
+        "trendMethodology": "Likert",
+        "baseYear": 2018.0
+      },
+      "status": "Fair progress but acceleration needed"
     },
     {
       "series": "EN_SCP_FSHGDP",
@@ -6530,7 +6536,13 @@
           "value": 1.0
         }
       ],
-      "status": "Methodology Unavailable"
+      "methodology": {
+        "targetValue": 5,
+        "normativeDirection": "increase",
+        "trendMethodology": "Likert",
+        "baseYear": 2018.0
+      },
+      "status": "Insufficient Data"
     },
     {
       "Reporting Type": "G",

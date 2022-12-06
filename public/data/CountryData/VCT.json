@@ -43,7 +43,7 @@
     },
     {
       "goal": 14,
-      "noOfIndicatorsWithData": 2,
+      "noOfIndicatorsWithData": 3,
       "status": "Identified Gap"
     },
     {
@@ -231,7 +231,7 @@
     {
       "goal": "14",
       "target": "14.b",
-      "status": null
+      "status": "Identified Gap"
     },
     {
       "goal": "15",
@@ -728,7 +728,7 @@
       "goal": "14",
       "target": "14.b",
       "indicator": "14.b.1",
-      "status": null
+      "status": "Identified Gap"
     },
     {
       "goal": "15",
@@ -4781,7 +4781,13 @@
           "value": 4.0
         }
       ],
-      "status": "Methodology Unavailable"
+      "methodology": {
+        "targetValue": 5,
+        "normativeDirection": "increase",
+        "trendMethodology": "Likert",
+        "baseYear": 2020.0
+      },
+      "status": "Insufficient Data"
     },
     {
       "series": "EN_SCP_FSHGDP",
@@ -4831,7 +4837,13 @@
           "value": 4.0
         }
       ],
-      "status": "Methodology Unavailable"
+      "methodology": {
+        "targetValue": 5,
+        "normativeDirection": "increase",
+        "trendMethodology": "Likert",
+        "baseYear": 2018.0
+      },
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",

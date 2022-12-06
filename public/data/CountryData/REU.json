@@ -28,7 +28,7 @@
     },
     {
       "goal": 14,
-      "noOfIndicatorsWithData": 1,
+      "noOfIndicatorsWithData": 3,
       "status": "Identified Gap"
     },
     {
@@ -121,12 +121,12 @@
     {
       "goal": "14",
       "target": "14.6",
-      "status": null
+      "status": "Identified Gap"
     },
     {
       "goal": "14",
       "target": "14.b",
-      "status": null
+      "status": "Identified Gap"
     },
     {
       "goal": "15",
@@ -318,13 +318,13 @@
       "goal": "14",
       "target": "14.6",
       "indicator": "14.6.1",
-      "status": null
+      "status": "Identified Gap"
     },
     {
       "goal": "14",
       "target": "14.b",
       "indicator": "14.b.1",
-      "status": null
+      "status": "Identified Gap"
     },
     {
       "goal": "15",
@@ -1470,7 +1470,13 @@
           "label": "NA"
         }
       ],
-      "status": "Methodology Unavailable"
+      "methodology": {
+        "targetValue": 5,
+        "normativeDirection": "increase",
+        "trendMethodology": "Likert",
+        "baseYear": 2018.0
+      },
+      "status": "Limited or No Progress"
     },
     {
       "Reporting Type": "G",
@@ -1491,7 +1497,13 @@
           "label": "NA"
         }
       ],
-      "status": "Methodology Unavailable"
+      "methodology": {
+        "targetValue": 5,
+        "normativeDirection": "increase",
+        "trendMethodology": "Likert",
+        "baseYear": 2018.0
+      },
+      "status": "Limited or No Progress"
     },
     {
       "Reporting Type": "G",

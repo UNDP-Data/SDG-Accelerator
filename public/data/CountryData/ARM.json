@@ -6834,7 +6834,13 @@
           "value": 2.0
         }
       ],
-      "status": "Methodology Unavailable"
+      "methodology": {
+        "targetValue": 5,
+        "normativeDirection": "increase",
+        "trendMethodology": "Likert",
+        "baseYear": 2018.0
+      },
+      "status": "Insufficient Data"
     },
     {
       "Reporting Type": "G",
