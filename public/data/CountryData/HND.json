@@ -64,7 +64,7 @@
     {
       "goal": 3,
       "noOfIndicatorsWithData": 4,
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": 4,
@@ -84,7 +84,7 @@
     {
       "goal": 9,
       "noOfIndicatorsWithData": 2,
-      "status": "For Review"
+      "status": "Identified Gap"
     }
   ],
   "targetStatus": [
@@ -446,7 +446,7 @@
     {
       "goal": "3",
       "target": "3.b",
-      "status": "On Track"
+      "status": "Identified Gap"
     },
     {
       "goal": "3",
@@ -611,7 +611,7 @@
     {
       "goal": "9",
       "target": "9.c",
-      "status": "For Review"
+      "status": "Identified Gap"
     }
   ],
   "indicatorStatus": [
@@ -1213,7 +1213,7 @@
       "goal": "3",
       "target": "3.b",
       "indicator": "3.b.1",
-      "status": "On Track"
+      "status": "Identified Gap"
     },
     {
       "goal": "3",
@@ -1465,7 +1465,7 @@
       "goal": "9",
       "target": "9.c",
       "indicator": "9.c.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     }
   ],
   "tsData": [
@@ -1668,6 +1668,11 @@
       "methodology": {
         "targetValue": 80,
         "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -1718,6 +1723,11 @@
       "methodology": {
         "targetValue": 80,
         "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -4715,7 +4725,12 @@
       ],
       "methodology": {
         "targetValue": 0.1,
-        "normativeDirection": "not increase",
+        "normativeDirection": "decrease",
+        "CAGRLimit": [
+          0.005,
+          -0.005,
+          -0.01
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2014.0
       },
@@ -6094,6 +6109,11 @@
       ],
       "methodology": {
         "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.005
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -6167,10 +6187,15 @@
       ],
       "methodology": {
         "normativeDirection": "not decrease",
+        "CAGRLimit": [
+          0.001,
+          -0.0005,
+          -0.001
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
-      "status": "Limited or No Progress"
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",
@@ -6707,11 +6732,16 @@
         }
       ],
       "methodology": {
-        "value": 1,
-        "trendMethodology": "Binary",
+        "normativeDirection": "not decrease",
+        "CAGRLimit": [
+          0.01,
+          -0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
-      "status": "Target Not Achieved"
+      "status": "On Track"
     },
     {
       "Reporting Type": "G",
@@ -9828,6 +9858,11 @@
       "methodology": {
         "targetValue": 90,
         "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -10187,6 +10222,11 @@
       ],
       "methodology": {
         "normativeDirection": "not decrease",
+        "CAGRLimit": [
+          0.01,
+          -0.005,
+          -0.01
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2014.0
       },
@@ -10243,6 +10283,11 @@
       ],
       "methodology": {
         "normativeDirection": "not increase",
+        "CAGRLimit": [
+          0.01,
+          -0.005,
+          -0.01
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2009.0
       },
@@ -10339,6 +10384,11 @@
       ],
       "methodology": {
         "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.005
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -10435,6 +10485,11 @@
       ],
       "methodology": {
         "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.005
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -10531,6 +10586,11 @@
       ],
       "methodology": {
         "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.005
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -10915,7 +10975,7 @@
       "methodology": {
         "targetValue": 25,
         "normativeDirection": "decrease",
-        "trendMethodology": "CAGRR",
+        "trendMethodology": "CAGRR+AARRR",
         "baseYear": 2015.0
       },
       "status": "Target Achieved"
@@ -12013,7 +12073,7 @@
         "trendMethodology": "CAGRR",
         "baseYear": 2015.0
       },
-      "status": "On Track"
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",
@@ -14696,6 +14756,11 @@
       ],
       "methodology": {
         "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.095
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -17188,6 +17253,11 @@
       "methodology": {
         "targetValue": 20,
         "normativeDirection": "not decrease",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -17294,6 +17364,11 @@
       "methodology": {
         "targetValue": 20,
         "normativeDirection": "not decrease",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -17887,7 +17962,7 @@
         "trendMethodology": "CAGRR",
         "baseYear": 2015.0
       },
-      "status": "On Track"
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",

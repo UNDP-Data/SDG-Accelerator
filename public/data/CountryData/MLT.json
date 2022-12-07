@@ -14,7 +14,7 @@
     {
       "goal": 16,
       "noOfIndicatorsWithData": 1,
-      "status": "On Track"
+      "status": "Identified Gap"
     },
     {
       "goal": 11,
@@ -266,7 +266,7 @@
     {
       "goal": "16",
       "target": "16.1",
-      "status": "On Track"
+      "status": "Identified Gap"
     },
     {
       "goal": "16",
@@ -812,7 +812,7 @@
       "goal": "16",
       "target": "16.1",
       "indicator": "16.1.1",
-      "status": "On Track"
+      "status": "Identified Gap"
     },
     {
       "goal": "16",
@@ -4792,6 +4792,11 @@
       ],
       "methodology": {
         "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.005
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -4865,6 +4870,11 @@
       ],
       "methodology": {
         "normativeDirection": "not decrease",
+        "CAGRLimit": [
+          0.001,
+          -0.0005,
+          -0.001
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -5409,11 +5419,16 @@
         }
       ],
       "methodology": {
-        "value": 1,
-        "trendMethodology": "Binary",
+        "normativeDirection": "not decrease",
+        "CAGRLimit": [
+          0.01,
+          -0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
-      "status": "Target Not Achieved"
+      "status": "Insufficient Data"
     },
     {
       "Reporting Type": "G",
@@ -5675,7 +5690,7 @@
         "trendMethodology": "CAGRR",
         "baseYear": 2015.0
       },
-      "status": "On Track"
+      "status": "Deterioration"
     },
     {
       "Age": "ALLAGE",
@@ -7930,6 +7945,11 @@
       "methodology": {
         "targetValue": 90,
         "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -8258,6 +8278,11 @@
       ],
       "methodology": {
         "normativeDirection": "not decrease",
+        "CAGRLimit": [
+          0.01,
+          -0.005,
+          -0.01
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2014.0
       },
@@ -8310,6 +8335,11 @@
       ],
       "methodology": {
         "normativeDirection": "not increase",
+        "CAGRLimit": [
+          0.01,
+          -0.005,
+          -0.01
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2008.0
       },
@@ -8402,6 +8432,11 @@
       ],
       "methodology": {
         "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.005
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -8498,6 +8533,11 @@
       ],
       "methodology": {
         "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.005
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -8590,6 +8630,11 @@
       ],
       "methodology": {
         "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.005
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -9026,7 +9071,7 @@
       "methodology": {
         "targetValue": 25,
         "normativeDirection": "decrease",
-        "trendMethodology": "CAGRR",
+        "trendMethodology": "CAGRR+AARRR",
         "baseYear": 2015.0
       },
       "status": "Target Achieved"
@@ -11553,6 +11598,11 @@
       ],
       "methodology": {
         "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.095
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -13550,6 +13600,11 @@
       "methodology": {
         "targetValue": 20,
         "normativeDirection": "not decrease",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },
@@ -13656,6 +13711,11 @@
       "methodology": {
         "targetValue": 20,
         "normativeDirection": "not decrease",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
         "trendMethodology": "CAGRA",
         "baseYear": 2015.0
       },

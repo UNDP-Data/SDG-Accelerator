@@ -109,7 +109,7 @@ export const HomePage = (props: Props) => {
             <div className='max-width margin-top-13' style={{ padding: '0rem 1rem' }}>
               <h2 className='undp-typography margin-bottom-05'>Global SDG Trends</h2>
               <p className='undp-typography large-font margin-bottom-09'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dolor nisl, gravida in urna et, congue placerat sem. Aenean interdum nisl non ipsum dapibus scelerisque. Vestibulum congue libero sit amet interdum aliquet. Nunc feugiat placerat arcu, quis tincidunt felis volutpat sit amet. Praesent tempor facilisis dictum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis nisi sem, vestibulum eget eleifend vitae,
+                At midpoint of 2030 Agenda, while progress is possible it is not inevitable. The world is not transitioning to ‘build forward better’ from Covid - on the contrary, developing countries in every region are entering a divergent social, political and economic period with sharp downside risks for the most vulnerable, and regression in gender equality.
               </p>
               <Select
                 className='undp-select'

@@ -92,6 +92,22 @@ export const LineChart = (props: Props) => {
             );
           })
         }
+        {
+          data.status
+            ? (
+              <div
+                className={`undp-chip undp-chip-small ${data.status === 'On Track' || data.status === 'Target Achieved'
+                  ? 'undp-chip-dark-green'
+                  : data.status === 'Fair progress but acceleration needed' || data.status === 'Limited or No Progress' || data.status === 'Target Not Achieved'
+                    ? 'undp-chip-dark-yellow'
+                    : data.status === 'Deterioration' ? 'undp-chip-dark-red'
+                      : 'undp-chip-dark-gray'
+                }`}
+              >
+                {data.status}
+              </div>
+            ) : null
+        }
       </div>
       {
         values.length === 0 ? <h6 className='undp-typography'>No Data Avalaiable</h6>
@@ -189,6 +205,32 @@ export const LineChart = (props: Props) => {
                           </text>
                         </g>
                       ))
+                    }
+                    {
+                      data.methodology
+                        ? data.methodology.baseYear ? (
+                          <g>
+                            <line
+                              x1={x(data.methodology.baseYear)}
+                              x2={x(data.methodology.baseYear)}
+                              y1={0}
+                              y2={graphHeight}
+                              stroke='#55606E'
+                              strokeWidth={1}
+                            />
+                            <text
+                              fill='#232E3D'
+                              fontSize={12}
+                              y={0}
+                              x={x(data.methodology.baseYear)}
+                              textAnchor='middle'
+                              dy={-10}
+                            >
+                              {data.methodology.baseYear}
+                            </text>
+                          </g>
+                        ) : null
+                        : null
                     }
                     {
                       hoverData
