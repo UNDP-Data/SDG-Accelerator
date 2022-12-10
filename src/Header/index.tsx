@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { Input, Modal } from 'antd';
 import sortBy from 'lodash.sortby';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
@@ -16,6 +16,7 @@ interface Props {
 
 export const Header = (props: Props) => {
   const { country } = props;
+  const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
   const countryFullName = country && CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === country) !== -1 ? CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === country)]['Country or Area'] : undefined;
   const [searchText, setSearchText] = useState<string | null>(null);
@@ -192,7 +193,7 @@ export const Header = (props: Props) => {
               >
                 <NavLink
                   key={i}
-                  to={`../sdg-push-diagnostic/${d['Alpha-3 code-1']}`}
+                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenHeaderCountryModal(false); }}
                 >
@@ -206,7 +207,7 @@ export const Header = (props: Props) => {
               >
                 <NavLink
                   key={i}
-                  to={`../sdg-push-diagnostic/${d['Alpha-3 code-1']}`}
+                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenHeaderCountryModal(false); }}
                 >
