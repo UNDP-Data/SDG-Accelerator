@@ -1,9 +1,7 @@
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Select } from 'antd';
 import sortBy from 'lodash.sortby';
-import { json } from 'd3-request';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 import '../style/heroSections.css';
 import SDGTrends from '../img/01.png';
@@ -12,11 +10,6 @@ import FutureImg from '../img/03.png';
 import InterlinkagesImg from '../img/04.png';
 import Background from '../img/UNDP-hero-image.png';
 import GIZLogo from '../img/gizLogo.png';
-import { DATASOURCELINK } from '../Constants';
-import { CountryGoalStatusType, SDGSListType } from '../Types';
-import { GlobalTrendViz } from './GlobalTrendViz';
-
-const SDGList:SDGSListType[] = require('../Data/SDGGoalList.json');
 
 interface Props {
   countryCode?: string;
@@ -41,15 +34,17 @@ export const HomePage = (props: Props) => {
     countryCode,
     countryFullName,
   } = props;
-  const [selectedGoal, setSelectedGoal] = useState('SDG 1');
-  const [allCountriesData, setAllCountriesData] = useState<CountryGoalStatusType[] | undefined>(undefined);
+  // const [selectedGoal, setSelectedGoal] = useState('SDG 1');
+  // const [allCountriesData, setAllCountriesData] = useState<CountryGoalStatusType[] | undefined>(undefined);
 
+  /*
   useEffect(() => {
     json(`${DATASOURCELINK}/data/AllCountryGoalStatus.json`, (err: any, d: CountryGoalStatusType[]) => {
       if (err) { throw err; }
       setAllCountriesData(d);
     });
   }, []);
+  */
   return (
     <>
       <HeroImageEl className='undp-hero-image'>
@@ -100,45 +95,6 @@ export const HomePage = (props: Props) => {
                   Use the custom built tools below, to establish a rapid baseline with data-powered visualizations, a natural language processing tool, futures scenarios and mapping interlinkages.
                 </div>
               </div>
-            </div>
-          )
-      }
-      {
-        countryCode ? null
-          : (
-            <div className='max-width margin-top-13' style={{ padding: '0rem 1rem' }}>
-              <h2 className='undp-typography margin-bottom-05'>Global SDG Trends</h2>
-              <p className='undp-typography large-font margin-bottom-09'>
-                At midpoint of 2030 Agenda, while progress is possible it is not inevitable. The world is not transitioning to ‘build forward better’ from Covid - on the contrary, developing countries in every region are entering a divergent social, political and economic period with sharp downside risks for the most vulnerable, and regression in gender equality.
-              </p>
-              <Select
-                className='undp-select'
-                placeholder='Select Year'
-                showSearch
-                value={selectedGoal}
-                onChange={(value) => { setSelectedGoal(value); }}
-                style={{ flexGrow: 1 }}
-              >
-                {
-                  SDGList.map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d.Goal}>{`${d.Goal}: ${d['Goal Name']}`}</Select.Option>)
-                }
-              </Select>
-              {
-                allCountriesData
-                  ? (
-                    <GlobalTrendViz
-                      goal={selectedGoal}
-                      data={allCountriesData}
-                    />
-                  ) : (
-                    <div style={{
-                      width: '100%', height: '400px', backgroundColor: 'var(--gray-100)', paddingTop: '150px',
-                    }}
-                    >
-                      <div className='undp-loader' style={{ margin: 'auto' }} />
-                    </div>
-                  )
-              }
             </div>
           )
       }

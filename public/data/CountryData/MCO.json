@@ -23,8 +23,8 @@
     },
     {
       "goal": 16,
-      "noOfIndicatorsWithData": 1,
-      "status": "On Track"
+      "noOfIndicatorsWithData": 0,
+      "status": null
     },
     {
       "goal": 12,
@@ -211,7 +211,7 @@
     {
       "goal": "16",
       "target": "16.1",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "16",
@@ -546,7 +546,7 @@
       "goal": "16",
       "target": "16.1",
       "indicator": "16.1.1",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "16",
@@ -1888,6 +1888,7 @@
         "targetValue": 0.5,
         "normativeDirection": "decrease",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Target Achieved"
@@ -2832,6 +2833,7 @@
           -0.001
         ],
         "trendMethodology": "CAGRA",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Insufficient Data"
@@ -2934,12 +2936,13 @@
         }
       ],
       "methodology": {
-        "targetValue": 1,
+        "targetValue": 0.8,
         "normativeDirection": "increase",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
-      "status": "Limited or No Progress"
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",
@@ -2998,7 +3001,8 @@
           -0.01
         ],
         "trendMethodology": "CAGRA",
-        "baseYear": 2015.0
+        "baselineYear": 2016,
+        "baseYear": 2016.0
       },
       "status": "Insufficient Data"
     },
@@ -3038,7 +3042,7 @@
       "methodology": {
         "value": 1,
         "trendMethodology": "Binary",
-        "baseYear": 2016.0
+        "baseYear": null
       },
       "status": "Target Not Achieved"
     },
@@ -3094,7 +3098,7 @@
       "methodology": {
         "value": 1,
         "trendMethodology": "Binary",
-        "baseYear": 2015.0
+        "baseYear": null
       },
       "status": "Target Not Achieved"
     },
@@ -3196,9 +3200,10 @@
         "targetValue": 1,
         "normativeDirection": "decrease",
         "trendMethodology": "CAGRR",
-        "baseYear": 2008.0
+        "baselineYear": 2015,
+        "baseYear": null
       },
-      "status": "Target Achieved"
+      "status": "No Data After 2015"
     },
     {
       "Age": "ALLAGE",
@@ -3831,6 +3836,7 @@
           -0.01
         ],
         "trendMethodology": "CAGRA",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Target Achieved"
@@ -4124,7 +4130,8 @@
         "targetValue": 25,
         "normativeDirection": "decrease",
         "trendMethodology": "CAGRR+AARRR",
-        "baseYear": 2015.0
+        "baselineYear": 2010,
+        "baseYear": 2010.0
       },
       "status": "Target Achieved"
     },
@@ -4581,6 +4588,7 @@
         "targetValue": 95,
         "normativeDirection": "increase",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Target Achieved"
@@ -4803,6 +4811,7 @@
         "targetValue": 50,
         "normativeDirection": "increase",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "On Track"
@@ -4905,6 +4914,7 @@
         "targetValue": 99,
         "normativeDirection": "increase",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Target Achieved"
@@ -5007,6 +5017,7 @@
         "targetValue": 99,
         "normativeDirection": "increase",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Target Achieved"
@@ -5555,6 +5566,7 @@
         "targetValue": 99,
         "normativeDirection": "increase",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Target Achieved"
@@ -5793,6 +5805,7 @@
         "targetValue": 3,
         "normativeDirection": "decrease",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2000.0
       },
       "status": "Deterioration"
@@ -5935,18 +5948,7 @@
           "value": 5676.89
         }
       ],
-      "methodology": {
-        "targetValue": 20,
-        "normativeDirection": "not decrease",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baseYear": 2015.0
-      },
-      "status": "Deterioration"
+      "status": "Methodology Unavailable"
     },
     {
       "Reporting Type": "G",
@@ -6055,6 +6057,7 @@
           -0.01
         ],
         "trendMethodology": "CAGRA",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Deterioration"
@@ -6174,6 +6177,7 @@
         "targetValue": 98,
         "normativeDirection": "increase",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Target Achieved"
@@ -6235,6 +6239,7 @@
         "targetValue": 98,
         "normativeDirection": "increase",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Target Achieved"

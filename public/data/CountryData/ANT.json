@@ -3,8 +3,8 @@
   "goalStatus": [
     {
       "goal": 12,
-      "noOfIndicatorsWithData": 1,
-      "status": "On Track"
+      "noOfIndicatorsWithData": 0,
+      "status": null
     },
     {
       "goal": 8,
@@ -36,7 +36,7 @@
     {
       "goal": "12",
       "target": "12.2",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "8",
@@ -74,7 +74,7 @@
       "goal": "12",
       "target": "12.2",
       "indicator": "12.2.2",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "8",
@@ -168,9 +168,10 @@
         "targetValue": 0.5,
         "normativeDirection": "decrease",
         "trendMethodology": "CAGRR",
-        "baseYear": 2009.0
+        "baselineYear": 2015,
+        "baseYear": null
       },
-      "status": "Target Achieved"
+      "status": "No Data After 2015"
     },
     {
       "Type of product": "MEO",

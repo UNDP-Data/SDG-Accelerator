@@ -38,8 +38,8 @@
     },
     {
       "goal": 2,
-      "noOfIndicatorsWithData": 0,
-      "status": null
+      "noOfIndicatorsWithData": 1,
+      "status": "On Track"
     },
     {
       "goal": 3,
@@ -136,7 +136,7 @@
     {
       "goal": "15",
       "target": "15.5",
-      "status": "Identified Gap"
+      "status": "On Track"
     },
     {
       "goal": "15",
@@ -181,7 +181,7 @@
     {
       "goal": "2",
       "target": "2.5",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "3",
@@ -313,7 +313,7 @@
       "goal": "15",
       "target": "15.5",
       "indicator": "15.5.1",
-      "status": "Identified Gap"
+      "status": "On Track"
     },
     {
       "goal": "15",
@@ -373,7 +373,7 @@
       "goal": "2",
       "target": "2.5",
       "indicator": "2.5.2",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "3",
@@ -840,6 +840,7 @@
         "targetValue": 83,
         "normativeDirection": "increase",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Limited or No Progress"
@@ -861,6 +862,7 @@
         "targetValue": 5,
         "normativeDirection": "increase",
         "trendMethodology": "Likert",
+        "baselineYear": 2018,
         "baseYear": 2018.0
       },
       "status": "Target Achieved"
@@ -901,6 +903,7 @@
           -0.005
         ],
         "trendMethodology": "CAGRA",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "On Track"
@@ -922,6 +925,7 @@
         "targetValue": 5,
         "normativeDirection": "increase",
         "trendMethodology": "Likert",
+        "baselineYear": 2018,
         "baseYear": 2018.0
       },
       "status": "Insufficient Data"
@@ -975,6 +979,7 @@
           -0.001
         ],
         "trendMethodology": "CAGRA",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Fair progress but acceleration needed"
@@ -1080,6 +1085,7 @@
         "targetValue": 83,
         "normativeDirection": "increase",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Insufficient Data"
@@ -1442,12 +1448,13 @@
         }
       ],
       "methodology": {
-        "targetValue": 1,
+        "targetValue": 0.8,
         "normativeDirection": "increase",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
-      "status": "Limited or No Progress"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -1506,7 +1513,8 @@
           -0.01
         ],
         "trendMethodology": "CAGRA",
-        "baseYear": 2015.0
+        "baselineYear": 2016,
+        "baseYear": 2016.0
       },
       "status": "Insufficient Data"
     },
@@ -1546,7 +1554,7 @@
       "methodology": {
         "value": 1,
         "trendMethodology": "Binary",
-        "baseYear": 2016.0
+        "baseYear": null
       },
       "status": "Target Not Achieved"
     },
@@ -1602,7 +1610,7 @@
       "methodology": {
         "value": 1,
         "trendMethodology": "Binary",
-        "baseYear": 2015.0
+        "baseYear": null
       },
       "status": "Target Not Achieved"
     },
@@ -2267,6 +2275,7 @@
           -0.01
         ],
         "trendMethodology": "CAGRA",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Target Achieved"
@@ -2344,9 +2353,10 @@
           -0.01
         ],
         "trendMethodology": "CAGRA",
-        "baseYear": 2007.0
+        "baselineYear": 2016,
+        "baseYear": 2016.0
       },
-      "status": "Insufficient Data"
+      "status": "On Track"
     },
     {
       "Age": "15-19",
@@ -2986,6 +2996,7 @@
         "targetValue": 99,
         "normativeDirection": "increase",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Target Achieved"
@@ -3021,9 +3032,10 @@
         "targetValue": 3,
         "normativeDirection": "decrease",
         "trendMethodology": "CAGRR",
-        "baseYear": 2004.0
+        "baselineYear": 2015,
+        "baseYear": null
       },
-      "status": "Insufficient Data"
+      "status": "No Data After 2015"
     },
     {
       "Mode of transportation": "ROA",
@@ -3216,6 +3228,7 @@
         "targetValue": 98,
         "normativeDirection": "increase",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Target Achieved"
@@ -3257,6 +3270,7 @@
         "targetValue": 98,
         "normativeDirection": "increase",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Target Achieved"

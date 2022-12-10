@@ -13,8 +13,8 @@
     },
     {
       "goal": 16,
-      "noOfIndicatorsWithData": 1,
-      "status": "On Track"
+      "noOfIndicatorsWithData": 0,
+      "status": null
     },
     {
       "goal": 7,
@@ -76,7 +76,7 @@
     {
       "goal": "16",
       "target": "16.1",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "16",
@@ -174,7 +174,7 @@
       "goal": "16",
       "target": "16.1",
       "indicator": "16.1.1",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "16",
@@ -784,9 +784,10 @@
         "targetValue": 1,
         "normativeDirection": "decrease",
         "trendMethodology": "CAGRR",
-        "baseYear": 2015.0
+        "baselineYear": 2015,
+        "baseYear": null
       },
-      "status": "Target Achieved"
+      "status": "No Data After 2015"
     },
     {
       "Age": "ALLAGE",
@@ -1146,6 +1147,7 @@
           -0.01
         ],
         "trendMethodology": "CAGRA",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "On Track"
@@ -1554,18 +1556,7 @@
           "value": 9773.61
         }
       ],
-      "methodology": {
-        "targetValue": 20,
-        "normativeDirection": "not decrease",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baseYear": 2015.0
-      },
-      "status": "On Track"
+      "status": "Methodology Unavailable"
     },
     {
       "Reporting Type": "G",
@@ -1674,6 +1665,7 @@
           -0.01
         ],
         "trendMethodology": "CAGRA",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "On Track"
@@ -1959,6 +1951,7 @@
         "targetValue": 98,
         "normativeDirection": "increase",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Target Achieved"
@@ -2032,6 +2025,7 @@
         "targetValue": 98,
         "normativeDirection": "increase",
         "trendMethodology": "CAGRR",
+        "baselineYear": 2015,
         "baseYear": 2015.0
       },
       "status": "Target Achieved"

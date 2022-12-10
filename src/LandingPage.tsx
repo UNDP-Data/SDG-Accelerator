@@ -17,14 +17,14 @@ import CountryTaxonomy from './Data/countryTaxonomy.json';
 
 import './style/heroSections.css';
 import { Interlinkages } from './Interlinkages';
-import { CountryDataType, StatusesType } from './Types';
+import { CountryDataType, StatusesType, TimeSeriesDataTypeWithStatusCode } from './Types';
 
 export const LandingPage = () => {
   const countryCode = useParams().country || 'ZAF';
   const [selectedCountry, setSelectedCountry] = useState('Afghanistan');
   const [error, setError] = useState <any>(null);
   const [statuses, setStatuses] = useState<StatusesType | undefined>(undefined);
-  const [countryData, setCountryData] = useState<any>(undefined);
+  const [countryData, setCountryData] = useState<TimeSeriesDataTypeWithStatusCode[] | undefined>(undefined);
   const countryFullName = CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === countryCode) !== -1 ? CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === countryCode)]['Country or Area'] : '';
 
   useEffect(() => {
@@ -32,7 +32,20 @@ export const LandingPage = () => {
     setError(undefined);
     json(`${DATASOURCELINK}/data/CountryData/${countryCode}.json`, (err: any, d: CountryDataType) => {
       if (err) { setError(err); }
-      setCountryData(d.tsData);
+      setCountryData(d.tsData.map((el) => (
+        {
+          ...el,
+          statusCode: el.status === 'On Track' || el.status === 'Target Achieved'
+            ? 4
+            : el.status === 'Fair progress but acceleration needed' || el.status === 'Target Not Achieved'
+              ? 3
+              : el.status === 'Limited or No Progress'
+                ? 2
+                : el.status === 'Deterioration'
+                  ? 1
+                  : 5,
+        }
+      )));
       const SDGs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
       const goalStatus = SDGs.map((sdg) => (d.goalStatus.findIndex((g) => g.goal === sdg) !== -1 ? d.goalStatus[d.goalStatus.findIndex((g) => g.goal === sdg)]
         : {

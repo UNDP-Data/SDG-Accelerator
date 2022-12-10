@@ -1,12 +1,15 @@
 import { geoEqualEarth } from 'd3-geo';
+import { Select } from 'antd';
 import styled from 'styled-components';
 import { useState } from 'react';
-import { CountryGoalStatusType } from '../Types';
+import { CountryGoalStatusType, SDGSListType } from '../Types';
 import World from '../Data/worldMap.json';
 
 import '../style/chipStyle.css';
 import '../style/tabStyle.css';
 import '../style/selectStyle.css';
+
+const SDGList:SDGSListType[] = require('../Data/SDGGoalList.json');
 
 interface Props {
   data: CountryGoalStatusType[];
@@ -49,6 +52,7 @@ export const GlobalTrendViz = (props: Props) => {
     goal,
   } = props;
   const [hoverData, setHoverData] = useState<HoverDataType | undefined>(undefined);
+  const [selectedGoal, setSelectedGoal] = useState('SDG 1');
   const projection = geoEqualEarth().rotate([0, 0]).scale(window.innerWidth > 960 ? 265 : 180).translate([window.innerWidth > 960 ? 550 : 430, window.innerWidth > 960 ? 380 : 280]);
   const svgHeight = window.innerWidth > 960 ? 678 : 500;
   const svgWidth = window.innerWidth > 960 ? 1280 : 960;
@@ -56,7 +60,23 @@ export const GlobalTrendViz = (props: Props) => {
   const noOfIdentifiedGaps = data.filter((d) => (d.goalStatus.findIndex((el) => `SDG ${el.goal}` === goal) !== -1 ? d.goalStatus[d.goalStatus.findIndex((el) => `SDG ${el.goal}` === goal)].status === 'Identified Gap' : false)).length;
   const noOfForReview = data.filter((d) => (d.goalStatus.findIndex((el) => `SDG ${el.goal}` === goal) !== -1 ? d.goalStatus[d.goalStatus.findIndex((el) => `SDG ${el.goal}` === goal)].status === 'For Review' : false)).length;
   return (
-    <>
+    <div className='max-width margin-top-13' style={{ padding: '0rem 1rem' }}>
+      <h2 className='undp-typography margin-bottom-05'>Global SDG Trends</h2>
+      <p className='undp-typography large-font margin-bottom-09'>
+        At midpoint of 2030 Agenda, while progress is possible it is not inevitable. The world is not transitioning to ‘build forward better’ from Covid - on the contrary, developing countries in every region are entering a divergent social, political and economic period with sharp downside risks for the most vulnerable, and regression in gender equality.
+      </p>
+      <Select
+        className='undp-select'
+        placeholder='Select Year'
+        showSearch
+        value={selectedGoal}
+        onChange={(value) => { setSelectedGoal(value); }}
+        style={{ flexGrow: 1 }}
+      >
+        {
+          SDGList.map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d.Goal}>{`${d.Goal}: ${d['Goal Name']}`}</Select.Option>)
+        }
+      </Select>
       <div className='flex-div margin-top-07 margin-bottom-07 flex-wrap'>
         <StatCardsContainer>
           <div className='stat-card'>
@@ -238,6 +258,6 @@ export const GlobalTrendViz = (props: Props) => {
           )
           : null
       }
-    </>
+    </div>
   );
 };

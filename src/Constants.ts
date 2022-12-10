@@ -155,6 +155,162 @@ export const KEYSTOAVOID = [
   'values',
   'methodology',
   'status',
+  'statusCode',
+];
+
+export const SERIES_TAGS_LABELS = [
+  {
+    key: 'ALLAGE',
+    label: 'All ages',
+  },
+  {
+    key: '<1Y',
+    label: '< 1 Yr',
+  },
+  {
+    key: '<5Y',
+    label: '< 5 Yrs',
+  },
+  {
+    key: '15-49',
+    label: '15-49',
+  },
+  {
+    key: '<1M',
+    label: '< 1 Month',
+  },
+  {
+    key: '30-70',
+    label: '30-70',
+  },
+  {
+    key: '15+',
+    label: '15+',
+  },
+  {
+    key: '10-14',
+    label: '10-14',
+  },
+  {
+    key: '15-19',
+    label: '15-19',
+  },
+  {
+    key: '16-65',
+    label: '16-65',
+  },
+  {
+    key: '10+',
+    label: '10+',
+  },
+  {
+    key: '15-24',
+    label: '15-24',
+  },
+  {
+    key: '18-29',
+    label: '18-29',
+  },
+  {
+    key: '20-24',
+    label: '20-24',
+  },
+  {
+    key: '18-24',
+    label: '18-24',
+  },
+  {
+    key: '25-44',
+    label: '25-44',
+  },
+  {
+    key: '45-59',
+    label: '45-59',
+  },
+  {
+    key: '60+',
+    label: '60+',
+  },
+  {
+    key: '7-17',
+    label: '7-17',
+  },
+  {
+    key: 'ALLAREA',
+    label: 'All Areas',
+  },
+  {
+    key: 'URBAN',
+    label: 'Urban',
+  },
+  {
+    key: 'RURAL',
+    label: 'Rural',
+  },
+  {
+    key: 'BOTHSEX',
+    label: 'Both sexes',
+  },
+  {
+    key: 'FEMALE',
+    label: 'Female',
+  },
+  {
+    key: 'MALE',
+    label: 'Male',
+  },
+  {
+    key: 'LOWSEC',
+    label: 'Low. Sec.',
+  },
+  {
+    key: 'UPPSEC',
+    label: 'Upp. Sec.',
+  },
+  {
+    key: 'SECOND',
+    label: 'Secondary',
+  },
+  {
+    key: 'GRAD23',
+    label: 'Graduate',
+  },
+  {
+    key: 'PRIMAR',
+    label: 'Primary',
+  },
+  {
+    key: 'EXTREME',
+    label: 'Extreme',
+  },
+  {
+    key: 'MEDIUM',
+    label: 'Medium',
+  },
+  {
+    key: 'AIR',
+    label: 'Air',
+  },
+  {
+    key: 'ROA',
+    label: 'Road',
+  },
+  {
+    key: 'SEA',
+    label: 'Sea',
+  },
+  {
+    key: 'SOLAR',
+    label: 'Solar',
+  },
+  {
+    key: 'JOHANNESBURG',
+    label: 'Johannesburg',
+  },
+  {
+    key: '_T',
+    label: 'Total',
+  },
 ];
 
 export const SCENARIOINDICATORBASEDONSDG = [

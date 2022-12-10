@@ -7,14 +7,16 @@ import uniqBy from 'lodash.uniqby';
 import { scaleLinear } from 'd3-scale';
 import { useEffect, useRef, useState } from 'react';
 import { pointer, select } from 'd3-selection';
-import { KEYSTOAVOID } from '../Constants';
+import { KEYSTOAVOID, SERIES_TAGS_LABELS } from '../Constants';
+import { TimeSeriesDataTypeWithStatusCode } from '../Types';
 
 interface Props {
-  data: any;
+  data: TimeSeriesDataTypeWithStatusCode;
+  cursor: string;
 }
 
 export const LineChart = (props: Props) => {
-  const { data } = props;
+  const { data, cursor } = props;
   const GraphRef = useRef(null);
   const countryCode = useParams().country || 'ZAF';
   const [hoverData, setHoverData] = useState<any>(null);
@@ -31,15 +33,15 @@ export const LineChart = (props: Props) => {
 
   const MouseoverRectRef = useRef(null);
 
-  const values = uniqBy(data.values, 'year').filter((d: any) => d.value !== null);
-  const minParam = min(values.map((d: any) => d.value)) ? min(values.map((d: any) => d.value)) as number > 0 ? 0 : min(values.map((d: any) => d.value)) : 0;
+  const values = uniqBy(data.values, 'year').filter((d) => d.value !== null);
+  const minParam = min(values.map((d) => d.value)) ? min(values.map((d) => d.value)) as number > 0 ? 0 : min(values.map((d) => d.value)) : 0;
 
-  const maxParam = max(values.map((d: any) => d.value))
-    ? max(values.map((d: any) => d.value))
+  const maxParam = max(values.map((d) => d.value))
+    ? max(values.map((d) => d.value))
     : 0;
 
-  const minYearFiltered: number = min(values.map((d: any) => d.year)) ? min(values.map((d: any) => d.year)) as number : 2000;
-  const maxYearFiltered: number = max(values.map((d: any) => d.year)) ? max(values.map((d: any) => d.year)) as number : 2020;
+  const minYearFiltered: number = min(values.map((d) => d.year)) ? min(values.map((d) => d.year)) as number : 2000;
+  const maxYearFiltered: number = max(values.map((d) => d.year)) ? max(values.map((d) => d.year)) as number : 2020;
   const x = scaleLinear().domain([minYearFiltered, maxYearFiltered]).range([0, graphWidth]);
   const y = scaleLinear().domain([minParam as number, maxParam as number]).range([graphHeight, 0]).nice();
   const lineShape1 = line()
@@ -52,7 +54,7 @@ export const LineChart = (props: Props) => {
   useEffect(() => {
     const mousemove = (event: any) => {
       const yr = Math.round(x.invert(pointer(event)[0]));
-      const indx = data.values.findIndex((d: any) => d.year === Math.round(x.invert(pointer(event)[0])));
+      const indx = data.values.findIndex((d) => d.year === Math.round(x.invert(pointer(event)[0])));
       if (indx !== -1) {
         setHoverData({
           year: yr,
@@ -74,7 +76,13 @@ export const LineChart = (props: Props) => {
     <div
       ref={GraphRef}
       style={{
-        width: '85%', flexShrink: 0, minWidth: '50rem', backgroundColor: 'var(--gray-100)', padding: '1rem 2rem',
+        width: '85%',
+        flexShrink: 0,
+        minWidth: '50rem',
+        backgroundColor:
+        'var(--gray-100)',
+        padding: '1rem 2rem',
+        cursor,
       }}
     >
       <h6 className='undp-typography margin-top-05'>{data.seriesDescription}</h6>
@@ -87,7 +95,7 @@ export const LineChart = (props: Props) => {
                 {d}
                 :
                 {' '}
-                {data[d]}
+                {SERIES_TAGS_LABELS.findIndex((el) => el.key === (data as any)[d]) === -1 ? (data as any)[d] : SERIES_TAGS_LABELS[SERIES_TAGS_LABELS.findIndex((el) => el.key === (data as any)[d])].label }
               </div>
             );
           })
@@ -98,13 +106,15 @@ export const LineChart = (props: Props) => {
               <div
                 className={`undp-chip undp-chip-small ${data.status === 'On Track' || data.status === 'Target Achieved'
                   ? 'undp-chip-dark-green'
-                  : data.status === 'Fair progress but acceleration needed' || data.status === 'Limited or No Progress' || data.status === 'Target Not Achieved'
+                  : data.status === 'Fair progress but acceleration needed'
                     ? 'undp-chip-dark-yellow'
-                    : data.status === 'Deterioration' ? 'undp-chip-dark-red'
-                      : 'undp-chip-dark-gray'
+                    : data.status === 'Limited or No Progress' || data.status === 'Target Not Achieved'
+                      ? 'undp-chip-red'
+                      : data.status === 'Deterioration' ? 'undp-chip-dark-red'
+                        : 'undp-chip-dark-gray'
                 }`}
               >
-                {data.status}
+                {data.status === 'No Data After 2015' ? 'Insufficient Data: No Data after 2015' : data.status}
               </div>
             ) : null
         }
@@ -183,7 +193,7 @@ export const LineChart = (props: Props) => {
                   <g>
                     <path d={lineShape1(values as any) as string} fill='none' stroke='#006EB5' strokeWidth={2} />
                     {
-                      values.map((d: any, i: number) => (
+                      values.map((d, i: number) => (
                         <g
                           key={i}
                         >
@@ -201,7 +211,7 @@ export const LineChart = (props: Props) => {
                             textAnchor='middle'
                             fill='#55606E'
                           >
-                            {typeof d.value === 'number' ? Math.abs(d.value) === 0 ? 0 : Math.abs(d.value) < 1 ? Math.abs(d.value) < 0.09 ? d.value.toFixed(3) : d.value.toFixed(2) : Math.abs(d.value) > 1000 ? format('.2s')(d.value).replace('G', 'B') : format('.3s')(d.value) : d.value}
+                            {d.label ? d.label : typeof d.value === 'number' ? Math.abs(d.value) === 0 ? 0 : Math.abs(d.value) < 1 ? Math.abs(d.value) < 0.09 ? d.value.toFixed(3) : d.value.toFixed(2) : Math.abs(d.value) > 1000 ? format('.2s')(d.value).replace('G', 'B') : format('.3s')(d.value) : d.value}
                           </text>
                         </g>
                       ))

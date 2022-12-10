@@ -8,12 +8,12 @@ import { SDGGapsData } from './SDGGapsData';
 import Background from '../img/UNDP-hero-image.png';
 import '../style/statCardStyle.css';
 import { describeArc } from '../utils/getArc';
-import { GoalStatusType, StatusesType } from '../Types';
+import { GoalStatusType, StatusesType, TimeSeriesDataTypeWithStatusCode } from '../Types';
 
 interface Props {
   goalStatuses: GoalStatusType[];
   statuses: StatusesType;
-  countryData: any;
+  countryData: TimeSeriesDataTypeWithStatusCode[];
   countryFullName: string;
 }
 
@@ -49,10 +49,10 @@ export const CurrentGaps = (props: Props) => {
     countryFullName,
   } = props;
   const [selectedSDG, setSelectedSDG] = useState('SDG 1: No Poverty');
-  const onTrack = sortBy(goalStatuses.filter((d: any) => d.status === 'On Track'), 'goal');
-  const identifiedGap = sortBy(goalStatuses.filter((d: any) => d.status === 'Identified Gap'), 'goal');
-  const forReview = sortBy(goalStatuses.filter((d: any) => d.status === 'For Review'), 'goal');
-  const gapsNA = sortBy(goalStatuses.filter((d: any) => !d.status), 'goal');
+  const onTrack = sortBy(goalStatuses.filter((d) => d.status === 'On Track'), 'goal');
+  const identifiedGap = sortBy(goalStatuses.filter((d) => d.status === 'Identified Gap'), 'goal');
+  const forReview = sortBy(goalStatuses.filter((d) => d.status === 'For Review'), 'goal');
+  const gapsNA = sortBy(goalStatuses.filter((d) => !d.status), 'goal');
   return (
     <>
       <HeroImageEl className='undp-hero-image'>
@@ -80,13 +80,13 @@ export const CurrentGaps = (props: Props) => {
             , out of 17 SDG goals,
             {' '}
             <span className='bold' style={{ color: 'var(--dark-green)' }}>
-              {goalStatuses.filter((d: any) => d.status === 'On Track').length}
+              {goalStatuses.filter((d) => d.status === 'On Track').length}
               {' '}
               are On Track,
             </span>
             <span className='bold' style={{ color: 'var(--dark-yellow)' }}>
               {' '}
-              {goalStatuses.filter((d: any) => d.status === 'For Review').length}
+              {goalStatuses.filter((d) => d.status === 'For Review').length}
               {' '}
               are For Review
             </span>
@@ -94,7 +94,7 @@ export const CurrentGaps = (props: Props) => {
             and,
             <span className='bold' style={{ color: 'var(--dark-red)' }}>
               {' '}
-              {goalStatuses.filter((d: any) => d.status === 'Identified Gap').length}
+              {goalStatuses.filter((d) => d.status === 'Identified Gap').length}
               {' '}
               are Identified Gaps
             </span>
@@ -179,7 +179,7 @@ export const CurrentGaps = (props: Props) => {
                 <div className='sdg-icon-group'>
                   <div className='sdg-icon-container'>
                     {
-                      onTrack.map((d: any, i: number) => (
+                      onTrack.map((d, i: number) => (
                         <div key={i}>
                           {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
                         </div>
@@ -202,7 +202,7 @@ export const CurrentGaps = (props: Props) => {
                 <div className='sdg-icon-group'>
                   <div className='sdg-icon-container'>
                     {
-                      forReview.map((d: any, i: number) => (
+                      forReview.map((d, i: number) => (
                         <div key={i}>
                           {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
                         </div>
@@ -225,7 +225,7 @@ export const CurrentGaps = (props: Props) => {
                 <div className='sdg-icon-group'>
                   <div className='sdg-icon-container'>
                     {
-                      identifiedGap.map((d: any, i: number) => (
+                      identifiedGap.map((d, i: number) => (
                         <div key={i}>
                           {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
                         </div>
@@ -248,7 +248,7 @@ export const CurrentGaps = (props: Props) => {
                 <div className='sdg-icon-group'>
                   <div className='sdg-icon-container'>
                     {
-                      gapsNA.map((d: any, i: number) => (
+                      gapsNA.map((d, i: number) => (
                         <div key={i}>
                           {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
                         </div>
@@ -280,16 +280,16 @@ export const CurrentGaps = (props: Props) => {
             <div className='stat-card'>
               <h2
                 className={
-                  goalStatuses[goalStatuses.findIndex((d: any) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status === 'On Track'
+                  goalStatuses[goalStatuses.findIndex((d) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status === 'On Track'
                     ? 'green-text'
-                    : goalStatuses[goalStatuses.findIndex((d: any) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status === 'For Review'
+                    : goalStatuses[goalStatuses.findIndex((d) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status === 'For Review'
                       ? 'yellow-text'
-                      : goalStatuses[goalStatuses.findIndex((d: any) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status === 'Identified Gap'
+                      : goalStatuses[goalStatuses.findIndex((d) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status === 'Identified Gap'
                         ? 'red-text'
                         : ''
                   }
               >
-                {goalStatuses[goalStatuses.findIndex((d: any) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status ? goalStatuses[goalStatuses.findIndex((d: any) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status : 'Gap NA'}
+                {goalStatuses[goalStatuses.findIndex((d) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status ? goalStatuses[goalStatuses.findIndex((d) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status : 'Gap NA'}
               </h2>
               <p>SDG Trend</p>
             </div>

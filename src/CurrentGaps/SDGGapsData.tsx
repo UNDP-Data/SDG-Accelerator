@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import { SDGSListType, StatusesType } from '../Types';
+import sortBy from 'lodash.sortby';
+import styled from 'styled-components';
+import { SDGSListType, StatusesType, TimeSeriesDataTypeWithStatusCode } from '../Types';
 import { LineChart } from './LineChart';
 
 import '../style/sideBarNav.css';
@@ -8,9 +10,20 @@ const SDGList:SDGSListType[] = require('../Data/SDGGoalList.json');
 
 interface Props {
   statusData: StatusesType;
-  countryData: any;
+  countryData: TimeSeriesDataTypeWithStatusCode[];
   selectedSDG: string;
 }
+
+interface ColorProps {
+  backgroundColor: string;
+}
+
+const ColorCircle = styled.div<ColorProps>`
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 1rem;
+  background-color: ${(props) => props.backgroundColor};
+`;
 
 export const SDGGapsData = (props: Props) => {
   const {
@@ -21,12 +34,12 @@ export const SDGGapsData = (props: Props) => {
   const targets = SDGList[SDGList.findIndex((d) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].Targets;
   const [selectedTarget, setSelectedTarget] = useState(targets[0]);
   const [selectedIndicator, setSelectedIndicator] = useState(targets[0].Indicators[0]);
-  const [selectedIndicatorTS, setSelectedIndicatorTS] = useState(countryData.filter((d: any) => d.indicator === targets[0].Indicators[0].Indicator.split(' ')[1]));
+  const [selectedIndicatorTS, setSelectedIndicatorTS] = useState(countryData.filter((d) => d.indicator === targets[0].Indicators[0].Indicator.split(' ')[1]));
   useEffect(() => {
     const targetsUpdated = SDGList[SDGList.findIndex((d) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].Targets;
     setSelectedTarget(targetsUpdated[0]);
     setSelectedIndicator(targetsUpdated[0].Indicators[0]);
-    setSelectedIndicatorTS((countryData.filter((d: any) => d.indicator === targetsUpdated[0].Indicators[0].Indicator.split(' ')[1])));
+    setSelectedIndicatorTS((countryData.filter((d) => d.indicator === targetsUpdated[0].Indicators[0].Indicator.split(' ')[1])));
   }, [selectedSDG, statusData]);
   return (
     <div className='flex-div margin-bottom-13'>
@@ -37,7 +50,7 @@ export const SDGGapsData = (props: Props) => {
               type='button'
               key={i}
               className={d.Target === selectedTarget.Target ? 'selected side-bar-el' : 'side-bar-el'}
-              onClick={() => { setSelectedTarget(d); setSelectedIndicator(d.Indicators[0]); setSelectedIndicatorTS((countryData.filter((el: any) => el.indicator === d.Indicators[0].Indicator.split(' ')[1]))); }}
+              onClick={() => { setSelectedTarget(d); setSelectedIndicator(d.Indicators[0]); setSelectedIndicatorTS((countryData.filter((el) => el.indicator === d.Indicators[0].Indicator.split(' ')[1]))); }}
             >
               <div
                 style={
@@ -89,10 +102,22 @@ export const SDGGapsData = (props: Props) => {
             selectedTarget.Indicators.map((d, i: number) => (
               <button
                 type='button'
-                className={`undp-tab-radio ${d.Indicator === selectedIndicator.Indicator ? 'selected' : ''}`}
+                style={{ gap: '0.5rem' }}
+                className={`undp-tab-radio flex-div flex-vert-align-center ${d.Indicator === selectedIndicator.Indicator ? 'selected' : ''}`}
                 key={i}
-                onClick={() => { setSelectedIndicator(d); setSelectedIndicatorTS((countryData.filter((el: any) => el.indicator === d.Indicator.split(' ')[1]))); }}
+                onClick={() => { setSelectedIndicator(d); setSelectedIndicatorTS((countryData.filter((el) => el.indicator === d.Indicator.split(' ')[1]))); }}
               >
+                <ColorCircle
+                  backgroundColor={statusData.indicatorStatus.findIndex((el) => `Indicator ${el.indicator}` === d.Indicator) === -1
+                    ? 'var(--gray-300)'
+                    : statusData.indicatorStatus[statusData.indicatorStatus.findIndex((el) => `Indicator ${el.indicator}` === d.Indicator)].status === 'On Track'
+                      ? 'var(--dark-green)'
+                      : statusData.indicatorStatus[statusData.indicatorStatus.findIndex((el) => `Indicator ${el.indicator}` === d.Indicator)].status === 'For Review'
+                        ? 'var(--dark-yellow)'
+                        : statusData.indicatorStatus[statusData.indicatorStatus.findIndex((el) => `Indicator ${el.indicator}` === d.Indicator)].status === 'Identified Gap'
+                          ? 'var(--dark-red)'
+                          : 'var(--gray-300)'}
+                />
                 {d.Indicator}
               </button>
             ))
@@ -123,8 +148,18 @@ export const SDGGapsData = (props: Props) => {
         </div>
         <div className='flex-div undp-scrollbar top-scrollbars' style={{ gap: '2rem', overflow: 'auto', paddingBottom: '0.5rem' }}>
           {
-            selectedIndicatorTS.map((d: any, i: number) => (
-              <LineChart data={d} key={i} />
+            sortBy(selectedIndicatorTS, 'statusCode').map((d, i: number) => (
+              <LineChart
+                data={d}
+                key={i}
+                cursor={
+                  selectedIndicatorTS.length === 1
+                    ? 'auto'
+                    : i < selectedIndicatorTS.length - 1
+                      ? 'url(https://design.undp.org/static/media/arrow-right.125a0586.svg), auto'
+                      : 'url(https://design.undp.org/static/media/arrow-left.14de54ea.svg), auto'
+                  }
+              />
             ))
           }
           {
