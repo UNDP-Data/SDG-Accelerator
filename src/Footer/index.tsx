@@ -89,7 +89,7 @@ export const Footer = () => {
               >
                 <NavLink
                   key={i}
-                  to={`../sdg-push-diagnostic/${d['Alpha-3 code-1']}`}
+                  to={`../sdg-push-diagnostic-test/${d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenCountryModal(false); }}
                 >
@@ -103,7 +103,7 @@ export const Footer = () => {
               >
                 <NavLink
                   key={i}
-                  to={`../sdg-push-diagnostic/${d['Alpha-3 code-1']}`}
+                  to={`../sdg-push-diagnostic-test/${d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenCountryModal(false); }}
                 >

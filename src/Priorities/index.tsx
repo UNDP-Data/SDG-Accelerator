@@ -234,7 +234,7 @@ export const Priorities = (props: Props) => {
         if (countryData.length > 0) {
           setVNRYear(countryData[0].year);
           setSelectYear(countryData[0].year);
-          axios.get(`https://sdg-accelerator-api.azurewebsites.net/vnrs/${countrySelected.toLowerCase()}/${countryData[0].year}/${countryData[0].language}/multiclass/sentence`)
+          axios.get(`https://sdg-accelerator-api.azurewebsites.net/vnrs/${countrySelected.toLowerCase()}/${countryData[0].year}/${countryData[0].language}/${model}/${granularity}`)
             .then((res) => {
               setData(res.data.sdgs);
             })

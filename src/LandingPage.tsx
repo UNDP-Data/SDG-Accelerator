@@ -62,9 +62,6 @@ export const LandingPage = () => {
   }, [countryCode]);
   return (
     <>
-      <Header
-        country={countryCode}
-      />
       {
         error
           ? (
@@ -92,7 +89,7 @@ export const LandingPage = () => {
                     }
                   </Select>
                   <NavLink
-                    to={`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === selectedCountry)]['Alpha-3 code-1']}`}
+                    to={`../../sdg-push-diagnostic-test/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === selectedCountry)]['Alpha-3 code-1']}`}
                     style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
                   >
                     <button type='button' className='undp-button button-primary button-arrow'>
@@ -105,56 +102,64 @@ export const LandingPage = () => {
           )
           : statuses && countryData
             ? (
-              <Routes>
-                <Route
-                  path='/'
-                  element={(
-                    <HomePage
-                      countryCode={countryCode}
-                      countryFullName={countryFullName}
-                    />
-                )}
+              <>
+                <Header
+                  country={countryCode}
+                  statuses={statuses}
+                  countrySelected={countryCode}
+                  goalStatuses={statuses.goalStatus}
                 />
-                <Route
-                  path='/sdg-trends'
-                  element={(
-                    <CurrentGaps
-                      statuses={statuses}
-                      countryData={countryData}
-                      goalStatuses={statuses.goalStatus}
-                      countryFullName={countryFullName}
-                    />
-                )}
-                />
-                <Route
-                  path='/synergies-and-tradeoffs'
-                  element={(
-                    <Interlinkages
-                      targetStatuses={statuses.targetStatus}
-                      countryFullName={countryFullName}
-                    />
-                )}
-                />
-                <Route
-                  path='/current-priorities'
-                  element={(
-                    <Priorities
-                      countrySelected={countryCode}
-                      goalStatuses={statuses.goalStatus}
-                      countryFullName={countryFullName}
-                    />
-                )}
-                />
-                <Route
-                  path='/future-scenarios'
-                  element={(
-                    <FutureScenariosList
-                      countryCode={countryCode}
-                      countryFullName={countryFullName}
-                    />
-                )}
-                />
-              </Routes>
+                <Routes>
+                  <Route
+                    path='/'
+                    element={(
+                      <HomePage
+                        countryCode={countryCode}
+                        countryFullName={countryFullName}
+                      />
+                  )}
+                  />
+                  <Route
+                    path='/sdg-trends'
+                    element={(
+                      <CurrentGaps
+                        statuses={statuses}
+                        countryData={countryData}
+                        goalStatuses={statuses.goalStatus}
+                        countryFullName={countryFullName}
+                      />
+                  )}
+                  />
+                  <Route
+                    path='/synergies-and-tradeoffs'
+                    element={(
+                      <Interlinkages
+                        targetStatuses={statuses.targetStatus}
+                        countryFullName={countryFullName}
+                      />
+                  )}
+                  />
+                  <Route
+                    path='/current-priorities'
+                    element={(
+                      <Priorities
+                        countrySelected={countryCode}
+                        goalStatuses={statuses.goalStatus}
+                        countryFullName={countryFullName}
+                      />
+                  )}
+                  />
+                  <Route
+                    path='/future-scenarios'
+                    element={(
+                      <FutureScenariosList
+                        countryCode={countryCode}
+                        countryFullName={countryFullName}
+                      />
+                  )}
+                  />
+                </Routes>
+              </>
             ) : (
               <div style={{ margin: '10rem auto 3rem auto', minHeight: '30rem' }}>
                 <div className='undp-loader' style={{ margin: 'auto' }} />

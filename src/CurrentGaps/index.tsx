@@ -53,6 +53,7 @@ export const CurrentGaps = (props: Props) => {
   const identifiedGap = sortBy(goalStatuses.filter((d) => d.status === 'Identified Gap'), 'goal');
   const forReview = sortBy(goalStatuses.filter((d) => d.status === 'For Review'), 'goal');
   const gapsNA = sortBy(goalStatuses.filter((d) => !d.status), 'goal');
+
   return (
     <>
       <HeroImageEl className='undp-hero-image'>
@@ -99,20 +100,17 @@ export const CurrentGaps = (props: Props) => {
               are Identified Gaps
             </span>
           </h3>
-          <button type='button' className='margin-top-09 undp-button button-primary button-arrow'>
-            Download Report
-          </button>
         </div>
       </HeroImageEl>
       <div className=' margin-top-00' style={{ backgroundColor: 'var(--gray-200)', padding: 'var(--spacing-09)' }}>
-        <div className='max-width'>
+        <div className='max-width' style={{ backgroundColor: 'var(--gray-200)', padding: 'var(--spacing-09)' }}>
           <h2 className='undp-typography'>Current Gaps</h2>
           <div className='flex-div margin-top-07 flex-wrap' style={{ gap: '2rem' }}>
             <GraphContainer width='calc(40% - 1rem)'>
               <svg
-                width='calc(100% - 20px)'
+                width='100%'
                 style={{
-                  maxWidth: '360px', margin: '0 auto', display: 'flex', justifyContent: 'center',
+                  margin: '0 auto', display: 'flex', justifyContent: 'center',
                 }}
                 viewBox='0 0 360 360'
               >
@@ -144,7 +142,7 @@ export const CurrentGaps = (props: Props) => {
                   x={180}
                   y={180}
                   textAnchor='middle'
-                  fontFamily='proxima-nova'
+                  style={{ fontFamily: 'proxima-nova' }}
                   fontWeight='bold'
                   fontSize='60px'
                   dy={10}
@@ -155,7 +153,7 @@ export const CurrentGaps = (props: Props) => {
                   x={180}
                   y={180}
                   textAnchor='middle'
-                  fontFamily='proxima-nova'
+                  style={{ fontFamily: 'proxima-nova' }}
                   fontWeight='bold'
                   fontSize='20px'
                   dy={35}

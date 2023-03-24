@@ -528,3 +528,51 @@ div.top-scrollbars {
 div.top-scrollbars div {
   transform: rotateX(180deg);
 }
+
+.download-animated {
+  align-items: flex-end;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  height: 12px;
+  position: relative;
+  margin-right: 0.5rem;
+}
+
+.download-animated:before {
+  content: "";
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  transition: all .3s;
+  background: var(--gray-700);
+  bottom: 7px;
+  height: 10px;
+  left: 10px;
+  width: 2px;
+  transform: translate(0, 0);
+}
+
+.download-animated:after {
+  content: "";
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  transform: rotate(-45deg) translate(0, 0);  
+  transition: all .3s;
+  border-bottom: 2px solid var(--gray-700);
+  border-left: 2px solid var(--gray-700);
+  bottom: 6px;
+  height: 8px;
+  left: 7px;
+  width: 8px;
+}
+
+.download-animated i {
+  border: 2px solid var(--gray-700);
+  border-top: 0;
+  box-sizing: content-box;
+  display: block;
+  height: 6px;
+  width: 1.125rem;
+}
