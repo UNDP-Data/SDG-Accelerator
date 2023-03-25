@@ -36,9 +36,6 @@ interface WidthProps {
 
 const GraphContainer = styled.div<WidthProps>`
   width: ${(props) => props.width};
-  @media (max-width: 720px) {
-    width: 100%;
-  }
 `;
 
 export const ReportEl = (props: Props) => {

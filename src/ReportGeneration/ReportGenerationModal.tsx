@@ -215,19 +215,19 @@ export const ReportGenerationModal = (props: Props) => {
     <Modal
       className='undp-modal'
       open={openModal}
-      width='1440px'
       onCancel={() => { resetValues(); }}
       onOk={() => { resetValues(); }}
     >
-      <h5 className='undp-typography'>Generate Summary PDF</h5>
-      <p className='undp-typography'>
-        Please select a VNR or upload a document to identify the national priorities
-      </p>
-      <Radio.Group onChange={(d) => { setDocType(d.target.value); }} value={docType}>
-        <Radio className='undp-radio' value='Custom'>Upload a document</Radio>
-        <Radio disabled={!isVnrAvailable} className='undp-radio' value='VNR'>Most Recent VNR</Radio>
-      </Radio.Group>
-      {
+      <div style={{ width: '70vw', maxWidth: '960px' }}>
+        <h5 className='undp-typography'>Generate and Download Report</h5>
+        <p className='undp-typography'>
+          Please select a VNR or upload a document to identify the national priorities
+        </p>
+        <Radio.Group onChange={(d) => { setDocType(d.target.value); }} value={docType}>
+          <Radio className='undp-radio' value='Custom'>Upload a document</Radio>
+          <Radio disabled={!isVnrAvailable} className='undp-radio' value='VNR'>Most Recent VNR</Radio>
+        </Radio.Group>
+        {
         docType === 'Custom'
           ? (
             <>
@@ -260,29 +260,30 @@ export const ReportGenerationModal = (props: Props) => {
             </p>
           )
       }
-      <button
-        disabled={error ? true : docType === 'Custom' ? !selectedFileName : !isVnrAvailable}
-        className={`undp-button button-primary button-arrow margin-top-07${error ? ' disabled' : docType === 'Custom' ? !selectedFileName ? ' disabled' : '' : !isVnrAvailable ? ' disabled' : ''}`}
-        type='button'
-        onClick={() => {
-          setNodeData(null); analyzeVNR(docType); setGeneratePDFClicked(true);
-        }}
-      >
-        Generate Report
-      </button>
-      <ReportEl
-        docName={docName}
-        nodeData={nodeData}
-        data={data}
-        countryFullName={countryFullName}
-        countrySelected={countrySelected}
-        selectedTarget={selectedTarget}
-        dataWithStatuses={dataWithStatuses}
-        sdgForInterlinkage={sdgForInterlinkage}
-        goalStatuses={goalStatuses}
-        targetStatus={targetStatus}
-        generatePDFClicked={generatePDFClicked}
-      />
+        <button
+          disabled={error ? true : docType === 'Custom' ? !selectedFileName : !isVnrAvailable}
+          className={`undp-button button-primary button-arrow margin-top-07${error ? ' disabled' : docType === 'Custom' ? !selectedFileName ? ' disabled' : '' : !isVnrAvailable ? ' disabled' : ''}`}
+          type='button'
+          onClick={() => {
+            setNodeData(null); analyzeVNR(docType); setGeneratePDFClicked(true);
+          }}
+        >
+          Generate Report
+        </button>
+        <ReportEl
+          docName={docName}
+          nodeData={nodeData}
+          data={data}
+          countryFullName={countryFullName}
+          countrySelected={countrySelected}
+          selectedTarget={selectedTarget}
+          dataWithStatuses={dataWithStatuses}
+          sdgForInterlinkage={sdgForInterlinkage}
+          goalStatuses={goalStatuses}
+          targetStatus={targetStatus}
+          generatePDFClicked={generatePDFClicked}
+        />
+      </div>
     </Modal>
   );
 };

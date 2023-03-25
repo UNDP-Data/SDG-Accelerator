@@ -356,11 +356,12 @@ export const MyDocument = (props: Props) => {
                     The matrix below maps national priorities and current trends. This can provide meaningful insights for national dialogues and identification of transformative pathways.
                   </Text>
                   <Text style={{
-                    fontSize: '14px',
+                    fontSize: '12px',
                     textAlign: 'left',
                     fontWeight: 'bold',
                     fontFamily: 'Helvetica-Bold',
-                    marginBottom: 5,
+                    marginBottom: 10,
+                    lineHeight: 1.5,
                   }}
                   >
                     Comparing SDG national priorities based on
