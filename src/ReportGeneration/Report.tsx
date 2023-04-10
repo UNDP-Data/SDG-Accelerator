@@ -4,6 +4,8 @@ import {
 } from '@react-pdf/renderer';
 import html2canvas from 'html2canvas';
 import { useEffect, useState } from 'react';
+import { ReportTranslation } from './ReportLanguage';
+import { LanguageList } from '../Types';
 
 interface Props {
   countryName: string;
@@ -11,115 +13,15 @@ interface Props {
   prioritiesDiv: HTMLDivElement;
   gapPrioritiesMatrixDiv: HTMLDivElement;
   interlinkagesDiv: HTMLDivElement;
+  futureScenarioDiv: HTMLDivElement;
   dataWithStatus: any;
   selectedTarget: string;
   sdgForInterlinkage: any;
-  docName?: string;
+  docName: string[];
+  language: LanguageList;
 }
 
 // Create styles
-const styles = StyleSheet.create({
-  page: {
-    flexDirection: 'column',
-    backgroundColor: '#fff',
-  },
-  documentName: {
-    fontSize: '36px',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontFamily: 'Helvetica-Bold',
-    color: '#006EB5',
-  },
-  title: {
-    fontSize: '24px',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontFamily: 'Helvetica-Bold',
-    color: '#006EB5',
-    marginTop: 32,
-  },
-  year: {
-    fontSize: '20px',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontFamily: 'Helvetica-Bold',
-    textTransform: 'uppercase',
-    padding: 10,
-    marginBottom: 30,
-    width: 300,
-  },
-  subNote: {
-    fontSize: '14px',
-    textAlign: 'center',
-    fontFamily: 'Helvetica',
-    width: 300,
-  },
-  text: {
-    fontSize: '14px',
-    textAlign: 'left',
-    fontFamily: 'Helvetica',
-    marginBottom: 20,
-  },
-  boldText: {
-    fontSize: '14px',
-    textAlign: 'left',
-    fontWeight: 'bold',
-    fontFamily: 'Helvetica-Bold',
-    marginBottom: 20,
-  },
-  coverSection: {
-    margin: 10,
-    marginTop: 240,
-    padding: 10,
-    alignItems: 'center',
-    flexDirection: 'column',
-    display: 'flex',
-  },
-  section: {
-    padding: 0,
-  },
-  highlightSection: {
-    padding: 32,
-    backgroundColor: 'rgba(0, 110, 181, 0.05)',
-    marginBottom: '20px',
-  },
-  insidePageSection: {
-    margin: 10,
-    padding: 50,
-    flexDirection: 'column',
-    display: 'flex',
-  },
-  pageTitle: {
-    fontSize: '36px',
-    fontWeight: 'bold',
-    fontFamily: 'Helvetica-Bold',
-    color: '#006EB5',
-    marginBottom: 36,
-  },
-  SVGText: {
-    fontSize: '30px',
-    fontWeight: 'bold',
-    fontFamily: 'Helvetica-Bold',
-  },
-  SVGTextNote: {
-    fontSize: '16px',
-    fontFamily: 'Helvetica',
-  },
-  SVGKeyText: {
-    fontSize: '14px',
-    fontWeight: 'bold',
-    fontFamily: 'Helvetica',
-  },
-  pageH2: {
-    fontSize: '18px',
-    fontFamily: 'Helvetica-Bold',
-    marginBottom: 24,
-  },
-  image: {
-    width: 500,
-    height: 500,
-  },
-});
 
 export const MyDocument = (props: Props) => {
   const {
@@ -129,10 +31,115 @@ export const MyDocument = (props: Props) => {
     gapPrioritiesMatrixDiv,
     dataWithStatus,
     interlinkagesDiv,
+    futureScenarioDiv,
     selectedTarget,
     sdgForInterlinkage,
     docName,
+    language,
   } = props;
+  const font = 'Helvetica';
+  const styles = StyleSheet.create({
+    page: {
+      flexDirection: 'column',
+      backgroundColor: '#fff',
+    },
+    documentName: {
+      fontSize: '36px',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      fontFamily: `${font}-Bold`,
+      color: '#006EB5',
+    },
+    title: {
+      fontSize: '24px',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      fontFamily: `${font}-Bold`,
+      color: '#006EB5',
+      marginTop: 32,
+    },
+    year: {
+      fontSize: '20px',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      fontFamily: `${font}-Bold`,
+      textTransform: 'uppercase',
+      padding: 10,
+      marginBottom: 30,
+      width: 300,
+    },
+    subNote: {
+      fontSize: '14px',
+      textAlign: 'center',
+      fontFamily: font,
+      width: 300,
+    },
+    text: {
+      fontSize: '14px',
+      textAlign: 'left',
+      fontFamily: font,
+      marginBottom: 20,
+    },
+    boldText: {
+      fontSize: '14px',
+      textAlign: 'left',
+      fontWeight: 'bold',
+      fontFamily: `${font}-Bold`,
+      marginBottom: 20,
+    },
+    coverSection: {
+      margin: 10,
+      marginTop: 240,
+      padding: 10,
+      alignItems: 'center',
+      flexDirection: 'column',
+      display: 'flex',
+    },
+    section: {
+      padding: 0,
+    },
+    highlightSection: {
+      padding: 32,
+      backgroundColor: 'rgba(0, 110, 181, 0.05)',
+      marginBottom: '20px',
+    },
+    insidePageSection: {
+      margin: 10,
+      padding: 50,
+      flexDirection: 'column',
+      display: 'flex',
+    },
+    pageTitle: {
+      fontSize: '36px',
+      fontWeight: 'bold',
+      fontFamily: `${font}-Bold`,
+      color: '#006EB5',
+      marginBottom: 36,
+    },
+    SVGText: {
+      fontSize: '30px',
+      fontWeight: 'bold',
+      fontFamily: `${font}-Bold`,
+    },
+    SVGTextNote: {
+      fontSize: '16px',
+      fontFamily: font,
+    },
+    SVGKeyText: {
+      fontSize: '14px',
+      fontWeight: 'bold',
+      fontFamily: font,
+    },
+    pageH2: {
+      fontSize: '18px',
+      fontFamily: `${font}-Bold`,
+      marginBottom: 24,
+    },
+    image: {
+      width: 500,
+      height: 500,
+    },
+  });
   let highPrioritySDG = '';
   dataWithStatus.filter((d: any) => d.category === 'High').forEach((d: any) => {
     highPrioritySDG += `SDG${d.sdg}, `;
@@ -141,6 +148,7 @@ export const MyDocument = (props: Props) => {
   const [prioritiesCanvas, setPrioritiesCanvas] = useState<string | null>(null);
   const [gapPrioritiesMatrixCanvas, setGapPrioritiesMatrixCanvas] = useState<string | null>(null);
   const [interlinkageCanvas, setInterlinkageCanvas] = useState<string | null>(null);
+  const [futureScenarioCanvas, setFutureScenarioCanvas] = useState<string | null>(null);
   useEffect(() => {
     if (gapDiv) {
       html2canvas(gapDiv).then((canvas) => {
@@ -169,6 +177,13 @@ export const MyDocument = (props: Props) => {
       });
     }
   }, [interlinkagesDiv]);
+  useEffect(() => {
+    if (futureScenarioDiv) {
+      html2canvas(futureScenarioDiv).then((canvas) => {
+        setFutureScenarioCanvas(canvas.toDataURL());
+      });
+    }
+  }, [futureScenarioDiv]);
   return (
     <>
       {
@@ -177,7 +192,7 @@ export const MyDocument = (props: Props) => {
             <Document>
               <Page style={styles.page}>
                 <View style={styles.coverSection}>
-                  <Text style={styles.documentName}>Integrated SDG Insights</Text>
+                  <Text style={styles.documentName}>{ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'docTitle')][language]}</Text>
                   <Text style={styles.documentName}>{countryName}</Text>
                   <Text style={styles.title}>SDG Push Diagnostic</Text>
                   <Text style={styles.year}>
@@ -188,7 +203,7 @@ export const MyDocument = (props: Props) => {
                     {new Date().getFullYear()}
                   </Text>
                   <Text style={styles.subNote}>
-                    Powered by
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'poweredBy')][language]}
                     {' '}
                     <Link style={{ textDecoration: 'underline', color: '#006EB5', fontStyle: 'italics' }} src='https://data.undp.org/'>Data Futures Platform</Link>
                   </Text>
@@ -199,19 +214,19 @@ export const MyDocument = (props: Props) => {
                   <Text
                     style={{
                       fontSize: 20,
-                      fontFamily: 'Helvetica-Bold',
+                      fontFamily: `${font}-Bold`,
                       fontWeight: 'bold',
                       marginBottom: 20,
                     }}
                   >
                     {countryName}
                     {' '}
-                    Summary Report
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'summaryReport')][language]}
                   </Text>
                   <Text
                     style={{
                       fontSize: 20,
-                      fontFamily: 'Helvetica',
+                      fontFamily: font,
                       marginBottom: 20,
                     }}
                   >
@@ -221,20 +236,20 @@ export const MyDocument = (props: Props) => {
                     style={{
                       fontSize: 14,
                       fontStyle: 'italics',
-                      fontFamily: 'Helvetica',
+                      fontFamily: font,
                       marginBottom: 20,
                       lineHeight: 1.5,
                     }}
                   >
-                    This report has been generated through the
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'reportGenerated')][language]}
                     {' '}
                     <Link style={{ textDecoration: 'underline', color: '#006EB5', fontStyle: 'italics' }} src='https://data.undp.org/sdg-push-diagnostic-test/'>SDG Push Diagnostic</Link>
                     {' '}
-                    for
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'for')][language]}
                     {' '}
                     {countryName}
                     {' '}
-                    on
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'on')][language]}
                     {' '}
                     {new Date().getDate() + 1}
                     /
@@ -248,47 +263,47 @@ export const MyDocument = (props: Props) => {
                         fontSize: '14px',
                         textAlign: 'left',
                         fontWeight: 'bold',
-                        fontFamily: 'Helvetica-Bold',
+                        fontFamily: `${font}-Bold`,
                         marginBottom: 10,
                       }}
                     >
-                      Background
+                      {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'background')][language]}
                     </Text>
                     <Text
                       style={{
                         fontSize: '12px',
                         textAlign: 'left',
-                        fontFamily: 'Helvetica',
+                        fontFamily: font,
                         marginBottom: 10,
                         lineHeight: 1.5,
                       }}
                     >
-                      The SDG Push Diagnostic helps countries practically advance transformative pathways. It integrates multiple data sources and digital innovation to establish a rapid landscape analysis – national priorities, current trends, potential futures, and interlinkages.
+                      {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'docIntro')][language]}
                     </Text>
                     <Text
                       style={{
                         fontSize: '12px',
                         lineHeight: 1.5,
                         textAlign: 'left',
-                        fontFamily: 'Helvetica',
+                        fontFamily: font,
                       }}
                     >
-                      The SDG Push Diagnostic is the foundation for a tailored ‘Integrated SDG Insights’ report that helps member states assess areas where they are making investments with biggest multiplier effects, and chart transformative pathways as part of their national commitments at the SDG Summit.
+                      {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'sdgPushIntro')][language]}
                     </Text>
                   </View>
                   <Text style={styles.boldText}>
-                    Current Priorities
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'currentPriorities')][language]}
                   </Text>
                   <Text
                     style={{
                       fontSize: '12px',
                       lineHeight: 1.5,
                       textAlign: 'left',
-                      fontFamily: 'Helvetica',
+                      fontFamily: font,
                       marginBottom: 20,
                     }}
                   >
-                    This section analysis national SDG priorities based on key national documents such as national development plans, Voluntary National Reviews (VNRs) and any other relevant policy documents outlining government development priorities. This text analysis provides a summarized review of lengthy policy documents and maps them to the SDGs. The output reveals the most prominent SDGs that are mentioned across key policy documents.
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'priorityAnalysis')][language]}
                   </Text>
                   {
                     prioritiesCanvas
@@ -298,7 +313,21 @@ export const MyDocument = (props: Props) => {
                         />
                       ) : null
                   }
-
+                  <Text
+                    style={{
+                      fontSize: '12px',
+                      lineHeight: 1.5,
+                      textAlign: 'left',
+                      fontFamily: font,
+                      marginBottom: 20,
+                    }}
+                  >
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'sdgAnalysisMethodology')][language]}
+                    {' '}
+                    <Link style={{ textDecoration: 'underline', color: '#006EB5', fontStyle: 'italics' }} src='https://data.undp.org/sdg-push-diagnostic-test/Methodology.pdf'>SDG Push - Diagnostic Methodological Note & User Guide.pdf</Link>
+                    {' '}
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'detailedMethodology')][language]}
+                  </Text>
                   <View style={styles.highlightSection}>
                     <Text
                       style={{
@@ -306,16 +335,10 @@ export const MyDocument = (props: Props) => {
                         textAlign: 'left',
                         fontWeight: 'bold',
                         lineHeight: 1.5,
-                        fontFamily: 'Helvetica-Bold',
+                        fontFamily: `${font}-Bold`,
                       }}
                     >
-                      For
-                      {' '}
-                      {countryName}
-                      , analyzing the major priorities in the current action documents by the country, we find
-                      {' '}
-                      {highPrioritySDG}
-                      are likely high priority.
+                      {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'countryActionPriorities')][language].replaceAll('{{countryName}}', countryName).replaceAll('{{sdgList}}', highPrioritySDG).replaceAll('SDG', ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'sdg')][language])}
                     </Text>
                   </View>
                   <Text
@@ -323,87 +346,70 @@ export const MyDocument = (props: Props) => {
                       fontSize: '12px',
                       lineHeight: 1.5,
                       textAlign: 'left',
-                      fontFamily: 'Helvetica',
+                      fontFamily: font,
                       marginBottom: 20,
                     }}
                   >
-                    The analysis is generated using machine learning text analysis to surface priorities that can be mapped to the SDGs. The model analyses the document by linking its constituent pieces to SDGs and then aggregates the statistics before presenting the results. The underlying assumption of the analysis is that the amount of text linked to each SDG defines how important each SDG is. In this context, the “importance” of an SDG is referred to as “salience”. Thus, the most salient SDG is the one to which most of the text pieces, e.g., paragraphs, could be linked. Refer to the
-                    {' '}
-                    <Link style={{ textDecoration: 'underline', color: '#006EB5', fontStyle: 'italics' }} src='https://data.undp.org/sdg-push-diagnostic-test/Methodology.pdf'>SDG Push - Diagnostic Methodological Note & User Guide.pdf</Link>
-                    {' '}
-                    for a detailed methodology.
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'detailedMethodologyPara1')][language]}
                   </Text>
                   <Text
                     style={{
                       fontSize: '12px',
                       lineHeight: 1.5,
                       textAlign: 'left',
-                      fontFamily: 'Helvetica',
+                      fontFamily: font,
                       marginBottom: 20,
                     }}
                   >
-                    The output from the text analysis is overlayed with the SDG ‘status’, to map which SDGs are off-track in reaching the 2030 goals. This comparison is important in pointing out the gaps and opportunities of the current national SDG policy priorities versus how the SDGs are performing on the ground. The comparison can guide potential opportunities for SDG investments in optimizing national priorities and achieving the sustainable development goals.
-                  </Text>
-                  <Text
-                    style={{
-                      fontSize: '12px',
-                      lineHeight: 1.5,
-                      textAlign: 'left',
-                      fontFamily: 'Helvetica',
-                      marginBottom: 20,
-                    }}
-                  >
-                    The matrix below maps national priorities and current trends. This can provide meaningful insights for national dialogues and identification of transformative pathways.
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'MatrixMapping')][language]}
                   </Text>
                   <Text style={{
                     fontSize: '12px',
                     textAlign: 'left',
                     fontWeight: 'bold',
-                    fontFamily: 'Helvetica-Bold',
+                    fontFamily: `${font}-Bold`,
                     marginBottom: 10,
                     lineHeight: 1.5,
                   }}
                   >
-                    Comparing SDG national priorities based on
-                    {' '}
-                    {docName}
-                    {' '}
-                    and SDG gaps
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'comparingSDGNationalPriorities')][language].replaceAll('{{docName}}', docName.join(', '))}
                   </Text>
                   <Text
                     style={{
                       fontSize: '12px',
                       lineHeight: 1.5,
                       textAlign: 'left',
-                      fontFamily: 'Helvetica',
+                      fontFamily: font,
                       marginBottom: 5,
                     }}
                   >
-                    This matrix maps the SDGs along two parameters
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'SDGMatrixParameters')][language]}
                   </Text>
                   <Text
                     style={{
                       fontSize: '12px',
                       lineHeight: 1.5,
                       textAlign: 'left',
-                      fontFamily: 'Helvetica',
+                      fontFamily: font,
                       marginBottom: 5,
                     }}
                   >
-                    1. their current trend status and
+                    1.
+                    {' '}
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'SDGMatrixParametersPoint1')][language]}
                   </Text>
                   <Text
                     style={{
                       fontSize: '12px',
                       lineHeight: 1.5,
                       textAlign: 'left',
-                      fontFamily: 'Helvetica',
+                      fontFamily: font,
                       marginBottom: 0,
                     }}
                   >
-                    2. their priority status as identified in
+                    2.
                     {' '}
-                    {docName}
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'SDGMatrixParametersPoint2')][language].replaceAll('{{docName}}', docName.join(', '))}
                   </Text>
                   {
                     gapPrioritiesMatrixCanvas
@@ -419,34 +425,30 @@ export const MyDocument = (props: Props) => {
                       lineHeight: 1.5,
                       textAlign: 'left',
                       fontStyle: 'italic',
-                      fontFamily: 'Helvetica',
+                      fontFamily: font,
                       color: '#AAA',
                       marginTop: 10,
                     }}
                   >
-                    Disclaimer: The current priorities identified in
-                    {' '}
-                    {docName}
-                    {' '}
-                    may not reflect the actual and complete priorities of the government. They are a starting point for further discussion.
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'disclaimer')][language]}
                   </Text>
                 </View>
               </Page>
               <Page style={{ padding: 50 }}>
                 <View style={styles.section}>
                   <Text style={styles.boldText}>
-                    Current Trends
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'currentTrends')][language]}
                   </Text>
                   <Text
                     style={{
                       fontSize: '12px',
                       lineHeight: 1.5,
                       textAlign: 'left',
-                      fontFamily: 'Helvetica',
+                      fontFamily: font,
                       marginBottom: 20,
                     }}
                   >
-                    The ’Current Trends’ measures the progress of the SDGs. Progress on the 17 SDGs are tracked through 169 sub-targets, which in turn are measured using 231 unique indicators. This analysis provides a categorization and overview of the SDGs and corresponding targets and indicators which are on-track or off-track at the national level, providing the baseline landscape against which to build the SDG Push.
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'currentTrendsIntro')][language]}
                   </Text>
                   <View style={styles.highlightSection}>
                     <Text
@@ -455,10 +457,10 @@ export const MyDocument = (props: Props) => {
                         textAlign: 'left',
                         fontWeight: 'bold',
                         lineHeight: 1.5,
-                        fontFamily: 'Helvetica-Bold',
+                        fontFamily: `${font}-Bold`,
                       }}
                     >
-                      For
+                      {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'for')][language]}
                       {' '}
                       <Text
                         style={{
@@ -466,12 +468,12 @@ export const MyDocument = (props: Props) => {
                           textAlign: 'left',
                           fontWeight: 'bold',
                           lineHeight: 1.5,
-                          fontFamily: 'Helvetica-Bold',
+                          fontFamily: `${font}-Bold`,
                         }}
                       >
                         {countryName}
                       </Text>
-                      , out of 17 SDGs,
+                      {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'outOf')][language]}
                       {' '}
                       <Text
                         style={{
@@ -479,13 +481,15 @@ export const MyDocument = (props: Props) => {
                           textAlign: 'left',
                           fontWeight: 'bold',
                           lineHeight: 1.5,
-                          fontFamily: 'Helvetica-Bold',
+                          fontFamily: `${font}-Bold`,
                           color: '#59BA47',
                         }}
                       >
                         {dataWithStatus.filter((d: any) => d.status === 'On Track').length}
                         {' '}
-                        are On Track,
+                        {ReportTranslation[ReportTranslation.findIndex((d) => (dataWithStatus.filter((el: any) => el.status === 'On Track').length === 1 ? d.key === 'is' : d.key === 'are'))][language]}
+                        {' '}
+                        On Track,
                       </Text>
                       <Text
                         style={{
@@ -493,14 +497,17 @@ export const MyDocument = (props: Props) => {
                           textAlign: 'left',
                           fontWeight: 'bold',
                           lineHeight: 1.5,
-                          fontFamily: 'Helvetica-Bold',
+                          fontFamily: `${font}-Bold`,
                           color: '#FBC412',
                         }}
                       >
                         {' '}
                         {dataWithStatus.filter((d: any) => d.status === 'For Review').length}
                         {' '}
-                        are For Review
+
+                        {ReportTranslation[ReportTranslation.findIndex((d) => (dataWithStatus.filter((el: any) => el.status === 'For Review').length === 1 ? d.key === 'is' : d.key === 'are'))][language]}
+                        {' '}
+                        For Review
                       </Text>
                       {' '}
                       and
@@ -511,13 +518,16 @@ export const MyDocument = (props: Props) => {
                           textAlign: 'left',
                           fontWeight: 'bold',
                           lineHeight: 1.5,
-                          fontFamily: 'Helvetica-Bold',
+                          fontFamily: `${font}-Bold`,
                           color: '#D12800',
                         }}
                       >
                         {dataWithStatus.filter((d: any) => d.status === 'Identified Gap').length}
                         {' '}
-                        are Identified Gaps
+
+                        {ReportTranslation[ReportTranslation.findIndex((d) => (dataWithStatus.filter((el: any) => el.status === 'Identified Gap').length === 1 ? d.key === 'is' : d.key === 'are'))][language]}
+                        {' '}
+                        Identified Gaps
                       </Text>
                     </Text>
                   </View>
@@ -534,71 +544,51 @@ export const MyDocument = (props: Props) => {
               <Page style={{ padding: 50 }}>
                 <View style={styles.section}>
                   <Text style={styles.boldText}>
-                    SDG Interlinkages
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'sdgInterlinkages')][language]}
                   </Text>
                   <Text
                     style={{
                       fontSize: '12px',
                       lineHeight: 1.5,
                       textAlign: 'left',
-                      fontFamily: 'Helvetica',
+                      fontFamily: font,
                       marginBottom: 20,
                     }}
                   >
-                    The SDGs do not exist in silos, understanding how the goals are interconnected, both positively and negatively, is essential to understanding the mechanisms for achieving the targets. A better understanding of patterns of synergies and trade-offs can support strategic decision making and promote game-changing interventions for the SDGs.
-                    {' '}
-
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'interlinkagesPara1')][language]}
                   </Text>
                   <Text
                     style={{
                       fontSize: '12px',
                       lineHeight: 1.5,
                       textAlign: 'left',
-                      fontFamily: 'Helvetica',
+                      fontFamily: font,
                       marginBottom: 20,
                     }}
                   >
-                    This section considers the interlinkages between SDGs and their targets. It considers the national priorities and their SDG ‘status’ and investigates which SDG targets has the most synergies and hence potential for a positive multiplier effect on other SDG targets.
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'interlinkagesPara2')][language]}
                   </Text>
                   <View style={styles.highlightSection}>
                     <Text
                       style={{
                         fontSize: '12px',
                         textAlign: 'left',
-                        fontFamily: 'Helvetica',
+                        fontFamily: font,
                         marginBottom: 10,
                         lineHeight: 1.5,
                       }}
                     >
-                      For
-                      {' '}
-                      {countryName}
-                      , SDG
-                      {' '}
-                      {sdgForInterlinkage.sdg}
-                      {' '}
-                      has been identified as having
-                      {' '}
-                      {sdgForInterlinkage.status}
-                      {' '}
-                      as well as being high priority as per the national documents uploaded.
+                      {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'interlinkagesBoxPara1')][language].replaceAll('{{countryName}}', countryName).replaceAll('{{sdgNo}}', sdgForInterlinkage.sdg).replaceAll('{{status}}', sdgForInterlinkage.status)}
                     </Text>
                     <Text
                       style={{
                         fontSize: '12px',
                         lineHeight: 1.5,
                         textAlign: 'left',
-                        fontFamily: 'Helvetica',
+                        fontFamily: font,
                       }}
                     >
-                      Within SDG
-                      {' '}
-                      {sdgForInterlinkage.sdg}
-                      ,
-                      {' '}
-                      {selectedTarget}
-                      {' '}
-                      has the highest potential for a positive multiplier effect as it’s connected with the most targets across the SDGS.
+                      {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'interlinkagesBoxPara2')][language].replaceAll('{{sdgNo}}', sdgForInterlinkage.sdg).replaceAll('{{targetNo}}', selectedTarget)}
                     </Text>
                   </View>
                   {
@@ -606,6 +596,70 @@ export const MyDocument = (props: Props) => {
                       ? (
                         <Image
                           src={interlinkageCanvas}
+                        />
+                      ) : null
+                  }
+                </View>
+              </Page>
+              <Page style={{ padding: 50 }}>
+                <View style={styles.section}>
+                  <Text style={styles.boldText}>
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'futureScenarios')][language]}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: '12px',
+                      lineHeight: 1.5,
+                      textAlign: 'left',
+                      fontFamily: font,
+                      marginBottom: 20,
+                    }}
+                  >
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'futureScenariosPara1')][language]}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: '12px',
+                      lineHeight: 1.5,
+                      textAlign: 'left',
+                      fontFamily: font,
+                      marginBottom: 20,
+                    }}
+                  >
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'futureScenariosPara2')][language]}
+
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: '12px',
+                      lineHeight: 1.5,
+                      textAlign: 'left',
+                      fontFamily: font,
+                      marginBottom: 20,
+                    }}
+                  >
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'futureScenariosPara3')][language]}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: '12px',
+                      lineHeight: 1.5,
+                      textAlign: 'left',
+                      fontFamily: font,
+                      marginBottom: 20,
+                    }}
+                  >
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'futureScenariosPara4Part1')][language]}
+                    <Link style={{ textDecoration: 'underline', color: '#006EB5', fontStyle: 'italics' }} src='https://data.undp.org/wp-content/uploads/2021/04/Leaving-No-One-Behind-COVID-impact-on-the-SDGs-second-flagship-2.pdf'>
+                      {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'futureScenariosPara4Part2')][language]}
+                    </Link>
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'futureScenariosPara4Part3')][language]}
+                  </Text>
+                  {
+                    futureScenarioCanvas
+                      ? (
+                        <Image
+                          src={futureScenarioCanvas}
                         />
                       ) : null
                   }

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import styled from 'styled-components';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import {
   Modal,
   Radio,
@@ -11,7 +11,6 @@ import { useEffect, useRef, useState } from 'react';
 import sortBy from 'lodash.sortby';
 import reverse from 'lodash.reverse';
 import { VNRAnalysis } from './VNRAnalysis';
-import { CompareAnalysis } from './CompareTable';
 import { GoalStatusType } from '../Types';
 
 import '../style/tabStyle.css';
@@ -21,6 +20,7 @@ import '../style/radioStyle.css';
 import Background from '../img/UNDP-hero-image.png';
 import ChevronRight from '../img/chevron-small-right.svg';
 import ChevronDown from '../img/chevron-small-down.svg';
+import { API_ACCESS_TOKEN } from '../Constants';
 
 interface Props {
   countrySelected: string;
@@ -34,20 +34,12 @@ const HeroImageEl = styled.div`
   margin-top: 7.1875rem;
 `;
 
-interface WidthProps {
-  width: string;
-}
-
-const UploadEl = styled.div<WidthProps>`
+const UploadEl = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
-  border: 2px solid var(--gray-700);
-  background-color: var(--white);
-  width: ${(props) => props.width};
-  @media (max-width: 1172px) {
-    width: 100%;
-  }
+  width: fit-content;
+  background-color: var(--gray-300);
 `;
 
 const Button = styled.button`
@@ -81,15 +73,23 @@ const UploadButtonEl = styled.div`
   font-size: 0.875rem;
   line-height: 1;
   width: fit-content;
-  background-color: var(--gray-200);
   font-weight: bold;
-  border-right: 2px solid var(--gray-400);
   &:hover{
-    background-color: var(--gray-300);
+    background-color: var(--gray-400);
   }
 `;
 
-const FileAttacehmentButton = styled.input`
+const CloseIcon = styled.div`
+  margin-left: 0.5rem;
+  width: 24px;
+  height: 24px;
+  background-color: var(--dark-red);
+  -webkit-mask-image: url(https://design.undp.org/icons/times.svg);
+  mask-image: url(https://design.undp.org/icons/times.svg);
+  mask-size: 24px;
+`;
+
+const FileAttachmentButton = styled.input`
   display: none;
 `;
 
@@ -100,105 +100,44 @@ export const Priorities = (props: Props) => {
     goalStatuses,
   } = props;
   const fileInputRef = useRef<any>(null);
-  const [selectedFileName, setSelectedFileName] = useState<string>('');
-  const [selectedFileNameAnalyzed, setSelectedFileNameAnalyzed] = useState<string>('');
   const [loading, setLoading] = useState(false);
-  const [selectedFile, setSelectedFile] = useState<any>(null);
-  const [selectedCompareFileName1, setSelectedCompareFileName1] = useState<string>('');
-  const [selectedCompareFileName1Analyzed, setSelectedCompareFileName1Analyzed] = useState<string>('');
-  const [selectedCompareFile1, setSelectedCompareFile1] = useState<any>(null);
-  const [selectedCompareFileName2, setSelectedCompareFileName2] = useState<string>('');
-  const [selectedCompareFileName2Analyzed, setSelectedCompareFileName2Analyzed] = useState<string>('');
-  const [selectedCompareFile2, setSelectedCompareFile2] = useState<any>(null);
+  const [selectedFile, setSelectedFile] = useState<any>([]);
+  const [selectedFileNotAnalyzed, setSelectedFileNotAnalyzed] = useState<any>([]);
   const [vnrYear, setVNRYear] = useState<null | number>(null);
   const [selectYear, setSelectYear] = useState<null | number>(null);
   const [error, setError] = useState<any>(null);
   const [data, setData] = useState<any>(null);
   const [countryVNRs, setCountryVNRs] = useState<any>(null);
-  const [showAdvanceSettings, setShowAdvancedSettings] = useState(false);
-  const [model, setModel] = useState<'multiclass' | 'multilabel'>('multilabel');
-  const [granularity, setGranularity] = useState<'sentence' | 'paragraph'>('paragraph');
+  const [strategy, setStrategy] = useState<'equal' | 'proportional'>('equal');
 
   const handleFileSelect = (event: any) => {
     if (event.target.files) {
       if (event.target.files[0]) {
-        setSelectedFile(event.target.files[0]);
-        setSelectedFileName(event.target.files[0].name);
+        const files: any = [...selectedFileNotAnalyzed].concat([...event.target.files].map((d: any) => d));
+        setSelectedFileNotAnalyzed(files);
       }
-    }
-  };
-  const handleCompareFileSelect1 = (event: any) => {
-    if (event.target.files) {
-      if (event.target.files[0]) {
-        setSelectedCompareFile1(event.target.files[0]);
-        setSelectedCompareFileName1(event.target.files[0].name);
-      }
-    }
-  };
-  const handleCompareFileSelect2 = (event: any) => {
-    if (event.target.files) {
-      if (event.target.files[0]) {
-        setSelectedCompareFile2(event.target.files[0]);
-        setSelectedCompareFileName2(event.target.files[0].name);
-      }
-    }
-  };
-
-  const compareDocument = () => {
-    if (selectedCompareFile1 && selectedCompareFile2) {
-      const formData1 = new FormData();
-      formData1.append('file', selectedCompareFile1);
-      const formData2 = new FormData();
-      formData2.append('file', selectedCompareFile2);
-      axios({
-        method: 'post',
-        url: `https://sdg-accelerator-api.azurewebsites.net/upload?model=${model}&granularity=${granularity}`,
-        data: formData1,
-        headers: { 'Content-Type': 'multipart/form-data' },
-      })
-        .then((response1: any) => {
-          axios({
-            method: 'post',
-            url: `https://sdg-accelerator-api.azurewebsites.net/upload?model=${model}&granularity=${granularity}`,
-            data: formData2,
-            headers: { 'Content-Type': 'multipart/form-data' },
-          })
-            .then((response2: any) => {
-              if (typeof response2.data === 'string' || typeof response1.data === 'string') setError('PDF File Required');
-              else {
-                setSelectedCompareFileName1Analyzed(selectedCompareFileName1);
-                setSelectedCompareFileName2Analyzed(selectedCompareFileName2);
-                setData({ mode: 'compare', data: [response1.data.sdgs, response2.data.sdgs] });
-                setError(null);
-                setLoading(false);
-              }
-            })
-            .catch((err) => {
-              setError(err.message);
-              setLoading(false);
-            });
-        })
-        .catch((err) => {
-          setError(err.message);
-          setLoading(false);
-        });
     }
   };
 
   const analyzeDocument = () => {
-    if (selectedFile) {
+    if (selectedFileNotAnalyzed) {
       const formData = new FormData();
-      formData.append('file', selectedFile);
+      for (let i = 0; i < selectedFileNotAnalyzed.length; i += 1) {
+        formData.append('files', selectedFileNotAnalyzed[i]);
+      }
+      setSelectedFile(selectedFileNotAnalyzed);
       axios({
         method: 'post',
-        url: `https://sdg-accelerator-api.azurewebsites.net/upload?model=${model}&granularity=${granularity}`,
+        url: `https://sdg-push-diagnostic-api.azurewebsites.net/v1/upload/files?strategy=${strategy}`,
         data: formData,
-        headers: { 'Content-Type': 'multipart/form-data' },
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          access_token: API_ACCESS_TOKEN,
+        },
       })
-        .then((response: any) => {
+        .then((response: AxiosResponse) => {
           if (typeof response.data === 'string') setError('PDF File Required');
           else {
-            setSelectedFileNameAnalyzed(selectedFileName);
             setData({ mode: 'analyze', data: response.data.sdgs });
             setLoading(false);
             setError(null);
@@ -214,7 +153,12 @@ export const Priorities = (props: Props) => {
   const analyzeVNR = () => {
     if (selectYear) {
       const { language } = countryVNRs[countryVNRs.findIndex((d: any) => d.year === selectYear)];
-      axios.get(`https://sdg-accelerator-api.azurewebsites.net/vnrs/${countrySelected.toLowerCase()}/${selectYear}/${language}/${model}/${granularity}`)
+      axios.get(
+        `https://sdg-push-diagnostic-api.azurewebsites.net/v1/vnrs/find?iso=${countrySelected.toLowerCase()}&year=${selectYear}&language=${language}`,
+        {
+          headers: { access_token: API_ACCESS_TOKEN },
+        },
+      )
         .then((res) => {
           setData(res.data.sdgs);
           setVNRYear(selectYear);
@@ -227,14 +171,24 @@ export const Priorities = (props: Props) => {
   };
 
   useEffect(() => {
-    axios.get('https://sdg-accelerator-api.azurewebsites.net/vnrs')
-      .then((response:any) => {
+    axios.get(
+      'https://sdg-push-diagnostic-api.azurewebsites.net/v1/vnrs/list',
+      {
+        headers: { access_token: API_ACCESS_TOKEN },
+      },
+    )
+      .then((response:AxiosResponse) => {
         const countryData = reverse(sortBy(response.data.filter((country: any) => country.iso === countrySelected.toLowerCase()), 'year'));
         setCountryVNRs(countryData);
         if (countryData.length > 0) {
           setVNRYear(countryData[0].year);
           setSelectYear(countryData[0].year);
-          axios.get(`https://sdg-accelerator-api.azurewebsites.net/vnrs/${countrySelected.toLowerCase()}/${countryData[0].year}/${countryData[0].language}/${model}/${granularity}`)
+          axios.get(
+            `https://sdg-push-diagnostic-api.azurewebsites.net/v1/vnrs/find?iso=${countrySelected.toLowerCase()}&year=${countryData[0].year}&language=${countryData[0].language}`,
+            {
+              headers: { access_token: API_ACCESS_TOKEN },
+            },
+          )
             .then((res) => {
               setData(res.data.sdgs);
             })
@@ -260,9 +214,7 @@ export const Priorities = (props: Props) => {
               defaultActiveKey='vnrs'
               className='undp-tabs'
               onChange={() => {
-                setModel('multilabel');
-                setGranularity('paragraph');
-                setShowAdvancedSettings(false);
+                setStrategy('equal');
               }}
               items={[
                 {
@@ -297,40 +249,6 @@ export const Priorities = (props: Props) => {
                                       countryVNRs.map((d: any, i: number) => <Select.Option key={i} className='undp-select-option' value={d.year}>{d.year}</Select.Option>)
                                     }
                                   </Select>
-                                </div>
-                                <div className='margin-top-07'>
-                                  <Button
-                                    role='button'
-                                    className='flex-div flex-vert-align-center margin-bottom-05'
-                                    style={{ gap: '0.25rem' }}
-                                    onClick={() => { setShowAdvancedSettings(!showAdvanceSettings); }}
-                                  >
-                                    {
-                                      showAdvanceSettings ? <img alt='chevron-down' src={ChevronDown} style={{ width: '14px' }} />
-                                        : <img alt='chevron-right' src={ChevronRight} style={{ width: '14px', padding: '0 2px' }} />
-                                    }
-                                    <h6 className='undp-typography margin-bottom-00' style={{ color: 'var(--gray-600)' }}>Experimental settings</h6>
-                                  </Button>
-                                  {
-                                    showAdvanceSettings ? (
-                                      <div className='flex-div flex-space-between'>
-                                        <div style={{ width: 'calc(50% - 1rem)' }}>
-                                          <p className='label'>Machine learning Model</p>
-                                          <Radio.Group value={model} onChange={(target) => { setModel(target.target.value); }}>
-                                            <Radio className='undp-radio' value='multilabel'>Multi-label (recommended)</Radio>
-                                            <Radio className='undp-radio' value='multiclass'>Multi-class</Radio>
-                                          </Radio.Group>
-                                        </div>
-                                        <div style={{ width: 'calc(50% - 1rem)' }}>
-                                          <p className='label'>Granularity</p>
-                                          <Radio.Group value={granularity} onChange={(target) => { setGranularity(target.target.value); }}>
-                                            <Radio className='undp-radio' value='paragraph'>Paragraph (recommended)</Radio>
-                                            <Radio className='undp-radio' value='sentence'>Sentence</Radio>
-                                          </Radio.Group>
-                                        </div>
-                                      </div>
-                                    ) : null
-                                  }
                                 </div>
                                 <button
                                   type='button'
@@ -367,7 +285,7 @@ export const Priorities = (props: Props) => {
                   ),
                 },
                 {
-                  label: 'Upload a document',
+                  label: 'Upload documents',
                   key: 'upload',
                   children: (
                     <>
@@ -376,61 +294,42 @@ export const Priorities = (props: Props) => {
                         <br />
                         <br />
                         Explore the analysis of these priorities using Machine Learning.
+                        {' '}
+                        <span className='italics' style={{ color: 'var(--gray-500)' }}>Maximum 10 documents allowed</span>
                       </h5>
                       <>
                         <div className='margin-top-07'>
-                          <UploadEl width='100%'>
+                          {
+                            selectedFileNotAnalyzed.length > 0
+                              ? (
+                                <div className='flex-div margin-bottom-05'>
+                                  {
+                                selectedFileNotAnalyzed.map((d: any, i: number) => (
+                                  <div className='undp-chip-dark-gray undp-chip' key={i}>
+                                    {d.name}
+                                    <CloseIcon onClick={() => { setSelectedFileNotAnalyzed(selectedFileNotAnalyzed.filter((el: any) => d !== el)); }} />
+                                  </div>
+                                ))
+                              }
+                                </div>
+                              ) : null
+                          }
+                          <UploadEl>
                             <label htmlFor='file-upload-analyze' className='custom-file-upload'>
-                              <UploadButtonEl style={{ width: '177.55px' }}>Upload a document</UploadButtonEl>
+                              <UploadButtonEl>Add Document</UploadButtonEl>
                             </label>
-                            {
-                              selectedFileName !== '' ? (
-                                <SelectedEl>
-                                  Selected
-                                  {' '}
-                                  <span className='bold'>{selectedFileName}</span>
-                                </SelectedEl>
-                              ) : <SelectedEl style={{ opacity: '0.6' }}>No file selected</SelectedEl>
-                            }
-                            <FileAttacehmentButton ref={fileInputRef} id='file-upload-analyze' accept='application/pdf' type='file' onChange={handleFileSelect} />
+                            <FileAttachmentButton multiple ref={fileInputRef} id='file-upload-analyze' accept='application/pdf' type='file' onChange={handleFileSelect} />
                           </UploadEl>
                         </div>
                         <div className='margin-top-07'>
-                          <Button
-                            role='button'
-                            className='flex-div flex-vert-align-center margin-bottom-05'
-                            style={{ gap: '0.25rem' }}
-                            onClick={() => { setShowAdvancedSettings(!showAdvanceSettings); }}
-                          >
-                            {
-                              showAdvanceSettings ? <img alt='chevron-down' src={ChevronDown} style={{ width: '14px' }} />
-                                : <img alt='chevron-right' src={ChevronRight} style={{ width: '14px', padding: '0 2px' }} />
-                            }
-                            <h6 className='undp-typography margin-bottom-00' style={{ color: 'var(--gray-600)' }}>Experimental settings</h6>
-                          </Button>
-                          {
-                            showAdvanceSettings ? (
-                              <div className='flex-div flex-space-between'>
-                                <div style={{ width: 'calc(50% - 1rem)' }}>
-                                  <p className='label'>Machine learning Model</p>
-                                  <Radio.Group value={model} onChange={(target) => { setModel(target.target.value); }}>
-                                    <Radio className='undp-radio' value='multilabel'>Multi-label (recommended)</Radio>
-                                    <Radio className='undp-radio' value='multiclass'>Multi-class</Radio>
-                                  </Radio.Group>
-                                </div>
-                                <div style={{ width: 'calc(50% - 1rem)' }}>
-                                  <p className='label'>Granularity</p>
-                                  <Radio.Group value={granularity} onChange={(target) => { setGranularity(target.target.value); }}>
-                                    <Radio className='undp-radio' value='paragraph'>Paragraph (recommended)</Radio>
-                                    <Radio className='undp-radio' value='sentence'>Sentence</Radio>
-                                  </Radio.Group>
-                                </div>
-                              </div>
-                            ) : null
-                          }
+                          <p className='label'>Document Proportional Strategy</p>
+                          <Radio.Group value={strategy} onChange={(target) => { setStrategy(target.target.value); }}>
+                            <Radio className='undp-radio' value='equal'>Equal</Radio>
+                            <Radio className='undp-radio' value='proportional'>Proportional</Radio>
+                          </Radio.Group>
                         </div>
                         {
-                          selectedFileName !== ''
+                          selectedFileNotAnalyzed.length > 0
                             ? (
                               <button
                                 type='button'
@@ -446,105 +345,6 @@ export const Priorities = (props: Props) => {
                             : (
                               <button type='button' className='margin-top-05 undp-button button-primary button-arrow margin-top-07 disabled'>
                                 Analyze Document
-                              </button>
-                            )
-                        }
-                      </>
-                    </>
-                  ),
-                },
-                {
-                  label: 'Compare two document',
-                  key: 'compare',
-                  children: (
-                    <>
-                      <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-                        Upload multiple documents, and compare which SDGs feature most prominently as a priority in each of the documents.
-                      </h5>
-                      <>
-                        <div className='margin-top-07 flex-div flex-wrap'>
-                          <UploadEl width='calc(50% - 0.5rem)'>
-                            <label htmlFor='file-upload-doc1' className='custom-file-upload'>
-                              <UploadButtonEl style={{ width: '205.25px' }}>Upload first document</UploadButtonEl>
-                            </label>
-                            {
-                              selectedCompareFileName1 !== '' ? (
-                                <SelectedEl>
-                                  Selected
-                                  {' '}
-                                  <span className='bold'>{selectedCompareFileName1}</span>
-                                </SelectedEl>
-                              ) : <SelectedEl style={{ opacity: '0.6' }}>No file selected</SelectedEl>
-                            }
-                            <FileAttacehmentButton ref={fileInputRef} id='file-upload-doc1' accept='application/pdf' type='file' onChange={handleCompareFileSelect1} />
-                          </UploadEl>
-                          <UploadEl width='calc(50% - 0.5rem)'>
-                            <label htmlFor='file-upload-doc2' className='custom-file-upload'>
-                              <UploadButtonEl style={{ width: '225.11px' }}>Upload second document</UploadButtonEl>
-                            </label>
-                            {
-                              selectedCompareFileName2 !== '' ? (
-                                <SelectedEl>
-                                  Selected
-                                  {' '}
-                                  <span className='bold'>{selectedCompareFileName2}</span>
-                                </SelectedEl>
-                              ) : <SelectedEl style={{ opacity: '0.6' }}>No file selected</SelectedEl>
-                            }
-                            <FileAttacehmentButton ref={fileInputRef} id='file-upload-doc2' accept='application/pdf' type='file' onChange={handleCompareFileSelect2} />
-                          </UploadEl>
-                        </div>
-                        <div className='margin-top-07'>
-                          <Button
-                            role='button'
-                            className='flex-div flex-vert-align-center margin-bottom-05'
-                            style={{ gap: '0.25rem' }}
-                            onClick={() => { setShowAdvancedSettings(!showAdvanceSettings); }}
-                          >
-                            {
-                              showAdvanceSettings ? <img alt='chevron-down' src={ChevronDown} style={{ width: '14px' }} />
-                                : <img alt='chevron-right' src={ChevronRight} style={{ width: '14px', padding: '0 2px' }} />
-                            }
-                            <h6 className='undp-typography margin-bottom-00' style={{ color: 'var(--gray-600)' }}>Experimental settings</h6>
-                          </Button>
-                          {
-                            showAdvanceSettings ? (
-                              <div className='flex-div flex-space-between'>
-                                <div style={{ width: 'calc(50% - 1rem)' }}>
-                                  <p className='label'>Machine learning Model</p>
-                                  <Radio.Group value={model} onChange={(target) => { setModel(target.target.value); }}>
-                                    <Radio className='undp-radio' value='multilabel'>Multi-label (recommended)</Radio>
-                                    <Radio className='undp-radio' value='multiclass'>Multi-class</Radio>
-                                  </Radio.Group>
-                                </div>
-                                <div style={{ width: 'calc(50% - 1rem)' }}>
-                                  <p className='label'>Granularity</p>
-                                  <Radio.Group value={granularity} onChange={(target) => { setGranularity(target.target.value); }}>
-                                    <Radio className='undp-radio' value='paragraph'>Paragraph (recommended)</Radio>
-                                    <Radio className='undp-radio' value='sentence'>Sentence</Radio>
-                                  </Radio.Group>
-                                </div>
-                              </div>
-                            ) : null
-                          }
-                        </div>
-                        {
-                          selectedCompareFileName1 !== '' && selectedCompareFileName2 !== ''
-                            ? (
-                              <button
-                                type='button'
-                                className='margin-top-05 undp-button button-primary button-arrow margin-top-07'
-                                onClick={() => {
-                                  setLoading(true);
-                                  compareDocument();
-                                }}
-                              >
-                                Compare Documents
-                              </button>
-                            )
-                            : (
-                              <button type='button' className='margin-top-05 undp-button button-primary button-arrow margin-top-07 disabled'>
-                                Compare Documents
                               </button>
                             )
                         }
@@ -568,13 +368,13 @@ export const Priorities = (props: Props) => {
             >
               <h6 className='undp-typography margin-bottom-00' style={{ color: 'var(--dark-red)' }}>
                 {
-                  error === 'No VNRs' ? `We don't a VNR for ${countryFullName} available in our database. Plese try to upload a document and analyze it.`
+                  error === 'No VNRs' ? `We don't a VNR for ${countryFullName} available in our database. Please try to upload a document and analyze it.`
                     : (
                       <>
                         We are sorry! Something went wrong in the analysis.
                         <br />
                         <br />
-                        Please try again later after sometime and make sure you are uplaoding a PDF document
+                        Please try again later after sometime and make sure you are uploading a PDF document
                       </>
                     )
                 }
@@ -582,20 +382,13 @@ export const Priorities = (props: Props) => {
             </div>
           )
           : data
-            ? data.mode !== 'compare'
-              ? (
-                <VNRAnalysis
-                  data={data.mode === 'analyze' ? data.data : data}
-                  goalStatuses={goalStatuses}
-                  document={data.mode === 'analyze' ? selectedFileNameAnalyzed : `VNR ${vnrYear}`}
-                />
-              ) : (
-                <CompareAnalysis
-                  data={data.data}
-                  goalStatuses={goalStatuses}
-                  document={[selectedCompareFileName1Analyzed, selectedCompareFileName2Analyzed]}
-                />
-              )
+            ? (
+              <VNRAnalysis
+                data={data.mode === 'analyze' ? data.data : data}
+                goalStatuses={goalStatuses}
+                document={data.mode === 'analyze' ? selectedFile.map((d:any) => d.name) : [`VNR ${vnrYear}`]}
+              />
+            )
             : null
       }
       <Modal

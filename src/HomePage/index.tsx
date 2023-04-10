@@ -46,7 +46,7 @@ export const HomePage = (props: Props) => {
           <h5 className='undp-typography'>
             The
             {' '}
-            <a href='https://sdgintegration.undp.org/sdg-acceleration-diagnostic' className='undp-style dark-bg red-underline' target='_blank' rel='noreferrer'>SDG Push</a>
+            <a href='https://sdgintegration.undp.org/sdg-push' className='undp-style dark-bg red-underline' target='_blank' rel='noreferrer'>SDG Push</a>
             {' '}
             reimagines and recalibrates how we determine, interrogate and advance development interventions that put countries on more stable footing. The SDG Push Diagnostic is a key element of the SDG Push.
           </h5>

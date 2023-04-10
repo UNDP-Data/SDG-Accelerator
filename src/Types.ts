@@ -222,3 +222,5 @@ export interface CountryGoalStatusType {
     status: 'On Track' | 'Identified Gap' | 'For Review' | null;
   }[];
 }
+
+export type LanguageList = 'en' | 'ru' | 'fr' | 'es';

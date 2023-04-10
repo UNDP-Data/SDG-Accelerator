@@ -467,3 +467,5 @@ export const TargetIndicatorCount = [
     noOfIndicators: 25,
   },
 ];
+
+export const API_ACCESS_TOKEN = 'ph92BXomD13M0qS9';

@@ -20,7 +20,7 @@ import '../style/selectStyle.css';
 interface Props {
   data: any;
   goalStatuses: GoalStatusType[];
-  document: string;
+  document: string[];
 }
 
 interface SDGHoveredProps {
@@ -67,11 +67,11 @@ export const VNRAnalysis = (props: Props) => {
   const [hoveredSDG, setHoveredSDG] = useState<null | SDGHoveredProps>(null);
   const [nodeData, setNodeData] = useState<any>(null);
   const [showSalienceGraph, setShowSalienceGraph] = useState(false);
-  const dataWithStatuses = data.map((d: any) => ({ ...d, category: d.salience === 0 ? 'No Mention' : d.category.charAt(0).toUpperCase() + d.category.slice(1), status: goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status || 'Gaps NA' }));
+  const dataWithStatuses = data.map((d: any) => ({ ...d, category: d.importance === 0 ? 'No Mention' : d.category.charAt(0).toUpperCase() + d.category.slice(1), status: goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status || 'Gaps NA' }));
   const medium = data.filter((d: any) => d.category === 'medium');
-  const low = data.filter((d: any) => d.category === 'low' && d.salience !== 0);
+  const low = data.filter((d: any) => d.category === 'low' && d.importance !== 0);
   const high = data.filter((d: any) => d.category === 'high');
-  const noMetion = data.filter((d: any) => d.salience === 0);
+  const noMetion = data.filter((d: any) => d.importance === 0);
   const gridSize = 600;
   const margin = 20;
   const cellSize = (gridSize - margin) / 4;
@@ -96,7 +96,7 @@ export const VNRAnalysis = (props: Props) => {
           <h2 className='undp-typography'>
             Current Priorities Based on
             {' '}
-            {document}
+            {document.join(', ')}
           </h2>
           <div className='flex-div margin-top-07 flex-wrap' style={{ gap: '2rem' }}>
             <GraphContainer width='calc(40% - 1rem)'>
@@ -412,7 +412,7 @@ export const VNRAnalysis = (props: Props) => {
             <h2 className='undp-typography'>
               Comparing SDG national priorities based on
               {' '}
-              {document}
+              {document.join(', ')}
               {' '}
               and SDG gaps
             </h2>
@@ -423,7 +423,7 @@ export const VNRAnalysis = (props: Props) => {
               <br />
               2. their priority status as identified in the
               {' '}
-              {document}
+              {document.join(', ')}
               .
               <br />
               <br />
@@ -433,7 +433,7 @@ export const VNRAnalysis = (props: Props) => {
               <span className='italics small-font'>
                 Disclaimer: The current priorities identified in the
                 {' '}
-                {document}
+                {document.join(', ')}
                 {' '}
                 may not reflect the actual and complete priorities of the government. They are a starting point for further discussion.
               </span>

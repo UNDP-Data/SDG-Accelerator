@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import styled from 'styled-components';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { useEffect, useRef, useState } from 'react';
 import sortBy from 'lodash.sortby';
 import reverse from 'lodash.reverse';
@@ -9,7 +9,7 @@ import {
 } from 'd3-force';
 import { Modal, Radio } from 'antd';
 import {
-  GoalStatusType, LinkageDataType, SDGSListType, TargetStatusWithDetailsType,
+  GoalStatusType, LanguageList, LinkageDataType, SDGSListType, TargetStatusWithDetailsType,
 } from '../Types';
 
 import '../style/tabStyle.css';
@@ -17,6 +17,7 @@ import '../style/selectStyle.css';
 import '../style/modalStyle.css';
 import '../style/radioStyle.css';
 import { ReportEl } from './ReportEl';
+import { API_ACCESS_TOKEN } from '../Constants';
 
 const SDGList:SDGSListType[] = require('../Data/SDGGoalList.json');
 
@@ -31,17 +32,6 @@ interface Props {
   openModal: boolean;
   targetStatuses: any;
 }
-interface WidthProps {
-  width: string;
-}
-
-const SelectedEl = styled.div`
-  font-size: 1rem;
-  background-color: var(--gray-100);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-`;
 
 const UploadButtonEl = styled.div`
   color: var(--black);
@@ -54,11 +44,9 @@ const UploadButtonEl = styled.div`
   font-size: 0.875rem;
   line-height: 1;
   width: fit-content;
-  background-color: var(--gray-200);
   font-weight: bold;
-  border-right: 2px solid var(--gray-400);
   &:hover{
-    background-color: var(--gray-300);
+    background-color: var(--gray-400);
   }
 `;
 
@@ -66,16 +54,22 @@ const FileAttachmentButton = styled.input`
   display: none;
 `;
 
-const UploadEl = styled.div<WidthProps>`
+const UploadEl = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
-  border: 2px solid var(--gray-700);
-  background-color: var(--white);
-  width: ${(props) => props.width};
-  @media (max-width: 1172px) {
-    width: 100%;
-  }
+  width: fit-content;
+  background-color: var(--gray-300);
+`;
+
+const CloseIcon = styled.div`
+  margin-left: 0.5rem;
+  width: 24px;
+  height: 24px;
+  background-color: var(--dark-red);
+  -webkit-mask-image: url(https://design.undp.org/icons/times.svg);
+  mask-image: url(https://design.undp.org/icons/times.svg);
+  mask-size: 24px;
 `;
 
 export const ReportGenerationModal = (props: Props) => {
@@ -87,18 +81,18 @@ export const ReportGenerationModal = (props: Props) => {
     openModal,
     setOpenModal,
   } = props;
-  const [docName, setDocName] = useState<string | undefined>(undefined);
+  const [docName, setDocName] = useState<string[]>([]);
   const [generatePDFClicked, setGeneratePDFClicked] = useState(false);
   const [isVnrAvailable, setIsVnrAvailable] = useState(false);
   const [nodeData, setNodeData] = useState<any>(null);
   const [error, setError] = useState<any>(null);
   const [data, setData] = useState<any>(null);
+  const [language, setLanguage] = useState<LanguageList>('en');
   const [selectedTarget, setSelectedTarget] = useState<undefined | string>(undefined);
   const [dataWithStatuses, setDataWithStatuses] = useState<any>(null);
   const [sdgForInterlinkage, setSDGForInterlinkage] = useState<any>(null);
   const fileInputRef = useRef<any>(null);
-  const [selectedFileName, setSelectedFileName] = useState<string>('');
-  const [selectedFile, setSelectedFile] = useState<any>(null);
+  const [selectedFile, setSelectedFile] = useState<any>([]);
   const [docType, setDocType] = useState('Custom');
   const gridSize = 600;
   const margin = 20;
@@ -144,51 +138,71 @@ export const ReportGenerationModal = (props: Props) => {
     }
   }, [dataWithStatuses]);
   useEffect(() => {
-    axios.get('https://sdg-accelerator-api.azurewebsites.net/vnrs')
-      .then((response:any) => {
+    axios.get(
+      'https://sdg-push-diagnostic-api.azurewebsites.net/v1/vnrs/list',
+      {
+        headers: { access_token: API_ACCESS_TOKEN },
+      },
+    )
+      .then((response:AxiosResponse) => {
         setIsVnrAvailable(response.data.filter((country: any) => country.iso === countrySelected.toLowerCase()).length > 0);
       });
   }, [countrySelected]);
   const handleFileSelect = (event: any) => {
     if (event.target.files) {
       if (event.target.files[0]) {
-        setSelectedFile(event.target.files[0]);
-        setSelectedFileName(event.target.files[0].name);
+        const files: any = [...selectedFile].concat([...event.target.files].map((d: any) => d));
+        setSelectedFile(files);
       }
     }
   };
   const analyzeVNR = (doc: string) => {
     if (doc === 'VNR') {
-      axios.get('https://sdg-accelerator-api.azurewebsites.net/vnrs')
-        .then((response:any) => {
+      axios.get(
+        'https://sdg-push-diagnostic-api.azurewebsites.net/v1/vnrs/list',
+        {
+          headers: { access_token: API_ACCESS_TOKEN },
+        },
+      )
+        .then((response:AxiosResponse) => {
           const countryData = reverse(sortBy(response.data.filter((country: any) => country.iso === countrySelected.toLowerCase()), 'year'));
           if (countryData.length > 0) {
-            axios.get(`https://sdg-accelerator-api.azurewebsites.net/vnrs/${countrySelected.toLowerCase()}/${countryData[0].year}/${countryData[0].language}/multiclass/sentence`)
+            axios.get(
+              `https://sdg-push-diagnostic-api.azurewebsites.net/v1/vnrs/find?iso=${countrySelected.toLowerCase()}&year=${countryData[0].year}&language=${countryData[0].language}`,
+              {
+                headers: { access_token: API_ACCESS_TOKEN },
+              },
+            )
               .then((res) => {
-                setDocName(`VNR ${countryData[0].year}`);
+                setDocName([`VNR ${countryData[0].year}`]);
                 setData(res.data.sdgs);
-                setDataWithStatuses(res.data.sdgs.map((d: any) => ({ ...d, category: d.salience === 0 ? 'No Mention' : d.category.charAt(0).toUpperCase() + d.category.slice(1), status: goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status || 'Gaps NA' })));
+                setDataWithStatuses(res.data.sdgs.map((d: any) => ({ ...d, category: d.importance === 0 ? 'No Mention' : d.category.charAt(0).toUpperCase() + d.category.slice(1), status: goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status || 'Gaps NA' })));
               })
               .catch((errorFetchingVNR) => {
                 setError(errorFetchingVNR.message);
               });
           }
         });
-    } else if (selectedFile) {
+    } else if (selectedFile.length > 0) {
       const formData = new FormData();
-      formData.append('file', selectedFile);
+      for (let i = 0; i < selectedFile.length; i += 1) {
+        formData.append('files', selectedFile[i]);
+      }
       axios({
         method: 'post',
-        url: 'https://sdg-accelerator-api.azurewebsites.net/upload?model=multilabel&granularity=paragraph',
+        url: 'https://sdg-push-diagnostic-api.azurewebsites.net/v1/upload/files?strategy=equal',
         data: formData,
-        headers: { 'Content-Type': 'multipart/form-data' },
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          access_token: API_ACCESS_TOKEN,
+        },
       })
         .then((response: any) => {
           if (typeof response.data === 'string') setError('PDF File Required');
           else {
-            setDocName(selectedFileName);
+            setDocName(selectedFile.map((d: any) => d.name));
             setData(response.data.sdgs);
-            setDataWithStatuses(response.data.sdgs.map((d: any) => ({ ...d, category: d.salience === 0 ? 'No Mention' : d.category.charAt(0).toUpperCase() + d.category.slice(1), status: goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status || 'Gaps NA' })));
+            setDataWithStatuses(response.data.sdgs.map((d: any) => ({ ...d, category: d.importance === 0 ? 'No Mention' : d.category.charAt(0).toUpperCase() + d.category.slice(1), status: goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status || 'Gaps NA' })));
             setError(null);
           }
         })
@@ -198,7 +212,7 @@ export const ReportGenerationModal = (props: Props) => {
     }
   };
   const resetValues = () => {
-    setDocName(undefined);
+    setDocName([]);
     setGeneratePDFClicked(false);
     setNodeData(null);
     setError(null);
@@ -206,8 +220,7 @@ export const ReportGenerationModal = (props: Props) => {
     setSelectedTarget(undefined);
     setDataWithStatuses(null);
     setSDGForInterlinkage(null);
-    setSelectedFileName('');
-    setSelectedFile(null);
+    setSelectedFile([]);
     setDocType('Custom');
     setOpenModal(false);
   };
@@ -228,41 +241,57 @@ export const ReportGenerationModal = (props: Props) => {
           <Radio disabled={!isVnrAvailable} className='undp-radio' value='VNR'>Most Recent VNR</Radio>
         </Radio.Group>
         {
-        docType === 'Custom'
-          ? (
-            <>
-              <p className='undp-typography margin-bottom-00 margin-top-07' style={{ color: 'var(--black)' }}>
-                Documents such as National Development Plans indicates priorities of the government that can be mapped to the SDGs. Upload a development plan, to discover which SDGs feature most prominently as a priority.
-              </p>
+          docType === 'Custom'
+            ? (
               <>
-                <div className='margin-top-03'>
-                  <UploadEl width='100%'>
-                    <label htmlFor='file-upload-analyze' className='custom-file-upload'>
-                      <UploadButtonEl style={{ width: '177.55px' }}>Upload a document</UploadButtonEl>
-                    </label>
+                <p className='undp-typography margin-bottom-00 margin-top-07' style={{ color: 'var(--black)' }}>
+                  Documents such as National Development Plans indicates priorities of the government that can be mapped to the SDGs. Upload documents, to discover which SDGs feature most prominently as a priority.
+                  {' '}
+                  <span className='italics' style={{ color: 'var(--gray-500)' }}>Maximum 10 documents allowed</span>
+                </p>
+                <>
+                  <div className='margin-top-07'>
                     {
-                      selectedFileName !== '' ? (
-                        <SelectedEl>
-                          Selected
-                          {' '}
-                          <span className='bold'>{selectedFileName}</span>
-                        </SelectedEl>
-                      ) : <SelectedEl style={{ opacity: '0.6' }}>No file selected</SelectedEl>
+                      selectedFile.length > 0
+                        ? (
+                          <div className='flex-div margin-bottom-05'>
+                            {
+                          selectedFile.map((d: any, i: number) => (
+                            <div className='undp-chip-dark-gray undp-chip' key={i}>
+                              {d.name}
+                              <CloseIcon onClick={() => { setSelectedFile(selectedFile.filter((el: any) => d !== el)); }} />
+                            </div>
+                          ))
+                        }
+                          </div>
+                        ) : null
                     }
-                    <FileAttachmentButton ref={fileInputRef} id='file-upload-analyze' accept='application/pdf' type='file' onChange={handleFileSelect} />
-                  </UploadEl>
-                </div>
+                    <UploadEl>
+                      <label htmlFor='file-upload-analyze-1' className='custom-file-upload-1'>
+                        <UploadButtonEl>Add Document</UploadButtonEl>
+                      </label>
+                      <FileAttachmentButton multiple ref={fileInputRef} id='file-upload-analyze-1' accept='application/pdf' type='file' onChange={handleFileSelect} />
+                    </UploadEl>
+                  </div>
+                </>
               </>
-            </>
-          ) : (
-            <p className='undp-typography margin-bottom-00 margin-top-07' style={{ color: 'var(--black)' }}>
-              Documents such as Voluntary National Reviews (VNRs) indicates priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.
-            </p>
-          )
-      }
+            ) : (
+              <p className='undp-typography margin-bottom-00 margin-top-07' style={{ color: 'var(--black)' }}>
+                Documents such as Voluntary National Reviews (VNRs) indicates priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.
+              </p>
+            )
+        }
+        <p className='undp-typography margin-top-07'>
+          Choose the language for the report
+        </p>
+        <Radio.Group onChange={(d) => { setLanguage(d.target.value); }} value={language}>
+          <Radio className='undp-radio' value='en'>English</Radio>
+          <Radio className='undp-radio' value='fr'>French</Radio>
+          <Radio className='undp-radio' value='es'>Spanish</Radio>
+        </Radio.Group>
         <button
-          disabled={error ? true : docType === 'Custom' ? !selectedFileName : !isVnrAvailable}
-          className={`undp-button button-primary button-arrow margin-top-07${error ? ' disabled' : docType === 'Custom' ? !selectedFileName ? ' disabled' : '' : !isVnrAvailable ? ' disabled' : ''}`}
+          disabled={error ? true : docType === 'Custom' ? selectedFile.length === 0 : !isVnrAvailable}
+          className={`undp-button button-primary button-arrow margin-top-07${error ? ' disabled' : docType === 'Custom' ? selectedFile.length === 0 ? ' disabled' : '' : !isVnrAvailable ? ' disabled' : ''}`}
           type='button'
           onClick={() => {
             setNodeData(null); analyzeVNR(docType); setGeneratePDFClicked(true);
@@ -282,6 +311,7 @@ export const ReportGenerationModal = (props: Props) => {
           goalStatuses={goalStatuses}
           targetStatus={targetStatus}
           generatePDFClicked={generatePDFClicked}
+          language={language}
         />
       </div>
     </Modal>

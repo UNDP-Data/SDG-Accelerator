@@ -1,9 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import styled from 'styled-components';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import sortBy from 'lodash.sortby';
-import { GoalStatusType, LinkageDataType, TargetStatusWithDetailsType } from '../Types';
+import { json } from 'd3-request';
+import {
+  GoalStatusType, LanguageList, LinkageDataType, ScenarioDataType, TargetStatusWithDetailsType,
+} from '../Types';
 
 import '../style/tabStyle.css';
 import '../style/selectStyle.css';
@@ -11,14 +14,15 @@ import '../style/modalStyle.css';
 import '../style/radioStyle.css';
 import { describeArc } from '../utils/getArc';
 import { getSDGIcon } from '../utils/getSDGIcon';
-import { SDG_COLOR_ARRAY, SDG_ICON_SIZE } from '../Constants';
+import { DATASOURCELINK, SDG_COLOR_ARRAY, SDG_ICON_SIZE } from '../Constants';
 import { MyDocument } from './Report';
 import { InterlinkagesViz } from './InterlinkageVizForPdf';
+import { LineChart } from './LineChartForPDF';
 
 const LinkageData:LinkageDataType[] = require('../Data/linkages.json');
 
 interface Props {
-  docName?: string;
+  docName: string[];
   nodeData: any;
   data: any;
   countryFullName: string;
@@ -29,6 +33,7 @@ interface Props {
   goalStatuses: GoalStatusType[];
   targetStatus: TargetStatusWithDetailsType[];
   generatePDFClicked: boolean;
+  language: LanguageList;
 }
 interface WidthProps {
   width: string;
@@ -51,6 +56,7 @@ export const ReportEl = (props: Props) => {
     goalStatuses,
     targetStatus,
     generatePDFClicked,
+    language,
   } = props;
 
   const gapDiv = useRef<HTMLDivElement>(null);
@@ -58,6 +64,7 @@ export const ReportEl = (props: Props) => {
   const gapPrioritiesMatrixDiv = useRef<HTMLDivElement>(null);
   const interlinkagesDiv = useRef<HTMLDivElement>(null);
   const gapPrioritiesMatrixSvg = useRef<SVGSVGElement>(null);
+  const futureScenarioDiv = useRef<HTMLDivElement>(null);
 
   const onTrack = sortBy(goalStatuses.filter((d) => d.status === 'On Track'), 'goal');
   const identifiedGap = sortBy(goalStatuses.filter((d) => d.status === 'Identified Gap'), 'goal');
@@ -70,10 +77,17 @@ export const ReportEl = (props: Props) => {
   const nodeRadius = 15;
   const statusArray = ['Identified Gap', 'For Review', 'On Track', 'Gaps NA'];
   const priorityArray = ['High', 'Medium', 'Low', 'No Mention'];
+  const [fsData, setFSData] = useState<undefined | ScenarioDataType[]>(undefined);
+  useEffect(() => {
+    json(`${DATASOURCELINK}/data/ScenarioData/${countrySelected}.json`, (err: any, d: ScenarioDataType[]) => {
+      if (err) throw err;
+      setFSData(d);
+    });
+  }, [countrySelected]);
   return (
     <div>
       {
-        gapDiv && prioritiesDiv && gapPrioritiesMatrixDiv && gapPrioritiesMatrixSvg && nodeData && interlinkagesDiv && sdgForInterlinkage && selectedTarget
+        gapDiv && prioritiesDiv && gapPrioritiesMatrixDiv && gapPrioritiesMatrixSvg && nodeData && interlinkagesDiv && futureScenarioDiv && sdgForInterlinkage && selectedTarget
           ? (
             <PDFDownloadLink
               document={(
@@ -83,10 +97,12 @@ export const ReportEl = (props: Props) => {
                   prioritiesDiv={prioritiesDiv.current as HTMLDivElement}
                   gapPrioritiesMatrixDiv={gapPrioritiesMatrixDiv.current as HTMLDivElement}
                   interlinkagesDiv={interlinkagesDiv.current as HTMLDivElement}
+                  futureScenarioDiv={futureScenarioDiv.current as HTMLDivElement}
                   dataWithStatus={dataWithStatuses}
                   sdgForInterlinkage={sdgForInterlinkage}
                   selectedTarget={selectedTarget}
                   docName={docName}
+                  language={language}
                 />
               )}
               fileName={`${countrySelected}_Summary.pdf`}
@@ -315,13 +331,13 @@ export const ReportEl = (props: Props) => {
                             style={{ stroke: 'var(--blue-400)' }}
                           />
                           <path
-                            d={describeArc(180, 180, 140, 360 * ((data.filter((d: any) => d.category === 'high').length + data.filter((d: any) => d.category === 'medium').length) / (17)), 360 * ((data.filter((d: any) => d.category === 'high').length + data.filter((d: any) => d.category === 'medium').length + data.filter((d: any) => d.category === 'low' && d.salience !== 0).length) / 17))}
+                            d={describeArc(180, 180, 140, 360 * ((data.filter((d: any) => d.category === 'high').length + data.filter((d: any) => d.category === 'medium').length) / (17)), 360 * ((data.filter((d: any) => d.category === 'high').length + data.filter((d: any) => d.category === 'medium').length + data.filter((d: any) => d.category === 'low' && d.importance !== 0).length) / 17))}
                             fill='none'
                             strokeWidth={50}
                             style={{ stroke: 'var(--blue-200)' }}
                           />
                           <path
-                            d={describeArc(180, 180, 140, 360 * ((data.filter((d: any) => d.category === 'high').length + data.filter((d: any) => d.category === 'medium').length + data.filter((d: any) => d.category === 'low' && d.salience !== 0).length) / 17), 360)}
+                            d={describeArc(180, 180, 140, 360 * ((data.filter((d: any) => d.category === 'high').length + data.filter((d: any) => d.category === 'medium').length + data.filter((d: any) => d.category === 'low' && d.importance !== 0).length) / 17), 360)}
                             fill='none'
                             strokeWidth={50}
                             style={{ stroke: 'var(--gray-400)' }}
@@ -400,9 +416,9 @@ export const ReportEl = (props: Props) => {
                         <div className='margin-bottom-09'>
                           <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--blue-200)' }}>
                             <span className='bold'>
-                              {data.filter((d: any) => d.category === 'low' && d.salience !== 0).length > 0 ? data.filter((d: any) => d.category === 'low' && d.salience !== 0).length : 'No'}
+                              {data.filter((d: any) => d.category === 'low' && d.importance !== 0).length > 0 ? data.filter((d: any) => d.category === 'low' && d.importance !== 0).length : 'No'}
                               {' '}
-                              {data.filter((d: any) => d.category === 'low' && d.salience !== 0).length > 1 ? 'SDGs' : 'SDG'}
+                              {data.filter((d: any) => d.category === 'low' && d.importance !== 0).length > 1 ? 'SDGs' : 'SDG'}
                             </span>
                             {' '}
                             Low Priority
@@ -411,7 +427,7 @@ export const ReportEl = (props: Props) => {
                           <div className='sdg-icon-group'>
                             <div className='sdg-icon-container'>
                               {
-                                data.filter((d: any) => d.category === 'low' && d.salience !== 0).map((d: any, i: number) => (
+                                data.filter((d: any) => d.category === 'low' && d.importance !== 0).map((d: any, i: number) => (
                                   <div key={i}>
                                     {getSDGIcon(`SDG ${d.sdg}`, SDG_ICON_SIZE)}
                                   </div>
@@ -423,9 +439,9 @@ export const ReportEl = (props: Props) => {
                         <div>
                           <h4 className='undp-typography margin-bottom-03' style={{ color: 'var(--gray-400)' }}>
                             <span className='bold'>
-                              {data.filter((d: any) => d.salience === 0).length > 0 ? data.filter((d: any) => d.salience === 0).length : 'No'}
+                              {data.filter((d: any) => d.importance === 0).length > 0 ? data.filter((d: any) => d.importance === 0).length : 'No'}
                               {' '}
-                              {data.filter((d: any) => d.salience === 0).length > 1 ? 'SDGs' : 'SDG'}
+                              {data.filter((d: any) => d.importance === 0).length > 1 ? 'SDGs' : 'SDG'}
                             </span>
                             {' '}
                             Not Mentioned
@@ -433,7 +449,7 @@ export const ReportEl = (props: Props) => {
                           <div className='sdg-icon-group'>
                             <div className='sdg-icon-container'>
                               {
-                                data.filter((d: any) => d.salience === 0).map((d: any, i: number) => (
+                                data.filter((d: any) => d.importance === 0).map((d: any, i: number) => (
                                   <div key={i}>
                                     {getSDGIcon(`SDG ${d.sdg}`, SDG_ICON_SIZE)}
                                   </div>
@@ -617,6 +633,14 @@ export const ReportEl = (props: Props) => {
                   data={targetStatus}
                   LinkageData={LinkageData}
                 />
+              </div>
+            ) : null
+        }
+        {
+          fsData
+            ? (
+              <div ref={futureScenarioDiv} className='max-width' style={{ minWidth: '1372px' }}>
+                <LineChart data={fsData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)')} />
               </div>
             ) : null
         }

@@ -8,7 +8,7 @@ import '../style/selectStyle.css';
 interface Props {
   data: any;
   goalStatuses: GoalStatusType[];
-  document: string;
+  document: string[];
 }
 
 const ColorKeyBox = styled.div`
@@ -28,7 +28,7 @@ export const SalienceGraph = (props: Props) => {
         <h3 className='undp-typography bold'>
           Relative Salience Based on
           {' '}
-          {document}
+          {document.join(', ')}
         </h3>
         <p className='undp-typography'>
           Relative Salience is a measure of the amount of text content linked to each SDG as compared to the Goal, which is the most salient in the text. Relative Salience can help to understand which of the SDGs covered in the document receive most attention and which ones are only briefly treated.
@@ -120,7 +120,7 @@ export const SalienceGraph = (props: Props) => {
                 <circle
                   cx={37.5}
                   r={15}
-                  cy={400 - (375 * d.salience)}
+                  cy={400 - (375 * d.importance)}
                   style={{
                     fill: goalStatuses.findIndex((el) => el.goal === d.sdg) !== -1 ? goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'On Track' ? 'var(--dark-green)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'For Review' ? 'var(--dark-yellow)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'Identified Gap' ? 'var(--dark-red)' : 'var(--gray-500)' : 'var(--gray-500)',
                   }}
@@ -130,7 +130,7 @@ export const SalienceGraph = (props: Props) => {
                   width={45}
                   x1={37.5}
                   x2={37.5}
-                  y1={400 - (375 * d.salience)}
+                  y1={400 - (375 * d.importance)}
                   y2={400}
                   style={{
                     stroke: goalStatuses.findIndex((el) => el.goal === d.sdg) !== -1 ? goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'On Track' ? 'var(--dark-green)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'For Review' ? 'var(--dark-yellow)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'Identified Gap' ? 'var(--dark-red)' : 'var(--gray-500)' : 'var(--gray-500)',
@@ -138,7 +138,7 @@ export const SalienceGraph = (props: Props) => {
                 />
                 <text
                   x={37.5}
-                  y={400 - (375 * d.salience)}
+                  y={400 - (375 * d.importance)}
                   dy={-20}
                   style={{
                     fill: goalStatuses.findIndex((el) => el.goal === d.sdg) !== -1 ? goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'On Track' ? 'var(--dark-green)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'For Review' ? 'var(--dark-yellow)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'Identified Gap' ? 'var(--dark-red)' : 'var(--gray-500)' : 'var(--gray-500)',
@@ -146,7 +146,7 @@ export const SalienceGraph = (props: Props) => {
                   fontSize={12}
                   textAnchor='middle'
                 >
-                  {(d.salience).toFixed(3)}
+                  {(d.importance)?.toFixed(3)}
                 </text>
                 <text
                   x={37.5}

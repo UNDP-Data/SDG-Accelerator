@@ -95,26 +95,26 @@ export const CompareAnalysis = (props: Props) => {
                     <div
                       className='undp-chip'
                       style={{
-                        backgroundColor: d.salience === 0 ? 'var(--gray-400)' : d.category === 'high' ? 'var(--blue-700)' : d.category === 'medium' ? 'var(--blue-400)' : 'var(--blue-200)',
-                        color: d.salience === 0 ? 'var(--gray-700)' : d.category === 'high' ? 'var(--white)' : d.category === 'medium' ? 'var(--white)' : 'var(--gray-700)',
+                        backgroundColor: d.importance === 0 ? 'var(--gray-400)' : d.category === 'high' ? 'var(--blue-700)' : d.category === 'medium' ? 'var(--blue-400)' : 'var(--blue-200)',
+                        color: d.importance === 0 ? 'var(--gray-700)' : d.category === 'high' ? 'var(--white)' : d.category === 'medium' ? 'var(--white)' : 'var(--gray-700)',
                         fontSize: '1rem',
                         textTransform: 'capitalize',
                       }}
                     >
-                      {d.salience === 0 ? 'No mention' : d.category}
+                      {d.importance === 0 ? 'No mention' : d.category}
                     </div>
                   </div>
                   <div style={{ width: '33.33%', backgroundColor: `${dataDoc2WithStatuses[i].category !== d.category ? 'var(--gray-300)' : 'var(--white)'}` }} className='undp-table-row-cell'>
                     <div
                       className='undp-chip'
                       style={{
-                        backgroundColor: dataDoc2WithStatuses[i].salience === 0 ? 'var(--gray-400)' : dataDoc2WithStatuses[i].category === 'high' ? 'var(--blue-700)' : dataDoc2WithStatuses[i].category === 'medium' ? 'var(--blue-400)' : 'var(--blue-200)',
-                        color: dataDoc2WithStatuses[i].salience === 0 ? 'var(--gray-700)' : dataDoc2WithStatuses[i].category === 'high' ? 'var(--white)' : dataDoc2WithStatuses[i].category === 'medium' ? 'var(--white)' : 'var(--gray-700)',
+                        backgroundColor: dataDoc2WithStatuses[i].importance === 0 ? 'var(--gray-400)' : dataDoc2WithStatuses[i].category === 'high' ? 'var(--blue-700)' : dataDoc2WithStatuses[i].category === 'medium' ? 'var(--blue-400)' : 'var(--blue-200)',
+                        color: dataDoc2WithStatuses[i].importance === 0 ? 'var(--gray-700)' : dataDoc2WithStatuses[i].category === 'high' ? 'var(--white)' : dataDoc2WithStatuses[i].category === 'medium' ? 'var(--white)' : 'var(--gray-700)',
                         fontSize: '1rem',
                         textTransform: 'capitalize',
                       }}
                     >
-                      {dataDoc2WithStatuses[i].salience === 0 ? 'No mention' : dataDoc2WithStatuses[i].category}
+                      {dataDoc2WithStatuses[i].importance === 0 ? 'No mention' : dataDoc2WithStatuses[i].category}
                     </div>
                   </div>
                 </div>
