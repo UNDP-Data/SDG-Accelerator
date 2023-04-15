@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { Select } from 'antd';
 import sortBy from 'lodash.sortby';
+import { NavLink } from 'react-router-dom';
 import { getSDGIcon } from '../utils/getSDGIcon';
 import { SDGGOALS, SDG_ICON_SIZE, TargetIndicatorCount } from '../Constants';
 import { SDGGapsData } from './SDGGapsData';
@@ -15,6 +16,7 @@ interface Props {
   statuses: StatusesType;
   countryData: TimeSeriesDataTypeWithStatusCode[];
   countryFullName: string;
+  countryCode: string;
 }
 
 const HeroImageEl = styled.div`
@@ -47,6 +49,7 @@ export const CurrentGaps = (props: Props) => {
     statuses,
     countryData,
     countryFullName,
+    countryCode,
   } = props;
   const [selectedSDG, setSelectedSDG] = useState('SDG 1: No Poverty');
   const onTrack = sortBy(goalStatuses.filter((d) => d.status === 'On Track'), 'goal');
@@ -73,8 +76,40 @@ export const CurrentGaps = (props: Props) => {
             Understanding how countries perform against these provides a comprehensive assessment of the current trends and the baseline landscape against which to build the SDG Push.
             <br />
             <br />
+            <span className='italics'>
+              The gaps and trends can be customized to support national level dialogue using national data by contacting
+              {' '}
+              <a className='undp-style' style={{ color: 'var(--white' }} href='mailto:data@undp.org' target='_blank' rel='noreferrer'>data@undp.org</a>
+              .
+              {
+                countryCode === 'IDN' ? (
+                  <>
+                    <br />
+                    <br />
+                    <NavLink style={{ color: 'var(--white' }} className='undp-style' to='../../sdg-push-diagnostic/IDNWithCountryGovInput/sdg-trends'>
+                      Click here
+                    </NavLink>
+                    {' '}
+                    to see the analysis after national level dialogue.
+                  </>
+                ) : null
+              }
+              {
+                countryCode === 'IDNWithCountryGovInput' ? (
+                  <>
+                    <br />
+                    <br />
+                    <NavLink style={{ color: 'var(--white' }} className='undp-style' to='../../sdg-push-diagnostic/IDN/sdg-trends'>
+                      Click here
+                    </NavLink>
+                    {' '}
+                    to see the analysis without national level dialogue.
+                  </>
+                ) : null
+              }
+            </span>
           </h5>
-          <h3 className='undp-typography'>
+          <h3 className='undp-typography margin-top-09'>
             For
             {' '}
             <span className='bold'>{countryFullName}</span>

@@ -81,7 +81,9 @@ export const ReportGenerationModal = (props: Props) => {
     openModal,
     setOpenModal,
   } = props;
+  const countryCode = countrySelected === 'IDNWithCountryGovInput' ? 'IDN' : countrySelected;
   const [docName, setDocName] = useState<string[]>([]);
+  const [strategy, setStrategy] = useState<'equal' | 'proportional'>('equal');
   const [generatePDFClicked, setGeneratePDFClicked] = useState(false);
   const [isVnrAvailable, setIsVnrAvailable] = useState(false);
   const [nodeData, setNodeData] = useState<any>(null);
@@ -145,9 +147,9 @@ export const ReportGenerationModal = (props: Props) => {
       },
     )
       .then((response:AxiosResponse) => {
-        setIsVnrAvailable(response.data.filter((country: any) => country.iso === countrySelected.toLowerCase()).length > 0);
+        setIsVnrAvailable(response.data.filter((country: any) => country.iso === countryCode.toLowerCase()).length > 0);
       });
-  }, [countrySelected]);
+  }, [countryCode]);
   const handleFileSelect = (event: any) => {
     if (event.target.files) {
       if (event.target.files[0]) {
@@ -165,10 +167,10 @@ export const ReportGenerationModal = (props: Props) => {
         },
       )
         .then((response:AxiosResponse) => {
-          const countryData = reverse(sortBy(response.data.filter((country: any) => country.iso === countrySelected.toLowerCase()), 'year'));
+          const countryData = reverse(sortBy(response.data.filter((country: any) => country.iso === countryCode.toLowerCase()), 'year'));
           if (countryData.length > 0) {
             axios.get(
-              `https://sdg-push-diagnostic-api.azurewebsites.net/v1/vnrs/find?iso=${countrySelected.toLowerCase()}&year=${countryData[0].year}&language=${countryData[0].language}`,
+              `https://sdg-push-diagnostic-api.azurewebsites.net/v1/vnrs/find?iso=${countryCode.toLowerCase()}&year=${countryData[0].year}&language=${countryData[0].language}`,
               {
                 headers: { access_token: API_ACCESS_TOKEN },
               },
@@ -190,7 +192,7 @@ export const ReportGenerationModal = (props: Props) => {
       }
       axios({
         method: 'post',
-        url: 'https://sdg-push-diagnostic-api.azurewebsites.net/v1/upload/files?strategy=equal',
+        url: `https://sdg-push-diagnostic-api.azurewebsites.net/v1/upload/files?strategy=${strategy}`,
         data: formData,
         headers: {
           'Content-Type': 'multipart/form-data',
@@ -234,23 +236,23 @@ export const ReportGenerationModal = (props: Props) => {
       <div style={{ width: '70vw', maxWidth: '960px' }}>
         <h5 className='undp-typography'>Generate and Download Report</h5>
         <p className='undp-typography'>
-          Please select a VNR or upload a document to identify the national priorities
+          Please upload documents (max. 10) or or analyze the most recent VNR to identify the national priorities
         </p>
         <Radio.Group onChange={(d) => { setDocType(d.target.value); }} value={docType}>
-          <Radio className='undp-radio' value='Custom'>Upload a document</Radio>
+          <Radio className='undp-radio' value='Custom'>Upload documents</Radio>
           <Radio disabled={!isVnrAvailable} className='undp-radio' value='VNR'>Most Recent VNR</Radio>
         </Radio.Group>
         {
           docType === 'Custom'
             ? (
               <>
-                <p className='undp-typography margin-bottom-00 margin-top-07' style={{ color: 'var(--black)' }}>
+                <p className='undp-typography small-font margin-bottom-00 margin-top-07 italics' style={{ color: 'var(--black)' }}>
                   Documents such as National Development Plans indicates priorities of the government that can be mapped to the SDGs. Upload documents, to discover which SDGs feature most prominently as a priority.
                   {' '}
                   <span className='italics' style={{ color: 'var(--gray-500)' }}>Maximum 10 documents allowed</span>
                 </p>
                 <>
-                  <div className='margin-top-07'>
+                  <div className='margin-top-03'>
                     {
                       selectedFile.length > 0
                         ? (
@@ -268,12 +270,19 @@ export const ReportGenerationModal = (props: Props) => {
                     }
                     <UploadEl>
                       <label htmlFor='file-upload-analyze-1' className='custom-file-upload-1'>
-                        <UploadButtonEl>Add Document</UploadButtonEl>
+                        <UploadButtonEl>Add Documents</UploadButtonEl>
                       </label>
                       <FileAttachmentButton multiple ref={fileInputRef} id='file-upload-analyze-1' accept='application/pdf' type='file' onChange={handleFileSelect} />
                     </UploadEl>
                   </div>
                 </>
+                <div className='margin-top-07'>
+                  <p className='label'>Document Weighting Strategy</p>
+                  <Radio.Group value={strategy} onChange={(target) => { setStrategy(target.target.value); }}>
+                    <Radio className='undp-radio' value='equal'>Place Equal Weight on All Documents</Radio>
+                    <Radio className='undp-radio' value='proportional'>Place More Weight on Longer Documents</Radio>
+                  </Radio.Group>
+                </div>
               </>
             ) : (
               <p className='undp-typography margin-bottom-00 margin-top-07' style={{ color: 'var(--black)' }}>
@@ -281,6 +290,7 @@ export const ReportGenerationModal = (props: Props) => {
               </p>
             )
         }
+        <hr className='undp-style margin-top-07' />
         <p className='undp-typography margin-top-07'>
           Choose the language for the report
         </p>
@@ -304,7 +314,7 @@ export const ReportGenerationModal = (props: Props) => {
           nodeData={nodeData}
           data={data}
           countryFullName={countryFullName}
-          countrySelected={countrySelected}
+          countrySelected={countryCode}
           selectedTarget={selectedTarget}
           dataWithStatuses={dataWithStatuses}
           sdgForInterlinkage={sdgForInterlinkage}

@@ -11,7 +11,7 @@ const App = () => (
   <div className='undp-container'>
     <Routes>
       <Route
-        path='/sdg-push-diagnostic-test'
+        path='/sdg-push-diagnostic'
         element={(
           <>
             <GlobalHeader />
@@ -21,7 +21,7 @@ const App = () => (
         )}
       />
       <Route
-        path='/sdg-push-diagnostic-test/:country/*'
+        path='/sdg-push-diagnostic/:country/*'
         element={(
           <LandingPage />
         )}

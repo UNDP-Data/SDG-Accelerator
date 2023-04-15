@@ -316,16 +316,16 @@ export const Priorities = (props: Props) => {
                           }
                           <UploadEl>
                             <label htmlFor='file-upload-analyze' className='custom-file-upload'>
-                              <UploadButtonEl>Add Document</UploadButtonEl>
+                              <UploadButtonEl>Add Documents</UploadButtonEl>
                             </label>
                             <FileAttachmentButton multiple ref={fileInputRef} id='file-upload-analyze' accept='application/pdf' type='file' onChange={handleFileSelect} />
                           </UploadEl>
                         </div>
                         <div className='margin-top-07'>
-                          <p className='label'>Document Proportional Strategy</p>
+                          <p className='label'>Document Weighting Strategy</p>
                           <Radio.Group value={strategy} onChange={(target) => { setStrategy(target.target.value); }}>
-                            <Radio className='undp-radio' value='equal'>Equal</Radio>
-                            <Radio className='undp-radio' value='proportional'>Proportional</Radio>
+                            <Radio className='undp-radio' value='equal'>Place Equal Weight on All Documents</Radio>
+                            <Radio className='undp-radio' value='proportional'>Place More Weight on Longer Documents</Radio>
                           </Radio.Group>
                         </div>
                         {

@@ -14,9 +14,8 @@ import { ReportGenerationModal } from '../ReportGeneration/ReportGenerationModal
 import { GoalStatusType, StatusesType } from '../Types';
 
 interface Props {
-  country?: string;
+  country: string;
   statuses: StatusesType;
-  countrySelected: string;
   goalStatuses: GoalStatusType[];
 }
 
@@ -28,11 +27,11 @@ const AButton = styled.a`
 
 export const Header = (props: Props) => {
   const {
-    country, statuses, goalStatuses, countrySelected,
+    country, statuses, goalStatuses,
   } = props;
   const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
-  const countryFullName = country && CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === country) !== -1 ? CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === country)]['Country or Area'] : undefined;
+  const countryFullName = country && CountryTaxonomy.findIndex((d) => (country === 'IDNWithCountryGovInput' ? d['Alpha-3 code-1'] === 'IDN' : d['Alpha-3 code-1'] === country)) !== -1 ? CountryTaxonomy[CountryTaxonomy.findIndex((d) => (country === 'IDNWithCountryGovInput' ? d['Alpha-3 code-1'] === 'IDN' : d['Alpha-3 code-1'] === country))]['Country or Area'] : undefined;
   const [searchText, setSearchText] = useState<string | null>(null);
   const [openHeaderCountryModal, setOpenHeaderCountryModal] = useState(false);
   const [openModal, setOpenModal] = useState(false);
@@ -49,7 +48,7 @@ export const Header = (props: Props) => {
                     countryFullName
                       ? (
                         <NavLink
-                          to='../sdg-push-diagnostic-test'
+                          to='../sdg-push-diagnostic'
                           className='logo-sub-head'
                         >
                           SDG Push Diagnostic
@@ -58,7 +57,7 @@ export const Header = (props: Props) => {
                   }
                   <span>
                     <NavLink
-                      to={country ? `../sdg-push-diagnostic-test/${country}` : '../sdg-push-diagnostic-test'}
+                      to={country ? `../sdg-push-diagnostic/${country}` : '../sdg-push-diagnostic'}
                     >
                       {countryFullName || 'SDG Push Diagnostic'}
                     </NavLink>
@@ -70,25 +69,25 @@ export const Header = (props: Props) => {
                   ? (
                     <div className='undp-nav-div'>
                       <NavLink
-                        to={`../sdg-push-diagnostic-test/${country}/sdg-trends`}
+                        to={`../sdg-push-diagnostic/${country}/sdg-trends`}
                         className={({ isActive }) => (isActive ? 'header-link-active' : 'header-link')}
                       >
                         SDG Trends
                       </NavLink>
                       <NavLink
-                        to={`../sdg-push-diagnostic-test/${country}/current-priorities`}
+                        to={`../sdg-push-diagnostic/${country}/current-priorities`}
                         className={({ isActive }) => (isActive ? 'header-link-active' : 'header-link')}
                       >
                         Current Priorities
                       </NavLink>
                       <NavLink
-                        to={`../sdg-push-diagnostic-test/${country}/future-scenarios`}
+                        to={`../sdg-push-diagnostic/${country}/future-scenarios`}
                         className={({ isActive }) => (isActive ? 'header-link-active' : 'header-link')}
                       >
                         Future Scenarios
                       </NavLink>
                       <NavLink
-                        to={`../sdg-push-diagnostic-test/${country}/synergies-and-tradeoffs`}
+                        to={`../sdg-push-diagnostic/${country}/synergies-and-tradeoffs`}
                         className={({ isActive }) => (isActive ? 'header-link-active' : 'header-link')}
                       >
                         SDG Interlinkages
@@ -136,7 +135,7 @@ export const Header = (props: Props) => {
                   <NavLink
                     className='undp-button button-tertiary button-arrow header-link'
                     onClick={() => (setShowMenu(false))}
-                    to={`../sdg-push-diagnostic-test/${country}/sdg-trends`}
+                    to={`../sdg-push-diagnostic/${country}/sdg-trends`}
                     style={{
                       color: 'var(--black)',
                       backgroundColor: 'transparent',
@@ -150,7 +149,7 @@ export const Header = (props: Props) => {
                   <NavLink
                     className='undp-button button-tertiary button-arrow header-link'
                     onClick={() => (setShowMenu(false))}
-                    to={`../sdg-push-diagnostic-test/${country}/current-priorities`}
+                    to={`../sdg-push-diagnostic/${country}/current-priorities`}
                     style={{
                       color: 'var(--black)',
                       backgroundColor: 'transparent',
@@ -164,7 +163,7 @@ export const Header = (props: Props) => {
                   <NavLink
                     className='undp-button button-tertiary button-arrow header-link'
                     onClick={() => (setShowMenu(false))}
-                    to={`../sdg-push-diagnostic-test/${country}/future-scenarios`}
+                    to={`../sdg-push-diagnostic/${country}/future-scenarios`}
                     style={{
                       color: 'var(--black)',
                       backgroundColor: 'transparent',
@@ -178,7 +177,7 @@ export const Header = (props: Props) => {
                   <NavLink
                     className='undp-button button-tertiary button-arrow header-link'
                     onClick={() => (setShowMenu(false))}
-                    to={`../sdg-push-diagnostic-test/${country}/synergies-and-tradeoffs`}
+                    to={`../sdg-push-diagnostic/${country}/synergies-and-tradeoffs`}
                     style={{
                       color: 'var(--black)',
                       backgroundColor: 'transparent',
@@ -230,7 +229,7 @@ export const Header = (props: Props) => {
               >
                 <NavLink
                   key={i}
-                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic-test/${d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic-test/${d['Alpha-3 code-1']}`}
+                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenHeaderCountryModal(false); }}
                 >
@@ -244,7 +243,7 @@ export const Header = (props: Props) => {
               >
                 <NavLink
                   key={i}
-                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic-test/${d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic-test/${d['Alpha-3 code-1']}`}
+                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenHeaderCountryModal(false); }}
                 >
@@ -257,7 +256,7 @@ export const Header = (props: Props) => {
       </Modal>
       <ReportGenerationModal
         targetStatuses={statuses.targetStatus}
-        countrySelected={countrySelected}
+        countrySelected={country}
         countryFullName={countryFullName as string}
         goalStatuses={goalStatuses}
         setOpenModal={setOpenModal}
@@ -282,7 +281,7 @@ export const GlobalHeader = () => {
                 <div className='undp-site-title'>
                   <span>
                     <NavLink
-                      to='../sdg-push-diagnostic-test'
+                      to='../sdg-push-diagnostic'
                     >
                       SDG Push Diagnostic
                     </NavLink>
@@ -326,7 +325,7 @@ export const GlobalHeader = () => {
               >
                 <NavLink
                   key={i}
-                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic-test/${d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic-test/${d['Alpha-3 code-1']}`}
+                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenHeaderCountryModal(false); }}
                 >
@@ -340,7 +339,7 @@ export const GlobalHeader = () => {
               >
                 <NavLink
                   key={i}
-                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic-test/${d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic-test/${d['Alpha-3 code-1']}`}
+                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenHeaderCountryModal(false); }}
                 >

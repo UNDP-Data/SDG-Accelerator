@@ -25,7 +25,7 @@ export const LandingPage = () => {
   const [error, setError] = useState <any>(null);
   const [statuses, setStatuses] = useState<StatusesType | undefined>(undefined);
   const [countryData, setCountryData] = useState<TimeSeriesDataTypeWithStatusCode[] | undefined>(undefined);
-  const countryFullName = CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === countryCode) !== -1 ? CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === countryCode)]['Country or Area'] : '';
+  const countryFullName = CountryTaxonomy.findIndex((d) => (countryCode === 'IDNWithCountryGovInput' ? d['Alpha-3 code-1'] === 'IDN' : d['Alpha-3 code-1'] === countryCode)) !== -1 ? CountryTaxonomy[CountryTaxonomy.findIndex((d) => (countryCode === 'IDNWithCountryGovInput' ? d['Alpha-3 code-1'] === 'IDN' : d['Alpha-3 code-1'] === countryCode))]['Country or Area'] : '';
 
   useEffect(() => {
     setStatuses(undefined);
@@ -89,7 +89,7 @@ export const LandingPage = () => {
                     }
                   </Select>
                   <NavLink
-                    to={`../../sdg-push-diagnostic-test/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === selectedCountry)]['Alpha-3 code-1']}`}
+                    to={`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === selectedCountry)]['Alpha-3 code-1']}`}
                     style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
                   >
                     <button type='button' className='undp-button button-primary button-arrow'>
@@ -106,7 +106,6 @@ export const LandingPage = () => {
                 <Header
                   country={countryCode}
                   statuses={statuses}
-                  countrySelected={countryCode}
                   goalStatuses={statuses.goalStatus}
                 />
                 <Routes>
@@ -127,6 +126,7 @@ export const LandingPage = () => {
                         countryData={countryData}
                         goalStatuses={statuses.goalStatus}
                         countryFullName={countryFullName}
+                        countryCode={countryCode}
                       />
                   )}
                   />
@@ -143,7 +143,7 @@ export const LandingPage = () => {
                     path='/current-priorities'
                     element={(
                       <Priorities
-                        countrySelected={countryCode}
+                        countrySelected={countryCode === 'IDNWithCountryGovInput' ? 'IDN' : countryCode}
                         goalStatuses={statuses.goalStatus}
                         countryFullName={countryFullName}
                       />
@@ -153,7 +153,7 @@ export const LandingPage = () => {
                     path='/future-scenarios'
                     element={(
                       <FutureScenariosList
-                        countryCode={countryCode}
+                        countryCode={countryCode === 'IDNWithCountryGovInput' ? 'IDN' : countryCode}
                         countryFullName={countryFullName}
                       />
                   )}
