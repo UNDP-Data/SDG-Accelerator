@@ -313,7 +313,7 @@ export const ReportEl = (props: Props) => {
                     <h2 className='undp-typography'>
                       Current Priorities Based on
                       {' '}
-                      {docName}
+                      {docName.join(', ')}
                     </h2>
                     <div className='flex-div margin-top-07 flex-wrap' style={{ gap: '2rem' }}>
                       <GraphContainer width='calc(40% - 1rem)'>

@@ -202,7 +202,6 @@ export const MyDocument = (props: Props) => {
                 <View style={styles.coverSection}>
                   <Text style={styles.documentName}>{ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'docTitle')][language]}</Text>
                   <Text style={styles.documentName}>{countryName}</Text>
-                  <Text style={styles.title}>SDG Push Diagnostic</Text>
                   <Text style={styles.year}>
                     {new Date().getDate() + 1}
                     /
@@ -233,15 +232,6 @@ export const MyDocument = (props: Props) => {
                     {countryName}
                     {' '}
                     {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'summaryReport')][language]}
-                  </Text>
-                  <Text
-                    style={{
-                      fontSize: 20,
-                      fontFamily: font,
-                      marginBottom: 20,
-                    }}
-                  >
-                    SDG Push Diagnostic
                   </Text>
                   <Text
                     style={{

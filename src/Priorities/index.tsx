@@ -302,15 +302,15 @@ export const Priorities = (props: Props) => {
                           {
                             selectedFileNotAnalyzed.length > 0
                               ? (
-                                <div className='flex-div margin-bottom-05'>
+                                <div className='flex-div margin-bottom-05 flex-wrap'>
                                   {
-                                selectedFileNotAnalyzed.map((d: any, i: number) => (
-                                  <div className='undp-chip-dark-gray undp-chip' key={i}>
-                                    {d.name}
-                                    <CloseIcon onClick={() => { setSelectedFileNotAnalyzed(selectedFileNotAnalyzed.filter((el: any) => d !== el)); }} />
-                                  </div>
-                                ))
-                              }
+                                    selectedFileNotAnalyzed.map((d: any, i: number) => (
+                                      <div className='undp-chip-dark-gray undp-chip' key={i}>
+                                        {d.name}
+                                        <CloseIcon onClick={() => { setSelectedFileNotAnalyzed(selectedFileNotAnalyzed.filter((el: any) => d !== el)); }} />
+                                      </div>
+                                    ))
+                                  }
                                 </div>
                               ) : null
                           }
