@@ -101,6 +101,8 @@ export const Priorities = (props: Props) => {
   } = props;
   const fileInputRef = useRef<any>(null);
   const [loading, setLoading] = useState(false);
+  const [totalFileSize, setTotalFileSize] = useState(0);
+  const [noOfFiles, setNoOfFiles] = useState(0);
   const [selectedFile, setSelectedFile] = useState<any>([]);
   const [selectedFileNotAnalyzed, setSelectedFileNotAnalyzed] = useState<any>([]);
   const [vnrYear, setVNRYear] = useState<null | number>(null);
@@ -114,6 +116,10 @@ export const Priorities = (props: Props) => {
     if (event.target.files) {
       if (event.target.files[0]) {
         const files: any = [...selectedFileNotAnalyzed].concat([...event.target.files].map((d: any) => d));
+        let totalSize = 0;
+        files.forEach((d: any) => { totalSize += (d.size / 1024 / 1024); });
+        setTotalFileSize(totalSize);
+        setNoOfFiles(files.length);
         setSelectedFileNotAnalyzed(files);
       }
     }
@@ -307,6 +313,11 @@ export const Priorities = (props: Props) => {
                                     selectedFileNotAnalyzed.map((d: any, i: number) => (
                                       <div className='undp-chip-dark-gray undp-chip' key={i}>
                                         {d.name}
+                                        {' '}
+                                        (
+                                        {(d.size / 1024 / 1024).toFixed(1)}
+                                        {' '}
+                                        MBs)
                                         <CloseIcon onClick={() => { setSelectedFileNotAnalyzed(selectedFileNotAnalyzed.filter((el: any) => d !== el)); }} />
                                       </div>
                                     ))
@@ -329,7 +340,7 @@ export const Priorities = (props: Props) => {
                           </Radio.Group>
                         </div>
                         {
-                          selectedFileNotAnalyzed.length > 0
+                          selectedFileNotAnalyzed.length > 0 && noOfFiles < 11 && totalFileSize <= 100
                             ? (
                               <button
                                 type='button'
@@ -347,6 +358,18 @@ export const Priorities = (props: Props) => {
                                 Analyze Document
                               </button>
                             )
+                        }
+                        {
+                          noOfFiles > 10 || totalFileSize > 100 ? (
+                            <p className='undp-typography small-font italics margin-top-05' style={{ color: 'var(--dark-red)' }}>
+                              {
+                                noOfFiles > 10 ? `Maximum 10 files allowed (please remove ${noOfFiles - 10} files). ` : ''
+                              }
+                              {
+                                totalFileSize > 100 ? 'Maximum total file size allowed is 100Mbs' : ''
+                              }
+                            </p>
+                          ) : null
                         }
                       </>
                     </>

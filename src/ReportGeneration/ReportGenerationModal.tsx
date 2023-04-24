@@ -83,6 +83,8 @@ export const ReportGenerationModal = (props: Props) => {
   } = props;
   const countryCode = countrySelected === 'IDNWithCountryGovInput' ? 'IDN' : countrySelected;
   const [docName, setDocName] = useState<string[]>([]);
+  const [totalFileSize, setTotalFileSize] = useState(0);
+  const [noOfFiles, setNoOfFiles] = useState(0);
   const [strategy, setStrategy] = useState<'equal' | 'proportional'>('equal');
   const [generatePDFClicked, setGeneratePDFClicked] = useState(false);
   const [isVnrAvailable, setIsVnrAvailable] = useState(false);
@@ -154,6 +156,10 @@ export const ReportGenerationModal = (props: Props) => {
     if (event.target.files) {
       if (event.target.files[0]) {
         const files: any = [...selectedFile].concat([...event.target.files].map((d: any) => d));
+        let totalSize = 0;
+        files.forEach((d: any) => { totalSize += (d.size / 1024 / 1024); });
+        setTotalFileSize(totalSize);
+        setNoOfFiles(files.length);
         setSelectedFile(files);
       }
     }
@@ -256,15 +262,20 @@ export const ReportGenerationModal = (props: Props) => {
                     {
                       selectedFile.length > 0
                         ? (
-                          <div className='flex-div margin-bottom-05'>
+                          <div className='flex-div margin-bottom-05 flex-wrap'>
                             {
-                          selectedFile.map((d: any, i: number) => (
-                            <div className='undp-chip-dark-gray undp-chip' key={i}>
-                              {d.name}
-                              <CloseIcon onClick={() => { setSelectedFile(selectedFile.filter((el: any) => d !== el)); }} />
-                            </div>
-                          ))
-                        }
+                              selectedFile.map((d: any, i: number) => (
+                                <div className='undp-chip-dark-gray undp-chip' key={i}>
+                                  {d.name}
+                                  {' '}
+                                  (
+                                  {(d.size / 1024 / 1024).toFixed(1)}
+                                  {' '}
+                                  MBs)
+                                  <CloseIcon onClick={() => { setSelectedFile(selectedFile.filter((el: any) => d !== el)); }} />
+                                </div>
+                              ))
+                            }
                           </div>
                         ) : null
                     }
@@ -300,8 +311,8 @@ export const ReportGenerationModal = (props: Props) => {
           <Radio className='undp-radio' value='es'>Spanish</Radio>
         </Radio.Group>
         <button
-          disabled={error ? true : docType === 'Custom' ? selectedFile.length === 0 : !isVnrAvailable}
-          className={`undp-button button-primary button-arrow margin-top-07${error ? ' disabled' : docType === 'Custom' ? selectedFile.length === 0 ? ' disabled' : '' : !isVnrAvailable ? ' disabled' : ''}`}
+          disabled={error ? true : docType === 'Custom' ? selectedFile.length === 0 || noOfFiles > 10 || totalFileSize > 100 : !isVnrAvailable}
+          className={`undp-button button-primary button-arrow margin-top-07${error ? ' disabled' : docType === 'Custom' ? selectedFile.length === 0 || noOfFiles > 10 || totalFileSize > 100 ? ' disabled' : '' : !isVnrAvailable ? ' disabled' : ''}`}
           type='button'
           onClick={() => {
             setNodeData(null); analyzeVNR(docType); setGeneratePDFClicked(true);
@@ -309,6 +320,18 @@ export const ReportGenerationModal = (props: Props) => {
         >
           Generate Report
         </button>
+        {
+          noOfFiles > 10 || totalFileSize > 100 ? (
+            <p className='undp-typography small-font italics margin-top-05' style={{ color: 'var(--dark-red)' }}>
+              {
+                noOfFiles > 10 ? `Maximum 10 files allowed (please remove ${noOfFiles - 10} files). ` : ''
+              }
+              {
+                totalFileSize > 100 ? 'Maximum total file size allowed is 100Mbs' : ''
+              }
+            </p>
+          ) : null
+        }
         <ReportEl
           docName={docName}
           nodeData={nodeData}
