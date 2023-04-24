@@ -457,6 +457,24 @@ export const MyDocument = (props: Props) => {
                       textAlign: 'left',
                       fontFamily: font,
                       marginBottom: 20,
+                      marginTop: 20,
+                      padding: 20,
+                      backgroundColor: '#B5D5F5',
+                    }}
+                  >
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'trendDisclaimer1')][language]}
+                    <Link style={{ textDecoration: 'underline', color: '#006EB5', fontStyle: 'italics' }} src='https://unstats.un.org/sdgs/dataportal'>UN Stats SDG Data Portal</Link>
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'trendDisclaimer2')][language]}
+                    <Link style={{ textDecoration: 'underline', color: '#006EB5', fontStyle: 'italics' }} src='https://unstats.un.org/sdgs/report/2022/Progress_Chart_Technical_Note_2022.pdf'>SDG Progress Chart 2022 Technical Note</Link>
+                    {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'trendDisclaimer3')][language]}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: '12px',
+                      lineHeight: 1.5,
+                      textAlign: 'left',
+                      fontFamily: font,
+                      marginBottom: 20,
                     }}
                   >
                     {ReportTranslation[ReportTranslation.findIndex((d) => d.key === 'currentTrendsIntro')][language]}

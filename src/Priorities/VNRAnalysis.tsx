@@ -435,7 +435,15 @@ export const VNRAnalysis = (props: Props) => {
                 {' '}
                 {document.join(', ')}
                 {' '}
-                may not reflect the actual and complete priorities of the government. They are a starting point for further discussion.
+                may not reflect the actual and complete priorities of the government. They are a starting point for further discussion. The SDG Trends assessment is based on currently available data in the
+                {' '}
+                <a href='https://unstats.un.org/sdgs/dataportal' className='undp-style' target='_blank' rel='noreferrer'>UN Stats SDG Data Portal</a>
+                {' '}
+                and methodology as per the
+                {' '}
+                <a href='https://unstats.un.org/sdgs/report/2022/Progress_Chart_Technical_Note_2022.pdf' className='undp-style' target='_blank' rel='noreferrer'>SDG Progress Chart 2022 Technical Note</a>
+                .
+                Engagement with National Statistics Offices and country Government are required to ensure the latest SDG data and national methodologies are incorporated and updated.
               </span>
             </p>
           </GraphContainer>

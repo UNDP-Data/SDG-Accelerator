@@ -23,7 +23,7 @@ const HeroImageEl = styled.div`
 `;
 
 const H2 = styled.h2`
-  margin-bottom: var(--spacing-05);
+  margin-bottom: var(--spacing-13);
   @media (max-width: 720px) {
     margin-bottom: var(--spacing-11) !important;
   }
@@ -88,52 +88,8 @@ export const HomePage = (props: Props) => {
           )
       }
       <div className='margin-top-13 margin-bottom-13 max-width'>
-        <H2 className='undp-typography' style={{ padding: '0rem 1rem' }}>SDG push Diagnostics Features</H2>
-        <div className='undp-section margin-bottom-13 image-right'>
-          <div>
-            <h4 className='undp-typography margin-top-05'>SDG Trends</h4>
-            <p className='undp-typography large-font'>
-              Progress on the 17 SDGs are tracked through 169 sub-targets, which in turn are measured using
-              {' '}
-              <a href='https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%20refinement_Eng.pdf' target='_blank' rel='noreferrer' className='undp-style'>232 unique indicators</a>
-              .
-              <br />
-              <br />
-              Understanding how countries perform against these provides a comprehensive assessment of the current trends and the baseline landscape against which to build the SDG Push.
-            </p>
-            {
-              countryCode ? (
-                <NavLink
-                  to={`../../sdg-push-diagnostic/${countryCode}/sdg-trends`}
-                  style={{ color: 'var(--white)', textDecoration: 'none' }}
-                >
-                  <button type='button' className='undp-button button-primary button-arrow'>
-                    Explore SDG Trends
-                  </button>
-                </NavLink>
-              ) : (
-                <>
-                  <p className='label margin-top-07'>Select a country to explore their SDG trends</p>
-                  <Select
-                    style={{ width: '100%' }}
-                    className='undp-select'
-                    placeholder='Select Country'
-                    showSearch
-                    onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
-                  >
-                    {
-                      sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
-                    }
-                  </Select>
-                </>
-              )
-            }
-          </div>
-          <div>
-            <img alt='sgd trends' src={SDGTrends} style={{ width: '100%' }} />
-          </div>
-        </div>
-        <div className='undp-section margin-bottom-13 image-left'>
+        <H2 className='undp-typography margin-bottom-07' style={{ padding: '0rem 1rem' }}>SDG push Diagnostics Features</H2>
+        <div className='undp-section margin-bottom-13 image-left margin-top-07'>
           <div>
             <img alt='Future Scenarios' src={PrioritiesImg} style={{ width: '100%' }} />
           </div>
@@ -180,33 +136,35 @@ export const HomePage = (props: Props) => {
         </div>
         <div className='undp-section margin-bottom-13 image-right'>
           <div>
-            <h4 className='undp-typography margin-top-05'>Future Scenarios</h4>
+            <h4 className='undp-typography margin-top-05'>SDG Trends</h4>
             <p className='undp-typography large-font'>
-              In the SDG Push we will be identifying potential accelerators.
+              Progress on the 17 SDGs are tracked through 169 sub-targets, which in turn are measured using
               {' '}
-              <a href='https://data.undp.org/wp-content/uploads/2021/04/Leaving-No-One-Behind-COVID-impact-on-the-SDGs-second-flagship-2.pdf' target='_blank' className='undp-style' rel='noreferrer'>UNDP&apos;s flagship publication</a>
-              {' '}
-              presents one such scenario (governance, social protection, green economy, and digitalisation) at the global level that can put us back on track to recover better.
+              <a href='https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%20refinement_Eng.pdf' target='_blank' rel='noreferrer' className='undp-style'>232 unique indicators</a>
+              .
+              <br />
+              <br />
+              Understanding how countries perform against these provides a comprehensive assessment of the current trends and the baseline landscape against which to build the SDG Push.
             </p>
             {
               countryCode ? (
                 <NavLink
-                  to={`../../sdg-push-diagnostic/${countryCode}/future-scenarios`}
+                  to={`../../sdg-push-diagnostic/${countryCode}/sdg-trends`}
                   style={{ color: 'var(--white)', textDecoration: 'none' }}
                 >
                   <button type='button' className='undp-button button-primary button-arrow'>
-                    Explore Future Scenarios
+                    Explore SDG Trends
                   </button>
                 </NavLink>
               ) : (
                 <>
-                  <p className='label margin-top-07'>Select a country to explore their future scenarios</p>
+                  <p className='label margin-top-07'>Select a country to explore their SDG trends</p>
                   <Select
                     style={{ width: '100%' }}
                     className='undp-select'
                     placeholder='Select Country'
                     showSearch
-                    onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/future-scenarios`, '_self'); }}
+                    onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
                   >
                     {
                       sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
@@ -217,10 +175,10 @@ export const HomePage = (props: Props) => {
             }
           </div>
           <div>
-            <img alt='future scenarios' src={FutureImg} style={{ width: '100%' }} />
+            <img alt='sgd trends' src={SDGTrends} style={{ width: '100%' }} />
           </div>
         </div>
-        <div className='undp-section image-left'>
+        <div className='undp-section image-left margin-bottom-13'>
           <div>
             <img alt='sinterlinkages' src={InterlinkagesImg} style={{ width: '100%' }} />
           </div>
@@ -259,6 +217,48 @@ export const HomePage = (props: Props) => {
                 </>
               )
             }
+          </div>
+        </div>
+        <div className='undp-section image-right'>
+          <div>
+            <h4 className='undp-typography margin-top-05'>Future Scenarios</h4>
+            <p className='undp-typography large-font'>
+              In the SDG Push we will be identifying potential accelerators.
+              {' '}
+              <a href='https://data.undp.org/wp-content/uploads/2021/04/Leaving-No-One-Behind-COVID-impact-on-the-SDGs-second-flagship-2.pdf' target='_blank' className='undp-style' rel='noreferrer'>UNDP&apos;s flagship publication</a>
+              {' '}
+              presents one such scenario (governance, social protection, green economy, and digitalisation) at the global level that can put us back on track to recover better.
+            </p>
+            {
+              countryCode ? (
+                <NavLink
+                  to={`../../sdg-push-diagnostic/${countryCode}/future-scenarios`}
+                  style={{ color: 'var(--white)', textDecoration: 'none' }}
+                >
+                  <button type='button' className='undp-button button-primary button-arrow'>
+                    Explore Future Scenarios
+                  </button>
+                </NavLink>
+              ) : (
+                <>
+                  <p className='label margin-top-07'>Select a country to explore their future scenarios</p>
+                  <Select
+                    style={{ width: '100%' }}
+                    className='undp-select'
+                    placeholder='Select Country'
+                    showSearch
+                    onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/future-scenarios`, '_self'); }}
+                  >
+                    {
+                      sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
+                    }
+                  </Select>
+                </>
+              )
+            }
+          </div>
+          <div>
+            <img alt='future scenarios' src={FutureImg} style={{ width: '100%' }} />
           </div>
         </div>
       </div>
