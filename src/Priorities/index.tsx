@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import styled from 'styled-components';
 import axios, { AxiosResponse } from 'axios';
@@ -17,10 +16,8 @@ import '../style/tabStyle.css';
 import '../style/selectStyle.css';
 import '../style/modalStyle.css';
 import '../style/radioStyle.css';
-import Background from '../img/UNDP-hero-image.png';
-import ChevronRight from '../img/chevron-small-right.svg';
-import ChevronDown from '../img/chevron-small-down.svg';
 import { API_ACCESS_TOKEN } from '../Constants';
+import IMAGES from '../img/images';
 
 interface Props {
   countrySelected: string;
@@ -29,7 +26,7 @@ interface Props {
 }
 
 const HeroImageEl = styled.div`
-  background: url(${Background}) rgba(0, 0, 0, 0.3) no-repeat center;
+  background: url(${IMAGES.heroImage}) rgba(0, 0, 0, 0.3) no-repeat center;
   background-size: cover;
   margin-top: 7.1875rem;
 `;
@@ -40,26 +37,6 @@ const UploadEl = styled.div`
   align-items: center;
   width: fit-content;
   background-color: var(--gray-300);
-`;
-
-const Button = styled.button`
-  border: 0;
-  background-color: transparent;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  opacity: 0.7;
-  &:hover {
-    opacity: 0.9;
-  }
-`;
-
-const SelectedEl = styled.div`
-  font-size: 1rem;
-  background-color: var(--gray-100);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 `;
 
 const UploadButtonEl = styled.div`

@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import sortBy from 'lodash.sortby';
 import styled from 'styled-components';
-import { SDGSListType, StatusesType, TimeSeriesDataTypeWithStatusCode } from '../Types';
+import { StatusesType, TimeSeriesDataTypeWithStatusCode } from '../Types';
 import { LineChart } from './LineChart';
+import { SDGList } from '../Data/SDGGoalList';
 
 import '../style/sideBarNav.css';
-
-const SDGList:SDGSListType[] = require('../Data/SDGGoalList.json');
 
 interface Props {
   statusData: StatusesType;

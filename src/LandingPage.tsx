@@ -105,8 +105,6 @@ export const LandingPage = () => {
               <>
                 <Header
                   country={countryCode}
-                  statuses={statuses}
-                  goalStatuses={statuses.goalStatus}
                 />
                 <Routes>
                   <Route

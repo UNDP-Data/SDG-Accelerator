@@ -3,13 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { Select } from 'antd';
 import sortBy from 'lodash.sortby';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
+import IMAGES from '../img/images';
 import '../style/heroSections.css';
-import SDGTrends from '../img/01.png';
-import PrioritiesImg from '../img/02.png';
-import FutureImg from '../img/03.png';
-import InterlinkagesImg from '../img/04.png';
-import Background from '../img/UNDP-hero-image.png';
-import GIZLogo from '../img/gizLogo.png';
 
 interface Props {
   countryCode?: string;
@@ -17,7 +12,7 @@ interface Props {
 }
 
 const HeroImageEl = styled.div`
-  background: url(${Background}) no-repeat center;
+  background: url(${IMAGES.heroImage}) no-repeat center;
   background-size: cover;
   margin-top: 7.1875rem;
 `;
@@ -91,7 +86,7 @@ export const HomePage = (props: Props) => {
         <H2 className='undp-typography margin-bottom-07' style={{ padding: '0rem 1rem' }}>SDG push Diagnostics Features</H2>
         <div className='undp-section margin-bottom-13 image-left margin-top-07'>
           <div>
-            <img alt='Future Scenarios' src={PrioritiesImg} style={{ width: '100%' }} />
+            <img alt='Future Scenarios' src={IMAGES.img02} style={{ width: '100%' }} />
           </div>
           <div>
             <h4 className='undp-typography margin-top-05'>Current Priorities</h4>
@@ -175,12 +170,12 @@ export const HomePage = (props: Props) => {
             }
           </div>
           <div>
-            <img alt='sgd trends' src={SDGTrends} style={{ width: '100%' }} />
+            <img alt='sgd trends' src={IMAGES.imgO1} style={{ width: '100%' }} />
           </div>
         </div>
         <div className='undp-section image-left margin-bottom-13'>
           <div>
-            <img alt='sinterlinkages' src={InterlinkagesImg} style={{ width: '100%' }} />
+            <img alt='sinterlinkages' src={IMAGES.img04} style={{ width: '100%' }} />
           </div>
           <div>
             <h4 className='undp-typography margin-top-05'>SDG Interlinkages</h4>
@@ -258,7 +253,7 @@ export const HomePage = (props: Props) => {
             }
           </div>
           <div>
-            <img alt='future scenarios' src={FutureImg} style={{ width: '100%' }} />
+            <img alt='future scenarios' src={IMAGES.img03} style={{ width: '100%' }} />
           </div>
         </div>
       </div>
@@ -321,7 +316,7 @@ export const HomePage = (props: Props) => {
       }}
       >
         <h6 className='undp-typography margin-bottom-07'>With the support of the German Federal Ministry for Economic Cooperation and Development</h6>
-        <img alt='giz logo' src={GIZLogo} style={{ width: '250px', margin: 'auto' }} />
+        <img alt='giz logo' src={IMAGES.gizLogo} style={{ width: '250px', margin: 'auto' }} />
       </div>
     </>
   );

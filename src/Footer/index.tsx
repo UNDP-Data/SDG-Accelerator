@@ -5,15 +5,10 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import sortBy from 'lodash.sortby';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
+import IMAGES from '../img/images';
 import '../style/modalStyle.css';
 import '../style/inputStyle.css';
 import '../style/footerStyle.css';
-import UNDPLogo from '../img/logo.png';
-import GlobeWhite from '../img/globe-white.svg';
-import FAOLogo from '../img/logos/FAO_logo.svg';
-import UNWomenLogo from '../img/logos/UN_Women_logo.svg';
-import UNLogo from '../img/logos/United_Nations_logo.svg';
-import EuropeanCommissionLogo from '../img/logos/European_Commision_logo.svg';
 
 export const Footer = () => {
   const [searchText, setSearchText] = useState<string | null>(null);
@@ -32,16 +27,16 @@ export const Footer = () => {
                 padding: '0 0.75rem', maxWidth: '83.33333%', margin: 'auto', gap: '2.5rem',
               }}
             >
-              <img alt='fao_logo' src={FAOLogo} style={{ height: '3.5rem' }} />
-              <img alt='un_women_logo' src={UNWomenLogo} style={{ height: '3.5rem' }} />
-              <img alt='un_logo' src={UNLogo} style={{ height: '3.5rem' }} />
-              <img alt='european_commission_logo' src={EuropeanCommissionLogo} style={{ height: '3.5rem' }} />
+              <img alt='fao_logo' src={IMAGES.faoLogo} style={{ height: '3.5rem' }} />
+              <img alt='un_women_logo' src={IMAGES.unWomenLogo} style={{ height: '3.5rem' }} />
+              <img alt='un_logo' src={IMAGES.unLogo} style={{ height: '3.5rem' }} />
+              <img alt='european_commission_logo' src={IMAGES.ecLogo} style={{ height: '3.5rem' }} />
             </div>
           </div>
           <div className='undp-footer'>
             <div className='flex-div flex-space-between margin-bottom-07 flex-wrap' style={{ padding: '0 0.75rem var(--spacing-09) 0.75rem', borderBottom: '1px solid var(--white)' }}>
               <div className='flex-div flex-vert-align-center' style={{ margin: 0 }}>
-                <img alt='undp logo' src={UNDPLogo} style={{ width: '72px' }} />
+                <img alt='undp logo' src={IMAGES.undpLogoWhite} style={{ width: '72px' }} />
                 <h5 className='undp-typography margin-bottom-00'>
                   UNDP
                   <br />
@@ -50,7 +45,7 @@ export const Footer = () => {
               </div>
               <div className='undp-footer-right-container'>
                 <div className='margin-bottom-05'>
-                  <img style={{ cursor: 'pointer' }} onClick={() => { setOpenCountryModal(true); }} src={GlobeWhite} alt='icon-global' width='24px' height='24px' />
+                  <img style={{ cursor: 'pointer' }} onClick={() => { setOpenCountryModal(true); }} src={IMAGES.globeWhite} alt='icon-global' width='24px' height='24px' />
                 </div>
                 <div className='margin-bottom-03 '>
                   <a className='undp-footer-link undp-footer-right-link' href='mailto:data@undp.org' target='_blank' rel='noreferrer'>Contact Us</a>

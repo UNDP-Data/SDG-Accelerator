@@ -6,10 +6,10 @@ import { NavLink } from 'react-router-dom';
 import { getSDGIcon } from '../utils/getSDGIcon';
 import { SDGGOALS, SDG_ICON_SIZE, TargetIndicatorCount } from '../Constants';
 import { SDGGapsData } from './SDGGapsData';
-import Background from '../img/UNDP-hero-image.png';
 import '../style/statCardStyle.css';
 import { describeArc } from '../utils/getArc';
 import { GoalStatusType, StatusesType, TimeSeriesDataTypeWithStatusCode } from '../Types';
+import IMAGES from '../img/images';
 
 interface Props {
   goalStatuses: GoalStatusType[];
@@ -20,7 +20,7 @@ interface Props {
 }
 
 const HeroImageEl = styled.div`
-  background: url(${Background}) rgba(0, 0, 0, 0.3) no-repeat center;
+  background: url(${IMAGES.heroImage}) rgba(0, 0, 0, 0.3) no-repeat center;
   background-size: cover;
   background-blend-mode: multiply;
   margin-top: 7.1875rem;

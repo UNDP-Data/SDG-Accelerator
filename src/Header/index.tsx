@@ -9,14 +9,10 @@ import CountryTaxonomy from '../Data/countryTaxonomy.json';
 import '../style/headerStyle.css';
 import '../style/modalStyle.css';
 import '../style/inputStyle.css';
-import GlobeBlue from '../img/globe-icon.svg';
-import { ReportGenerationModal } from '../ReportGeneration/ReportGenerationModal';
-import { GoalStatusType, StatusesType } from '../Types';
+import IMAGES from '../img/images';
 
 interface Props {
   country: string;
-  statuses: StatusesType;
-  goalStatuses: GoalStatusType[];
 }
 
 const AButton = styled.a`
@@ -27,14 +23,13 @@ const AButton = styled.a`
 
 export const Header = (props: Props) => {
   const {
-    country, statuses, goalStatuses,
+    country,
   } = props;
   const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
   const countryFullName = country && CountryTaxonomy.findIndex((d) => (country === 'IDNWithCountryGovInput' ? d['Alpha-3 code-1'] === 'IDN' : d['Alpha-3 code-1'] === country)) !== -1 ? CountryTaxonomy[CountryTaxonomy.findIndex((d) => (country === 'IDNWithCountryGovInput' ? d['Alpha-3 code-1'] === 'IDN' : d['Alpha-3 code-1'] === country))]['Country or Area'] : undefined;
   const [searchText, setSearchText] = useState<string | null>(null);
   const [openHeaderCountryModal, setOpenHeaderCountryModal] = useState(false);
-  const [openModal, setOpenModal] = useState(false);
   return (
     <>
       <div>
@@ -115,15 +110,11 @@ export const Header = (props: Props) => {
                 <AButton href='https://data.undp.org/' target='_blank' className='undp-button button-tertiary' style={{ backgroundColor: 'var(--gray-300)' }} rel='noreferrer'>
                   Data Futures Platform
                 </AButton>
-                <button type='button' className='undp-button button-tertiary' onClick={() => { setOpenModal(true); }} style={{ backgroundColor: 'var(--gray-300)' }}>
-                  <span className='download-animated'><i /></span>
-                  Report
-                </button>
                 <div style={{
                   height: '24px', justifyContent: 'flex-end', textAlign: 'right',
                 }}
                 >
-                  <img style={{ cursor: 'pointer' }} onClick={() => { setOpenHeaderCountryModal(true); }} src={GlobeBlue} alt='Global Icon' />
+                  <img style={{ cursor: 'pointer' }} onClick={() => { setOpenHeaderCountryModal(true); }} src={IMAGES.globeicon} alt='Global Icon' />
                 </div>
               </div>
             </div>
@@ -254,14 +245,6 @@ export const Header = (props: Props) => {
           }
         </div>
       </Modal>
-      <ReportGenerationModal
-        targetStatuses={statuses.targetStatus}
-        countrySelected={country}
-        countryFullName={countryFullName as string}
-        goalStatuses={goalStatuses}
-        setOpenModal={setOpenModal}
-        openModal={openModal}
-      />
     </>
   );
 };
@@ -296,7 +279,7 @@ export const GlobalHeader = () => {
                   height: '24px', justifyContent: 'flex-end', textAlign: 'right',
                 }}
                 >
-                  <img style={{ cursor: 'pointer' }} onClick={() => { setOpenHeaderCountryModal(true); }} src={GlobeBlue} alt='Global Icon' />
+                  <img style={{ cursor: 'pointer' }} onClick={() => { setOpenHeaderCountryModal(true); }} src={IMAGES.globeicon} alt='Global Icon' />
                 </div>
               </div>
             </div>

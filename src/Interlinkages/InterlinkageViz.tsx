@@ -2,10 +2,9 @@ import { useState } from 'react';
 import uniq from 'lodash.uniq';
 import { Tooltip } from './LinkageTooltip';
 import {
-  LinkageDataType, LinkageHoverDataType, SDGSListType, TargetStatusWithDetailsType,
+  LinkageDataType, LinkageHoverDataType, TargetStatusWithDetailsType,
 } from '../Types';
-
-const SDGList:SDGSListType[] = require('../Data/SDGGoalList.json');
+import { SDGList } from '../Data/SDGGoalList';
 
 interface Props {
   selectedTarget: string;

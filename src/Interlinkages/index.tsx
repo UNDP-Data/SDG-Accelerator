@@ -4,19 +4,17 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { Modal, Radio } from 'antd';
 import {
-  LinkageDataType, LiteratureDataType, SDGSListType, TargetStatusType, TargetStatusWithDetailsType,
+  LinkageDataType,
+  TargetStatusType, TargetStatusWithDetailsType,
 } from '../Types';
 import { InterlinkagesViz } from './InterlinkageViz';
+import { SDGList } from '../Data/SDGGoalList';
 
 import '../style/radioStyle.css';
-import Background from '../img/UNDP-hero-image.png';
 import { NetworkGraph } from './NetworkGraph';
-
-const LinkageData:LinkageDataType[] = require('../Data/linkages.json');
-const LinkageData2023:LinkageDataType[] = require('../Data/linkage2023.json');
-const LiteratureData:LiteratureDataType[] = require('./Literature.json');
-
-const SDGList:SDGSListType[] = require('../Data/SDGGoalList.json');
+import { LinkageData, LinkageData2023 } from '../Data/linkages';
+import { LiteratureData } from '../Data/Literature';
+import IMAGES from '../img/images';
 
 interface Props {
   targetStatuses: TargetStatusType[];
@@ -24,7 +22,7 @@ interface Props {
 }
 
 const HeroImageEl = styled.div`
-background: url(${Background}) rgba(0, 0, 0, 0.3) no-repeat center;
+background: url(${IMAGES.heroImage}) rgba(0, 0, 0, 0.3) no-repeat center;
   background-size: cover;
   margin-top: 7.1875rem;
 `;
@@ -115,13 +113,13 @@ export const Interlinkages = (props: Props) => {
           setSelectedTarget={setSelectedTarget}
           linkageType={linkageType}
           data={targetStatus}
-          linkageData={year === '2023' ? LinkageData2023 : LinkageData}
+          linkageData={year === '2023' ? LinkageData2023 as LinkageDataType[] : LinkageData as LinkageDataType[]}
         />
       </div>
       <div className='margin-top-13 max-width-1440 margin-bottom-13' style={{ padding: '0 1rem' }}>
         <NetworkGraph
           data={targetStatus}
-          linkageData={year === '2023' ? LinkageData2023 : LinkageData}
+          linkageData={year === '2023' ? LinkageData2023 as LinkageDataType[] : LinkageData as LinkageDataType[]}
         />
       </div>
       <Modal

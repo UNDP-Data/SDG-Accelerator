@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { json } from 'd3-request';
 import { DATASOURCELINK, SCENARIOINDICATORBASEDONSDG, SDGGOALSFORFUTURESCENARIO } from '../Constants';
 import { ScenarioDataType } from '../Types';
+import IMAGES from '../img/images';
 
-import Background from '../img/UNDP-hero-image.png';
 import { LineChart } from './LineChart';
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const HeroImageEl = styled.div`
-  background: url(${Background}) rgba(0, 0, 0, 0.3) no-repeat center;
+  background: url(${IMAGES.heroImage}) rgba(0, 0, 0, 0.3) no-repeat center;
   background-size: cover;
   margin-top: 7.1875rem;
 `;
