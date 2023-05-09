@@ -137,26 +137,6 @@ export const CurrentGaps = (props: Props) => {
           </h3>
         </div>
       </HeroImageEl>
-      <div
-        className='margin-top-07 margin-bottom-07 bold'
-        style={{
-          padding: 'var(--spacing-07)', backgroundColor: 'var(--blue-100)', marginLeft: 'var(--spacing-07)', marginRight: 'var(--spacing-07)',
-        }}
-      >
-        Disclaimer
-        <br />
-        <br />
-        For the diagnostics and the insights report to be useful for policy inference, engagement with relevant member state is critical. The results here only presents an initial draft diagnostics of the state of SDGs in a country.
-        The SDG Trends assessment is based on currently available data in the
-        {' '}
-        <a href='https://unstats.un.org/sdgs/dataportal' className='undp-style' target='_blank' rel='noreferrer'>UN Stats SDG Data Portal</a>
-        {' '}
-        and methodology as per the
-        {' '}
-        <a href='https://unstats.un.org/sdgs/report/2022/Progress_Chart_Technical_Note_2022.pdf' className='undp-style' target='_blank' rel='noreferrer'>SDG Progress Chart 2022 Technical Note</a>
-        .
-        Engagement with National Statistics Offices and country Government are required to ensure the latest SDG data and national methodologies are incorporated and updated.
-      </div>
       <div className=' margin-top-00' style={{ backgroundColor: 'var(--gray-200)', padding: 'var(--spacing-09)' }}>
         <div className='max-width' style={{ backgroundColor: 'var(--gray-200)', padding: 'var(--spacing-09)' }}>
           <h2 className='undp-typography'>Current Gaps</h2>

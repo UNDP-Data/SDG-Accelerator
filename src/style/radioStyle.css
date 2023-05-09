@@ -62,3 +62,31 @@
   background-color: var(--blue-600);
   color: var(--white);
 }
+
+
+
+.undp-button-radio.ant-radio-group {
+  position: relative;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.undp-button-radio.ant-radio-group label {
+  padding: 0.5rem 0.75rem;
+  height: auto !important;
+}
+
+.undp-button-radio.ant-radio-group .ant-radio-button-wrapper {
+  border-radius: 0 !important;
+  border: 2px solid var(--gray-600) !important;
+  color: var(--gray-600);
+}
+
+
+.undp-button-radio.ant-radio-group .ant-radio-button-wrapper-checked {
+  border-radius: 0 !important;
+  border: 2px solid var(--blue-600) !important;
+  color: var(--white);
+  background-color: var(--blue-600) !important;
+}

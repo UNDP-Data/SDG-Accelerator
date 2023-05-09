@@ -13,6 +13,7 @@ import Background from '../img/UNDP-hero-image.png';
 import { NetworkGraph } from './NetworkGraph';
 
 const LinkageData:LinkageDataType[] = require('../Data/linkages.json');
+const LinkageData2023:LinkageDataType[] = require('../Data/linkage2023.json');
 const LiteratureData:LiteratureDataType[] = require('./Literature.json');
 
 const SDGList:SDGSListType[] = require('../Data/SDGGoalList.json');
@@ -31,6 +32,7 @@ background: url(${Background}) rgba(0, 0, 0, 0.3) no-repeat center;
 export const Interlinkages = (props: Props) => {
   const { targetStatuses, countryFullName } = props;
   const [selectedTarget, setSelectedTarget] = useState('All Targets');
+  const [year, setYear] = useState('2023');
   const [literatureModal, setLiteratureModal] = useState(false);
   const [linkageType, setLinkageTypes] = useState<'synergies' | 'tradeOffs'>('synergies');
   const targetOptions = [{ label: 'All Targets' }];
@@ -83,18 +85,21 @@ export const Interlinkages = (props: Props) => {
       <div className='margin-top-13 max-width-1440' style={{ padding: '0 1rem' }}>
         <div className='flex-div flex-space-between flex-vert-align-center margin-bottom-05'>
           <h3 className='undp-typography bold'>Interlinkages Visualization</h3>
-          <Radio.Group onChange={(d) => { setLinkageTypes(d.target.value); }} value={linkageType}>
-            <Radio className='undp-radio' value='synergies'>Synergies</Radio>
-            <Radio className='undp-radio' value='tradeOffs'>Trade Offs</Radio>
-          </Radio.Group>
+          <div className='flex-div flex-vert-align-center'>
+            <Radio.Group className='undp-button-radio' onChange={(d) => { setYear(d.target.value); }} value={year}>
+              <Radio.Button className='undp-radio' value='2019'>2019</Radio.Button>
+              <Radio.Button className='undp-radio' value='2023'>2023</Radio.Button>
+            </Radio.Group>
+            <Radio.Group onChange={(d) => { setLinkageTypes(d.target.value); }} value={linkageType}>
+              <Radio className='undp-radio' value='synergies'>Synergies</Radio>
+              <Radio className='undp-radio' value='tradeOffs'>Trade Offs</Radio>
+            </Radio.Group>
+          </div>
         </div>
         <p className='undp-typography small-font'>
           The synergies and tradeoffs are global, which means they are the same for all countries as mapped by the
           {' '}
-          <a className='undp-style' target='_blank' href='https://knowsdgs.jrc.ec.europa.eu/interlinkages-visualization' rel='noreferrer'>KnowSDGs Platform by European Commission</a>
-          . This is based on the current
-          {' '}
-          <span className='link-button' onClick={() => { setLiteratureModal(true); }} style={{ cursor: 'pointer' }}>literature on SDG interlinkages (read more here)</span>
+          <a className='undp-style' target='_blank' href='https://knowsdgs.jrc.ec.europa.eu/interlinkages-targets' rel='noreferrer'>KnowSDGs Platform by European Commission</a>
           . This methodology can be adapted to the national context.
           <br />
           <br />
@@ -110,13 +115,13 @@ export const Interlinkages = (props: Props) => {
           setSelectedTarget={setSelectedTarget}
           linkageType={linkageType}
           data={targetStatus}
-          linkageData={LinkageData}
+          linkageData={year === '2023' ? LinkageData2023 : LinkageData}
         />
       </div>
       <div className='margin-top-13 max-width-1440 margin-bottom-13' style={{ padding: '0 1rem' }}>
         <NetworkGraph
           data={targetStatus}
-          linkageData={LinkageData}
+          linkageData={year === '2023' ? LinkageData2023 : LinkageData}
         />
       </div>
       <Modal
