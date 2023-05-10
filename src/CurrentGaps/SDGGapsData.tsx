@@ -5,8 +5,6 @@ import { StatusesType, TimeSeriesDataTypeWithStatusCode } from '../Types';
 import { LineChart } from './LineChart';
 import { SDGList } from '../Data/SDGGoalList';
 
-import '../style/sideBarNav.css';
-
 interface Props {
   statusData: StatusesType;
   countryData: TimeSeriesDataTypeWithStatusCode[];
@@ -22,6 +20,31 @@ const ColorCircle = styled.div<ColorProps>`
   height: 0.75rem;
   border-radius: 1rem;
   background-color: ${(props) => props.backgroundColor};
+`;
+
+const SideBarNavEl = styled.div`
+  margin-right: -2px;
+  border-right: 2px solid var(--gray-200);
+  width: 9rem;
+`;
+
+interface SelectedProps{
+  selected: boolean;
+}
+
+const SideBarButtonEl = styled.button<SelectedProps>`
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  gap: 0.375rem;
+  align-items: center;
+  padding: 1rem 0;
+  border: 0;
+  border-right: ${(props) => (props.selected ? '2px solid var(--blue-600)' : '2px solid var(--gray-200)')};
+  color: ${(props) => (props.selected ? 'var(--blue-600)' : 'var(--black)')};
+  font-size: 1rem;
+  font-weight: ${(props) => (!props.selected ? 'normal' : '700')};
+  cursor: pointer;
 `;
 
 export const SDGGapsData = (props: Props) => {
@@ -42,13 +65,13 @@ export const SDGGapsData = (props: Props) => {
   }, [selectedSDG, statusData]);
   return (
     <div className='flex-div margin-bottom-13'>
-      <div className='side-bar-nav'>
+      <SideBarNavEl>
         {
           targets.map((d, i) => (
-            <button
+            <SideBarButtonEl
               type='button'
               key={i}
-              className={d.Target === selectedTarget.Target ? 'selected side-bar-el' : 'side-bar-el'}
+              selected={d.Target === selectedTarget.Target}
               onClick={() => { setSelectedTarget(d); setSelectedIndicator(d.Indicators[0]); setSelectedIndicatorTS((countryData.filter((el) => el.indicator === d.Indicators[0].Indicator.split(' ')[1]))); }}
             >
               <div
@@ -70,10 +93,10 @@ export const SDGGapsData = (props: Props) => {
                 }
               />
               {d.Target}
-            </button>
+            </SideBarButtonEl>
           ))
         }
-      </div>
+      </SideBarNavEl>
       <div style={{ width: 'calc(100% - 9rem)', padding: '1rem 2rem' }}>
         <div className='flex-div flex-vert-align-center margin-bottom-05' style={{ gap: '0.5rem' }}>
           <h6 className='undp-typography margin-bottom-00'>
@@ -81,14 +104,14 @@ export const SDGGapsData = (props: Props) => {
           </h6>
           <div
             className={`undp-chip undp-chip-small ${statusData.targetStatus.findIndex((el) => `Target ${el.target}` === selectedTarget.Target) === -1
-              ? 'undp-chip-dark-gray'
+              ? 'undp-chip-gray'
               : statusData.targetStatus[statusData.targetStatus.findIndex((el) => `Target ${el.target}` === selectedTarget.Target)].status === 'On Track'
-                ? 'undp-chip-dark-green'
+                ? 'undp-chip-green'
                 : statusData.targetStatus[statusData.targetStatus.findIndex((el) => `Target ${el.target}` === selectedTarget.Target)].status === 'For Review'
-                  ? 'undp-chip-dark-yellow'
+                  ? 'undp-chip-yellow'
                   : statusData.targetStatus[statusData.targetStatus.findIndex((el) => `Target ${el.target}` === selectedTarget.Target)].status === 'Identified Gap'
-                    ? 'undp-chip-dark-red'
-                    : 'undp-chip-dark-gray'}`}
+                    ? 'undp-chip-red'
+                    : 'undp-chip-gray'}`}
           >
             {statusData.targetStatus.findIndex((el) => `Target ${el.target}` === selectedTarget.Target) === -1 ? 'Gaps NA' : statusData.targetStatus[statusData.targetStatus.findIndex((el) => `Target ${el.target}` === selectedTarget.Target)].status ? statusData.targetStatus[statusData.targetStatus.findIndex((el) => `Target ${el.target}` === selectedTarget.Target)].status : 'Gaps NA'}
           </div>
@@ -129,14 +152,14 @@ export const SDGGapsData = (props: Props) => {
             </h6>
             <div
               className={`undp-chip undp-chip-small ${statusData.indicatorStatus.findIndex((el) => `Indicator ${el.indicator}` === selectedIndicator.Indicator) === -1
-                ? 'undp-chip-dark-gray'
+                ? 'undp-chip-gray'
                 : statusData.indicatorStatus[statusData.indicatorStatus.findIndex((el) => `Indicator ${el.indicator}` === selectedIndicator.Indicator)].status === 'On Track'
-                  ? 'undp-chip-dark-green'
+                  ? 'undp-chip-green'
                   : statusData.indicatorStatus[statusData.indicatorStatus.findIndex((el) => `Indicator ${el.indicator}` === selectedIndicator.Indicator)].status === 'For Review'
-                    ? 'undp-chip-dark-yellow'
+                    ? 'undp-chip-yellow'
                     : statusData.indicatorStatus[statusData.indicatorStatus.findIndex((el) => `Indicator ${el.indicator}` === selectedIndicator.Indicator)].status === 'Identified Gap'
-                      ? 'undp-chip-dark-red'
-                      : 'undp-chip-dark-gray'}`}
+                      ? 'undp-chip-red'
+                      : 'undp-chip-gray'}`}
             >
               {statusData.indicatorStatus.findIndex((el) => `Indicator ${el.indicator}` === selectedIndicator.Indicator) === -1 ? 'Gaps NA' : statusData.indicatorStatus[statusData.indicatorStatus.findIndex((el) => `Indicator ${el.indicator}` === selectedIndicator.Indicator)].status ? statusData.indicatorStatus[statusData.indicatorStatus.findIndex((el) => `Indicator ${el.indicator}` === selectedIndicator.Indicator)].status : 'Gaps NA'}
             </div>

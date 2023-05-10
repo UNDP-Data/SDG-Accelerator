@@ -6,9 +6,6 @@ import { Input, Modal } from 'antd';
 import sortBy from 'lodash.sortby';
 import styled from 'styled-components';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
-import '../style/headerStyle.css';
-import '../style/modalStyle.css';
-import '../style/inputStyle.css';
 import IMAGES from '../img/images';
 
 interface Props {
@@ -107,7 +104,7 @@ export const Header = (props: Props) => {
                       </button>
                     ) : null
                 }
-                <AButton href='https://data.undp.org/' target='_blank' className='undp-button button-tertiary' style={{ backgroundColor: 'var(--gray-300)' }} rel='noreferrer'>
+                <AButton href='https://data.undp.org/' target='_blank' className='undp-button button-secondary' style={{ backgroundColor: 'var(--gray-300)', color: 'var(--gray-700)', textDecoration: 'none' }} rel='noreferrer'>
                   Data Futures Platform
                 </AButton>
                 <div style={{
@@ -204,18 +201,20 @@ export const Header = (props: Props) => {
         open={openHeaderCountryModal}
         onCancel={() => { setOpenHeaderCountryModal(false); }}
         onOk={() => { setOpenHeaderCountryModal(false); }}
+        width='80vw'
       >
         <div
           className='margin-top-07 flex-div flex-wrap'
           style={{
-            width: '75vw', minWidth: '60rem', maxWidth: '90rem',
+            maxWidth: '90rem',
+            justifyContent: 'space-between',
           }}
         >
           <Input className='undp-input margin-bottom-05' placeholder='Search a country' onChange={(value) => { setSearchText(value.target.value); }} />
           {
             searchText ? sortBy(CountryTaxonomy, 'Country or Area').filter((d) => d['Country or Area'].toLowerCase().includes(searchText.toLowerCase())).map((d, i) => (
               <div
-                style={{ width: 'calc(33.33% - 0.667rem)' }}
+                style={{ width: 'calc(33.33% - 1rem)' }}
                 key={i}
               >
                 <NavLink
@@ -229,7 +228,7 @@ export const Header = (props: Props) => {
               </div>
             )) : sortBy(CountryTaxonomy, 'Country or Area').map((d, i) => (
               <div
-                style={{ width: 'calc(33.33% - 0.667rem)' }}
+                style={{ width: 'calc(33.33% - 1rem)' }}
                 key={i}
               >
                 <NavLink
@@ -272,7 +271,7 @@ export const GlobalHeader = () => {
                 </div>
               </div>
               <div className='flex-div flex-vert-align-center nav-top-right'>
-                <a href='https://data.undp.org/' target='_blank' className='undp-button button-tertiary' style={{ backgroundColor: 'var(--gray-300)' }} rel='noreferrer'>
+                <a href='https://data.undp.org/' target='_blank' className='undp-button button-secondary' style={{ backgroundColor: 'var(--gray-300)', color: 'var(--gray-700)', textDecoration: 'none' }} rel='noreferrer'>
                   Data Futures Platform
                 </a>
                 <div style={{
@@ -292,18 +291,20 @@ export const GlobalHeader = () => {
         open={openHeaderCountryModal}
         onCancel={() => { setOpenHeaderCountryModal(false); }}
         onOk={() => { setOpenHeaderCountryModal(false); }}
+        width='80vw'
       >
         <div
           className='margin-top-07 flex-div flex-wrap'
           style={{
-            width: '75vw', minWidth: '60rem', maxWidth: '90rem',
+            maxWidth: '90rem',
+            justifyContent: 'space-between',
           }}
         >
           <Input className='undp-input margin-bottom-05' placeholder='Search a country' onChange={(value) => { setSearchText(value.target.value); }} />
           {
             searchText ? sortBy(CountryTaxonomy, 'Country or Area').filter((d) => d['Country or Area'].toLowerCase().includes(searchText.toLowerCase())).map((d, i) => (
               <div
-                style={{ width: 'calc(33.33% - 0.667rem)' }}
+                style={{ width: 'calc(33.33% - 1rem)' }}
                 key={i}
               >
                 <NavLink
@@ -317,7 +318,7 @@ export const GlobalHeader = () => {
               </div>
             )) : sortBy(CountryTaxonomy, 'Country or Area').map((d, i) => (
               <div
-                style={{ width: 'calc(33.33% - 0.667rem)' }}
+                style={{ width: 'calc(33.33% - 1rem)' }}
                 key={i}
               >
                 <NavLink

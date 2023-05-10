@@ -15,7 +15,6 @@ import { Footer } from './Footer';
 import { DATASOURCELINK } from './Constants';
 import CountryTaxonomy from './Data/countryTaxonomy.json';
 
-import './style/heroSections.css';
 import { Interlinkages } from './Interlinkages';
 import { CountryDataType, StatusesType, TimeSeriesDataTypeWithStatusCode } from './Types';
 

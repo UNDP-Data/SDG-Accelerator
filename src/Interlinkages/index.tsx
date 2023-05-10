@@ -9,8 +9,6 @@ import {
 } from '../Types';
 import { InterlinkagesViz } from './InterlinkageViz';
 import { SDGList } from '../Data/SDGGoalList';
-
-import '../style/radioStyle.css';
 import { NetworkGraph } from './NetworkGraph';
 import { LinkageData, LinkageData2023 } from '../Data/linkages';
 import { LiteratureData } from '../Data/Literature';

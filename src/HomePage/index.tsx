@@ -4,7 +4,6 @@ import { Select } from 'antd';
 import sortBy from 'lodash.sortby';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 import IMAGES from '../img/images';
-import '../style/heroSections.css';
 
 interface Props {
   countryCode?: string;

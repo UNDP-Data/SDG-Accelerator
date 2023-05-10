@@ -105,13 +105,13 @@ export const LineChart = (props: Props) => {
             ? (
               <div
                 className={`undp-chip undp-chip-small ${data.status === 'On Track' || data.status === 'Target Achieved'
-                  ? 'undp-chip-dark-green'
+                  ? 'undp-chip-green'
                   : data.status === 'Fair progress but acceleration needed'
-                    ? 'undp-chip-dark-yellow'
+                    ? 'undp-chip-yellow'
                     : data.status === 'Limited or No Progress' || data.status === 'Target Not Achieved'
                       ? 'undp-chip-red'
-                      : data.status === 'Deterioration' ? 'undp-chip-dark-red'
-                        : 'undp-chip-dark-gray'
+                      : data.status === 'Deterioration' ? 'undp-chip-red'
+                        : 'undp-chip-gray'
                 }`}
               >
                 {data.status === 'No Data After 2015' ? 'Insufficient Data: No Data after 2015' : data.status}

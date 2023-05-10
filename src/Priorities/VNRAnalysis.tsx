@@ -12,11 +12,6 @@ import { describeArc } from '../utils/getArc';
 import { GoalStatusType } from '../Types';
 import { SalienceGraph } from './SalienceGraph';
 
-import '../style/chipStyle.css';
-import '../style/tabStyle.css';
-import '../style/buttonStyle.css';
-import '../style/selectStyle.css';
-
 interface Props {
   data: any;
   goalStatuses: GoalStatusType[];

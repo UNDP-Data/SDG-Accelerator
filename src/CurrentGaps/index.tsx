@@ -6,7 +6,6 @@ import { NavLink } from 'react-router-dom';
 import { getSDGIcon } from '../utils/getSDGIcon';
 import { SDGGOALS, SDG_ICON_SIZE, TargetIndicatorCount } from '../Constants';
 import { SDGGapsData } from './SDGGapsData';
-import '../style/statCardStyle.css';
 import { describeArc } from '../utils/getArc';
 import { GoalStatusType, StatusesType, TimeSeriesDataTypeWithStatusCode } from '../Types';
 import IMAGES from '../img/images';
@@ -210,7 +209,7 @@ export const CurrentGaps = (props: Props) => {
                 </h4>
                 <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>The country is on track to fulfil the SDG by 2030</p>
                 <div className='sdg-icon-group'>
-                  <div className='sdg-icon-container'>
+                  <div className='flex-div flex-wrap'>
                     {
                       onTrack.map((d, i: number) => (
                         <div key={i}>
@@ -233,7 +232,7 @@ export const CurrentGaps = (props: Props) => {
                 </h4>
                 <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>With current progress the country will miss the SDG by 2030 by a small margin</p>
                 <div className='sdg-icon-group'>
-                  <div className='sdg-icon-container'>
+                  <div className='flex-div flex-wrap'>
                     {
                       forReview.map((d, i: number) => (
                         <div key={i}>
@@ -256,7 +255,7 @@ export const CurrentGaps = (props: Props) => {
                 </h4>
                 <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>With current progress the country will miss the SDG by 2030 by a large margin</p>
                 <div className='sdg-icon-group'>
-                  <div className='sdg-icon-container'>
+                  <div className='flex-div flex-wrap'>
                     {
                       identifiedGap.map((d, i: number) => (
                         <div key={i}>
@@ -279,7 +278,7 @@ export const CurrentGaps = (props: Props) => {
                 </h4>
                 <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Country doesn’t have enough data to identify the progress of the SDG</p>
                 <div className='sdg-icon-group'>
-                  <div className='sdg-icon-container'>
+                  <div className='flex-div flex-wrap'>
                     {
                       gapsNA.map((d, i: number) => (
                         <div key={i}>
@@ -297,7 +296,7 @@ export const CurrentGaps = (props: Props) => {
       <div className='margin-top-13 max-width-1440' style={{ padding: '0 1rem' }}>
         <Select
           value={selectedSDG}
-          className='sdg-select'
+          className='undp-select-no-background'
           onChange={(d) => { setSelectedSDG(d); }}
         >
           {

@@ -6,10 +6,6 @@ import { CountryGoalStatusType } from '../Types';
 import World from '../Data/worldMap.json';
 import { SDGList } from '../Data/SDGGoalList';
 
-import '../style/chipStyle.css';
-import '../style/tabStyle.css';
-import '../style/selectStyle.css';
-
 interface Props {
   data: CountryGoalStatusType[];
   goal: string;

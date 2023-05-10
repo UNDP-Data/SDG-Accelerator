@@ -3,9 +3,6 @@ import { LandingPage } from './LandingPage';
 import { HomePage } from './HomePage';
 import { GlobalHeader } from './Header';
 import { Footer } from './Footer';
-import './style/style.css';
-import './style/antd.css';
-import './style/buttonStyle.css';
 
 const App = () => (
   <div className='undp-container'>

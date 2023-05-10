@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import { GoalStatusType } from '../Types';
 
-import '../style/chipStyle.css';
-import '../style/tabStyle.css';
-import '../style/selectStyle.css';
-
 interface Props {
   data: any;
   goalStatuses: GoalStatusType[];

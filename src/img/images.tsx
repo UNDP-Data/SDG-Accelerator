@@ -4,7 +4,7 @@ const IMAGES = {
   unWomenLogo: new URL('./logos/UN_Women_logo.svg', import.meta.url).href,
   unLogo: new URL('./logos/United_Nations_logo.svg', import.meta.url).href,
   gizLogo: new URL('./logos/gizLogo.png', import.meta.url).href,
-  undpLogoWhite: new URL('./logo/undpWhiteLogo.png', import.meta.url).href,
+  undpLogoWhite: new URL('./logos/undpWhiteLogo.png', import.meta.url).href,
   imgO1: new URL('./01.png', import.meta.url).href,
   img02: new URL('./02.png', import.meta.url).href,
   img03: new URL('./03.png', import.meta.url).href,

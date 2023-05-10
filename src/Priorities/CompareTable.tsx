@@ -3,9 +3,6 @@ import { getSDGIcon } from '../utils/getSDGIcon';
 import SDGGoalList from '../Data/SDGGoalList.json';
 import { GoalStatusType } from '../Types';
 
-import '../style/statCardStyle.css';
-import '../style/tableStyle.css';
-
 interface Props {
   data: any;
   goalStatuses: GoalStatusType[];
@@ -85,7 +82,7 @@ export const CompareAnalysis = (props: Props) => {
                           {' '}
                           {SDGGoalList[SDGGoalList.findIndex((el) => el.Goal === `SDG ${d.sdg}`)]['Goal Name']}
                         </h6>
-                        <div key={i} className={`undp-chip undp-chip-small ${d.status === 'On Track' ? 'undp-chip-dark-green' : d.status === 'For Review' ? 'undp-chip-dark-yellow' : d.status === 'Identified Gap' ? 'undp-chip-dark-red' : 'undp-chip-dark-gray'}`}>
+                        <div key={i} className={`undp-chip undp-chip-small ${d.status === 'On Track' ? 'undp-chip-green' : d.status === 'For Review' ? 'undp-chip-yellow' : d.status === 'Identified Gap' ? 'undp-chip-red' : 'undp-chip-gray'}`}>
                           {d.status}
                         </div>
                       </div>

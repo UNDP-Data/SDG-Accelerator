@@ -6,9 +6,6 @@ import { useState } from 'react';
 import sortBy from 'lodash.sortby';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 import IMAGES from '../img/images';
-import '../style/modalStyle.css';
-import '../style/inputStyle.css';
-import '../style/footerStyle.css';
 
 export const Footer = () => {
   const [searchText, setSearchText] = useState<string | null>(null);
@@ -68,18 +65,20 @@ export const Footer = () => {
         open={openCountryModal}
         onCancel={() => { setOpenCountryModal(false); }}
         onOk={() => { setOpenCountryModal(false); }}
+        width='80vw'
       >
         <div
           className='margin-top-07 flex-div flex-wrap'
           style={{
-            width: '75vw', minWidth: '60rem', maxWidth: '90rem',
+            maxWidth: '90rem',
+            justifyContent: 'space-between',
           }}
         >
           <Input className='undp-input margin-bottom-05' placeholder='Search a country' onChange={(value) => { setSearchText(value.target.value); }} />
           {
             searchText ? sortBy(CountryTaxonomy, 'Country or Area').filter((d) => d['Country or Area'].toLowerCase().includes(searchText.toLowerCase())).map((d, i) => (
               <div
-                style={{ width: 'calc(33.33% - 0.667rem)' }}
+                style={{ width: 'calc(33.33% - 1rem)' }}
                 key={i}
               >
                 <NavLink
@@ -93,7 +92,7 @@ export const Footer = () => {
               </div>
             )) : sortBy(CountryTaxonomy, 'Country or Area').map((d, i) => (
               <div
-                style={{ width: 'calc(33.33% - 0.667rem)' }}
+                style={{ width: 'calc(33.33% - 1rem)' }}
                 key={i}
               >
                 <NavLink

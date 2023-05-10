@@ -11,11 +11,6 @@ import sortBy from 'lodash.sortby';
 import reverse from 'lodash.reverse';
 import { VNRAnalysis } from './VNRAnalysis';
 import { GoalStatusType } from '../Types';
-
-import '../style/tabStyle.css';
-import '../style/selectStyle.css';
-import '../style/modalStyle.css';
-import '../style/radioStyle.css';
 import { API_ACCESS_TOKEN } from '../Constants';
 import IMAGES from '../img/images';
 
@@ -288,7 +283,7 @@ export const Priorities = (props: Props) => {
                                 <div className='flex-div margin-bottom-05 flex-wrap'>
                                   {
                                     selectedFileNotAnalyzed.map((d: any, i: number) => (
-                                      <div className='undp-chip-dark-gray undp-chip' key={i}>
+                                      <div className='undp-chip-gray undp-chip' key={i}>
                                         {d.name}
                                         {' '}
                                         (
