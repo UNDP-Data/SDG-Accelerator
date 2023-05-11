@@ -25,7 +25,8 @@ const ColorCircle = styled.div<ColorProps>`
 const SideBarNavEl = styled.div`
   margin-right: -2px;
   border-right: 2px solid var(--gray-200);
-  width: 9rem;
+  width: 9rem !important;
+  min-width: 9rem !important;
 `;
 
 interface SelectedProps{
@@ -97,7 +98,7 @@ export const SDGGapsData = (props: Props) => {
           ))
         }
       </SideBarNavEl>
-      <div style={{ width: 'calc(100% - 9rem)', padding: '1rem 2rem' }}>
+      <div style={{ width: 'calc(100% - 14rem)', padding: '1rem 2rem' }}>
         <div className='flex-div flex-vert-align-center margin-bottom-05' style={{ gap: '0.5rem' }}>
           <h6 className='undp-typography margin-bottom-00'>
             {selectedTarget.Target}
