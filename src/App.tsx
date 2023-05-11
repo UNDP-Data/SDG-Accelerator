@@ -8,6 +8,16 @@ const App = () => (
   <div className='undp-container'>
     <Routes>
       <Route
+        path='/'
+        element={(
+          <>
+            <GlobalHeader />
+            <HomePage />
+            <Footer />
+          </>
+        )}
+      />
+      <Route
         path='/sdg-push-diagnostic'
         element={(
           <>
