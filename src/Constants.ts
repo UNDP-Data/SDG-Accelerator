@@ -376,7 +376,7 @@ export const SDG_COLOR_ARRAY = [
   '#19486A',
 ];
 
-export const DATASOURCELINK = process.env.NODE_ENV === 'production' ? '../..' : '../..';
+export const DATASOURCELINK = '../..';
 
 export const SDG_ICON_SIZE = 64;
 
