@@ -3,12 +3,12 @@
   "goalStatus": [
     {
       "goal": 1,
-      "noOfIndicatorsWithData": 4,
-      "status": "For Review"
+      "noOfIndicatorsWithData": 5,
+      "status": "Identified Gap"
     },
     {
       "goal": 11,
-      "noOfIndicatorsWithData": 5,
+      "noOfIndicatorsWithData": 6,
       "status": "For Review"
     },
     {
@@ -53,7 +53,7 @@
     },
     {
       "goal": 17,
-      "noOfIndicatorsWithData": 15,
+      "noOfIndicatorsWithData": 14,
       "status": "For Review"
     },
     {
@@ -78,7 +78,7 @@
     },
     {
       "goal": 6,
-      "noOfIndicatorsWithData": 6,
+      "noOfIndicatorsWithData": 7,
       "status": "For Review"
     },
     {
@@ -101,22 +101,22 @@
     {
       "goal": "1",
       "target": "1.3",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "1",
       "target": "1.4",
-      "status": "On Track"
+      "status": "Identified Gap"
     },
     {
       "goal": "1",
       "target": "1.5",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "11",
       "target": "11.5",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "13",
@@ -156,7 +156,7 @@
     {
       "goal": "10",
       "target": "10.a",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "10",
@@ -166,12 +166,12 @@
     {
       "goal": "10",
       "target": "10.c",
-      "status": "On Track"
+      "status": "Identified Gap"
     },
     {
       "goal": "11",
       "target": "11.1",
-      "status": "On Track"
+      "status": "Identified Gap"
     },
     {
       "goal": "11",
@@ -320,11 +320,6 @@
     },
     {
       "goal": "17",
-      "target": "17.10",
-      "status": "Identified Gap"
-    },
-    {
-      "goal": "17",
       "target": "17.11",
       "status": "Identified Gap"
     },
@@ -376,7 +371,7 @@
     {
       "goal": "17",
       "target": "17.8",
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": "17",
@@ -521,12 +516,12 @@
     {
       "goal": "6",
       "target": "6.2",
-      "status": "On Track"
+      "status": "Identified Gap"
     },
     {
       "goal": "6",
       "target": "6.3",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "6",
@@ -677,13 +672,13 @@
       "goal": "1",
       "target": "1.3",
       "indicator": "1.3.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "1",
       "target": "1.4",
       "indicator": "1.4.1",
-      "status": "On Track"
+      "status": "Identified Gap"
     },
     {
       "goal": "1",
@@ -713,13 +708,13 @@
       "goal": "1",
       "target": "1.5",
       "indicator": "1.5.2",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "11",
       "target": "11.5",
       "indicator": "11.5.2",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "1",
@@ -797,7 +792,7 @@
       "goal": "10",
       "target": "10.a",
       "indicator": "10.a.1",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "10",
@@ -809,13 +804,13 @@
       "goal": "10",
       "target": "10.c",
       "indicator": "10.c.1",
-      "status": "On Track"
+      "status": "Identified Gap"
     },
     {
       "goal": "11",
       "target": "11.1",
       "indicator": "11.1.1",
-      "status": "On Track"
+      "status": "Identified Gap"
     },
     {
       "goal": "11",
@@ -1029,12 +1024,6 @@
     },
     {
       "goal": "17",
-      "target": "17.10",
-      "indicator": "17.10.1",
-      "status": "Identified Gap"
-    },
-    {
-      "goal": "17",
       "target": "17.11",
       "indicator": "17.11.1",
       "status": "Identified Gap"
@@ -1115,7 +1104,7 @@
       "goal": "17",
       "target": "17.8",
       "indicator": "17.8.1",
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": "17",
@@ -1403,13 +1392,13 @@
       "goal": "6",
       "target": "6.2",
       "indicator": "6.2.1",
-      "status": "On Track"
+      "status": "Identified Gap"
     },
     {
       "goal": "6",
       "target": "6.3",
       "indicator": "6.3.2",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "6",
@@ -1705,10 +1694,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 3.0,
         "baseYear": null,
         "latestAvailable": null
       },
@@ -1739,10 +1729,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2020.0
       },
@@ -1773,10 +1764,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2016,
         "latestAvailable": 2016.0
       },
@@ -1805,7 +1797,7 @@
         }
       ],
       "methodology": {
-        "targetValue": 80,
+        "targetValue": 95.0,
         "currentLevelThresholds": [
           80,
           60,
@@ -1825,7 +1817,7 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
@@ -1857,7 +1849,7 @@
         }
       ],
       "methodology": {
-        "targetValue": 80,
+        "targetValue": 95.0,
         "currentLevelThresholds": [
           80,
           60,
@@ -1877,7 +1869,7 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
@@ -1911,10 +1903,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2016,
         "latestAvailable": 2016.0
       },
@@ -1949,10 +1942,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2022.0
       },
@@ -1987,10 +1981,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2016,
         "latestAvailable": 2020.0
       },
@@ -2025,10 +2020,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2015,
         "latestAvailable": 2019.0
       },
@@ -2063,10 +2059,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2016,
         "latestAvailable": 2020.0
       },
@@ -2074,7 +2071,7 @@
       "Partner_Agency(ies)": "World Bank",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Fair progress but acceleration needed"
     },
     {
       "Sex": "BOTHSEX",
@@ -2097,10 +2094,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -2139,6 +2137,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2016,
         "latestAvailable": 2020.0
       },
@@ -2209,10 +2208,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 97.0,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },
@@ -2220,7 +2220,7 @@
       "Partner_Agency(ies)": "UNICEF, WHO",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Limited or No Progress"
     },
     {
       "Location": "ALLAREA",
@@ -2283,10 +2283,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 97.0,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },
@@ -2294,7 +2295,7 @@
       "Partner_Agency(ies)": "UNICEF, WHO",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Limited or No Progress"
     },
     {
       "Sex": "BOTHSEX",
@@ -2321,6 +2322,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2018,
         "latestAvailable": 2018.0
       },
@@ -3780,6 +3782,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2018.0
       },
@@ -3787,7 +3790,7 @@
       "Partner_Agency(ies)": "UNEP, FAO",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -3845,6 +3848,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2018.0
       },
@@ -3852,7 +3856,7 @@
       "Partner_Agency(ies)": "UNEP, FAO",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -4684,6 +4688,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": null,
         "latestAvailable": null
       },
@@ -5578,6 +5583,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2015,
         "latestAvailable": 2022.0
       },
@@ -5585,7 +5591,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Target Achieved"
     },
     {
       "Type of product": "IND",
@@ -5640,6 +5646,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
@@ -5647,7 +5654,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Target Achieved"
     },
     {
       "Type of product": "CLO",
@@ -5702,6 +5709,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
@@ -5709,7 +5717,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Target Achieved"
     },
     {
       "Type of product": "TEX",
@@ -5764,6 +5772,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
@@ -5771,7 +5780,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Target Achieved"
     },
     {
       "Type of product": "OIL",
@@ -5810,6 +5819,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": null,
         "latestAvailable": 2021.0
       },
@@ -5872,6 +5882,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
@@ -5879,7 +5890,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Target Achieved"
     },
     {
       "Type of product": "ARM",
@@ -5934,6 +5945,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
@@ -5996,6 +6008,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
@@ -6003,7 +6016,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -6122,10 +6135,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
@@ -6133,7 +6147,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Limited or No Progress"
     },
     {
       "Location": "URBAN",
@@ -6183,14 +6197,14 @@
           "Far from target",
           "Very far from target"
         ],
-        "targetValue": 0.1,
+        "targetValue": 1.0,
         "normativeDirection": "decrease",
         "CAGRLimit": [
           0.005,
           -0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2014
         },
@@ -6201,7 +6215,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": "Very far from target",
-      "status": "On Track"
+      "status": "Limited or No Progress"
     },
     {
       "Reporting Type": "G",
@@ -7963,6 +7977,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2015,
         "latestAvailable": 2022.0
       },
@@ -8170,10 +8185,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },
@@ -8227,10 +8243,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },
@@ -8312,6 +8329,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2015,
         "latestAvailable": 2022.0
       },
@@ -9239,6 +9257,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2018.0
       },
@@ -9246,7 +9265,7 @@
       "Partner_Agency(ies)": "NA",
       "Tier_Classification": "NA",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -10335,6 +10354,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2014,
         "latestAvailable": 2017.0
       },
@@ -10922,874 +10942,6 @@
       "status": "On Track"
     },
     {
-      "Type of product": "CLO",
-      "Reporting Type": "G",
-      "series": "TM_TAX_WMFN",
-      "goal": "17",
-      "target": "17.10",
-      "indicator": "17.10.1",
-      "seriesDescription": "Worldwide weighted tariff-average, most-favoured-nation status, by type of product (%)",
-      "values": [
-        {
-          "value": 25.0,
-          "year": 2010.0
-        },
-        {
-          "value": 25.0,
-          "year": 2015.0
-        },
-        {
-          "value": 25.0,
-          "year": 2016.0
-        },
-        {
-          "value": 25.0,
-          "year": 2017.0
-        },
-        {
-          "value": 25.0,
-          "year": 2018.0
-        },
-        {
-          "value": 25.0,
-          "year": 2019.0
-        },
-        {
-          "value": 25.0,
-          "year": 2020.0
-        },
-        {
-          "value": 25.0,
-          "year": 2021.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "decrease",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
-      "Custodian_Agency(ies)": "WTO,ITC,UNCTAD",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Fair progress but acceleration needed"
-    },
-    {
-      "Type of product": "IND",
-      "Reporting Type": "G",
-      "series": "TM_TAX_WMFN",
-      "goal": "17",
-      "target": "17.10",
-      "indicator": "17.10.1",
-      "seriesDescription": "Worldwide weighted tariff-average, most-favoured-nation status, by type of product (%)",
-      "values": [
-        {
-          "value": 7.45685,
-          "year": 2010.0
-        },
-        {
-          "value": 10.27412,
-          "year": 2015.0
-        },
-        {
-          "value": 10.27415,
-          "year": 2016.0
-        },
-        {
-          "value": 7.71003,
-          "year": 2017.0
-        },
-        {
-          "value": 9.00672,
-          "year": 2018.0
-        },
-        {
-          "value": 10.72828,
-          "year": 2019.0
-        },
-        {
-          "value": 9.78819,
-          "year": 2020.0
-        },
-        {
-          "value": 10.61426,
-          "year": 2021.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "decrease",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
-      "Custodian_Agency(ies)": "WTO,ITC,UNCTAD",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Limited or No Progress"
-    },
-    {
-      "Type of product": "AGR",
-      "Reporting Type": "G",
-      "series": "TM_TAX_WMFN",
-      "goal": "17",
-      "target": "17.10",
-      "indicator": "17.10.1",
-      "seriesDescription": "Worldwide weighted tariff-average, most-favoured-nation status, by type of product (%)",
-      "values": [
-        {
-          "value": 14.47604,
-          "year": 2010.0
-        },
-        {
-          "value": 16.71962,
-          "year": 2015.0
-        },
-        {
-          "value": 16.71962,
-          "year": 2016.0
-        },
-        {
-          "value": 16.81337,
-          "year": 2017.0
-        },
-        {
-          "value": 17.08359,
-          "year": 2018.0
-        },
-        {
-          "value": 16.82749,
-          "year": 2019.0
-        },
-        {
-          "value": 14.83382,
-          "year": 2020.0
-        },
-        {
-          "value": 17.33406,
-          "year": 2021.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "decrease",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
-      "Custodian_Agency(ies)": "WTO,ITC,UNCTAD",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Limited or No Progress"
-    },
-    {
-      "Type of product": "ALP",
-      "Reporting Type": "G",
-      "series": "TM_TAX_WMFN",
-      "goal": "17",
-      "target": "17.10",
-      "indicator": "17.10.1",
-      "seriesDescription": "Worldwide weighted tariff-average, most-favoured-nation status, by type of product (%)",
-      "values": [
-        {
-          "value": 7.71497,
-          "year": 2010.0
-        },
-        {
-          "value": 10.47015,
-          "year": 2015.0
-        },
-        {
-          "value": 10.47018,
-          "year": 2016.0
-        },
-        {
-          "value": 8.11916,
-          "year": 2017.0
-        },
-        {
-          "value": 9.03659,
-          "year": 2018.0
-        },
-        {
-          "value": 10.55338,
-          "year": 2019.0
-        },
-        {
-          "value": 10.20514,
-          "year": 2020.0
-        },
-        {
-          "value": 11.26135,
-          "year": 2021.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "decrease",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
-      "Custodian_Agency(ies)": "WTO,ITC,UNCTAD",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Deterioration"
-    },
-    {
-      "Type of product": "ARM",
-      "Reporting Type": "G",
-      "series": "TM_TAX_WMFN",
-      "goal": "17",
-      "target": "17.10",
-      "indicator": "17.10.1",
-      "seriesDescription": "Worldwide weighted tariff-average, most-favoured-nation status, by type of product (%)",
-      "values": [
-        {
-          "value": 17.43211,
-          "year": 2010.0
-        },
-        {
-          "value": 20.72797,
-          "year": 2015.0
-        },
-        {
-          "value": 20.72797,
-          "year": 2016.0
-        },
-        {
-          "value": 20.79273,
-          "year": 2017.0
-        },
-        {
-          "value": 20.79273,
-          "year": 2018.0
-        },
-        {
-          "value": 23.62839,
-          "year": 2019.0
-        },
-        {
-          "value": 15.27729,
-          "year": 2020.0
-        },
-        {
-          "value": 15.37868,
-          "year": 2021.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "decrease",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
-      "Custodian_Agency(ies)": "WTO,ITC,UNCTAD",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "On Track"
-    },
-    {
-      "Type of product": "TEX",
-      "Reporting Type": "G",
-      "series": "TM_TAX_WMFN",
-      "goal": "17",
-      "target": "17.10",
-      "indicator": "17.10.1",
-      "seriesDescription": "Worldwide weighted tariff-average, most-favoured-nation status, by type of product (%)",
-      "values": [
-        {
-          "value": 15.9809,
-          "year": 2010.0
-        },
-        {
-          "value": 18.25882,
-          "year": 2015.0
-        },
-        {
-          "value": 18.25882,
-          "year": 2016.0
-        },
-        {
-          "value": 12.94178,
-          "year": 2017.0
-        },
-        {
-          "value": 12.94412,
-          "year": 2018.0
-        },
-        {
-          "value": 17.65315,
-          "year": 2019.0
-        },
-        {
-          "value": 21.0494,
-          "year": 2020.0
-        },
-        {
-          "value": 18.46059,
-          "year": 2021.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "decrease",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
-      "Custodian_Agency(ies)": "WTO,ITC,UNCTAD",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Fair progress but acceleration needed"
-    },
-    {
-      "Type of product": "OIL",
-      "Reporting Type": "G",
-      "series": "TM_TAX_WMFN",
-      "goal": "17",
-      "target": "17.10",
-      "indicator": "17.10.1",
-      "seriesDescription": "Worldwide weighted tariff-average, most-favoured-nation status, by type of product (%)",
-      "values": [
-        {
-          "value": 5.0,
-          "year": 2010.0
-        },
-        {
-          "value": 5.0,
-          "year": 2015.0
-        },
-        {
-          "value": 5.0,
-          "year": 2016.0
-        },
-        {
-          "value": 5.0,
-          "year": 2017.0
-        },
-        {
-          "value": 0.0,
-          "year": 2018.0
-        },
-        {
-          "value": 0.0,
-          "year": 2019.0
-        },
-        {
-          "value": 0.0,
-          "year": 2020.0
-        },
-        {
-          "value": 0.0,
-          "year": 2021.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "decrease",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
-      "Custodian_Agency(ies)": "WTO,ITC,UNCTAD",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "On Track"
-    },
-    {
-      "Type of product": "AGR",
-      "Reporting Type": "G",
-      "series": "TM_TAX_WMPS",
-      "goal": "17",
-      "target": "17.10",
-      "indicator": "17.10.1",
-      "seriesDescription": "Worldwide weighted tariff-average, preferential status, by type of product (%)",
-      "values": [
-        {
-          "value": 2.81465,
-          "year": 2010.0
-        },
-        {
-          "value": 2.4448,
-          "year": 2015.0
-        },
-        {
-          "value": 2.4448,
-          "year": 2016.0
-        },
-        {
-          "value": 2.46918,
-          "year": 2017.0
-        },
-        {
-          "value": 2.39219,
-          "year": 2018.0
-        },
-        {
-          "value": 2.73625,
-          "year": 2019.0
-        },
-        {
-          "value": 2.96398,
-          "year": 2020.0
-        },
-        {
-          "value": 6.13001,
-          "year": 2021.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "decrease",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
-      "Custodian_Agency(ies)": "WTO,ITC,UNCTAD",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Deterioration"
-    },
-    {
-      "Type of product": "ALP",
-      "Reporting Type": "G",
-      "series": "TM_TAX_WMPS",
-      "goal": "17",
-      "target": "17.10",
-      "indicator": "17.10.1",
-      "seriesDescription": "Worldwide weighted tariff-average, preferential status, by type of product (%)",
-      "values": [
-        {
-          "value": 3.53349,
-          "year": 2010.0
-        },
-        {
-          "value": 3.92111,
-          "year": 2015.0
-        },
-        {
-          "value": 3.92117,
-          "year": 2016.0
-        },
-        {
-          "value": 3.39265,
-          "year": 2017.0
-        },
-        {
-          "value": 4.20829,
-          "year": 2018.0
-        },
-        {
-          "value": 5.33982,
-          "year": 2019.0
-        },
-        {
-          "value": 5.12119,
-          "year": 2020.0
-        },
-        {
-          "value": 6.58639,
-          "year": 2021.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "decrease",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
-      "Custodian_Agency(ies)": "WTO,ITC,UNCTAD",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Deterioration"
-    },
-    {
-      "Type of product": "ARM",
-      "Reporting Type": "G",
-      "series": "TM_TAX_WMPS",
-      "goal": "17",
-      "target": "17.10",
-      "indicator": "17.10.1",
-      "seriesDescription": "Worldwide weighted tariff-average, preferential status, by type of product (%)",
-      "values": [
-        {
-          "value": 17.39669,
-          "year": 2010.0
-        },
-        {
-          "value": 20.69923,
-          "year": 2015.0
-        },
-        {
-          "value": 20.69923,
-          "year": 2016.0
-        },
-        {
-          "value": 20.75793,
-          "year": 2017.0
-        },
-        {
-          "value": 18.90565,
-          "year": 2018.0
-        },
-        {
-          "value": 22.11077,
-          "year": 2019.0
-        },
-        {
-          "value": 14.27996,
-          "year": 2020.0
-        },
-        {
-          "value": 15.27381,
-          "year": 2021.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "decrease",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
-      "Custodian_Agency(ies)": "WTO,ITC,UNCTAD",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "On Track"
-    },
-    {
-      "Type of product": "OIL",
-      "Reporting Type": "G",
-      "series": "TM_TAX_WMPS",
-      "goal": "17",
-      "target": "17.10",
-      "indicator": "17.10.1",
-      "seriesDescription": "Worldwide weighted tariff-average, preferential status, by type of product (%)",
-      "values": [
-        {
-          "value": 4.99855,
-          "year": 2010.0
-        },
-        {
-          "value": 4.99995,
-          "year": 2015.0
-        },
-        {
-          "value": 4.99995,
-          "year": 2016.0
-        },
-        {
-          "value": 4.99995,
-          "year": 2017.0
-        },
-        {
-          "value": 0.0,
-          "year": 2018.0
-        },
-        {
-          "value": 0.0,
-          "year": 2019.0
-        },
-        {
-          "value": 0.0,
-          "year": 2020.0
-        },
-        {
-          "value": 0.0,
-          "year": 2021.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "decrease",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
-      "Custodian_Agency(ies)": "WTO,ITC,UNCTAD",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "On Track"
-    },
-    {
-      "Type of product": "TEX",
-      "Reporting Type": "G",
-      "series": "TM_TAX_WMPS",
-      "goal": "17",
-      "target": "17.10",
-      "indicator": "17.10.1",
-      "seriesDescription": "Worldwide weighted tariff-average, preferential status, by type of product (%)",
-      "values": [
-        {
-          "value": 5.65216,
-          "year": 2010.0
-        },
-        {
-          "value": 5.74541,
-          "year": 2015.0
-        },
-        {
-          "value": 5.74541,
-          "year": 2016.0
-        },
-        {
-          "value": 4.69277,
-          "year": 2017.0
-        },
-        {
-          "value": 4.6561,
-          "year": 2018.0
-        },
-        {
-          "value": 8.23482,
-          "year": 2019.0
-        },
-        {
-          "value": 14.8073,
-          "year": 2020.0
-        },
-        {
-          "value": 10.13241,
-          "year": 2021.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "decrease",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
-      "Custodian_Agency(ies)": "WTO,ITC,UNCTAD",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Deterioration"
-    },
-    {
-      "Type of product": "CLO",
-      "Reporting Type": "G",
-      "series": "TM_TAX_WMPS",
-      "goal": "17",
-      "target": "17.10",
-      "indicator": "17.10.1",
-      "seriesDescription": "Worldwide weighted tariff-average, preferential status, by type of product (%)",
-      "values": [
-        {
-          "value": 13.83601,
-          "year": 2010.0
-        },
-        {
-          "value": 11.55955,
-          "year": 2015.0
-        },
-        {
-          "value": 11.55955,
-          "year": 2016.0
-        },
-        {
-          "value": 9.67394,
-          "year": 2017.0
-        },
-        {
-          "value": 9.54354,
-          "year": 2018.0
-        },
-        {
-          "value": 15.77067,
-          "year": 2019.0
-        },
-        {
-          "value": 18.36827,
-          "year": 2020.0
-        },
-        {
-          "value": 13.74371,
-          "year": 2021.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "decrease",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
-      "Custodian_Agency(ies)": "WTO,ITC,UNCTAD",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Deterioration"
-    },
-    {
-      "Type of product": "IND",
-      "Reporting Type": "G",
-      "series": "TM_TAX_WMPS",
-      "goal": "17",
-      "target": "17.10",
-      "indicator": "17.10.1",
-      "seriesDescription": "Worldwide weighted tariff-average, preferential status, by type of product (%)",
-      "values": [
-        {
-          "value": 3.32792,
-          "year": 2010.0
-        },
-        {
-          "value": 3.86873,
-          "year": 2015.0
-        },
-        {
-          "value": 3.86879,
-          "year": 2016.0
-        },
-        {
-          "value": 3.29877,
-          "year": 2017.0
-        },
-        {
-          "value": 4.54954,
-          "year": 2018.0
-        },
-        {
-          "value": 5.78382,
-          "year": 2019.0
-        },
-        {
-          "value": 5.02856,
-          "year": 2020.0
-        },
-        {
-          "value": 6.55746,
-          "year": 2021.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "decrease",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
-      "Custodian_Agency(ies)": "WTO,ITC,UNCTAD",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Deterioration"
-    },
-    {
       "Reporting Type": "G",
       "series": "TX_IMP_GBMRCH",
       "goal": "17",
@@ -11997,83 +11149,6 @@
         },
         {
           "value": 0.00826,
-          "year": 2021.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "increase",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
-      "Custodian_Agency(ies)": "NA",
-      "Partner_Agency(ies)": "NA",
-      "Tier_Classification": "NA",
-      "currentLevelAssessment": null,
-      "status": "Deterioration"
-    },
-    {
-      "Reporting Type": "G",
-      "series": "TX_IMP_GBSVR",
-      "goal": "17",
-      "target": "17.11",
-      "indicator": "17.11.1",
-      "seriesDescription": "Developing countries\u2019 and least developed countries\u2019 share of global services imports (%)",
-      "values": [
-        {
-          "value": 0.0229,
-          "year": 2010.0
-        },
-        {
-          "value": 0.02524,
-          "year": 2011.0
-        },
-        {
-          "value": 0.02977,
-          "year": 2012.0
-        },
-        {
-          "value": 0.0384,
-          "year": 2013.0
-        },
-        {
-          "value": 0.03192,
-          "year": 2014.0
-        },
-        {
-          "value": 0.02922,
-          "year": 2015.0
-        },
-        {
-          "value": 0.02826,
-          "year": 2016.0
-        },
-        {
-          "value": 0.02761,
-          "year": 2017.0
-        },
-        {
-          "value": 0.02883,
-          "year": 2018.0
-        },
-        {
-          "value": 0.02543,
-          "year": 2019.0
-        },
-        {
-          "value": 0.02138,
-          "year": 2020.0
-        },
-        {
-          "value": 0.02272,
           "year": 2021.0
         }
       ],
@@ -14934,7 +14009,7 @@
         }
       ],
       "methodology": {
-        "targetValue": 90,
+        "targetValue": 95.0,
         "currentLevelThresholds": [
           90,
           60,
@@ -14954,7 +14029,7 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
@@ -14965,7 +14040,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": "Very far from target",
-      "status": "On Track"
+      "status": "Fair progress but acceleration needed"
     },
     {
       "Reporting Type": "G",
@@ -15208,10 +14283,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },
@@ -15462,6 +14538,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2013,
         "latestAvailable": 2018.0
       },
@@ -15574,6 +14651,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },
@@ -15719,6 +14797,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 3.0,
         "baseYear": 2015,
         "latestAvailable": 2019.0
       },
@@ -15790,6 +14869,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 3.0,
         "baseYear": 2015,
         "latestAvailable": 2019.0
       },
@@ -15861,6 +14941,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 3.0,
         "baseYear": 2015,
         "latestAvailable": 2019.0
       },
@@ -17127,6 +16208,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 0.01,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
@@ -17204,6 +16286,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
@@ -17332,6 +16415,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 0.2,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },
@@ -17494,6 +16578,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2015,
         "latestAvailable": 2019.0
       },
@@ -17621,6 +16706,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2015,
         "latestAvailable": 2019.0
       },
@@ -17836,10 +16922,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": null,
         "latestAvailable": null
       },
@@ -17869,10 +16956,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": null,
         "latestAvailable": null
       },
@@ -17906,6 +16994,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 50.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -17939,6 +17028,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 15.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -17972,6 +17062,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 10.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -18005,6 +17096,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 70.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -18047,6 +17139,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 0.5,
         "baseYear": 2015,
         "latestAvailable": 2019.0
       },
@@ -18098,6 +17191,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },
@@ -18241,10 +17335,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
@@ -18302,10 +17397,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
@@ -18343,6 +17439,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2021.0
       },
@@ -18505,10 +17602,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2016,
         "latestAvailable": 2016.0
       },
@@ -18712,6 +17810,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": null,
         "latestAvailable": 2020.0
       },
@@ -18757,6 +17856,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2016,
         "latestAvailable": 2020.0
       },
@@ -18800,10 +17900,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 97.0,
         "baseYear": 2017,
         "latestAvailable": 2020.0
       },
@@ -18811,7 +17912,7 @@
       "Partner_Agency(ies)": "OECD, Eurostat, ILO",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Limited or No Progress"
     },
     {
       "Education level": "PRIMAR",
@@ -18937,10 +18038,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 97.0,
         "baseYear": 2017,
         "latestAvailable": 2017.0
       },
@@ -18971,10 +18073,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 97.0,
         "baseYear": 2017,
         "latestAvailable": 2017.0
       },
@@ -19009,10 +18112,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 97.0,
         "baseYear": 2016,
         "latestAvailable": 2017.0
       },
@@ -19047,10 +18151,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 97.0,
         "baseYear": 2016,
         "latestAvailable": 2017.0
       },
@@ -19081,10 +18186,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 97.0,
         "baseYear": 2016,
         "latestAvailable": 2016.0
       },
@@ -19115,10 +18221,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 97.0,
         "baseYear": 2016,
         "latestAvailable": 2016.0
       },
@@ -19149,10 +18256,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 97.0,
         "baseYear": 2016,
         "latestAvailable": 2016.0
       },
@@ -19191,6 +18299,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2016,
         "latestAvailable": 2017.0
       },
@@ -19229,6 +18338,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2016,
         "latestAvailable": 2017.0
       },
@@ -19263,6 +18373,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2016,
         "latestAvailable": 2016.0
       },
@@ -19297,6 +18408,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2016,
         "latestAvailable": 2016.0
       },
@@ -19446,10 +18558,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2018,
         "latestAvailable": 2018.0
       },
@@ -19976,6 +19089,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -20005,10 +19119,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -20071,10 +19186,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -20104,10 +19220,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -20137,10 +19254,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -20170,10 +19288,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -20236,10 +19355,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -20269,10 +19389,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -20302,10 +19423,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -20335,10 +19457,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -20368,10 +19491,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -20401,10 +19525,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -20434,10 +19559,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -20467,10 +19593,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -20500,10 +19627,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -20533,10 +19661,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": null,
         "latestAvailable": 2019.0
       },
@@ -20646,6 +19775,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2018,
         "latestAvailable": 2018.0
       },
@@ -20716,10 +19846,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 97.0,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },
@@ -20727,7 +19858,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I (a)/Tier II (b)",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Limited or No Progress"
     },
     {
       "Location": "ALLAREA",
@@ -20790,10 +19921,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },
@@ -20801,7 +19933,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I (a)/Tier II (b)",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Limited or No Progress"
     },
     {
       "Reporting Type": "G",
@@ -20827,6 +19959,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2017,
         "latestAvailable": 2017.0
       },
@@ -20834,7 +19967,7 @@
       "Partner_Agency(ies)": "UN-Water",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -20856,10 +19989,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2017,
         "latestAvailable": 2017.0
       },
@@ -20889,10 +20023,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2017,
         "latestAvailable": 2017.0
       },
@@ -20922,10 +20057,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2017,
         "latestAvailable": 2017.0
       },
@@ -21113,6 +20249,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2017,
         "latestAvailable": 2020.0
       },
@@ -21151,6 +20288,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2017,
         "latestAvailable": 2020.0
       },
@@ -21189,6 +20327,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2017,
         "latestAvailable": 2020.0
       },
@@ -21227,6 +20366,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2017,
         "latestAvailable": 2020.0
       },
@@ -21265,6 +20405,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2017,
         "latestAvailable": 2020.0
       },
@@ -21302,6 +20443,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2017,
         "latestAvailable": 2020.0
       },
@@ -21339,6 +20481,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2017,
         "latestAvailable": 2020.0
       },
@@ -22791,10 +21934,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
@@ -22864,10 +22008,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },
@@ -22875,7 +22020,7 @@
       "Partner_Agency(ies)": "World Bank, UN-Energy",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Limited or No Progress"
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",
@@ -23524,6 +22669,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2017,
         "latestAvailable": 2021.0
       },
@@ -23575,6 +22721,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2017,
         "latestAvailable": 2021.0
       },
@@ -23673,6 +22820,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2018,
         "latestAvailable": 2021.0
       },
@@ -23720,6 +22868,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2018,
         "latestAvailable": 2021.0
       },
@@ -23767,10 +22916,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2017,
         "latestAvailable": 2021.0
       },
@@ -23778,7 +22928,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Limited or No Progress"
     },
     {
       "Age": "15-24",
@@ -23822,6 +22972,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2017,
         "latestAvailable": 2021.0
       },
@@ -25107,10 +24258,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },

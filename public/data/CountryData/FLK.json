@@ -4,12 +4,12 @@
     {
       "goal": 1,
       "noOfIndicatorsWithData": 1,
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": 10,
-      "noOfIndicatorsWithData": 1,
-      "status": "Identified Gap"
+      "noOfIndicatorsWithData": 2,
+      "status": "For Review"
     },
     {
       "goal": 11,
@@ -48,8 +48,8 @@
     },
     {
       "goal": 6,
-      "noOfIndicatorsWithData": 0,
-      "status": null
+      "noOfIndicatorsWithData": 1,
+      "status": "On Track"
     },
     {
       "goal": 8,
@@ -66,17 +66,17 @@
     {
       "goal": "1",
       "target": "1.4",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "10",
       "target": "10.7",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "10",
       "target": "10.a",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "11",
@@ -166,7 +166,7 @@
     {
       "goal": "6",
       "target": "6.2",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "6",
@@ -199,19 +199,19 @@
       "goal": "1",
       "target": "1.4",
       "indicator": "1.4.1",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "10",
       "target": "10.7",
       "indicator": "10.7.4",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "10",
       "target": "10.a",
       "indicator": "10.a.1",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "11",
@@ -331,7 +331,7 @@
       "goal": "6",
       "target": "6.2",
       "indicator": "6.2.1",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "6",
@@ -418,10 +418,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 97.0,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },
@@ -492,10 +493,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 97.0,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },
@@ -503,7 +505,7 @@
       "Partner_Agency(ies)": "UNICEF, WHO",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Limited or No Progress"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -577,6 +579,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2015,
         "latestAvailable": 2022.0
       },
@@ -584,7 +587,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Type of product": "AGR",
@@ -639,6 +642,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
@@ -646,7 +650,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Target Achieved"
     },
     {
       "Type of product": "TEX",
@@ -701,6 +705,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
@@ -763,6 +768,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
@@ -770,7 +776,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Target Achieved"
     },
     {
       "Type of product": "ALP",
@@ -825,6 +831,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
@@ -832,7 +839,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Target Achieved"
     },
     {
       "Type of product": "CLO",
@@ -887,6 +894,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
@@ -894,7 +902,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Target Achieved"
     },
     {
       "Location": "ALLAREA",
@@ -1222,6 +1230,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2015,
         "latestAvailable": 2022.0
       },
@@ -1229,7 +1238,7 @@
       "Partner_Agency(ies)": "IOC-UNESCO,IMO,FAO",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -1268,6 +1277,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2018,
         "latestAvailable": 2021.0
       },
@@ -1314,6 +1324,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2018,
         "latestAvailable": 2021.0
       },
@@ -1360,6 +1371,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2018,
         "latestAvailable": 2021.0
       },
@@ -1367,7 +1379,7 @@
       "Partner_Agency(ies)": "IOC-UNESCO,IMO,FAO",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -1689,6 +1701,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2015,
         "latestAvailable": 2022.0
       },
@@ -2566,6 +2579,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2018.0
       },
@@ -4029,7 +4043,7 @@
         }
       ],
       "methodology": {
-        "targetValue": 90,
+        "targetValue": 95.0,
         "currentLevelThresholds": [
           90,
           60,
@@ -4049,7 +4063,7 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
@@ -4293,10 +4307,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },
@@ -4304,7 +4319,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I (a)/Tier II (b)",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -5094,10 +5109,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },
@@ -5105,7 +5121,7 @@
       "Partner_Agency(ies)": "World Bank, UN-Energy",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Limited or No Progress"
     },
     {
       "Age": "15-24",
@@ -5129,10 +5145,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": null,
         "latestAvailable": null
       },
@@ -5168,6 +5185,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": null,
         "latestAvailable": null
       },

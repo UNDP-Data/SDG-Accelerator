@@ -14,7 +14,7 @@
     {
       "goal": 14,
       "noOfIndicatorsWithData": 2,
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": 15,
@@ -44,7 +44,7 @@
     {
       "goal": 7,
       "noOfIndicatorsWithData": 1,
-      "status": "On Track"
+      "status": "Identified Gap"
     },
     {
       "goal": 9,
@@ -71,7 +71,7 @@
     {
       "goal": "14",
       "target": "14.1",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "14",
@@ -126,7 +126,7 @@
     {
       "goal": "7",
       "target": "7.2",
-      "status": "On Track"
+      "status": "Identified Gap"
     },
     {
       "goal": "9",
@@ -162,7 +162,7 @@
       "goal": "14",
       "target": "14.1",
       "indicator": "14.1.1",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "14",
@@ -234,7 +234,7 @@
       "goal": "7",
       "target": "7.2",
       "indicator": "7.2.1",
-      "status": "On Track"
+      "status": "Identified Gap"
     },
     {
       "goal": "9",
@@ -471,6 +471,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2015,
         "latestAvailable": 2022.0
       },
@@ -517,6 +518,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2018,
         "latestAvailable": 2021.0
       },
@@ -524,7 +526,7 @@
       "Partner_Agency(ies)": "IOC-UNESCO,IMO,FAO",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -563,6 +565,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2018,
         "latestAvailable": 2021.0
       },
@@ -570,7 +573,7 @@
       "Partner_Agency(ies)": "IOC-UNESCO,IMO,FAO",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -609,6 +612,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 5.0,
         "baseYear": 2018,
         "latestAvailable": 2021.0
       },
@@ -616,7 +620,7 @@
       "Partner_Agency(ies)": "IOC-UNESCO,IMO,FAO",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -971,6 +975,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2015,
         "latestAvailable": 2022.0
       },
@@ -1558,7 +1563,7 @@
         }
       ],
       "methodology": {
-        "targetValue": 90,
+        "targetValue": 95.0,
         "currentLevelThresholds": [
           90,
           60,
@@ -1578,7 +1583,7 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
@@ -1615,6 +1620,7 @@
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 1.0,
         "baseYear": 2016,
         "latestAvailable": 2016.0
       },
@@ -2252,10 +2258,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },
@@ -2263,7 +2270,7 @@
       "Partner_Agency(ies)": "World Bank, UN-Energy",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Limited or No Progress"
     },
     {
       "Reporting Type": "G",
@@ -2410,10 +2417,11 @@
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 95.0,
         "baseYear": 2015,
         "latestAvailable": 2021.0
       },
