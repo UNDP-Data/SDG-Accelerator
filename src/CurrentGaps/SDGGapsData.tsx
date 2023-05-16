@@ -63,13 +63,14 @@ export const SDGGapsData = (props: Props) => {
     const targetsUpdated = SDGList[SDGList.findIndex((d) => d.Goal === selectedSDG.split(':')[0])].Targets;
     setSelectedTarget(targetsUpdated[0]);
     setSelectedIndicator(targetsUpdated[0].Indicators[0]);
-    setSelectedIndicatorTS((countryData.filter((d) => d.indicator === targetsUpdated[0].Indicators[0].Indicator.split(' ')[1])));
+    setSelectedIndicatorTS((countryData.filter((d) => `${d.indicator}` === `${targetsUpdated[0].Indicators[0].Indicator.split(' ')[1]}`)));
   }, [selectedSDG, statusData]);
-  const AllSeriesForIndicator = AllSeries.filter((d: any) => d.indicator.indexOf(selectedIndicator.Indicator.split(' ')[1]) !== -1).map((d) => ({
+  const AllSeriesForIndicator = AllSeries.filter((d: any) => d.indicator.indexOf(`${selectedIndicator.Indicator}`.split(' ')[1]) !== -1 && selectedIndicatorTS.findIndex((el) => el.series === d.series) === -1).map((d) => ({
     ...d,
     values: [],
     statusCode: 6,
   }));
+  console.log(AllSeriesForIndicator.map((d) => d.indicator[0]), selectedIndicator.Indicator.split(' ')[1]);
   return (
     <div className='flex-div margin-bottom-13'>
       <SideBarNavEl>

@@ -156,6 +156,7 @@ export const KEYSTOAVOID = [
   'methodology',
   'status',
   'statusCode',
+  'UNStats Methodology',
 ];
 
 export const SERIES_TAGS_LABELS = [
@@ -310,6 +311,22 @@ export const SERIES_TAGS_LABELS = [
   {
     key: '_T',
     label: 'Total',
+  },
+  {
+    key: 'Custodian_Agency(ies)',
+    label: 'Custodian Agency(ies)',
+  },
+  {
+    key: 'Partner_Agency(ies)',
+    label: 'Partner Agency(ies)',
+  },
+  {
+    key: 'Tier_Classification',
+    label: 'Tier Classification',
+  },
+  {
+    key: 'currentLevelAssessment',
+    label: 'Current Level Assessment',
   },
 ];
 

@@ -92,10 +92,10 @@ export const LineChart = (props: Props) => {
             if (KEYSTOAVOID.indexOf(d) !== -1) return null;
             return (
               <div className='undp-chip undp-chip-small' key={i}>
-                {d}
+                {SERIES_TAGS_LABELS.findIndex((el) => el.key === d) === -1 ? d : SERIES_TAGS_LABELS[SERIES_TAGS_LABELS.findIndex((el) => el.key === d)].label }
                 :
                 {' '}
-                {SERIES_TAGS_LABELS.findIndex((el) => el.key === (data as any)[d]) === -1 ? (data as any)[d] : SERIES_TAGS_LABELS[SERIES_TAGS_LABELS.findIndex((el) => el.key === (data as any)[d])].label }
+                {SERIES_TAGS_LABELS.findIndex((el) => el.key === (data as any)[d]) === -1 ? !(data as any)[d] || (data as any)[d] === '' ? 'NA' : (data as any)[d] : SERIES_TAGS_LABELS[SERIES_TAGS_LABELS.findIndex((el) => el.key === (data as any)[d])].label }
               </div>
             );
           })
