@@ -1,7 +1,7 @@
 export const SDGList = [
   {
     Goal: 'SDG 1',
-    'Goal Name': 'No Poverty',
+    'Goal Name': 'End poverty in all its forms everywhere',
     Targets: [
       {
         Target: 'Target 1.1',
@@ -9,13 +9,13 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 1.1.1',
-            'Indicator Description': 'Proportion of population below the international poverty line, by sex, age, employment status and geographical location (urban/rural)',
+            'Indicator Description': 'Proportion of the population living below the international poverty line by sex, age, employment status and geographic location (urban/rural)',
           },
         ],
       },
       {
         Target: 'Target 1.2',
-        'Target Description': 'By 2030, reduce at least by half the proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions ',
+        'Target Description': 'By 2030, reduce at least by half the proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions',
         Indicators: [
           {
             Indicator: 'Indicator 1.2.1',
@@ -29,7 +29,7 @@ export const SDGList = [
       },
       {
         Target: 'Target 1.3',
-        'Target Description': 'Implement nationally appropriate social protection systems and measures for all, including floors, and by 2030 achieve substantial coverage of the poor and the vulnerable ',
+        'Target Description': 'Implement nationally appropriate social protection systems and measures for all, including floors, and by 2030 achieve substantial coverage of the poor and the vulnerable',
         Indicators: [
           {
             Indicator: 'Indicator 1.3.1',
@@ -47,25 +47,25 @@ export const SDGList = [
           },
           {
             Indicator: 'Indicator 1.4.2',
-            'Indicator Description': 'Proportion of total adult population with secure tenure rights to land, with legally recognized documentation and who perceive their rights to land as secure, by sex and by type of tenure',
+            'Indicator Description': 'Proportion of total adult population with secure tenure rights to land, (a) with legally recognized documentation, and (b) who perceive their rights to land as secure, by sex and type of tenure',
           },
         ],
       },
       {
         Target: 'Target 1.5',
-        'Target Description': 'By 2030, build the resilience of the poor and those in vulnerable situations and reduce their exposure and vulnerability to climate-related extreme events and other economic, social and environmental shocks and disasters ',
+        'Target Description': 'By 2030, build the resilience of the poor and those in vulnerable situations and reduce their exposure and vulnerability to climate-related extreme events and other economic, social and environmental shocks and disasters',
         Indicators: [
           {
             Indicator: 'Indicator 1.5.1',
-            'Indicator Description': 'Number of deaths, missing persons and persons affected by disaster per 100,000 people',
+            'Indicator Description': 'Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population',
           },
           {
             Indicator: 'Indicator 1.5.2',
-            'Indicator Description': 'Direct disaster economic loss in relation to global gross domestic product a (GDP)',
+            'Indicator Description': 'Direct economic loss attributed to disasters in relation to global gross domestic product (GDP)',
           },
           {
             Indicator: 'Indicator 1.5.3',
-            'Indicator Description': 'Number of countries with national and local disaster risk reduction strategies',
+            'Indicator Description': 'Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015-2030',
           },
           {
             Indicator: 'Indicator 1.5.4',
@@ -75,11 +75,11 @@ export const SDGList = [
       },
       {
         Target: 'Target 1.a',
-        'Target Description': 'Ensure significant mobilization of resources from a variety of sources, including through enhanced development cooperation, in order to provide adequate and predictable means for developing countries, in particular least developed countries, to implement programmes and policies to end poverty in all its dimensions ',
+        'Target Description': 'Ensure significant mobilization of resources from a variety of sources, including through enhanced development cooperation, in order to provide adequate and predictable means for developing countries, in particular least developed countries, to implement programmes and policies to end poverty in all its dimensions',
         Indicators: [
           {
             Indicator: 'Indicator 1.a.1',
-            'Indicator Description': 'Proportion of resources allocated by the government directly to poverty reduction programmes',
+            'Indicator Description': "Total official development assistance grants from all donors that focus on poverty reduction as a share of the recipient country's gross national income",
           },
           {
             Indicator: 'Indicator 1.a.2',
@@ -89,11 +89,11 @@ export const SDGList = [
       },
       {
         Target: 'Target 1.b',
-        'Target Description': 'Create sound policy frameworks at the national, regional and international levels, based on pro-poor and gender-sensitive development strategies, to support accelerated investment in poverty eradication actions ',
+        'Target Description': 'Create sound policy frameworks at the national, regional and international levels, based on pro-poor and gender-sensitive development strategies, to support accelerated investment in poverty eradication actions',
         Indicators: [
           {
             Indicator: 'Indicator 1.b.1',
-            'Indicator Description': 'Proportion of government recurrent and capital spending to sectors that disproportionately benefit women, the poor and vulnerable groups',
+            'Indicator Description': 'Pro-poor public social spending',
           },
         ],
       },
@@ -101,7 +101,7 @@ export const SDGList = [
   },
   {
     Goal: 'SDG 2',
-    'Goal Name': 'Zero Hunger',
+    'Goal Name': 'End hunger, achieve food security and improved nutrition and promote sustainable agriculture',
     Targets: [
       {
         Target: 'Target 2.1',
@@ -129,6 +129,10 @@ export const SDGList = [
             Indicator: 'Indicator 2.2.2',
             'Indicator Description': 'Prevalence of malnutrition (weight for height >+2 or <-2 standard deviation from the median of the WHO Child Growth Standards) among children under 5 years of age, by type (wasting and overweight)',
           },
+          {
+            Indicator: 'Indicator 2.2.3',
+            'Indicator Description': 'Prevalence of anaemia in women aged 15 to 49 years, by pregnancy status (percentage)',
+          },
         ],
       },
       {
@@ -147,7 +151,7 @@ export const SDGList = [
       },
       {
         Target: 'Target 2.4',
-        'Target Description': 'By 2030, ensure sustainable food production systems and implement resilient agricultural practices that increase productivity and production, that help maintain ecosystems, that strengthen capacity for adaptation to climate change, extreme weather, drought, flooding and other disasters and that progressively improve land and soil quality ',
+        'Target Description': 'By 2030, ensure sustainable food production systems and implement resilient agricultural practices that increase productivity and production, that help maintain ecosystems, that strengthen capacity for adaptation to climate change, extreme weather, drought, flooding and other disasters and that progressively improve land and soil quality',
         Indicators: [
           {
             Indicator: 'Indicator 2.4.1',
@@ -161,11 +165,11 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 2.5.1',
-            'Indicator Description': 'Number of plant and animal genetic resources for food and agriculture secured in either medium or long-term conservation facilities',
+            'Indicator Description': 'Number of (a) plant and (b) animal genetic resources for food and agriculture secured in either medium- or long-term conservation facilities',
           },
           {
             Indicator: 'Indicator 2.5.2',
-            'Indicator Description': 'Proportion of local breeds classified as being at risk, not-at-risk or at unknown level of risk of extinction',
+            'Indicator Description': 'Proportion of local breeds classified as being at risk of extinction',
           },
         ],
       },
@@ -189,17 +193,13 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 2.b.1',
-            'Indicator Description': 'Producer Support Estimate',
-          },
-          {
-            Indicator: 'Indicator 2.b.2',
             'Indicator Description': 'Agricultural export subsidies',
           },
         ],
       },
       {
         Target: 'Target 2.c',
-        'Target Description': 'Adopt measures to ensure the proper functioning of food commodity markets and their derivatives and facilitate timely access to market information, including on food reserves, in order to help limit extreme food price volatility ',
+        'Target Description': 'Adopt measures to ensure the proper functioning of food commodity markets and their derivatives and facilitate timely access to market information, including on food reserves, in order to help limit extreme food price volatility',
         Indicators: [
           {
             Indicator: 'Indicator 2.c.1',
@@ -211,7 +211,7 @@ export const SDGList = [
   },
   {
     Goal: 'SDG 3',
-    'Goal Name': 'Good Health And Well-Being',
+    'Goal Name': 'Ensure healthy lives and promote well-being for all at all ages',
     Targets: [
       {
         Target: 'Target 3.1',
@@ -233,7 +233,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 3.2.1',
-            'Indicator Description': 'Under-five mortality rate',
+            'Indicator Description': 'Under-5 mortality rate',
           },
           {
             Indicator: 'Indicator 3.2.2',
@@ -243,7 +243,7 @@ export const SDGList = [
       },
       {
         Target: 'Target 3.3',
-        'Target Description': 'By 2030, end the epidemics of AIDS, tuberculosis, malaria and neglected tropical diseases and combat hepatitis, water-borne diseases and other communicable diseases ',
+        'Target Description': 'By 2030, end the epidemics of AIDS, tuberculosis, malaria and neglected tropical diseases and combat hepatitis, water-borne diseases and other communicable diseases',
         Indicators: [
           {
             Indicator: 'Indicator 3.3.1',
@@ -251,7 +251,7 @@ export const SDGList = [
           },
           {
             Indicator: 'Indicator 3.3.2',
-            'Indicator Description': 'Tuberculosis incidence per 1,000 population',
+            'Indicator Description': 'Tuberculosis incidence per 100,000 population',
           },
           {
             Indicator: 'Indicator 3.3.3',
@@ -283,7 +283,7 @@ export const SDGList = [
       },
       {
         Target: 'Target 3.5',
-        'Target Description': 'Strengthen the prevention and treatment of substance abuse, including narcotic drug abuse and harmful use of alcohol ',
+        'Target Description': 'Strengthen the prevention and treatment of substance abuse, including narcotic drug abuse and harmful use of alcohol',
         Indicators: [
           {
             Indicator: 'Indicator 3.5.1',
@@ -291,7 +291,7 @@ export const SDGList = [
           },
           {
             Indicator: 'Indicator 3.5.2',
-            'Indicator Description': 'Harmful use of alcohol, defined according to the national context as alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol',
+            'Indicator Description': 'Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol',
           },
         ],
       },
@@ -307,7 +307,7 @@ export const SDGList = [
       },
       {
         Target: 'Target 3.7',
-        'Target Description': 'By 2030, ensure universal access to sexual and reproductive health-care services, including for family planning, information and education, and the integration of reproductive health into national strategies and programmes ',
+        'Target Description': 'By 2030, ensure universal access to sexual and reproductive health-care services, including for family planning, information and education, and the integration of reproductive health into national strategies and programmes',
         Indicators: [
           {
             Indicator: 'Indicator 3.7.1',
@@ -325,11 +325,11 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 3.8.1',
-            'Indicator Description': 'Coverage of essential health services (defined as the average coverage of essential services based on tracer interventions that include reproductive, maternal, newborn and child health, infectious diseases, non-communicable diseases and service capacity and access, among the general and the most disadvantaged population)',
+            'Indicator Description': 'Coverage of essential health services',
           },
           {
             Indicator: 'Indicator 3.8.2',
-            'Indicator Description': 'Number of people covered by health insurance or a public health system per 1,000 population',
+            'Indicator Description': 'Proportion of population with large household expenditures on health as a share of total household expenditure or income',
           },
         ],
       },
@@ -367,11 +367,15 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 3.b.1',
-            'Indicator Description': 'Proportion of the population with access to affordable medicines and vaccines on a sustainable basis',
+            'Indicator Description': 'Proportion of the target population covered by all vaccines included in their national programme',
           },
           {
             Indicator: 'Indicator 3.b.2',
             'Indicator Description': 'Total net official development assistance to medical research and basic health sectors',
+          },
+          {
+            Indicator: 'Indicator 3.b.3',
+            'Indicator Description': 'Proportion of health facilities that have a core set of relevant essential medicines available and affordable on a sustainable basis',
           },
         ],
       },
@@ -387,11 +391,15 @@ export const SDGList = [
       },
       {
         Target: 'Target 3.d',
-        'Target Description': 'Strengthen the capacity of all countries, in particular developing countries, for early warning, risk reduction and management of national and global health risks ',
+        'Target Description': 'Strengthen the capacity of all countries, in particular developing countries, for early warning, risk reduction and management of national and global health risks',
         Indicators: [
           {
             Indicator: 'Indicator 3.d.1',
             'Indicator Description': 'International Health Regulations (IHR) capacity and health emergency preparedness',
+          },
+          {
+            Indicator: 'Indicator 3.d.2',
+            'Indicator Description': 'Percentage of bloodstream infections due to selected antimicrobial-resistant organisms',
           },
         ],
       },
@@ -399,7 +407,7 @@ export const SDGList = [
   },
   {
     Goal: 'SDG 4',
-    'Goal Name': 'Quality Education',
+    'Goal Name': 'Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all',
     Targets: [
       {
         Target: 'Target 4.1',
@@ -407,7 +415,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 4.1.1',
-            'Indicator Description': 'Proportion of children and young people: (a) in grades 2/3; (b) at the end of primary; and (c) at the end of lower secondary achieving at least a minimum proficiency level in (i) reading and (ii) mathematics, by sex',
+            'Indicator Description': 'Proportion of children and young people (a) in grades 2/3; (b) at the end of primary; and (c) at the end of lower secondary achieving at least a minimum proficiency level in (i) reading and (ii) mathematics, by sex',
           },
           {
             Indicator: 'Indicator 4.1.2',
@@ -417,11 +425,11 @@ export const SDGList = [
       },
       {
         Target: 'Target 4.2',
-        'Target Description': 'By 2030, ensure that all girls and boys have access to quality early childhood development, care and pre-primary education so that they are ready for primary education ',
+        'Target Description': 'By 2030, ensure that all girls and boys have access to quality early childhood development, care and pre-primary education so that they are ready for primary education',
         Indicators: [
           {
             Indicator: 'Indicator 4.2.1',
-            'Indicator Description': 'Proportion of children under 5 years of age who are developmentally on track in health, learning and psychosocial wellbeing, by sex',
+            'Indicator Description': 'Proportion of children aged 24-59 months who are developmentally on track in health, learning and psychosocial well-being, by sex',
           },
           {
             Indicator: 'Indicator 4.2.2',
@@ -431,7 +439,7 @@ export const SDGList = [
       },
       {
         Target: 'Target 4.3',
-        'Target Description': 'By 2030, ensure equal access for all women and men to affordable and quality technical, vocational and tertiary education, including university ',
+        'Target Description': 'By 2030, ensure equal access for all women and men to affordable and quality technical, vocational and tertiary education, including university',
         Indicators: [
           {
             Indicator: 'Indicator 4.3.1',
@@ -441,7 +449,7 @@ export const SDGList = [
       },
       {
         Target: 'Target 4.4',
-        'Target Description': 'By 2030, substantially increase the number of youth and adults who have relevant skills, including technical and vocational skills, for employment, decent jobs and entrepreneurship ',
+        'Target Description': 'By 2030, substantially increase the number of youth and adults who have relevant skills, including technical and vocational skills, for employment, decent jobs and entrepreneurship',
         Indicators: [
           {
             Indicator: 'Indicator 4.4.1',
@@ -461,21 +469,21 @@ export const SDGList = [
       },
       {
         Target: 'Target 4.6',
-        'Target Description': 'By 2030, ensure that all youth and a substantial proportion of adults, both men and women, achieve literacy and numeracy ',
+        'Target Description': 'By 2030, ensure that all youth and a substantial proportion of adults, both men and women, achieve literacy and numeracy',
         Indicators: [
           {
             Indicator: 'Indicator 4.6.1',
-            'Indicator Description': 'Percentage of population in a given age group achieving at least a fixed level of proficiency in functional (a) literacy and (b) numeracy skills, by sex',
+            'Indicator Description': 'Proportion of population in a given age group achieving at least a fixed level of proficiency in functional (a) literacy and (b) numeracy skills, by sex',
           },
         ],
       },
       {
         Target: 'Target 4.7',
-        'Target Description': 'By 2030, ensure that all learners acquire the knowledge and skills needed to promote sustainable development, including, among others, through education for sustainable development and sustainable lifestyles, human rights, gender equality, promotion of a culture of peace and non-violence, global citizenship and appreciation of cultural diversity and of culture\u2019s contribution to sustainable development',
+        'Target Description': "By 2030, ensure that all learners acquire the knowledge and skills needed to promote sustainable development, including, among others, through education for sustainable development and sustainable lifestyles, human rights, gender equality, promotion of a culture of peace and non-violence, global citizenship and appreciation of cultural diversity and of culture's contribution to sustainable development",
         Indicators: [
           {
             Indicator: 'Indicator 4.7.1',
-            'Indicator Description': 'Extent to which (i) global citizenship education and (ii) education for sustainable development, including gender equality and human rights, are mainstreamed at all levels in: (a) national education policies, (b) curricula, (c) teacher education and (d) student assessment',
+            'Indicator Description': 'Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment',
           },
         ],
       },
@@ -485,7 +493,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 4.a.1',
-            'Indicator Description': 'Proportion of schools with access to: (a) electricity; (b) the Internet for pedagogical purposes; (c) computers for pedagogical purposes; (d) adapted infrastructure and materials for students with disabilities; (e) basic drinking water; (f) single-sex basic sanitation facilities; and (g) basic handwashing facilities (as per the WASH indicator definitions)',
+            'Indicator Description': 'Proportion of schools offering basic services, by type of service',
           },
         ],
       },
@@ -501,11 +509,11 @@ export const SDGList = [
       },
       {
         Target: 'Target 4.c',
-        'Target Description': 'By 2030, substantially increase the supply of qualified teachers, including through international cooperation for teacher training in developing countries, especially least developed countries and small island developing States ',
+        'Target Description': 'By 2030, substantially increase the supply of qualified teachers, including through international cooperation for teacher training in developing countries, especially least developed countries and small island developing States',
         Indicators: [
           {
             Indicator: 'Indicator 4.c.1',
-            'Indicator Description': 'Proportion of teachers in: (a) pre- primary; (b) primary; (c) lower secondary; and (d) upper secondary education who have received at least the minimum organized teacher training (e.g. pedagogical training) pre-service or in- service required for teaching at the relevant level in a given country',
+            'Indicator Description': 'Proportion of teachers with the minimum required qualifications, by education level',
           },
         ],
       },
@@ -513,15 +521,15 @@ export const SDGList = [
   },
   {
     Goal: 'SDG 5',
-    'Goal Name': 'Gender Equality',
+    'Goal Name': 'Achieve gender equality and empower all women and girls',
     Targets: [
       {
         Target: 'Target 5.1',
-        'Target Description': 'End all forms of discrimination against all women and girls everywhere ',
+        'Target Description': 'End all forms of discrimination against all women and girls everywhere',
         Indicators: [
           {
             Indicator: 'Indicator 5.1.1',
-            'Indicator Description': 'Whether or not legal frameworks are in place to promote, enforce and monitor equality and non_discrimination on the basis of sex',
+            'Indicator Description': 'Whether or not legal frameworks are in place to promote, enforce and monitor equality and non-discrimination on the basis of sex',
           },
         ],
       },
@@ -549,13 +557,13 @@ export const SDGList = [
           },
           {
             Indicator: 'Indicator 5.3.2',
-            'Indicator Description': 'Proportion of girls and women aged 15-49 years who have undergone female genital mutilation/cutting, by age',
+            'Indicator Description': 'Proportion of girls and women aged 15-49 years who have undergone female genital mutilation, by age',
           },
         ],
       },
       {
         Target: 'Target 5.4',
-        'Target Description': 'Recognize and value unpaid care and domestic work through the provision of public services, infrastructure and social protection policies and the promotion of shared responsibility within the household and the family as nationally appropriate ',
+        'Target Description': 'Recognize and value unpaid care and domestic work through the provision of public services, infrastructure and social protection policies and the promotion of shared responsibility within the household and the family as nationally appropriate',
         Indicators: [
           {
             Indicator: 'Indicator 5.4.1',
@@ -565,11 +573,11 @@ export const SDGList = [
       },
       {
         Target: 'Target 5.5',
-        'Target Description': 'Ensure women\u2019s full and effective participation and equal opportunities for leadership at all levels of decision-making in political, economic and public life',
+        'Target Description': "Ensure women's full and effective participation and equal opportunities for leadership at all levels of decision-making in political, economic and public life",
         Indicators: [
           {
             Indicator: 'Indicator 5.5.1',
-            'Indicator Description': 'Proportion of seats held by women in national parliaments and local governments',
+            'Indicator Description': 'Proportion of seats held by women in (a) national parliaments and (b) local governments',
           },
           {
             Indicator: 'Indicator 5.5.2',
@@ -587,7 +595,7 @@ export const SDGList = [
           },
           {
             Indicator: 'Indicator 5.6.2',
-            'Indicator Description': 'Number of countries with laws and regulations that guarantee women aged 15-49 years access to sexual and reproductive health care, information and education',
+            'Indicator Description': 'Number of countries with laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education',
           },
         ],
       },
@@ -617,7 +625,7 @@ export const SDGList = [
       },
       {
         Target: 'Target 5.c',
-        'Target Description': 'Adopt and strengthen sound policies and enforceable legislation for the promotion of gender equality and the empowerment of all women and girls at all levels ',
+        'Target Description': 'Adopt and strengthen sound policies and enforceable legislation for the promotion of gender equality and the empowerment of all women and girls at all levels',
         Indicators: [
           {
             Indicator: 'Indicator 5.c.1',
@@ -629,7 +637,7 @@ export const SDGList = [
   },
   {
     Goal: 'SDG 6',
-    'Goal Name': 'Clean Water And Sanitation',
+    'Goal Name': 'Ensure availability and sustainable management of water and sanitation for all',
     Targets: [
       {
         Target: 'Target 6.1',
@@ -647,7 +655,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 6.2.1',
-            'Indicator Description': 'Proportion of population using safely managed sanitation services, including a hand-washing facility with soap and water',
+            'Indicator Description': 'Proportion of population using (a) safely managed sanitation services and (b) a hand-washing facility with soap and water',
           },
         ],
       },
@@ -657,7 +665,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 6.3.1',
-            'Indicator Description': 'Proportion of wastewater safely treated',
+            'Indicator Description': 'Proportion of domestic and industrial wastewater flows safely treated',
           },
           {
             Indicator: 'Indicator 6.3.2',
@@ -681,11 +689,11 @@ export const SDGList = [
       },
       {
         Target: 'Target 6.5',
-        'Target Description': 'By 2030, implement integrated water resources management at all levels, including through transboundary cooperation as appropriate ',
+        'Target Description': 'By 2030, implement integrated water resources management at all levels, including through transboundary cooperation as appropriate',
         Indicators: [
           {
             Indicator: 'Indicator 6.5.1',
-            'Indicator Description': 'Degree of integrated water resources management implementation (0-100)',
+            'Indicator Description': 'Degree of integrated water resources management',
           },
           {
             Indicator: 'Indicator 6.5.2',
@@ -699,7 +707,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 6.6.1',
-            'Indicator Description': 'Change in the extent of waterrelated ecosystems over time',
+            'Indicator Description': 'Change in the extent of water-related ecosystems over time',
           },
         ],
       },
@@ -709,13 +717,13 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 6.a.1',
-            'Indicator Description': 'Amount of water- and sanitation- related official development assistance that is part of a government-coordinated spending plan',
+            'Indicator Description': 'Amount of water- and sanitation-related official development assistance that is part of a government-coordinated spending plan',
           },
         ],
       },
       {
         Target: 'Target 6.b',
-        'Target Description': 'Support and strengthen the participation of local communities in improving water and sanitation management ',
+        'Target Description': 'Support and strengthen the participation of local communities in improving water and sanitation management',
         Indicators: [
           {
             Indicator: 'Indicator 6.b.1',
@@ -727,11 +735,11 @@ export const SDGList = [
   },
   {
     Goal: 'SDG 7',
-    'Goal Name': 'Affordable And Clean Energy',
+    'Goal Name': 'Ensure access to affordable, reliable, sustainable and modern energy for all',
     Targets: [
       {
         Target: 'Target 7.1',
-        'Target Description': 'By 2030, ensure universal access to affordable, reliable and modern energy services ',
+        'Target Description': 'By 2030, ensure universal access to affordable, reliable and modern energy services',
         Indicators: [
           {
             Indicator: 'Indicator 7.1.1',
@@ -769,17 +777,17 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 7.a.1',
-            'Indicator Description': 'Mobilized amount of United States dollars per year starting in 2020 accountable towards the $100 billion commitment',
+            'Indicator Description': 'International financial flows to developing countries in support of clean energy research and development and renewable energy production, including in hybrid systems',
           },
         ],
       },
       {
         Target: 'Target 7.b',
-        'Target Description': 'By 2030, expand infrastructure and upgrade technology for supplying modern and sustainable energy services for all in developing countries, in particular least developed countries, small island developing States, and land-locked developing countries, in accordance with their respective programmes of support ',
+        'Target Description': 'By 2030, expand infrastructure and upgrade technology for supplying modern and sustainable energy services for all in developing countries, in particular least developed countries, small island developing States and landlocked developing countries, in accordance with their respective programmes of support',
         Indicators: [
           {
             Indicator: 'Indicator 7.b.1',
-            'Indicator Description': 'Investments in energy efficiency as a percentage of GDP and the amount of foreign direct investment in financial transfer for infrastructure and technology to sustainable development services',
+            'Indicator Description': 'Installed renewable energy-generating capacity in developing countries (in watts per capita)',
           },
         ],
       },
@@ -787,7 +795,7 @@ export const SDGList = [
   },
   {
     Goal: 'SDG 8',
-    'Goal Name': 'Decent Work And Economic Growth',
+    'Goal Name': 'Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all',
     Targets: [
       {
         Target: 'Target 8.1',
@@ -801,7 +809,7 @@ export const SDGList = [
       },
       {
         Target: 'Target 8.2',
-        'Target Description': 'Achieve higher levels of economic productivity through diversification, technological upgrading and innovation, including through a focus on high-value added and labour-intensive sectors ',
+        'Target Description': 'Achieve higher levels of economic productivity through diversification, technological upgrading and innovation, including through a focus on high-value added and labour-intensive sectors',
         Indicators: [
           {
             Indicator: 'Indicator 8.2.1',
@@ -811,17 +819,17 @@ export const SDGList = [
       },
       {
         Target: 'Target 8.3',
-        'Target Description': 'Promote development-oriented policies that support productive activities, decent job creation, entrepreneurship, creativity and innovation, and encourage the formalization and growth of micro-, small- and medium-sized enterprises, including through access to financial services ',
+        'Target Description': 'Promote development-oriented policies that support productive activities, decent job creation, entrepreneurship, creativity and innovation, and encourage the formalization and growth of micro-, small- and medium-sized enterprises, including through access to financial services',
         Indicators: [
           {
             Indicator: 'Indicator 8.3.1',
-            'Indicator Description': 'Proportion of informal employment in non_agriculture employment, by sex',
+            'Indicator Description': 'Proportion of informal employment in total employment, by sector and sex',
           },
         ],
       },
       {
         Target: 'Target 8.4',
-        'Target Description': 'Improve progressively, through 2030, global resource efficiency in consumption and production and endeavour to decouple economic growth from environmental degradation, in accordance with the 10-year framework of programmes on sustainable consumption and production, with developed countries taking the lead',
+        'Target Description': 'Improve progressively, through 2030, global resource efficiency in consumption and production and endeavour to decouple economic growth from environmental degradation, in accordance with the 10-Year Framework of Programmes on Sustainable Consumption and Production, with developed countries taking the lead',
         Indicators: [
           {
             Indicator: 'Indicator 8.4.1',
@@ -839,7 +847,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 8.5.1',
-            'Indicator Description': 'Average hourly earnings of female and male employees, by occupation, age and persons with disabilities',
+            'Indicator Description': 'Average hourly earnings of employees, by sex, age, occupation and persons with disabilities',
           },
           {
             Indicator: 'Indicator 8.5.2',
@@ -859,11 +867,11 @@ export const SDGList = [
       },
       {
         Target: 'Target 8.7',
-        'Target Description': 'Take immediate and effective measures to eradicate forced labour, end modern slavery and human trafficking and secure the prohibition and elimination of the worst forms of child labour, including recruitment and use of child soldiers, and by 2025 end child labour in all its forms ',
+        'Target Description': 'Take immediate and effective measures to eradicate forced labour, end modern slavery and human trafficking and secure the prohibition and elimination of the worst forms of child labour, including recruitment and use of child soldiers, and by 2025 end child labour in all its forms',
         Indicators: [
           {
             Indicator: 'Indicator 8.7.1',
-            'Indicator Description': 'Proportion and number of children aged 5_17 years engaged in child labour, by sex and age',
+            'Indicator Description': 'Proportion and number of children aged 5-17 years engaged in child labour, by sex and age',
           },
         ],
       },
@@ -873,11 +881,11 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 8.8.1',
-            'Indicator Description': 'Frequency rates of fatal and nonfatal occupational injuries, by sex and migrant status',
+            'Indicator Description': 'Fatal and non-fatal occupational injuries per 100,000 workers, by sex and migrant status',
           },
           {
             Indicator: 'Indicator 8.8.2',
-            'Indicator Description': 'Increase in national compliance of labour rights (freedom of association and collective bargaining) based on International Labour Organization (ILO) textual sources and national legislation, by sex and migrant status',
+            'Indicator Description': 'Level of national compliance with labour rights (freedom of association and collective bargaining) based on International Labour Organization (ILO) textual sources and national legislation, by sex and migrant status',
           },
         ],
       },
@@ -889,10 +897,6 @@ export const SDGList = [
             Indicator: 'Indicator 8.9.1',
             'Indicator Description': 'Tourism direct GDP as a proportion of total GDP and in growth rate',
           },
-          {
-            Indicator: 'Indicator 8.9.2',
-            'Indicator Description': 'Number of jobs in tourism industries as a proportion of total jobs and growth rate of jobs, by sex',
-          },
         ],
       },
       {
@@ -901,17 +905,17 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 8.10.1',
-            'Indicator Description': 'Number of commercial bank branches and automated teller machines (ATMs) per 100,000 adults',
+            'Indicator Description': '(a) Number of commercial bank branches per 100,000 adults and (b) number of automated teller machines (ATMs) per 100,000 adults',
           },
           {
             Indicator: 'Indicator 8.10.2',
-            'Indicator Description': 'Proportion of adults (15 years and older) with an account at a bank or other financial institution or with a mobile- money-service provider',
+            'Indicator Description': 'Proportion of adults (15 years and older) with an account at a bank or other financial institution or with a mobile-money-service provider',
           },
         ],
       },
       {
         Target: 'Target 8.a',
-        'Target Description': 'Increase Aid for Trade support for developing countries, in particular least developed countries, including through the Enhanced Integrated Framework for Trade-Related Technical Assistance to Least Developed Countries',
+        'Target Description': 'Increase Aid for Trade support for developing countries, in particular least developed countries, including through the Enhanced Integrated Framework for Trade-related Technical Assistance to Least Developed Countries',
         Indicators: [
           {
             Indicator: 'Indicator 8.a.1',
@@ -921,11 +925,11 @@ export const SDGList = [
       },
       {
         Target: 'Target 8.b',
-        'Target Description': 'By 2020, develop and operationalize a global strategy for youth employment and implement the Global Jobs Pact of the International Labour Organization ',
+        'Target Description': 'By 2020, develop and operationalize a global strategy for youth employment and implement the Global Jobs Pact of the International Labour Organization',
         Indicators: [
           {
             Indicator: 'Indicator 8.b.1',
-            'Indicator Description': 'Total government spending in social protection and employment programmes as a proportion of the national budgets and GDP',
+            'Indicator Description': 'Existence of a developed and operationalized national strategy for youth employment, as a distinct strategy or as part of a national employment strategy',
           },
         ],
       },
@@ -933,25 +937,25 @@ export const SDGList = [
   },
   {
     Goal: 'SDG 9',
-    'Goal Name': 'Industry, Innovation And Infrastructure',
+    'Goal Name': 'Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation',
     Targets: [
       {
         Target: 'Target 9.1',
-        'Target Description': 'Develop quality, reliable, sustainable and resilient infrastructure, including regional and transborder infrastructure, to support economic development and human well-being, with a focus on affordable and equitable access for all',
+        'Target Description': 'Develop quality, reliable, sustainable and resilient infrastructure, including regional and trans-border infrastructure, to support economic development and human well-being, with a focus on affordable and equitable access for all',
         Indicators: [
-          {
-            Indicator: 'Indicator 9.1.1',
-            'Indicator Description': 'Proportion of the rural population who live within 2 km of an all-season road',
-          },
           {
             Indicator: 'Indicator 9.1.2',
             'Indicator Description': 'Passenger and freight volumes, by mode of transport',
+          },
+          {
+            Indicator: 'Indicator 9.1.1',
+            'Indicator Description': 'Proportion of the rural population who live within 2 km of an all-season road',
           },
         ],
       },
       {
         Target: 'Target 9.2',
-        'Target Description': 'Promote inclusive and sustainable industrialization and, by 2030, significantly raise industry\u2019s share of employment and gross domestic product, in line with national circumstances, and double its share in least developed countries ',
+        'Target Description': "Promote inclusive and sustainable industrialization and, by 2030, significantly raise industry's share of employment and gross domestic product, in line with national circumstances, and double its share in least developed countries",
         Indicators: [
           {
             Indicator: 'Indicator 9.2.1',
@@ -1017,7 +1021,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 9.b.1',
-            'Indicator Description': 'Proportion of medium and high- tech industry value added in total value added',
+            'Indicator Description': 'Proportion of medium and high-tech industry value added in total value added',
           },
         ],
       },
@@ -1035,11 +1039,11 @@ export const SDGList = [
   },
   {
     Goal: 'SDG 10',
-    'Goal Name': 'Reduced Inequalities',
+    'Goal Name': 'Reduce inequality within and among countries',
     Targets: [
       {
         Target: 'Target 10.1',
-        'Target Description': 'By 2030, progressively achieve and sustain income growth of the bottom 40 per cent of the population at a rate higher than the national average ',
+        'Target Description': 'By 2030, progressively achieve and sustain income growth of the bottom 40 per cent of the population at a rate higher than the national average',
         Indicators: [
           {
             Indicator: 'Indicator 10.1.1',
@@ -1049,11 +1053,11 @@ export const SDGList = [
       },
       {
         Target: 'Target 10.2',
-        'Target Description': 'By 2030, empower and promote the social, economic and political inclusion of all, irrespective of age, sex, disability, race, ethnicity, origin, religion or economic or other status ',
+        'Target Description': 'By 2030, empower and promote the social, economic and political inclusion of all, irrespective of age, sex, disability, race, ethnicity, origin, religion or economic or other status',
         Indicators: [
           {
             Indicator: 'Indicator 10.2.1',
-            'Indicator Description': 'Proportion of people living below 50 per cent of median income, by age, sex and persons with disabilities',
+            'Indicator Description': 'Proportion of people living below 50 per cent of median income, by sex, age and persons with disabilities',
           },
         ],
       },
@@ -1063,7 +1067,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 10.3.1',
-            'Indicator Description': 'Proportion of the population reporting having personally felt discriminated against or harassed within the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law',
+            'Indicator Description': 'Proportion of population reporting having personally felt discriminated against or harassed in the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law',
           },
         ],
       },
@@ -1073,7 +1077,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 10.4.1',
-            'Indicator Description': 'Labour share of GDP, comprising wages and social protection transfers',
+            'Indicator Description': 'Labour share of GDP',
           },
           {
             Indicator: 'Indicator 10.4.2',
@@ -1083,7 +1087,7 @@ export const SDGList = [
       },
       {
         Target: 'Target 10.5',
-        'Target Description': 'Improve the regulation and monitoring of global financial markets and institutions and strengthen the implementation of such regulations ',
+        'Target Description': 'Improve the regulation and monitoring of global financial markets and institutions and strengthen the implementation of such regulations',
         Indicators: [
           {
             Indicator: 'Indicator 10.5.1',
@@ -1107,11 +1111,19 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 10.7.1',
-            'Indicator Description': 'Recruitment cost borne by employee as a proportion of yearly income earned in country of destination',
+            'Indicator Description': 'Recruitment cost borne by employee as a proportion of monthly income earned in country of destination',
           },
           {
             Indicator: 'Indicator 10.7.2',
-            'Indicator Description': 'Number of countries that have implemented well-managed migration policies',
+            'Indicator Description': 'Proportion of countries with migration policies that facilitate orderly, safe, regular and responsible migration and mobility of people',
+          },
+          {
+            Indicator: 'Indicator 10.7.3',
+            'Indicator Description': 'Number of people who died or disappeared in the process of migration towards an international destination',
+          },
+          {
+            Indicator: 'Indicator 10.7.4',
+            'Indicator Description': 'Proportion of the population who are refugees, by country of origin',
           },
         ],
       },
@@ -1137,7 +1149,7 @@ export const SDGList = [
       },
       {
         Target: 'Target 10.c',
-        'Target Description': 'By 2030, reduce to less than 3 per cent the transaction costs of migrant remittances and eliminate remittance corridors with costs higher than 5 per cent ',
+        'Target Description': 'By 2030, reduce to less than 3 per cent the transaction costs of migrant remittances and eliminate remittance corridors with costs higher than 5 per cent',
         Indicators: [
           {
             Indicator: 'Indicator 10.c.1',
@@ -1149,11 +1161,11 @@ export const SDGList = [
   },
   {
     Goal: 'SDG 11',
-    'Goal Name': 'Sustainable Cities And Communities',
+    'Goal Name': 'Make cities and human settlements inclusive, safe, resilient and sustainable',
     Targets: [
       {
         Target: 'Target 11.1',
-        'Target Description': 'By 2030, ensure access for all to adequate, safe and affordable housing and basic services and upgrade slums ',
+        'Target Description': 'By 2030, ensure access for all to adequate, safe and affordable housing and basic services and upgrade slums',
         Indicators: [
           {
             Indicator: 'Indicator 11.1.1',
@@ -1187,35 +1199,39 @@ export const SDGList = [
       },
       {
         Target: 'Target 11.4',
-        'Target Description': 'Strengthen efforts to protect and safeguard the world\u2019s cultural and natural heritage ',
+        'Target Description': "Strengthen efforts to protect and safeguard the world's cultural and natural heritage",
         Indicators: [
           {
             Indicator: 'Indicator 11.4.1',
-            'Indicator Description': 'Total expenditure (public and private) per capita spent on the preservation, protection and conservation of all cultural and natural heritage, by type of heritage (cultural, natural, mixed and World Heritage Centre designation), level of government (national, regional and local/municipal), type of expenditure (operating expenditure/investment) and type of private funding (donations in kind, private non-profit sector and sponsorship)',
+            'Indicator Description': 'Total per capita expenditure on the preservation, protection and conservation of all cultural and natural heritage, by source of funding (public, private), type of heritage (cultural, natural) and level of government (national, regional, and local/municipal)',
           },
         ],
       },
       {
         Target: 'Target 11.5',
-        'Target Description': 'By 2030, significantly reduce the number of deaths and the number of people affected and substantially decrease the direct economic losses relative to global gross domestic product caused by disasters, including water-related disasters, with a focus on protecting the poor and people in vulnerable situations ',
+        'Target Description': 'By 2030, significantly reduce the number of deaths and the number of people affected and substantially decrease the direct economic losses relative to global gross domestic product caused by disasters, including water-related disasters, with a focus on protecting the poor and people in vulnerable situations',
         Indicators: [
           {
             Indicator: 'Indicator 11.5.1',
-            'Indicator Description': 'Number of deaths, missing persons and persons affected by disaster per 100,000 people',
+            'Indicator Description': 'Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population',
           },
           {
             Indicator: 'Indicator 11.5.2',
-            'Indicator Description': 'Direct disaster economic loss in relation to global GDP, including disaster damage to critical infrastructure and a disruption of basic services',
+            'Indicator Description': 'Direct economic loss attributed to disasters in relation to global gross domestic product (GDP)',
+          },
+          {
+            Indicator: 'Indicator 11.5.3',
+            'Indicator Description': '(a) Damage to critical infrastructure and (b) number of disruptions to basic services, attributed to disasters',
           },
         ],
       },
       {
         Target: 'Target 11.6',
-        'Target Description': 'By 2030, reduce the adverse per capita environmental impact of cities, including by paying special attention to air quality and municipal and other waste management ',
+        'Target Description': 'By 2030, reduce the adverse per capita environmental impact of cities, including by paying special attention to air quality and municipal and other waste management',
         Indicators: [
           {
             Indicator: 'Indicator 11.6.1',
-            'Indicator Description': 'Proportion of urban solid waste regularly collected and with adequate final discharge out of total urban solid waste generated, by cities',
+            'Indicator Description': 'Proportion of municipal solid waste collected and managed in controlled facilities out of total municipal waste generated, by cities',
           },
           {
             Indicator: 'Indicator 11.6.2',
@@ -1239,11 +1255,11 @@ export const SDGList = [
       },
       {
         Target: 'Target 11.a',
-        'Target Description': 'Support positive economic, social and environmental links between urban, per-urban and rural areas by strengthening national and regional development planning',
+        'Target Description': 'Support positive economic, social and environmental links between urban, peri-urban and rural areas by strengthening national and regional development planning',
         Indicators: [
           {
             Indicator: 'Indicator 11.a.1',
-            'Indicator Description': 'Proportion of population living in cities that implement urban and regional development plans integrating population projections and resource needs, by size of city',
+            'Indicator Description': 'Number of countries that have national urban policies or regional development plans that (a) respond to population dynamics; (b) ensure balanced territorial development; and (c) increase local fiscal space',
           },
         ],
       },
@@ -1253,37 +1269,32 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 11.b.1',
-            'Indicator Description': 'Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015-2030',
+            'Indicator Description': 'Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015-2030',
           },
           {
             Indicator: 'Indicator 11.b.2',
-            'Indicator Description': 'Number of countries with national and local disaster risk reduction strategies',
+            'Indicator Description': 'Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies',
           },
         ],
       },
       {
         Target: 'Target 11.c',
-        'Target Description': 'Support least developed countries, including through financial and technical assistance, in building sustainable and resilient buildings utilizing local materials ',
-        Indicators: [
-          {
-            Indicator: 'Indicator 11.c.1',
-            'Indicator Description': 'Proportion of financial support to the least developed countries that is allocated to the construction and retrofitting of sustainable, resilient and resource-efficient buildings utilizing local material',
-          },
-        ],
+        'Target Description': 'Support least developed countries, including through financial and technical assistance, in building sustainable and resilient buildings utilizing local materials',
+        Indicators: [],
       },
     ],
   },
   {
     Goal: 'SDG 12',
-    'Goal Name': 'Responsible Consumption And Production',
+    'Goal Name': 'Ensure sustainable consumption and production patterns',
     Targets: [
       {
         Target: 'Target 12.1',
-        'Target Description': 'Implement the 10-year framework of programmes on sustainable consumption and production, all countries taking action, with developed countries taking the lead, taking into account the development and capabilities of developing countries ',
+        'Target Description': 'Implement the 10-Year Framework of Programmes on Sustainable Consumption and Production Patterns, all countries taking action, with developed countries taking the lead, taking into account the development and capabilities of developing countries',
         Indicators: [
           {
             Indicator: 'Indicator 12.1.1',
-            'Indicator Description': 'Number of countries with sustainable consumption and production (SCP) national action plans or SCP mainstreamed as a priority or a target into national policies',
+            'Indicator Description': 'Number of countries developing, adopting or implementing policy instruments aimed at supporting the shift to sustainable consumption and production',
           },
         ],
       },
@@ -1303,17 +1314,17 @@ export const SDGList = [
       },
       {
         Target: 'Target 12.3',
-        'Target Description': 'By 2030, halve per capita global food waste at the retail and consumer levels and reduce food losses along production and supply chains, including post-harvest losses ',
+        'Target Description': 'By 2030, halve per capita global food waste at the retail and consumer levels and reduce food losses along production and supply chains, including post-harvest losses',
         Indicators: [
           {
             Indicator: 'Indicator 12.3.1',
-            'Indicator Description': 'Global food loss index',
+            'Indicator Description': '(a) Food loss index and (b) food waste index',
           },
         ],
       },
       {
         Target: 'Target 12.4',
-        'Target Description': 'By 2020, achieve the environmentally sound management of chemicals and all wastes throughout their life cycle, in accordance with agreed international frameworks, and significantly reduce their release to air, water and soil in order to minimize their adverse impacts on human health and the environment ',
+        'Target Description': 'By 2020, achieve the environmentally sound management of chemicals and all wastes throughout their life cycle, in accordance with agreed international frameworks, and significantly reduce their release to air, water and soil in order to minimize their adverse impacts on human health and the environment',
         Indicators: [
           {
             Indicator: 'Indicator 12.4.1',
@@ -1321,13 +1332,13 @@ export const SDGList = [
           },
           {
             Indicator: 'Indicator 12.4.2',
-            'Indicator Description': 'Hazardous waste generated per capita and proportion of hazardous waste treated, by type of treatment',
+            'Indicator Description': '(a) Hazardous waste generated per capita; and (b) proportion of hazardous waste treated, by type of treatment',
           },
         ],
       },
       {
         Target: 'Target 12.5',
-        'Target Description': 'By 2030, substantially reduce waste generation through prevention, reduction, recycling and reuse ',
+        'Target Description': 'By 2030, substantially reduce waste generation through prevention, reduction, recycling and reuse',
         Indicators: [
           {
             Indicator: 'Indicator 12.5.1',
@@ -1347,7 +1358,7 @@ export const SDGList = [
       },
       {
         Target: 'Target 12.7',
-        'Target Description': 'Promote public procurement practices that are sustainable, in accordance with national policies and priorities ',
+        'Target Description': 'Promote public procurement practices that are sustainable, in accordance with national policies and priorities',
         Indicators: [
           {
             Indicator: 'Indicator 12.7.1',
@@ -1361,7 +1372,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 12.8.1',
-            'Indicator Description': 'Extent to which (i) global citizenship education and (ii) education for sustainable development (including climate change education) are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment',
+            'Indicator Description': 'Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment',
           },
         ],
       },
@@ -1371,7 +1382,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 12.a.1',
-            'Indicator Description': 'Amount of support to developing countries on research and development for sustainable consumption and production and environmentally sound technologies',
+            'Indicator Description': 'Installed renewable energy-generating capacity in developing countries (in watts per capita)',
           },
         ],
       },
@@ -1381,7 +1392,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 12.b.1',
-            'Indicator Description': 'Number of sustainable tourism strategies or policies and implemented action plans with agreed monitoring and evaluation tools',
+            'Indicator Description': 'Implementation of standard accounting tools to monitor the economic and environmental aspects of tourism sustainability',
           },
         ],
       },
@@ -1391,7 +1402,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 12.c.1',
-            'Indicator Description': 'Amount of fossil-fuel subsidies per unit of GDP (production and consumption) and as a proportion of total national expenditure on fossil fuels',
+            'Indicator Description': 'Amount of fossil-fuel subsidies (production and consumption) per unit of GDP',
           },
         ],
       },
@@ -1399,19 +1410,19 @@ export const SDGList = [
   },
   {
     Goal: 'SDG 13',
-    'Goal Name': 'Climate Action',
+    'Goal Name': 'Take urgent action to combat climate change and its impacts',
     Targets: [
       {
         Target: 'Target 13.1',
-        'Target Description': 'Strengthen resilience and adaptive capacity to climate-related hazards and natural disasters in all countries ',
+        'Target Description': 'Strengthen resilience and adaptive capacity to climate-related hazards and natural disasters in all countries',
         Indicators: [
           {
             Indicator: 'Indicator 13.1.1',
-            'Indicator Description': 'Number of countries with national and local disaster risk reduction a strategies',
+            'Indicator Description': 'Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population',
           },
           {
             Indicator: 'Indicator 13.1.2',
-            'Indicator Description': 'Number of deaths, missing persons and persons affected by disaster per 100,000 people',
+            'Indicator Description': 'Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015-2030',
           },
           {
             Indicator: 'Indicator 13.1.3',
@@ -1425,7 +1436,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 13.2.1',
-            'Indicator Description': 'Number of countries that have communicated the establishment or operationalization of an integrated policy/strategy/plan which increases their ability to adapt to the adverse impacts of climate change, and foster climate resilience and low greenhouse gas emissions development in a manner that does not threaten food production (including a national adaptation plan, nationally determined contribution, national communication, biennial update report or other)',
+            'Indicator Description': 'Number of countries with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change',
           },
           {
             Indicator: 'Indicator 13.2.2',
@@ -1439,11 +1450,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 13.3.1',
-            'Indicator Description': 'Number of countries that have integrated mitigation, adaptation, impact reduction and early warning into primary, secondary and tertiary curricula',
-          },
-          {
-            Indicator: 'Indicator 13.3.2',
-            'Indicator Description': 'Number of countries that have communicated the strengthening of institutional, systemic and individual capacity-building to implement adaptation, mitigation and technology transfer, and development actions',
+            'Indicator Description': 'Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment',
           },
         ],
       },
@@ -1453,7 +1460,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 13.a.1',
-            'Indicator Description': 'Mobilized amount of United States dollars per year starting in 2020 accountable towards the $100 billion commitment',
+            'Indicator Description': 'Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025',
           },
         ],
       },
@@ -1463,7 +1470,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 13.b.1',
-            'Indicator Description': 'Number of least developed countries and small island developing States that are receiving specialized support, and amount of support, including finance, technology and capacity-building, for mechanisms for raising capacities for effective climate change-related planning and management, including focusing on women, youth and local and marginalized communities',
+            'Indicator Description': 'Number of least developed countries and small island developing States with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change',
           },
         ],
       },
@@ -1471,7 +1478,7 @@ export const SDGList = [
   },
   {
     Goal: 'SDG 14',
-    'Goal Name': 'Life Below Water',
+    'Goal Name': 'Conserve and sustainably use the oceans, seas and marine resources for sustainable development',
     Targets: [
       {
         Target: 'Target 14.1',
@@ -1479,7 +1486,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 14.1.1',
-            'Indicator Description': 'Index of coastal eutrophication and floating plastic debris density',
+            'Indicator Description': '(a) Index of coastal eutrophication; and (b) plastic debris density',
           },
         ],
       },
@@ -1489,7 +1496,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 14.2.1',
-            'Indicator Description': 'Proportion of national exclusive economic zones managed using ecosystem based approaches',
+            'Indicator Description': 'Number of countries using ecosystem-based approaches to managing marine areas',
           },
         ],
       },
@@ -1525,21 +1532,21 @@ export const SDGList = [
       },
       {
         Target: 'Target 14.6',
-        'Target Description': 'By 2020, prohibit certain forms of fisheries subsidies which contribute to overcapacity and overfishing, eliminate subsidies that contribute to illegal, unreported and unregulated fishing and refrain from introducing new such subsidies, recognizing that appropriate and effective special and differential treatment for developing and least developed countries should be an integral part of the World Trade Organization fisheries subsidies negotiation',
+        'Target Description': 'By 2020, prohibit certain forms of fisheries subsidies which contribute to overcapacity and overfishing, eliminate subsidies that contribute to illegal, unreported and unregulated fishing and refrain from introducing new such subsidies, recognizing that appropriate and effective special and differential treatment for developing and least developed countries should be an integral part of the World Trade Organization fisheries subsidies negotiation [c]',
         Indicators: [
           {
             Indicator: 'Indicator 14.6.1',
-            'Indicator Description': 'Progress by countries in the degree of implementation of international instruments aiming to combat illegal, unreported and unregulated fishing',
+            'Indicator Description': 'Degree of implementation of international instruments aiming to combat illegal, unreported and unregulated fishing',
           },
         ],
       },
       {
         Target: 'Target 14.7',
-        'Target Description': 'By 2030, increase the economic benefits to Small Island developing States and least developed countries from the sustainable use of marine resources, including through sustainable management of fisheries, aquaculture and tourism',
+        'Target Description': 'By 2030, increase the economic benefits to small island developing States and least developed countries from the sustainable use of marine resources, including through sustainable management of fisheries, aquaculture and tourism',
         Indicators: [
           {
             Indicator: 'Indicator 14.7.1',
-            'Indicator Description': 'Sustainable fisheries as a percentage of GDP in small island developing States, least developed countries and all countries',
+            'Indicator Description': 'Sustainable fisheries as a proportion of GDP in small island developing States, least developed countries and all countries',
           },
         ],
       },
@@ -1559,17 +1566,17 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 14.b.1',
-            'Indicator Description': 'Progress by countries in the degree of application of a legal/regulatory/policy/institutional framework which recognizes and protects access rights for small-scale fisheries',
+            'Indicator Description': 'Degree of application of a legal/regulatory/policy/institutional framework which recognizes and protects access rights for small-scale fisheries',
           },
         ],
       },
       {
         Target: 'Target 14.c',
-        'Target Description': 'Enhance the conservation and sustainable use of oceans and their resources by implementing international law as reflected in UNCLOS, which provides the legal framework for the conservation and sustainable use of oceans and their resources, as recalled in paragraph 158 of The Future We Want ',
+        'Target Description': "Enhance the conservation and sustainable use of oceans and their resources by implementing international law as reflected in the United Nations Convention on the Law of the Sea, which provides the legal framework for the conservation and sustainable use of oceans and their resources, as recalled in paragraph 158 of 'The future we want'",
         Indicators: [
           {
             Indicator: 'Indicator 14.c.1',
-            'Indicator Description': 'Number of countries making progress in ratifying, accepting and implementing through legal, policy and institutional frameworks, ocean-related instruments that implement international law, as reflected in the United Nation Convention on the Law of the Sea, for the conservation and sustainable use of the oceans and their resources',
+            'Indicator Description': 'Number of countries making progress in ratifying, accepting and implementing through legal, policy and institutional frameworks, ocean-related instruments that implement international law, as reflected in the United Nations Convention on the Law of the Sea, for the conservation and sustainable use of the oceans and their resources',
           },
         ],
       },
@@ -1577,7 +1584,7 @@ export const SDGList = [
   },
   {
     Goal: 'SDG 15',
-    'Goal Name': 'Life On Land',
+    'Goal Name': 'Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss',
     Targets: [
       {
         Target: 'Target 15.1',
@@ -1623,7 +1630,7 @@ export const SDGList = [
           },
           {
             Indicator: 'Indicator 15.4.2',
-            'Indicator Description': 'Mountain Green Cover Index',
+            'Indicator Description': '(a) Mountain Green Cover Index and (b) proportion of degraded mountain land',
           },
         ],
       },
@@ -1673,7 +1680,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 15.9.1',
-            'Indicator Description': 'Progress towards national targets established in accordance with Aichi Biodiversity Target 2 of the Strategic Plan for Biodiversity 2011-2020',
+            'Indicator Description': '(a) Number of countries that have established national targets in accordance with or similar to Aichi Biodiversity Target 2 of the Strategic Plan for Biodiversity 2011-2020 in their national biodiversity strategy and action plans and the progress reported towards these targets; and (b) integration of biodiversity into national accounting and reporting systems, defined as implementation of the System of Environmental-Economic Accounting',
           },
         ],
       },
@@ -1683,7 +1690,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 15.a.1',
-            'Indicator Description': 'Official development assistance and public expenditure on conservation and sustainable use of biodiversity and ecosystems',
+            'Indicator Description': '(a) Official development assistance on conservation and sustainable use of biodiversity; and (b) revenue generated and finance mobilized from biodiversity-relevant economic instruments',
           },
         ],
       },
@@ -1693,13 +1700,13 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 15.b.1',
-            'Indicator Description': 'Official development assistance and public expenditure on conservation and sustainable use of biodiversity and ecosystems',
+            'Indicator Description': '(a) Official development assistance on conservation and sustainable use of biodiversity; and (b) revenue generated and finance mobilized from biodiversity-relevant economic instruments',
           },
         ],
       },
       {
         Target: 'Target 15.c',
-        'Target Description': 'Enhance global support for efforts to combat poaching and trafficking of protected species, including by increasing the capacity of local communities to pursue sustainable livelihood opportunities ',
+        'Target Description': 'Enhance global support for efforts to combat poaching and trafficking of protected species, including by increasing the capacity of local communities to pursue sustainable livelihood opportunities',
         Indicators: [
           {
             Indicator: 'Indicator 15.c.1',
@@ -1711,7 +1718,7 @@ export const SDGList = [
   },
   {
     Goal: 'SDG 16',
-    'Goal Name': 'Peace, Justice And Strong Institution',
+    'Goal Name': 'Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels',
     Targets: [
       {
         Target: 'Target 16.1',
@@ -1727,11 +1734,11 @@ export const SDGList = [
           },
           {
             Indicator: 'Indicator 16.1.3',
-            'Indicator Description': 'Proportion of population subjected to physical, psychological or sexual violence in the previous 12 months',
+            'Indicator Description': 'Proportion of population subjected to (a) physical violence, (b) psychological violence and (c) sexual violence in the previous 12 months',
           },
           {
             Indicator: 'Indicator 16.1.4',
-            'Indicator Description': 'Proportion of population that feel safe walking alone around the area they live',
+            'Indicator Description': 'Proportion of population that feel safe walking alone around the area they live after dark',
           },
         ],
       },
@@ -1749,7 +1756,7 @@ export const SDGList = [
           },
           {
             Indicator: 'Indicator 16.2.3',
-            'Indicator Description': 'Proportion of young women and men aged 18_29 years who experienced sexual violence by age 18',
+            'Indicator Description': 'Proportion of young women and men aged 18-29 years who experienced sexual violence by age 18',
           },
         ],
       },
@@ -1765,6 +1772,10 @@ export const SDGList = [
             Indicator: 'Indicator 16.3.2',
             'Indicator Description': 'Unsentenced detainees as a proportion of overall prison population',
           },
+          {
+            Indicator: 'Indicator 16.3.3',
+            'Indicator Description': 'Proportion of the population who have experienced a dispute in the past two years and who accessed a formal or informal dispute resolution mechanism, by type of mechanism',
+          },
         ],
       },
       {
@@ -1777,7 +1788,7 @@ export const SDGList = [
           },
           {
             Indicator: 'Indicator 16.4.2',
-            'Indicator Description': 'Proportion of seized small arms and light weapons that are recorded and traced, in accordance with international standards and legal instruments',
+            'Indicator Description': 'Proportion of seized, found or surrendered arms whose illicit origin or context has been traced or established by a competent authority in line with international instruments',
           },
         ],
       },
@@ -1805,7 +1816,7 @@ export const SDGList = [
           },
           {
             Indicator: 'Indicator 16.6.2',
-            'Indicator Description': 'Proportion of the population satisfied with their last experience of public services',
+            'Indicator Description': 'Proportion of population satisfied with their last experience of public services',
           },
         ],
       },
@@ -1815,7 +1826,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 16.7.1',
-            'Indicator Description': 'Proportions of positions (by sex, age, persons with disabilities and population groups) in public institutions (national and local legislatures, public service, and judiciary) compared to national distributions',
+            'Indicator Description': 'Proportions of positions in national and local institutions, including (a) the legislatures; (b) the public service; and (c) the judiciary, compared to national distributions, by sex, age, persons with disabilities and population groups',
           },
           {
             Indicator: 'Indicator 16.7.2',
@@ -1881,7 +1892,7 @@ export const SDGList = [
   },
   {
     Goal: 'SDG 17',
-    'Goal Name': 'Partnership For The Goals',
+    'Goal Name': 'Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development',
     Targets: [
       {
         Target: 'Target 17.1',
@@ -1899,7 +1910,7 @@ export const SDGList = [
       },
       {
         Target: 'Target 17.2',
-        'Target Description': 'Developed countries to implement fully their official development assistance commitments, including the commitment by many developed countries to achieve the target of 0.7 per cent of ODA/GNI to developing countries and 0.15 to 0.20 per cent of ODA/GNI to least developed countries; ODA providers are encouraged to consider setting a target to provide at least 0.20 per cent of ODA/GNI to least developed countries',
+        'Target Description': 'Developed countries to implement fully their official development assistance commitments, including the commitment by many developed countries to achieve the target of 0.7 per cent of gross national income for official development assistance (ODA/GNI) to developing countries and 0.15 to 0.20 per cent of ODA/GNI to least developed countries; ODA providers are encouraged to consider setting a target to provide at least 0.20 per cent of ODA/GNI to least developed countries',
         Indicators: [
           {
             Indicator: 'Indicator 17.2.1',
@@ -1913,7 +1924,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 17.3.1',
-            'Indicator Description': 'Foreign direct investments (FDI), official development assistance and South- South Cooperation as a proportion of total domestic budget',
+            'Indicator Description': 'Additional financial resources mobilized for developing countries from multiple sources',
           },
           {
             Indicator: 'Indicator 17.3.2',
@@ -1933,24 +1944,20 @@ export const SDGList = [
       },
       {
         Target: 'Target 17.5',
-        'Target Description': 'Adopt and implement investment promotion regimes for least developed countries ',
+        'Target Description': 'Adopt and implement investment promotion regimes for least developed countries',
         Indicators: [
           {
             Indicator: 'Indicator 17.5.1',
-            'Indicator Description': 'Number of countries that adopt and implement investment promotion regimes for least developed countries',
+            'Indicator Description': 'Number of countries that adopt and implement investment promotion regimes for developing countries, including the least developed countries',
           },
         ],
       },
       {
         Target: 'Target 17.6',
-        'Target Description': 'Enhance North-South, South-South and triangular regional and international cooperation on and access to science, technology and innovation and enhance knowledge sharing on mutually agreed terms, including through improved coordination among existing mechanisms, in particular at the United Nations level, and through a global technology facilitation mechanism',
+        'Target Description': 'Enhance North-South, South-South and triangular regional and international cooperation on and access to science, technology and innovation and enhance knowledge-sharing on mutually agreed terms, including through improved coordination among existing mechanisms, in particular at the United Nations level, and through a global technology facilitation mechanism',
         Indicators: [
           {
             Indicator: 'Indicator 17.6.1',
-            'Indicator Description': 'Number of science and/or technology cooperation agreements and programmes between countries, by type of cooperation',
-          },
-          {
-            Indicator: 'Indicator 17.6.2',
             'Indicator Description': 'Fixed Internet broadband subscriptions per 100 inhabitants, by speed',
           },
         ],
@@ -1961,13 +1968,13 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 17.7.1',
-            'Indicator Description': 'Total amount of approved funding for developing countries to promote the development, transfer, dissemination and diffusion of environmentally sound technologies',
+            'Indicator Description': 'Total amount of funding for developing countries to promote the development, transfer, dissemination and diffusion of environmentally sound technologies',
           },
         ],
       },
       {
         Target: 'Target 17.8',
-        'Target Description': 'Fully operationalize the technology bank and science, technology and innovation capacity-building mechanism for least developed countries by 2017 and enhance the use of enabling technology, in particular information and communications technology ',
+        'Target Description': 'Fully operationalize the technology bank and science, technology and innovation capacity-building mechanism for least developed countries by 2017 and enhance the use of enabling technology, in particular information and communications technology',
         Indicators: [
           {
             Indicator: 'Indicator 17.8.1',
@@ -1977,7 +1984,7 @@ export const SDGList = [
       },
       {
         Target: 'Target 17.9',
-        'Target Description': 'Enhance international support for implementing effective and targeted capacity-building in developing countries to support national plans to implement all the sustainable development goals, including through North-South, South-South and triangular cooperation ',
+        'Target Description': 'Enhance international support for implementing effective and targeted capacity-building in developing countries to support national plans to implement all the Sustainable Development Goals, including through North-South, South-South and triangular cooperation',
         Indicators: [
           {
             Indicator: 'Indicator 17.9.1',
@@ -1991,13 +1998,13 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 17.10.1',
-            'Indicator Description': 'Worldwide weighted tariff- average',
+            'Indicator Description': 'Worldwide weighted tariff-average',
           },
         ],
       },
       {
         Target: 'Target 17.11',
-        'Target Description': 'Significantly increase the exports of developing countries, in particular with a view to doubling the least developed countries\u2019 share of global exports by 2020',
+        'Target Description': "Significantly increase the exports of developing countries, in particular with a view to doubling the least developed countries' share of global exports by 2020",
         Indicators: [
           {
             Indicator: 'Indicator 17.11.1',
@@ -2007,11 +2014,11 @@ export const SDGList = [
       },
       {
         Target: 'Target 17.12',
-        'Target Description': 'Realize timely implementation of duty-free and quota-free market access on a lasting basis for all least developed countries, consistent with World Trade Organization decisions, including by ensuring that preferential rules of origin applicable to imports from least developed countries are transparent and simple, and contribute to facilitating market access ',
+        'Target Description': 'Realize timely implementation of duty-free and quota-free market access on a lasting basis for all least developed countries, consistent with World Trade Organization decisions, including by ensuring that preferential rules of origin applicable to imports from least developed countries are transparent and simple, and contribute to facilitating market access',
         Indicators: [
           {
             Indicator: 'Indicator 17.12.1',
-            'Indicator Description': 'Average tariffs faced by developing countries, least developed countries and small island developing States',
+            'Indicator Description': 'Weighted average tariffs faced by developing countries, least developed countries and small island developing States',
           },
         ],
       },
@@ -2037,7 +2044,7 @@ export const SDGList = [
       },
       {
         Target: 'Target 17.15',
-        'Target Description': 'Respect each country\u2019s policy space and leadership to establish and implement policies for poverty eradication and sustainable development',
+        'Target Description': "Respect each country's policy space and leadership to establish and implement policies for poverty eradication and sustainable development",
         Indicators: [
           {
             Indicator: 'Indicator 17.15.1',
@@ -2047,7 +2054,7 @@ export const SDGList = [
       },
       {
         Target: 'Target 17.16',
-        'Target Description': 'Enhance the global partnership for sustainable development, complemented by multi-stakeholder partnerships that mobilize and share knowledge, expertise, technology and financial resources, to support the achievement of the sustainable development goals in all countries, in particular developing countries',
+        'Target Description': 'Enhance the Global Partnership for Sustainable Development, complemented by multi-stakeholder partnerships that mobilize and share knowledge, expertise, technology and financial resources, to support the achievement of the Sustainable Development Goals in all countries, in particular developing countries',
         Indicators: [
           {
             Indicator: 'Indicator 17.16.1',
@@ -2061,7 +2068,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 17.17.1',
-            'Indicator Description': 'Amount of United States dollars committed to public-private and civil society partnerships',
+            'Indicator Description': 'Amount in United States dollars committed to public-private partnerships for infrastructure',
           },
         ],
       },
@@ -2071,7 +2078,7 @@ export const SDGList = [
         Indicators: [
           {
             Indicator: 'Indicator 17.18.1',
-            'Indicator Description': 'Proportion of sustainable development indicators produced at the national level with full disaggregation when relevant to the target, in accordance with the Fundamental Principles of Official Statistics',
+            'Indicator Description': 'Statistical capacity indicator for Sustainable Development Goal monitoring',
           },
           {
             Indicator: 'Indicator 17.18.2',
@@ -2085,7 +2092,7 @@ export const SDGList = [
       },
       {
         Target: 'Target 17.19',
-        'Target Description': 'By 2030, build on existing initiatives to develop measurements of progress on sustainable development that complement gross domestic product, and support statistical capacity-building in developing countries ',
+        'Target Description': 'By 2030, build on existing initiatives to develop measurements of progress on sustainable development that complement gross domestic product, and support statistical capacity-building in developing countries',
         Indicators: [
           {
             Indicator: 'Indicator 17.19.1',

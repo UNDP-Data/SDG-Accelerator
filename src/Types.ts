@@ -194,11 +194,11 @@ export interface TimeSeriesDataType {
   Counterpart?: 'ZM';
   Cities?: 'JOHANNESBURG';
   'Sampling Stations'?: 'ALGOA';
-  status: 'Target Achieved' | 'On Track' | 'Target Not Achieved' | 'Fair progress but acceleration needed' | 'Limited or No Progress' | 'Insufficient Data' | 'No Data After 2015' | 'Deterioration';
+  status?: 'Target Achieved' | 'On Track' | 'Target Not Achieved' | 'Fair progress but acceleration needed' | 'Limited or No Progress' | 'Insufficient Data' | 'No Data After 2015' | 'Deterioration';
 }
 
 export interface TimeSeriesDataTypeWithStatusCode extends TimeSeriesDataType {
-  statusCode: 1 | 2 | 3 | 4 | 5;
+  statusCode: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
 export interface CountryDataType {

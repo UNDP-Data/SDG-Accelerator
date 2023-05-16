@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import sortBy from 'lodash.sortby';
 import styled from 'styled-components';
 import { StatusesType, TimeSeriesDataTypeWithStatusCode } from '../Types';
+import AllSeries from '../Data/FullMethodology.json';
 import { LineChart } from './LineChart';
 import { SDGList } from '../Data/SDGGoalList';
 
@@ -54,16 +55,21 @@ export const SDGGapsData = (props: Props) => {
     countryData,
     selectedSDG,
   } = props;
-  const targets = SDGList[SDGList.findIndex((d) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].Targets;
+  const targets = SDGList[SDGList.findIndex((d) => d.Goal === selectedSDG.split(':')[0])].Targets;
   const [selectedTarget, setSelectedTarget] = useState(targets[0]);
   const [selectedIndicator, setSelectedIndicator] = useState(targets[0].Indicators[0]);
   const [selectedIndicatorTS, setSelectedIndicatorTS] = useState(countryData.filter((d) => d.indicator === targets[0].Indicators[0].Indicator.split(' ')[1]));
   useEffect(() => {
-    const targetsUpdated = SDGList[SDGList.findIndex((d) => `${d.Goal}: ${d['Goal Name']}` === selectedSDG)].Targets;
+    const targetsUpdated = SDGList[SDGList.findIndex((d) => d.Goal === selectedSDG.split(':')[0])].Targets;
     setSelectedTarget(targetsUpdated[0]);
     setSelectedIndicator(targetsUpdated[0].Indicators[0]);
     setSelectedIndicatorTS((countryData.filter((d) => d.indicator === targetsUpdated[0].Indicators[0].Indicator.split(' ')[1])));
   }, [selectedSDG, statusData]);
+  const AllSeriesForIndicator = AllSeries.filter((d: any) => d.indicator.indexOf(selectedIndicator.Indicator.split(' ')[1]) !== -1).map((d) => ({
+    ...d,
+    values: [],
+    statusCode: 6,
+  }));
   return (
     <div className='flex-div margin-bottom-13'>
       <SideBarNavEl>
@@ -171,14 +177,14 @@ export const SDGGapsData = (props: Props) => {
         </div>
         <div className='flex-div undp-scrollbar top-scrollbars' style={{ gap: '2rem', overflow: 'auto', paddingBottom: '0.5rem' }}>
           {
-            sortBy(selectedIndicatorTS, 'statusCode').map((d, i: number) => (
+            sortBy(selectedIndicatorTS.concat(AllSeriesForIndicator), 'statusCode').map((d, i: number) => (
               <LineChart
                 data={d}
                 key={i}
                 cursor={
-                  selectedIndicatorTS.length === 1
+                  selectedIndicatorTS.concat(AllSeriesForIndicator).length === 1
                     ? 'auto'
-                    : i < selectedIndicatorTS.length - 1
+                    : i < selectedIndicatorTS.concat(AllSeriesForIndicator).length - 1
                       ? 'url(https://design.undp.org/static/media/arrow-right.125a0586.svg), auto'
                       : 'url(https://design.undp.org/static/media/arrow-left.14de54ea.svg), auto'
                   }
@@ -186,7 +192,7 @@ export const SDGGapsData = (props: Props) => {
             ))
           }
           {
-            selectedIndicatorTS.length === 0
+            selectedIndicatorTS.concat(AllSeriesForIndicator).length === 0
               ? (
                 <div
                   style={{
