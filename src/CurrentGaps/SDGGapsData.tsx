@@ -70,7 +70,6 @@ export const SDGGapsData = (props: Props) => {
     values: [],
     statusCode: 6,
   }));
-  console.log(AllSeriesForIndicator.map((d) => d.indicator[0]), selectedIndicator.Indicator.split(' ')[1]);
   return (
     <div className='flex-div margin-bottom-13'>
       <SideBarNavEl>
