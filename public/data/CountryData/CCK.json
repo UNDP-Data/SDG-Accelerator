@@ -633,7 +633,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -709,7 +709,7 @@
         }
       ],
       "methodology": {
-        "normativeDirection": "increase",
+        "normativeDirection": "decrease",
         "CAGRLimit": [
           0.01,
           0.005,
@@ -727,7 +727,7 @@
       "Partner_Agency(ies)": "IOC-UNESCO,IMO,FAO",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -1142,7 +1142,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2022.0
       },
       "Custodian_Agency(ies)": "FAO",
@@ -1305,7 +1305,7 @@
         "baselineYear": {
           "all": 2016
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2022.0
       },
       "Custodian_Agency(ies)": "CBD-Secretariat",

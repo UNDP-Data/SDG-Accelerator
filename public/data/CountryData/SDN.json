@@ -38,13 +38,13 @@
     },
     {
       "goal": 14,
-      "noOfIndicatorsWithData": 1,
+      "noOfIndicatorsWithData": 2,
       "status": "For Review"
     },
     {
       "goal": 15,
       "noOfIndicatorsWithData": 11,
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": 16,
@@ -171,7 +171,7 @@
     {
       "goal": "11",
       "target": "11.a",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "12",
@@ -216,7 +216,7 @@
     {
       "goal": "14",
       "target": "14.5",
-      "status": null
+      "status": "Identified Gap"
     },
     {
       "goal": "14",
@@ -261,12 +261,12 @@
     {
       "goal": "15",
       "target": "15.8",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "15",
       "target": "15.9",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "15",
@@ -331,7 +331,7 @@
     {
       "goal": "17",
       "target": "17.16",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "17",
@@ -341,7 +341,7 @@
     {
       "goal": "17",
       "target": "17.18",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "17",
@@ -790,7 +790,7 @@
       "goal": "11",
       "target": "11.a",
       "indicator": "11.a.1",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "12",
@@ -844,7 +844,7 @@
       "goal": "14",
       "target": "14.5",
       "indicator": "14.5.1",
-      "status": null
+      "status": "Identified Gap"
     },
     {
       "goal": "14",
@@ -910,13 +910,13 @@
       "goal": "15",
       "target": "15.8",
       "indicator": "15.8.1",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "15",
       "target": "15.9",
       "indicator": "15.9.1",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "15",
@@ -1006,7 +1006,7 @@
       "goal": "17",
       "target": "17.16",
       "indicator": "17.16.1",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "17",
@@ -1018,13 +1018,13 @@
       "goal": "17",
       "target": "17.18",
       "indicator": "17.18.2",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "17",
       "target": "17.18",
       "indicator": "17.18.3",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "17",
@@ -1114,7 +1114,7 @@
       "goal": "2",
       "target": "2.5",
       "indicator": "2.5.2",
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": "2",
@@ -1798,14 +1798,14 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": 2016,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNDRR",
       "Partner_Agency(ies)": "UN-Habitat, UNEP, DESA Population Division",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",
@@ -1867,14 +1867,14 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": 2016,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNDRR",
       "Partner_Agency(ies)": "UN-Habitat, UNEP, DESA Population Division",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",
@@ -1936,14 +1936,14 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": 2016,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNDRR",
       "Partner_Agency(ies)": "UN-Habitat, UNEP, DESA Population Division",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",
@@ -3983,7 +3983,7 @@
           "all": 2015
         },
         "targetValue": 1.0,
-        "baseYear": 2015,
+        "baseYear": 2018,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -4049,7 +4049,7 @@
           "all": 2015
         },
         "targetValue": 1.0,
-        "baseYear": 2015,
+        "baseYear": 2018,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -5987,7 +5987,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -5999,7 +5999,7 @@
       "Partner_Agency(ies)": "UNFPA",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Type of product": "ALP",
@@ -7101,7 +7101,7 @@
         }
       ],
       "methodology": {
-        "normativeDirection": "increase",
+        "normativeDirection": "decrease",
         "CAGRLimit": [
           0.01,
           0.005,
@@ -7119,7 +7119,7 @@
       "Partner_Agency(ies)": "IOC-UNESCO,IMO,FAO",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -7590,14 +7590,14 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": 2016,
         "latestAvailable": 2022.0
       },
       "Custodian_Agency(ies)": "UNEP-WCMC,UNEP,IUCN",
       "Partner_Agency(ies)": "Ramsar",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": "Moderate distance to target",
-      "status": "Insufficient Data"
+      "status": "Limited or No Progress"
     },
     {
       "Reporting Type": "G",
@@ -7896,13 +7896,13 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2022.0
       },
       "Custodian_Agency(ies)": "UNEP-WCMC,UNEP,IUCN",
       "Partner_Agency(ies)": "Ramsar",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": "Very far from target",
+      "currentLevelAssessment": null,
       "status": "Insufficient Data"
     },
     {
@@ -8100,7 +8100,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2022.0
       },
       "Custodian_Agency(ies)": "FAO",
@@ -8368,7 +8368,7 @@
           "all": 2015
         },
         "targetValue": 95.0,
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2022.0
       },
       "Custodian_Agency(ies)": "UNEP-WCMC,UNEP,IUCN",
@@ -8540,7 +8540,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "FAO",
@@ -9567,7 +9567,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -9579,7 +9579,7 @@
       "Partner_Agency(ies)": "FAO,UNEP",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -9603,7 +9603,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -9615,7 +9615,7 @@
       "Partner_Agency(ies)": "FAO,UNEP",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -9799,7 +9799,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -9811,7 +9811,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -9827,7 +9827,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -9839,7 +9839,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -9855,7 +9855,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -9884,7 +9884,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -9896,7 +9896,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I (a)/Tier II (b)",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -12125,7 +12125,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -12137,7 +12137,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -12203,7 +12203,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2020.0
       },
       "Custodian_Agency(ies)": "World Bank",
@@ -12272,7 +12272,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "World Bank",
@@ -12303,7 +12303,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -12315,7 +12315,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -12339,7 +12339,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -12351,7 +12351,7 @@
       "Partner_Agency(ies)": "UNSD,Regional Commissions,World Bank",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -12367,7 +12367,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -12379,7 +12379,7 @@
       "Partner_Agency(ies)": "UNSD,Regional Commissions,World Bank",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -12403,7 +12403,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -12415,7 +12415,7 @@
       "Partner_Agency(ies)": "UNSD,Regional Commissions,World Bank",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -12439,7 +12439,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -14555,14 +14555,14 @@
           "PRY": 2018,
           "YEM": 2019
         },
-        "baseYear": 2015,
+        "baseYear": 2018,
         "latestAvailable": 2023.0
       },
       "Custodian_Agency(ies)": "FAO",
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Limited or No Progress"
     },
     {
       "Reporting Type": "G",
@@ -22572,14 +22572,14 @@
           "all": 2015
         },
         "targetValue": 95.0,
-        "baseYear": 2015,
+        "baseYear": 2016,
         "latestAvailable": 2021.0
       },
       "Custodian_Agency(ies)": "ITU",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Limited or No Progress"
     }
   ]
 }

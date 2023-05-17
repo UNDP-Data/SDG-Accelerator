@@ -8,8 +8,8 @@
     },
     {
       "goal": 10,
-      "noOfIndicatorsWithData": 1,
-      "status": "On Track"
+      "noOfIndicatorsWithData": 0,
+      "status": null
     },
     {
       "goal": 11,
@@ -18,8 +18,8 @@
     },
     {
       "goal": 12,
-      "noOfIndicatorsWithData": 3,
-      "status": "On Track"
+      "noOfIndicatorsWithData": 4,
+      "status": "For Review"
     },
     {
       "goal": 7,
@@ -39,12 +39,12 @@
     {
       "goal": 17,
       "noOfIndicatorsWithData": 3,
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": 3,
       "noOfIndicatorsWithData": 1,
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": 5,
@@ -53,8 +53,8 @@
     },
     {
       "goal": 6,
-      "noOfIndicatorsWithData": 2,
-      "status": "For Review"
+      "noOfIndicatorsWithData": 1,
+      "status": "Identified Gap"
     },
     {
       "goal": 8,
@@ -76,7 +76,7 @@
     {
       "goal": "10",
       "target": "10.7",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "11",
@@ -111,7 +111,7 @@
     {
       "goal": "12",
       "target": "12.b",
-      "status": null
+      "status": "Identified Gap"
     },
     {
       "goal": "14",
@@ -156,12 +156,12 @@
     {
       "goal": "17",
       "target": "17.18",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "17",
       "target": "17.19",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "17",
@@ -171,7 +171,7 @@
     {
       "goal": "3",
       "target": "3.7",
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": "5",
@@ -186,7 +186,7 @@
     {
       "goal": "6",
       "target": "6.2",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "6",
@@ -245,7 +245,7 @@
       "goal": "10",
       "target": "10.7",
       "indicator": "10.7.4",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "11",
@@ -287,7 +287,7 @@
       "goal": "12",
       "target": "12.b",
       "indicator": "12.b.1",
-      "status": null
+      "status": "Identified Gap"
     },
     {
       "goal": "14",
@@ -353,19 +353,19 @@
       "goal": "17",
       "target": "17.18",
       "indicator": "17.18.2",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "17",
       "target": "17.18",
       "indicator": "17.18.3",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "17",
       "target": "17.19",
       "indicator": "17.19.2",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "17",
@@ -377,7 +377,7 @@
       "goal": "3",
       "target": "3.7",
       "indicator": "3.7.2",
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": "5",
@@ -395,7 +395,7 @@
       "goal": "6",
       "target": "6.2",
       "indicator": "6.2.1",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "6",
@@ -676,14 +676,14 @@
           "all": 2015
         },
         "targetValue": 5.0,
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2022.0
       },
       "Custodian_Agency(ies)": "UNHCR",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Achieved"
+      "status": "Insufficient Data"
     },
     {
       "Location": "ALLAREA",
@@ -769,7 +769,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -1044,14 +1044,14 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": 2016,
         "latestAvailable": 2020.0
       },
       "Custodian_Agency(ies)": "UNSD, UNEP",
       "Partner_Agency(ies)": "OECD,Eurostat,UNU",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",
@@ -1168,7 +1168,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2020.0
       },
       "Custodian_Agency(ies)": "UNSD, UNEP",
@@ -1230,14 +1230,14 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": 2016,
         "latestAvailable": 2020.0
       },
       "Custodian_Agency(ies)": "UNSD, UNEP",
       "Partner_Agency(ies)": "OECD,Eurostat,UNU",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",
@@ -1852,14 +1852,14 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": 2016,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNSD, UNEP",
       "Partner_Agency(ies)": "OECD,Eurostat,UNU",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "On Track"
     },
     {
       "Reporting Type": "G",
@@ -2111,7 +2111,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2016,
+        "baseYear": null,
         "latestAvailable": 2020.0
       },
       "Custodian_Agency(ies)": "NA",
@@ -2160,7 +2160,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2016,
+        "baseYear": null,
         "latestAvailable": 2020.0
       },
       "Custodian_Agency(ies)": "NA",
@@ -2458,14 +2458,14 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": 2017,
         "latestAvailable": 2020.0
       },
       "Custodian_Agency(ies)": "UNWTO",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",
@@ -2531,7 +2531,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2020.0
       },
       "Custodian_Agency(ies)": "UNWTO",
@@ -2604,14 +2604,14 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": 2017,
         "latestAvailable": 2020.0
       },
       "Custodian_Agency(ies)": "UNWTO",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",
@@ -2675,7 +2675,7 @@
         }
       ],
       "methodology": {
-        "normativeDirection": "increase",
+        "normativeDirection": "decrease",
         "CAGRLimit": [
           0.01,
           0.005,
@@ -2693,7 +2693,7 @@
       "Partner_Agency(ies)": "IOC-UNESCO,IMO,FAO",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -3559,7 +3559,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2022.0
       },
       "Custodian_Agency(ies)": "FAO",
@@ -4004,7 +4004,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "FAO",
@@ -4133,7 +4133,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "FAO",
@@ -4219,7 +4219,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "FAO",
@@ -4871,7 +4871,7 @@
         "baselineYear": {
           "all": 2016
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2022.0
       },
       "Custodian_Agency(ies)": "CBD-Secretariat",
@@ -5672,7 +5672,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -5684,7 +5684,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -5708,7 +5708,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -5720,7 +5720,7 @@
       "Partner_Agency(ies)": "UNSD,Regional Commissions,World Bank",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -5744,7 +5744,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -5756,7 +5756,7 @@
       "Partner_Agency(ies)": "UNSD,Regional Commissions,World Bank",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -5780,7 +5780,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -5792,7 +5792,7 @@
       "Partner_Agency(ies)": "UNSD,Regional Commissions,World Bank",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -5808,7 +5808,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -5820,7 +5820,7 @@
       "Partner_Agency(ies)": "UNFPA,DESA Population Division,other involved agencies in the inter-agency group on CRVS ",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -5856,7 +5856,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -5868,7 +5868,7 @@
       "Partner_Agency(ies)": "UNFPA,DESA Population Division,other involved agencies in the inter-agency group on CRVS ",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -5904,7 +5904,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -5916,7 +5916,7 @@
       "Partner_Agency(ies)": "UNFPA,DESA Population Division,other involved agencies in the inter-agency group on CRVS ",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -5986,7 +5986,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2021.0
       },
       "Custodian_Agency(ies)": "OECD,UNCTAD",
@@ -6132,14 +6132,14 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": 2018,
         "latestAvailable": 2020.0
       },
       "Custodian_Agency(ies)": "DESA Population Division",
       "Partner_Agency(ies)": "UNFPA, WHO",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Deterioration"
     },
     {
       "Sex": "FEMALE",
@@ -6354,14 +6354,14 @@
           "all": 2015
         },
         "targetValue": 1.0,
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2020.0
       },
       "Custodian_Agency(ies)": "WHO,UNICEF",
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I (a)/Tier II (b)",
       "currentLevelAssessment": null,
-      "status": "Target Achieved"
+      "status": "Insufficient Data"
     },
     {
       "Reporting Type": "G",

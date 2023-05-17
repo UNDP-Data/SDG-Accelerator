@@ -4,7 +4,7 @@
     {
       "goal": 10,
       "noOfIndicatorsWithData": 1,
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": 11,
@@ -26,7 +26,7 @@
     {
       "goal": "10",
       "target": "10.a",
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": "11",
@@ -69,7 +69,7 @@
       "goal": "10",
       "target": "10.a",
       "indicator": "10.a.1",
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": "11",
@@ -423,14 +423,14 @@
           "all": 2015
         },
         "targetValue": 1.0,
-        "baseYear": 2015,
+        "baseYear": 2017,
         "latestAvailable": 2021.0
       },
       "Custodian_Agency(ies)": "ITC,UNCTAD,WTO",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Deterioration"
     },
     {
       "Type of product": "OIL",
@@ -548,7 +548,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -620,7 +620,7 @@
         }
       ],
       "methodology": {
-        "normativeDirection": "increase",
+        "normativeDirection": "decrease",
         "CAGRLimit": [
           0.01,
           0.005,
@@ -638,7 +638,7 @@
       "Partner_Agency(ies)": "IOC-UNESCO,IMO,FAO",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -912,7 +912,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2022.0
       },
       "Custodian_Agency(ies)": "FAO",
@@ -1075,7 +1075,7 @@
         "baselineYear": {
           "all": 2016
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2022.0
       },
       "Custodian_Agency(ies)": "CBD-Secretariat",

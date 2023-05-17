@@ -3,12 +3,12 @@
   "goalStatus": [
     {
       "goal": 1,
-      "noOfIndicatorsWithData": 4,
+      "noOfIndicatorsWithData": 3,
       "status": "For Review"
     },
     {
       "goal": 11,
-      "noOfIndicatorsWithData": 5,
+      "noOfIndicatorsWithData": 4,
       "status": "For Review"
     },
     {
@@ -23,12 +23,12 @@
     },
     {
       "goal": 12,
-      "noOfIndicatorsWithData": 4,
-      "status": "For Review"
+      "noOfIndicatorsWithData": 3,
+      "status": "Identified Gap"
     },
     {
       "goal": 8,
-      "noOfIndicatorsWithData": 2,
+      "noOfIndicatorsWithData": 1,
       "status": "On Track"
     },
     {
@@ -39,7 +39,7 @@
     {
       "goal": 14,
       "noOfIndicatorsWithData": 1,
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": 15,
@@ -63,7 +63,7 @@
     },
     {
       "goal": 3,
-      "noOfIndicatorsWithData": 4,
+      "noOfIndicatorsWithData": 5,
       "status": "On Track"
     },
     {
@@ -101,7 +101,7 @@
     {
       "goal": "11",
       "target": "11.5",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "13",
@@ -141,12 +141,12 @@
     {
       "goal": "12",
       "target": "12.2",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "8",
       "target": "8.4",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "12",
@@ -196,7 +196,7 @@
     {
       "goal": "14",
       "target": "14.1",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "15",
@@ -226,7 +226,7 @@
     {
       "goal": "15",
       "target": "15.9",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "16",
@@ -261,7 +261,7 @@
     {
       "goal": "17",
       "target": "17.19",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "17",
@@ -398,13 +398,13 @@
       "goal": "1",
       "target": "1.5",
       "indicator": "1.5.2",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "11",
       "target": "11.5",
       "indicator": "11.5.2",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "1",
@@ -482,13 +482,13 @@
       "goal": "12",
       "target": "12.2",
       "indicator": "12.2.2",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "8",
       "target": "8.4",
       "indicator": "8.4.2",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "12",
@@ -554,7 +554,7 @@
       "goal": "14",
       "target": "14.1",
       "indicator": "14.1.1",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "15",
@@ -590,7 +590,7 @@
       "goal": "15",
       "target": "15.9",
       "indicator": "15.9.1",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "16",
@@ -632,7 +632,7 @@
       "goal": "17",
       "target": "17.19",
       "indicator": "17.19.2",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "17",
@@ -680,7 +680,7 @@
       "goal": "3",
       "target": "3.3",
       "indicator": "3.3.5",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "3",
@@ -968,7 +968,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1009,7 +1009,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1050,7 +1050,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1087,7 +1087,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1124,7 +1124,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1161,7 +1161,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1202,7 +1202,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1243,7 +1243,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1284,7 +1284,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1325,7 +1325,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1366,7 +1366,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1407,7 +1407,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1448,7 +1448,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1489,7 +1489,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1530,7 +1530,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1567,7 +1567,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1604,7 +1604,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1641,7 +1641,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1678,7 +1678,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1715,7 +1715,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1752,7 +1752,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1789,7 +1789,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1826,7 +1826,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1863,7 +1863,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1900,7 +1900,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1937,7 +1937,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -1974,7 +1974,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -2011,7 +2011,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -2048,7 +2048,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -2085,7 +2085,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -2122,7 +2122,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -2159,7 +2159,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -2197,14 +2197,14 @@
           "all": 2015
         },
         "targetValue": 1.0,
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
       "Partner_Agency(ies)": "UNEP, FAO",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Achieved"
+      "status": "Insufficient Data"
     },
     {
       "Reporting Type": "G",
@@ -2235,14 +2235,14 @@
           "all": 2015
         },
         "targetValue": 1.0,
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
       "Partner_Agency(ies)": "UNEP, FAO",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Achieved"
+      "status": "Insufficient Data"
     },
     {
       "Reporting Type": "G",
@@ -2272,7 +2272,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -2309,7 +2309,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -2346,7 +2346,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -2383,7 +2383,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -2420,7 +2420,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -2457,7 +2457,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -2494,7 +2494,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -2531,7 +2531,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -2568,7 +2568,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -2605,7 +2605,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -3214,7 +3214,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -3251,7 +3251,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -3288,7 +3288,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -3325,7 +3325,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -3362,7 +3362,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -3399,7 +3399,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -3436,7 +3436,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -3473,7 +3473,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2017,
+        "baseYear": null,
         "latestAvailable": 2018.0
       },
       "Custodian_Agency(ies)": "UNDRR",
@@ -3566,7 +3566,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -3641,7 +3641,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNEP",
@@ -3711,7 +3711,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNEP",
@@ -3790,14 +3790,14 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNEP",
       "Partner_Agency(ies)": "OECD",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": "Target met or almost met",
-      "status": "Target Achieved"
+      "currentLevelAssessment": null,
+      "status": "Insufficient Data"
     },
     {
       "Type of product": "ALP",
@@ -3869,14 +3869,14 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNEP",
       "Partner_Agency(ies)": "OECD",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": "Target met or almost met",
-      "status": "Target Achieved"
+      "currentLevelAssessment": null,
+      "status": "Insufficient Data"
     },
     {
       "Type of product": "ALP",
@@ -3939,7 +3939,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNEP",
@@ -4009,7 +4009,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2019.0
       },
       "Custodian_Agency(ies)": "UNEP",
@@ -5185,7 +5185,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2017.0
       },
       "Custodian_Agency(ies)": "UNSD, UNEP",
@@ -5301,7 +5301,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2017.0
       },
       "Custodian_Agency(ies)": "UNSD, UNEP",
@@ -6134,7 +6134,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2020.0
       },
       "Custodian_Agency(ies)": "UNWTO",
@@ -6246,7 +6246,7 @@
         }
       ],
       "methodology": {
-        "normativeDirection": "increase",
+        "normativeDirection": "decrease",
         "CAGRLimit": [
           0.01,
           0.005,
@@ -6264,7 +6264,7 @@
       "Partner_Agency(ies)": "IOC-UNESCO,IMO,FAO",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -6499,7 +6499,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2020.0
       },
       "Custodian_Agency(ies)": "FAO",
@@ -6556,7 +6556,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2020.0
       },
       "Custodian_Agency(ies)": "FAO",
@@ -6613,7 +6613,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2020.0
       },
       "Custodian_Agency(ies)": "FAO",
@@ -6678,7 +6678,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2022.0
       },
       "Custodian_Agency(ies)": "FAO",
@@ -6841,7 +6841,7 @@
         "baselineYear": {
           "all": 2016
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2022.0
       },
       "Custodian_Agency(ies)": "CBD-Secretariat",
@@ -6868,7 +6868,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -6900,7 +6900,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -7096,7 +7096,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -7108,7 +7108,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -7128,7 +7128,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -7160,7 +7160,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -7189,7 +7189,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -7201,7 +7201,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I (a)/Tier II (b)",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Sex": "BOTHSEX",
@@ -8629,7 +8629,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -8641,7 +8641,7 @@
       "Partner_Agency(ies)": "UNFPA,DESA Population Division,other involved agencies in the inter-agency group on CRVS ",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -8677,7 +8677,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -8689,7 +8689,7 @@
       "Partner_Agency(ies)": "UNFPA,DESA Population Division,other involved agencies in the inter-agency group on CRVS ",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -8725,7 +8725,7 @@
         }
       ],
       "methodology": {
-        "value": "1",
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -8737,7 +8737,7 @@
       "Partner_Agency(ies)": "UNFPA,DESA Population Division,other involved agencies in the inter-agency group on CRVS ",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Type of speed": "ANYS",
@@ -9269,7 +9269,7 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2021.0
       },
       "Custodian_Agency(ies)": "UNICEF",
@@ -9672,7 +9672,7 @@
           "all": 2015
         },
         "targetValue": 5.0,
-        "baseYear": 2015,
+        "baseYear": 2016,
         "latestAvailable": 2021.0
       },
       "Custodian_Agency(ies)": "WHO",
@@ -9784,14 +9784,14 @@
         "baselineYear": {
           "all": 2015
         },
-        "baseYear": 2015,
+        "baseYear": 2018,
         "latestAvailable": 2021.0
       },
       "Custodian_Agency(ies)": "WHO",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "On Track"
     },
     {
       "Reporting Type": "G",
@@ -12078,14 +12078,14 @@
           "all": 2015
         },
         "targetValue": 1.0,
-        "baseYear": 2015,
+        "baseYear": null,
         "latestAvailable": 2020.0
       },
       "Custodian_Agency(ies)": "WHO,UNICEF",
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I (a)/Tier II (b)",
       "currentLevelAssessment": null,
-      "status": "Target Achieved"
+      "status": "Insufficient Data"
     },
     {
       "Reporting Type": "G",
