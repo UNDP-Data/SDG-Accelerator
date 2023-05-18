@@ -42,11 +42,11 @@ export const HomePage = (props: Props) => {
           </h5>
           {
             countryCode ? null : (
-              <div className='flex-div margin-top-09'>
-                <p className='label margin-top-07'>Select a country to find out more</p>
+              <div className='margin-top-09'>
+                <p className='label margin-bottom-03'>Select a country to find out more</p>
                 <Select
                   className='undp-select'
-                  placeholder='Select a country'
+                  placeholder='Select a country to find out more'
                   showSearch
                   onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
                   style={{ flexGrow: 1 }}
