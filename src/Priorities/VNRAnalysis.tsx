@@ -7,12 +7,11 @@ import {
   forceCollide, forceManyBody, forceSimulation, forceX, forceY,
 } from 'd3-force';
 import {
-  SDGGOALS, SDG_COLOR_ARRAY, SDG_ICON_SIZE,
+  SDGGOALS, SDG_COLOR_ARRAY,
 } from '../Constants';
-import { getSDGIcon } from '../utils/getSDGIcon';
-import { describeArc } from '../utils/getArc';
 import { GoalStatusType } from '../Types';
 import { SalienceGraph } from './SalienceGraph';
+import { BubbleChart } from './BubbleChart';
 
 interface Props {
   data: any;
@@ -26,6 +25,7 @@ interface SDGHoveredProps {
   xPosition: number;
   yPosition: number;
 }
+
 interface TooltipElProps {
   x: number;
   y: number;
@@ -74,10 +74,6 @@ export const VNRAnalysis = (props: Props) => {
   const [nodeData, setNodeData] = useState<any>(null);
   const [showSalienceGraph, setShowSalienceGraph] = useState(false);
   const dataWithStatuses = data.map((d: any) => ({ ...d, category: d.importance === 0 ? 'No Mention' : d.category.charAt(0).toUpperCase() + d.category.slice(1), status: goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status || 'Gaps NA' }));
-  const medium = data.filter((d: any) => d.category === 'medium');
-  const low = data.filter((d: any) => d.category === 'low' && d.importance !== 0);
-  const high = data.filter((d: any) => d.category === 'high');
-  const noMetion = data.filter((d: any) => d.importance === 0);
   const gridSize = 600;
   const margin = 20;
   const cellSize = (gridSize - margin) / 4;
@@ -97,7 +93,7 @@ export const VNRAnalysis = (props: Props) => {
   }, [document]);
   return (
     <>
-      <div className=' margin-top-00' style={{ backgroundColor: 'var(--gray-200)', padding: 'var(--spacing-13)' }}>
+      <div className=' margin-top-00' style={{ backgroundColor: 'var(--gray-200)', padding: 'var(--spacing-13)', paddingBottom: 'var(--spacing-09)' }}>
         <div className='max-width-1440'>
           <div className='flex-div flex-vert-align-center flex-wrap'>
             <h2 className='undp-typography margin-bottom-00'>
@@ -110,151 +106,7 @@ export const VNRAnalysis = (props: Props) => {
             ) : document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
 
           </div>
-          <div className='flex-div margin-top-07 flex-wrap' style={{ gap: '2rem' }}>
-            <GraphContainer width='calc(40% - 1rem)'>
-              <svg width='calc(100% - 20px)' viewBox='0 0 360 360'>
-                <path
-                  d={describeArc(180, 180, 140, 0, 360 * (high.length / (17)))}
-                  fill='none'
-                  strokeWidth={50}
-                  style={{ stroke: 'var(--blue-700)' }}
-                />
-                <path
-                  d={describeArc(180, 180, 140, 360 * (high.length / (17)), 360 * ((high.length + medium.length) / (17)))}
-                  fill='none'
-                  strokeWidth={50}
-                  style={{ stroke: 'var(--blue-400)' }}
-                />
-                <path
-                  d={describeArc(180, 180, 140, 360 * ((high.length + medium.length) / (17)), 360 * ((high.length + medium.length + low.length) / 17))}
-                  fill='none'
-                  strokeWidth={50}
-                  style={{ stroke: 'var(--blue-200)' }}
-                />
-                <path
-                  d={describeArc(180, 180, 140, 360 * ((high.length + medium.length + low.length) / 17), 360)}
-                  fill='none'
-                  strokeWidth={50}
-                  style={{ stroke: 'var(--gray-400)' }}
-                />
-                <text
-                  x={180}
-                  y={180}
-                  textAnchor='middle'
-                  fontFamily='proxima-nova'
-                  fontWeight='bold'
-                  fontSize='60px'
-                  dy={10}
-                >
-                  {17}
-                </text>
-                <text
-                  x={180}
-                  y={180}
-                  textAnchor='middle'
-                  fontFamily='proxima-nova'
-                  fontWeight='bold'
-                  fontSize='20px'
-                  dy={35}
-                >
-                  SDGs
-                </text>
-              </svg>
-            </GraphContainer>
-            <GraphContainer width='calc(60% - 1rem)'>
-              <div className='margin-bottom-09'>
-                <h4 className='undp-typography margin-bottom-03' style={{ color: 'var(--blue-700)' }}>
-                  <span className='bold'>
-                    {high.length > 0 ? high.length : 'No'}
-                    {' '}
-                    {high.length > 1 ? 'SDGs' : 'SDG'}
-                  </span>
-                  {' '}
-                  High Priority
-                </h4>
-                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Click on the icons to see key features for the SDG</p>
-                <div className='flex-div flex-wrap margin-bottom-11'>
-                  <div className='flex-div flex-wrap'>
-                    {
-                      high.map((d: any, i: number) => (
-                        <div key={i} onClick={() => { setSelectedSDG(d); }} style={{ cursor: 'pointer' }}>
-                          {getSDGIcon(`SDG ${d.sdg}`, SDG_ICON_SIZE)}
-                        </div>
-                      ))
-                    }
-                  </div>
-                </div>
-              </div>
-              <div className='margin-bottom-09'>
-                <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--blue-400)' }}>
-                  <span className='bold'>
-                    {medium.length > 0 ? medium.length : 'No'}
-                    {' '}
-                    {medium.length > 1 ? 'SDGs' : 'SDG'}
-                  </span>
-                  {' '}
-                  Medium Priority
-                </h4>
-                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Click on the icons to see key features for the SDG</p>
-                <div className='flex-div flex-wrap margin-bottom-11'>
-                  <div className='flex-div flex-wrap'>
-                    {
-                      medium.map((d: any, i: number) => (
-                        <div key={i} onClick={() => { setSelectedSDG(d); }} style={{ cursor: 'pointer' }}>
-                          {getSDGIcon(`SDG ${d.sdg}`, SDG_ICON_SIZE)}
-                        </div>
-                      ))
-                    }
-                  </div>
-                </div>
-              </div>
-              <div className='margin-bottom-09'>
-                <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--blue-200)' }}>
-                  <span className='bold'>
-                    {low.length > 0 ? low.length : 'No'}
-                    {' '}
-                    {low.length > 1 ? 'SDGs' : 'SDG'}
-                  </span>
-                  {' '}
-                  Low Priority
-                </h4>
-                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Click on the icons to see key features for the SDG</p>
-                <div className='flex-div flex-wrap margin-bottom-11'>
-                  <div className='flex-div flex-wrap'>
-                    {
-                      low.map((d: any, i: number) => (
-                        <div key={i} onClick={() => { setSelectedSDG(d); }} style={{ cursor: 'pointer' }}>
-                          {getSDGIcon(`SDG ${d.sdg}`, SDG_ICON_SIZE)}
-                        </div>
-                      ))
-                    }
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h4 className='undp-typography margin-bottom-03' style={{ color: 'var(--gray-400)' }}>
-                  <span className='bold'>
-                    {noMetion.length > 0 ? noMetion.length : 'No'}
-                    {' '}
-                    {noMetion.length > 1 ? 'SDGs' : 'SDG'}
-                  </span>
-                  {' '}
-                  Not Mentioned
-                </h4>
-                <div className='flex-div flex-wrap margin-bottom-11'>
-                  <div className='flex-div flex-wrap'>
-                    {
-                      noMetion.map((d: any, i: number) => (
-                        <div key={i}>
-                          {getSDGIcon(`SDG ${d.sdg}`, SDG_ICON_SIZE)}
-                        </div>
-                      ))
-                    }
-                  </div>
-                </div>
-              </div>
-            </GraphContainer>
-          </div>
+          <BubbleChart data={dataWithStatuses} setSelectedSDG={setSelectedSDG} />
         </div>
       </div>
       <div className=' margin-top-13 max-width-1440 flex-div margin-bottom-13' style={{ gap: '2rem', padding: '0 1rem' }}>

@@ -79,7 +79,7 @@ export const HomePage = (props: Props) => {
           )
       }
       <div className='margin-top-13 margin-bottom-13 max-width'>
-        <H2 className='undp-typography margin-bottom-07' style={{ padding: '0rem 1rem' }}>SDG push Diagnostics Features</H2>
+        <H2 className='undp-typography margin-bottom-07' style={{ padding: '0rem 1rem' }}>SDG Push Diagnostics Features</H2>
         <div className='undp-section margin-bottom-13 image-right'>
           <div>
             <h4 className='undp-typography margin-top-05'>SDG Trends</h4>

@@ -30,17 +30,6 @@ const StatCardsContainer = styled.div`
   flex-grow: 1;
 `;
 
-interface WidthProps {
-  width: string;
-}
-
-const GraphContainer = styled.div<WidthProps>`
-  width: ${(props) => props.width};
-  @media (max-width: 720px) {
-    width: 100%;
-  }
-`;
-
 export const CurrentGaps = (props: Props) => {
   const {
     goalStatuses,
@@ -122,109 +111,113 @@ export const CurrentGaps = (props: Props) => {
       </HeroImageEl>
       <div className=' margin-top-00' style={{ backgroundColor: 'var(--gray-200)', padding: 'var(--spacing-09)' }}>
         <div className='max-width' style={{ backgroundColor: 'var(--gray-200)', padding: 'var(--spacing-09)' }}>
-          <h2 className='undp-typography'>Current Gaps</h2>
-          <div className='flex-div margin-top-07 flex-wrap' style={{ gap: '2rem' }}>
-            <GraphContainer width='calc(30% - 1rem)'>
-              The SDG Trends assessment is based on currently available data in the UN Stats SDG Data Portal and methodology as per the SDG Progress Chart 2022 Technical Note. Additional data may be added to address gaps at a government&apos;s request, providing a comprehensive landscape for identification of SDG policy pathways.
-            </GraphContainer>
-            <GraphContainer width='calc(70% - 1rem)'>
-              <div
-                style={{ backgroundColor: 'var(--white)', padding: '3rem' }}
-              >
-                <div className='margin-bottom-09'>
-                  <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--dark-green)' }}>
-                    <span className='bold'>
-                      {onTrack.length > 0 ? onTrack.length : 'No'}
-                      {' '}
-                      {onTrack.length > 1 ? 'SDGs' : 'SDG'}
-                    </span>
+          <h2 className='undp-typography'>SDG Trends</h2>
+          <div className='margin-top-07 margin-bottom-05'>
+            The SDG Trends assessment is based on currently available data in the
+            <a href='https://unstats.un.org/sdgs/dataportal' className='undp-style' target='_blank' rel='noreferrer'>UN Stats SDG Data Portal</a>
+            {' '}
+            and methodology as per the
+            {' '}
+            <a href='https://unstats.un.org/sdgs/report/2022/Progress_Chart_Technical_Note_2022.pdf' className='undp-style' target='_blank' rel='noreferrer'>SDG Progress Chart 2022 Technical Note</a>
+            . Additional data may be added to address gaps at a government&apos;s request, providing a comprehensive landscape for identification of SDG policy pathways.
+          </div>
+          <div>
+            <div
+              style={{ backgroundColor: 'var(--white)', padding: '3rem' }}
+            >
+              <div className='margin-bottom-09'>
+                <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--dark-green)' }}>
+                  <span className='bold'>
+                    {onTrack.length > 0 ? onTrack.length : 'No'}
                     {' '}
-                    On Track
-                  </h4>
-                  <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>The country is on track to fulfil the SDG by 2030</p>
-                  <div className='flex-div flex-wrap margin-bottom-11'>
-                    <div className='flex-div flex-wrap'>
-                      {
-                      onTrack.map((d, i: number) => (
-                        <div key={i}>
-                          {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
-                        </div>
-                      ))
-                    }
-                    </div>
-                  </div>
-                </div>
-                <div className='margin-bottom-09'>
-                  <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--dark-yellow)' }}>
-                    <span className='bold'>
-                      {forReview.length > 0 ? forReview.length : 'No'}
-                      {' '}
-                      {forReview.length > 1 ? 'SDGs' : 'SDG'}
-                    </span>
-                    {' '}
-                    For Review
-                  </h4>
-                  <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>With current progress the country will miss the SDG by 2030 by a small margin</p>
-                  <div className='flex-div flex-wrap margin-bottom-11'>
-                    <div className='flex-div flex-wrap'>
-                      {
-                      forReview.map((d, i: number) => (
-                        <div key={i}>
-                          {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
-                        </div>
-                      ))
-                    }
-                    </div>
-                  </div>
-                </div>
-                <div className='margin-bottom-09'>
-                  <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--dark-red)' }}>
-                    <span className='bold'>
-                      {identifiedGap.length}
-                      {' '}
-                      SDG
-                    </span>
-                    {' '}
-                    Identified Gaps
-                  </h4>
-                  <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>With current progress the country will miss the SDG by 2030 by a large margin</p>
-                  <div className='flex-div flex-wrap margin-bottom-11'>
-                    <div className='flex-div flex-wrap'>
-                      {
-                      identifiedGap.map((d, i: number) => (
-                        <div key={i}>
-                          {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
-                        </div>
-                      ))
-                    }
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--gray-600)' }}>
-                    <span className='bold'>
-                      {gapsNA.length}
-                      {' '}
-                      SDG
-                    </span>
-                    {' '}
-                    Gaps NA
-                  </h4>
-                  <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Country doesn’t have enough data to identify the progress of the SDG</p>
-                  <div className='flex-div flex-wrap margin-bottom-11'>
-                    <div className='flex-div flex-wrap'>
-                      {
-                      gapsNA.map((d, i: number) => (
-                        <div key={i}>
-                          {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
-                        </div>
-                      ))
-                    }
-                    </div>
+                    {onTrack.length > 1 ? 'SDGs' : 'SDG'}
+                  </span>
+                  {' '}
+                  On Track
+                </h4>
+                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>The country is on track to fulfil the SDG by 2030</p>
+                <div className='flex-div flex-wrap margin-bottom-11'>
+                  <div className='flex-div flex-wrap'>
+                    {
+                    onTrack.map((d, i: number) => (
+                      <div key={i}>
+                        {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
+                      </div>
+                    ))
+                  }
                   </div>
                 </div>
               </div>
-            </GraphContainer>
+              <div className='margin-bottom-09'>
+                <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--dark-yellow)' }}>
+                  <span className='bold'>
+                    {forReview.length > 0 ? forReview.length : 'No'}
+                    {' '}
+                    {forReview.length > 1 ? 'SDGs' : 'SDG'}
+                  </span>
+                  {' '}
+                  For Review
+                </h4>
+                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>With current progress the country will miss the SDG by 2030 by a small margin</p>
+                <div className='flex-div flex-wrap margin-bottom-11'>
+                  <div className='flex-div flex-wrap'>
+                    {
+                    forReview.map((d, i: number) => (
+                      <div key={i}>
+                        {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
+                      </div>
+                    ))
+                  }
+                  </div>
+                </div>
+              </div>
+              <div className='margin-bottom-09'>
+                <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--dark-red)' }}>
+                  <span className='bold'>
+                    {identifiedGap.length}
+                    {' '}
+                    SDG
+                  </span>
+                  {' '}
+                  Identified Gaps
+                </h4>
+                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>With current progress the country will miss the SDG by 2030 by a large margin</p>
+                <div className='flex-div flex-wrap margin-bottom-11'>
+                  <div className='flex-div flex-wrap'>
+                    {
+                    identifiedGap.map((d, i: number) => (
+                      <div key={i}>
+                        {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
+                      </div>
+                    ))
+                  }
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--gray-600)' }}>
+                  <span className='bold'>
+                    {gapsNA.length}
+                    {' '}
+                    SDG
+                  </span>
+                  {' '}
+                  Gaps NA
+                </h4>
+                <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Country doesn’t have enough data to identify the progress of the SDG</p>
+                <div className='flex-div flex-wrap margin-bottom-11'>
+                  <div className='flex-div flex-wrap'>
+                    {
+                    gapsNA.map((d, i: number) => (
+                      <div key={i}>
+                        {getSDGIcon(`SDG ${d.goal}`, SDG_ICON_SIZE)}
+                      </div>
+                    ))
+                  }
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

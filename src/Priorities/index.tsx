@@ -209,6 +209,13 @@ export const Priorities = (props: Props) => {
                   children: COUNTRIES_WITH_DOCS.indexOf(countrySelected) === -1 ? (
                     <>
                       <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
+                        Countries national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is an improved and cleaned
+                        {' '}
+                        <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer' className='undp-style'>OSDG Community Dataset</a>
+                        {' '}
+                        from UNDP IICPSD SDG AI Lab. It considers 100k+ terms, including phrases and expressions.
+                        <br />
+                        <br />
                         Documents such as
                         {' '}
                         <a href='https://sustainabledevelopment.un.org/vnrs/' target='_blank' rel='noreferrer' className='undp-style'>Voluntary National Reviews (VNRs)</a>
@@ -226,7 +233,7 @@ export const Priorities = (props: Props) => {
                                 <div className='margin-top-07'>
                                   <p className='label undp-typography'>Select year</p>
                                   <Select
-                                    className='undp-select'
+                                    className='undp-select margin-bottom-07'
                                     placeholder='Select Year'
                                     value={selectYear}
                                     onChange={(value) => { setSelectYear(value); }}
@@ -249,7 +256,7 @@ export const Priorities = (props: Props) => {
                             )
                             : (
                               <>
-                                <div className='margin-top-07'>
+                                <div className='margin-top-07 margin-bottom-07'>
                                   <Select
                                     className='undp-select'
                                     placeholder='No VNRs Available'

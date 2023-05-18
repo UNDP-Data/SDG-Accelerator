@@ -124,16 +124,20 @@ export interface LiteratureDataType {
   'Full reference': string | null;
 }
 
+export type StatusType = 'On Track' | 'Identified Gap' | 'For Review'
+
+export type PriorityType = 'High' | 'Medium' | 'Low'
+
 export interface IndicatorStatusType {
   goal: string;
   target: string;
   indicator: string;
-  status: 'On Track' | 'Identified Gap' | 'For Review' | null;
+  status: StatusType | null;
 }
 export interface TargetStatusType {
   goal: string;
   target: string;
-  status: 'On Track' | 'Identified Gap' | 'For Review' | null;
+  status: StatusType | null;
 }
 
 export interface TargetStatusWithDetailsType extends TargetStatusType {
@@ -143,7 +147,7 @@ export interface TargetStatusWithDetailsType extends TargetStatusType {
 export interface GoalStatusType {
   goal: number;
   noOfIndicatorsWithData: number;
-  status: 'On Track' | 'Identified Gap' | 'For Review' | null;
+  status: StatusType | null;
 }
 
 export interface ValuesDataType {
@@ -219,7 +223,7 @@ export interface CountryGoalStatusType {
   countryCode: string;
   goalStatus: {
     goal: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '13' | '14' | '15' | '16' | '17';
-    status: 'On Track' | 'Identified Gap' | 'For Review' | null;
+    status: StatusType | null;
   }[];
 }
 
