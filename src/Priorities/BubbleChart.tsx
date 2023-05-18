@@ -43,80 +43,95 @@ export const BubbleChart = (props: Props) => {
   }, [data]);
   return (
     <>
-      <div className='max-width-1440 margin-top-09' style={{ padding: '0 1rem' }}>
-        <p className='undp-typography label margin-bottom-03'>
-          Highlight by priorities and trends
-        </p>
-        <div className='flex-div flex-vert-align-center margin-bottom-09'>
-          <Checkbox
-            className='undp-checkbox'
-            checked={highlightSettings.High}
-            onChange={(e) => {
-              setHighlightSettings({ ...highlightSettings, High: e.target.checked });
-            }}
-          >
-            High Priority
-          </Checkbox>
-          <Checkbox
-            className='undp-checkbox'
-            checked={highlightSettings.Medium}
-            onChange={(e) => {
-              setHighlightSettings({ ...highlightSettings, Medium: e.target.checked });
-            }}
-          >
-            Medium Priority
-          </Checkbox>
-          <Checkbox
-            className='undp-checkbox'
-            checked={highlightSettings.Low}
-            onChange={(e) => {
-              setHighlightSettings({ ...highlightSettings, Low: e.target.checked });
-            }}
-          >
-            Low Priority
-          </Checkbox>
-          <Checkbox
-            className='undp-checkbox'
-            checked={highlightSettings['On Track']}
-            onChange={(e) => {
-              setHighlightSettings({ ...highlightSettings, 'On Track': e.target.checked });
-            }}
-          >
-            On Track
-          </Checkbox>
-          <Checkbox
-            className='undp-checkbox'
-            checked={highlightSettings['For Review']}
-            onChange={(e) => {
-              setHighlightSettings({ ...highlightSettings, 'For Review': e.target.checked });
-            }}
-          >
-            For Review
-          </Checkbox>
-          <Checkbox
-            className='undp-checkbox'
-            checked={highlightSettings['Identified Gap']}
-            onChange={(e) => {
-              setHighlightSettings({ ...highlightSettings, 'Identified Gap': e.target.checked });
-            }}
-          >
-            Identified Gap
-          </Checkbox>
-          <Checkbox
-            className='undp-checkbox'
-            checked={highlightSettings['Gaps NA']}
-            onChange={(e) => {
-              setHighlightSettings({ ...highlightSettings, 'Gaps NA': e.target.checked });
-            }}
-          >
-            Gaps NA
-          </Checkbox>
+      <div className='max-width-1440 margin-top-09 flex-div' style={{ padding: '0 1rem', gap: 'var(--spacing-05)' }}>
+        <div style={{
+          width: 'calc(25% - 1rem)',
+        }}
+        >
+          <p className='undp-typography label margin-bottom-03'>
+            Highlight SDGs by priorities
+          </p>
+          <div className='flex-div flex-vert-align-center margin-bottom-07 flex-wrap'>
+            <Checkbox
+              className='undp-checkbox'
+              checked={highlightSettings.High}
+              onChange={(e) => {
+                setHighlightSettings({ ...highlightSettings, High: e.target.checked });
+              }}
+            >
+              High
+            </Checkbox>
+            <Checkbox
+              className='undp-checkbox'
+              checked={highlightSettings.Medium}
+              onChange={(e) => {
+                setHighlightSettings({ ...highlightSettings, Medium: e.target.checked });
+              }}
+            >
+              Medium
+            </Checkbox>
+            <Checkbox
+              className='undp-checkbox'
+              checked={highlightSettings.Low}
+              onChange={(e) => {
+                setHighlightSettings({ ...highlightSettings, Low: e.target.checked });
+              }}
+            >
+              Low
+            </Checkbox>
+          </div>
+          <p className='undp-typography label margin-bottom-02'>
+            Highlight SDGs by Trends
+          </p>
+          <div className='margin-bottom-05' style={{ display: 'grid' }}>
+            <Checkbox
+              className='undp-checkbox'
+              checked={highlightSettings['On Track']}
+              onChange={(e) => {
+                setHighlightSettings({ ...highlightSettings, 'On Track': e.target.checked });
+              }}
+              style={{ marginInlineStart: 0 }}
+            >
+              On Track
+            </Checkbox>
+            <Checkbox
+              className='undp-checkbox'
+              checked={highlightSettings['For Review']}
+              onChange={(e) => {
+                setHighlightSettings({ ...highlightSettings, 'For Review': e.target.checked });
+              }}
+              style={{ marginInlineStart: 0 }}
+            >
+              For Review
+            </Checkbox>
+            <Checkbox
+              className='undp-checkbox'
+              checked={highlightSettings['Identified Gap']}
+              onChange={(e) => {
+                setHighlightSettings({ ...highlightSettings, 'Identified Gap': e.target.checked });
+              }}
+              style={{ marginInlineStart: 0 }}
+            >
+              Identified Gap
+            </Checkbox>
+            <Checkbox
+              className='undp-checkbox'
+              checked={highlightSettings['Gaps NA']}
+              onChange={(e) => {
+                setHighlightSettings({ ...highlightSettings, 'Gaps NA': e.target.checked });
+              }}
+              style={{ marginInlineStart: 0 }}
+            >
+              Gaps NA
+            </Checkbox>
+          </div>
+          <p className='undp-typography italics' style={{ fontSize: '1rem', color: 'var(--gray-600)' }}>Click on the icons to view the common words/phrases by SDG</p>
         </div>
         {
           nodeData
             ? (
-              <svg width='calc(100% - 32px)' viewBox='0 0 720 200'>
-                <g transform='translate(360,100)'>
+              <svg width='calc(75% - 1rem)' viewBox='0 0 450 250'>
+                <g transform='translate(225,125)'>
                   {
                     nodeData.map((d: any, i: number) => (
                       <g
@@ -148,7 +163,7 @@ export const BubbleChart = (props: Props) => {
             )
             : (
               <div style={{
-                width: '100%', height: '200px', backgroundColor: 'var(--gray-100)', paddingTop: '80px',
+                width: 'calc(75% - 1rem)', height: '200px', backgroundColor: 'var(--gray-100)', paddingTop: '80px',
               }}
               >
                 <div className='undp-loader' style={{ margin: 'auto' }} />

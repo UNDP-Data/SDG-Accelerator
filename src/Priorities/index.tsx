@@ -282,6 +282,12 @@ export const Priorities = (props: Props) => {
                       <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer' className='undp-style'>OSDG Community Dataset</a>
                       {' '}
                       from UNDP IICPSD SDG AI Lab. It considers 100k+ terms, including phrases and expressions.
+                      <br />
+                      <br />
+                      Documents such as National Development Plans indicate priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.
+                      <br />
+                      <br />
+                      Explore the analysis of these priorities using Machine Learning.
                     </h5>
                   ),
                 },

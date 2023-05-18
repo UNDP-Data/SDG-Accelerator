@@ -56,7 +56,7 @@ export const CurrentGaps = (props: Props) => {
           <h5 className='undp-typography'>
             Progress on the 17 SDGs are tracked through 169 sub-targets, which in turn are measured using
             {' '}
-            <a href='https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%20refinement_Eng.pdf' target='_blank' rel='noreferrer' className='undp-style dark-bg red-underline'>232 unique indicators</a>
+            <a href='https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%20refinement_Eng.pdf' target='_blank' rel='noreferrer' className='undp-style dark-bg'>232 unique indicators</a>
             .
             <br />
             <br />
@@ -65,11 +65,11 @@ export const CurrentGaps = (props: Props) => {
             <br />
             Countries SDG trends are based on
             {' '}
-            <a href='https://unstats.un.org/sdgs/dataportal' style={{ color: 'var(--white' }} target='_blank' rel='noreferrer' className='undp-style'>data</a>
+            <a href='https://unstats.un.org/sdgs/dataportal' style={{ color: 'var(--white' }} target='_blank' rel='noreferrer' className='undp-style dark-bg'>data</a>
             {' '}
             and
             {' '}
-            <a href='https://unstats.un.org/sdgs/report/2022/Progress_Chart_Technical_Note_2022.pdf' style={{ color: 'var(--white' }} target='_blank' rel='noreferrer' className='undp-style'>methodology</a>
+            <a href='https://unstats.un.org/sdgs/report/2022/Progress_Chart_Technical_Note_2022.pdf' style={{ color: 'var(--white' }} target='_blank' rel='noreferrer' className='undp-style dark-bg'>methodology</a>
             {' '}
             from the UN Statistics Division. Additional data may be added to address gaps at government request, to provide a comprehensive landscape for identification of SDG policy pathways.
             <br />
@@ -114,6 +114,7 @@ export const CurrentGaps = (props: Props) => {
           <h2 className='undp-typography'>SDG Trends</h2>
           <div className='margin-top-07 margin-bottom-05'>
             The SDG Trends assessment is based on currently available data in the
+            {' '}
             <a href='https://unstats.un.org/sdgs/dataportal' className='undp-style' target='_blank' rel='noreferrer'>UN Stats SDG Data Portal</a>
             {' '}
             and methodology as per the
