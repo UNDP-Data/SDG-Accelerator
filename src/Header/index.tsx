@@ -61,16 +61,16 @@ export const Header = (props: Props) => {
                   ? (
                     <div className='undp-nav-div'>
                       <NavLink
-                        to={`../sdg-push-diagnostic/${country}/current-priorities`}
-                        className={({ isActive }) => (isActive ? 'header-link-active' : 'header-link')}
-                      >
-                        Current Priorities
-                      </NavLink>
-                      <NavLink
                         to={`../sdg-push-diagnostic/${country}/sdg-trends`}
                         className={({ isActive }) => (isActive ? 'header-link-active' : 'header-link')}
                       >
                         SDG Trends
+                      </NavLink>
+                      <NavLink
+                        to={`../sdg-push-diagnostic/${country}/current-priorities`}
+                        className={({ isActive }) => (isActive ? 'header-link-active' : 'header-link')}
+                      >
+                        National Priorities
                       </NavLink>
                       <NavLink
                         to={`../sdg-push-diagnostic/${country}/synergies-and-tradeoffs`}
@@ -144,7 +144,7 @@ export const Header = (props: Props) => {
                       justifyContent: 'flex-start',
                     }}
                   >
-                    Current Priorities
+                    National Priorities
                   </NavLink>
                 </div>
                 <div>
