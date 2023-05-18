@@ -376,7 +376,7 @@ export const SDG_COLOR_ARRAY = [
   '#19486A',
 ];
 
-export const DATASOURCELINK = process.env.NODE_ENV === 'production' ? '../..' : '../..';
+export const DATASOURCELINK = process.env.NODE_ENV === 'production' ? 'https://data.undp.org/sdg-push-diagnostic' : '../..';
 
 export const SDG_ICON_SIZE = 64;
 
@@ -467,5 +467,7 @@ export const TargetIndicatorCount = [
     noOfIndicators: 25,
   },
 ];
+
+export const COUNTRIES_WITH_DOCS = ['IDN', 'IRQ', 'KEN', 'MDA', 'NAM', 'PER', 'ZAF'];
 
 export const API_ACCESS_TOKEN = 'ph92BXomD13M0qS9';

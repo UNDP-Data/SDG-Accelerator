@@ -38,11 +38,17 @@ export const FutureScenariosList = (props: Props) => {
             {countryFullName}
           </h1>
           <h5 className='undp-typography'>
-            In the SDG Push we will be identifying accelerators.
+            SDG Push identifies national
             {' '}
-            <a href='https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%20refinement_Eng.pdf' target='_blank' rel='noreferrer' className='undp-style dark-bg red-underline'>UNDP&apos;s flagship publication</a>
+            <a href='https://sdgintegration.undp.org/covid-impact-low-and-medium-hdi-groups' style={{ color: 'var(--white)' }} target='_blank' className='undp-style' rel='noreferrer'>SDG insights based on integrated accelerators</a>
             {' '}
-            presents one such scenario (governance, social protection, green economy, and digitalisation) at the global level that can put us back on track to recover better.
+            across Governance, Social Protection, Green Economy and Digital Disruption.
+            <br />
+            <br />
+            Based on the systems model of
+            {' '}
+            <a href='https://korbel.du.edu/pardee/international-futures-platform' style={{ color: 'var(--white)' }} target='_blank' className='undp-style' rel='noreferrer'>international futures</a>
+            , SDG Push models the impact that incorporating SDG Push accelerators in development can make, providing valuable insights into systems interactions across the SDGs.
           </h5>
         </div>
       </HeroImageEl>
@@ -52,16 +58,20 @@ export const FutureScenariosList = (props: Props) => {
             <h2 className='undp-typography'>SDG Push Scenario</h2>
           </div>
           <div className='undp-section-content'>
-            The Future Scenarios outlines projections based on accelerators in the areas of Governance, Social Protection, Green Economy and Digital Disruption.
-            <br />
-            <br />
-            UNDP&apos;s
+            The Future Scenarios provide projections based on accelerators in governance, social protection, green economy, and digital disruption.
             {' '}
-            <a href='https://data.undp.org/wp-content/uploads/2021/04/Leaving-No-One-Behind-COVID-impact-on-the-SDGs-second-flagship-2.pdf' target='_blank' className='undp-style dark-bg' rel='noreferrer'>flagship study</a>
-            , conducted with the Pardee Center for International Futures at the University of Denver, assesses the impact of three different COVID-19 scenarios on the SDGs, capturing the multidimensional effects of the pandemic over the next decades. The findings show that while COVID-19 can lead to severe long-term impacts, a set of ambitious but feasible integrated SDG investments can help the world exceed the development trajectory we were on before the pandemic.
+            <a href='https://data.undp.org/wp-content/uploads/2021/04/Leaving-No-One-Behind-COVID-impact-on-the-SDGs-second-flagship-2.pdf' target='_blank' className='undp-style dark-bg' rel='noreferrer'>UNDP&apos;s flagship study</a>
+            , conducted with the
+            {' '}
+            <a href='https://korbel.du.edu/pardee/international-futures-platform' target='_blank' className='undp-style dark-bg' rel='noreferrer'>Pardee Center for International Futures</a>
+            {' '}
+            at the University of Denver, assesses the
+            {' '}
+            <a href='https://sdgintegration.undp.org/covid-impact-low-and-medium-hdi-groups' target='_blank' className='undp-style dark-bg' rel='noreferrer'>long-term impact of three COVID-19 scenarios on the SDGs</a>
+            .
             <br />
             <br />
-            These SDG Investments, detailed below, are aimed at narrowing the gaps identified in the ‘Current SDG Gaps’ page. Their projected impact over the coming decades is visualized here as the “SDG Push” scenario.
+            It captures the multifaceted effects of the pandemic over the next decades. The findings reveal that although COVID-19 can have significant long-term consequences, a set of ambitious yet achievable integrated SDG investments can surpass the development trajectory before the pandemic. These SDG Investments, outlined below, aim to address the gaps identified on the &apos;SDG Trends&apos; page. Their projected impact in the upcoming decades is illustrated as the &apos;SDG Push&apos; scenario.
           </div>
         </div>
       </div>

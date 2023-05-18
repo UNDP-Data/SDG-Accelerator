@@ -6,7 +6,9 @@ import styled from 'styled-components';
 import {
   forceCollide, forceManyBody, forceSimulation, forceX, forceY,
 } from 'd3-force';
-import { SDGGOALS, SDG_COLOR_ARRAY, SDG_ICON_SIZE } from '../Constants';
+import {
+  SDGGOALS, SDG_COLOR_ARRAY, SDG_ICON_SIZE,
+} from '../Constants';
 import { getSDGIcon } from '../utils/getSDGIcon';
 import { describeArc } from '../utils/getArc';
 import { GoalStatusType } from '../Types';
@@ -15,7 +17,8 @@ import { SalienceGraph } from './SalienceGraph';
 interface Props {
   data: any;
   goalStatuses: GoalStatusType[];
-  document: string[];
+  document: any;
+  defaultDocs: boolean;
 }
 
 interface SDGHoveredProps {
@@ -52,11 +55,19 @@ const GraphContainer = styled.div<WidthProps>`
   }
 `;
 
+const FileNameChip = styled.div`
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: var(--gray-300);
+  font-weight: bold;
+`;
+
 export const VNRAnalysis = (props: Props) => {
   const {
     data,
     document,
     goalStatuses,
+    defaultDocs,
   } = props;
   const [selectedSDG, setSelectedSDG] = useState<any>(null);
   const [hoveredSDG, setHoveredSDG] = useState<null | SDGHoveredProps>(null);
@@ -88,11 +99,17 @@ export const VNRAnalysis = (props: Props) => {
     <>
       <div className=' margin-top-00' style={{ backgroundColor: 'var(--gray-200)', padding: 'var(--spacing-13)' }}>
         <div className='max-width-1440'>
-          <h2 className='undp-typography'>
-            Current Priorities Based on
-            {' '}
-            {document.join(', ')}
-          </h2>
+          <div className='flex-div flex-vert-align-center flex-wrap'>
+            <h2 className='undp-typography margin-bottom-00'>
+              National Priorities Based on
+            </h2>
+            {defaultDocs ? (
+              <>
+                {document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
+              </>
+            ) : document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
+
+          </div>
           <div className='flex-div margin-top-07 flex-wrap' style={{ gap: '2rem' }}>
             <GraphContainer width='calc(40% - 1rem)'>
               <svg width='calc(100% - 20px)' viewBox='0 0 360 360'>
@@ -156,8 +173,8 @@ export const VNRAnalysis = (props: Props) => {
                   High Priority
                 </h4>
                 <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Click on the icons to see key features for the SDG</p>
-                <div className='sdg-icon-group'>
-                  <div className='sdg-icon-container'>
+                <div className='flex-div flex-wrap margin-bottom-11'>
+                  <div className='flex-div flex-wrap'>
                     {
                       high.map((d: any, i: number) => (
                         <div key={i} onClick={() => { setSelectedSDG(d); }} style={{ cursor: 'pointer' }}>
@@ -179,8 +196,8 @@ export const VNRAnalysis = (props: Props) => {
                   Medium Priority
                 </h4>
                 <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Click on the icons to see key features for the SDG</p>
-                <div className='sdg-icon-group'>
-                  <div className='sdg-icon-container'>
+                <div className='flex-div flex-wrap margin-bottom-11'>
+                  <div className='flex-div flex-wrap'>
                     {
                       medium.map((d: any, i: number) => (
                         <div key={i} onClick={() => { setSelectedSDG(d); }} style={{ cursor: 'pointer' }}>
@@ -202,8 +219,8 @@ export const VNRAnalysis = (props: Props) => {
                   Low Priority
                 </h4>
                 <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Click on the icons to see key features for the SDG</p>
-                <div className='sdg-icon-group'>
-                  <div className='sdg-icon-container'>
+                <div className='flex-div flex-wrap margin-bottom-11'>
+                  <div className='flex-div flex-wrap'>
                     {
                       low.map((d: any, i: number) => (
                         <div key={i} onClick={() => { setSelectedSDG(d); }} style={{ cursor: 'pointer' }}>
@@ -224,8 +241,8 @@ export const VNRAnalysis = (props: Props) => {
                   {' '}
                   Not Mentioned
                 </h4>
-                <div className='sdg-icon-group'>
-                  <div className='sdg-icon-container'>
+                <div className='flex-div flex-wrap margin-bottom-11'>
+                  <div className='flex-div flex-wrap'>
                     {
                       noMetion.map((d: any, i: number) => (
                         <div key={i}>
@@ -404,33 +421,29 @@ export const VNRAnalysis = (props: Props) => {
             }
           </GraphContainer>
           <GraphContainer width='calc(50% - 1rem)'>
-            <h2 className='undp-typography'>
-              Comparing SDG national priorities based on
-              {' '}
-              {document.join(', ')}
-              {' '}
-              and SDG gaps
-            </h2>
+            <div className='flex-div flex-vert-align-center flex-wrap margin-bottom-07'>
+              <h2 className='undp-typography margin-bottom-00'>
+                Comparing SDG trends and SDG national priorities based on
+              </h2>
+              {defaultDocs ? (
+                <>
+                  {document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
+                </>
+              ) : document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
+            </div>
             <p className='undp-typography'>
               This matrix maps the SDGs along two parameters
               <br />
-              1. their current trend status and
+              1. Their current trend status and
               <br />
-              2. their priority status as identified in the
-              {' '}
-              {document.join(', ')}
-              .
+              2. Their prominence referenced in documents
               <br />
               <br />
               Understanding which SDGs are off-track but potentially a low priority can provide an insightful starting point for national dialogues.
               <br />
               <br />
               <span className='italics small-font'>
-                Disclaimer: The current priorities identified in the
-                {' '}
-                {document.join(', ')}
-                {' '}
-                may not reflect the actual and complete priorities of the government. They are a starting point for further discussion. The SDG Trends assessment is based on currently available data in the
+                Disclaimer: The national priorities identified in the documents may not reflect the actual and complete priorities of the government. They are a starting point for further discussion. The SDG Trends assessment is based on currently available data in the
                 {' '}
                 <a href='https://unstats.un.org/sdgs/dataportal' className='undp-style' target='_blank' rel='noreferrer'>UN Stats SDG Data Portal</a>
                 {' '}
@@ -438,7 +451,7 @@ export const VNRAnalysis = (props: Props) => {
                 {' '}
                 <a href='https://unstats.un.org/sdgs/report/2022/Progress_Chart_Technical_Note_2022.pdf' className='undp-style' target='_blank' rel='noreferrer'>SDG Progress Chart 2022 Technical Note</a>
                 .
-                Engagement with National Statistics Offices and country Government are required to ensure the latest SDG data and national methodologies are incorporated and updated.
+                Additional data may be added to address gaps at government request, to provide a comprehensive landscape for identification of SDG policy pathways.
               </span>
             </p>
           </GraphContainer>
@@ -455,7 +468,7 @@ export const VNRAnalysis = (props: Props) => {
           ) : null
       }
       <div className='max-width-1440 margin-bottom-13' style={{ padding: '0 1rem' }}>
-        <button type='button' className='undp-button button-primary' onClick={() => { setShowSalienceGraph(!showSalienceGraph); }}>{showSalienceGraph ? 'Hide Salience Graph' : 'Show Salience Graph'}</button>
+        <button type='button' className='undp-button button-primary' onClick={() => { setShowSalienceGraph(!showSalienceGraph); }}>{showSalienceGraph ? 'Hide details' : 'Explore in detail '}</button>
       </div>
       {
         hoveredSDG ? (
