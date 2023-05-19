@@ -38,18 +38,15 @@ export const HomePage = (props: Props) => {
             }
           </h1>
           <h5 className='undp-typography'>
-            The
-            {' '}
-            <a href='https://sdgintegration.undp.org/sdg-push' className='undp-style dark-bg red-underline' target='_blank' rel='noreferrer'>SDG Push</a>
-            {' '}
-            reimagines and recalibrates how we determine, interrogate and advance development interventions that put countries on more stable footing. The SDG Push Diagnostic is a key element of the SDG Push.
+            SDG Push reimagines and recalibrates how we determine, interrogate and advance development interventions that put countries on more stable footing. The Diagnostic powers &lsquo;Integrated SDG Insights&lsquo; reports which provide a strong evidence-base and relevant insights to support national ambition at the SDG Summit 2023.
           </h5>
           {
             countryCode ? null : (
-              <div className='flex-div margin-top-09'>
+              <div className='margin-top-09'>
+                <p className='label margin-bottom-03'>Select a country to find out more</p>
                 <Select
                   className='undp-select'
-                  placeholder='Select a country'
+                  placeholder='Select a country to find out more'
                   showSearch
                   onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
                   style={{ flexGrow: 1 }}
@@ -72,62 +69,17 @@ export const HomePage = (props: Props) => {
                   <h2 className='undp-typography'>What does the SDG Push Diagnostic do?</h2>
                 </div>
                 <div className='undp-section-content'>
-                  The SDG Push Diagnostic provides a dynamic visualization of the development landscape. It integrates multiple data sources and digital innovation to establish a rapid landscape analysis – SDG trends, current priorities, potential futures, and interlinkages.
+                  The SDG Push Diagnostic provides a dynamic visualization of the development landscape to help countries chart acceleration pathways through their policy choices. It integrates multiple data sources to establish a rapid landscape analysis that showcases SDG trends, national priorities, interlinkages, and potential futures.
                   <br />
                   <br />
-                  Use the custom built tools below, to establish a rapid baseline with data-powered visualizations, a natural language processing tool, futures scenarios and mapping interlinkages.
+                  The diagnostic is the foundation for country-specific &lsquo;Integrated SDG Insights&lsquo; reports. By mapping national priorities against current SDG trends and exploring interlinkages across SDGs, it can help countries consider where policy choices could have the biggest multiplier effect or trade-off.
                 </div>
               </div>
             </div>
           )
       }
       <div className='margin-top-13 margin-bottom-13 max-width'>
-        <H2 className='undp-typography margin-bottom-07' style={{ padding: '0rem 1rem' }}>SDG push Diagnostics Features</H2>
-        <div className='undp-section margin-bottom-13 image-left margin-top-07'>
-          <div>
-            <img alt='Future Scenarios' src={IMAGES.img02} style={{ width: '100%' }} />
-          </div>
-          <div>
-            <h4 className='undp-typography margin-top-05'>Current Priorities</h4>
-            <p className='undp-typography large-font'>
-              Documents such as National Development Plans and
-              {' '}
-              <a href='https://sustainabledevelopment.un.org/vnrs/' target='_blank' rel='noreferrer' className='undp-style'>Voluntary National Reviews (VNRs)</a>
-              {' '}
-              indicate priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.
-              <br />
-              <br />
-              Explore the analysis of these priorities using Machine Learning by country.
-            </p>
-            {
-              countryCode ? (
-                <NavLink
-                  to={`../../sdg-push-diagnostic/${countryCode}/current-priorities`}
-                  style={{ color: 'var(--white)', textDecoration: 'none' }}
-                >
-                  <button type='button' className='undp-button button-primary button-arrow'>
-                    Explore Current Priorities
-                  </button>
-                </NavLink>
-              ) : (
-                <>
-                  <p className='label margin-top-07'>Select a country to analyze their current priorities</p>
-                  <Select
-                    style={{ width: '100%' }}
-                    className='undp-select'
-                    placeholder='Select Country'
-                    showSearch
-                    onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/current-priorities`, '_self'); }}
-                  >
-                    {
-                      sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
-                    }
-                  </Select>
-                </>
-              )
-            }
-          </div>
-        </div>
+        <H2 className='undp-typography margin-bottom-07' style={{ padding: '0rem 1rem' }}>SDG Push Diagnostics Features</H2>
         <div className='undp-section margin-bottom-13 image-right'>
           <div>
             <h4 className='undp-typography margin-top-05'>SDG Trends</h4>
@@ -138,7 +90,18 @@ export const HomePage = (props: Props) => {
               .
               <br />
               <br />
-              Understanding how countries perform against these provides a comprehensive assessment of the current trends and the baseline landscape against which to build the SDG Push.
+              Understanding how countries perform against these provides an assessment of SDG progress and the baseline landscape against which to build SDG policy pathways.
+              <br />
+              <br />
+              Countries SDG trends are based on
+              {' '}
+              <a href='https://unstats.un.org/sdgs/dataportal' target='_blank' rel='noreferrer' className='undp-style'>data</a>
+              {' '}
+              and
+              {' '}
+              <a href='https://unstats.un.org/sdgs/report/2022/Progress_Chart_Technical_Note_2022.pdf' target='_blank' rel='noreferrer' className='undp-style'>methodology</a>
+              {' '}
+              from the UN Statistics Division. Additional data may be added to address gaps at government request, to provide a comprehensive landscape for identification of SDG policy pathways.
             </p>
             {
               countryCode ? (
@@ -152,7 +115,7 @@ export const HomePage = (props: Props) => {
                 </NavLink>
               ) : (
                 <>
-                  <p className='label margin-top-07'>Select a country to explore their SDG trends</p>
+                  <p className='label margin-top-07'>Select a country to explore SDG trends </p>
                   <Select
                     style={{ width: '100%' }}
                     className='undp-select'
@@ -172,17 +135,68 @@ export const HomePage = (props: Props) => {
             <img alt='sgd trends' src={IMAGES.imgO1} style={{ width: '100%' }} />
           </div>
         </div>
-        <div className='undp-section image-left margin-bottom-13'>
+        <div className='undp-section margin-bottom-13 image-left margin-top-07'>
           <div>
-            <img alt='sinterlinkages' src={IMAGES.img04} style={{ width: '100%' }} />
+            <img alt='Future Scenarios' src={IMAGES.img02} style={{ width: '100%' }} />
           </div>
+          <div>
+            <h4 className='undp-typography margin-top-05'>National Priorities</h4>
+            <p className='undp-typography large-font'>
+              Current priorities are analysed using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is based on an improved
+              {' '}
+              <a href='https://zenodo.org/record/6831287#.ZGVpKHZBxhZ' target='_blank' rel='noreferrer' className='undp-style'>OSDG Community Dataset</a>
+              {' '}
+              from UNDP IICPSD SDG AI Lab. It considers 100k+ terms, including phrases and expressions.
+              <br />
+              <br />
+              Explore the analysis of these priorities using Machine Learning by country.
+            </p>
+            {
+              countryCode ? (
+                <NavLink
+                  to={`../../sdg-push-diagnostic/${countryCode}/current-priorities`}
+                  style={{ color: 'var(--white)', textDecoration: 'none' }}
+                >
+                  <button type='button' className='undp-button button-primary button-arrow'>
+                    Explore National Priorities
+                  </button>
+                </NavLink>
+              ) : (
+                <>
+                  <p className='label margin-top-07'>Select a country to explore national priorities</p>
+                  <Select
+                    style={{ width: '100%' }}
+                    className='undp-select'
+                    placeholder='Select Country'
+                    showSearch
+                    onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/current-priorities`, '_self'); }}
+                  >
+                    {
+                      sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
+                    }
+                  </Select>
+                </>
+              )
+            }
+          </div>
+        </div>
+        <div className='undp-section image-right margin-bottom-13'>
           <div>
             <h4 className='undp-typography margin-top-05'>SDG Interlinkages</h4>
             <p className='undp-typography large-font'>
-              The SDGs do not exist in silos. Understanding the interactions across social, economic, political, health and environmental developments is essential to move the needle on the SDGs.
+              The SDGs do not exist in silos. Understanding the interactions across social, economic and environmental elements of sustainable development is essential to move the needle on the SDGs. SDG Interlinkages show how actions directed towards one SDG can influence the others. Uncovering and understanding these interactions helps in achieving the 2030 Agenda - avoiding the unintended deterioration of the SDGs and their 169 associated targets.
               <br />
               <br />
-              Examine how the 169 targets are interconnected and how this relates to the SDGs that are not on track to reach the 2030 goals.
+              The target-level interlinkages are based on the latest available methodology by the
+              {' '}
+              <a href='https://knowsdgs.jrc.ec.europa.eu/interlinkages-targets' target='_blank' rel='noreferrer' className='undp-style'>KnowSDGs Platform by European Commission</a>
+              . A first literature review (
+              <a href='https://publications.jrc.ec.europa.eu/repository/handle/JRC115163' target='_blank' rel='noreferrer' className='undp-style'>Miola et al., 2019</a>
+              ) was updated and expanded in
+              {' '}
+              <a href='https://knowsdgs.jrc.ec.europa.eu/intro-interlinkages' target='_blank' rel='noreferrer' className='undp-style'>2021-2022</a>
+              {' '}
+              by a team of researchers who retrieved and analysed all relevant scientific and grey literature* on SDG interlinkages, both in Scopus and Google Scholar.
             </p>
             {
               countryCode ? (
@@ -196,7 +210,7 @@ export const HomePage = (props: Props) => {
                 </NavLink>
               ) : (
                 <>
-                  <p className='label margin-top-07'>Select a country to explore their SDG interlinkages</p>
+                  <p className='label margin-top-07'>Select a country to explore SDG interlinkages</p>
                   <Select
                     style={{ width: '100%' }}
                     className='undp-select'
@@ -212,16 +226,28 @@ export const HomePage = (props: Props) => {
               )
             }
           </div>
+          <div>
+            <img alt='sinterlinkages' src={IMAGES.img04} style={{ width: '100%' }} />
+          </div>
         </div>
-        <div className='undp-section image-right'>
+        <div className='undp-section image-left'>
+          <div>
+            <img alt='future scenarios' src={IMAGES.img03} style={{ width: '100%' }} />
+          </div>
           <div>
             <h4 className='undp-typography margin-top-05'>Future Scenarios</h4>
             <p className='undp-typography large-font'>
-              In the SDG Push we will be identifying potential accelerators.
+              SDG Push identifies national
               {' '}
-              <a href='https://data.undp.org/wp-content/uploads/2021/04/Leaving-No-One-Behind-COVID-impact-on-the-SDGs-second-flagship-2.pdf' target='_blank' className='undp-style' rel='noreferrer'>UNDP&apos;s flagship publication</a>
+              <a href='https://sdgintegration.undp.org/covid-impact-low-and-medium-hdi-groups' target='_blank' className='undp-style' rel='noreferrer'>SDG insights based on integrated accelerators</a>
               {' '}
-              presents one such scenario (governance, social protection, green economy, and digitalisation) at the global level that can put us back on track to recover better.
+              across Governance, Social Protection, Green Economy and Digital Disruption.
+              <br />
+              <br />
+              Based on the systems model of
+              {' '}
+              <a href='https://korbel.du.edu/pardee/international-futures-platform' target='_blank' className='undp-style' rel='noreferrer'>international futures</a>
+              , SDG Push models the impact that incorporating SDG Push accelerators in development can make, providing valuable insights into systems interactions across the SDGs.
             </p>
             {
               countryCode ? (
@@ -235,7 +261,7 @@ export const HomePage = (props: Props) => {
                 </NavLink>
               ) : (
                 <>
-                  <p className='label margin-top-07'>Select a country to explore their future scenarios</p>
+                  <p className='label margin-top-07'>Select a country to explore future scenarios</p>
                   <Select
                     style={{ width: '100%' }}
                     className='undp-select'
@@ -250,9 +276,6 @@ export const HomePage = (props: Props) => {
                 </>
               )
             }
-          </div>
-          <div>
-            <img alt='future scenarios' src={IMAGES.img03} style={{ width: '100%' }} />
           </div>
         </div>
       </div>

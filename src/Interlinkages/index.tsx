@@ -60,9 +60,6 @@ export const Interlinkages = (props: Props) => {
             {' '}
             {countryFullName}
           </h1>
-          <h5 className='undp-typography'>
-            Examine how the 169 targets are interconnected and how this relates to the SDGs that are not on track to reach the 2030 goals.
-          </h5>
         </div>
       </HeroImageEl>
       <div className='undp-hero-section-gray'>
@@ -71,10 +68,19 @@ export const Interlinkages = (props: Props) => {
             <h2 className='undp-typography'>Synergies and Tradeoffs</h2>
           </div>
           <div className='undp-section-content'>
-            The SDGs do not exist in silos, understanding how the goals are interconnected, both positively and negatively, is essential to understanding the mechanisms for achieving the targets.
+            The SDGs do not exist in silos. Understanding the interactions across social, economic and environmental elements of sustainable development is essential to move the needle on the SDGs. SDG Interlinkages show how actions directed towards one SDG can influence the others. Uncovering and understanding these interactions helps in achieving the 2030 Agenda - avoiding the unintended deterioration of the SDGs and their 169 associated targets.
             <br />
             <br />
-            Examine how the 169 targets are interconnected and how this relates to the SDGs that are not on track to reach the 2030 goals.
+            The target-level interlinkages are based on the latest available methodology by the
+            {' '}
+            <a href='https://knowsdgs.jrc.ec.europa.eu/interlinkages-targets' target='_blank' rel='noreferrer' className='undp-style dark-bg'>KnowSDGs Platform by European Commission</a>
+            . A first literature review (
+            <a href='https://publications.jrc.ec.europa.eu/repository/handle/JRC115163' target='_blank' rel='noreferrer' className='undp-style dark-bg'>Miola et al., 2019</a>
+            ) was updated and expanded in
+            {' '}
+            <a href='https://knowsdgs.jrc.ec.europa.eu/intro-interlinkages' target='_blank' rel='noreferrer' className='undp-style dark-bg'>2021-2022</a>
+            {' '}
+            by a team of researchers who retrieved and analysed all relevant scientific and grey literature* on SDG interlinkages, both in Scopus and Google Scholar.
           </div>
         </div>
       </div>
@@ -96,13 +102,13 @@ export const Interlinkages = (props: Props) => {
           The synergies and tradeoffs are global, which means they are the same for all countries as mapped by the
           {' '}
           <a className='undp-style' target='_blank' href='https://knowsdgs.jrc.ec.europa.eu/interlinkages-targets' rel='noreferrer'>KnowSDGs Platform by European Commission</a>
-          . This methodology can be adapted to the national context.
+          .
           <br />
           <br />
-          The traffic light colouring of the targets is customised based on each countries data on the SDGs. Targets are greyed out because of lack of data, however, the information on interlinkages still applies.
+          The traffic light colouring of the targets is customised based on each countries data on the SDGs. Greyed out targets occur due to a lack of data, however, the information on interlinkages still applies.
           <br />
           <br />
-          <span className='italics'>Click on the target to see the interlinkages</span>
+          <span className='italics'>Click on a target to see the interlinkages</span>
         </p>
       </div>
       <div className='margin-top-07 max-width-1440 margin-bottom-13' style={{ padding: '0 1rem' }}>

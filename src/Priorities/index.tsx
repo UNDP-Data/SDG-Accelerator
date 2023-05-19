@@ -9,9 +9,10 @@ import {
 import { useEffect, useRef, useState } from 'react';
 import sortBy from 'lodash.sortby';
 import reverse from 'lodash.reverse';
+import { json } from 'd3-request';
 import { VNRAnalysis } from './VNRAnalysis';
 import { GoalStatusType } from '../Types';
-import { API_ACCESS_TOKEN } from '../Constants';
+import { API_ACCESS_TOKEN, COUNTRIES_WITH_DOCS, DATASOURCELINK } from '../Constants';
 import IMAGES from '../img/images';
 
 interface Props {
@@ -149,58 +150,72 @@ export const Priorities = (props: Props) => {
   };
 
   useEffect(() => {
-    axios.get(
-      'https://sdg-push-diagnostic-api.azurewebsites.net/v1/vnrs/list',
-      {
-        headers: { access_token: API_ACCESS_TOKEN },
-      },
-    )
-      .then((response:AxiosResponse) => {
-        const countryData = reverse(sortBy(response.data.filter((country: any) => country.iso === countrySelected.toLowerCase()), 'year'));
-        setCountryVNRs(countryData);
-        if (countryData.length > 0) {
-          setVNRYear(countryData[0].year);
-          setSelectYear(countryData[0].year);
-          axios.get(
-            `https://sdg-push-diagnostic-api.azurewebsites.net/v1/vnrs/find?iso=${countrySelected.toLowerCase()}&year=${countryData[0].year}&language=${countryData[0].language}`,
-            {
-              headers: { access_token: API_ACCESS_TOKEN },
-            },
-          )
-            .then((res) => {
-              setData(res.data.sdgs);
-            })
-            .catch((errorFetchingVNR) => {
-              setError(errorFetchingVNR.message);
-            });
-        } else {
-          setError('No VNRs');
-        }
+    if (COUNTRIES_WITH_DOCS.indexOf(countrySelected) === -1) {
+      axios.get(
+        'https://sdg-push-diagnostic-api.azurewebsites.net/v1/vnrs/list',
+        {
+          headers: { access_token: API_ACCESS_TOKEN },
+        },
+      )
+        .then((response:AxiosResponse) => {
+          const countryData = reverse(sortBy(response.data.filter((country: any) => country.iso === countrySelected.toLowerCase()), 'year'));
+          setCountryVNRs(countryData);
+          if (countryData.length > 0) {
+            setVNRYear(countryData[0].year);
+            setSelectYear(countryData[0].year);
+            axios.get(
+              `https://sdg-push-diagnostic-api.azurewebsites.net/v1/vnrs/find?iso=${countrySelected.toLowerCase()}&year=${countryData[0].year}&language=${countryData[0].language}`,
+              {
+                headers: { access_token: API_ACCESS_TOKEN },
+              },
+            )
+              .then((res) => {
+                setData(res.data.sdgs);
+              })
+              .catch((errorFetchingVNR) => {
+                setError(errorFetchingVNR.message);
+              });
+          } else {
+            setError('No VNRs');
+          }
+        });
+    } else {
+      json(`${DATASOURCELINK}/data/PrioritiesData/${countrySelected}.json`, (err: any, d: any) => {
+        if (err) { setError(err); }
+        setData({ mode: 'defaultDocs', data: d.sdgs, documents: d.doc_name });
       });
+    }
   }, [countrySelected]);
   return (
     <>
       <HeroImageEl className='undp-hero-image'>
         <div className='max-width-1440' style={{ backgroundColor: 'var(--white)', color: 'var(--black)', padding: 'var(--spacing-06)' }}>
           <h1 className='undp-typography'>
-            Show Current Priorities For
+            National Priorities For
             {' '}
             {countryFullName}
           </h1>
           <div className='margin-top-07'>
             <Tabs
-              defaultActiveKey='vnrs'
+              defaultActiveKey={COUNTRIES_WITH_DOCS.indexOf(countrySelected) === -1 ? 'vnrs' : 'nationalPriorities'}
               className='undp-tabs'
               onChange={() => {
                 setStrategy('equal');
               }}
               items={[
                 {
-                  label: 'Analyze VNRs',
-                  key: 'vnrs',
-                  children: (
+                  label: COUNTRIES_WITH_DOCS.indexOf(countrySelected) === -1 ? 'Analyze VNRs' : 'National Priorities',
+                  key: COUNTRIES_WITH_DOCS.indexOf(countrySelected) === -1 ? 'vnrs' : 'nationalPriorities',
+                  children: COUNTRIES_WITH_DOCS.indexOf(countrySelected) === -1 ? (
                     <>
                       <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
+                        Countries national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is an improved and cleaned
+                        {' '}
+                        <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer' className='undp-style'>OSDG Community Dataset</a>
+                        {' '}
+                        from UNDP IICPSD SDG AI Lab. It considers 100k+ terms, including phrases and expressions.
+                        <br />
+                        <br />
                         Documents such as
                         {' '}
                         <a href='https://sustainabledevelopment.un.org/vnrs/' target='_blank' rel='noreferrer' className='undp-style'>Voluntary National Reviews (VNRs)</a>
@@ -218,7 +233,7 @@ export const Priorities = (props: Props) => {
                                 <div className='margin-top-07'>
                                   <p className='label undp-typography'>Select year</p>
                                   <Select
-                                    className='undp-select'
+                                    className='undp-select margin-bottom-07'
                                     placeholder='Select Year'
                                     value={selectYear}
                                     onChange={(value) => { setSelectYear(value); }}
@@ -241,7 +256,7 @@ export const Priorities = (props: Props) => {
                             )
                             : (
                               <>
-                                <div className='margin-top-07'>
+                                <div className='margin-top-07 margin-bottom-07'>
                                   <Select
                                     className='undp-select'
                                     placeholder='No VNRs Available'
@@ -260,6 +275,20 @@ export const Priorities = (props: Props) => {
                           )
                       }
                     </>
+                  ) : (
+                    <h5 className='undp-typography' style={{ color: 'var(--black)', lineHeight: 1.5 }}>
+                      Countries national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is an improved and cleaned
+                      {' '}
+                      <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer' className='undp-style'>OSDG Community Dataset</a>
+                      {' '}
+                      from UNDP IICPSD SDG AI Lab. It considers 100k+ terms, including phrases and expressions.
+                      <br />
+                      <br />
+                      Documents such as National Development Plans indicate priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.
+                      <br />
+                      <br />
+                      Explore the analysis of these priorities using Machine Learning.
+                    </h5>
                   ),
                 },
                 {
@@ -379,9 +408,10 @@ export const Priorities = (props: Props) => {
           : data
             ? (
               <VNRAnalysis
-                data={data.mode === 'analyze' ? data.data : data}
+                data={data.mode === 'analyze' || data.mode === 'defaultDocs' ? data.data : data}
                 goalStatuses={goalStatuses}
-                document={data.mode === 'analyze' ? selectedFile.map((d:any) => d.name) : [`VNR ${vnrYear}`]}
+                document={data.mode === 'analyze' ? selectedFile.map((d:any) => d.name) : data.mode === 'defaultDocs' ? data.documents : [`VNR ${vnrYear}`]}
+                defaultDocs={data.mode === 'defaultDocs'}
               />
             )
             : null
