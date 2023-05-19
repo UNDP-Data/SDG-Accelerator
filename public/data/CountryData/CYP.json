@@ -23,7 +23,7 @@
     },
     {
       "goal": 12,
-      "noOfIndicatorsWithData": 7,
+      "noOfIndicatorsWithData": 6,
       "status": "Identified Gap"
     },
     {
@@ -33,7 +33,7 @@
     },
     {
       "goal": 4,
-      "noOfIndicatorsWithData": 3,
+      "noOfIndicatorsWithData": 4,
       "status": "For Review"
     },
     {
@@ -191,7 +191,7 @@
     {
       "goal": "12",
       "target": "12.4",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "12",
@@ -486,7 +486,7 @@
     {
       "goal": "4",
       "target": "4.5",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "4",
@@ -784,12 +784,6 @@
       "target": "12.3",
       "indicator": "12.3.1",
       "status": null
-    },
-    {
-      "goal": "12",
-      "target": "12.4",
-      "indicator": "12.4.1",
-      "status": "Identified Gap"
     },
     {
       "goal": "12",
@@ -1257,7 +1251,7 @@
       "goal": "4",
       "target": "4.5",
       "indicator": "4.5.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "4",
@@ -6483,154 +6477,6 @@
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
       "status": "Insufficient Data"
-    },
-    {
-      "Reporting Type": "G",
-      "series": "SG_HAZ_CMRMNTRL",
-      "goal": "12",
-      "target": "12.4",
-      "indicator": "12.4.1",
-      "seriesDescription": "Parties meeting their commitments and obligations in transmitting information as required by Montreal Protocol on hazardous waste, and other chemicals",
-      "values": [
-        {
-          "value": 100.0,
-          "year": 2015.0
-        },
-        {
-          "value": 100.0,
-          "year": 2020.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "increase",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2020.0
-      },
-      "Custodian_Agency(ies)": "UNEP",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Limited or No Progress"
-    },
-    {
-      "Reporting Type": "G",
-      "series": "SG_HAZ_CMRROTDAM",
-      "goal": "12",
-      "target": "12.4",
-      "indicator": "12.4.1",
-      "seriesDescription": "Parties meeting their commitments and obligations in transmitting information as required by Rotterdam Convention on hazardous waste, and other chemicals",
-      "values": [
-        {
-          "value": 100.0,
-          "year": 2015.0
-        },
-        {
-          "value": 96.55,
-          "year": 2020.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "increase",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2020.0
-      },
-      "Custodian_Agency(ies)": "UNEP",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Limited or No Progress"
-    },
-    {
-      "Reporting Type": "G",
-      "series": "SG_HAZ_CMRBASEL",
-      "goal": "12",
-      "target": "12.4",
-      "indicator": "12.4.1",
-      "seriesDescription": "Parties meeting their commitments and obligations in transmitting information as required by Basel Convention on hazardous waste, and other chemicals",
-      "values": [
-        {
-          "value": 100.0,
-          "year": 2015.0
-        },
-        {
-          "value": 80.0,
-          "year": 2020.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "increase",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2020.0
-      },
-      "Custodian_Agency(ies)": "UNEP",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Deterioration"
-    },
-    {
-      "Reporting Type": "G",
-      "series": "SG_HAZ_CMRSTHOLM",
-      "goal": "12",
-      "target": "12.4",
-      "indicator": "12.4.1",
-      "seriesDescription": "Parties meeting their commitments and obligations in transmitting information as required by Stockholm Convention on hazardous waste, and other chemicals",
-      "values": [
-        {
-          "value": 100.0,
-          "year": 2015.0
-        },
-        {
-          "value": 100.0,
-          "year": 2020.0
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "increase",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2020.0
-      },
-      "Custodian_Agency(ies)": "UNEP",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Limited or No Progress"
     },
     {
       "Reporting Type": "G",
@@ -19915,7 +19761,7 @@
       "Partner_Agency(ies)": "OECD",
       "Tier_Classification": "Tier I/II depending on indice",
       "currentLevelAssessment": null,
-      "status": null
+      "status": "Target Achieved"
     },
     {
       "Age": "15-64",
@@ -19984,7 +19830,7 @@
       "Partner_Agency(ies)": "OECD",
       "Tier_Classification": "Tier I/II depending on indice",
       "currentLevelAssessment": null,
-      "status": null
+      "status": "Limited or No Progress"
     },
     {
       "Type of skill": "EMAIL",
@@ -20066,7 +19912,7 @@
       "Partner_Agency(ies)": "OECD",
       "Tier_Classification": "Tier I/II depending on indice",
       "currentLevelAssessment": null,
-      "status": null
+      "status": "Deterioration"
     },
     {
       "Type of skill": "CMFL",
@@ -20111,7 +19957,7 @@
       "Partner_Agency(ies)": "OECD",
       "Tier_Classification": "Tier I/II depending on indice",
       "currentLevelAssessment": null,
-      "status": null
+      "status": "Target Achieved"
     },
     {
       "Type of skill": "ARSP",
@@ -20160,7 +20006,7 @@
       "Partner_Agency(ies)": "OECD",
       "Tier_Classification": "Tier I/II depending on indice",
       "currentLevelAssessment": null,
-      "status": null
+      "status": "On Track"
     },
     {
       "Type of skill": "EPRS",
@@ -20209,7 +20055,7 @@
       "Partner_Agency(ies)": "OECD",
       "Tier_Classification": "Tier I/II depending on indice",
       "currentLevelAssessment": null,
-      "status": null
+      "status": "Deterioration"
     },
     {
       "Type of skill": "TRAF",
@@ -20258,7 +20104,7 @@
       "Partner_Agency(ies)": "OECD",
       "Tier_Classification": "Tier I/II depending on indice",
       "currentLevelAssessment": null,
-      "status": null
+      "status": "On Track"
     },
     {
       "Type of skill": "INST",
@@ -20344,7 +20190,7 @@
       "Partner_Agency(ies)": "OECD",
       "Tier_Classification": "Tier I/II depending on indice",
       "currentLevelAssessment": null,
-      "status": null
+      "status": "Deterioration"
     },
     {
       "Type of skill": "SOFT",
@@ -20381,7 +20227,7 @@
       "Partner_Agency(ies)": "OECD",
       "Tier_Classification": "Tier I/II depending on indice",
       "currentLevelAssessment": null,
-      "status": null
+      "status": "On Track"
     },
     {
       "Age": "16-65",
