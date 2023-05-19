@@ -3,7 +3,7 @@
   "goalStatus": [
     {
       "goal": 10,
-      "noOfIndicatorsWithData": 4,
+      "noOfIndicatorsWithData": 3,
       "status": "For Review"
     },
     {
@@ -19,7 +19,7 @@
     {
       "goal": 15,
       "noOfIndicatorsWithData": 5,
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": 17,
@@ -41,7 +41,7 @@
     {
       "goal": "10",
       "target": "10.4",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "10",
@@ -61,7 +61,7 @@
     {
       "goal": "11",
       "target": "11.a",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "14",
@@ -71,7 +71,7 @@
     {
       "goal": "15",
       "target": "15.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "15",
@@ -81,7 +81,7 @@
     {
       "goal": "15",
       "target": "15.4",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "15",
@@ -91,7 +91,7 @@
     {
       "goal": "15",
       "target": "15.6",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "17",
@@ -114,7 +114,7 @@
       "goal": "10",
       "target": "10.4",
       "indicator": "10.4.1",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "10",
@@ -144,7 +144,7 @@
       "goal": "11",
       "target": "11.a",
       "indicator": "11.a.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "14",
@@ -156,7 +156,7 @@
       "goal": "15",
       "target": "15.1",
       "indicator": "15.1.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "15",
@@ -168,7 +168,7 @@
       "goal": "15",
       "target": "15.4",
       "indicator": "15.4.2",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "15",
@@ -180,7 +180,7 @@
       "goal": "15",
       "target": "15.6",
       "indicator": "15.6.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "17",
@@ -1566,20 +1566,12 @@
           "year": 2020.0
         }
       ],
-      "methodology": {
-        "targetValue": "0",
-        "trendMethodology": "Parity",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": null,
-        "latestAvailable": 2020.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "FAO",
       "Partner_Agency(ies)": "UNEP,UNFCCC",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": null
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -3431,20 +3423,12 @@
           "year": 2022.0
         }
       ],
-      "methodology": {
-        "targetValue": "0",
-        "trendMethodology": "Parity",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2022.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "UNEP,Ramsar",
       "Partner_Agency(ies)": "UN-Water,IUCN",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": null
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",

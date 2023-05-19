@@ -24,7 +24,7 @@
     {
       "goal": 16,
       "noOfIndicatorsWithData": 1,
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": 12,
@@ -38,27 +38,27 @@
     },
     {
       "goal": 7,
-      "noOfIndicatorsWithData": 6,
+      "noOfIndicatorsWithData": 5,
       "status": "Identified Gap"
     },
     {
       "goal": 15,
+      "noOfIndicatorsWithData": 11,
+      "status": "Identified Gap"
+    },
+    {
+      "goal": 17,
       "noOfIndicatorsWithData": 12,
       "status": "For Review"
     },
     {
-      "goal": 17,
-      "noOfIndicatorsWithData": 13,
-      "status": "For Review"
-    },
-    {
       "goal": 2,
-      "noOfIndicatorsWithData": 7,
+      "noOfIndicatorsWithData": 6,
       "status": "Identified Gap"
     },
     {
       "goal": 3,
-      "noOfIndicatorsWithData": 18,
+      "noOfIndicatorsWithData": 16,
       "status": "For Review"
     },
     {
@@ -73,13 +73,13 @@
     },
     {
       "goal": 6,
-      "noOfIndicatorsWithData": 6,
+      "noOfIndicatorsWithData": 4,
       "status": "For Review"
     },
     {
       "goal": 9,
       "noOfIndicatorsWithData": 4,
-      "status": "For Review"
+      "status": "Identified Gap"
     }
   ],
   "targetStatus": [
@@ -131,7 +131,7 @@
     {
       "goal": "10",
       "target": "10.5",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "10",
@@ -161,7 +161,7 @@
     {
       "goal": "11",
       "target": "11.a",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "12",
@@ -211,7 +211,7 @@
     {
       "goal": "15",
       "target": "15.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "15",
@@ -226,7 +226,7 @@
     {
       "goal": "15",
       "target": "15.4",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "15",
@@ -236,12 +236,12 @@
     {
       "goal": "15",
       "target": "15.6",
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": "15",
       "target": "15.8",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "15",
@@ -276,7 +276,7 @@
     {
       "goal": "16",
       "target": "16.a",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "17",
@@ -301,7 +301,7 @@
     {
       "goal": "17",
       "target": "17.15",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "17",
@@ -311,7 +311,7 @@
     {
       "goal": "17",
       "target": "17.18",
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": "17",
@@ -336,7 +336,7 @@
     {
       "goal": "17",
       "target": "17.8",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "17",
@@ -376,7 +376,7 @@
     {
       "goal": "3",
       "target": "3.2",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "3",
@@ -401,7 +401,7 @@
     {
       "goal": "3",
       "target": "3.7",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "3",
@@ -481,7 +481,7 @@
     {
       "goal": "6",
       "target": "6.4",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "6",
@@ -501,7 +501,7 @@
     {
       "goal": "6",
       "target": "6.b",
-      "status": "Identified Gap"
+      "status": null
     },
     {
       "goal": "7",
@@ -516,7 +516,7 @@
     {
       "goal": "7",
       "target": "7.3",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "7",
@@ -639,7 +639,7 @@
       "goal": "10",
       "target": "10.5",
       "indicator": "10.5.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "10",
@@ -687,7 +687,7 @@
       "goal": "11",
       "target": "11.a",
       "indicator": "11.a.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "12",
@@ -753,7 +753,7 @@
       "goal": "15",
       "target": "15.1",
       "indicator": "15.1.2",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "15",
@@ -789,13 +789,13 @@
       "goal": "15",
       "target": "15.6",
       "indicator": "15.6.1",
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": "15",
       "target": "15.8",
       "indicator": "15.8.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "15",
@@ -837,7 +837,7 @@
       "goal": "16",
       "target": "16.a",
       "indicator": "16.a.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "17",
@@ -873,7 +873,7 @@
       "goal": "17",
       "target": "17.15",
       "indicator": "17.15.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "17",
@@ -891,7 +891,7 @@
       "goal": "17",
       "target": "17.18",
       "indicator": "17.18.3",
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": "17",
@@ -927,7 +927,7 @@
       "goal": "17",
       "target": "17.8",
       "indicator": "17.8.1",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "17",
@@ -951,7 +951,7 @@
       "goal": "2",
       "target": "2.2",
       "indicator": "2.2.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "2",
@@ -963,7 +963,7 @@
       "goal": "2",
       "target": "2.2",
       "indicator": "2.2.3",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "2",
@@ -1029,7 +1029,7 @@
       "goal": "3",
       "target": "3.3",
       "indicator": "3.3.2",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "3",
@@ -1083,7 +1083,7 @@
       "goal": "3",
       "target": "3.7",
       "indicator": "3.7.2",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "3",
@@ -1215,7 +1215,7 @@
       "goal": "6",
       "target": "6.4",
       "indicator": "6.4.2",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "6",
@@ -1239,7 +1239,7 @@
       "goal": "6",
       "target": "6.b",
       "indicator": "6.b.1",
-      "status": "Identified Gap"
+      "status": null
     },
     {
       "goal": "7",
@@ -1263,7 +1263,7 @@
       "goal": "7",
       "target": "7.3",
       "indicator": "7.3.1",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "7",
@@ -2827,7 +2827,7 @@
         }
       ],
       "methodology": {
-        "targetValue": "4",
+        "targetValue": 4,
         "normativeDirection": "increase",
         "trendMethodology": "Likert",
         "baselineYear": {
@@ -5307,20 +5307,12 @@
           "year": 2020.0
         }
       ],
-      "methodology": {
-        "targetValue": "0",
-        "trendMethodology": "Parity",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": null,
-        "latestAvailable": 2020.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "FAO",
       "Partner_Agency(ies)": "UNEP,UNFCCC",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": null
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -8643,20 +8635,12 @@
           "year": 2019.0
         }
       ],
-      "methodology": {
-        "targetValue": "1",
-        "trendMethodology": "Parity",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2019.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "World Bank",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": null
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -8707,20 +8691,12 @@
           "year": 2020.0
         }
       ],
-      "methodology": {
-        "targetValue": "1",
-        "trendMethodology": "Parity",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2020.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "World Bank",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": null
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -9446,20 +9422,12 @@
           "year": 2021.0
         }
       ],
-      "methodology": {
-        "targetValue": "2",
-        "trendMethodology": "Parity",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "World Bank",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": null
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -12180,20 +12148,12 @@
           "year": 2018.0
         }
       ],
-      "methodology": {
-        "targetValue": "1",
-        "trendMethodology": "Parity",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2018.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "FAO",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": null
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Type of product": "MAZ",
@@ -12237,20 +12197,12 @@
           "year": 2022.0
         }
       ],
-      "methodology": {
-        "targetValue": "1",
-        "trendMethodology": "Parity",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2022.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "FAO",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": null
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Type of product": "WHE",
@@ -12278,20 +12230,12 @@
           "year": 2018.0
         }
       ],
-      "methodology": {
-        "targetValue": "1",
-        "trendMethodology": "Parity",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2018.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "FAO",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": null
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Sex": "FEMALE",
@@ -14251,7 +14195,7 @@
         }
       ],
       "methodology": {
-        "targetValue": "1",
+        "targetValue": 1,
         "trendMethodology": "Parity",
         "baselineYear": {
           "all": 2015
@@ -14280,7 +14224,7 @@
         }
       ],
       "methodology": {
-        "targetValue": "1",
+        "targetValue": 1,
         "trendMethodology": "Parity",
         "baselineYear": {
           "all": 2015
@@ -16384,20 +16328,12 @@
           "year": 2022.0
         }
       ],
-      "methodology": {
-        "targetValue": "0",
-        "trendMethodology": "Parity",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2022.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "UNEP,Ramsar",
       "Partner_Agency(ies)": "UN-Water,IUCN",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": null
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -17158,7 +17094,7 @@
         }
       ],
       "methodology": {
-        "targetValue": "3",
+        "targetValue": 3,
         "normativeDirection": "increase",
         "trendMethodology": "Likert",
         "baselineYear": {
@@ -17204,7 +17140,7 @@
         }
       ],
       "methodology": {
-        "targetValue": "10",
+        "targetValue": 10,
         "normativeDirection": "increase",
         "trendMethodology": "Likert",
         "baselineYear": {
@@ -17217,7 +17153,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": "Target met or almost met",
-      "status": "Limited or No Progress"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -17237,7 +17173,7 @@
         }
       ],
       "methodology": {
-        "targetValue": "3",
+        "targetValue": 3,
         "normativeDirection": "increase",
         "trendMethodology": "Likert",
         "baselineYear": {
@@ -17270,7 +17206,7 @@
         }
       ],
       "methodology": {
-        "targetValue": "10",
+        "targetValue": 10,
         "normativeDirection": "increase",
         "trendMethodology": "Likert",
         "baselineYear": {

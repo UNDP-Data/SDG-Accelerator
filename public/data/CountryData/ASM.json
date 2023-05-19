@@ -4,12 +4,12 @@
     {
       "goal": 1,
       "noOfIndicatorsWithData": 1,
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": 11,
-      "noOfIndicatorsWithData": 2,
-      "status": "For Review"
+      "noOfIndicatorsWithData": 1,
+      "status": "Identified Gap"
     },
     {
       "goal": 10,
@@ -34,7 +34,7 @@
     {
       "goal": 15,
       "noOfIndicatorsWithData": 7,
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": 16,
@@ -66,7 +66,7 @@
     {
       "goal": "1",
       "target": "1.4",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "1",
@@ -86,12 +86,12 @@
     {
       "goal": "11",
       "target": "11.6",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "11",
       "target": "11.a",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "12",
@@ -131,7 +131,7 @@
     {
       "goal": "15",
       "target": "15.4",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "15",
@@ -141,7 +141,7 @@
     {
       "goal": "15",
       "target": "15.6",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "16",
@@ -181,7 +181,7 @@
     {
       "goal": "3",
       "target": "3.7",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "6",
@@ -229,7 +229,7 @@
       "goal": "1",
       "target": "1.4",
       "indicator": "1.4.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "1",
@@ -253,13 +253,13 @@
       "goal": "11",
       "target": "11.6",
       "indicator": "11.6.2",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "11",
       "target": "11.a",
       "indicator": "11.a.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "12",
@@ -319,7 +319,7 @@
       "goal": "15",
       "target": "15.4",
       "indicator": "15.4.2",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "15",
@@ -331,7 +331,7 @@
       "goal": "15",
       "target": "15.6",
       "indicator": "15.6.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "16",
@@ -379,7 +379,7 @@
       "goal": "3",
       "target": "3.7",
       "indicator": "3.7.2",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "6",
@@ -2680,20 +2680,12 @@
           "year": 2020.0
         }
       ],
-      "methodology": {
-        "targetValue": "0",
-        "trendMethodology": "Parity",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": null,
-        "latestAvailable": 2020.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "FAO",
       "Partner_Agency(ies)": "UNEP,UNFCCC",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": null
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -6158,20 +6150,12 @@
           "year": 2022.0
         }
       ],
-      "methodology": {
-        "targetValue": "0",
-        "trendMethodology": "Parity",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2022.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "UNEP,Ramsar",
       "Partner_Agency(ies)": "UN-Water,IUCN",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": null
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -6634,20 +6618,12 @@
           "year": 2020.0
         }
       ],
-      "methodology": {
-        "targetValue": "0",
-        "trendMethodology": "Parity",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2020.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "UNEP,Ramsar",
       "Partner_Agency(ies)": "UN-Water,IUCN",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": null
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",

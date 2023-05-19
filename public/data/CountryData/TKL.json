@@ -8,8 +8,8 @@
     },
     {
       "goal": 11,
-      "noOfIndicatorsWithData": 2,
-      "status": "For Review"
+      "noOfIndicatorsWithData": 1,
+      "status": "Identified Gap"
     },
     {
       "goal": 10,
@@ -34,11 +34,11 @@
     {
       "goal": 15,
       "noOfIndicatorsWithData": 4,
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": 17,
-      "noOfIndicatorsWithData": 5,
+      "noOfIndicatorsWithData": 4,
       "status": "For Review"
     },
     {
@@ -64,7 +64,7 @@
     {
       "goal": 8,
       "noOfIndicatorsWithData": 1,
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": 9,
@@ -101,12 +101,12 @@
     {
       "goal": "11",
       "target": "11.6",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "11",
       "target": "11.a",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "7",
@@ -151,7 +151,7 @@
     {
       "goal": "15",
       "target": "15.6",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "15",
@@ -176,7 +176,7 @@
     {
       "goal": "17",
       "target": "17.18",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "17",
@@ -251,7 +251,7 @@
     {
       "goal": "8",
       "target": "8.a",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "9",
@@ -294,13 +294,13 @@
       "goal": "11",
       "target": "11.6",
       "indicator": "11.6.2",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "11",
       "target": "11.a",
       "indicator": "11.a.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "7",
@@ -360,7 +360,7 @@
       "goal": "15",
       "target": "15.6",
       "indicator": "15.6.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "15",
@@ -396,7 +396,7 @@
       "goal": "17",
       "target": "17.18",
       "indicator": "17.18.3",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "17",
@@ -492,7 +492,7 @@
       "goal": "8",
       "target": "8.a",
       "indicator": "8.a.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "9",
@@ -4593,7 +4593,7 @@
         }
       ],
       "methodology": {
-        "targetValue": "1",
+        "targetValue": 1,
         "trendMethodology": "Parity",
         "baselineYear": {
           "all": 2015
@@ -4634,7 +4634,7 @@
         }
       ],
       "methodology": {
-        "targetValue": "1",
+        "targetValue": 1,
         "trendMethodology": "Parity",
         "baselineYear": {
           "all": 2015
@@ -4671,7 +4671,7 @@
         }
       ],
       "methodology": {
-        "targetValue": "1",
+        "targetValue": 1,
         "trendMethodology": "Parity",
         "baselineYear": {
           "all": 2015
@@ -4712,7 +4712,7 @@
         }
       ],
       "methodology": {
-        "targetValue": "1",
+        "targetValue": 1,
         "trendMethodology": "Parity",
         "baselineYear": {
           "all": 2015
@@ -4749,7 +4749,7 @@
         }
       ],
       "methodology": {
-        "targetValue": "1",
+        "targetValue": 1,
         "trendMethodology": "Parity",
         "baselineYear": {
           "all": 2015
@@ -4782,7 +4782,7 @@
         }
       ],
       "methodology": {
-        "targetValue": "1",
+        "targetValue": 1,
         "trendMethodology": "Parity",
         "baselineYear": {
           "all": 2015
@@ -6246,20 +6246,12 @@
           "year": 2022.0
         }
       ],
-      "methodology": {
-        "targetValue": "0",
-        "trendMethodology": "Parity",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2022.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "UNEP,Ramsar",
       "Partner_Agency(ies)": "UN-Water,IUCN",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": null
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
