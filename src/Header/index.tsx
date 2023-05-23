@@ -219,7 +219,7 @@ export const Header = (props: Props) => {
               >
                 <NavLink
                   key={i}
-                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1']}`}
+                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenHeaderCountryModal(false); }}
                 >
@@ -233,7 +233,7 @@ export const Header = (props: Props) => {
               >
                 <NavLink
                   key={i}
-                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1']}`}
+                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenHeaderCountryModal(false); }}
                 >
@@ -309,7 +309,7 @@ export const GlobalHeader = () => {
               >
                 <NavLink
                   key={i}
-                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1']}`}
+                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenHeaderCountryModal(false); }}
                 >
@@ -323,7 +323,7 @@ export const GlobalHeader = () => {
               >
                 <NavLink
                   key={i}
-                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1']}`}
+                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenHeaderCountryModal(false); }}
                 >

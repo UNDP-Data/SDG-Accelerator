@@ -48,7 +48,7 @@ export const HomePage = (props: Props) => {
                   className='undp-select'
                   placeholder='Select a country to find out more'
                   showSearch
-                  onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
+                  onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
                   style={{ flexGrow: 1 }}
                 >
                   {
@@ -292,7 +292,7 @@ export const HomePage = (props: Props) => {
                   className='undp-select'
                   showSearch
                   placeholder='Select a country'
-                  onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
+                  onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
                   style={{ flexGrow: 1 }}
                 >
                   {

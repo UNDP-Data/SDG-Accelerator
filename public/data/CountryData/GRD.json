@@ -63,7 +63,7 @@
     },
     {
       "goal": 3,
-      "noOfIndicatorsWithData": 13,
+      "noOfIndicatorsWithData": 14,
       "status": "For Review"
     },
     {
@@ -386,7 +386,7 @@
     {
       "goal": "3",
       "target": "3.2",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "3",
@@ -784,7 +784,7 @@
       "goal": "15",
       "target": "15.4",
       "indicator": "15.4.2",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "15",
@@ -1030,7 +1030,7 @@
       "goal": "3",
       "target": "3.2",
       "indicator": "3.2.1",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "3",
@@ -1096,13 +1096,13 @@
       "goal": "3",
       "target": "3.9",
       "indicator": "3.9.1",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "3",
       "target": "3.9",
       "indicator": "3.9.2",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "3",
@@ -8062,7 +8062,7 @@
       "Partner_Agency(ies)": "NA",
       "Tier_Classification": "NA",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -13351,13 +13351,14 @@
         }
       ],
       "methodology": {
+        "targetValue": 70,
         "normativeDirection": "decrease",
         "CAGRLimit": [
           0.01,
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
@@ -13368,7 +13369,7 @@
       "Partner_Agency(ies)": "UNICEF,UNFPA, DESA Population Division, World Bank",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -13663,13 +13664,14 @@
         }
       ],
       "methodology": {
+        "targetValue": 12,
         "normativeDirection": "decrease",
         "CAGRLimit": [
           0.01,
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
@@ -13680,7 +13682,7 @@
       "Partner_Agency(ies)": "DESA Population Division, World Bank,WHO",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Fair progress but acceleration needed"
+      "status": "Deterioration"
     },
     {
       "Age": "<5Y",
@@ -14360,7 +14362,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -14462,7 +14464,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Sex": "BOTHSEX",

@@ -4,7 +4,6 @@ import { GoalStatusType } from '../Types';
 interface Props {
   data: any;
   goalStatuses: GoalStatusType[];
-  document: string[];
 }
 
 const ColorKeyBox = styled.div`
@@ -16,15 +15,12 @@ export const SalienceGraph = (props: Props) => {
   const {
     data,
     goalStatuses,
-    document,
   } = props;
   return (
     <>
       <div className='max-width-1440 margin-top-13' style={{ padding: '0 1rem' }}>
         <h3 className='undp-typography bold'>
-          Relative Salience Based on
-          {' '}
-          {document.join(', ')}
+          Relative Salience
         </h3>
         <p className='undp-typography'>
           Relative Salience is a measure of the amount of text content linked to each SDG as compared to the Goal, which is the most salient in the text. Relative Salience can help to understand which of the SDGs covered in the document receive most attention and which ones are only briefly treated.
@@ -40,11 +36,11 @@ export const SalienceGraph = (props: Props) => {
           </div>
           <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem' }}>
             <ColorKeyBox style={{ backgroundColor: 'var(--dark-red' }} />
-            <p className='small-font margin-top-00 margin-bottom-00'>Identified gap</p>
+            <p className='small-font margin-top-00 margin-bottom-00'>Off Track</p>
           </div>
           <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem' }}>
             <ColorKeyBox style={{ backgroundColor: 'var(--gray-400' }} />
-            <p className='small-font margin-top-00 margin-bottom-00'>Gaps NA</p>
+            <p className='small-font margin-top-00 margin-bottom-00'>Trend NA</p>
           </div>
         </div>
         <svg width='100%' viewBox='0 0 1280 430' style={{ marginBottom: '4rem' }}>

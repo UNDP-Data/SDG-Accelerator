@@ -28,7 +28,7 @@
     },
     {
       "goal": 8,
-      "noOfIndicatorsWithData": 8,
+      "noOfIndicatorsWithData": 9,
       "status": "For Review"
     },
     {
@@ -43,7 +43,7 @@
     },
     {
       "goal": 14,
-      "noOfIndicatorsWithData": 5,
+      "noOfIndicatorsWithData": 6,
       "status": "For Review"
     },
     {
@@ -68,7 +68,7 @@
     },
     {
       "goal": 3,
-      "noOfIndicatorsWithData": 16,
+      "noOfIndicatorsWithData": 18,
       "status": "For Review"
     },
     {
@@ -78,7 +78,7 @@
     },
     {
       "goal": 6,
-      "noOfIndicatorsWithData": 5,
+      "noOfIndicatorsWithData": 6,
       "status": "On Track"
     },
     {
@@ -291,7 +291,7 @@
     {
       "goal": "14",
       "target": "14.c",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "15",
@@ -456,7 +456,7 @@
     {
       "goal": "3",
       "target": "3.1",
-      "status": "Identified Gap"
+      "status": "On Track"
     },
     {
       "goal": "3",
@@ -611,7 +611,7 @@
     {
       "goal": "8",
       "target": "8.2",
-      "status": null
+      "status": "Identified Gap"
     },
     {
       "goal": "8",
@@ -995,7 +995,7 @@
       "goal": "14",
       "target": "14.c",
       "indicator": "14.c.1",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "15",
@@ -1265,7 +1265,7 @@
       "goal": "3",
       "target": "3.1",
       "indicator": "3.1.1",
-      "status": "Identified Gap"
+      "status": "On Track"
     },
     {
       "goal": "3",
@@ -1355,13 +1355,13 @@
       "goal": "3",
       "target": "3.9",
       "indicator": "3.9.1",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "3",
       "target": "3.9",
       "indicator": "3.9.2",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "3",
@@ -1457,7 +1457,7 @@
       "goal": "6",
       "target": "6.3",
       "indicator": "6.3.1",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "6",
@@ -1541,7 +1541,7 @@
       "goal": "8",
       "target": "8.2",
       "indicator": "8.2.1",
-      "status": null
+      "status": "Identified Gap"
     },
     {
       "goal": "8",
@@ -6501,7 +6501,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "On Track"
     },
     {
       "Reporting Type": "G",
@@ -10331,7 +10331,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -18578,13 +18578,14 @@
         }
       ],
       "methodology": {
+        "targetValue": 70,
         "normativeDirection": "decrease",
         "CAGRLimit": [
           0.01,
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
@@ -18595,7 +18596,7 @@
       "Partner_Agency(ies)": "UNICEF,UNFPA, DESA Population Division, World Bank",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -18870,13 +18871,14 @@
         }
       ],
       "methodology": {
+        "targetValue": 12,
         "normativeDirection": "decrease",
         "CAGRLimit": [
           0.01,
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
@@ -18887,7 +18889,7 @@
       "Partner_Agency(ies)": "DESA Population Division, World Bank,WHO",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Target Achieved"
     },
     {
       "Age": "<5Y",
@@ -19884,7 +19886,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -19986,7 +19988,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Sex": "BOTHSEX",
@@ -24203,7 +24205,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I (a)/Tier II (b)",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -24241,7 +24243,7 @@
       "Partner_Agency(ies)": "UNEP,OECD,Eurostat",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Location": "ALLAREA",
@@ -26420,7 +26422,7 @@
       "Partner_Agency(ies)": "World Bank,UNSD",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Deterioration"
     },
     {
       "Sex": "BOTHSEX",

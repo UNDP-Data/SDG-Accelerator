@@ -68,7 +68,7 @@
     },
     {
       "goal": 3,
-      "noOfIndicatorsWithData": 20,
+      "noOfIndicatorsWithData": 21,
       "status": "For Review"
     },
     {
@@ -451,7 +451,7 @@
     {
       "goal": "3",
       "target": "3.2",
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": "3",
@@ -1223,7 +1223,7 @@
       "goal": "3",
       "target": "3.2",
       "indicator": "3.2.1",
-      "status": "For Review"
+      "status": null
     },
     {
       "goal": "3",
@@ -1313,13 +1313,13 @@
       "goal": "3",
       "target": "3.9",
       "indicator": "3.9.1",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "3",
       "target": "3.9",
       "indicator": "3.9.2",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "3",
@@ -15687,13 +15687,14 @@
         }
       ],
       "methodology": {
+        "targetValue": 70,
         "normativeDirection": "decrease",
         "CAGRLimit": [
           0.01,
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
@@ -16007,13 +16008,14 @@
         }
       ],
       "methodology": {
+        "targetValue": 12,
         "normativeDirection": "decrease",
         "CAGRLimit": [
           0.01,
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
@@ -16024,7 +16026,7 @@
       "Partner_Agency(ies)": "DESA Population Division, World Bank,WHO",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Fair progress but acceleration needed"
+      "status": "Limited or No Progress"
     },
     {
       "Age": "<5Y",
@@ -17052,7 +17054,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -17154,7 +17156,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Sex": "BOTHSEX",

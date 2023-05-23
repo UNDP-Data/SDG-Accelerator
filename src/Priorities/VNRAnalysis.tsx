@@ -148,7 +148,7 @@ export const VNRAnalysis = (props: Props) => {
                             textAnchor='middle'
                             style={{ fill: `${d === 'Identified Gap' ? 'var(--dark-red)' : d === 'On Track' ? 'var(--dark-green)' : d === 'For Review' ? 'var(--dark-yellow)' : 'var(--gray-500)'}` }}
                           >
-                            {d.toUpperCase()}
+                            {d === 'Identified Gap' ? 'OFF TRACK' : d === 'Gaps NA' ? 'TREND NA' : d.toUpperCase()}
                           </text>
                         </g>
                       ))
@@ -314,7 +314,6 @@ export const VNRAnalysis = (props: Props) => {
           ? (
             <SalienceGraph
               data={data}
-              document={document}
               goalStatuses={goalStatuses}
             />
           ) : null

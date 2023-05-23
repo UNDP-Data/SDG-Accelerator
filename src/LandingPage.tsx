@@ -88,7 +88,7 @@ export const LandingPage = () => {
                     }
                   </Select>
                   <NavLink
-                    to={`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === selectedCountry)]['Alpha-3 code-1']}`}
+                    to={`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === selectedCountry)]['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === selectedCountry)]['Alpha-3 code-1']}`}
                     style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
                   >
                     <button type='button' className='undp-button button-primary button-arrow'>

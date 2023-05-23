@@ -63,8 +63,8 @@
     },
     {
       "goal": 6,
-      "noOfIndicatorsWithData": 1,
-      "status": "Identified Gap"
+      "noOfIndicatorsWithData": 2,
+      "status": "For Review"
     },
     {
       "goal": 8,
@@ -281,7 +281,7 @@
     {
       "goal": "6",
       "target": "6.2",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "6",
@@ -616,7 +616,7 @@
       "goal": "6",
       "target": "6.2",
       "indicator": "6.2.1",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "6",
@@ -5314,13 +5314,14 @@
         }
       ],
       "methodology": {
+        "targetValue": 12,
         "normativeDirection": "decrease",
         "CAGRLimit": [
           0.01,
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
@@ -5331,7 +5332,7 @@
       "Partner_Agency(ies)": "DESA Population Division, World Bank,WHO",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Fair progress but acceleration needed"
     },
     {
       "Age": "<5Y",
@@ -7745,7 +7746,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I (a)/Tier II (b)",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",

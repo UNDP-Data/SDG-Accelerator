@@ -112,7 +112,7 @@ export const BubbleChart = (props: Props) => {
               }}
               style={{ marginInlineStart: 0 }}
             >
-              Identified Gap
+              Off Track
             </Checkbox>
             <Checkbox
               className='undp-checkbox'
@@ -122,7 +122,7 @@ export const BubbleChart = (props: Props) => {
               }}
               style={{ marginInlineStart: 0 }}
             >
-              Gaps NA
+              Trend NA
             </Checkbox>
           </div>
           <p className='undp-typography italics' style={{ fontSize: '1rem', color: 'var(--gray-600)' }}>Click on the icons to view the common words/phrases by SDG</p>

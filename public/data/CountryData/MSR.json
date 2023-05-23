@@ -8,7 +8,7 @@
     },
     {
       "goal": 10,
-      "noOfIndicatorsWithData": 3,
+      "noOfIndicatorsWithData": 4,
       "status": "For Review"
     },
     {
@@ -18,8 +18,8 @@
     },
     {
       "goal": 12,
-      "noOfIndicatorsWithData": 2,
-      "status": "Identified Gap"
+      "noOfIndicatorsWithData": 3,
+      "status": "For Review"
     },
     {
       "goal": 8,
@@ -58,7 +58,7 @@
     },
     {
       "goal": 3,
-      "noOfIndicatorsWithData": 4,
+      "noOfIndicatorsWithData": 5,
       "status": "On Track"
     },
     {
@@ -68,8 +68,8 @@
     },
     {
       "goal": 5,
-      "noOfIndicatorsWithData": 0,
-      "status": null
+      "noOfIndicatorsWithData": 1,
+      "status": "On Track"
     },
     {
       "goal": 6,
@@ -101,7 +101,7 @@
     {
       "goal": "10",
       "target": "10.7",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "10",
@@ -161,7 +161,7 @@
     {
       "goal": "12",
       "target": "12.c",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "14",
@@ -281,7 +281,7 @@
     {
       "goal": "3",
       "target": "3.3",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "3",
@@ -316,7 +316,7 @@
     {
       "goal": "5",
       "target": "5.5",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "6",
@@ -402,7 +402,7 @@
       "goal": "10",
       "target": "10.7",
       "indicator": "10.7.4",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "10",
@@ -474,7 +474,7 @@
       "goal": "12",
       "target": "12.c",
       "indicator": "12.c.1",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "14",
@@ -516,7 +516,7 @@
       "goal": "15",
       "target": "15.4",
       "indicator": "15.4.2",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "15",
@@ -648,7 +648,7 @@
       "goal": "3",
       "target": "3.3",
       "indicator": "3.3.2",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "3",
@@ -690,7 +690,7 @@
       "goal": "5",
       "target": "5.5",
       "indicator": "5.5.2",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "6",
@@ -1074,7 +1074,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",
@@ -1441,7 +1441,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Type of product": "CLO",
@@ -3392,7 +3392,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -5067,7 +5067,7 @@
       "Partner_Agency(ies)": "NA",
       "Tier_Classification": "NA",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -7622,13 +7622,14 @@
         }
       ],
       "methodology": {
+        "targetValue": 12,
         "normativeDirection": "decrease",
         "CAGRLimit": [
           0.01,
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
@@ -7639,7 +7640,7 @@
       "Partner_Agency(ies)": "DESA Population Division, World Bank,WHO",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Target Achieved"
     },
     {
       "Age": "<5Y",
@@ -7875,7 +7876,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Age": "10-14",
@@ -9341,7 +9342,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Sex": "FEMALE",

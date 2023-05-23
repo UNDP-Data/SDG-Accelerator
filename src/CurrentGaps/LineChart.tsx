@@ -120,7 +120,7 @@ export const LineChart = (props: Props) => {
         }
       </div>
       {
-        values.length === 0 ? <h6 className='undp-typography'>No Data Avalaiable</h6>
+        values.length === 0 ? <h6 className='undp-typography'>No Data Available</h6>
           : (
             <>
               <svg width='100%' viewBox={`0 0 ${svgWidth} ${svgHeight}`}>

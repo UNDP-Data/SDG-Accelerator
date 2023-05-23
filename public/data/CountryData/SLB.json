@@ -23,7 +23,7 @@
     },
     {
       "goal": 12,
-      "noOfIndicatorsWithData": 2,
+      "noOfIndicatorsWithData": 3,
       "status": "For Review"
     },
     {
@@ -201,7 +201,7 @@
     {
       "goal": "12",
       "target": "12.c",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "13",
@@ -326,7 +326,7 @@
     {
       "goal": "17",
       "target": "17.13",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "17",
@@ -411,7 +411,7 @@
     {
       "goal": "3",
       "target": "3.1",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "3",
@@ -451,7 +451,7 @@
     {
       "goal": "3",
       "target": "3.9",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "3",
@@ -811,7 +811,7 @@
       "goal": "12",
       "target": "12.c",
       "indicator": "12.c.1",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "13",
@@ -985,7 +985,7 @@
       "goal": "17",
       "target": "17.13",
       "indicator": "17.13.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "17",
@@ -1123,7 +1123,7 @@
       "goal": "3",
       "target": "3.1",
       "indicator": "3.1.1",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "3",
@@ -1219,7 +1219,7 @@
       "goal": "3",
       "target": "3.9",
       "indicator": "3.9.2",
-      "status": null
+      "status": "On Track"
     },
     {
       "goal": "3",
@@ -8065,7 +8065,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -13223,7 +13223,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",
@@ -13296,7 +13296,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",
@@ -13369,7 +13369,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",
@@ -13442,7 +13442,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "On Track"
     },
     {
       "Reporting Type": "G",
@@ -16376,13 +16376,14 @@
         }
       ],
       "methodology": {
+        "targetValue": 70,
         "normativeDirection": "decrease",
         "CAGRLimit": [
           0.01,
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
@@ -16393,7 +16394,7 @@
       "Partner_Agency(ies)": "UNICEF,UNFPA, DESA Population Division, World Bank",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Fair progress but acceleration needed"
     },
     {
       "Reporting Type": "G",
@@ -16664,13 +16665,14 @@
         }
       ],
       "methodology": {
+        "targetValue": 12,
         "normativeDirection": "decrease",
         "CAGRLimit": [
           0.01,
           0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
@@ -17580,7 +17582,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Target Achieved"
     },
     {
       "Sex": "BOTHSEX",

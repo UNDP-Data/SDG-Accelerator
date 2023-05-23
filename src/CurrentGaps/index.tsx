@@ -180,7 +180,7 @@ export const CurrentGaps = (props: Props) => {
                     SDG
                   </span>
                   {' '}
-                  Identified Gaps
+                  Off Track
                 </h4>
                 <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>With current progress the country will miss the SDG by 2030 by a large margin</p>
                 <div className='flex-div flex-wrap margin-bottom-11'>
@@ -203,7 +203,7 @@ export const CurrentGaps = (props: Props) => {
                     SDG
                   </span>
                   {' '}
-                  Gaps NA
+                  Trend NA
                 </h4>
                 <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Country doesn’t have enough data to identify the progress of the SDG</p>
                 <div className='flex-div flex-wrap margin-bottom-11'>
