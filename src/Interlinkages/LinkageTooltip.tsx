@@ -28,7 +28,7 @@ export const Tooltip = (props: Props) => {
     data,
   } = props;
   return (
-    <TooltipEl x={data.xPosition > window.innerWidth / 2 ? data.xPosition - 345 : data.xPosition} y={data.yPosition}>
+    <TooltipEl x={data.xPosition > window.innerWidth / 2 ? data.xPosition - 375 : data.xPosition} y={data.yPosition}>
       <h6 className='undp-typography margin-bottom-01'>{data.title}</h6>
       <p className='margin-top-00' style={{ fontSize: '0.875rem' }}>{data.text}</p>
       <hr />
