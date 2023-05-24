@@ -51,6 +51,7 @@ export const BubbleChart = (props: Props) => {
           width: 'calc(25% - 1rem)',
         }}
         >
+          <p className='undp-typography italics margin-bottom-05' style={{ fontSize: '1rem', color: 'var(--gray-600)' }}>Click on the icons to view the common words/phrases by SDG</p>
           <p className='undp-typography label margin-bottom-03'>
             Highlight SDGs by priorities
           </p>
@@ -128,7 +129,7 @@ export const BubbleChart = (props: Props) => {
               Trend NA
             </Checkbox>
           </div>
-          <div className='margin-bottom-05'>
+          <div className='margin-bottom-07'>
             <p className='undp-typography label margin-bottom-02'>
               Choose orientation
             </p>
@@ -146,7 +147,6 @@ export const BubbleChart = (props: Props) => {
           >
             Download Bubble Chart
           </button>
-          <p className='undp-typography italics' style={{ fontSize: '1rem', color: 'var(--gray-600)' }}>Click on the icons to view the common words/phrases by SDG</p>
         </div>
         {
           nodeData
