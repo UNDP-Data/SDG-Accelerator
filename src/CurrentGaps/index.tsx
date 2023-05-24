@@ -250,7 +250,7 @@ export const CurrentGaps = (props: Props) => {
                         : ''
                   }
               >
-                {goalStatuses[goalStatuses.findIndex((d) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status ? goalStatuses[goalStatuses.findIndex((d) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status : 'Gap NA'}
+                {goalStatuses[goalStatuses.findIndex((d) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status ? goalStatuses[goalStatuses.findIndex((d) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status === 'Identified Gap' ? 'Off Track' : goalStatuses[goalStatuses.findIndex((d) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status : 'trend NA'}
               </h2>
               <p>SDG Trend</p>
             </div>

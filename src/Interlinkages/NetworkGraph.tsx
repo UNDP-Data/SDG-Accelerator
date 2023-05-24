@@ -46,7 +46,7 @@ export const NetworkGraph = (props: Props) => {
   const [selectedTargetData, setSelectedTargetData] = useState<any>(null);
   const width = 720;
   const height = 400;
-  const radiusScale = 4;
+  const radiusScale = 1;
   const targetStatusForSelect: TargetProps[] = data.filter((d) => d.status === 'For Review' || d.status === 'Identified Gap').map((d) => ({
     id: d.target,
     description: d.description,

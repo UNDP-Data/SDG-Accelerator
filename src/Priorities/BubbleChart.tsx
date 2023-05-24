@@ -3,7 +3,7 @@ import {
   forceCenter,
   forceCollide, forceManyBody, forceSimulation, forceX, forceY,
 } from 'd3-force';
-import { Checkbox } from 'antd';
+import { Checkbox, Radio } from 'antd';
 import { SDG_COLOR_ARRAY } from '../Constants';
 import { getSDGIconWoBg } from '../utils/getSDGIcon';
 import { PriorityType, StatusType } from '../Types';
@@ -20,6 +20,7 @@ export const BubbleChart = (props: Props) => {
     setSelectedSDG,
   } = props;
   const [nodeData, setNodeData] = useState<any>(null);
+  const [graphOrientation, setGraphOrientation] = useState<'horizontal' | 'vertical'>('horizontal');
   const [highlightSettings, setHighlightSettings] = useState({
     High: true,
     Low: false,
@@ -35,12 +36,12 @@ export const BubbleChart = (props: Props) => {
     forceSimulation(dataTemp)
       .force('charge', forceManyBody().strength(2.25))
       .force('center', forceCenter())
-      .force('x', forceX().strength(1).x((d: any) => (d.sdg * 15)))
-      .force('y', forceY().strength(1).y(0))
+      .force('x', forceX().strength(1).x(graphOrientation === 'horizontal' ? (d: any) => (d.sdg * 15) : 0))
+      .force('y', forceY().strength(1).y(graphOrientation === 'vertical' ? (d: any) => (d.sdg * 15) : 0))
       .force('collision', forceCollide().radius((d: any) => (d.importance * 50) + 4))
       .tick(10000)
       .on('end', () => { setNodeData(dataTemp); });
-  }, [data]);
+  }, [data, graphOrientation]);
   return (
     <>
       <div className='max-width-1440 margin-top-09 flex-div' style={{ padding: '0 1rem', gap: 'var(--spacing-05)' }}>
@@ -125,13 +126,22 @@ export const BubbleChart = (props: Props) => {
               Trend NA
             </Checkbox>
           </div>
+          <div className='margin-bottom-05'>
+            <p className='undp-typography label margin-bottom-02'>
+              Choose orientation
+            </p>
+            <Radio.Group value={graphOrientation} onChange={(e) => { setGraphOrientation(e.target.value); }}>
+              <Radio className='undp-radio' value='horizontal'>Horizontal</Radio>
+              <Radio className='undp-radio' value='vertical'>Vertical</Radio>
+            </Radio.Group>
+          </div>
           <p className='undp-typography italics' style={{ fontSize: '1rem', color: 'var(--gray-600)' }}>Click on the icons to view the common words/phrases by SDG</p>
         </div>
         {
           nodeData
             ? (
-              <svg width='calc(75% - 1rem)' viewBox='0 0 450 250'>
-                <g transform='translate(225,125)'>
+              <svg width='calc(75% - 1rem)' style={{ maxWidth: graphOrientation === 'horizontal' ? '75rem' : '40rem', margin: 'auto' }} viewBox={graphOrientation === 'horizontal' ? '0 0 450 250' : '0 0 250 450'}>
+                <g transform={graphOrientation === 'horizontal' ? 'translate(225,125)' : 'translate(125,225)'}>
                   {
                     nodeData.map((d: any, i: number) => (
                       <g

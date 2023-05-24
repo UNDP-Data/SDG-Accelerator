@@ -26,7 +26,7 @@ const TooltipEl = styled.div<TooltipElProps>`
 export const GraphTooltip = (props: Props) => {
   const { data } = props;
   return (
-    <TooltipEl x={data.xPosition > window.innerWidth / 2 ? data.xPosition - 280 : data.xPosition} y={data.yPosition}>
+    <TooltipEl x={data.xPosition > window.innerWidth / 2 ? data.xPosition - 320 : data.xPosition} y={data.yPosition}>
       <h6 className='undp-typography margin-bottom-00'>
         {data.year}
       </h6>
