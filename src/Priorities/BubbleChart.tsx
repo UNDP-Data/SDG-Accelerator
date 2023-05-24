@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   forceCenter,
   forceCollide, forceManyBody, forceSimulation, forceX, forceY,
@@ -7,6 +7,7 @@ import { Checkbox, Radio } from 'antd';
 import { SDG_COLOR_ARRAY } from '../Constants';
 import { getSDGIconWoBg } from '../utils/getSDGIcon';
 import { PriorityType, StatusType } from '../Types';
+import { DownloadImage } from '../utils/DownloadImage';
 
 interface Props {
   data: any;
@@ -21,6 +22,7 @@ export const BubbleChart = (props: Props) => {
   } = props;
   const [nodeData, setNodeData] = useState<any>(null);
   const [graphOrientation, setGraphOrientation] = useState<'horizontal' | 'vertical'>('horizontal');
+  const bubbleChartRef = useRef<HTMLDivElement>(null);
   const [highlightSettings, setHighlightSettings] = useState({
     High: true,
     Low: false,
@@ -135,45 +137,61 @@ export const BubbleChart = (props: Props) => {
               <Radio className='undp-radio' value='vertical'>Vertical</Radio>
             </Radio.Group>
           </div>
+          <button
+            className='undp-button tertiary-button'
+            type='button'
+            style={{ color: nodeData === null ? 'var(--gray-400)' : 'var(--blue-600)', padding: 0 }}
+            disabled={nodeData === null}
+            onClick={() => { if (bubbleChartRef.current) { DownloadImage(bubbleChartRef.current, 'Bubble Chart'); } }}
+          >
+            Download Bubble Chart
+          </button>
           <p className='undp-typography italics' style={{ fontSize: '1rem', color: 'var(--gray-600)' }}>Click on the icons to view the common words/phrases by SDG</p>
         </div>
         {
           nodeData
             ? (
-              <svg width='calc(75% - 1rem)' style={{ maxWidth: graphOrientation === 'horizontal' ? '75rem' : '40rem', margin: 'auto' }} viewBox={graphOrientation === 'horizontal' ? '0 0 450 250' : '0 0 250 450'}>
-                <g transform={graphOrientation === 'horizontal' ? 'translate(225,125)' : 'translate(125,225)'}>
-                  {
-                    nodeData.map((d: any, i: number) => (
-                      <g
-                        key={i}
-                        transform={`translate(${d.x},${d.y})`}
-                        style={{ cursor: 'pointer' }}
-                        onClick={() => { setSelectedSDG(d); }}
-                        opacity={highlightSettings[d.category as PriorityType] && highlightSettings[d.status as StatusType] ? 1 : 0.4}
-                      >
-                        <circle
-                          cx={0}
-                          cy={0}
-                          r={d.importance * 50}
-                          fill={SDG_COLOR_ARRAY[d.sdg - 1]}
-                        />
-                        {
-                          d.importance * 50 < 10 ? null
-                            : (
-                              <g transform={`translate(${0 - d.importance * 35},${0 - d.importance * 35})`}>
-                                {getSDGIconWoBg(`SDG ${d.sdg}`, d.importance * 70)}
-                              </g>
-                            )
-                        }
-                      </g>
-                    ))
-                  }
-                </g>
-              </svg>
+              <div
+                style={{
+                  width: '100%', display: 'flex', justifyContent: 'center',
+                }}
+                ref={bubbleChartRef}
+              >
+                <svg width='calc(75% - 1rem)' style={{ maxWidth: graphOrientation === 'horizontal' ? '75rem' : '40rem', margin: 'auto' }} viewBox={graphOrientation === 'horizontal' ? '0 0 450 250' : '0 0 250 450'}>
+                  <g transform={graphOrientation === 'horizontal' ? 'translate(225,125)' : 'translate(125,225)'}>
+                    {
+                      nodeData.map((d: any, i: number) => (
+                        <g
+                          key={i}
+                          transform={`translate(${d.x},${d.y})`}
+                          style={{ cursor: 'pointer' }}
+                          onClick={() => { setSelectedSDG(d); }}
+                          opacity={highlightSettings[d.category as PriorityType] && highlightSettings[d.status as StatusType] ? 1 : 0.4}
+                        >
+                          <circle
+                            cx={0}
+                            cy={0}
+                            r={d.importance * 50}
+                            fill={SDG_COLOR_ARRAY[d.sdg - 1]}
+                          />
+                          {
+                            d.importance * 50 < 10 ? null
+                              : (
+                                <g transform={`translate(${0 - d.importance * 35},${0 - d.importance * 35})`}>
+                                  {getSDGIconWoBg(`SDG ${d.sdg}`, d.importance * 70)}
+                                </g>
+                              )
+                          }
+                        </g>
+                      ))
+                    }
+                  </g>
+                </svg>
+              </div>
             )
             : (
               <div style={{
-                width: 'calc(75% - 1rem)', height: '200px', backgroundColor: 'var(--gray-100)', paddingTop: '80px',
+                width: 'calc(75% - 1rem)', height: '400px', backgroundColor: 'var(--gray-100)', paddingTop: '80px',
               }}
               >
                 <div className='undp-loader' style={{ margin: 'auto' }} />

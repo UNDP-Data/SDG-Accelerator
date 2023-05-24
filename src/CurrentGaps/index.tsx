@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Select } from 'antd';
 import sortBy from 'lodash.sortby';
 import { NavLink } from 'react-router-dom';
@@ -8,6 +8,7 @@ import { SDGGOALS, SDG_ICON_SIZE, TargetIndicatorCount } from '../Constants';
 import { SDGGapsData } from './SDGGapsData';
 import { GoalStatusType, StatusesType, TimeSeriesDataTypeWithStatusCode } from '../Types';
 import IMAGES from '../img/images';
+import { DownloadImage } from '../utils/DownloadImage';
 
 interface Props {
   goalStatuses: GoalStatusType[];
@@ -43,6 +44,7 @@ export const CurrentGaps = (props: Props) => {
   const identifiedGap = sortBy(goalStatuses.filter((d) => d.status === 'Identified Gap'), 'goal');
   const forReview = sortBy(goalStatuses.filter((d) => d.status === 'For Review'), 'goal');
   const gapsNA = sortBy(goalStatuses.filter((d) => !d.status), 'goal');
+  const trendRef = useRef<HTMLDivElement>(null);
 
   return (
     <>
@@ -122,9 +124,18 @@ export const CurrentGaps = (props: Props) => {
             <a href='https://unstats.un.org/sdgs/report/2022/Progress_Chart_Technical_Note_2022.pdf' className='undp-style' target='_blank' rel='noreferrer'>SDG Progress Chart 2022 Technical Note</a>
             . Additional data may be added to address gaps at a government&apos;s request, providing a comprehensive landscape for identification of SDG policy pathways.
           </div>
-          <div>
+          <button
+            className='undp-button tertiary-button'
+            type='button'
+            style={{ color: 'var(--blue-600)', padding: 0 }}
+            onClick={() => { if (trendRef.current) { DownloadImage(trendRef.current, `Trends Chart ${countryCode}`); } }}
+          >
+            Download Graph
+          </button>
+          <div className='margin-top-07'>
             <div
-              style={{ backgroundColor: 'var(--white)', padding: '3rem' }}
+              style={{ backgroundColor: 'var(--white)', padding: '3rem', fontFamily: 'ProximaNova, proxima-nova, Helvetica Neue, sans-serif' }}
+              ref={trendRef}
             >
               <div className='margin-bottom-09'>
                 <h4 className='undp-typography margin-bottom-00' style={{ color: 'var(--dark-green)' }}>
@@ -206,7 +217,7 @@ export const CurrentGaps = (props: Props) => {
                   Trend NA
                 </h4>
                 <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Country doesn’t have enough data to identify the progress of the SDG</p>
-                <div className='flex-div flex-wrap margin-bottom-11'>
+                <div className='flex-div flex-wrap'>
                   <div className='flex-div flex-wrap'>
                     {
                     gapsNA.map((d, i: number) => (

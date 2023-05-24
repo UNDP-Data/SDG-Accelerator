@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Modal, Radio } from 'antd';
 import {
@@ -13,6 +13,7 @@ import { NetworkGraph } from './NetworkGraph';
 import { LinkageData, LinkageData2023 } from '../Data/linkages';
 import { LiteratureData } from '../Data/Literature';
 import IMAGES from '../img/images';
+import { DownloadImage } from '../utils/DownloadImage';
 
 interface Props {
   targetStatuses: TargetStatusType[];
@@ -30,6 +31,7 @@ export const Interlinkages = (props: Props) => {
   const [selectedTarget, setSelectedTarget] = useState('All Targets');
   const [year, setYear] = useState('2023');
   const [literatureModal, setLiteratureModal] = useState(false);
+  const interlinkageRef = useRef<HTMLDivElement>(null);
   const [linkageType, setLinkageTypes] = useState<'synergies' | 'tradeOffs'>('synergies');
   const targetOptions = [{ label: 'All Targets' }];
   let TargetMostSynergies = '';
@@ -98,7 +100,7 @@ export const Interlinkages = (props: Props) => {
             </Radio.Group>
           </div>
         </div>
-        <p className='undp-typography small-font'>
+        <p className='undp-typography small-font margin-bottom-07'>
           The synergies and tradeoffs are global, which means they are the same for all countries as mapped by the
           {' '}
           <a className='undp-style' target='_blank' href='https://knowsdgs.jrc.ec.europa.eu/interlinkages-targets' rel='noreferrer'>KnowSDGs Platform by European Commission</a>
@@ -110,8 +112,16 @@ export const Interlinkages = (props: Props) => {
           <br />
           <span className='italics'>Click on a target to see the interlinkages</span>
         </p>
+        <button
+          className='undp-button tertiary-button'
+          type='button'
+          style={{ color: 'var(--blue-600)', padding: 0 }}
+          onClick={() => { if (interlinkageRef.current) { DownloadImage(interlinkageRef.current, `Interlinkage Graph ${countryFullName}`); } }}
+        >
+          Download Interlinkages as Image
+        </button>
       </div>
-      <div className='margin-top-07 max-width-1440 margin-bottom-13' style={{ padding: '0 1rem' }}>
+      <div className='margin-top-07 max-width-1440 margin-bottom-13' style={{ padding: '0 1rem' }} ref={interlinkageRef}>
         <InterlinkagesViz
           selectedTarget={selectedTarget}
           setSelectedTarget={setSelectedTarget}
