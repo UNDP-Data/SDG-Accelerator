@@ -98,7 +98,7 @@ export const SDGGoalGapList = (props: Props) => {
             Trend NA
           </h4>
           <p className='undp-typography small-font italics' style={{ color: 'var(--gray-500)' }}>Country doesn’t have enough data to identify the progress of the SDG</p>
-          <div className='flex-div flex-wrap margin-bottom-11'>
+          <div className='flex-div flex-wrap'>
             <div className='flex-div flex-wrap'>
               {
                   gapsNA.map((d, i: number) => (

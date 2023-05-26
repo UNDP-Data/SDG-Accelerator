@@ -31,7 +31,7 @@ export const SectionDiv = (props: Props) => {
           {' '}
           {sectionNo}
         </h5>
-        <h2 className='undp-typography'>{sectionTitle}</h2>
+        <h1 className='undp-typography'>{sectionTitle}</h1>
         <div className='margin-top-07 margin-bottom-05'>
           {contentDiv}
         </div>

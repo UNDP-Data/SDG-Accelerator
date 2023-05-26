@@ -95,7 +95,7 @@ export const VNRAnalysis = (props: Props) => {
   }, [document]);
   return (
     <>
-      <div className=' margin-top-00' style={{ padding: 'var(--spacing-13)', paddingBottom: 'var(--spacing-09)' }}>
+      <div className=' margin-top-00' style={{ padding: onlyBubbleChart ? 0 : 'var(--spacing-13) var(--spacing-13) var(--spacing-09) var(--spacing-13)' }}>
         <div className='max-width-1440'>
           <div className='flex-div flex-vert-align-center flex-wrap'>
             <h2 className='undp-typography margin-bottom-00'>

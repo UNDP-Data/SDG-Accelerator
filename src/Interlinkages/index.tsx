@@ -33,7 +33,6 @@ export const Interlinkages = (props: Props) => {
   const [literatureModal, setLiteratureModal] = useState(false);
   const interlinkageRef = useRef<HTMLDivElement>(null);
   const [linkageType, setLinkageTypes] = useState<'synergies' | 'tradeOffs'>('synergies');
-  const targetOptions = [{ label: 'All Targets' }];
   let TargetMostSynergies = '';
   let mostSynergies = 0;
   LinkageData.forEach((d) => {
@@ -44,7 +43,6 @@ export const Interlinkages = (props: Props) => {
   SDGList.forEach((goal) => {
     goal.Targets.forEach((target) => {
       const status = targetStatuses.findIndex((el) => `Target ${el.target}` === target.Target) !== -1 ? targetStatuses[targetStatuses.findIndex((el) => `Target ${el.target}` === target.Target)].status : null;
-      targetOptions.push({ label: `${target.Target}: ${target['Target Description']}` });
       targetStatus.push({
         goal: goal.Goal,
         target: target.Target,

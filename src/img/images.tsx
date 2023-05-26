@@ -18,6 +18,7 @@ const IMAGES = {
   iconFutures: new URL('./icons/futures.png', import.meta.url).href,
   iconSnapshot: new URL('./icons/snapshot.png', import.meta.url).href,
   iconConstraints: new URL('./icons/constraints.png', import.meta.url).href,
+  interlinkageImage: new URL('./InterlinkageImage.png', import.meta.url).href,
 };
 
 export default IMAGES;

@@ -59,6 +59,7 @@ export const BubbleChart = (props: Props) => {
             <Checkbox
               className='undp-checkbox'
               checked={highlightSettings.High}
+              style={{ marginInlineStart: 0 }}
               onChange={(e) => {
                 setHighlightSettings({ ...highlightSettings, High: e.target.checked });
               }}
@@ -68,6 +69,7 @@ export const BubbleChart = (props: Props) => {
             <Checkbox
               className='undp-checkbox'
               checked={highlightSettings.Medium}
+              style={{ marginInlineStart: 0 }}
               onChange={(e) => {
                 setHighlightSettings({ ...highlightSettings, Medium: e.target.checked });
               }}
@@ -77,6 +79,7 @@ export const BubbleChart = (props: Props) => {
             <Checkbox
               className='undp-checkbox'
               checked={highlightSettings.Low}
+              style={{ marginInlineStart: 0 }}
               onChange={(e) => {
                 setHighlightSettings({ ...highlightSettings, Low: e.target.checked });
               }}
@@ -141,7 +144,7 @@ export const BubbleChart = (props: Props) => {
           <button
             className='undp-button tertiary-button'
             type='button'
-            style={{ color: nodeData === null ? 'var(--gray-400)' : 'var(--blue-600)', padding: 0 }}
+            style={{ color: nodeData === null ? 'var(--gray-400)' : 'var(--blue-600)', padding: 0, textAlign: 'left' }}
             disabled={nodeData === null}
             onClick={() => { if (bubbleChartRef.current) { DownloadImage(bubbleChartRef.current, 'Bubble Chart'); } }}
           >

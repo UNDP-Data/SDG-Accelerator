@@ -10,7 +10,7 @@ interface Props {
   selectedTarget: string;
   linkageType: 'tradeOffs' | 'synergies';
   // eslint-disable-next-line no-unused-vars
-  setSelectedTarget: (_d: string) => void;
+  setSelectedTarget?: (_d: string) => void;
   data: TargetStatusWithDetailsType[];
   linkageData: LinkageDataType[];
 
@@ -39,7 +39,7 @@ export const InterlinkagesViz = (props: Props) => {
           fill='#fff'
           opacity={0}
           onClick={() => {
-            setSelectedTarget('All Targets');
+            if (setSelectedTarget) { setSelectedTarget('All Targets'); }
           }}
         />
         <g className='sdgGowlName'>
@@ -471,10 +471,12 @@ export const InterlinkagesViz = (props: Props) => {
                       transform={`translate(0,${j * 50})`}
                       key={j}
                       onClick={() => {
-                        if (selectedTarget === `${target.Target}: ${target['Target Description']}`) setSelectedTarget('All Targets');
-                        else setSelectedTarget(`${target.Target}: ${target['Target Description']}`);
+                        if (setSelectedTarget) {
+                          if (selectedTarget.split(':')[0] === `${target.Target}`) setSelectedTarget('All Targets');
+                          else setSelectedTarget(`${target.Target}: ${target['Target Description']}`);
+                        }
                       }}
-                      opacity={selectedTarget === 'All Targets' || selectedTarget === `${target.Target}: ${target['Target Description']}` || linkTargets.indexOf(target.Target.split(' ')[1]) !== -1 ? 1 : 0.3}
+                      opacity={selectedTarget === 'All Targets' || selectedTarget.split(':')[0] === `${target.Target}` || linkTargets.indexOf(target.Target.split(' ')[1]) !== -1 ? 1 : 0.3}
                       style={{ cursor: 'pointer' }}
                       onMouseEnter={(event) => {
                         setHoverData({

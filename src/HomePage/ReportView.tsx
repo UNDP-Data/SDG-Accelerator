@@ -3,17 +3,25 @@ import { queue } from 'd3-queue';
 import { json } from 'd3-request';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { format } from 'd3-format';
 import IMAGES from '../img/images';
-import { GoalStatusType, dataForReportType } from '../Types';
+import {
+  GoalStatusType, LinkageDataType, ScenarioDataType, TargetStatusType, TargetStatusWithDetailsType, dataForReportType,
+} from '../Types';
 import { SectionCard } from './SectionCard';
 import { SectionDiv } from './SectionDiv';
 import { DATASOURCELINK } from '../Constants';
 import { SDGGoalGapList } from '../CurrentGaps/SDGGoalGapList';
 import { VNRAnalysis } from '../Priorities/VNRAnalysis';
+import { InterlinkagesViz } from '../Interlinkages/InterlinkageViz';
+import { LinkageData2023 } from '../Data/linkages';
+import { SDGList } from '../Data/SDGGoalList';
+import { LineChart } from '../FutureScenarios/LineChart';
 
 interface Props {
   countryCode: string;
   goalStatuses: GoalStatusType[];
+  targetStatuses: TargetStatusType[];
 }
 
 const HeroImageEl = styled.div`
@@ -23,11 +31,13 @@ const HeroImageEl = styled.div`
 `;
 
 export const ReportView = (props: Props) => {
-  const { countryCode, goalStatuses } = props;
+  const { countryCode, goalStatuses, targetStatuses } = props;
   const [reportData, setReportData] = useState<
     dataForReportType | undefined
   >(undefined);
+  const [scenarioData, setScenarioData] = useState<ScenarioDataType[] | undefined>(undefined);
   const [priorityData, setPriorityData] = useState<any>(null);
+  const [targetStatus, setTargetStatus] = useState<TargetStatusWithDetailsType[] | undefined>(undefined);
   const [activeTab, setActiveTab] = useState('0');
   useEffect(() => {
     setReportData(undefined);
@@ -35,15 +45,32 @@ export const ReportView = (props: Props) => {
     queue()
       .defer(json, `${DATASOURCELINK}/data/ReportPages/${countryCode}.json`)
       .defer(json, `${DATASOURCELINK}/data/PrioritiesData/${countryCode}.json`)
+      .defer(json, `${DATASOURCELINK}/data/ScenarioData/${countryCode}.json`)
       .await(
         (
           err: any,
           data: dataForReportType,
           d: any,
+          scenarioDataFromFile: ScenarioDataType[],
         ) => {
           if (err) throw err;
           setReportData(data);
           setPriorityData({ mode: 'defaultDocs', data: d.sdgs, documents: d.doc_name });
+
+          const targetStatusTemp: TargetStatusWithDetailsType[] = [];
+          SDGList.forEach((goal) => {
+            goal.Targets.forEach((target) => {
+              const status = targetStatuses.findIndex((el) => `Target ${el.target}` === target.Target) !== -1 ? targetStatuses[targetStatuses.findIndex((el) => `Target ${el.target}` === target.Target)].status : null;
+              targetStatusTemp.push({
+                goal: goal.Goal,
+                target: target.Target,
+                description: target['Target Description'],
+                status,
+              });
+            });
+          });
+          setTargetStatus(targetStatusTemp);
+          setScenarioData(scenarioDataFromFile);
         },
       );
   }, [countryCode]);
@@ -85,7 +112,7 @@ export const ReportView = (props: Props) => {
           <SectionCard id='section6' cardTitle='Fiscal/financial constraints' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconConstraints} />
         </div>
       </div>
-      {reportData && priorityData ? (
+      {reportData && priorityData && targetStatus ? (
         <>
           <SectionDiv
             sectionNo={1}
@@ -133,6 +160,16 @@ export const ReportView = (props: Props) => {
             sectionTitle='Interlinkages'
             contentDiv={(
               <div>
+                <p className='undp-typography'>
+                  SDG Interlinkages show how actions directed towards one SDG can influence the others. Uncovering and understanding these interactions helps achieving the 2030 Agenda, avoiding the unintended deterioration of any SDGs.
+                </p>
+                <p className='undp-typography'>
+                  The following pages provide insights into the pathways with the most potential to accelerate the SDGs. Building from the national priorities analyzed for South Africa and most critical SDG gaps and enablers, the following section explores the SDG interlinkages of economic growth, income equality, renewable energy and a just transition, combined with effective institutions as key policy areas for acceleration.
+                </p>
+                <p className='undp-typography'>
+                  Interlinkage analysis includes both synergies with positive multiplier effects and trade offs which can prevent effective policy implementation.
+                </p>
+                <img src={IMAGES.interlinkageImage} alt='Interlinkage' className='margin-bottom-09' />
                 <Tabs
                   activeKey={activeTab}
                   className='undp-tabs'
@@ -152,6 +189,42 @@ export const ReportView = (props: Props) => {
                             {interlinkage['Target Text']}
                           </p>
                           {interlinkage.Description.split('\n').map((d, j) => <p className='undp-typography' key={j}>{d}</p>)}
+                          <div className='margin-top-09'>
+                            <div style={{ backgroundColor: 'var(--white)' }}>
+                              <div style={{
+                                backgroundColor: 'var(--dark-green)', color: 'var(--white)', fontWeight: 'bold', textAlign: 'center',
+                              }}
+                              >
+                                Synergies
+                              </div>
+                              <div style={{ padding: 'var(--spacing-05)' }}>
+                                <InterlinkagesViz
+                                  selectedTarget={`Target ${interlinkage.Target}`}
+                                  linkageType='synergies'
+                                  data={targetStatus}
+                                  linkageData={LinkageData2023 as LinkageDataType[]}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className='margin-top-09'>
+                            <div style={{ backgroundColor: 'var(--white)' }}>
+                              <div style={{
+                                backgroundColor: 'var(--dark-red)', color: 'var(--white)', fontWeight: 'bold', textAlign: 'center',
+                              }}
+                              >
+                                Trade-Offs
+                              </div>
+                              <div style={{ padding: 'var(--spacing-05)' }}>
+                                <InterlinkagesViz
+                                  selectedTarget={`Target ${interlinkage.Target}`}
+                                  linkageType='tradeOffs'
+                                  data={targetStatus}
+                                  linkageData={LinkageData2023 as LinkageDataType[]}
+                                />
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       ),
                     }))}
@@ -167,6 +240,78 @@ export const ReportView = (props: Props) => {
             contentDiv={(
               <div>
                 {reportData.Futures.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
+                {
+                  scenarioData ? (
+                    <>
+                      <div className='margin-top-09 margin-bottom-09'>
+                        <div className='undp-table-head'>
+                          <div style={{ width: 'calc(50% - 2rem)', color: 'var(--black)', padding: '1rem' }} className='undp-table-head-cell undp-sticky-head-column'>
+                            People living in poverty
+                          </div>
+                          <div style={{ width: 'calc(25% - 2rem)', color: 'var(--black)', padding: '1rem' }} className='undp-table-head-cell undp-sticky-head-column align-right'>
+                            By 2030
+                          </div>
+                          <div style={{ width: 'calc(25% - 2rem)', color: 'var(--black)', padding: '1rem' }} className='undp-table-head-cell undp-sticky-head-column align-right'>
+                            by 2050
+                          </div>
+                        </div>
+                        <div className='undp-table-row' style={{ backgroundColor: 'transparent', color: 'var(--white)' }}>
+                          <div
+                            style={{
+                              width: 'calc(50% - 2rem)', padding: '1rem', backgroundColor: 'transparent', color: 'var(--white)',
+                            }}
+                            className='undp-table-row-cell'
+                          >
+                            Without SDG Push
+                          </div>
+                          <div
+                            style={{
+                              width: 'calc(25% - 2rem)', padding: '1rem', backgroundColor: 'transparent', color: 'var(--white)',
+                            }}
+                            className='undp-table-row-cell align-right'
+                          >
+                            {format('~s')(scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)' && series.scenario === "'COVID Baseline' scenario")[0].data[scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)' && series.scenario === "'COVID Baseline' scenario")[0].data.findIndex((d) => d.year === 2030)].value).replace('G', 'B')}
+                          </div>
+                          <div
+                            style={{
+                              width: 'calc(25% - 2rem)', padding: '1rem', backgroundColor: 'transparent', color: 'var(--white)',
+                            }}
+                            className='undp-table-row-cell align-right'
+                          >
+                            {format('~s')(scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)' && series.scenario === "'COVID Baseline' scenario")[0].data[scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)' && series.scenario === "'COVID Baseline' scenario")[0].data.findIndex((d) => d.year === 2050)].value).replace('G', 'B')}
+                          </div>
+                        </div>
+                        <div className='undp-table-row' style={{ backgroundColor: 'transparent', color: 'var(--white)' }}>
+                          <div
+                            style={{
+                              width: 'calc(50% - 2rem)', padding: '1rem', backgroundColor: 'transparent', color: 'var(--white)',
+                            }}
+                            className='undp-table-row-cell'
+                          >
+                            With SDG Push
+                          </div>
+                          <div
+                            style={{
+                              width: 'calc(25% - 2rem)', padding: '1rem', backgroundColor: 'transparent', color: 'var(--white)',
+                            }}
+                            className='undp-table-row-cell align-right'
+                          >
+                            {format('~s')(scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)' && series.scenario === "'SDG Push' scenario")[0].data[scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)' && series.scenario === "'SDG Push' scenario")[0].data.findIndex((d) => d.year === 2030)].value).replace('G', 'B')}
+                          </div>
+                          <div
+                            style={{
+                              width: 'calc(25% - 2rem)', padding: '1rem', backgroundColor: 'transparent', color: 'var(--white)',
+                            }}
+                            className='undp-table-row-cell align-right'
+                          >
+                            {format('~s')(scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)' && series.scenario === "'SDG Push' scenario")[0].data[scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)' && series.scenario === "'SDG Push' scenario")[0].data.findIndex((d) => d.year === 2050)].value).replace('G', 'B')}
+                          </div>
+                        </div>
+                      </div>
+                      <LineChart data={scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)')} />
+                    </>
+                  ) : <div className='undp-loader' style={{ margin: 'auto' }} />
+                }
               </div>
             )}
             color='var(--white)'

@@ -75,7 +75,7 @@ export const LineChart = (props: Props) => {
   return (
     <div className='max-width-1440 margin-bottom-09' style={{ backgroundColor: 'var(--gray-200)', paddingBottom: 'var(--spacing-05)' }} ref={ref}>
       <div style={{ padding: 'var(--spacing-07) var(--spacing-05) 0 var(--spacing-05)' }} ref={graphRef}>
-        <h6 className='undp-typography'>{data[0].indicator}</h6>
+        <h6 className='undp-typography' style={{ color: 'var(--black)' }}>{data[0].indicator}</h6>
         <>
           <svg width='100%' height='100%' viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
             <g transform={`translate(${margin.left},${margin.top})`}>
