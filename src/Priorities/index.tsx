@@ -412,6 +412,7 @@ export const Priorities = (props: Props) => {
                 goalStatuses={goalStatuses}
                 document={data.mode === 'analyze' ? selectedFile.map((d:any) => d.name) : data.mode === 'defaultDocs' ? data.documents : [`VNR ${vnrYear}`]}
                 defaultDocs={data.mode === 'defaultDocs'}
+                onlyBubbleChart={false}
               />
             )
             : null
