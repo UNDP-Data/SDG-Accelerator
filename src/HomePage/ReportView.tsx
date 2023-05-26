@@ -4,16 +4,16 @@ import { json } from 'd3-request';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import IMAGES from '../img/images';
-import { dataForReportType, InterlinkagesForReportType } from '../Types';
+import { GoalStatusType, dataForReportType } from '../Types';
 import { SectionCard } from './SectionCard';
+import { SectionDiv } from './SectionDiv';
+import { DATASOURCELINK } from '../Constants';
+import { SDGGoalGapList } from '../CurrentGaps/SDGGoalGapList';
+import { VNRAnalysis } from '../Priorities/VNRAnalysis';
 
 interface Props {
   countryCode: string;
-}
-
-interface SectionProps {
-  color: string;
-  background: string;
+  goalStatuses: GoalStatusType[];
 }
 
 const HeroImageEl = styled.div`
@@ -22,30 +22,31 @@ const HeroImageEl = styled.div`
   margin-top: 7.1875rem;
 `;
 
-const SectionEl = styled.div<SectionProps>`
-  background-color: ${(props) => props.background};
-  color: ${(props) => props.color};
-  padding: var(--spacing-09);
-`;
-
 export const ReportView = (props: Props) => {
-  const { countryCode } = props;
+  const { countryCode, goalStatuses } = props;
   const [reportData, setReportData] = useState<
     dataForReportType | undefined
   >(undefined);
+  const [priorityData, setPriorityData] = useState<any>(null);
+  const [activeTab, setActiveTab] = useState('0');
   useEffect(() => {
+    setReportData(undefined);
+    setPriorityData(null);
     queue()
-      .defer(json, '../data/ReportPages/ZAF.json')
+      .defer(json, `${DATASOURCELINK}/data/ReportPages/${countryCode}.json`)
+      .defer(json, `${DATASOURCELINK}/data/PrioritiesData/${countryCode}.json`)
       .await(
         (
           err: any,
           data: dataForReportType,
+          d: any,
         ) => {
           if (err) throw err;
           setReportData(data);
+          setPriorityData({ mode: 'defaultDocs', data: d.sdgs, documents: d.doc_name });
         },
       );
-  }, []);
+  }, [countryCode]);
 
   return (
     <>
@@ -76,104 +77,117 @@ export const ReportView = (props: Props) => {
             maxWidth: '70rem', margin: 'auto', gap: '1rem',
           }}
         >
-          <SectionCard cardTitle='Growth Pathways' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconSnapshot} />
-          <SectionCard cardTitle='SDG Trends' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconTrends} />
-          <SectionCard cardTitle='National Priorities' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconPriorities} />
-          <SectionCard cardTitle='Interlinkages' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconInterlinkages} />
-          <SectionCard cardTitle='Futures' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconFutures} />
-          <SectionCard cardTitle='Fiscal/financial constraints' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconConstraints} />
+          <SectionCard id='section1' cardTitle='Growth Pathways' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconSnapshot} />
+          <SectionCard id='section2' cardTitle='SDG Trends' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconTrends} />
+          <SectionCard id='section3' cardTitle='National Priorities' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconPriorities} />
+          <SectionCard id='section4' cardTitle='Interlinkages' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconInterlinkages} />
+          <SectionCard id='section5' cardTitle='Futures' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconFutures} />
+          <SectionCard id='section6' cardTitle='Fiscal/financial constraints' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconConstraints} />
         </div>
       </div>
-      {reportData ? (
+      {reportData && priorityData ? (
         <>
-          <SectionEl className='max-width' color='var(--white)' background='var(--blue-600)'>
-            <h5 className='undp-typography margin-bottom-02'>Section 1</h5>
-            <h2 className='undp-typography'>Growth Pathways</h2>
-            <div className='margin-top-07 margin-bottom-05'>
-              {reportData['Growth Pathways']}
-            </div>
-          </SectionEl>
-          <SectionEl className='max-width' color='var(--black)' background='var(--gray-200)'>
-            <h5 className='undp-typography margin-bottom-02'>Section 2</h5>
-            <h2 className='undp-typography'>Trends</h2>
-            <div className='margin-top-07 margin-bottom-05'>
-              {reportData.Trends}
-            </div>
-          </SectionEl>
-          <SectionEl className='max-width' color='var(--black)' background='var(--white)'>
-            <h5 className='undp-typography margin-bottom-02'>Section 3</h5>
-            <h2 className='undp-typography'>National Priorities</h2>
-            <div className='margin-top-07 margin-bottom-05'>
-              {reportData['National Priorities']}
-            </div>
-          </SectionEl>
-          <SectionEl className='max-width' color='var(--black)' background='var(--gray-200)'>
-            <h5 className='undp-typography margin-bottom-02'>Section 4</h5>
-            <h2 className='undp-typography'>Interlinkages</h2>
-            <div className='margin-top-07 margin-bottom-05'>
-              Lorem ipsum
-            </div>
-            <Tabs
-              defaultActiveKey='Insight 1'
-              className='undp-tabs'
-              onChange={() => {
-              }}
-              items={[
-                {
-                  label: 'Insight 1',
-                  key: '1',
-                  children: (
-                    <>
-                      {reportData.Interlinkages.map((interlinkage: InterlinkagesForReportType, index:number) => (
-                        <div key={index}>
-                          <h3>
-                            Interlinkage
-                            {' '}
-                            {index + 1}
-                          </h3>
-                          <p>
-                            Target:
+          <SectionDiv
+            sectionNo={1}
+            sectionTitle='Growth Pathways'
+            contentDiv={(
+              <div>
+                {reportData['Growth Pathways'].split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
+              </div>
+            )}
+            color='var(--white)'
+            background='var(--blue-600)'
+          />
+          <SectionDiv
+            sectionNo={2}
+            sectionTitle='Trends'
+            contentDiv={(
+              <div>
+                {reportData.Trends.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
+                <SDGGoalGapList goalStatuses={goalStatuses} />
+              </div>
+            )}
+            color='var(--black)'
+            background='var(--gray-200)'
+          />
+          <SectionDiv
+            sectionNo={3}
+            sectionTitle='National Priorities'
+            contentDiv={(
+              <div>
+                {reportData['National Priorities'].split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
+                <VNRAnalysis
+                  data={priorityData.data}
+                  goalStatuses={goalStatuses}
+                  document={priorityData.documents}
+                  defaultDocs
+                  onlyBubbleChart
+                />
+              </div>
+            )}
+            color='var(--black)'
+            background='var(--white)'
+          />
+          <SectionDiv
+            sectionNo={4}
+            sectionTitle='Interlinkages'
+            contentDiv={(
+              <div>
+                <Tabs
+                  activeKey={activeTab}
+                  className='undp-tabs'
+                  onChange={(d) => { setActiveTab(d); }}
+                  items={reportData.Interlinkages.map((interlinkage, i) => (
+                    {
+                      label: `Insight ${i + 1}`,
+                      key: `${i}`,
+                      children: (
+                        <div key={`${i}`}>
+                          <h3 className='undp-typography'>
+                            Target
                             {' '}
                             {interlinkage.Target}
-                          </p>
-                          <p>
-                            Target Text:
-                            {' '}
+                          </h3>
+                          <p className='bold undp-typography'>
                             {interlinkage['Target Text']}
                           </p>
-                          <p>
-                            Description:
-                            {' '}
-                            {interlinkage.Description}
-                          </p>
+                          {interlinkage.Description.split('\n').map((d, j) => <p className='undp-typography' key={j}>{d}</p>)}
                         </div>
-                      ))}
-                    </>
-                  ),
-                },
-              ]}
-            />
-
-          </SectionEl>
-          <SectionEl className='max-width' color='var(--white)' background='var(--blue-600)'>
-            <h5 className='undp-typography margin-bottom-02'>Section 5</h5>
-            <h2 className='undp-typography'>Futures</h2>
-            <div className='margin-top-07 margin-bottom-05'>
-              {reportData.Futures}
-            </div>
-          </SectionEl>
-          <SectionEl className='max-width' color='var(--black)' background='var(--white)'>
-            <h5 className='undp-typography margin-bottom-02'>Section 6</h5>
-            <h2 className='undp-typography'>Fiscal</h2>
-            <div className='margin-top-07 margin-bottom-05'>
-              {reportData.Fiscal}
-            </div>
-          </SectionEl>
+                      ),
+                    }))}
+                />
+              </div>
+            )}
+            color='var(--black)'
+            background='var(--gray-200)'
+          />
+          <SectionDiv
+            sectionNo={5}
+            sectionTitle='Futures'
+            contentDiv={(
+              <div>
+                {reportData.Futures.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
+              </div>
+            )}
+            color='var(--white)'
+            background='var(--blue-600)'
+          />
+          <SectionDiv
+            sectionNo={6}
+            sectionTitle='Fiscal'
+            contentDiv={(
+              <div>
+                {reportData.Fiscal.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
+              </div>
+            )}
+            color='var(--black)'
+            background='var(--white)'
+          />
         </>
       )
         : (
           <div style={{
-            width: 'calc(75% - 1rem)', height: '200px', backgroundColor: 'var(--gray-100)', paddingTop: '80px',
+            height: '200px', backgroundColor: 'var(--gray-100)', paddingTop: '80px',
           }}
           >
             <div className='undp-loader' style={{ margin: 'auto' }} />
