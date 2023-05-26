@@ -1,12 +1,13 @@
 import styled from 'styled-components';
-import { useRef, useState } from 'react';
 import { Select } from 'antd';
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 import { SDGGOALS, TargetIndicatorCount } from '../Constants';
 import { SDGGapsData } from './SDGGapsData';
 import { GoalStatusType, StatusesType, TimeSeriesDataTypeWithStatusCode } from '../Types';
 import IMAGES from '../img/images';
-import { DownloadImage } from '../utils/DownloadImage';
+import { SDGGoalGapList } from './SDGGoalGapList';
+
 interface Props {
   goalStatuses: GoalStatusType[];
   statuses: StatusesType;
