@@ -112,6 +112,7 @@ export const LandingPage = () => {
                       <HomePage
                         countryCode={countryCode}
                         countryFullName={countryFullName}
+                        goalStatuses={statuses.goalStatus}
                       />
                   )}
                   />

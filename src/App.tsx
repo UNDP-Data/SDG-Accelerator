@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import { LandingPage } from './LandingPage';
-import { HomePage } from './HomePage';
 import { GlobalHeader } from './Header';
 import { Footer } from './Footer';
+import { DefaultHomePage } from './HomePage/DefaultHomePage';
 
 const App = () => (
   <div className='undp-container'>
@@ -12,7 +12,7 @@ const App = () => (
         element={(
           <>
             <GlobalHeader />
-            <HomePage />
+            <DefaultHomePage />
             <Footer />
           </>
         )}
@@ -22,7 +22,7 @@ const App = () => (
         element={(
           <>
             <GlobalHeader />
-            <HomePage />
+            <DefaultHomePage />
             <Footer />
           </>
         )}
