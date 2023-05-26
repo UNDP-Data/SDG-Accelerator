@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from 'react';
 import { pointer, select } from 'd3-selection';
 import { KEYSTOAVOID, SERIES_TAGS_LABELS } from '../Constants';
 import { TimeSeriesDataTypeWithStatusCode } from '../Types';
+import { DownloadImage } from '../utils/DownloadImage';
 
 interface Props {
   data: TimeSeriesDataTypeWithStatusCode;
@@ -74,7 +75,6 @@ export const LineChart = (props: Props) => {
   }, [data]);
   return (
     <div
-      ref={GraphRef}
       style={{
         width: '85%',
         flexShrink: 0,
@@ -85,242 +85,269 @@ export const LineChart = (props: Props) => {
         cursor,
       }}
     >
-      <h6 className='undp-typography margin-top-05'>{data.seriesDescription}</h6>
-      <div className='flex-div flex-wrap margin-bottom-07'>
+      <div
+        ref={GraphRef}
+        style={{
+          padding: '1rem 2rem',
+          fontFamily: 'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
+        }}
+      >
+        <h6 className='undp-typography margin-top-05'>{data.seriesDescription}</h6>
+        <div className='flex-div flex-wrap margin-bottom-07'>
+          {
+            Object.keys(data).map((d, i) => {
+              if (KEYSTOAVOID.indexOf(d) !== -1) return null;
+              return (
+                <div
+                  className='undp-chip undp-chip-small'
+                  key={i}
+                  style={{
+                    fontFamily: 'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
+                  }}
+                >
+                  {SERIES_TAGS_LABELS.findIndex((el) => el.key === d) === -1 ? d : SERIES_TAGS_LABELS[SERIES_TAGS_LABELS.findIndex((el) => el.key === d)].label }
+                  :
+                  {' '}
+                  {SERIES_TAGS_LABELS.findIndex((el) => el.key === (data as any)[d]) === -1 ? !(data as any)[d] || (data as any)[d] === '' ? 'NA' : (data as any)[d] : SERIES_TAGS_LABELS[SERIES_TAGS_LABELS.findIndex((el) => el.key === (data as any)[d])].label }
+                </div>
+              );
+            })
+          }
+          {
+            data.status
+              ? (
+                <div
+                  className={`undp-chip undp-chip-small ${data.status === 'On Track' || data.status === 'Target Achieved'
+                    ? 'undp-chip-green'
+                    : data.status === 'Fair progress but acceleration needed'
+                      ? 'undp-chip-yellow'
+                      : data.status === 'Limited or No Progress' || data.status === 'Target Not Achieved'
+                        ? 'undp-chip-red'
+                        : data.status === 'Deterioration' ? 'undp-chip-red'
+                          : 'undp-chip-gray'
+                  }`}
+                >
+                  {data.status === 'No Data After 2015' ? 'Insufficient Data: No Data after 2015' : data.status}
+                </div>
+              ) : null
+          }
+        </div>
         {
-          Object.keys(data).map((d, i) => {
-            if (KEYSTOAVOID.indexOf(d) !== -1) return null;
-            return (
-              <div className='undp-chip undp-chip-small' key={i}>
-                {SERIES_TAGS_LABELS.findIndex((el) => el.key === d) === -1 ? d : SERIES_TAGS_LABELS[SERIES_TAGS_LABELS.findIndex((el) => el.key === d)].label }
-                :
-                {' '}
-                {SERIES_TAGS_LABELS.findIndex((el) => el.key === (data as any)[d]) === -1 ? !(data as any)[d] || (data as any)[d] === '' ? 'NA' : (data as any)[d] : SERIES_TAGS_LABELS[SERIES_TAGS_LABELS.findIndex((el) => el.key === (data as any)[d])].label }
-              </div>
-            );
-          })
-        }
-        {
-          data.status
-            ? (
-              <div
-                className={`undp-chip undp-chip-small ${data.status === 'On Track' || data.status === 'Target Achieved'
-                  ? 'undp-chip-green'
-                  : data.status === 'Fair progress but acceleration needed'
-                    ? 'undp-chip-yellow'
-                    : data.status === 'Limited or No Progress' || data.status === 'Target Not Achieved'
-                      ? 'undp-chip-red'
-                      : data.status === 'Deterioration' ? 'undp-chip-red'
-                        : 'undp-chip-gray'
-                }`}
-              >
-                {data.status === 'No Data After 2015' ? 'Insufficient Data: No Data after 2015' : data.status}
-              </div>
-            ) : null
+          values.length === 0 ? <h6 className='undp-typography'>No Data Available</h6>
+            : (
+              <>
+                <svg width='100%' viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
+                  <g transform={`translate(${margin.left},${margin.top})`}>
+                    <line
+                      y1={y(0)}
+                      y2={y(0)}
+                      x1={0 - margin.left}
+                      x2={graphWidth + margin.right}
+                      stroke='#55606E'
+                      strokeWidth={1}
+                    />
+                    <text
+                      x={0 - margin.left + 2}
+                      y={y(0)}
+                      fill='#A9B1B7'
+                      textAnchor='start'
+                      fontSize={12}
+                      dy={-3}
+                    >
+                      0
+                    </text>
+                    <g>
+                      {
+                        yTicks.map((d, i) => (
+                          <g key={i}>
+                            <line
+                              y1={y(d)}
+                              y2={y(d)}
+                              x1={0 - margin.left}
+                              x2={graphWidth + margin.right}
+                              stroke='#A9B1B7'
+                              strokeWidth={1}
+                              strokeDasharray='4,8'
+                              opacity={d === 0 ? 0 : 1}
+                            />
+                            <text
+                              x={0 - margin.left + 2}
+                              y={y(d)}
+                              fill='#A9B1B7'
+                              textAnchor='start'
+                              fontSize={12}
+                              dy={-3}
+                              opacity={d === 0 ? 0 : 1}
+                            >
+                              {Math.abs(d) < 1 ? d : format('~s')(d).replace('G', 'B')}
+                            </text>
+                          </g>
+                        ))
+                      }
+                    </g>
+                    <g>
+                      {
+                        xTicks.map((d, i) => (
+                          <g key={i}>
+                            <text
+                              y={graphHeight}
+                              x={x(d)}
+                              fill='#A9B1B7'
+                              textAnchor='middle'
+                              fontSize={12}
+                              dy={15}
+                            >
+                              {d}
+                            </text>
+                          </g>
+                        ))
+                      }
+                    </g>
+                    <g>
+                      <path d={lineShape1(values as any) as string} fill='none' stroke='#006EB5' strokeWidth={2} />
+                      {
+                        values.map((d, i: number) => (
+                          <g
+                            key={i}
+                          >
+                            <circle
+                              cx={x(d.year)}
+                              cy={y(d.value)}
+                              r={4}
+                              fill='#006EB5'
+                            />
+                            <text
+                              x={x(d.year)}
+                              y={y(d.value)}
+                              dy={-8}
+                              fontSize={values.length > 10 ? values.length > 20 ? 0 : 11 : 12}
+                              textAnchor='middle'
+                              fill='#55606E'
+                            >
+                              {d.label ? d.label : typeof d.value === 'number' ? Math.abs(d.value) === 0 ? 0 : Math.abs(d.value) < 1 ? Math.abs(d.value) < 0.09 ? d.value.toFixed(3) : d.value.toFixed(2) : Math.abs(d.value) > 1000 ? format('.2s')(d.value).replace('G', 'B') : format('.3s')(d.value) : d.value}
+                            </text>
+                          </g>
+                        ))
+                      }
+                      {
+                        data.methodology
+                          ? data.methodology.baseYear ? (
+                            <g>
+                              <line
+                                x1={x(data.methodology.baseYear)}
+                                x2={x(data.methodology.baseYear)}
+                                y1={0}
+                                y2={graphHeight}
+                                stroke='#55606E'
+                                strokeWidth={1}
+                              />
+                              <text
+                                fill='#232E3D'
+                                fontSize={12}
+                                y={0}
+                                x={x(data.methodology.baseYear)}
+                                textAnchor='middle'
+                                dy={-10}
+                              >
+                                {data.methodology.baseYear}
+                              </text>
+                            </g>
+                          ) : null
+                          : null
+                      }
+                      {
+                        hoverData
+                          ? (
+                            <g>
+                              <line
+                                x1={x(hoverData.year)}
+                                x2={x(hoverData.year)}
+                                y1={0}
+                                y2={graphHeight}
+                                stroke='#55606E'
+                                strokeWidth={1}
+                              />
+                              <rect
+                                fill='#EDEFF0'
+                                opacity={0.8}
+                                y={0}
+                                x={x(hoverData.year) > graphWidth / 2 ? x(hoverData.year) - ((`${hoverData.value}`.length + 6) * 7) - 3 : x(hoverData.year) + 2}
+                                height={20}
+                                width={(`${hoverData.value}`.length + 6) * 7}
+                              />
+                              <text
+                                fill='#232E3D'
+                                fontSize={12}
+                                y={0}
+                                x={x(hoverData.year)}
+                                textAnchor={x(hoverData.year) > graphWidth / 2 ? 'end' : 'start'}
+                                dx={x(hoverData.year) > graphWidth / 2 ? -3 : 3}
+                                dy={15}
+                              >
+                                {hoverData.year}
+                                :
+                                {' '}
+                                {hoverData.label ? hoverData.label : hoverData.value === null ? 'NA' : hoverData.value}
+                              </text>
+                            </g>
+                          )
+                          : null
+                      }
+                      <rect
+                        x={0}
+                        y={0}
+                        width={graphWidth}
+                        height={graphHeight}
+                        fill='#fff'
+                        opacity={0}
+                        ref={MouseoverRectRef}
+                      />
+                    </g>
+                  </g>
+                </svg>
+                <div className='flex-div margin-top-05 margin-bottom-05'>
+                  {
+                    data.methodology
+                      ? data.methodology.targetValue ? (
+                        <div style={{ fontSize: '0.875rem', opacity: 0.7 }}>
+                          Target value:
+                          {' '}
+                          {data.methodology.targetValue}
+                        </div>
+                      ) : null
+                      : null
+                  }
+                  {
+                    data.methodology
+                      ? data.methodology.baseYear ? (
+                        <div style={{ fontSize: '0.875rem', opacity: 0.7 }}>
+                          Base year:
+                          {' '}
+                          {data.methodology.baseYear}
+                        </div>
+                      ) : null
+                      : null
+                  }
+                </div>
+                {
+                  data.series === '***' ? <div style={{ fontSize: '0.875rem', opacity: 0.7 }}>Data Source: Country office</div> : <a style={{ fontSize: '0.875rem', opacity: 0.7 }} href={`https://unstats.un.org/sdgs/dataportal/countryprofiles/${countryCode}`} className='undp-style margin-top-05' target='_blank' rel='noreferrer'>Data Source: UNStats</a>
+                }
+              </>
+            )
         }
       </div>
       {
-        values.length === 0 ? <h6 className='undp-typography'>No Data Available</h6>
-          : (
-            <>
-              <svg width='100%' viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
-                <g transform={`translate(${margin.left},${margin.top})`}>
-                  <line
-                    y1={y(0)}
-                    y2={y(0)}
-                    x1={0 - margin.left}
-                    x2={graphWidth + margin.right}
-                    stroke='#55606E'
-                    strokeWidth={1}
-                  />
-                  <text
-                    x={0 - margin.left + 2}
-                    y={y(0)}
-                    fill='#A9B1B7'
-                    textAnchor='start'
-                    fontSize={12}
-                    dy={-3}
-                  >
-                    0
-                  </text>
-                  <g>
-                    {
-                      yTicks.map((d, i) => (
-                        <g key={i}>
-                          <line
-                            y1={y(d)}
-                            y2={y(d)}
-                            x1={0 - margin.left}
-                            x2={graphWidth + margin.right}
-                            stroke='#A9B1B7'
-                            strokeWidth={1}
-                            strokeDasharray='4,8'
-                            opacity={d === 0 ? 0 : 1}
-                          />
-                          <text
-                            x={0 - margin.left + 2}
-                            y={y(d)}
-                            fill='#A9B1B7'
-                            textAnchor='start'
-                            fontSize={12}
-                            dy={-3}
-                            opacity={d === 0 ? 0 : 1}
-                          >
-                            {Math.abs(d) < 1 ? d : format('~s')(d).replace('G', 'B')}
-                          </text>
-                        </g>
-                      ))
-                    }
-                  </g>
-                  <g>
-                    {
-                      xTicks.map((d, i) => (
-                        <g key={i}>
-                          <text
-                            y={graphHeight}
-                            x={x(d)}
-                            fill='#A9B1B7'
-                            textAnchor='middle'
-                            fontSize={12}
-                            dy={15}
-                          >
-                            {d}
-                          </text>
-                        </g>
-                      ))
-                    }
-                  </g>
-                  <g>
-                    <path d={lineShape1(values as any) as string} fill='none' stroke='#006EB5' strokeWidth={2} />
-                    {
-                      values.map((d, i: number) => (
-                        <g
-                          key={i}
-                        >
-                          <circle
-                            cx={x(d.year)}
-                            cy={y(d.value)}
-                            r={4}
-                            fill='#006EB5'
-                          />
-                          <text
-                            x={x(d.year)}
-                            y={y(d.value)}
-                            dy={-8}
-                            fontSize={values.length > 10 ? values.length > 20 ? 0 : 11 : 12}
-                            textAnchor='middle'
-                            fill='#55606E'
-                          >
-                            {d.label ? d.label : typeof d.value === 'number' ? Math.abs(d.value) === 0 ? 0 : Math.abs(d.value) < 1 ? Math.abs(d.value) < 0.09 ? d.value.toFixed(3) : d.value.toFixed(2) : Math.abs(d.value) > 1000 ? format('.2s')(d.value).replace('G', 'B') : format('.3s')(d.value) : d.value}
-                          </text>
-                        </g>
-                      ))
-                    }
-                    {
-                      data.methodology
-                        ? data.methodology.baseYear ? (
-                          <g>
-                            <line
-                              x1={x(data.methodology.baseYear)}
-                              x2={x(data.methodology.baseYear)}
-                              y1={0}
-                              y2={graphHeight}
-                              stroke='#55606E'
-                              strokeWidth={1}
-                            />
-                            <text
-                              fill='#232E3D'
-                              fontSize={12}
-                              y={0}
-                              x={x(data.methodology.baseYear)}
-                              textAnchor='middle'
-                              dy={-10}
-                            >
-                              {data.methodology.baseYear}
-                            </text>
-                          </g>
-                        ) : null
-                        : null
-                    }
-                    {
-                      hoverData
-                        ? (
-                          <g>
-                            <line
-                              x1={x(hoverData.year)}
-                              x2={x(hoverData.year)}
-                              y1={0}
-                              y2={graphHeight}
-                              stroke='#55606E'
-                              strokeWidth={1}
-                            />
-                            <rect
-                              fill='#EDEFF0'
-                              opacity={0.8}
-                              y={0}
-                              x={x(hoverData.year) > graphWidth / 2 ? x(hoverData.year) - ((`${hoverData.value}`.length + 6) * 7) - 3 : x(hoverData.year) + 2}
-                              height={20}
-                              width={(`${hoverData.value}`.length + 6) * 7}
-                            />
-                            <text
-                              fill='#232E3D'
-                              fontSize={12}
-                              y={0}
-                              x={x(hoverData.year)}
-                              textAnchor={x(hoverData.year) > graphWidth / 2 ? 'end' : 'start'}
-                              dx={x(hoverData.year) > graphWidth / 2 ? -3 : 3}
-                              dy={15}
-                            >
-                              {hoverData.year}
-                              :
-                              {' '}
-                              {hoverData.label ? hoverData.label : hoverData.value === null ? 'NA' : hoverData.value}
-                            </text>
-                          </g>
-                        )
-                        : null
-                    }
-                    <rect
-                      x={0}
-                      y={0}
-                      width={graphWidth}
-                      height={graphHeight}
-                      fill='#fff'
-                      opacity={0}
-                      ref={MouseoverRectRef}
-                    />
-                  </g>
-                </g>
-              </svg>
-              <div className='flex-div margin-top-05 margin-bottom-05'>
-                {
-                  data.methodology
-                    ? data.methodology.targetValue ? (
-                      <div style={{ fontSize: '0.875rem', opacity: 0.7 }}>
-                        Target value:
-                        {' '}
-                        {data.methodology.targetValue}
-                      </div>
-                    ) : null
-                    : null
-                }
-                {
-                  data.methodology
-                    ? data.methodology.baseYear ? (
-                      <div style={{ fontSize: '0.875rem', opacity: 0.7 }}>
-                        Base year:
-                        {' '}
-                        {data.methodology.baseYear}
-                      </div>
-                    ) : null
-                    : null
-                }
-              </div>
-              {
-                data.series === '***' ? <div style={{ fontSize: '0.875rem', opacity: 0.7 }}>Data Source: Country office</div> : <a style={{ fontSize: '0.875rem', opacity: 0.7 }} href={`https://unstats.un.org/sdgs/dataportal/countryprofiles/${countryCode}`} className='undp-style margin-top-05' target='_blank' rel='noreferrer'>Data Source: UNStats</a>
-              }
-            </>
-          )
+        values.length !== 0
+          ? (
+            <button
+              className='undp-button tertiary-button'
+              type='button'
+              style={{ color: 'var(--blue-600)', padding: 'var(--spacing-05)' }}
+              onClick={() => { if (GraphRef.current) { DownloadImage(GraphRef.current, `${data.series}`); } }}
+            >
+              Download Graph
+            </button>
+          ) : null
       }
     </div>
   );

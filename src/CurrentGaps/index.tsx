@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Select } from 'antd';
 import { NavLink } from 'react-router-dom';
 import { SDGGOALS, TargetIndicatorCount } from '../Constants';
 import { SDGGapsData } from './SDGGapsData';
 import { GoalStatusType, StatusesType, TimeSeriesDataTypeWithStatusCode } from '../Types';
 import IMAGES from '../img/images';
-import { SDGGoalGapList } from './SDGGoalGapList';
-
+import { DownloadImage } from '../utils/DownloadImage';
 interface Props {
   goalStatuses: GoalStatusType[];
   statuses: StatusesType;
@@ -148,7 +147,7 @@ export const CurrentGaps = (props: Props) => {
                         : ''
                   }
               >
-                {goalStatuses[goalStatuses.findIndex((d) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status ? goalStatuses[goalStatuses.findIndex((d) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status : 'Gap NA'}
+                {goalStatuses[goalStatuses.findIndex((d) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status ? goalStatuses[goalStatuses.findIndex((d) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status === 'Identified Gap' ? 'Off Track' : goalStatuses[goalStatuses.findIndex((d) => `SDG ${d.goal}` === selectedSDG.split(':')[0])].status : 'trend NA'}
               </h2>
               <p>SDG Trend</p>
             </div>

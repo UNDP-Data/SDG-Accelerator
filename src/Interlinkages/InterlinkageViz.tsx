@@ -522,6 +522,7 @@ export const InterlinkagesViz = (props: Props) => {
                         x={squareSize / 2}
                         y={squareSize / 2}
                         dy={5}
+                        style={{ fontFamily: 'ProximaNova, proxima-nova, Helvetica Neue, sans-serif' }}
                         fontSize='13px'
                         fontWeight={500}
                         fill='#212121'
