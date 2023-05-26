@@ -1,8 +1,19 @@
+import { Tabs } from 'antd';
+import { queue } from 'd3-queue';
+import { json } from 'd3-request';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import IMAGES from '../img/images';
+import { dataForReportType, InterlinkagesForReportType } from '../Types';
+import { SectionCard } from './SectionCard';
 
 interface Props {
   countryCode: string;
+}
+
+interface SectionProps {
+  color: string;
+  background: string;
 }
 
 const HeroImageEl = styled.div`
@@ -11,10 +22,31 @@ const HeroImageEl = styled.div`
   margin-top: 7.1875rem;
 `;
 
+const SectionEl = styled.div<SectionProps>`
+  background-color: ${(props) => props.background};
+  color: ${(props) => props.color};
+  padding: var(--spacing-09);
+`;
+
 export const ReportView = (props: Props) => {
-  const {
-    countryCode,
-  } = props;
+  const { countryCode } = props;
+  const [reportData, setReportData] = useState<
+    dataForReportType | undefined
+  >(undefined);
+  useEffect(() => {
+    queue()
+      .defer(json, '../data/ReportPages/ZAF.json')
+      .await(
+        (
+          err: any,
+          data: dataForReportType,
+        ) => {
+          if (err) throw err;
+          setReportData(data);
+        },
+      );
+  }, []);
+
   return (
     <>
       <HeroImageEl className='undp-hero-image'>
@@ -25,15 +57,128 @@ export const ReportView = (props: Props) => {
         </div>
       </HeroImageEl>
       <div className='undp-hero-section padding-top-13 padding-bottom-13'>
-        <div className='max-width flex-div flex-wrap' style={{ padding: '0 1rem', gap: '4rem' }}>
-          <div className='undp-section-content' style={{ width: 'calc(50% - 2rem)', minWidth: '20rem', flexGrow: 1 }}>
-            <h2 className='undp-typography'>What are the Integrated SDG Insights?</h2>
+        <div
+          className='max-width flex-div flex-wrap flex-space-around'
+          style={{
+            maxWidth: '70rem', margin: 'auto', justifyContent: 'space-between', padding: '2rem 0rem', gap: '4rem',
+          }}
+        >
+          <div className='undp-section-content' style={{ width: 'calc(40% - 2rem)', minWidth: '20rem', flexGrow: 1 }}>
+            <h3 className='undp-typography'>What are the Integrated SDG Insights?</h3>
           </div>
-          <div className='undp-section-content' style={{ width: 'calc(50% - 2rem)', minWidth: '20rem', flexGrow: 1 }}>
+          <div className='undp-section-content' style={{ width: 'calc(60% - 2rem)', minWidth: '20rem', flexGrow: 1 }}>
             This report provides an integrated analysis of SDG trends, national priorities and explores critical SDG interlinkages to inform policy pathways and development choices. The insights support Member State preparation for the SDG Summit and builds towards effective policy implementation in the second half of the 2030 Agenda.
           </div>
         </div>
+        <div
+          className='max-width-1280 flex-div flex-wrap'
+          style={{
+            maxWidth: '70rem', margin: 'auto', gap: '1rem',
+          }}
+        >
+          <SectionCard cardTitle='Growth Pathways' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconSnapshot} />
+          <SectionCard cardTitle='SDG Trends' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconTrends} />
+          <SectionCard cardTitle='National Priorities' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconPriorities} />
+          <SectionCard cardTitle='Interlinkages' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconInterlinkages} />
+          <SectionCard cardTitle='Futures' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconFutures} />
+          <SectionCard cardTitle='Fiscal/financial constraints' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconConstraints} />
+        </div>
       </div>
+      {reportData ? (
+        <>
+          <SectionEl className='max-width' color='var(--white)' background='var(--blue-600)'>
+            <h5 className='undp-typography margin-bottom-02'>Section 1</h5>
+            <h2 className='undp-typography'>Growth Pathways</h2>
+            <div className='margin-top-07 margin-bottom-05'>
+              {reportData['Growth Pathways']}
+            </div>
+          </SectionEl>
+          <SectionEl className='max-width' color='var(--black)' background='var(--gray-200)'>
+            <h5 className='undp-typography margin-bottom-02'>Section 2</h5>
+            <h2 className='undp-typography'>Trends</h2>
+            <div className='margin-top-07 margin-bottom-05'>
+              {reportData.Trends}
+            </div>
+          </SectionEl>
+          <SectionEl className='max-width' color='var(--black)' background='var(--white)'>
+            <h5 className='undp-typography margin-bottom-02'>Section 3</h5>
+            <h2 className='undp-typography'>National Priorities</h2>
+            <div className='margin-top-07 margin-bottom-05'>
+              {reportData['National Priorities']}
+            </div>
+          </SectionEl>
+          <SectionEl className='max-width' color='var(--black)' background='var(--gray-200)'>
+            <h5 className='undp-typography margin-bottom-02'>Section 4</h5>
+            <h2 className='undp-typography'>Interlinkages</h2>
+            <div className='margin-top-07 margin-bottom-05'>
+              Lorem ipsum
+            </div>
+            <Tabs
+              defaultActiveKey='Insight 1'
+              className='undp-tabs'
+              onChange={() => {
+              }}
+              items={[
+                {
+                  label: 'Insight 1',
+                  key: '1',
+                  children: (
+                    <>
+                      {reportData.Interlinkages.map((interlinkage: InterlinkagesForReportType, index:number) => (
+                        <div key={index}>
+                          <h3>
+                            Interlinkage
+                            {' '}
+                            {index + 1}
+                          </h3>
+                          <p>
+                            Target:
+                            {' '}
+                            {interlinkage.Target}
+                          </p>
+                          <p>
+                            Target Text:
+                            {' '}
+                            {interlinkage['Target Text']}
+                          </p>
+                          <p>
+                            Description:
+                            {' '}
+                            {interlinkage.Description}
+                          </p>
+                        </div>
+                      ))}
+                    </>
+                  ),
+                },
+              ]}
+            />
+
+          </SectionEl>
+          <SectionEl className='max-width' color='var(--white)' background='var(--blue-600)'>
+            <h5 className='undp-typography margin-bottom-02'>Section 5</h5>
+            <h2 className='undp-typography'>Futures</h2>
+            <div className='margin-top-07 margin-bottom-05'>
+              {reportData.Futures}
+            </div>
+          </SectionEl>
+          <SectionEl className='max-width' color='var(--black)' background='var(--white)'>
+            <h5 className='undp-typography margin-bottom-02'>Section 6</h5>
+            <h2 className='undp-typography'>Fiscal</h2>
+            <div className='margin-top-07 margin-bottom-05'>
+              {reportData.Fiscal}
+            </div>
+          </SectionEl>
+        </>
+      )
+        : (
+          <div style={{
+            width: 'calc(75% - 1rem)', height: '200px', backgroundColor: 'var(--gray-100)', paddingTop: '80px',
+          }}
+          >
+            <div className='undp-loader' style={{ margin: 'auto' }} />
+          </div>
+        )}
       <div className='undp-hero-section-gray'>
         <div className='max-width flex-div flex-wrap' style={{ padding: '0 1rem' }}>
           <div className='undp-section-content'>

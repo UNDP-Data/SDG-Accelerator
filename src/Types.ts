@@ -227,4 +227,20 @@ export interface CountryGoalStatusType {
   }[];
 }
 
+export interface InterlinkagesForReportType {
+  'Target': string;
+  'Target Text': string;
+  'Description': string;
+}
+
+export interface dataForReportType {
+  reportData: any;
+  'Growth Pathways': string;
+  'Trends': string;
+  'National Priorities': string;
+  'Interlinkages': InterlinkagesForReportType[];
+  'Futures': string;
+  'Fiscal': string;
+}
+
 export type LanguageList = 'en' | 'ru' | 'fr' | 'es';
