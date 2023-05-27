@@ -393,7 +393,7 @@ export const SDG_COLOR_ARRAY = [
   '#19486A',
 ];
 
-export const DATASOURCELINK = '../..';
+export const DATASOURCELINK = './sdg-push-diagnostic';
 
 export const SDG_ICON_SIZE = 64;
 
