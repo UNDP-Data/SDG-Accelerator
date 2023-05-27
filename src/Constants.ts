@@ -485,6 +485,6 @@ export const TargetIndicatorCount = [
   },
 ];
 
-export const COUNTRIES_WITH_DOCS = ['IDN', 'IRQ', 'KEN', 'MDA', 'NAM', 'PER', 'ZAF'];
+export const COUNTRIES_WITH_DOCS = ['IDN', 'IRQ', 'KEN', 'MDA', 'NAM', 'PER', 'ZAF', 'TTO'];
 
 export const API_ACCESS_TOKEN = 'ph92BXomD13M0qS9';

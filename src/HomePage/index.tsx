@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { DefaultHomePage } from './DefaultHomePage';
 import { COUNTRIES_WITH_DOCS } from '../Constants';
 import { ReportView } from './ReportView';
@@ -17,17 +18,19 @@ export const HomePage = (props: Props) => {
     goalStatuses,
     targetStatuses,
   } = props;
+  const [error, setError] = useState<string | undefined>(undefined);
   return (
     <>
       {
         countryCode
-          ? COUNTRIES_WITH_DOCS.indexOf(countryCode) === -1
+          ? COUNTRIES_WITH_DOCS.indexOf(countryCode) === -1 || error
             ? <DefaultHomePage countryCode={countryCode} countryFullName={countryFullName} />
             : (
               <ReportView
                 countryCode={countryCode}
                 goalStatuses={goalStatuses}
                 targetStatuses={targetStatuses}
+                setError={setError}
               />
             )
           : <DefaultHomePage />

@@ -22,6 +22,8 @@ interface Props {
   countryCode: string;
   goalStatuses: GoalStatusType[];
   targetStatuses: TargetStatusType[];
+  // eslint-disable-next-line no-unused-vars
+  setError: (_d?: string) => void;
 }
 
 const HeroImageEl = styled.div`
@@ -31,7 +33,9 @@ const HeroImageEl = styled.div`
 `;
 
 export const ReportView = (props: Props) => {
-  const { countryCode, goalStatuses, targetStatuses } = props;
+  const {
+    countryCode, goalStatuses, targetStatuses, setError,
+  } = props;
   const [reportData, setReportData] = useState<
     dataForReportType | undefined
   >(undefined);
@@ -41,6 +45,7 @@ export const ReportView = (props: Props) => {
   const [activeTab, setActiveTab] = useState('0');
   useEffect(() => {
     setReportData(undefined);
+    setError(undefined);
     setPriorityData(null);
     queue()
       .defer(json, `${DATASOURCELINK}/data/ReportPages/${countryCode}.json`)
@@ -53,7 +58,7 @@ export const ReportView = (props: Props) => {
           d: any,
           scenarioDataFromFile: ScenarioDataType[],
         ) => {
-          if (err) throw err;
+          if (err) { setError('Error loading files'); }
           setReportData(data);
           setPriorityData({ mode: 'defaultDocs', data: d.sdgs, documents: d.doc_name });
 
