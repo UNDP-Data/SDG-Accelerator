@@ -38,7 +38,6 @@ export const CurrentGaps = (props: Props) => {
     countryCode,
   } = props;
   const [selectedSDG, setSelectedSDG] = useState('SDG 1: No Poverty');
-
   return (
     <>
       <HeroImageEl className='undp-hero-image'>
