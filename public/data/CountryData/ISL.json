@@ -3,7 +3,7 @@
   "goalStatus": [
     {
       "goal": 1,
-      "noOfIndicatorsWithData": 3,
+      "noOfIndicatorsWithData": 4,
       "status": "For Review"
     },
     {
@@ -28,17 +28,17 @@
     },
     {
       "goal": 13,
-      "noOfIndicatorsWithData": 0,
-      "status": null
+      "noOfIndicatorsWithData": 1,
+      "status": "For Review"
     },
     {
       "goal": 14,
-      "noOfIndicatorsWithData": 5,
+      "noOfIndicatorsWithData": 6,
       "status": "For Review"
     },
     {
       "goal": 15,
-      "noOfIndicatorsWithData": 10,
+      "noOfIndicatorsWithData": 11,
       "status": "For Review"
     },
     {
@@ -48,17 +48,17 @@
     },
     {
       "goal": 17,
-      "noOfIndicatorsWithData": 13,
+      "noOfIndicatorsWithData": 14,
       "status": "For Review"
     },
     {
       "goal": 2,
-      "noOfIndicatorsWithData": 5,
+      "noOfIndicatorsWithData": 6,
       "status": "For Review"
     },
     {
       "goal": 3,
-      "noOfIndicatorsWithData": 17,
+      "noOfIndicatorsWithData": 19,
       "status": "For Review"
     },
     {
@@ -78,7 +78,7 @@
     },
     {
       "goal": 7,
-      "noOfIndicatorsWithData": 3,
+      "noOfIndicatorsWithData": 4,
       "status": "For Review"
     },
     {
@@ -206,7 +206,7 @@
     {
       "goal": "13",
       "target": "13.2",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "14",
@@ -216,7 +216,7 @@
     {
       "goal": "14",
       "target": "14.3",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "14",
@@ -266,7 +266,7 @@
     {
       "goal": "15",
       "target": "15.8",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "15",
@@ -361,7 +361,7 @@
     {
       "goal": "17",
       "target": "17.6",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "17",
@@ -376,7 +376,7 @@
     {
       "goal": "2",
       "target": "2.1",
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": "2",
@@ -441,7 +441,7 @@
     {
       "goal": "3",
       "target": "3.8",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "3",
@@ -531,7 +531,7 @@
     {
       "goal": "7",
       "target": "7.2",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "7",
@@ -641,7 +641,7 @@
       "goal": "1",
       "target": "1.2",
       "indicator": "1.2.2",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "1",
@@ -791,7 +791,7 @@
       "goal": "13",
       "target": "13.2",
       "indicator": "13.2.2",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "14",
@@ -803,7 +803,7 @@
       "goal": "14",
       "target": "14.3",
       "indicator": "14.3.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "14",
@@ -875,7 +875,7 @@
       "goal": "15",
       "target": "15.8",
       "indicator": "15.8.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "15",
@@ -1019,7 +1019,7 @@
       "goal": "17",
       "target": "17.6",
       "indicator": "17.6.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "17",
@@ -1043,7 +1043,7 @@
       "goal": "2",
       "target": "2.1",
       "indicator": "2.1.2",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "2",
@@ -1103,7 +1103,7 @@
       "goal": "3",
       "target": "3.2",
       "indicator": "3.2.2",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "3",
@@ -1163,7 +1163,7 @@
       "goal": "3",
       "target": "3.8",
       "indicator": "3.8.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "3",
@@ -1307,7 +1307,7 @@
       "goal": "7",
       "target": "7.2",
       "indicator": "7.2.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "7",
@@ -10045,7 +10045,7 @@
         }
       ],
       "methodology": {
-        "value": "0",
+        "value": 0,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015

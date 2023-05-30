@@ -28,12 +28,12 @@
     },
     {
       "goal": 8,
-      "noOfIndicatorsWithData": 7,
+      "noOfIndicatorsWithData": 8,
       "status": "On Track"
     },
     {
       "goal": 7,
-      "noOfIndicatorsWithData": 5,
+      "noOfIndicatorsWithData": 6,
       "status": "Identified Gap"
     },
     {
@@ -43,7 +43,7 @@
     },
     {
       "goal": 15,
-      "noOfIndicatorsWithData": 9,
+      "noOfIndicatorsWithData": 11,
       "status": "For Review"
     },
     {
@@ -58,12 +58,12 @@
     },
     {
       "goal": 2,
-      "noOfIndicatorsWithData": 6,
+      "noOfIndicatorsWithData": 8,
       "status": "Identified Gap"
     },
     {
       "goal": 3,
-      "noOfIndicatorsWithData": 18,
+      "noOfIndicatorsWithData": 22,
       "status": "For Review"
     },
     {
@@ -78,7 +78,7 @@
     },
     {
       "goal": 6,
-      "noOfIndicatorsWithData": 6,
+      "noOfIndicatorsWithData": 7,
       "status": "For Review"
     },
     {
@@ -246,7 +246,7 @@
     {
       "goal": "15",
       "target": "15.3",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "15",
@@ -266,7 +266,7 @@
     {
       "goal": "15",
       "target": "15.8",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "15",
@@ -451,7 +451,7 @@
     {
       "goal": "3",
       "target": "3.6",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "3",
@@ -461,7 +461,7 @@
     {
       "goal": "3",
       "target": "3.8",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "3",
@@ -541,7 +541,7 @@
     {
       "goal": "6",
       "target": "6.4",
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": "6",
@@ -591,7 +591,7 @@
     {
       "goal": "8",
       "target": "8.10",
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": "8",
@@ -922,7 +922,7 @@
       "goal": "15",
       "target": "15.3",
       "indicator": "15.3.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "15",
@@ -946,7 +946,7 @@
       "goal": "15",
       "target": "15.8",
       "indicator": "15.8.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "15",
@@ -1156,7 +1156,7 @@
       "goal": "2",
       "target": "2.2",
       "indicator": "2.2.3",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "2",
@@ -1174,7 +1174,7 @@
       "goal": "2",
       "target": "2.5",
       "indicator": "2.5.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "2",
@@ -1222,7 +1222,7 @@
       "goal": "3",
       "target": "3.2",
       "indicator": "3.2.2",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "3",
@@ -1258,7 +1258,7 @@
       "goal": "3",
       "target": "3.4",
       "indicator": "3.4.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "3",
@@ -1276,7 +1276,7 @@
       "goal": "3",
       "target": "3.6",
       "indicator": "3.6.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "3",
@@ -1294,7 +1294,7 @@
       "goal": "3",
       "target": "3.8",
       "indicator": "3.8.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "3",
@@ -1456,7 +1456,7 @@
       "goal": "6",
       "target": "6.4",
       "indicator": "6.4.2",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "6",
@@ -1492,7 +1492,7 @@
       "goal": "7",
       "target": "7.1",
       "indicator": "7.1.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "7",
@@ -1528,7 +1528,7 @@
       "goal": "8",
       "target": "8.10",
       "indicator": "8.10.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "8",
@@ -11448,7 +11448,7 @@
         }
       ],
       "methodology": {
-        "value": "0",
+        "value": 0,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015

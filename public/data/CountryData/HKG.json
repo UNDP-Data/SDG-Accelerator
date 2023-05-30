@@ -8,7 +8,7 @@
     },
     {
       "goal": 10,
-      "noOfIndicatorsWithData": 3,
+      "noOfIndicatorsWithData": 5,
       "status": "For Review"
     },
     {
@@ -38,7 +38,7 @@
     },
     {
       "goal": 16,
-      "noOfIndicatorsWithData": 2,
+      "noOfIndicatorsWithData": 3,
       "status": "Identified Gap"
     },
     {
@@ -48,8 +48,8 @@
     },
     {
       "goal": 2,
-      "noOfIndicatorsWithData": 1,
-      "status": "On Track"
+      "noOfIndicatorsWithData": 2,
+      "status": "For Review"
     },
     {
       "goal": 3,
@@ -78,7 +78,7 @@
     },
     {
       "goal": 9,
-      "noOfIndicatorsWithData": 7,
+      "noOfIndicatorsWithData": 8,
       "status": "For Review"
     }
   ],
@@ -96,7 +96,7 @@
     {
       "goal": "10",
       "target": "10.4",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "10",
@@ -106,7 +106,7 @@
     {
       "goal": "10",
       "target": "10.7",
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": "10",
@@ -196,7 +196,7 @@
     {
       "goal": "16",
       "target": "16.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "16",
@@ -271,7 +271,7 @@
     {
       "goal": "2",
       "target": "2.a",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "3",
@@ -381,7 +381,7 @@
     {
       "goal": "9",
       "target": "9.4",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "9",
@@ -416,7 +416,7 @@
       "goal": "10",
       "target": "10.4",
       "indicator": "10.4.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "10",
@@ -428,7 +428,7 @@
       "goal": "10",
       "target": "10.7",
       "indicator": "10.7.3",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "10",
@@ -554,7 +554,7 @@
       "goal": "16",
       "target": "16.1",
       "indicator": "16.1.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "16",
@@ -668,7 +668,7 @@
       "goal": "2",
       "target": "2.a",
       "indicator": "2.a.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "3",
@@ -812,7 +812,7 @@
       "goal": "9",
       "target": "9.4",
       "indicator": "9.4.1",
-      "status": null
+      "status": "For Review"
     },
     {
       "goal": "9",
@@ -6485,7 +6485,7 @@
         }
       ],
       "methodology": {
-        "value": "0",
+        "value": 0,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
