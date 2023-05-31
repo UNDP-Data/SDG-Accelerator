@@ -4,49 +4,58 @@
     {
       "goal": 14,
       "noOfIndicatorsWithData": 1,
-      "status": "On Track"
+      "status": "On Track",
+      "score": 2.0
     },
     {
       "goal": 15,
       "noOfIndicatorsWithData": 3,
-      "status": "For Review"
+      "status": "On Track",
+      "score": 1.3333333333333333
     },
     {
       "goal": 6,
       "noOfIndicatorsWithData": 0,
-      "status": null
+      "status": null,
+      "score": -99
     }
   ],
   "targetStatus": [
     {
       "goal": "14",
       "target": "14.5",
-      "status": "On Track"
+      "status": "On Track",
+      "score": 2.0
     },
     {
       "goal": "15",
       "target": "15.1",
-      "status": "On Track"
+      "status": "On Track",
+      "score": 2.0
     },
     {
       "goal": "15",
       "target": "15.2",
-      "status": null
+      "status": null,
+      "score": -99
     },
     {
       "goal": "15",
       "target": "15.4",
-      "status": "On Track"
+      "status": "On Track",
+      "score": 2.0
     },
     {
       "goal": "15",
       "target": "15.6",
-      "status": "Identified Gap"
+      "status": "For Review",
+      "score": 0.0
     },
     {
       "goal": "6",
       "target": "6.6",
-      "status": null
+      "status": null,
+      "score": -99
     }
   ],
   "indicatorStatus": [
@@ -54,43 +63,50 @@
       "goal": "14",
       "target": "14.5",
       "indicator": "14.5.1",
-      "status": "On Track"
+      "status": "On Track",
+      "score": 2.0
     },
     {
       "goal": "15",
       "target": "15.1",
       "indicator": "15.1.1",
-      "status": null
+      "status": null,
+      "score": -99
     },
     {
       "goal": "15",
       "target": "15.1",
       "indicator": "15.1.2",
-      "status": "On Track"
+      "status": "On Track",
+      "score": 2.0
     },
     {
       "goal": "15",
       "target": "15.2",
       "indicator": "15.2.1",
-      "status": null
+      "status": null,
+      "score": -99
     },
     {
       "goal": "15",
       "target": "15.4",
       "indicator": "15.4.1",
-      "status": "On Track"
+      "status": "On Track",
+      "score": 2.0
     },
     {
       "goal": "15",
       "target": "15.6",
       "indicator": "15.6.1",
-      "status": "Identified Gap"
+      "status": "For Review",
+      "score": 0.0
     },
     {
       "goal": "6",
       "target": "6.6",
       "indicator": "6.6.1",
-      "status": null
+      "status": null,
+      "score": -99
     }
   ],
   "tsData": [
@@ -182,7 +198,8 @@
       "Partner_Agency(ies)": "Ramsar",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": "Target met or almost met",
-      "status": "Target Achieved"
+      "status": "Target Achieved",
+      "score": 2
     },
     {
       "Reporting Type": "G",
@@ -226,6 +243,7 @@
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier I",
       "status": "Methodology Unavailable",
+      "score": -99,
       "currentLevelAssessment": null
     },
     {
@@ -308,7 +326,8 @@
       "Partner_Agency(ies)": "Ramsar",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Achieved"
+      "status": "Target Achieved",
+      "score": 2
     },
     {
       "Reporting Type": "G",
@@ -373,7 +392,8 @@
       "Partner_Agency(ies)": "UNEP,UNFCCC",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Insufficient Data",
+      "score": -99
     },
     {
       "Reporting Type": "G",
@@ -455,7 +475,8 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Achieved"
+      "status": "Target Achieved",
+      "score": 2
     },
     {
       "Reporting Type": "G",
@@ -528,7 +549,8 @@
       "Partner_Agency(ies)": "FAO,UNEP",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Insufficient Data"
+      "status": "Insufficient Data",
+      "score": -99
     },
     {
       "Reporting Type": "G",
@@ -580,7 +602,8 @@
       "Partner_Agency(ies)": "FAO,UNEP",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "T",
+      "score": "a"
     },
     {
       "Reporting Type": "G",
@@ -648,7 +671,8 @@
       "Partner_Agency(ies)": "FAO,UNEP",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "T",
+      "score": "a"
     },
     {
       "Reporting Type": "G",
@@ -716,6 +740,7 @@
       "Partner_Agency(ies)": "UN-Water,IUCN",
       "Tier_Classification": "Tier I",
       "status": "Methodology Unavailable",
+      "score": -99,
       "currentLevelAssessment": null
     },
     {
@@ -784,6 +809,7 @@
       "Partner_Agency(ies)": "UN-Water,IUCN",
       "Tier_Classification": "Tier I",
       "status": "Methodology Unavailable",
+      "score": -99,
       "currentLevelAssessment": null
     },
     {
@@ -852,6 +878,7 @@
       "Partner_Agency(ies)": "UN-Water,IUCN",
       "Tier_Classification": "Tier I",
       "status": "Methodology Unavailable",
+      "score": -99,
       "currentLevelAssessment": null
     },
     {
@@ -920,6 +947,7 @@
       "Partner_Agency(ies)": "UN-Water,IUCN",
       "Tier_Classification": "Tier I",
       "status": "Methodology Unavailable",
+      "score": -99,
       "currentLevelAssessment": null
     },
     {
@@ -940,6 +968,7 @@
       "Partner_Agency(ies)": "UN-Water,IUCN",
       "Tier_Classification": "Tier I",
       "status": "Methodology Unavailable",
+      "score": -99,
       "currentLevelAssessment": null
     },
     {
@@ -960,6 +989,7 @@
       "Partner_Agency(ies)": "UN-Water,IUCN",
       "Tier_Classification": "Tier I",
       "status": "Methodology Unavailable",
+      "score": -99,
       "currentLevelAssessment": null
     }
   ]
