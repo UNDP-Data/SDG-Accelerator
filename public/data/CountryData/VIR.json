@@ -44,7 +44,7 @@
     {
       "goal": 17,
       "noOfIndicatorsWithData": 3,
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": 2,
@@ -63,8 +63,8 @@
     },
     {
       "goal": 8,
-      "noOfIndicatorsWithData": 1,
-      "status": "Identified Gap"
+      "noOfIndicatorsWithData": 0,
+      "status": null
     },
     {
       "goal": 9,
@@ -176,7 +176,7 @@
     {
       "goal": "17",
       "target": "17.13",
-      "status": "Identified Gap"
+      "status": "On Track"
     },
     {
       "goal": "17",
@@ -231,7 +231,7 @@
     {
       "goal": "8",
       "target": "8.2",
-      "status": "Identified Gap"
+      "status": null
     },
     {
       "goal": "9",
@@ -370,7 +370,7 @@
       "goal": "17",
       "target": "17.13",
       "indicator": "17.13.1",
-      "status": "Identified Gap"
+      "status": "On Track"
     },
     {
       "goal": "17",
@@ -442,7 +442,7 @@
       "goal": "8",
       "target": "8.2",
       "indicator": "8.2.1",
-      "status": "Identified Gap"
+      "status": null
     },
     {
       "goal": "9",
@@ -3283,7 +3283,7 @@
         ],
         "trendMethodology": "CAGRA",
         "baselineYear": {
-          "all": 2016
+          "all": 2015
         },
         "baseYear": null,
         "latestAvailable": 2022.0
@@ -3335,7 +3335,7 @@
         "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
-          "all": 2016
+          "all": 2015
         },
         "baseYear": null,
         "latestAvailable": null
@@ -3403,7 +3403,7 @@
         "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
-          "all": 2016
+          "all": 2015
         },
         "baseYear": null,
         "latestAvailable": null
@@ -4404,25 +4404,12 @@
           "year": 2020.0
         }
       ],
-      "methodology": {
-        "normativeDirection": "increase",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2020.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "World Bank",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -4550,25 +4537,12 @@
           "year": 2020.0
         }
       ],
-      "methodology": {
-        "normativeDirection": "increase",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2020.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "World Bank",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -4623,25 +4597,12 @@
           "year": 2020.0
         }
       ],
-      "methodology": {
-        "normativeDirection": "increase",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2020.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "World Bank",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -4696,25 +4657,12 @@
           "year": 2020.0
         }
       ],
-      "methodology": {
-        "normativeDirection": "increase",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2020.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "World Bank",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -6522,25 +6470,12 @@
           "year": 2022.0
         }
       ],
-      "methodology": {
-        "normativeDirection": "increase",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2022.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "ILO",
       "Partner_Agency(ies)": "World Bank,UNSD",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",

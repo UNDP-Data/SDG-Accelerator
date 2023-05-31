@@ -33,7 +33,7 @@
     },
     {
       "goal": 8,
-      "noOfIndicatorsWithData": 11,
+      "noOfIndicatorsWithData": 9,
       "status": "For Review"
     },
     {
@@ -406,7 +406,7 @@
     {
       "goal": "17",
       "target": "17.13",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "17",
@@ -636,7 +636,7 @@
     {
       "goal": "8",
       "target": "8.1",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "8",
@@ -646,7 +646,7 @@
     {
       "goal": "8",
       "target": "8.2",
-      "status": "Identified Gap"
+      "status": null
     },
     {
       "goal": "8",
@@ -1216,7 +1216,7 @@
       "goal": "17",
       "target": "17.13",
       "indicator": "17.13.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "17",
@@ -1600,7 +1600,7 @@
       "goal": "8",
       "target": "8.1",
       "indicator": "8.1.1",
-      "status": "On Track"
+      "status": null
     },
     {
       "goal": "8",
@@ -1618,7 +1618,7 @@
       "goal": "8",
       "target": "8.2",
       "indicator": "8.2.1",
-      "status": "Identified Gap"
+      "status": null
     },
     {
       "goal": "8",
@@ -10184,6 +10184,11 @@
           "Far from target",
           "Very far from target"
         ],
+        "CAGRRLimits": [
+          0.95,
+          0.1,
+          -0.1
+        ],
         "normativeDirection": "increase",
         "trendMethodology": "CAGRR",
         "baselineYear": {
@@ -12229,7 +12234,7 @@
         ],
         "trendMethodology": "CAGRA",
         "baselineYear": {
-          "all": 2016
+          "all": 2015
         },
         "baseYear": 2015,
         "latestAvailable": 2022.0
@@ -12349,7 +12354,7 @@
         "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
-          "all": 2016
+          "all": 2015
         },
         "baseYear": null,
         "latestAvailable": null
@@ -12417,7 +12422,7 @@
         "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
-          "all": 2016
+          "all": 2015
         },
         "baseYear": null,
         "latestAvailable": null
@@ -12457,7 +12462,7 @@
         "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
-          "all": 2016
+          "all": 2015
         },
         "baseYear": null,
         "latestAvailable": null
@@ -14200,7 +14205,7 @@
         "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
-          "all": 2016
+          "all": 2015
         },
         "baseYear": null,
         "latestAvailable": null
@@ -16012,25 +16017,12 @@
           "year": 2021.0
         }
       ],
-      "methodology": {
-        "normativeDirection": "increase",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "World Bank",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -16243,25 +16235,12 @@
           "year": 2021.0
         }
       ],
-      "methodology": {
-        "normativeDirection": "increase",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "World Bank",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -16320,25 +16299,12 @@
           "year": 2021.0
         }
       ],
-      "methodology": {
-        "normativeDirection": "increase",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "World Bank",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -16397,25 +16363,12 @@
           "year": 2021.0
         }
       ],
-      "methodology": {
-        "normativeDirection": "increase",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "World Bank",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -16474,25 +16427,12 @@
           "year": 2021.0
         }
       ],
-      "methodology": {
-        "normativeDirection": "increase",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "World Bank",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -18552,6 +18492,11 @@
           25,
           30
         ],
+        "CAGRRLimits": [
+          0.95,
+          0.1,
+          -0.1
+        ],
         "currentLevelThresholdsName": [
           "Target met or almost met",
           "Close to Target",
@@ -18615,6 +18560,11 @@
           10,
           25,
           30
+        ],
+        "CAGRRLimits": [
+          0.95,
+          0.1,
+          -0.1
         ],
         "currentLevelThresholdsName": [
           "Target met or almost met",
@@ -19216,8 +19166,13 @@
       "methodology": {
         "trendMethodology": "Doubling",
         "baselineYear": {
-          "all": 2010
+          "all": 2015
         },
+        "CAGRRLimits": [
+          0.95,
+          0.1,
+          -0.1
+        ],
         "baseYear": 2016,
         "latestAvailable": 2020.0
       },
@@ -19256,8 +19211,13 @@
       "methodology": {
         "trendMethodology": "Doubling",
         "baselineYear": {
-          "all": 2010
+          "all": 201
         },
+        "CAGRRLimits": [
+          0.95,
+          0.1,
+          -0.1
+        ],
         "baseYear": 2016,
         "latestAvailable": 2020.0
       },
@@ -19627,7 +19587,7 @@
         ],
         "trendMethodology": "CAGRA",
         "baselineYear": {
-          "all": 2016
+          "all": 2015
         },
         "baseYear": 2016,
         "latestAvailable": 2021.0
@@ -19966,7 +19926,7 @@
         "CAGRLimit": [
           0.01,
           0.005,
-          -0.005
+          -0.01
         ],
         "trendMethodology": "CAGRA",
         "baselineYear": {
@@ -20051,7 +20011,7 @@
         "CAGRLimit": [
           0.01,
           0.005,
-          -0.005
+          -0.01
         ],
         "trendMethodology": "CAGRA",
         "baselineYear": {
@@ -20128,7 +20088,7 @@
         "CAGRLimit": [
           0.01,
           0.005,
-          -0.005
+          -0.01
         ],
         "trendMethodology": "CAGRA",
         "baselineYear": {
@@ -26309,7 +26269,7 @@
         "CAGRLimit": [
           0.01,
           0.005,
-          -0.095
+          -0.01
         ],
         "trendMethodology": "CAGRA",
         "baselineYear": {
@@ -28157,25 +28117,12 @@
           "year": 2021.0
         }
       ],
-      "methodology": {
-        "normativeDirection": "increase",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2021.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "UNSD",
       "Partner_Agency(ies)": "World Bank",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "On Track"
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Age": "15+",
@@ -28538,25 +28485,12 @@
           "year": 2022.0
         }
       ],
-      "methodology": {
-        "normativeDirection": "increase",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2022.0
-      },
+      "methodology": "NA",
       "Custodian_Agency(ies)": "ILO",
       "Partner_Agency(ies)": "World Bank,UNSD",
       "Tier_Classification": "Tier I",
-      "currentLevelAssessment": null,
-      "status": "Deterioration"
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Sex": "BOTHSEX",
