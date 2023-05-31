@@ -13,7 +13,6 @@ interface Props {
   setSelectedTarget?: (_d: string) => void;
   data: TargetStatusWithDetailsType[];
   linkageData: LinkageDataType[];
-
 }
 
 export const InterlinkagesViz = (props: Props) => {

@@ -10,7 +10,8 @@ import {
 import { InterlinkagesViz } from './InterlinkageViz';
 import { SDGList } from '../Data/SDGGoalList';
 import { NetworkGraph } from './NetworkGraph';
-import { LinkageData, LinkageData2023 } from '../Data/linkages';
+import { LinkageData } from '../Data/linkages';
+import { LinkageData2023 } from '../Data/linkageWithDetails';
 import { LiteratureData } from '../Data/Literature';
 import IMAGES from '../img/images';
 import { DownloadImage } from '../utils/DownloadImage';
@@ -51,6 +52,11 @@ export const Interlinkages = (props: Props) => {
       });
     });
   });
+  const linkData2023 = LinkageData2023.map((d) => ({
+    ...d,
+    synergies: d.synergies.map((el) => el.target),
+    tradeOffs: d.tradeOffs.map((el) => el.target),
+  }));
   return (
     <>
       <HeroImageEl className='undp-hero-image'>
@@ -125,13 +131,13 @@ export const Interlinkages = (props: Props) => {
           setSelectedTarget={setSelectedTarget}
           linkageType={linkageType}
           data={targetStatus}
-          linkageData={year === '2023' ? LinkageData2023 as LinkageDataType[] : LinkageData as LinkageDataType[]}
+          linkageData={year === '2023' ? linkData2023 as LinkageDataType[] : LinkageData as LinkageDataType[]}
         />
       </div>
       <div className='margin-top-13 max-width-1440 margin-bottom-13' style={{ padding: '0 1rem' }}>
         <NetworkGraph
           data={targetStatus}
-          linkageData={year === '2023' ? LinkageData2023 as LinkageDataType[] : LinkageData as LinkageDataType[]}
+          linkageData={year === '2023' ? linkData2023 as LinkageDataType[] : LinkageData as LinkageDataType[]}
         />
       </div>
       <Modal
