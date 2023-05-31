@@ -19,6 +19,7 @@ interface Props {
   document: any;
   defaultDocs: boolean;
   onlyBubbleChart: boolean;
+  smallTitle?: boolean;
 }
 
 interface SDGHoveredProps {
@@ -70,6 +71,7 @@ export const VNRAnalysis = (props: Props) => {
     goalStatuses,
     defaultDocs,
     onlyBubbleChart,
+    smallTitle,
   } = props;
   const [selectedSDG, setSelectedSDG] = useState<any>(null);
   const [hoveredSDG, setHoveredSDG] = useState<null | SDGHoveredProps>(null);
@@ -98,9 +100,15 @@ export const VNRAnalysis = (props: Props) => {
       <div className=' margin-top-00' style={{ padding: onlyBubbleChart ? 0 : 'var(--spacing-13) var(--spacing-13) var(--spacing-09) var(--spacing-13)' }}>
         <div className='max-width-1440'>
           <div className='flex-div flex-vert-align-center flex-wrap'>
-            <h2 className='undp-typography margin-bottom-00'>
-              National Priorities Based on
-            </h2>
+            { smallTitle === true ? (
+              <h4 className='undp-typography margin-bottom-00'>
+                National Priorities Based on
+              </h4>
+            ) : (
+              <h2 className='undp-typography margin-bottom-00'>
+                National Priorities Based on
+              </h2>
+            ) }
             {defaultDocs ? (
               <>
                 {document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}

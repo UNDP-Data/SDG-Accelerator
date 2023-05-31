@@ -96,7 +96,12 @@ export const ReportView = (props: Props) => {
             maxWidth: '70rem', margin: 'auto', justifyContent: 'space-between', padding: '2rem 0rem', gap: '4rem',
           }}
         >
-          <div className='undp-section-content' style={{ width: 'calc(40% - 2rem)', minWidth: '20rem', flexGrow: 1 }}>
+          <div
+            className='undp-section-content'
+            style={{
+              width: 'calc(40% - 2rem)', minWidth: '20rem', flexGrow: 1, paddingBottom: '6rem',
+            }}
+          >
             <h3 className='undp-typography'>What are the Integrated SDG Insights?</h3>
           </div>
           <div className='undp-section-content' style={{ width: 'calc(60% - 2rem)', minWidth: '20rem', flexGrow: 1 }}>
@@ -109,12 +114,13 @@ export const ReportView = (props: Props) => {
             maxWidth: '70rem', margin: 'auto', gap: '1rem',
           }}
         >
-          <SectionCard id='section1' cardTitle='Growth Pathways' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconSnapshot} />
-          <SectionCard id='section2' cardTitle='SDG Trends' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconTrends} />
-          <SectionCard id='section3' cardTitle='National Priorities' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconPriorities} />
-          <SectionCard id='section4' cardTitle='Interlinkages' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconInterlinkages} />
-          <SectionCard id='section5' cardTitle='Futures' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconFutures} />
-          <SectionCard id='section6' cardTitle='Fiscal/financial constraints' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconConstraints} />
+          {/* <SectionCard id='section1' cardNumber='Section 1' cardTitle='Growth Pathways' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconSnapshot} /> */}
+          <SectionCard id='section1' cardIcon={IMAGES.iconPathways} cardTitle='Growth Pathways' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' />
+          <SectionCard id='section2' cardIcon={IMAGES.iconTrends} cardTitle='SDG Trends' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' />
+          <SectionCard id='section3' cardIcon={IMAGES.iconPriorities} cardTitle='National Priorities' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' />
+          <SectionCard id='section4' cardIcon={IMAGES.iconInterlinkages} cardTitle='Interlinkages' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' />
+          <SectionCard id='section5' cardIcon={IMAGES.iconFutures} cardTitle='Futures' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' />
+          <SectionCard id='section6' cardIcon={IMAGES.iconFiscal} cardTitle='Fiscal' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' />
         </div>
       </div>
       {reportData && priorityData && targetStatus ? (
@@ -154,6 +160,7 @@ export const ReportView = (props: Props) => {
                   document={priorityData.documents}
                   defaultDocs
                   onlyBubbleChart
+                  smallTitle
                 />
               </div>
             )}

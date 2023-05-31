@@ -12,13 +12,13 @@ const IMAGES = {
   globeicon: new URL('./globe-icon.svg', import.meta.url).href,
   globeWhite: new URL('./globe-white.svg', import.meta.url).href,
   heroImage: new URL('./UNDP-hero-image.png', import.meta.url).href,
-  iconTrends: new URL('./icons/trends.png', import.meta.url).href,
-  iconPriorities: new URL('./icons/priorities.png', import.meta.url).href,
-  iconInterlinkages: new URL('./icons/interlinkages.png', import.meta.url).href,
-  iconFutures: new URL('./icons/futures.png', import.meta.url).href,
-  iconSnapshot: new URL('./icons/snapshot.png', import.meta.url).href,
-  iconConstraints: new URL('./icons/constraints.png', import.meta.url).href,
-  interlinkageImage: new URL('./InterlinkageImage.png', import.meta.url).href,
+  iconTrends: new URL('./icons/trends.svg', import.meta.url).href,
+  iconPriorities: new URL('./icons/priorities.svg', import.meta.url).href,
+  iconInterlinkages: new URL('./icons/interlinkages.svg', import.meta.url).href,
+  iconFutures: new URL('./icons/futures.svg', import.meta.url).href,
+  iconPathways: new URL('./icons/pathways.svg', import.meta.url).href,
+  iconFiscal: new URL('./icons/fiscal.svg', import.meta.url).href,
+  interlinkageImage: new URL('./InterlinkageImage.svg', import.meta.url).href,
 };
 
 export default IMAGES;
