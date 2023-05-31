@@ -490,6 +490,11 @@
     },
     {
       "goal": "5",
+      "target": "5.2",
+      "status": null
+    },
+    {
+      "goal": "5",
       "target": "5.3",
       "status": null
     },
@@ -1324,6 +1329,12 @@
       "target": "4.b",
       "indicator": "4.b.1",
       "status": "On Track"
+    },
+    {
+      "goal": "5",
+      "target": "5.2",
+      "indicator": "5.2.1",
+      "status": null
     },
     {
       "goal": "5",
@@ -17548,6 +17559,42 @@
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
       "status": "On Track"
+    },
+    {
+      "Age": "15+",
+      "Sex": "FEMALE",
+      "Reporting Type": "G",
+      "series": "VC_VAW_MARR",
+      "goal": "5",
+      "target": "5.2",
+      "indicator": "5.2.1",
+      "seriesDescription": "Proportion of ever-partnered women and girls subjected to physical and/or sexual violence by a current or former intimate partner in the previous 12 months, by age (%)",
+      "values": [
+        {
+          "value": 33.6,
+          "year": 2018.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "decrease",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 1.0,
+        "baseYear": 2018,
+        "latestAvailable": 2018.0
+      },
+      "Custodian_Agency(ies)": "UNICEF, UN Women, UNFPA, WHO,UNODC",
+      "Partner_Agency(ies)": "UNSD, UNDP",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Insufficient Data"
     },
     {
       "Age": "20-24",

@@ -525,6 +525,11 @@
     },
     {
       "goal": "5",
+      "target": "5.2",
+      "status": null
+    },
+    {
+      "goal": "5",
       "target": "5.3",
       "status": null
     },
@@ -1431,6 +1436,12 @@
     },
     {
       "goal": "5",
+      "target": "5.2",
+      "indicator": "5.2.1",
+      "status": null
+    },
+    {
+      "goal": "5",
       "target": "5.3",
       "indicator": "5.3.1",
       "status": null
@@ -1772,6 +1783,90 @@
       "Partner_Agency(ies)": "ILO",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": "Target met or almost met",
+      "status": "Target Achieved"
+    },
+    {
+      "Age": "15+",
+      "Sex": "BOTHSEX",
+      "Reporting Type": "G",
+      "series": "SI_POV_EMP1",
+      "goal": "1",
+      "target": "1.1",
+      "indicator": "1.1.1",
+      "seriesDescription": "Employed population below international poverty line, by sex and age (%)",
+      "values": [
+        {
+          "value": 2.56,
+          "year": 2010.0
+        },
+        {
+          "value": 1.3,
+          "year": 2011.0
+        },
+        {
+          "value": 2.25,
+          "year": 2012.0
+        },
+        {
+          "value": 1.23,
+          "year": 2013.0
+        },
+        {
+          "value": 1.81,
+          "year": 2014.0
+        },
+        {
+          "value": 0.65,
+          "year": 2015.0
+        },
+        {
+          "value": 0.92,
+          "year": 2016.0
+        },
+        {
+          "value": 1.13,
+          "year": 2017.0
+        },
+        {
+          "value": 0.65,
+          "year": 2018.0
+        },
+        {
+          "value": 0.38,
+          "year": 2019.0
+        },
+        {
+          "value": 0.87,
+          "year": 2020.0
+        },
+        {
+          "value": 0.85,
+          "year": 2021.0
+        },
+        {
+          "value": 0.84,
+          "year": 2022.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "decrease",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 1.0,
+        "baseYear": 2015,
+        "latestAvailable": 2022.0
+      },
+      "Custodian_Agency(ies)": "World Bank",
+      "Partner_Agency(ies)": "ILO",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
       "status": "Target Achieved"
     },
     {
@@ -21504,6 +21599,42 @@
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
       "status": "Limited or No Progress"
+    },
+    {
+      "Age": "15+",
+      "Sex": "FEMALE",
+      "Reporting Type": "G",
+      "series": "VC_VAW_MARR",
+      "goal": "5",
+      "target": "5.2",
+      "indicator": "5.2.1",
+      "seriesDescription": "Proportion of ever-partnered women and girls subjected to physical and/or sexual violence by a current or former intimate partner in the previous 12 months, by age (%)",
+      "values": [
+        {
+          "value": 6.4,
+          "year": 2018.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "decrease",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 1.0,
+        "baseYear": 2018,
+        "latestAvailable": 2018.0
+      },
+      "Custodian_Agency(ies)": "UNICEF, UN Women, UNFPA, WHO,UNODC",
+      "Partner_Agency(ies)": "UNSD, UNDP",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Insufficient Data"
     },
     {
       "Age": "20-24",
