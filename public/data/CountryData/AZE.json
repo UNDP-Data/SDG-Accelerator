@@ -23,7 +23,7 @@
     },
     {
       "goal": 12,
-      "noOfIndicatorsWithData": 6,
+      "noOfIndicatorsWithData": 7,
       "status": "For Review"
     },
     {
@@ -68,7 +68,7 @@
     },
     {
       "goal": 4,
-      "noOfIndicatorsWithData": 4,
+      "noOfIndicatorsWithData": 6,
       "status": "On Track"
     },
     {
@@ -165,6 +165,11 @@
     },
     {
       "goal": "11",
+      "target": "11.2",
+      "status": null
+    },
+    {
+      "goal": "11",
       "target": "11.4",
       "status": null
     },
@@ -172,6 +177,11 @@
       "goal": "11",
       "target": "11.6",
       "status": "On Track"
+    },
+    {
+      "goal": "11",
+      "target": "11.7",
+      "status": null
     },
     {
       "goal": "11",
@@ -461,7 +471,7 @@
     {
       "goal": "3",
       "target": "3.4",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "3",
@@ -504,8 +514,23 @@
       "status": null
     },
     {
+      "goal": "3",
+      "target": "3.d",
+      "status": null
+    },
+    {
+      "goal": "4",
+      "target": "4.1",
+      "status": null
+    },
+    {
       "goal": "4",
       "target": "4.2",
+      "status": "On Track"
+    },
+    {
+      "goal": "4",
+      "target": "4.4",
       "status": "On Track"
     },
     {
@@ -521,6 +546,11 @@
     {
       "goal": "4",
       "target": "4.b",
+      "status": "On Track"
+    },
+    {
+      "goal": "4",
+      "target": "4.c",
       "status": "On Track"
     },
     {
@@ -818,6 +848,12 @@
     },
     {
       "goal": "11",
+      "target": "11.2",
+      "indicator": "11.2.1",
+      "status": null
+    },
+    {
+      "goal": "11",
       "target": "11.4",
       "indicator": "11.4.1",
       "status": null
@@ -827,6 +863,12 @@
       "target": "11.6",
       "indicator": "11.6.2",
       "status": "On Track"
+    },
+    {
+      "goal": "11",
+      "target": "11.7",
+      "indicator": "11.7.1",
+      "status": null
     },
     {
       "goal": "11",
@@ -857,6 +899,12 @@
       "target": "12.3",
       "indicator": "12.3.1",
       "status": null
+    },
+    {
+      "goal": "12",
+      "target": "12.4",
+      "indicator": "12.4.1",
+      "status": "For Review"
     },
     {
       "goal": "12",
@@ -1282,13 +1330,19 @@
       "goal": "3",
       "target": "3.4",
       "indicator": "3.4.1",
-      "status": "On Track"
+      "status": "Identified Gap"
     },
     {
       "goal": "3",
       "target": "3.4",
       "indicator": "3.4.2",
       "status": "Identified Gap"
+    },
+    {
+      "goal": "3",
+      "target": "3.5",
+      "indicator": "3.5.1",
+      "status": null
     },
     {
       "goal": "3",
@@ -1357,9 +1411,33 @@
       "status": null
     },
     {
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "status": null
+    },
+    {
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.1",
+      "status": null
+    },
+    {
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.2",
+      "status": null
+    },
+    {
       "goal": "4",
       "target": "4.2",
       "indicator": "4.2.2",
+      "status": "On Track"
+    },
+    {
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
       "status": "On Track"
     },
     {
@@ -1378,6 +1456,12 @@
       "goal": "4",
       "target": "4.b",
       "indicator": "4.b.1",
+      "status": "On Track"
+    },
+    {
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
       "status": "On Track"
     },
     {
@@ -1402,7 +1486,7 @@
       "goal": "5",
       "target": "5.5",
       "indicator": "5.5.1",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "5",
@@ -4005,6 +4089,41 @@
     },
     {
       "Reporting Type": "G",
+      "Custom Breakdown": "C01",
+      "series": "SP_TRN_PUBL",
+      "goal": "11",
+      "target": "11.2",
+      "indicator": "11.2.1",
+      "seriesDescription": "Proportion of population that has convenient access to public transport (%)",
+      "values": [
+        {
+          "value": 83.1,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "UN-Habitat",
+      "Partner_Agency(ies)": "UNEP,UNECE",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Insufficient Data"
+    },
+    {
+      "Reporting Type": "G",
       "Level_of_government": "_T",
       "series": "GB_XPD_CULNAT_PB",
       "goal": "11",
@@ -4109,6 +4228,40 @@
     },
     {
       "Reporting Type": "G",
+      "Custom Breakdown": "C01",
+      "series": "EN_URB_OPENSP",
+      "goal": "11",
+      "target": "11.7",
+      "indicator": "11.7.1",
+      "seriesDescription": "Average share of the built-up area of cities that is open space for public use for all (%)",
+      "values": [
+        {
+          "value": 57.0,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": null,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "UN-Habitat",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Insufficient Data"
+    },
+    {
+      "Reporting Type": "G",
       "series": "SD_CPA_UPRDP",
       "goal": "11",
       "target": "11.a",
@@ -4142,6 +4295,35 @@
       "target": "12.1",
       "indicator": "12.1.1",
       "seriesDescription": "Countries with sustainable consumption and production (SCP) national action plans or SCP mainstreamed as a priority or target into national policies (1 = YES; 0 = NO)",
+      "values": [
+        {
+          "value": 1.0,
+          "year": 2017.0
+        }
+      ],
+      "methodology": {
+        "value": 1,
+        "trendMethodology": "Binary",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "UNEP",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "Reporting Type": "G",
+      "Policy instruments": "POLICY_MACRO",
+      "series": "SG_SCP_POLINS",
+      "goal": "12",
+      "target": "12.1",
+      "indicator": "12.1.1",
+      "seriesDescription": "Countries with policy instrument for sustainable consumption and production (1 = YES; 0 = NO)",
       "values": [
         {
           "value": 1.0,
@@ -4701,6 +4883,120 @@
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
       "status": "Insufficient Data"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "SG_HAZ_CMRMNTRL",
+      "goal": "12",
+      "target": "12.4",
+      "indicator": "12.4.1",
+      "seriesDescription": "Parties meeting their commitments and obligations in transmitting information as required by Montreal Protocol on hazardous waste, and other chemicals",
+      "values": [
+        {
+          "value": 100.0,
+          "year": 2015.0
+        },
+        {
+          "value": 100.0,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "NA",
+      "Partner_Agency(ies)": "NA",
+      "Tier_Classification": "NA",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "SG_HAZ_CMRBASEL",
+      "goal": "12",
+      "target": "12.4",
+      "indicator": "12.4.1",
+      "seriesDescription": "Parties meeting their commitments and obligations in transmitting information as required by Basel Convention on hazardous waste, and other chemicals",
+      "values": [
+        {
+          "value": 100.0,
+          "year": 2015.0
+        },
+        {
+          "value": 100.0,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "NA",
+      "Partner_Agency(ies)": "NA",
+      "Tier_Classification": "NA",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "SG_HAZ_CMRSTHOLM",
+      "goal": "12",
+      "target": "12.4",
+      "indicator": "12.4.1",
+      "seriesDescription": "Parties meeting their commitments and obligations in transmitting information as required by Stockholm Convention on hazardous waste, and other chemicals",
+      "values": [
+        {
+          "value": 50.0,
+          "year": 2015.0
+        },
+        {
+          "value": 37.5,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "NA",
+      "Partner_Agency(ies)": "NA",
+      "Tier_Classification": "NA",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",
@@ -16326,6 +16622,85 @@
       "status": "On Track"
     },
     {
+      "Age": "<1M",
+      "Sex": "BOTHSEX",
+      "Reporting Type": "G",
+      "series": "SH_DYN_NMRT",
+      "goal": "3",
+      "target": "3.2",
+      "indicator": "3.2.2",
+      "seriesDescription": "Neonatal mortality rate (deaths per 1,000 live births)",
+      "values": [
+        {
+          "value": 20.4,
+          "year": 2010.0
+        },
+        {
+          "value": 18.9,
+          "year": 2011.0
+        },
+        {
+          "value": 17.4,
+          "year": 2012.0
+        },
+        {
+          "value": 16.0,
+          "year": 2013.0
+        },
+        {
+          "value": 14.7,
+          "year": 2014.0
+        },
+        {
+          "value": 13.6,
+          "year": 2015.0
+        },
+        {
+          "value": 12.6,
+          "year": 2016.0
+        },
+        {
+          "value": 11.8,
+          "year": 2017.0
+        },
+        {
+          "value": 11.1,
+          "year": 2018.0
+        },
+        {
+          "value": 10.4,
+          "year": 2019.0
+        },
+        {
+          "value": 10.0,
+          "year": 2020.0
+        },
+        {
+          "value": 9.5,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "decrease",
+        "CAGRLimit": [
+          0.01,
+          -0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNICEF",
+      "Partner_Agency(ies)": "DESA Population Division, World Bank,WHO",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
       "Age": "ALLAGE",
       "Sex": "BOTHSEX",
       "Reporting Type": "G",
@@ -16726,6 +17101,178 @@
     },
     {
       "Sex": "BOTHSEX",
+      "Name of non-communicable disease": "CAN",
+      "Reporting Type": "G",
+      "series": "SH_DTH_NCD",
+      "goal": "3",
+      "target": "3.4",
+      "indicator": "3.4.1",
+      "seriesDescription": "Number of deaths attributed to non-communicable diseases, by type of disease and sex (number)",
+      "values": [
+        {
+          "value": 6626.0,
+          "year": 2010.0
+        },
+        {
+          "value": 7552.0,
+          "year": 2015.0
+        },
+        {
+          "value": 8310.0,
+          "year": 2019.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "decrease",
+        "CAGRLimit": [
+          0.01,
+          -0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2019.0
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Name of non-communicable disease": "RES",
+      "Reporting Type": "G",
+      "series": "SH_DTH_NCD",
+      "goal": "3",
+      "target": "3.4",
+      "indicator": "3.4.1",
+      "seriesDescription": "Number of deaths attributed to non-communicable diseases, by type of disease and sex (number)",
+      "values": [
+        {
+          "value": 1903.0,
+          "year": 2010.0
+        },
+        {
+          "value": 2273.0,
+          "year": 2015.0
+        },
+        {
+          "value": 2417.0,
+          "year": 2019.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "decrease",
+        "CAGRLimit": [
+          0.01,
+          -0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2019.0
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Name of non-communicable disease": "CAR",
+      "Reporting Type": "G",
+      "series": "SH_DTH_NCD",
+      "goal": "3",
+      "target": "3.4",
+      "indicator": "3.4.1",
+      "seriesDescription": "Number of deaths attributed to non-communicable diseases, by type of disease and sex (number)",
+      "values": [
+        {
+          "value": 41813.0,
+          "year": 2010.0
+        },
+        {
+          "value": 48901.0,
+          "year": 2015.0
+        },
+        {
+          "value": 51281.0,
+          "year": 2019.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "decrease",
+        "CAGRLimit": [
+          0.01,
+          -0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2019.0
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Name of non-communicable disease": "DIA",
+      "Reporting Type": "G",
+      "series": "SH_DTH_NCD",
+      "goal": "3",
+      "target": "3.4",
+      "indicator": "3.4.1",
+      "seriesDescription": "Number of deaths attributed to non-communicable diseases, by type of disease and sex (number)",
+      "values": [
+        {
+          "value": 2271.0,
+          "year": 2010.0
+        },
+        {
+          "value": 2631.0,
+          "year": 2015.0
+        },
+        {
+          "value": 2942.0,
+          "year": 2019.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "decrease",
+        "CAGRLimit": [
+          0.01,
+          -0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2019.0
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
+    },
+    {
+      "Sex": "BOTHSEX",
       "Reporting Type": "G",
       "series": "SH_STA_SCIDE",
       "goal": "3",
@@ -16808,6 +17355,42 @@
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
       "status": "Deterioration"
+    },
+    {
+      "Age": "15+",
+      "Sex": "BOTHSEX",
+      "Reporting Type": "G",
+      "series": "SH_SUD_ALCOL",
+      "goal": "3",
+      "target": "3.5",
+      "indicator": "3.5.1",
+      "seriesDescription": "Alcohol use disorders, 12-month prevalence (%)",
+      "values": [
+        {
+          "value": 6.0,
+          "year": 2016.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "decrease",
+        "CAGRLimit": [
+          0.01,
+          -0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 1.0,
+        "baseYear": 2016,
+        "latestAvailable": 2016.0
+      },
+      "Custodian_Agency(ies)": "WHO,UNODC",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Insufficient Data"
     },
     {
       "Age": "15+",
@@ -17791,6 +18374,919 @@
       "status": "No Data After 2015"
     },
     {
+      "Sex": "FEMALE",
+      "Type of occupation": "PHYS",
+      "Reporting Type": "G",
+      "series": "SH_MED_HWRKDIS",
+      "goal": "3",
+      "target": "3.c",
+      "indicator": "3.c.1",
+      "seriesDescription": "Health worker distribution, by sex and type of occupation (%)",
+      "values": [
+        {
+          "value": 64.7,
+          "year": 2013.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "Sex": "MALE",
+      "Type of occupation": "PHYS",
+      "Reporting Type": "G",
+      "series": "SH_MED_HWRKDIS",
+      "goal": "3",
+      "target": "3.c",
+      "indicator": "3.c.1",
+      "seriesDescription": "Health worker distribution, by sex and type of occupation (%)",
+      "values": [
+        {
+          "value": 35.3,
+          "year": 2013.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "IHR Capacity": "IHR12",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 21.0,
+          "year": 2010.0
+        },
+        {
+          "value": 75.0,
+          "year": 2011.0
+        },
+        {
+          "value": 85.0,
+          "year": 2013.0
+        },
+        {
+          "value": 85.0,
+          "year": 2014.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "IHR Capacity": "IHR13",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 60.0,
+          "year": 2010.0
+        },
+        {
+          "value": 58.0,
+          "year": 2011.0
+        },
+        {
+          "value": 77.0,
+          "year": 2013.0
+        },
+        {
+          "value": 77.0,
+          "year": 2014.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "IHR Capacity": "IHR11",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 40.0,
+          "year": 2010.0
+        },
+        {
+          "value": 75.0,
+          "year": 2011.0
+        },
+        {
+          "value": 93.0,
+          "year": 2013.0
+        },
+        {
+          "value": 93.0,
+          "year": 2014.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "IHR Capacity": "IHR09",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 54.0,
+          "year": 2010.0
+        },
+        {
+          "value": 64.0,
+          "year": 2011.0
+        },
+        {
+          "value": 86.0,
+          "year": 2013.0
+        },
+        {
+          "value": 86.0,
+          "year": 2014.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "IHR Capacity": "IHR06",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 70.0,
+          "year": 2010.0
+        },
+        {
+          "value": 57.0,
+          "year": 2011.0
+        },
+        {
+          "value": 57.0,
+          "year": 2013.0
+        },
+        {
+          "value": 57.0,
+          "year": 2014.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "IHR Capacity": "IHR01",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 25.0,
+          "year": 2010.0
+        },
+        {
+          "value": 75.0,
+          "year": 2011.0
+        },
+        {
+          "value": 50.0,
+          "year": 2013.0
+        },
+        {
+          "value": 50.0,
+          "year": 2014.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "IHR Capacity": "IHR02",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 50.0,
+          "year": 2010.0
+        },
+        {
+          "value": 73.0,
+          "year": 2011.0
+        },
+        {
+          "value": 83.0,
+          "year": 2013.0
+        },
+        {
+          "value": 83.0,
+          "year": 2014.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "IHR Capacity": "IHR03",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 84.0,
+          "year": 2010.0
+        },
+        {
+          "value": 90.0,
+          "year": 2011.0
+        },
+        {
+          "value": 100.0,
+          "year": 2013.0
+        },
+        {
+          "value": 100.0,
+          "year": 2014.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "IHR Capacity": "IHR04",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 83.0,
+          "year": 2010.0
+        },
+        {
+          "value": 86.0,
+          "year": 2011.0
+        },
+        {
+          "value": 94.0,
+          "year": 2013.0
+        },
+        {
+          "value": 94.0,
+          "year": 2014.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "IHR Capacity": "IHR05",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 35.0,
+          "year": 2010.0
+        },
+        {
+          "value": 100.0,
+          "year": 2011.0
+        },
+        {
+          "value": 75.0,
+          "year": 2013.0
+        },
+        {
+          "value": 75.0,
+          "year": 2014.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "IHR Capacity": "IHR07",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 16.0,
+          "year": 2010.0
+        },
+        {
+          "value": 100.0,
+          "year": 2011.0
+        },
+        {
+          "value": 100.0,
+          "year": 2013.0
+        },
+        {
+          "value": 100.0,
+          "year": 2014.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "IHR Capacity": "IHR08",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 70.0,
+          "year": 2010.0
+        },
+        {
+          "value": 80.0,
+          "year": 2011.0
+        },
+        {
+          "value": 96.0,
+          "year": 2013.0
+        },
+        {
+          "value": 96.0,
+          "year": 2014.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "IHR Capacity": "IHR10",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 84.0,
+          "year": 2010.0
+        },
+        {
+          "value": 100.0,
+          "year": 2011.0
+        },
+        {
+          "value": 100.0,
+          "year": 2013.0
+        },
+        {
+          "value": 100.0,
+          "year": 2014.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "PRIMAR",
+      "Reporting Type": "G",
+      "Type of skill": "SKILL_READ",
+      "series": "SE_TOT_PRFL",
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.1",
+      "seriesDescription": "Proportion of children and young people achieving a minimum proficiency level in reading and mathematics (%)",
+      "values": [
+        {
+          "value": 81.85957,
+          "year": 2011.0
+        },
+        {
+          "value": 80.78633,
+          "year": 2016.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2016,
+        "latestAvailable": 2016.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Insufficient Data"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "PRIMAR",
+      "Reporting Type": "G",
+      "Type of skill": "SKILL_MATH",
+      "series": "SE_TOT_PRFL",
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.1",
+      "seriesDescription": "Proportion of children and young people achieving a minimum proficiency level in reading and mathematics (%)",
+      "values": [
+        {
+          "value": 46.41994,
+          "year": 2011.0
+        },
+        {
+          "value": 71.74674,
+          "year": 2019.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": 2019.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Insufficient Data"
+    },
+    {
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Education level": "LOWSEC",
+      "Reporting Type": "G",
+      "Quantile": "_T",
+      "series": "SE_TOT_CPLR",
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.2",
+      "seriesDescription": "Completion rate, by sex, location, wealth quintile and education level (%)",
+      "values": [
+        {
+          "value": 92.0,
+          "year": 2010.0
+        },
+        {
+          "value": 92.0,
+          "year": 2011.0
+        }
+      ],
+      "methodology": {
+        "currentLevelThresholds": [
+          97,
+          94,
+          85,
+          75
+        ],
+        "currentLevelThresholdsName": [
+          "Target met or almost met",
+          "Close to Target",
+          "Moderate distance to target",
+          "Far from target",
+          "Very far from target"
+        ],
+        "targetValue": 97,
+        "normativeDirection": "increase",
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Education level": "UPPSEC",
+      "Reporting Type": "G",
+      "Quantile": "_T",
+      "series": "SE_TOT_CPLR",
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.2",
+      "seriesDescription": "Completion rate, by sex, location, wealth quintile and education level (%)",
+      "values": [
+        {
+          "value": 84.0,
+          "year": 2010.0
+        },
+        {
+          "value": 85.0,
+          "year": 2011.0
+        }
+      ],
+      "methodology": {
+        "currentLevelThresholds": [
+          97,
+          94,
+          85,
+          75
+        ],
+        "currentLevelThresholdsName": [
+          "Target met or almost met",
+          "Close to Target",
+          "Moderate distance to target",
+          "Far from target",
+          "Very far from target"
+        ],
+        "targetValue": 97,
+        "normativeDirection": "increase",
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Education level": "PRIMAR",
+      "Reporting Type": "G",
+      "Quantile": "_T",
+      "series": "SE_TOT_CPLR",
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.2",
+      "seriesDescription": "Completion rate, by sex, location, wealth quintile and education level (%)",
+      "values": [
+        {
+          "value": 98.0,
+          "year": 2010.0
+        },
+        {
+          "value": 98.0,
+          "year": 2011.0
+        }
+      ],
+      "methodology": {
+        "currentLevelThresholds": [
+          97,
+          94,
+          85,
+          75
+        ],
+        "currentLevelThresholdsName": [
+          "Target met or almost met",
+          "Close to Target",
+          "Moderate distance to target",
+          "Far from target",
+          "Very far from target"
+        ],
+        "targetValue": 97,
+        "normativeDirection": "increase",
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
       "Sex": "BOTHSEX",
       "Reporting Type": "G",
       "series": "SE_PRE_PARTN",
@@ -17866,6 +19362,510 @@
       "Custodian_Agency(ies)": "UNESCO-UIS",
       "Partner_Agency(ies)": "UNICEF, OECD",
       "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Age": "ALLAGE",
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Type of skill": "INST",
+      "Reporting Type": "G",
+      "series": "SE_ADT_ACTS",
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
+      "seriesDescription": "Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",
+      "values": [
+        {
+          "value": 12.52898,
+          "year": 2014.0
+        },
+        {
+          "value": 12.78062,
+          "year": 2015.0
+        },
+        {
+          "value": 12.68611,
+          "year": 2016.0
+        },
+        {
+          "value": 14.23509,
+          "year": 2017.0
+        },
+        {
+          "value": 14.05664,
+          "year": 2018.0
+        },
+        {
+          "value": 14.71158,
+          "year": 2019.0
+        },
+        {
+          "value": 17.05,
+          "year": 2020.0
+        },
+        {
+          "value": 17.157,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS, ITU",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Age": "ALLAGE",
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Type of skill": "SOFT",
+      "Reporting Type": "G",
+      "series": "SE_ADT_ACTS",
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
+      "seriesDescription": "Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",
+      "values": [
+        {
+          "value": 7.15942,
+          "year": 2014.0
+        },
+        {
+          "value": 7.30322,
+          "year": 2015.0
+        },
+        {
+          "value": 7.25253,
+          "year": 2016.0
+        },
+        {
+          "value": 8.14213,
+          "year": 2017.0
+        },
+        {
+          "value": 8.04247,
+          "year": 2018.0
+        },
+        {
+          "value": 8.41466,
+          "year": 2019.0
+        },
+        {
+          "value": 10.075,
+          "year": 2020.0
+        },
+        {
+          "value": 10.0548,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS, ITU",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Age": "ALLAGE",
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Type of skill": "EMAIL",
+      "Reporting Type": "G",
+      "series": "SE_ADT_ACTS",
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
+      "seriesDescription": "Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",
+      "values": [
+        {
+          "value": 47.72947,
+          "year": 2014.0
+        },
+        {
+          "value": 48.68808,
+          "year": 2015.0
+        },
+        {
+          "value": 48.32735,
+          "year": 2016.0
+        },
+        {
+          "value": 54.22274,
+          "year": 2017.0
+        },
+        {
+          "value": 53.55371,
+          "year": 2018.0
+        },
+        {
+          "value": 56.03773,
+          "year": 2019.0
+        },
+        {
+          "value": 62.775,
+          "year": 2020.0
+        },
+        {
+          "value": 63.83999,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS, ITU",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Age": "ALLAGE",
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Type of skill": "TRAF",
+      "Reporting Type": "G",
+      "series": "SE_ADT_ACTS",
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
+      "seriesDescription": "Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",
+      "values": [
+        {
+          "value": 3.57971,
+          "year": 2014.0
+        },
+        {
+          "value": 3.6516,
+          "year": 2015.0
+        },
+        {
+          "value": 3.62619,
+          "year": 2016.0
+        },
+        {
+          "value": 4.06984,
+          "year": 2017.0
+        },
+        {
+          "value": 4.02565,
+          "year": 2018.0
+        },
+        {
+          "value": 4.20607,
+          "year": 2019.0
+        },
+        {
+          "value": 5.425,
+          "year": 2020.0
+        },
+        {
+          "value": 5.5062,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS, ITU",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Age": "ALLAGE",
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Type of skill": "ARSP",
+      "Reporting Type": "G",
+      "series": "SE_ADT_ACTS",
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
+      "seriesDescription": "Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",
+      "values": [
+        {
+          "value": 18.49516,
+          "year": 2014.0
+        },
+        {
+          "value": 18.86663,
+          "year": 2015.0
+        },
+        {
+          "value": 18.72528,
+          "year": 2016.0
+        },
+        {
+          "value": 21.01166,
+          "year": 2017.0
+        },
+        {
+          "value": 20.7524,
+          "year": 2018.0
+        },
+        {
+          "value": 21.71498,
+          "year": 2019.0
+        },
+        {
+          "value": 24.80001,
+          "year": 2020.0
+        },
+        {
+          "value": 24.738,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS, ITU",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Age": "ALLAGE",
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Type of skill": "COPA",
+      "Reporting Type": "G",
+      "series": "SE_ADT_ACTS",
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
+      "seriesDescription": "Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",
+      "values": [
+        {
+          "value": 56.67874,
+          "year": 2014.0
+        },
+        {
+          "value": 57.8171,
+          "year": 2015.0
+        },
+        {
+          "value": 57.39049,
+          "year": 2016.0
+        },
+        {
+          "value": 64.37218,
+          "year": 2017.0
+        },
+        {
+          "value": 63.57157,
+          "year": 2018.0
+        },
+        {
+          "value": 66.5269,
+          "year": 2019.0
+        },
+        {
+          "value": 73.47,
+          "year": 2020.0
+        },
+        {
+          "value": 74.21399,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS, ITU",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Age": "ALLAGE",
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Type of skill": "PCPR",
+      "Reporting Type": "G",
+      "series": "SE_ADT_ACTS",
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
+      "seriesDescription": "Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",
+      "values": [
+        {
+          "value": 0.59662,
+          "year": 2014.0
+        },
+        {
+          "value": 0.6086,
+          "year": 2015.0
+        },
+        {
+          "value": 0.60407,
+          "year": 2016.0
+        },
+        {
+          "value": 0.68645,
+          "year": 2017.0
+        },
+        {
+          "value": 0.68644,
+          "year": 2018.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2018.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS, ITU",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Age": "ALLAGE",
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Type of skill": "CMFL",
+      "Reporting Type": "G",
+      "series": "SE_ADT_ACTS",
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
+      "seriesDescription": "Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",
+      "values": [
+        {
+          "value": 58.46859,
+          "year": 2014.0
+        },
+        {
+          "value": 59.6429,
+          "year": 2015.0
+        },
+        {
+          "value": 59.19181,
+          "year": 2016.0
+        },
+        {
+          "value": 66.39264,
+          "year": 2017.0
+        },
+        {
+          "value": 65.5669,
+          "year": 2018.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2018.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS, ITU",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
       "status": "On Track"
     },
@@ -19741,6 +21741,306 @@
       "status": "On Track"
     },
     {
+      "Sex": "BOTHSEX",
+      "Education level": "PREPRI",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 90.90004,
+          "year": 2010.0
+        },
+        {
+          "value": 91.67776,
+          "year": 2011.0
+        },
+        {
+          "value": 91.72161,
+          "year": 2012.0
+        },
+        {
+          "value": 86.26211,
+          "year": 2014.0
+        },
+        {
+          "value": 91.16109,
+          "year": 2015.0
+        },
+        {
+          "value": 87.98922,
+          "year": 2016.0
+        },
+        {
+          "value": 91.0134,
+          "year": 2018.0
+        },
+        {
+          "value": 91.75064,
+          "year": 2019.0
+        },
+        {
+          "value": 91.18866,
+          "year": 2020.0
+        },
+        {
+          "value": 91.29519,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Limited or No Progress"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "PRIMAR",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 99.97936,
+          "year": 2010.0
+        },
+        {
+          "value": 99.98844,
+          "year": 2011.0
+        },
+        {
+          "value": 99.99272,
+          "year": 2012.0
+        },
+        {
+          "value": 99.56842,
+          "year": 2013.0
+        },
+        {
+          "value": 99.35141,
+          "year": 2014.0
+        },
+        {
+          "value": 99.27994,
+          "year": 2015.0
+        },
+        {
+          "value": 98.03782,
+          "year": 2017.0
+        },
+        {
+          "value": 99.52143,
+          "year": 2018.0
+        },
+        {
+          "value": 99.83149,
+          "year": 2019.0
+        },
+        {
+          "value": 99.86056,
+          "year": 2020.0
+        },
+        {
+          "value": 99.70946,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "LOWSEC",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 91.59518,
+          "year": 2016.0
+        },
+        {
+          "value": 97.62284,
+          "year": 2017.0
+        },
+        {
+          "value": 99.76004,
+          "year": 2018.0
+        },
+        {
+          "value": 99.59416,
+          "year": 2019.0
+        },
+        {
+          "value": 99.66224,
+          "year": 2020.0
+        },
+        {
+          "value": 99.55177,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2016,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "UPPSEC",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 94.87882,
+          "year": 2018.0
+        },
+        {
+          "value": 95.58054,
+          "year": 2019.0
+        },
+        {
+          "value": 95.48052,
+          "year": 2020.0
+        },
+        {
+          "value": 96.68343,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2018,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "SECOND",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 98.3834,
+          "year": 2018.0
+        },
+        {
+          "value": 98.538,
+          "year": 2019.0
+        },
+        {
+          "value": 98.59482,
+          "year": 2020.0
+        },
+        {
+          "value": 98.86063,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2018,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
       "Reporting Type": "G",
       "series": "SG_LGL_GENEQLFP",
       "goal": "5",
@@ -20094,6 +22394,101 @@
     {
       "Sex": "FEMALE",
       "Reporting Type": "G",
+      "series": "SG_GEN_PARL",
+      "goal": "5",
+      "target": "5.5",
+      "indicator": "5.5.1",
+      "seriesDescription": "Proportion of seats held by women in national parliaments (% of total number of seats)",
+      "values": [
+        {
+          "value": 11.38,
+          "year": 2010.0
+        },
+        {
+          "value": 16.0,
+          "year": 2011.0
+        },
+        {
+          "value": 16.0,
+          "year": 2012.0
+        },
+        {
+          "value": 16.0,
+          "year": 2013.0
+        },
+        {
+          "value": 15.57,
+          "year": 2014.0
+        },
+        {
+          "value": 15.57,
+          "year": 2015.0
+        },
+        {
+          "value": 16.94,
+          "year": 2016.0
+        },
+        {
+          "value": 16.8,
+          "year": 2017.0
+        },
+        {
+          "value": 16.8,
+          "year": 2018.0
+        },
+        {
+          "value": 16.81,
+          "year": 2019.0
+        },
+        {
+          "value": 16.81,
+          "year": 2020.0
+        },
+        {
+          "value": 18.18,
+          "year": 2021.0
+        },
+        {
+          "value": 18.33,
+          "year": 2022.0
+        },
+        {
+          "value": 18.64,
+          "year": 2023.0
+        }
+      ],
+      "methodology": {
+        "targetValue": 50,
+        "currentLevelThresholds": [
+          40,
+          30,
+          20,
+          10
+        ],
+        "currentLevelThresholdsName": [
+          "Target met or almost met",
+          "Close to Target",
+          "Moderate distance to target",
+          "Far from target",
+          "Very far from target"
+        ],
+        "normativeDirection": "increase",
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2023.0
+      },
+      "Custodian_Agency(ies)": "IPU, UN Women",
+      "Partner_Agency(ies)": "World Bank",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": "Far from target",
+      "status": "Limited or No Progress"
+    },
+    {
+      "Sex": "FEMALE",
+      "Reporting Type": "G",
       "series": "SG_GEN_LOCGELS",
       "goal": "5",
       "target": "5.5",
@@ -20263,7 +22658,7 @@
       "status": "Insufficient Data"
     },
     {
-      "Sex": "BOTHSEX",
+      "Sex": "FEMALE",
       "Reporting Type": "G",
       "series": "IT_MOB_OWN",
       "goal": "5",
@@ -20272,39 +22667,35 @@
       "seriesDescription": "Proportion of individuals who own a mobile telephone, by sex (%)",
       "values": [
         {
-          "value": 72.41433,
-          "year": 2013.0
-        },
-        {
-          "value": 73.9173,
+          "value": 70.65596,
           "year": 2014.0
         },
         {
-          "value": 74.1245,
+          "value": 70.46501,
           "year": 2015.0
         },
         {
-          "value": 73.41631,
+          "value": 69.84266,
           "year": 2016.0
         },
         {
-          "value": 84.0,
+          "value": 79.72038,
           "year": 2017.0
         },
         {
-          "value": 83.5,
+          "value": 79.34035,
           "year": 2018.0
         },
         {
-          "value": 83.5,
+          "value": 79.43088,
           "year": 2019.0
         },
         {
-          "value": 84.00001,
+          "value": 79.94754,
           "year": 2020.0
         },
         {
-          "value": 84.0,
+          "value": 83.37485,
           "year": 2021.0
         }
       ],
@@ -20411,6 +22802,172 @@
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": "Close to Target",
       "status": "Fair progress but acceleration needed"
+    },
+    {
+      "Location": "RURAL",
+      "Reporting Type": "G",
+      "series": "SH_H2O_SAFE",
+      "goal": "6",
+      "target": "6.1",
+      "indicator": "6.1.1",
+      "seriesDescription": "Proportion of population using safely managed drinking water services, by urban/rural (%)",
+      "values": [
+        {
+          "value": 58.0,
+          "year": 2010.0
+        },
+        {
+          "value": 61.0,
+          "year": 2011.0
+        },
+        {
+          "value": 63.0,
+          "year": 2012.0
+        },
+        {
+          "value": 66.0,
+          "year": 2013.0
+        },
+        {
+          "value": 69.0,
+          "year": 2014.0
+        },
+        {
+          "value": 72.0,
+          "year": 2015.0
+        },
+        {
+          "value": 73.0,
+          "year": 2016.0
+        },
+        {
+          "value": 75.0,
+          "year": 2017.0
+        },
+        {
+          "value": 76.0,
+          "year": 2018.0
+        },
+        {
+          "value": 77.0,
+          "year": 2019.0
+        },
+        {
+          "value": 78.0,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "targetValue": 99,
+        "currentLevelThresholds": [
+          99,
+          75,
+          50,
+          25
+        ],
+        "currentLevelThresholdsName": [
+          "Target met or almost met",
+          "Close to Target",
+          "Moderate distance to target",
+          "Far from target",
+          "Very far from target"
+        ],
+        "normativeDirection": "increase",
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "WHO,UNICEF",
+      "Partner_Agency(ies)": "UNEP, UN-Habitat",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": "Close to Target",
+      "status": "Fair progress but acceleration needed"
+    },
+    {
+      "Location": "URBAN",
+      "Reporting Type": "G",
+      "series": "SH_H2O_SAFE",
+      "goal": "6",
+      "target": "6.1",
+      "indicator": "6.1.1",
+      "seriesDescription": "Proportion of population using safely managed drinking water services, by urban/rural (%)",
+      "values": [
+        {
+          "value": 93.0,
+          "year": 2010.0
+        },
+        {
+          "value": 94.0,
+          "year": 2011.0
+        },
+        {
+          "value": 95.0,
+          "year": 2012.0
+        },
+        {
+          "value": 95.0,
+          "year": 2013.0
+        },
+        {
+          "value": 95.0,
+          "year": 2014.0
+        },
+        {
+          "value": 96.0,
+          "year": 2015.0
+        },
+        {
+          "value": 96.0,
+          "year": 2016.0
+        },
+        {
+          "value": 96.0,
+          "year": 2017.0
+        },
+        {
+          "value": 96.0,
+          "year": 2018.0
+        },
+        {
+          "value": 96.0,
+          "year": 2019.0
+        },
+        {
+          "value": 96.0,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "targetValue": 99,
+        "currentLevelThresholds": [
+          99,
+          75,
+          50,
+          25
+        ],
+        "currentLevelThresholdsName": [
+          "Target met or almost met",
+          "Close to Target",
+          "Moderate distance to target",
+          "Far from target",
+          "Very far from target"
+        ],
+        "normativeDirection": "increase",
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "WHO,UNICEF",
+      "Partner_Agency(ies)": "UNEP, UN-Habitat",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": "Close to Target",
+      "status": "Limited or No Progress"
     },
     {
       "Location": "ALLAREA",
@@ -23581,6 +26138,43 @@
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
       "status": "Insufficient Data"
+    },
+    {
+      "Mode of transportation": "AIR",
+      "Reporting Type": "G",
+      "series": "IS_RDP_FRGVOL",
+      "goal": "9",
+      "target": "9.1",
+      "indicator": "9.1.2",
+      "seriesDescription": "Freight volume, by mode of transport (tonne kilometres)",
+      "values": [
+        {
+          "value": 61625500.0,
+          "year": 2017.0
+        },
+        {
+          "value": 44088600.0,
+          "year": 2018.0
+        },
+        {
+          "value": 1620437910.0,
+          "year": 2019.0
+        },
+        {
+          "value": 2030378090.0,
+          "year": 2020.0
+        },
+        {
+          "value": 3173723770.0,
+          "year": 2021.0
+        }
+      ],
+      "methodology": "NA",
+      "Custodian_Agency(ies)": "ICAO,ITF-OECD",
+      "Partner_Agency(ies)": "UPU, UNEP,UNECE",
+      "Tier_Classification": "Tier I",
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Mode of transportation": "AIR",

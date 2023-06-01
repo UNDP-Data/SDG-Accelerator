@@ -63,7 +63,7 @@
     },
     {
       "goal": 4,
-      "noOfIndicatorsWithData": 4,
+      "noOfIndicatorsWithData": 5,
       "status": "For Review"
     },
     {
@@ -312,6 +312,11 @@
       "goal": "4",
       "target": "4.b",
       "status": "On Track"
+    },
+    {
+      "goal": "4",
+      "target": "4.c",
+      "status": "Identified Gap"
     },
     {
       "goal": "5",
@@ -685,6 +690,12 @@
       "target": "4.b",
       "indicator": "4.b.1",
       "status": "On Track"
+    },
+    {
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "status": "Identified Gap"
     },
     {
       "goal": "5",
@@ -7801,6 +7812,85 @@
       "status": "Target Achieved"
     },
     {
+      "Age": "<1M",
+      "Sex": "BOTHSEX",
+      "Reporting Type": "G",
+      "series": "SH_DYN_NMRT",
+      "goal": "3",
+      "target": "3.2",
+      "indicator": "3.2.2",
+      "seriesDescription": "Neonatal mortality rate (deaths per 1,000 live births)",
+      "values": [
+        {
+          "value": 4.0,
+          "year": 2010.0
+        },
+        {
+          "value": 3.9,
+          "year": 2011.0
+        },
+        {
+          "value": 3.7,
+          "year": 2012.0
+        },
+        {
+          "value": 3.6,
+          "year": 2013.0
+        },
+        {
+          "value": 3.5,
+          "year": 2014.0
+        },
+        {
+          "value": 3.4,
+          "year": 2015.0
+        },
+        {
+          "value": 3.2,
+          "year": 2016.0
+        },
+        {
+          "value": 3.2,
+          "year": 2017.0
+        },
+        {
+          "value": 3.1,
+          "year": 2018.0
+        },
+        {
+          "value": 2.9,
+          "year": 2019.0
+        },
+        {
+          "value": 2.8,
+          "year": 2020.0
+        },
+        {
+          "value": 2.8,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "decrease",
+        "CAGRLimit": [
+          0.01,
+          -0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNICEF",
+      "Partner_Agency(ies)": "DESA Population Division, World Bank,WHO",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
       "Reporting Type": "G",
       "series": "SH_TBS_INCD",
       "goal": "3",
@@ -9300,6 +9390,138 @@
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
       "status": "On Track"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "PRIMAR",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 72.5,
+          "year": 2014.0
+        },
+        {
+          "value": 76.66667,
+          "year": 2016.0
+        },
+        {
+          "value": 77.77778,
+          "year": 2018.0
+        },
+        {
+          "value": 75.86207,
+          "year": 2019.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2016,
+        "latestAvailable": 2019.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "PREPRI",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 81.81818,
+          "year": 2017.0
+        },
+        {
+          "value": 72.72727,
+          "year": 2018.0
+        },
+        {
+          "value": 68.75,
+          "year": 2019.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2017,
+        "latestAvailable": 2019.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "SECOND",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 47.22222,
+          "year": 2018.0
+        },
+        {
+          "value": 45.94595,
+          "year": 2019.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2018,
+        "latestAvailable": 2019.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
     },
     {
       "Sex": "FEMALE",

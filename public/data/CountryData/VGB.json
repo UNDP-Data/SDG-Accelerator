@@ -58,7 +58,7 @@
     },
     {
       "goal": 4,
-      "noOfIndicatorsWithData": 3,
+      "noOfIndicatorsWithData": 4,
       "status": "For Review"
     },
     {
@@ -247,6 +247,11 @@
       "goal": "4",
       "target": "4.a",
       "status": "On Track"
+    },
+    {
+      "goal": "4",
+      "target": "4.c",
+      "status": "Identified Gap"
     },
     {
       "goal": "5",
@@ -527,6 +532,12 @@
       "target": "4.a",
       "indicator": "4.a.1",
       "status": "On Track"
+    },
+    {
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "status": "Identified Gap"
     },
     {
       "goal": "5",
@@ -5725,6 +5736,85 @@
       "status": "On Track"
     },
     {
+      "Age": "<1M",
+      "Sex": "BOTHSEX",
+      "Reporting Type": "G",
+      "series": "SH_DYN_NMRT",
+      "goal": "3",
+      "target": "3.2",
+      "indicator": "3.2.2",
+      "seriesDescription": "Neonatal mortality rate (deaths per 1,000 live births)",
+      "values": [
+        {
+          "value": 7.6,
+          "year": 2010.0
+        },
+        {
+          "value": 7.4,
+          "year": 2011.0
+        },
+        {
+          "value": 7.3,
+          "year": 2012.0
+        },
+        {
+          "value": 7.0,
+          "year": 2013.0
+        },
+        {
+          "value": 6.8,
+          "year": 2014.0
+        },
+        {
+          "value": 6.6,
+          "year": 2015.0
+        },
+        {
+          "value": 6.4,
+          "year": 2016.0
+        },
+        {
+          "value": 6.2,
+          "year": 2017.0
+        },
+        {
+          "value": 6.0,
+          "year": 2018.0
+        },
+        {
+          "value": 5.8,
+          "year": 2019.0
+        },
+        {
+          "value": 5.6,
+          "year": 2020.0
+        },
+        {
+          "value": 5.4,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "decrease",
+        "CAGRLimit": [
+          0.01,
+          -0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNICEF",
+      "Partner_Agency(ies)": "DESA Population Division, World Bank,WHO",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
       "Reporting Type": "G",
       "series": "SH_TBS_INCD",
       "goal": "3",
@@ -7402,6 +7492,162 @@
     },
     {
       "Sex": "BOTHSEX",
+      "Education level": "PRIMAR",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 80.28674,
+          "year": 2014.0
+        },
+        {
+          "value": 91.60839,
+          "year": 2015.0
+        },
+        {
+          "value": 81.21019,
+          "year": 2016.0
+        },
+        {
+          "value": 80.13937,
+          "year": 2017.0
+        },
+        {
+          "value": 95.1417,
+          "year": 2018.0
+        },
+        {
+          "value": 71.64179,
+          "year": 2019.0
+        },
+        {
+          "value": 76.22378,
+          "year": 2020.0
+        },
+        {
+          "value": 85.0,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "SECOND",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 88.84462,
+          "year": 2015.0
+        },
+        {
+          "value": 99.19679,
+          "year": 2018.0
+        },
+        {
+          "value": 67.91045,
+          "year": 2019.0
+        },
+        {
+          "value": 69.46565,
+          "year": 2020.0
+        },
+        {
+          "value": 67.96875,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "PREPRI",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 34.78261,
+          "year": 2019.0
+        },
+        {
+          "value": 49.46237,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": null,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Insufficient Data"
+    },
+    {
+      "Sex": "FEMALE",
       "Reporting Type": "G",
       "series": "IT_MOB_OWN",
       "goal": "5",
@@ -7410,11 +7656,11 @@
       "seriesDescription": "Proportion of individuals who own a mobile telephone, by sex (%)",
       "values": [
         {
-          "value": 76.91455,
+          "value": 78.23193,
           "year": 2016.0
         },
         {
-          "value": 76.89939,
+          "value": 77.41622,
           "year": 2017.0
         }
       ],
@@ -7437,7 +7683,7 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
-      "status": "Limited or No Progress"
+      "status": "Deterioration"
     },
     {
       "Location": "ALLAREA",

@@ -63,7 +63,7 @@
     },
     {
       "goal": 4,
-      "noOfIndicatorsWithData": 3,
+      "noOfIndicatorsWithData": 4,
       "status": "On Track"
     },
     {
@@ -266,6 +266,11 @@
     {
       "goal": "4",
       "target": "4.a",
+      "status": "On Track"
+    },
+    {
+      "goal": "4",
+      "target": "4.c",
       "status": "On Track"
     },
     {
@@ -575,6 +580,12 @@
       "goal": "4",
       "target": "4.a",
       "indicator": "4.a.1",
+      "status": "On Track"
+    },
+    {
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
       "status": "On Track"
     },
     {
@@ -7200,6 +7211,242 @@
       "Custodian_Agency(ies)": "UNESCO-UIS",
       "Partner_Agency(ies)": "UNICEF, OECD, UNEP ",
       "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "SECOND",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 99.72452,
+          "year": 2011.0
+        },
+        {
+          "value": 99.04153,
+          "year": 2012.0
+        },
+        {
+          "value": 100.0,
+          "year": 2018.0
+        },
+        {
+          "value": 99.97102,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2018,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "UPPSEC",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 100.0,
+          "year": 2011.0
+        },
+        {
+          "value": 99.07975,
+          "year": 2012.0
+        },
+        {
+          "value": 100.0,
+          "year": 2018.0
+        },
+        {
+          "value": 99.94083,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2018,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "PRIMAR",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 94.84848,
+          "year": 2011.0
+        },
+        {
+          "value": 97.0297,
+          "year": 2012.0
+        },
+        {
+          "value": 88.11881,
+          "year": 2013.0
+        },
+        {
+          "value": 100.0,
+          "year": 2018.0
+        },
+        {
+          "value": 100.0,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2013,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "LOWSEC",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 99.45946,
+          "year": 2011.0
+        },
+        {
+          "value": 99.0,
+          "year": 2012.0
+        },
+        {
+          "value": 100.0,
+          "year": 2018.0
+        },
+        {
+          "value": 100.0,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2018,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "PREPRI",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 77.14286,
+          "year": 2012.0
+        },
+        {
+          "value": 100.0,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2012,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
       "status": "Target Achieved"
     },

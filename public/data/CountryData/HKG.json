@@ -58,8 +58,8 @@
     },
     {
       "goal": 4,
-      "noOfIndicatorsWithData": 3,
-      "status": "On Track"
+      "noOfIndicatorsWithData": 6,
+      "status": "For Review"
     },
     {
       "goal": 5,
@@ -285,7 +285,17 @@
     },
     {
       "goal": "4",
+      "target": "4.1",
+      "status": "For Review"
+    },
+    {
+      "goal": "4",
       "target": "4.2",
+      "status": "On Track"
+    },
+    {
+      "goal": "4",
+      "target": "4.4",
       "status": "On Track"
     },
     {
@@ -299,8 +309,18 @@
       "status": "On Track"
     },
     {
+      "goal": "4",
+      "target": "4.c",
+      "status": "Identified Gap"
+    },
+    {
       "goal": "5",
       "target": "5.2",
+      "status": null
+    },
+    {
+      "goal": "5",
+      "target": "5.4",
       "status": null
     },
     {
@@ -689,8 +709,20 @@
     },
     {
       "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.1",
+      "status": "For Review"
+    },
+    {
+      "goal": "4",
       "target": "4.2",
       "indicator": "4.2.2",
+      "status": "On Track"
+    },
+    {
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
       "status": "On Track"
     },
     {
@@ -706,9 +738,21 @@
       "status": "On Track"
     },
     {
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "status": "Identified Gap"
+    },
+    {
       "goal": "5",
       "target": "5.2",
       "indicator": "5.2.1",
+      "status": null
+    },
+    {
+      "goal": "5",
+      "target": "5.4",
+      "indicator": "5.4.1",
       "status": null
     },
     {
@@ -10362,6 +10406,182 @@
     },
     {
       "Sex": "BOTHSEX",
+      "Education level": "PRIMAR",
+      "Reporting Type": "G",
+      "Type of skill": "SKILL_READ",
+      "series": "SE_TOT_PRFL",
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.1",
+      "seriesDescription": "Proportion of children and young people achieving a minimum proficiency level in reading and mathematics (%)",
+      "values": [
+        {
+          "value": 99.18508,
+          "year": 2011.0
+        },
+        {
+          "value": 98.5961,
+          "year": 2016.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2016,
+        "latestAvailable": 2016.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "PRIMAR",
+      "Reporting Type": "G",
+      "Type of skill": "SKILL_MATH",
+      "series": "SE_TOT_PRFL",
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.1",
+      "seriesDescription": "Proportion of children and young people achieving a minimum proficiency level in reading and mathematics (%)",
+      "values": [
+        {
+          "value": 96.16563,
+          "year": 2011.0
+        },
+        {
+          "value": 97.79839,
+          "year": 2015.0
+        },
+        {
+          "value": 95.55637,
+          "year": 2019.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2019.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "LOWSEC",
+      "Reporting Type": "G",
+      "Type of skill": "SKILL_READ",
+      "series": "SE_TOT_PRFL",
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.1",
+      "seriesDescription": "Proportion of children and young people achieving a minimum proficiency level in reading and mathematics (%)",
+      "values": [
+        {
+          "value": 93.21001,
+          "year": 2012.0
+        },
+        {
+          "value": 90.7034,
+          "year": 2015.0
+        },
+        {
+          "value": 87.40203,
+          "year": 2018.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2018.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "LOWSEC",
+      "Reporting Type": "G",
+      "Type of skill": "SKILL_MATH",
+      "series": "SE_TOT_PRFL",
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.1",
+      "seriesDescription": "Proportion of children and young people achieving a minimum proficiency level in reading and mathematics (%)",
+      "values": [
+        {
+          "value": 91.48302,
+          "year": 2012.0
+        },
+        {
+          "value": 91.01389,
+          "year": 2015.0
+        },
+        {
+          "value": 90.82994,
+          "year": 2018.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2018.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Limited or No Progress"
+    },
+    {
+      "Sex": "BOTHSEX",
       "Reporting Type": "G",
       "series": "SE_PRE_PARTN",
       "goal": "4",
@@ -10426,6 +10646,444 @@
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
       "status": "Target Achieved"
+    },
+    {
+      "Age": "ALLAGE",
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Type of skill": "CMFL",
+      "Reporting Type": "G",
+      "series": "SE_ADT_ACTS",
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
+      "seriesDescription": "Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",
+      "values": [
+        {
+          "value": 50.7519,
+          "year": 2018.0
+        },
+        {
+          "value": 52.96389,
+          "year": 2019.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2018,
+        "latestAvailable": 2019.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS, ITU",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Age": "ALLAGE",
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Type of skill": "COPA",
+      "Reporting Type": "G",
+      "series": "SE_ADT_ACTS",
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
+      "seriesDescription": "Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",
+      "values": [
+        {
+          "value": 52.71008,
+          "year": 2018.0
+        },
+        {
+          "value": 53.69318,
+          "year": 2019.0
+        },
+        {
+          "value": 56.27833,
+          "year": 2020.0
+        },
+        {
+          "value": 58.62673,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2018,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS, ITU",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Age": "ALLAGE",
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Type of skill": "SOFT",
+      "Reporting Type": "G",
+      "series": "SE_ADT_ACTS",
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
+      "seriesDescription": "Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",
+      "values": [
+        {
+          "value": 29.98006,
+          "year": 2018.0
+        },
+        {
+          "value": 39.40921,
+          "year": 2019.0
+        },
+        {
+          "value": 32.56189,
+          "year": 2020.0
+        },
+        {
+          "value": 39.18929,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2018,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS, ITU",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Age": "ALLAGE",
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Type of skill": "TRAF",
+      "Reporting Type": "G",
+      "series": "SE_ADT_ACTS",
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
+      "seriesDescription": "Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",
+      "values": [
+        {
+          "value": 21.13194,
+          "year": 2018.0
+        },
+        {
+          "value": 43.07252,
+          "year": 2019.0
+        },
+        {
+          "value": 24.58162,
+          "year": 2020.0
+        },
+        {
+          "value": 42.52258,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2018,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS, ITU",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Age": "ALLAGE",
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Type of skill": "EMAIL",
+      "Reporting Type": "G",
+      "series": "SE_ADT_ACTS",
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
+      "seriesDescription": "Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",
+      "values": [
+        {
+          "value": 55.87685,
+          "year": 2018.0
+        },
+        {
+          "value": 57.22625,
+          "year": 2019.0
+        },
+        {
+          "value": 56.6994,
+          "year": 2020.0
+        },
+        {
+          "value": 57.82748,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2018,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS, ITU",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Age": "ALLAGE",
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Type of skill": "PCPR",
+      "Reporting Type": "G",
+      "series": "SE_ADT_ACTS",
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
+      "seriesDescription": "Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",
+      "values": [
+        {
+          "value": 2.66603,
+          "year": 2018.0
+        },
+        {
+          "value": 1.31916,
+          "year": 2019.0
+        },
+        {
+          "value": 3.78805,
+          "year": 2020.0
+        },
+        {
+          "value": 1.0068,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2018,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS, ITU",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
+    },
+    {
+      "Age": "ALLAGE",
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Type of skill": "ARSP",
+      "Reporting Type": "G",
+      "series": "SE_ADT_ACTS",
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
+      "seriesDescription": "Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",
+      "values": [
+        {
+          "value": 33.01083,
+          "year": 2018.0
+        },
+        {
+          "value": 36.49359,
+          "year": 2019.0
+        },
+        {
+          "value": 35.22352,
+          "year": 2020.0
+        },
+        {
+          "value": 40.07992,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2018,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS, ITU",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Age": "ALLAGE",
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Type of skill": "INST",
+      "Reporting Type": "G",
+      "series": "SE_ADT_ACTS",
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
+      "seriesDescription": "Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",
+      "values": [
+        {
+          "value": 26.35426,
+          "year": 2018.0
+        },
+        {
+          "value": 28.28755,
+          "year": 2019.0
+        },
+        {
+          "value": 26.19212,
+          "year": 2020.0
+        },
+        {
+          "value": 33.84241,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2018,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS, ITU",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Age": "ALLAGE",
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Reporting Type": "G",
+      "Type of skill": "SCRTY",
+      "series": "SE_ADT_ACTS",
+      "goal": "4",
+      "target": "4.4",
+      "indicator": "4.4.1",
+      "seriesDescription": "Proportion of youth and adults with information and communications technology (ICT) skills, by sex and type of skill (%)",
+      "values": [
+        {
+          "value": 45.25732,
+          "year": 2019.0
+        },
+        {
+          "value": 45.1539,
+          "year": 2020.0
+        },
+        {
+          "value": 45.12786,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS, ITU",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Insufficient Data"
     },
     {
       "Reporting Type": "G",
@@ -12390,6 +13048,246 @@
       "status": "Target Achieved"
     },
     {
+      "Sex": "BOTHSEX",
+      "Education level": "PREPRI",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 95.07105,
+          "year": 2010.0
+        },
+        {
+          "value": 94.978,
+          "year": 2011.0
+        },
+        {
+          "value": 94.91817,
+          "year": 2012.0
+        },
+        {
+          "value": 95.07489,
+          "year": 2013.0
+        },
+        {
+          "value": 94.77552,
+          "year": 2014.0
+        },
+        {
+          "value": 95.59451,
+          "year": 2015.0
+        },
+        {
+          "value": 95.35124,
+          "year": 2016.0
+        },
+        {
+          "value": 96.15219,
+          "year": 2017.0
+        },
+        {
+          "value": 96.48887,
+          "year": 2018.0
+        },
+        {
+          "value": 96.53588,
+          "year": 2019.0
+        },
+        {
+          "value": 97.10195,
+          "year": 2020.0
+        },
+        {
+          "value": 97.36525,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "PRIMAR",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 95.60564,
+          "year": 2010.0
+        },
+        {
+          "value": 95.79129,
+          "year": 2011.0
+        },
+        {
+          "value": 95.79185,
+          "year": 2012.0
+        },
+        {
+          "value": 96.00716,
+          "year": 2013.0
+        },
+        {
+          "value": 96.41133,
+          "year": 2014.0
+        },
+        {
+          "value": 96.17486,
+          "year": 2015.0
+        },
+        {
+          "value": 96.60663,
+          "year": 2016.0
+        },
+        {
+          "value": 96.89441,
+          "year": 2017.0
+        },
+        {
+          "value": 96.55109,
+          "year": 2018.0
+        },
+        {
+          "value": 95.98205,
+          "year": 2019.0
+        },
+        {
+          "value": 95.68095,
+          "year": 2020.0
+        },
+        {
+          "value": 96.14941,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Limited or No Progress"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "SECOND",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 94.16552,
+          "year": 2010.0
+        },
+        {
+          "value": 94.56663,
+          "year": 2011.0
+        },
+        {
+          "value": 93.77655,
+          "year": 2012.0
+        },
+        {
+          "value": 95.00097,
+          "year": 2013.0
+        },
+        {
+          "value": 96.13397,
+          "year": 2014.0
+        },
+        {
+          "value": 96.57293,
+          "year": 2015.0
+        },
+        {
+          "value": 96.92313,
+          "year": 2016.0
+        },
+        {
+          "value": 97.21031,
+          "year": 2017.0
+        },
+        {
+          "value": 97.00058,
+          "year": 2018.0
+        },
+        {
+          "value": 96.219,
+          "year": 2019.0
+        },
+        {
+          "value": 95.74387,
+          "year": 2020.0
+        },
+        {
+          "value": 95.09131,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
+    },
+    {
       "Age": "15+",
       "Sex": "FEMALE",
       "Reporting Type": "G",
@@ -12424,6 +13322,75 @@
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
       "status": "Insufficient Data"
+    },
+    {
+      "Age": "15+",
+      "Location": "ALLAREA",
+      "Sex": "FEMALE",
+      "Reporting Type": "G",
+      "series": "SL_DOM_TSPDCW",
+      "goal": "5",
+      "target": "5.4",
+      "indicator": "5.4.1",
+      "seriesDescription": "Proportion of time spent on unpaid care work, by sex, age and location (%)",
+      "values": [
+        {
+          "value": 2.08333,
+          "year": 2013.0
+        }
+      ],
+      "methodology": "NA",
+      "Custodian_Agency(ies)": "UNSD,UN Women",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier II",
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
+    },
+    {
+      "Age": "15+",
+      "Location": "ALLAREA",
+      "Sex": "FEMALE",
+      "Reporting Type": "G",
+      "series": "SL_DOM_TSPDDC",
+      "goal": "5",
+      "target": "5.4",
+      "indicator": "5.4.1",
+      "seriesDescription": "Proportion of time spent on unpaid domestic chores, by sex, age and location (%)",
+      "values": [
+        {
+          "value": 8.75,
+          "year": 2013.0
+        }
+      ],
+      "methodology": "NA",
+      "Custodian_Agency(ies)": "UNSD,UN Women",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier II",
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
+    },
+    {
+      "Age": "15+",
+      "Location": "ALLAREA",
+      "Sex": "FEMALE",
+      "Reporting Type": "G",
+      "series": "SL_DOM_TSPD",
+      "goal": "5",
+      "target": "5.4",
+      "indicator": "5.4.1",
+      "seriesDescription": "Proportion of time spent on unpaid domestic chores and care work, by sex, age and location (%)",
+      "values": [
+        {
+          "value": 10.83333,
+          "year": 2013.0
+        }
+      ],
+      "methodology": "NA",
+      "Custodian_Agency(ies)": "UNSD,UN Women",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier II",
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Sex": "FEMALE",
@@ -12552,7 +13519,7 @@
       "status": "No Data After 2015"
     },
     {
-      "Sex": "BOTHSEX",
+      "Sex": "FEMALE",
       "Reporting Type": "G",
       "series": "IT_MOB_OWN",
       "goal": "5",
@@ -12561,35 +13528,35 @@
       "seriesDescription": "Proportion of individuals who own a mobile telephone, by sex (%)",
       "values": [
         {
-          "value": 94.81363,
+          "value": 94.15334,
           "year": 2014.0
         },
         {
-          "value": 96.05247,
+          "value": 95.36566,
           "year": 2015.0
         },
         {
-          "value": 96.11976,
+          "value": 95.38152,
           "year": 2016.0
         },
         {
-          "value": 96.81793,
+          "value": 96.32777,
           "year": 2017.0
         },
         {
-          "value": 96.62149,
+          "value": 96.19855,
           "year": 2018.0
         },
         {
-          "value": 97.06446,
+          "value": 96.51044,
           "year": 2019.0
         },
         {
-          "value": 97.0802,
+          "value": 96.71103,
           "year": 2020.0
         },
         {
-          "value": 97.33585,
+          "value": 96.9347,
           "year": 2021.0
         }
       ],
@@ -14429,6 +15396,43 @@
       "Custodian_Agency(ies)": "UNWTO",
       "Partner_Agency(ies)": "UNEP",
       "Tier_Classification": "Tier II",
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
+    },
+    {
+      "Mode of transportation": "AIR",
+      "Reporting Type": "G",
+      "series": "IS_RDP_FRGVOL",
+      "goal": "9",
+      "target": "9.1",
+      "indicator": "9.1.2",
+      "seriesDescription": "Freight volume, by mode of transport (tonne kilometres)",
+      "values": [
+        {
+          "value": 12415199320.0,
+          "year": 2017.0
+        },
+        {
+          "value": 12676721747.0,
+          "year": 2018.0
+        },
+        {
+          "value": 11739489567.0,
+          "year": 2019.0
+        },
+        {
+          "value": 8084899620.0,
+          "year": 2020.0
+        },
+        {
+          "value": 9027879964.0,
+          "year": 2021.0
+        }
+      ],
+      "methodology": "NA",
+      "Custodian_Agency(ies)": "ICAO,ITF-OECD",
+      "Partner_Agency(ies)": "UPU, UNEP,UNECE",
+      "Tier_Classification": "Tier I",
       "status": "Methodology Unavailable",
       "currentLevelAssessment": null
     },

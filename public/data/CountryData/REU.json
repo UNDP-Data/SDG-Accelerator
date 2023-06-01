@@ -175,6 +175,11 @@
     },
     {
       "goal": "5",
+      "target": "5.4",
+      "status": null
+    },
+    {
+      "goal": "5",
       "target": "5.5",
       "status": null
     },
@@ -378,6 +383,12 @@
       "target": "3.7",
       "indicator": "3.7.2",
       "status": "Identified Gap"
+    },
+    {
+      "goal": "5",
+      "target": "5.4",
+      "indicator": "5.4.1",
+      "status": null
     },
     {
       "goal": "5",
@@ -6132,6 +6143,75 @@
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
       "status": "Deterioration"
+    },
+    {
+      "Age": "15+",
+      "Location": "ALLAREA",
+      "Sex": "FEMALE",
+      "Reporting Type": "G",
+      "series": "SL_DOM_TSPDCW",
+      "goal": "5",
+      "target": "5.4",
+      "indicator": "5.4.1",
+      "seriesDescription": "Proportion of time spent on unpaid care work, by sex, age and location (%)",
+      "values": [
+        {
+          "value": 2.15278,
+          "year": 2010.0
+        }
+      ],
+      "methodology": "NA",
+      "Custodian_Agency(ies)": "UNSD,UN Women",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier II",
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
+    },
+    {
+      "Age": "15+",
+      "Location": "ALLAREA",
+      "Sex": "FEMALE",
+      "Reporting Type": "G",
+      "series": "SL_DOM_TSPDDC",
+      "goal": "5",
+      "target": "5.4",
+      "indicator": "5.4.1",
+      "seriesDescription": "Proportion of time spent on unpaid domestic chores, by sex, age and location (%)",
+      "values": [
+        {
+          "value": 13.95833,
+          "year": 2010.0
+        }
+      ],
+      "methodology": "NA",
+      "Custodian_Agency(ies)": "UNSD,UN Women",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier II",
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
+    },
+    {
+      "Age": "15+",
+      "Location": "ALLAREA",
+      "Sex": "FEMALE",
+      "Reporting Type": "G",
+      "series": "SL_DOM_TSPD",
+      "goal": "5",
+      "target": "5.4",
+      "indicator": "5.4.1",
+      "seriesDescription": "Proportion of time spent on unpaid domestic chores and care work, by sex, age and location (%)",
+      "values": [
+        {
+          "value": 16.11111,
+          "year": 2010.0
+        }
+      ],
+      "methodology": "NA",
+      "Custodian_Agency(ies)": "UNSD,UN Women",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier II",
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
     },
     {
       "Sex": "FEMALE",

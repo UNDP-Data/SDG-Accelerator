@@ -7729,6 +7729,27 @@
     {
       "Mode of transportation": "AIR",
       "Reporting Type": "G",
+      "series": "IS_RDP_FRGVOL",
+      "goal": "9",
+      "target": "9.1",
+      "indicator": "9.1.2",
+      "seriesDescription": "Freight volume, by mode of transport (tonne kilometres)",
+      "values": [
+        {
+          "value": 4890180.0,
+          "year": 2021.0
+        }
+      ],
+      "methodology": "NA",
+      "Custodian_Agency(ies)": "ICAO,ITF-OECD",
+      "Partner_Agency(ies)": "UPU, UNEP,UNECE",
+      "Tier_Classification": "Tier I",
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
+    },
+    {
+      "Mode of transportation": "AIR",
+      "Reporting Type": "G",
       "series": "IS_RDP_PFVOL",
       "goal": "9",
       "target": "9.1",

@@ -18,7 +18,7 @@
     },
     {
       "goal": 12,
-      "noOfIndicatorsWithData": 4,
+      "noOfIndicatorsWithData": 5,
       "status": "For Review"
     },
     {
@@ -58,7 +58,7 @@
     },
     {
       "goal": 3,
-      "noOfIndicatorsWithData": 1,
+      "noOfIndicatorsWithData": 2,
       "status": "Identified Gap"
     },
     {
@@ -69,7 +69,7 @@
     {
       "goal": 5,
       "noOfIndicatorsWithData": 1,
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": 6,
@@ -141,7 +141,7 @@
     {
       "goal": "12",
       "target": "12.4",
-      "status": "For Review"
+      "status": "Identified Gap"
     },
     {
       "goal": "12",
@@ -264,6 +264,16 @@
       "status": "Identified Gap"
     },
     {
+      "goal": "3",
+      "target": "3.d",
+      "status": "Identified Gap"
+    },
+    {
+      "goal": "4",
+      "target": "4.1",
+      "status": null
+    },
+    {
       "goal": "4",
       "target": "4.2",
       "status": "On Track"
@@ -276,7 +286,7 @@
     {
       "goal": "5",
       "target": "5.5",
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": "6",
@@ -389,6 +399,12 @@
       "target": "12.3",
       "indicator": "12.3.1",
       "status": null
+    },
+    {
+      "goal": "12",
+      "target": "12.4",
+      "indicator": "12.4.1",
+      "status": "Identified Gap"
     },
     {
       "goal": "12",
@@ -559,6 +575,18 @@
       "status": "Identified Gap"
     },
     {
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "status": "Identified Gap"
+    },
+    {
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.1",
+      "status": null
+    },
+    {
       "goal": "4",
       "target": "4.2",
       "indicator": "4.2.2",
@@ -574,7 +602,7 @@
       "goal": "5",
       "target": "5.5",
       "indicator": "5.5.1",
-      "status": "On Track"
+      "status": "For Review"
     },
     {
       "goal": "6",
@@ -1980,6 +2008,120 @@
       "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
       "status": "Insufficient Data"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "SG_HAZ_CMRMNTRL",
+      "goal": "12",
+      "target": "12.4",
+      "indicator": "12.4.1",
+      "seriesDescription": "Parties meeting their commitments and obligations in transmitting information as required by Montreal Protocol on hazardous waste, and other chemicals",
+      "values": [
+        {
+          "value": 100.0,
+          "year": 2015.0
+        },
+        {
+          "value": 100.0,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "NA",
+      "Partner_Agency(ies)": "NA",
+      "Tier_Classification": "NA",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "SG_HAZ_CMRBASEL",
+      "goal": "12",
+      "target": "12.4",
+      "indicator": "12.4.1",
+      "seriesDescription": "Parties meeting their commitments and obligations in transmitting information as required by Basel Convention on hazardous waste, and other chemicals",
+      "values": [
+        {
+          "value": 50.0,
+          "year": 2015.0
+        },
+        {
+          "value": 20.0,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "NA",
+      "Partner_Agency(ies)": "NA",
+      "Tier_Classification": "NA",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "SG_HAZ_CMRSTHOLM",
+      "goal": "12",
+      "target": "12.4",
+      "indicator": "12.4.1",
+      "seriesDescription": "Parties meeting their commitments and obligations in transmitting information as required by Stockholm Convention on hazardous waste, and other chemicals",
+      "values": [
+        {
+          "value": 50.0,
+          "year": 2015.0
+        },
+        {
+          "value": 25.0,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "NA",
+      "Partner_Agency(ies)": "NA",
+      "Tier_Classification": "NA",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
     },
     {
       "Reporting Type": "G",
@@ -8639,6 +8781,691 @@
       "status": "Deterioration"
     },
     {
+      "IHR Capacity": "IHR01",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 75.0,
+          "year": 2014.0
+        },
+        {
+          "value": 67.0,
+          "year": 2015.0
+        },
+        {
+          "value": 100.0,
+          "year": 2016.0
+        },
+        {
+          "value": 100.0,
+          "year": 2017.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2017.0
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "IHR Capacity": "IHR02",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 90.0,
+          "year": 2014.0
+        },
+        {
+          "value": 73.0,
+          "year": 2015.0
+        },
+        {
+          "value": 90.0,
+          "year": 2016.0
+        },
+        {
+          "value": 73.0,
+          "year": 2017.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2017.0
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Limited or No Progress"
+    },
+    {
+      "IHR Capacity": "IHR03",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 90.0,
+          "year": 2014.0
+        },
+        {
+          "value": 90.0,
+          "year": 2015.0
+        },
+        {
+          "value": 95.0,
+          "year": 2016.0
+        },
+        {
+          "value": 95.0,
+          "year": 2017.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2017.0
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "IHR Capacity": "IHR04",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 83.0,
+          "year": 2014.0
+        },
+        {
+          "value": 83.0,
+          "year": 2015.0
+        },
+        {
+          "value": 89.0,
+          "year": 2016.0
+        },
+        {
+          "value": 76.0,
+          "year": 2017.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2017.0
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
+    },
+    {
+      "IHR Capacity": "IHR05",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 83.0,
+          "year": 2014.0
+        },
+        {
+          "value": 75.0,
+          "year": 2015.0
+        },
+        {
+          "value": 83.0,
+          "year": 2016.0
+        },
+        {
+          "value": 63.0,
+          "year": 2017.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2017.0
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
+    },
+    {
+      "IHR Capacity": "IHR06",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 71.0,
+          "year": 2014.0
+        },
+        {
+          "value": 71.0,
+          "year": 2015.0
+        },
+        {
+          "value": 71.0,
+          "year": 2016.0
+        },
+        {
+          "value": 71.0,
+          "year": 2017.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2017.0
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Limited or No Progress"
+    },
+    {
+      "IHR Capacity": "IHR07",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 0.0,
+          "year": 2014.0
+        },
+        {
+          "value": 0.0,
+          "year": 2015.0
+        },
+        {
+          "value": 0.0,
+          "year": 2016.0
+        },
+        {
+          "value": 0.0,
+          "year": 2017.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": 2017.0
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Insufficient Data"
+    },
+    {
+      "IHR Capacity": "IHR08",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 80.0,
+          "year": 2014.0
+        },
+        {
+          "value": 80.0,
+          "year": 2015.0
+        },
+        {
+          "value": 86.0,
+          "year": 2016.0
+        },
+        {
+          "value": 86.0,
+          "year": 2017.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2017.0
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "IHR Capacity": "IHR09",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 0.0,
+          "year": 2014.0
+        },
+        {
+          "value": 0.0,
+          "year": 2015.0
+        },
+        {
+          "value": 0.0,
+          "year": 2016.0
+        },
+        {
+          "value": 0.0,
+          "year": 2017.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": 2017.0
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Insufficient Data"
+    },
+    {
+      "IHR Capacity": "IHR10",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 100.0,
+          "year": 2014.0
+        },
+        {
+          "value": 100.0,
+          "year": 2015.0
+        },
+        {
+          "value": 100.0,
+          "year": 2016.0
+        },
+        {
+          "value": 100.0,
+          "year": 2017.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2017.0
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "IHR Capacity": "IHR11",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 93.0,
+          "year": 2014.0
+        },
+        {
+          "value": 93.0,
+          "year": 2015.0
+        },
+        {
+          "value": 93.0,
+          "year": 2016.0
+        },
+        {
+          "value": 87.0,
+          "year": 2017.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2017.0
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
+    },
+    {
+      "IHR Capacity": "IHR12",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 92.0,
+          "year": 2014.0
+        },
+        {
+          "value": 92.0,
+          "year": 2015.0
+        },
+        {
+          "value": 92.0,
+          "year": 2016.0
+        },
+        {
+          "value": 92.0,
+          "year": 2017.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2017.0
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Limited or No Progress"
+    },
+    {
+      "IHR Capacity": "IHR13",
+      "Reporting Type": "G",
+      "series": "SH_IHR_CAPS",
+      "goal": "3",
+      "target": "3.d",
+      "indicator": "3.d.1",
+      "seriesDescription": "International Health Regulations (IHR) capacity, by type of IHR capacity (%)",
+      "values": [
+        {
+          "value": 85.0,
+          "year": 2014.0
+        },
+        {
+          "value": 85.0,
+          "year": 2015.0
+        },
+        {
+          "value": 85.0,
+          "year": 2016.0
+        },
+        {
+          "value": 62.0,
+          "year": 2017.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": 2015,
+        "latestAvailable": 2017.0
+      },
+      "Custodian_Agency(ies)": "WHO",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "LOWSEC",
+      "Reporting Type": "G",
+      "Type of skill": "SKILL_READ",
+      "series": "SE_TOT_PRFL",
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.1",
+      "seriesDescription": "Proportion of children and young people achieving a minimum proficiency level in reading and mathematics (%)",
+      "values": [
+        {
+          "value": 87.62445,
+          "year": 2012.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "LOWSEC",
+      "Reporting Type": "G",
+      "Type of skill": "SKILL_MATH",
+      "series": "SE_TOT_PRFL",
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.1",
+      "seriesDescription": "Proportion of children and young people achieving a minimum proficiency level in reading and mathematics (%)",
+      "values": [
+        {
+          "value": 85.92207,
+          "year": 2012.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 95.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
       "Sex": "BOTHSEX",
       "Reporting Type": "G",
       "series": "SE_PRE_PARTN",
@@ -8882,6 +9709,101 @@
       "Tier_Classification": "Tier I",
       "status": "Methodology Unavailable",
       "currentLevelAssessment": null
+    },
+    {
+      "Sex": "FEMALE",
+      "Reporting Type": "G",
+      "series": "SG_GEN_PARL",
+      "goal": "5",
+      "target": "5.5",
+      "indicator": "5.5.1",
+      "seriesDescription": "Proportion of seats held by women in national parliaments (% of total number of seats)",
+      "values": [
+        {
+          "value": 24.0,
+          "year": 2010.0
+        },
+        {
+          "value": 24.0,
+          "year": 2011.0
+        },
+        {
+          "value": 24.0,
+          "year": 2012.0
+        },
+        {
+          "value": 24.0,
+          "year": 2013.0
+        },
+        {
+          "value": 20.0,
+          "year": 2014.0
+        },
+        {
+          "value": 20.0,
+          "year": 2015.0
+        },
+        {
+          "value": 20.0,
+          "year": 2016.0
+        },
+        {
+          "value": 12.0,
+          "year": 2017.0
+        },
+        {
+          "value": 12.0,
+          "year": 2018.0
+        },
+        {
+          "value": 12.0,
+          "year": 2019.0
+        },
+        {
+          "value": 12.0,
+          "year": 2020.0
+        },
+        {
+          "value": 12.0,
+          "year": 2021.0
+        },
+        {
+          "value": 28.0,
+          "year": 2022.0
+        },
+        {
+          "value": 28.0,
+          "year": 2023.0
+        }
+      ],
+      "methodology": {
+        "targetValue": 50,
+        "currentLevelThresholds": [
+          40,
+          30,
+          20,
+          10
+        ],
+        "currentLevelThresholdsName": [
+          "Target met or almost met",
+          "Close to Target",
+          "Moderate distance to target",
+          "Far from target",
+          "Very far from target"
+        ],
+        "normativeDirection": "increase",
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2023.0
+      },
+      "Custodian_Agency(ies)": "IPU, UN Women",
+      "Partner_Agency(ies)": "World Bank",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": "Moderate distance to target",
+      "status": "Fair progress but acceleration needed"
     },
     {
       "Sex": "FEMALE",

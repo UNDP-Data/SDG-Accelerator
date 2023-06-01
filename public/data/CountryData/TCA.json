@@ -54,11 +54,11 @@
     {
       "goal": 3,
       "noOfIndicatorsWithData": 5,
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": 4,
-      "noOfIndicatorsWithData": 3,
+      "noOfIndicatorsWithData": 5,
       "status": "For Review"
     },
     {
@@ -236,7 +236,7 @@
     {
       "goal": "3",
       "target": "3.2",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "3",
@@ -246,6 +246,11 @@
     {
       "goal": "3",
       "target": "3.7",
+      "status": "On Track"
+    },
+    {
+      "goal": "4",
+      "target": "4.1",
       "status": "On Track"
     },
     {
@@ -262,6 +267,11 @@
       "goal": "4",
       "target": "4.a",
       "status": "For Review"
+    },
+    {
+      "goal": "4",
+      "target": "4.c",
+      "status": "Identified Gap"
     },
     {
       "goal": "5",
@@ -301,6 +311,11 @@
     {
       "goal": "8",
       "target": "8.1",
+      "status": null
+    },
+    {
+      "goal": "8",
+      "target": "8.7",
       "status": null
     },
     {
@@ -456,6 +471,12 @@
     {
       "goal": "16",
       "target": "16.2",
+      "indicator": "16.2.1",
+      "status": null
+    },
+    {
+      "goal": "16",
+      "target": "16.2",
       "indicator": "16.2.3",
       "status": null
     },
@@ -535,7 +556,7 @@
       "goal": "3",
       "target": "3.2",
       "indicator": "3.2.2",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "3",
@@ -553,6 +574,12 @@
       "goal": "3",
       "target": "3.7",
       "indicator": "3.7.2",
+      "status": "On Track"
+    },
+    {
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.2",
       "status": "On Track"
     },
     {
@@ -578,6 +605,12 @@
       "target": "4.a",
       "indicator": "4.a.1",
       "status": "For Review"
+    },
+    {
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "status": "Identified Gap"
     },
     {
       "goal": "5",
@@ -625,6 +658,12 @@
       "goal": "8",
       "target": "8.1",
       "indicator": "8.1.1",
+      "status": null
+    },
+    {
+      "goal": "8",
+      "target": "8.7",
+      "indicator": "8.7.1",
       "status": null
     },
     {
@@ -3453,6 +3492,40 @@
       "status": "No Data After 2015"
     },
     {
+      "Age": "1-14",
+      "Reporting Type": "G",
+      "series": "VC_VAW_PHYPYV",
+      "goal": "16",
+      "target": "16.2",
+      "indicator": "16.2.1",
+      "seriesDescription": "Proportion of children aged 1-14 years who experienced physical punishment and/or psychological aggression by caregivers in last month (% of children aged 1-14 years)",
+      "values": [
+        {
+          "value": 79.1,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "decrease",
+        "CAGRLimit": [
+          0.01,
+          -0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": null,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "UNICEF",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Insufficient Data"
+    },
+    {
       "Age": "18-29",
       "Sex": "FEMALE",
       "Reporting Type": "G",
@@ -5599,6 +5672,85 @@
       "status": "Limited or No Progress"
     },
     {
+      "Age": "<1M",
+      "Sex": "BOTHSEX",
+      "Reporting Type": "G",
+      "series": "SH_DYN_NMRT",
+      "goal": "3",
+      "target": "3.2",
+      "indicator": "3.2.2",
+      "seriesDescription": "Neonatal mortality rate (deaths per 1,000 live births)",
+      "values": [
+        {
+          "value": 3.2,
+          "year": 2010.0
+        },
+        {
+          "value": 3.1,
+          "year": 2011.0
+        },
+        {
+          "value": 3.0,
+          "year": 2012.0
+        },
+        {
+          "value": 3.0,
+          "year": 2013.0
+        },
+        {
+          "value": 2.9,
+          "year": 2014.0
+        },
+        {
+          "value": 2.8,
+          "year": 2015.0
+        },
+        {
+          "value": 2.7,
+          "year": 2016.0
+        },
+        {
+          "value": 2.7,
+          "year": 2017.0
+        },
+        {
+          "value": 2.6,
+          "year": 2018.0
+        },
+        {
+          "value": 2.5,
+          "year": 2019.0
+        },
+        {
+          "value": 2.4,
+          "year": 2020.0
+        },
+        {
+          "value": 2.4,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "decrease",
+        "CAGRLimit": [
+          0.01,
+          -0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNICEF",
+      "Partner_Agency(ies)": "DESA Population Division, World Bank,WHO",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
       "Reporting Type": "G",
       "series": "SH_TBS_INCD",
       "goal": "3",
@@ -5820,6 +5972,144 @@
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
       "status": "On Track"
+    },
+    {
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Education level": "LOWSEC",
+      "Reporting Type": "G",
+      "Quantile": "_T",
+      "series": "SE_TOT_CPLR",
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.2",
+      "seriesDescription": "Completion rate, by sex, location, wealth quintile and education level (%)",
+      "values": [
+        {
+          "value": 99.0,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "currentLevelThresholds": [
+          97,
+          94,
+          85,
+          75
+        ],
+        "currentLevelThresholdsName": [
+          "Target met or almost met",
+          "Close to Target",
+          "Moderate distance to target",
+          "Far from target",
+          "Very far from target"
+        ],
+        "targetValue": 97,
+        "normativeDirection": "increase",
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": null,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Education level": "PRIMAR",
+      "Reporting Type": "G",
+      "Quantile": "_T",
+      "series": "SE_TOT_CPLR",
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.2",
+      "seriesDescription": "Completion rate, by sex, location, wealth quintile and education level (%)",
+      "values": [
+        {
+          "value": 99.0,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "currentLevelThresholds": [
+          97,
+          94,
+          85,
+          75
+        ],
+        "currentLevelThresholdsName": [
+          "Target met or almost met",
+          "Close to Target",
+          "Moderate distance to target",
+          "Far from target",
+          "Very far from target"
+        ],
+        "targetValue": 97,
+        "normativeDirection": "increase",
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": null,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
+    },
+    {
+      "Location": "ALLAREA",
+      "Sex": "BOTHSEX",
+      "Education level": "UPPSEC",
+      "Reporting Type": "G",
+      "Quantile": "_T",
+      "series": "SE_TOT_CPLR",
+      "goal": "4",
+      "target": "4.1",
+      "indicator": "4.1.2",
+      "seriesDescription": "Completion rate, by sex, location, wealth quintile and education level (%)",
+      "values": [
+        {
+          "value": 98.0,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "currentLevelThresholds": [
+          97,
+          94,
+          85,
+          75
+        ],
+        "currentLevelThresholdsName": [
+          "Target met or almost met",
+          "Close to Target",
+          "Moderate distance to target",
+          "Far from target",
+          "Very far from target"
+        ],
+        "targetValue": 97,
+        "normativeDirection": "increase",
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": null,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "Target Achieved"
     },
     {
       "Age": "M36T59",
@@ -6869,6 +7159,138 @@
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
       "status": "Target Achieved"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "PRIMAR",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 89.12281,
+          "year": 2014.0
+        },
+        {
+          "value": 95.72954,
+          "year": 2020.0
+        },
+        {
+          "value": 91.7481,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2014,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Fair progress but acceleration needed"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "SECOND",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 97.61905,
+          "year": 2015.0
+        },
+        {
+          "value": 98.05447,
+          "year": 2017.0
+        },
+        {
+          "value": 97.0339,
+          "year": 2018.0
+        },
+        {
+          "value": 96.37097,
+          "year": 2020.0
+        },
+        {
+          "value": 96.60297,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Deterioration"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "PREPRI",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 77.08333,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": null,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Insufficient Data"
     },
     {
       "Age": "20-24",
@@ -8153,6 +8575,78 @@
       "Tier_Classification": "Tier I",
       "status": "Methodology Unavailable",
       "currentLevelAssessment": null
+    },
+    {
+      "Age": "5-17",
+      "Sex": "BOTHSEX",
+      "Reporting Type": "G",
+      "series": "SL_TLF_CHLDEC",
+      "goal": "8",
+      "target": "8.7",
+      "indicator": "8.7.1",
+      "seriesDescription": "Proportion of children engaged in economic activity and household chores, by sex and age (%)",
+      "values": [
+        {
+          "value": 6.1,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "decrease",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 1.0,
+        "baseYear": null,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "ILO,UNICEF",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Insufficient Data"
+    },
+    {
+      "Age": "5-17",
+      "Sex": "BOTHSEX",
+      "Reporting Type": "G",
+      "series": "SL_TLF_CHLDEA",
+      "goal": "8",
+      "target": "8.7",
+      "indicator": "8.7.1",
+      "seriesDescription": "Proportion of children engaged in economic activity, by sex and age  (%)",
+      "values": [
+        {
+          "value": 4.1,
+          "year": 2020.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "decrease",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 1.0,
+        "baseYear": null,
+        "latestAvailable": 2020.0
+      },
+      "Custodian_Agency(ies)": "ILO,UNICEF",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "Insufficient Data"
     },
     {
       "Reporting Type": "G",

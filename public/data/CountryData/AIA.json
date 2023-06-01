@@ -294,6 +294,11 @@
       "status": null
     },
     {
+      "goal": "4",
+      "target": "4.c",
+      "status": null
+    },
+    {
       "goal": "6",
       "target": "6.2",
       "status": "On Track"
@@ -629,6 +634,12 @@
       "goal": "4",
       "target": "4.b",
       "indicator": "4.b.1",
+      "status": null
+    },
+    {
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
       "status": null
     },
     {
@@ -6443,6 +6454,85 @@
       "status": "On Track"
     },
     {
+      "Age": "<1M",
+      "Sex": "BOTHSEX",
+      "Reporting Type": "G",
+      "series": "SH_DYN_NMRT",
+      "goal": "3",
+      "target": "3.2",
+      "indicator": "3.2.2",
+      "seriesDescription": "Neonatal mortality rate (deaths per 1,000 live births)",
+      "values": [
+        {
+          "value": 3.2,
+          "year": 2010.0
+        },
+        {
+          "value": 3.1,
+          "year": 2011.0
+        },
+        {
+          "value": 2.9,
+          "year": 2012.0
+        },
+        {
+          "value": 2.8,
+          "year": 2013.0
+        },
+        {
+          "value": 2.7,
+          "year": 2014.0
+        },
+        {
+          "value": 2.6,
+          "year": 2015.0
+        },
+        {
+          "value": 2.5,
+          "year": 2016.0
+        },
+        {
+          "value": 2.4,
+          "year": 2017.0
+        },
+        {
+          "value": 2.4,
+          "year": 2018.0
+        },
+        {
+          "value": 2.3,
+          "year": 2019.0
+        },
+        {
+          "value": 2.2,
+          "year": 2020.0
+        },
+        {
+          "value": 2.1,
+          "year": 2021.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "decrease",
+        "CAGRLimit": [
+          0.01,
+          -0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2021.0
+      },
+      "Custodian_Agency(ies)": "UNICEF",
+      "Partner_Agency(ies)": "DESA Population Division, World Bank,WHO",
+      "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
       "Reporting Type": "G",
       "series": "SH_TBS_INCD",
       "goal": "3",
@@ -7692,6 +7782,146 @@
       "Custodian_Agency(ies)": "OECD",
       "Partner_Agency(ies)": "UNESCO-UIS",
       "Tier_Classification": "Tier I",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "PREPRI",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 40.90909,
+          "year": 2010.0
+        },
+        {
+          "value": 74.19355,
+          "year": 2011.0
+        },
+        {
+          "value": 39.53488,
+          "year": 2013.0
+        },
+        {
+          "value": 39.02439,
+          "year": 2014.0
+        },
+        {
+          "value": 35.71429,
+          "year": 2015.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "PRIMAR",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 52.67857,
+          "year": 2010.0
+        },
+        {
+          "value": 71.17117,
+          "year": 2011.0
+        },
+        {
+          "value": 2.5974,
+          "year": 2014.0
+        },
+        {
+          "value": 2.5,
+          "year": 2015.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
+      "currentLevelAssessment": null,
+      "status": "No Data After 2015"
+    },
+    {
+      "Sex": "BOTHSEX",
+      "Education level": "SECOND",
+      "Reporting Type": "G",
+      "series": "SE_TRA_GRDL",
+      "goal": "4",
+      "target": "4.c",
+      "indicator": "4.c.1",
+      "seriesDescription": "Proportion of teachers with the minimum required qualifications, by education level and sex (%)",
+      "values": [
+        {
+          "value": 57.25806,
+          "year": 2011.0
+        },
+        {
+          "value": 66.03774,
+          "year": 2015.0
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRR",
+        "baselineYear": {
+          "all": 2015
+        },
+        "targetValue": 97.0,
+        "baseYear": null,
+        "latestAvailable": null
+      },
+      "Custodian_Agency(ies)": "UNESCO-UIS",
+      "Partner_Agency(ies)": "OECD",
+      "Tier_Classification": "Tier II",
       "currentLevelAssessment": null,
       "status": "No Data After 2015"
     },
