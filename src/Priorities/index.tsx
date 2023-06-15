@@ -12,7 +12,7 @@ import reverse from 'lodash.reverse';
 import { json } from 'd3-request';
 import { VNRAnalysis } from './VNRAnalysis';
 import { GoalStatusType } from '../Types';
-import { API_ACCESS_TOKEN, COUNTRIES_WITH_DOCS, DATASOURCELINK } from '../Constants';
+import { API_ACCESS_TOKEN, DATASOURCELINK } from '../Constants';
 import IMAGES from '../img/images';
 
 interface Props {
@@ -74,6 +74,7 @@ export const Priorities = (props: Props) => {
   } = props;
   const fileInputRef = useRef<any>(null);
   const [loading, setLoading] = useState(false);
+  const [countryFilePresent, setCountryFilePresent] = useState<boolean | undefined>(false);
   const [totalFileSize, setTotalFileSize] = useState(0);
   const [noOfFiles, setNoOfFiles] = useState(0);
   const [selectedFile, setSelectedFile] = useState<any>([]);
@@ -150,41 +151,44 @@ export const Priorities = (props: Props) => {
   };
 
   useEffect(() => {
-    if (COUNTRIES_WITH_DOCS.indexOf(countrySelected) === -1) {
-      axios.get(
-        'https://sdg-push-diagnostic-api.azurewebsites.net/v1/vnrs/list',
-        {
-          headers: { access_token: API_ACCESS_TOKEN },
-        },
-      )
-        .then((response:AxiosResponse) => {
-          const countryData = reverse(sortBy(response.data.filter((country: any) => country.iso === countrySelected.toLowerCase()), 'year'));
-          setCountryVNRs(countryData);
-          if (countryData.length > 0) {
-            setVNRYear(countryData[0].year);
-            setSelectYear(countryData[0].year);
-            axios.get(
-              `https://sdg-push-diagnostic-api.azurewebsites.net/v1/vnrs/find?iso=${countrySelected.toLowerCase()}&year=${countryData[0].year}&language=${countryData[0].language}`,
-              {
-                headers: { access_token: API_ACCESS_TOKEN },
-              },
-            )
-              .then((res) => {
-                setData(res.data.sdgs);
-              })
-              .catch((errorFetchingVNR) => {
-                setError(errorFetchingVNR.message);
-              });
-          } else {
-            setError('No VNRs');
-          }
-        });
-    } else {
-      json(`${DATASOURCELINK}/data/PrioritiesData/${countrySelected}.json`, (err: any, d: any) => {
-        if (err) { setError(err); }
+    setCountryFilePresent(undefined);
+    setData(undefined);
+    json(`${DATASOURCELINK}/data/PrioritiesData/${countrySelected}.json`, (err: any, d: any) => {
+      if (err) {
+        setCountryFilePresent(false);
+        axios.get(
+          'https://sdg-push-diagnostic-api.azurewebsites.net/v1/vnrs/list',
+          {
+            headers: { access_token: API_ACCESS_TOKEN },
+          },
+        )
+          .then((response:AxiosResponse) => {
+            const countryData = reverse(sortBy(response.data.filter((country: any) => country.iso === countrySelected.toLowerCase()), 'year'));
+            setCountryVNRs(countryData);
+            if (countryData.length > 0) {
+              setVNRYear(countryData[0].year);
+              setSelectYear(countryData[0].year);
+              axios.get(
+                `https://sdg-push-diagnostic-api.azurewebsites.net/v1/vnrs/find?iso=${countrySelected.toLowerCase()}&year=${countryData[0].year}&language=${countryData[0].language}`,
+                {
+                  headers: { access_token: API_ACCESS_TOKEN },
+                },
+              )
+                .then((res) => {
+                  setData(res.data.sdgs);
+                })
+                .catch((errorFetchingVNR) => {
+                  setError(errorFetchingVNR.message);
+                });
+            } else {
+              setError('No VNRs');
+            }
+          });
+      } else {
+        setCountryFilePresent(true);
         setData({ mode: 'defaultDocs', data: d.sdgs, documents: d.doc_name });
-      });
-    }
+      }
+    });
   }, [countrySelected]);
   return (
     <>
@@ -196,188 +200,198 @@ export const Priorities = (props: Props) => {
             {countryFullName}
           </h1>
           <div className='margin-top-07'>
-            <Tabs
-              defaultActiveKey={COUNTRIES_WITH_DOCS.indexOf(countrySelected) === -1 ? 'vnrs' : 'nationalPriorities'}
-              className='undp-tabs'
-              onChange={() => {
-                setStrategy('equal');
-              }}
-              items={[
-                {
-                  label: COUNTRIES_WITH_DOCS.indexOf(countrySelected) === -1 ? 'Analyze VNRs' : 'National Priorities',
-                  key: COUNTRIES_WITH_DOCS.indexOf(countrySelected) === -1 ? 'vnrs' : 'nationalPriorities',
-                  children: COUNTRIES_WITH_DOCS.indexOf(countrySelected) === -1 ? (
-                    <>
-                      <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-                        Countries national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is an improved and cleaned
-                        {' '}
-                        <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer' className='undp-style'>OSDG Community Dataset</a>
-                        {' '}
-                        from UNDP IICPSD SDG AI Lab. It considers 100k+ terms, including phrases and expressions.
-                        <br />
-                        <br />
-                        Documents such as
-                        {' '}
-                        <a href='https://sustainabledevelopment.un.org/vnrs/' target='_blank' rel='noreferrer' className='undp-style'>Voluntary National Reviews (VNRs)</a>
-                        {' '}
-                        indicates priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.
-                        <br />
-                        <br />
-                        Explore the analysis of these priorities using Machine Learning.
-                      </h5>
+            {
+              !data && countryFilePresent === undefined
+                ? (
+                  <div style={{ margin: '10rem auto 3rem auto', minHeight: '5rem' }}>
+                    <div className='undp-loader' style={{ margin: 'auto' }} />
+                  </div>
+                )
+                : (
+                  <Tabs
+                    defaultActiveKey={!data && countryFilePresent === false ? 'vnrs' : 'nationalPriorities'}
+                    className='undp-tabs'
+                    onChange={() => {
+                      setStrategy('equal');
+                    }}
+                    items={[
                       {
-                        countryVNRs
-                          ? countryVNRs.length > 0
-                            ? (
-                              <>
-                                <div className='margin-top-07'>
-                                  <p className='label undp-typography'>Select year</p>
-                                  <Select
-                                    className='undp-select margin-bottom-07'
-                                    placeholder='Select Year'
-                                    value={selectYear}
-                                    onChange={(value) => { setSelectYear(value); }}
+                        label: !data && countryFilePresent === false ? 'Analyze VNRs' : 'National Priorities',
+                        key: !data && countryFilePresent === false ? 'vnrs' : 'nationalPriorities',
+                        children: !data && countryFilePresent === false ? (
+                          <>
+                            <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
+                              Countries national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is an improved and cleaned
+                              {' '}
+                              <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer' className='undp-style'>OSDG Community Dataset</a>
+                              {' '}
+                              from UNDP IICPSD SDG AI Lab. It considers 100k+ terms, including phrases and expressions.
+                              <br />
+                              <br />
+                              Documents such as
+                              {' '}
+                              <a href='https://sustainabledevelopment.un.org/vnrs/' target='_blank' rel='noreferrer' className='undp-style'>Voluntary National Reviews (VNRs)</a>
+                              {' '}
+                              indicates priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.
+                              <br />
+                              <br />
+                              Explore the analysis of these priorities using Machine Learning.
+                            </h5>
+                            {
+                          countryVNRs
+                            ? countryVNRs.length > 0
+                              ? (
+                                <>
+                                  <div className='margin-top-07'>
+                                    <p className='label undp-typography'>Select year</p>
+                                    <Select
+                                      className='undp-select margin-bottom-07'
+                                      placeholder='Select Year'
+                                      value={selectYear}
+                                      onChange={(value) => { setSelectYear(value); }}
+                                    >
+                                      {
+                                        countryVNRs.map((d: any, i: number) => <Select.Option key={i} className='undp-select-option' value={d.year}>{d.year}</Select.Option>)
+                                      }
+                                    </Select>
+                                  </div>
+                                  <button
+                                    type='button'
+                                    className='margin-top-05 undp-button button-primary button-arrow margin-top-07'
+                                    onClick={() => {
+                                      analyzeVNR();
+                                    }}
                                   >
+                                    Analyze VNR
+                                  </button>
+                                </>
+                              )
+                              : (
+                                <>
+                                  <div className='margin-top-07 margin-bottom-07'>
+                                    <Select
+                                      className='undp-select'
+                                      placeholder='No VNRs Available'
+                                      disabled
+                                    />
+                                  </div>
+                                  <button type='button' className='margin-top-05 undp-button button-primary button-arrow margin-top-07 disabled'>
+                                    Analyze VNR
+                                  </button>
+                                </>
+                              )
+                            : (
+                              <div>
+                                <div className='undp-loader' style={{ margin: 'auto' }} />
+                              </div>
+                            )
+                        }
+                          </>
+                        ) : (
+                          <h5 className='undp-typography' style={{ color: 'var(--black)', lineHeight: 1.5 }}>
+                            Countries national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is an improved and cleaned
+                            {' '}
+                            <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer' className='undp-style'>OSDG Community Dataset</a>
+                            {' '}
+                            from UNDP IICPSD SDG AI Lab. It considers 100k+ terms, including phrases and expressions.
+                            <br />
+                            <br />
+                            Documents such as National Development Plans indicate priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.
+                            <br />
+                            <br />
+                            Explore the analysis of these priorities using Machine Learning.
+                          </h5>
+                        ),
+                      },
+                      {
+                        label: 'Upload documents',
+                        key: 'upload',
+                        children: (
+                          <>
+                            <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
+                              Documents such as National Development Plans indicates priorities of the government that can be mapped to the SDGs. Upload a development plan, to discover which SDGs feature most prominently as a priority.
+                              <br />
+                              <br />
+                              Explore the analysis of these priorities using Machine Learning.
+                              {' '}
+                              <span className='italics' style={{ color: 'var(--gray-500)' }}>Maximum 10 documents allowed</span>
+                            </h5>
+                            <>
+                              <div className='margin-top-07'>
+                                {
+                              selectedFileNotAnalyzed.length > 0
+                                ? (
+                                  <div className='flex-div margin-bottom-05 flex-wrap'>
                                     {
-                                      countryVNRs.map((d: any, i: number) => <Select.Option key={i} className='undp-select-option' value={d.year}>{d.year}</Select.Option>)
+                                      selectedFileNotAnalyzed.map((d: any, i: number) => (
+                                        <div className='undp-chip-gray undp-chip' key={i}>
+                                          {d.name}
+                                          {' '}
+                                          (
+                                          {(d.size / 1024 / 1024).toFixed(1)}
+                                          {' '}
+                                          MBs)
+                                          <CloseIcon onClick={() => { setSelectedFileNotAnalyzed(selectedFileNotAnalyzed.filter((el: any) => d !== el)); }} />
+                                        </div>
+                                      ))
                                     }
-                                  </Select>
-                                </div>
+                                  </div>
+                                ) : null
+                            }
+                                <UploadEl>
+                                  <label htmlFor='file-upload-analyze' className='custom-file-upload'>
+                                    <UploadButtonEl>Add Documents</UploadButtonEl>
+                                  </label>
+                                  <FileAttachmentButton multiple ref={fileInputRef} id='file-upload-analyze' accept='application/pdf' type='file' onChange={handleFileSelect} />
+                                </UploadEl>
+                              </div>
+                              <div className='margin-top-07 margin-bottom-07'>
+                                <p className='label'>Document Weighting Strategy</p>
+                                <Radio.Group value={strategy} onChange={(target) => { setStrategy(target.target.value); }}>
+                                  <Radio className='undp-radio' value='equal'>Place Equal Weight on All Documents</Radio>
+                                  <Radio className='undp-radio' value='proportional'>Place More Weight on Longer Documents</Radio>
+                                </Radio.Group>
+                              </div>
+                              {
+                            selectedFileNotAnalyzed.length > 0 && noOfFiles < 11 && totalFileSize <= 100
+                              ? (
                                 <button
                                   type='button'
                                   className='margin-top-05 undp-button button-primary button-arrow margin-top-07'
                                   onClick={() => {
-                                    analyzeVNR();
+                                    setLoading(true);
+                                    analyzeDocument();
                                   }}
                                 >
-                                  Analyze VNR
+                                  Analyze Document
                                 </button>
-                              </>
-                            )
-                            : (
-                              <>
-                                <div className='margin-top-07 margin-bottom-07'>
-                                  <Select
-                                    className='undp-select'
-                                    placeholder='No VNRs Available'
-                                    disabled
-                                  />
-                                </div>
+                              )
+                              : (
                                 <button type='button' className='margin-top-05 undp-button button-primary button-arrow margin-top-07 disabled'>
-                                  Analyze VNR
+                                  Analyze Document
                                 </button>
-                              </>
-                            )
-                          : (
-                            <div>
-                              <div className='undp-loader' style={{ margin: 'auto' }} />
-                            </div>
-                          )
-                      }
-                    </>
-                  ) : (
-                    <h5 className='undp-typography' style={{ color: 'var(--black)', lineHeight: 1.5 }}>
-                      Countries national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is an improved and cleaned
-                      {' '}
-                      <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer' className='undp-style'>OSDG Community Dataset</a>
-                      {' '}
-                      from UNDP IICPSD SDG AI Lab. It considers 100k+ terms, including phrases and expressions.
-                      <br />
-                      <br />
-                      Documents such as National Development Plans indicate priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.
-                      <br />
-                      <br />
-                      Explore the analysis of these priorities using Machine Learning.
-                    </h5>
-                  ),
-                },
-                {
-                  label: 'Upload documents',
-                  key: 'upload',
-                  children: (
-                    <>
-                      <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-                        Documents such as National Development Plans indicates priorities of the government that can be mapped to the SDGs. Upload a development plan, to discover which SDGs feature most prominently as a priority.
-                        <br />
-                        <br />
-                        Explore the analysis of these priorities using Machine Learning.
-                        {' '}
-                        <span className='italics' style={{ color: 'var(--gray-500)' }}>Maximum 10 documents allowed</span>
-                      </h5>
-                      <>
-                        <div className='margin-top-07'>
-                          {
-                            selectedFileNotAnalyzed.length > 0
-                              ? (
-                                <div className='flex-div margin-bottom-05 flex-wrap'>
-                                  {
-                                    selectedFileNotAnalyzed.map((d: any, i: number) => (
-                                      <div className='undp-chip-gray undp-chip' key={i}>
-                                        {d.name}
-                                        {' '}
-                                        (
-                                        {(d.size / 1024 / 1024).toFixed(1)}
-                                        {' '}
-                                        MBs)
-                                        <CloseIcon onClick={() => { setSelectedFileNotAnalyzed(selectedFileNotAnalyzed.filter((el: any) => d !== el)); }} />
-                                      </div>
-                                    ))
-                                  }
-                                </div>
-                              ) : null
+                              )
                           }
-                          <UploadEl>
-                            <label htmlFor='file-upload-analyze' className='custom-file-upload'>
-                              <UploadButtonEl>Add Documents</UploadButtonEl>
-                            </label>
-                            <FileAttachmentButton multiple ref={fileInputRef} id='file-upload-analyze' accept='application/pdf' type='file' onChange={handleFileSelect} />
-                          </UploadEl>
-                        </div>
-                        <div className='margin-top-07'>
-                          <p className='label'>Document Weighting Strategy</p>
-                          <Radio.Group value={strategy} onChange={(target) => { setStrategy(target.target.value); }}>
-                            <Radio className='undp-radio' value='equal'>Place Equal Weight on All Documents</Radio>
-                            <Radio className='undp-radio' value='proportional'>Place More Weight on Longer Documents</Radio>
-                          </Radio.Group>
-                        </div>
-                        {
-                          selectedFileNotAnalyzed.length > 0 && noOfFiles < 11 && totalFileSize <= 100
-                            ? (
-                              <button
-                                type='button'
-                                className='margin-top-05 undp-button button-primary button-arrow margin-top-07'
-                                onClick={() => {
-                                  setLoading(true);
-                                  analyzeDocument();
-                                }}
-                              >
-                                Analyze Document
-                              </button>
-                            )
-                            : (
-                              <button type='button' className='margin-top-05 undp-button button-primary button-arrow margin-top-07 disabled'>
-                                Analyze Document
-                              </button>
-                            )
-                        }
-                        {
-                          noOfFiles > 10 || totalFileSize > 100 ? (
-                            <p className='undp-typography small-font italics margin-top-05' style={{ color: 'var(--dark-red)' }}>
                               {
-                                noOfFiles > 10 ? `Maximum 10 files allowed (please remove ${noOfFiles - 10} files). ` : ''
-                              }
-                              {
-                                totalFileSize > 100 ? 'Maximum total file size allowed is 100Mbs' : ''
-                              }
-                            </p>
-                          ) : null
-                        }
-                      </>
-                    </>
-                  ),
-                },
-              ]}
-            />
+                            noOfFiles > 10 || totalFileSize > 100 ? (
+                              <p className='undp-typography small-font italics margin-top-05' style={{ color: 'var(--dark-red)' }}>
+                                {
+                                  noOfFiles > 10 ? `Maximum 10 files allowed (please remove ${noOfFiles - 10} files). ` : ''
+                                }
+                                {
+                                  totalFileSize > 100 ? 'Maximum total file size allowed is 100Mbs' : ''
+                                }
+                              </p>
+                            ) : null
+                          }
+                            </>
+                          </>
+                        ),
+                      },
+                    ]}
+                  />
+                )
+            }
           </div>
         </div>
       </HeroImageEl>

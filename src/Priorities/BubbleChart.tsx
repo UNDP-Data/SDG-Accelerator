@@ -5,7 +5,7 @@ import {
 } from 'd3-force';
 import { Checkbox, Radio } from 'antd';
 import { SDG_COLOR_ARRAY } from '../Constants';
-import { getSDGIconWoBg } from '../utils/getSDGIcon';
+import { getSDGIconSVG } from '../utils/getSDGIcon';
 import { PriorityType, StatusType } from '../Types';
 import { DownloadImage } from '../utils/DownloadImage';
 
@@ -181,7 +181,7 @@ export const BubbleChart = (props: Props) => {
                             d.importance * 50 < 10 ? null
                               : (
                                 <g transform={`translate(${0 - d.importance * 35},${0 - d.importance * 35})`}>
-                                  {getSDGIconWoBg(`SDG ${d.sdg}`, d.importance * 70)}
+                                  {getSDGIconSVG(`SDG ${d.sdg}`, d.importance * 70)}
                                 </g>
                               )
                           }

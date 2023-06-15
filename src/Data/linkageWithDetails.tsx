@@ -251,6 +251,80 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '17.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.2',
+        description: [
+          'Improper sanitation is problematic mainly in developing countries [58] and proper sanitation generates economic benefit. {Turkey}',
+        ],
+      },
+      {
+        target: '8.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.b',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       0,
       0,
@@ -632,6 +706,62 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.b',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       0,
       1,
@@ -643,7 +773,7 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          "Eradicating poverty [...] is a prerequisite to improving health. Poverty and HIV have a complex and bi-directional relationship; both are influenced by the same systemic inequalities and power dynamics. Healthcare services, schools and sanitation are often inaccessible for people living in poverty [...]. Poverty disproportionately affects women [...]. Poverty can also be a driver of transactional sex - the exchanging of sex for material goods including food, gifts and cash - which in turn increases the risk of HIV acquisition. Social protection systems, which attempt to reduce social and economic vulnerability of the most marginalized groups, [...] can reduce HIV risk behaviours, as well as improve adherence to ART for adolescents. While cash transfers alone may have some impact on HIV risk, combining cash with 'care' interventions - psychosocial support, such as from parents or teachers - more effectively reduce HIV risk for male and female adolescents. Social protection systems have been shown to improve adolescent health outcomes [...]. There is clear potential for organizations working on poverty reduction to use social protection interventions to support the achievement of [the end of the AIDS epidemics] for adolescents by reducing HIV risk behaviours and increasing treatment adherence.",
+          'Eradicating poverty [\u2026] is a prerequisite to improving health. Poverty and HIV have a complex and bi-directional relationship; both are influenced by the same systemic inequalities and power dynamics. Healthcare services, schools and sanitation are often inaccessible for people living in poverty [\u2026]. Poverty disproportionately affects women [\u2026]. Poverty can also be a driver of transactional sex \u2013 the exchanging of sex for material goods including food, gifts and cash \u2013 which in turn increases the risk of HIV acquisition. Social protection systems, which attempt to reduce social and economic vulnerability of the most marginalized groups, [\u2026] can reduce HIV risk behaviours, as well as improve adherence to ART for adolescents. While cash transfers alone may have some impact on HIV risk, combining cash with \u201ccare\u201d interventions \u2013 psychosocial support, such as from parents or teachers \u2013 more effectively reduce HIV risk for male and female adolescents. Social protection systems have been shown to improve adolescent health outcomes [\u2026]. There is clear potential for organizations working on poverty reduction to use social protection interventions to support the achievement of [the end of the AIDS epidemics] for adolescents by reducing HIV risk behaviours and increasing treatment adherence.',
         ],
       },
       {
@@ -669,7 +799,7 @@ export const LinkageData2023 = [
         target: '6.1',
         description: [
           'Having access to clean and safe water and sanitation is important for breaking poverty cycle.',
-          "UN Social Protection Floor (SPF) initiative is made up of two main elements. The first is: 'ensuring the availability, continuity and access to essential services, such as water and sanitation, food and adequate nutrition, health, education, housing and other social services.' If the percentage of the population covered by social protection floors/systems is higher, then this should directly ensure that more people are able to have equitable access to safe and affordable drinking water.",
+          'UN Social Protection Floor (SPF) initiative is made up of two main elements. The first is: \u201censuring the availability, continuity and access to essential services, such as water and sanitation, food and adequate nutrition, health, education, housing and other social services.\u201d If the percentage of the population covered by social protection floors/systems is higher, then this should directly ensure that more people are able to have equitable access to safe and affordable drinking water.',
           'Pro-poor social protection systems can improve access to sanitation. {Sri Lanka}',
         ],
       },
@@ -794,6 +924,137 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '11.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '4.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '15.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.18',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '5.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.b',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       0,
       2,
@@ -1168,6 +1429,122 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '14.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '15.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.c',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.b',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       0,
       3,
@@ -1413,7 +1790,7 @@ export const LinkageData2023 = [
         target: '6.6',
         description: [
           '',
-          "The significantly negative relationship observed [...] may reflect that most countries are better at reducing deaths in water-related disasters than other types of disasters. // Humans are prone to living and working in water-rich areas, which leads to higher human exposure to water-related disasters. According to UN-Water, around 74 per cent of all natural disasters between 2001 and 2018 were water-related, and during the past 20 years floods and droughts affected over 3 billion people (UNESCO and UN-Water 2020). Although governments and communities may have developed various measures to reduce or avoid deaths caused by these disasters - such as through improved early warning systems - people's livelihoods might be disrupted or destroyed to a greater extent in the future, with higher human exposure to water-related disasters than other kinds of disasters. This may explain why a significantly positive relationship was observed with respect to economic impacts, but a negative one was apparent with respect to mortality. [...] (UNESCO) estimated that by 2050, population growth in flood-prone lands, climate change, deforestation, loss of wetlands and rising sea levels would increase the number of people vulnerable to flood disaster to 2 billion (WWAP 2012). {Global} --- The significant negative relationship that was observed between economic loss (both direct economic loss and direct agriculture loss) due to disasters and water body extent suggests that economic development may be more susceptible to disasters in areas where water resources are not abundant, such as in sub-Saharan Africa [...] (Shiferaw et al. 2014). In these areas, it may make sense to give more attention to disaster risk reduction and prevention strategies related to drought, for example by adapting existing modes of production to address a higher incidence of water scarcity and by protecting limited water resources. For instance, integrated water management at the basin level can reduce disaster risks and its economic impact, through adopting measures and building infrastructure to retain water surplus. Retaining water surplus helps avoid flooding and can be used during drought periods (UNECE and UNISDR 2018). UN-Water (UNESCO and UN-Water 2020) suggests climate-smart agriculture (CSA) practices that could reduce the impact of disasters. [...] The relationship between water body extent and direct economic loss to other damaged or destroyed productive assets was observed to be positive. This may be due to the fact that productive assets are prone to be located near to water-abundant areas to reduce production costs. {Global}",
+          'The significantly negative relationship observed [\u2026] may reflect that most countries are better at reducing deaths in water-related disasters than other types of disasters. // Humans are prone to living and working in water-rich areas, which leads to higher human exposure to water-related disasters. According to UN-Water, around 74 per cent of all natural disasters between 2001 and 2018 were water-related, and during the past 20 years floods and droughts affected over 3 billion people (UNESCO and UN-Water 2020). Although governments and communities may have developed various measures to reduce or avoid deaths caused by these disasters \u2013 such as through improved early warning systems \u2013 people\u2019s livelihoods might be disrupted or destroyed to a greater extent in the future, with higher human exposure to water-related disasters than other kinds of disasters. This may explain why a significantly positive relationship was observed with respect to economic impacts, but a negative one was apparent with respect to mortality. [\u2026] (UNESCO) estimated that by 2050, population growth in flood-prone lands, climate change, deforestation, loss of wetlands and rising sea levels would increase the number of people vulnerable to flood disaster to 2 billion (WWAP 2012). {Global} --- The significant negative relationship that was observed between economic loss (both direct economic loss and direct agriculture loss) due to disasters and water body extent suggests that economic development may be more susceptible to disasters in areas where water resources are not abundant, such as in sub-Saharan Africa [\u2026] (Shiferaw et al. 2014). In these areas, it may make sense to give more attention to disaster risk reduction and prevention strategies related to drought, for example by adapting existing modes of production to address a higher incidence of water scarcity and by protecting limited water resources. For instance, integrated water management at the basin level can reduce disaster risks and its economic impact, through adopting measures and building infrastructure to retain water surplus. Retaining water surplus helps avoid flooding and can be used during drought periods (UNECE and UNISDR 2018). UN-Water (UNESCO and UN-Water 2020) suggests climate-smart agriculture (CSA) practices that could reduce the impact of disasters. [\u2026] The relationship between water body extent and direct economic loss to other damaged or destroyed productive assets was observed to be positive. This may be due to the fact that productive assets are prone to be located near to water-abundant areas to reduce production costs. {Global}',
           '',
         ],
       },
@@ -1602,11 +1979,115 @@ export const LinkageData2023 = [
       {
         target: '6.6',
         description: [
-          "The significantly negative relationship observed [...] may reflect that most countries are better at reducing deaths in water-related disasters than other types of disasters. // Humans are prone to living and working in water-rich areas, which leads to higher human exposure to water-related disasters. According to UN-Water, around 74 per cent of all natural disasters between 2001 and 2018 were water-related, and during the past 20 years floods and droughts affected over 3 billion people (UNESCO and UN-Water 2020). Although governments and communities may have developed various measures to reduce or avoid deaths caused by these disasters - such as through improved early warning systems - people's livelihoods might be disrupted or destroyed to a greater extent in the future, with higher human exposure to water-related disasters than other kinds of disasters. This may explain why a significantly positive relationship was observed with respect to economic impacts, but a negative one was apparent with respect to mortality. [...] (UNESCO) estimated that by 2050, population growth in flood-prone lands, climate change, deforestation, loss of wetlands and rising sea levels would increase the number of people vulnerable to flood disaster to 2 billion (WWAP 2012). {Global} --- The significant negative relationship that was observed between economic loss (both direct economic loss and direct agriculture loss) due to disasters and water body extent suggests that economic development may be more susceptible to disasters in areas where water resources are not abundant, such as in sub-Saharan Africa [...] (Shiferaw et al. 2014). In these areas, it may make sense to give more attention to disaster risk reduction and prevention strategies related to drought, for example by adapting existing modes of production to address a higher incidence of water scarcity and by protecting limited water resources. For instance, integrated water management at the basin level can reduce disaster risks and its economic impact, through adopting measures and building infrastructure to retain water surplus. Retaining water surplus helps avoid flooding and can be used during drought periods (UNECE and UNISDR 2018). UN-Water (UNESCO and UN-Water 2020) suggests climate-smart agriculture (CSA) practices that could reduce the impact of disasters. [...] The relationship between water body extent and direct economic loss to other damaged or destroyed productive assets was observed to be positive. This may be due to the fact that productive assets are prone to be located near to water-abundant areas to reduce production costs. {Global}",
+          'The significantly negative relationship observed [\u2026] may reflect that most countries are better at reducing deaths in water-related disasters than other types of disasters. // Humans are prone to living and working in water-rich areas, which leads to higher human exposure to water-related disasters. According to UN-Water, around 74 per cent of all natural disasters between 2001 and 2018 were water-related, and during the past 20 years floods and droughts affected over 3 billion people (UNESCO and UN-Water 2020). Although governments and communities may have developed various measures to reduce or avoid deaths caused by these disasters \u2013 such as through improved early warning systems \u2013 people\u2019s livelihoods might be disrupted or destroyed to a greater extent in the future, with higher human exposure to water-related disasters than other kinds of disasters. This may explain why a significantly positive relationship was observed with respect to economic impacts, but a negative one was apparent with respect to mortality. [\u2026] (UNESCO) estimated that by 2050, population growth in flood-prone lands, climate change, deforestation, loss of wetlands and rising sea levels would increase the number of people vulnerable to flood disaster to 2 billion (WWAP 2012). {Global} --- The significant negative relationship that was observed between economic loss (both direct economic loss and direct agriculture loss) due to disasters and water body extent suggests that economic development may be more susceptible to disasters in areas where water resources are not abundant, such as in sub-Saharan Africa [\u2026] (Shiferaw et al. 2014). In these areas, it may make sense to give more attention to disaster risk reduction and prevention strategies related to drought, for example by adapting existing modes of production to address a higher incidence of water scarcity and by protecting limited water resources. For instance, integrated water management at the basin level can reduce disaster risks and its economic impact, through adopting measures and building infrastructure to retain water surplus. Retaining water surplus helps avoid flooding and can be used during drought periods (UNECE and UNISDR 2018). UN-Water (UNESCO and UN-Water 2020) suggests climate-smart agriculture (CSA) practices that could reduce the impact of disasters. [\u2026] The relationship between water body extent and direct economic loss to other damaged or destroyed productive assets was observed to be positive. This may be due to the fact that productive assets are prone to be located near to water-abundant areas to reduce production costs. {Global}',
         ],
       },
       {
         target: '11.5',
+        description: [
+          '',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '11.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.c',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '13.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '14.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.d',
         description: [
           '',
         ],
@@ -1790,6 +2271,62 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.b',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       0,
       5,
@@ -1843,6 +2380,44 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       0,
       6,
@@ -2033,8 +2608,8 @@ export const LinkageData2023 = [
         target: '2.3',
         description: [
           '',
-          "Progressive farming [...] deploys greater crop diversity and utilises improved technologies and approaches to a greater extent (e.g., new grain varieties, horticulture, and irrigation). [...] It is developed expressly to increase food security, tackle chronic hunger. // As crop technologies become more developed, and the possible development of more resilient hybrids of vegetables, it may be possible to reduce the crops' climate susceptibility and therefore price fluctuation.",
-          "Hunger and undernutrition lead to workers' underperformance. Therefore, ending hunger would have positive impact on farmers' productivity.",
+          'Progressive farming [...] deploys greater crop diversity and utilises improved technologies and approaches to a greater extent (e.g., new grain varieties, horticulture, and irrigation). [...] It is developed expressly to increase food security, tackle chronic hunger. // As crop technologies become more developed, and the possible development of more resilient hybrids of vegetables, it may be possible to reduce the crops\u2019 climate susceptibility and therefore price fluctuation.',
+          'Hunger and undernutrition lead to workers\u2019 underperformance. Therefore, ending hunger would have positive impact on farmers\u2019 productivity.',
         ],
       },
       {
@@ -2061,7 +2636,7 @@ export const LinkageData2023 = [
         target: '6.4',
         description: [
           '',
-          'Agricultural needs plus an easily accessible supply of energy [...] may create a situation where water resources are overused. Areas with food insecurity are often those with the greatest water loss and therefore smart approaches to water use in agriculture are needed (Ringler et al., 2013).',
+          'Agricultural needs plus an easily accessible supply of energy [\u2026] may create a situation where water resources are overused. Areas with food insecurity are often those with the greatest water loss and therefore smart approaches to water use in agriculture are needed (Ringler et al., 2013).',
           '',
           'Find out more information on the role of context in identifying interlinkages between SDG 2 and 6 (goals and targets) in the publication, which analyses Voluntary National Reviews (VNRs).',
           'An adequate and reliable water resource is a prerequisite for the production of food [...] increases in demand (of water) for agricultural production can all put pressure on water availability, water quality and freshwater ecosystems [...] if care is not taken to reduce pollution, use water sustainably and protect ecosystems (mixed) // Substantially increasing recycling and safe reuse is interlinked with ending hunger (synergy).',
@@ -2124,7 +2699,7 @@ export const LinkageData2023 = [
         description: [
           '',
           '',
-          "[synergy] Countries and communities that maintain their indigenous food systems are better able to conserve local breeds and experience less undernutrition and fewer diet-related diseases (FAO 2010). Half of the breeds of the world's domesticated species have been lost (Mbow et al. 2019). Such species have been used for human consumption for thousands of years (FAO 2010). However, biodiversity loss through anthropogenic drivers of change including urbanization, climate change and the simplification of food consumption [...] is threatening food security, health and nutrition. This occurs not only through the loss of species but also through the loss in quality of local breeds consumed by communities, leading to negative health impacts, including undernutrition. [...] The number of undernourished people in a country increases in tandem with increases in the proportion of local breeds at risk of extinction. // [trade-off prevalence of undernourishment and risk of extinction] unexpected results that are difficult to explain.",
+          '[synergy] Countries and communities that maintain their indigenous food systems are better able to conserve local breeds and experience less undernutrition and fewer diet-related diseases (FAO 2010). Half of the breeds of the world\u2019s domesticated species have been lost (Mbow et al. 2019). Such species have been used for human consumption for thousands of years (FAO 2010). However, biodiversity loss through anthropogenic drivers of change including urbanization, climate change and the simplification of food consumption [\u2026] is threatening food security, health and nutrition. This occurs not only through the loss of species but also through the loss in quality of local breeds consumed by communities, leading to negative health impacts, including undernutrition. [\u2026] The number of undernourished people in a country increases in tandem with increases in the proportion of local breeds at risk of extinction. // [trade-off prevalence of undernourishment and risk of extinction] unexpected results that are difficult to explain.',
         ],
       },
       {
@@ -2177,7 +2752,7 @@ export const LinkageData2023 = [
       {
         target: '7.a',
         description: [
-          'Energy infrastructure aids in the provisioning of food [...] resources.',
+          'Energy infrastructure aids in the provisioning of food [\u2026] resources.',
           '',
         ],
       },
@@ -2251,7 +2826,7 @@ export const LinkageData2023 = [
       {
         target: '6.3',
         description: [
-          "Water quality of surface waters and groundwaters are likely to be degraded if more food is produced via expansion or intensification of cultivated land. // Irrigated cropland makes a well-known disproportionate contribution to world food supply [...] [irrigated land projected to expand]. [...] Farmers withdraw water from surface or subsurface sources and apply it to cropland where it picks up salts from soils, as well as residues of applied fertilizers and pesticides and other pollutants. These pollutants drain from farmland and cause salinity and other pollution in downstream stretches of rivers or other waterways (water quality is also degraded because there is less remaining river flow to dilute pollutants after it has been diverted upstream into irrigation canals). Since the impacts of irrigation usually occur within a river basin, the trade-off can be said to operate on the river basin scale. [Possibility to] Reduce runoff by improving the water use efficiency of irrigation projects. A disadvantage of this is the economic 'rebound effect' which means that improving irrigation efficiency can actually lead to an expansion of irrigation area. // an increase in the production of livestock and aquaculture-grown fish, under business-as-usual conditions, will lead to higher antibiotic use and contamination of surface waters with antibiotics and resistant bacteria.",
+          'Water quality of surface waters and groundwaters are likely to be degraded if more food is produced via expansion or intensification of cultivated land. // Irrigated cropland makes a well-known disproportionate contribution to world food supply [\u2026] [irrigated land projected to expand]. [\u2026] Farmers withdraw water from surface or subsurface sources and apply it to cropland where it picks up salts from soils, as well as residues of applied fertilizers and pesticides and other pollutants. These pollutants drain from farmland and cause salinity and other pollution in downstream stretches of rivers or other waterways (water quality is also degraded because there is less remaining river flow to dilute pollutants after it has been diverted upstream into irrigation canals). Since the impacts of irrigation usually occur within a river basin, the trade-off can be said to operate on the river basin scale. [Possibility to] Reduce runoff by improving the water use efficiency of irrigation projects. A disadvantage of this is the economic \u2018rebound effect\u2019 which means that improving irrigation efficiency can actually lead to an expansion of irrigation area. // an increase in the production of livestock and aquaculture-grown fish, under business-as-usual conditions, will lead to higher antibiotic use and contamination of surface waters with antibiotics and resistant bacteria.',
           'An adequate and reliable water resource is a prerequisite for the production of food [...] increases in demand (of water) for agricultural production can all put pressure on water availability, water quality and freshwater ecosystems [...] if care is not taken to reduce pollution, use water sustainably and protect ecosystems (mixed) // Substantially increasing recycling and safe reuse is interlinked with ending hunger (synergy).',
         ],
       },
@@ -2271,34 +2846,34 @@ export const LinkageData2023 = [
         target: '2.2',
         description: [
           '',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
         target: '2.3',
         description: [
           '',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs. // Ending malnutrition in northern Canada will require all three input groups as water, land and soil, and electricity and fuel will be required [...]. Similarly, all three input groups are required to double agriculture productivity and income [...]. Therefore, the two targets are in competition for all three resources. [...] In terms of infrastructure needs, all three infrastructure groups are also deemed necessary to end malnutrition. Health care would be needed to assess the prevalence of malnutrition among northern residents and possibly provide nutritional supplements to address and mitigate malnutrition. Technology and research would be required to increase food production, while streets, rails, airports, or other types of gray infrastructure would be required to transport food and health care to northern regions with limited access. Increasing food production and distribution would also require education, technology, and research as well as gray infrastructure to produce, transport, and sell commercial food products. Therefore, there are two infrastructure synergies [...].Ending malnutrition could pose benefits and risks to provisioning services as there would be benefits from greater food production, but achieving this could also reduce the availability of other resources or raw materials such as water and forested land. Achieving target 2.3 could pose similar risks and benefits to provisioning services as ending malnutrition. Therefore, the presence of both risks and benefits for each target results in a zero-sum impact.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs. // Ending malnutrition in northern Canada will require all three input groups as water, land and soil, and electricity and fuel will be required [\u2026]. Similarly, all three input groups are required to double agriculture productivity and income [\u2026]. Therefore, the two targets are in competition for all three resources. [\u2026] In terms of infrastructure needs, all three infrastructure groups are also deemed necessary to end malnutrition. Health care would be needed to assess the prevalence of malnutrition among northern residents and possibly provide nutritional supplements to address and mitigate malnutrition. Technology and research would be required to increase food production, while streets, rails, airports, or other types of gray infrastructure would be required to transport food and health care to northern regions with limited access. Increasing food production and distribution would also require education, technology, and research as well as gray infrastructure to produce, transport, and sell commercial food products. Therefore, there are two infrastructure synergies [\u2026].Ending malnutrition could pose benefits and risks to provisioning services as there would be benefits from greater food production, but achieving this could also reduce the availability of other resources or raw materials such as water and forested land. Achieving target 2.3 could pose similar risks and benefits to provisioning services as ending malnutrition. Therefore, the presence of both risks and benefits for each target results in a zero-sum impact.',
         ],
       },
       {
         target: '2.b',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
         target: '2.c',
         description: [
           '',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
         target: '6.6',
         description: [
-          'Potential negative consequences for regulating ecosystem services (e.g., water quality) if food security would be achieved by intensification or deforestation. // Competition for resources [...] based on the assumption that the fight against rural poverty, malnutrition, and hunger in the framework of the current economic system is likely to be addressed by increases in cheap food production and not by redistribution of resources, means, or food. Achievement of these targets [...] has a negative, draining effect on resources and implies a risk [...] such as issues of water quality and over-extraction. [...] The goal to protect ecosystems yet establish high yield agriculture that satisfies global hunger issues is challenging, especially if high yields are achieved by conventional (agrochemical intensive) agriculture.',
+          'Potential negative consequences for regulating ecosystem services (e.g., water quality) if food security would be achieved by intensification or deforestation. // Competition for resources [\u2026] based on the assumption that the fight against rural poverty, malnutrition, and hunger in the framework of the current economic system is likely to be addressed by increases in cheap food production and not by redistribution of resources, means, or food. Achievement of these targets [\u2026] has a negative, draining effect on resources and implies a risk [\u2026] such as issues of water quality and over-extraction. [\u2026] The goal to protect ecosystems yet establish high yield agriculture that satisfies global hunger issues is challenging, especially if high yields are achieved by conventional (agrochemical intensive) agriculture.',
           'An adequate and reliable water resource is a prerequisite for the production of food [...] increases in demand (of water) for agricultural production can all put pressure on water availability, water quality and freshwater ecosystems [...] if care is not taken to reduce pollution, use water sustainably and protect ecosystems (mixed) // Substantially increasing recycling and safe reuse is interlinked with ending hunger (synergy) // Healthy water-related ecosystems, including natural and constructed wetlands, can support agricultural productivity.',
         ],
       },
@@ -2313,7 +2888,7 @@ export const LinkageData2023 = [
         description: [
           'Food and nutrition security may constrain the use of water and land, at the expense of energy production such as bioenergy.',
           'Access to clean and affordable energy is a key enabler/is crucial in achieving food security // Meeting the target of ensuring universal access to nutritious and sufficient food and increasing agriculture productivity could increase energy demand along the food supply chain, and this could stress the energy system. There could be some trade -offs among the target of ending hunger and energy production, especially in countries that rely on biofuel to expand energy access (competition for land). [...] However, with holistic thinking and careful planning, agriculture residues and animal dung can be used for energy production, viz. biogas, which can help in promoting renewable energy and increasing the energy efficiency of traditional biomass utilization. This would create synergetic impact [4].',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
@@ -2365,19 +2940,69 @@ export const LinkageData2023 = [
       {
         target: '15.1',
         description: [
-          'For decades, deforestation has played a critical role in boosting food production. Agriculture accounted for around 80 per cent of deforestation worldwide (Hosonuma et al. 2012). [...] Especially in Latin America, the development of the local economy through harvesting of both wood and crops can help local people overcome poverty, thus leading to reduced prevalence of undernourishment (Sharma, Dwivedi and Singh 2016).',
+          'For decades, deforestation has played a critical role in boosting food production. Agriculture accounted for around 80 per cent of deforestation worldwide (Hosonuma et al. 2012). [\u2026] Especially in Latin America, the development of the local economy through harvesting of both wood and crops can help local people overcome poverty, thus leading to reduced prevalence of undernourishment (Sharma, Dwivedi and Singh 2016).',
         ],
       },
       {
         target: '15.2',
         description: [
-          'For decades, deforestation has played a critical role in boosting food production. Agriculture accounted for around 80 per cent of deforestation worldwide (Hosonuma et al. 2012). [...] Especially in Latin America, the development of the local economy through harvesting of both wood and crops can help local people overcome poverty, thus leading to reduced prevalence of undernourishment (Sharma, Dwivedi and Singh 2016).// However, halting deforestation is also essential for the sustainable transformation of food systems, through legal and sustainable forest value chains (FAO 2020e).',
+          'For decades, deforestation has played a critical role in boosting food production. Agriculture accounted for around 80 per cent of deforestation worldwide (Hosonuma et al. 2012). [\u2026] Especially in Latin America, the development of the local economy through harvesting of both wood and crops can help local people overcome poverty, thus leading to reduced prevalence of undernourishment (Sharma, Dwivedi and Singh 2016).// However, halting deforestation is also essential for the sustainable transformation of food systems, through legal and sustainable forest value chains (FAO 2020e).',
         ],
       },
       {
         target: '2.5',
         description: [
-          "Unexpected results that are difficult to explain. {Global} --- [synergy] Countries and communities that maintain their indigenous food systems are better able to conserve local breeds and experience less undernutrition and fewer diet-related diseases (FAO 2010). Half of the breeds of the world's domesticated species have been lost (Mbow et al. 2019). Such species have been used for human consumption for thousands of years (FAO 2010). However, biodiversity loss through anthropogenic drivers of change including urbanization, climate change and the simplification of food consumption [...] is threatening food security, health and nutrition. This occurs not only through the loss of species but also through the loss in quality of local breeds consumed by communities, leading to negative health impacts, including undernutrition. [...] The number of undernourished people in a country increases in tandem with increases in the proportion of local breeds at risk of extinction. // [trade-off prevalence of undernourishment and risk of extinction] unexpected results that are difficult to explain. {Global}",
+          'Unexpected results that are difficult to explain. {Global} --- [synergy] Countries and communities that maintain their indigenous food systems are better able to conserve local breeds and experience less undernutrition and fewer diet-related diseases (FAO 2010). Half of the breeds of the world\u2019s domesticated species have been lost (Mbow et al. 2019). Such species have been used for human consumption for thousands of years (FAO 2010). However, biodiversity loss through anthropogenic drivers of change including urbanization, climate change and the simplification of food consumption [\u2026] is threatening food security, health and nutrition. This occurs not only through the loss of species but also through the loss in quality of local breeds consumed by communities, leading to negative health impacts, including undernutrition. [\u2026] The number of undernourished people in a country increases in tandem with increases in the proportion of local breeds at risk of extinction. // [trade-off prevalence of undernourishment and risk of extinction] unexpected results that are difficult to explain. {Global}',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '1.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
         ],
       },
     ],
@@ -2564,7 +3189,7 @@ export const LinkageData2023 = [
         target: '2.3',
         description: [
           '',
-          "Stunting and wasting in children is associated to less schooling and to reduced productivity later in life. On the other hand, obesity is associated to increased health risks in adults, which also lead to reduced productivity. Therefore, ending malnutrition would have positive impact on farmers' productivity.",
+          'Stunting and wasting in children is associated to less schooling and to reduced productivity later in life. On the other hand, obesity is associated to increased health risks in adults, which also lead to reduced productivity. Therefore, ending malnutrition would have positive impact on farmers\u2019 productivity.',
         ],
       },
       {
@@ -2703,7 +3328,7 @@ export const LinkageData2023 = [
       {
         target: '7.a',
         description: [
-          'Energy infrastructure aids in the provisioning of food [...] resources.',
+          'Energy infrastructure aids in the provisioning of food [\u2026] resources.',
           '',
         ],
       },
@@ -2805,41 +3430,41 @@ export const LinkageData2023 = [
       {
         target: '6.3',
         description: [
-          "Water quality of surface waters and groundwaters are likely to be degraded if more food is produced via expansion or intensification of cultivated land. // Irrigated cropland makes a well-known disproportionate contribution to world food supply [...] [irrigated land projected to expand]. [...] Farmers withdraw water from surface or subsurface sources and apply it to cropland where it picks up salts from soils, as well as residues of applied fertilizers and pesticides and other pollutants. These pollutants drain from farmland and cause salinity and other pollution in downstream stretches of rivers or other waterways (water quality is also degraded because there is less remaining river flow to dilute pollutants after it has been diverted upstream into irrigation canals). Since the impacts of irrigation usually occur within a river basin, the trade-off can be said to operate on the river basin scale. [Possibility to] Reduce runoff by improving the water use efficiency of irrigation projects. A disadvantage of this is the economic 'rebound effect' which means that improving irrigation efficiency can actually lead to an expansion of irrigation area. // an increase in the production of livestock and aquaculture-grown fish, under business-as-usual conditions, will lead to higher antibiotic use and contamination of surface waters with antibiotics and resistant bacteria.",
+          'Water quality of surface waters and groundwaters are likely to be degraded if more food is produced via expansion or intensification of cultivated land. // Irrigated cropland makes a well-known disproportionate contribution to world food supply [\u2026] [irrigated land projected to expand]. [\u2026] Farmers withdraw water from surface or subsurface sources and apply it to cropland where it picks up salts from soils, as well as residues of applied fertilizers and pesticides and other pollutants. These pollutants drain from farmland and cause salinity and other pollution in downstream stretches of rivers or other waterways (water quality is also degraded because there is less remaining river flow to dilute pollutants after it has been diverted upstream into irrigation canals). Since the impacts of irrigation usually occur within a river basin, the trade-off can be said to operate on the river basin scale. [Possibility to] Reduce runoff by improving the water use efficiency of irrigation projects. A disadvantage of this is the economic \u2018rebound effect\u2019 which means that improving irrigation efficiency can actually lead to an expansion of irrigation area. // an increase in the production of livestock and aquaculture-grown fish, under business-as-usual conditions, will lead to higher antibiotic use and contamination of surface waters with antibiotics and resistant bacteria.',
         ],
       },
       {
         target: '2.1',
         description: [
           '',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
         target: '2.3',
         description: [
           '',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
         target: '2.b',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
         target: '2.c',
         description: [
           '',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
         target: '6.6',
         description: [
-          'Competition for resources [...] based on the assumption that the fight against rural poverty, malnutrition, and hunger in the framework of the current economic system is likely to be addressed by increases in cheap food production and not by redistribution of resources, means, or food. Achievement of these targets [...] has a negative, draining effect on resources and implies a risk [...] such as issues of water quality and over-extraction. [...] The goal to protect ecosystems yet establish high yield agriculture that satisfies global hunger issues is challenging, especially if high yields are achieved by conventional (agrochemical intensive) agriculture.',
+          'Competition for resources [\u2026] based on the assumption that the fight against rural poverty, malnutrition, and hunger in the framework of the current economic system is likely to be addressed by increases in cheap food production and not by redistribution of resources, means, or food. Achievement of these targets [\u2026] has a negative, draining effect on resources and implies a risk [\u2026] such as issues of water quality and over-extraction. [\u2026] The goal to protect ecosystems yet establish high yield agriculture that satisfies global hunger issues is challenging, especially if high yields are achieved by conventional (agrochemical intensive) agriculture.',
         ],
       },
       {
@@ -2853,7 +3478,7 @@ export const LinkageData2023 = [
         description: [
           'Food and nutrition security may constrain the use of water and land, at the expense of energy production such as bioenergy.',
           'Access to clean and affordable energy is a key enabler/is crucial in achieving better nutrition. // Energy prices influence food prices and therefore, types of energy uses may also impact nutrition. // Meeting the target of ensuring universal access to nutritious and sufficient food and increasing agriculture productivity could increase energy demand along the food supply chain, and this could stress the energy system. There could be some trade -offs among the target of ending hunger and energy production, especially in countries that rely on biofuel to expand energy access (competition for land). [...] However, with holistic thinking and careful planning, agriculture residues and animal dung can be used for energy production, viz. biogas, which can help in promoting renewable energy and increasing the energy efficiency of traditional biomass utilization. This would create synergetic impact [4].',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
@@ -2885,6 +3510,44 @@ export const LinkageData2023 = [
         target: '10.a',
         description: [
           '[In low-income countries]Government assistance to tradable agriculture [...] sometimes occurs in the form of trade protection such as through import tariffs or export subsidies. In the short run, this support can lead to increased consumer food prices, affecting food security, nutritional status, and poverty.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '15.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
         ],
       },
     ],
@@ -2964,10 +3627,10 @@ export const LinkageData2023 = [
           '',
           '',
           '',
-          "Progressive farming [...] deploys greater crop diversity and utilises improved technologies and approaches to a greater extent (e.g., new grain varieties, horticulture, and irrigation). [...] It is developed expressly to increase food security, tackle chronic hunger. // As crop technologies become more developed, and the possible development of more resilient hybrids of vegetables, it may be possible to reduce the crops' climate susceptibility and therefore price fluctuation.",
+          'Progressive farming [...] deploys greater crop diversity and utilises improved technologies and approaches to a greater extent (e.g., new grain varieties, horticulture, and irrigation). [...] It is developed expressly to increase food security, tackle chronic hunger. // As crop technologies become more developed, and the possible development of more resilient hybrids of vegetables, it may be possible to reduce the crops\u2019 climate susceptibility and therefore price fluctuation.',
           '',
           'The risk of food insecurity could be minimized by (i) enhancing agricultural productivity with modern agriculture practices and (ii) bringing additional arable area under irrigation, which will again increase yields.',
-          'Ending hunger does result from increased productivity as it provides the producers with either higher income, which can be used for food purchase or with more food produce (consumption of own food produce) [synergy] // .... while the increase in productivity might positively or negatively affect food safety. Overuse of pesticides, and not respecting preharvest interval might lead to food poisoning. Also lack of appropriate storage facilities for increased amounts of cereals produced can lead to increased risk of aflatoxin, which negatively affects food safety. [trade-off] // ... increase in productivity might positively or negatively affect nutritious characteristics. When improvements in productivity is based solely on improvement of staple cereals, at the expense of food produce with higher nutritive values, the overall effect will result in lower nutritive values. On the other hand, when increasing productivity targets nutritive dense foods, the overall effect will result in higher nutritive values. [trade-off].',
+          'Ending hunger does result from increased productivity as it provides the producers with either higher income, which can be used for food purchase or with more food produce (consumption of own food produce) [synergy] // \u2026. while the increase in productivity might positively or negatively affect food safety. Overuse of pesticides, and not respecting preharvest interval might lead to food poisoning. Also lack of appropriate storage facilities for increased amounts of cereals produced can lead to increased risk of aflatoxin, which negatively affects food safety. [trade-off] // \u2026 increase in productivity might positively or negatively affect nutritious characteristics. When improvements in productivity is based solely on improvement of staple cereals, at the expense of food produce with higher nutritive values, the overall effect will result in lower nutritive values. On the other hand, when increasing productivity targets nutritive dense foods, the overall effect will result in higher nutritive values. [trade-off].',
           'Higher availability of local rice, which is more affordable than imported rice, potentially increases dietary diversity. Also, cost savings on purchases of rice may benefit nutritional status.',
           'Doubling the productivity of small farmers will add and save more food to feed the undernourished people (Target 2.1).',
         ],
@@ -3136,7 +3799,7 @@ export const LinkageData2023 = [
         description: [
           '',
           '',
-          'Quantity and quality of water is crucial for sustainable agriculture. // Increase in agriculture productivity can help to address water scarcity and meet water -use efficiency in agriculture and vice -versa // The small poor farmers and their farming practices are vulnerable due to their high reliance on rain -fed agriculture. The extremity and unreliability on the climatic conditions because of climate change could further deteriorate the livelihood of poor and least resilient farmers [65-68]. [...] Effective management of water is crucial to maintain water use efficiency, increase agricultural productivity due to reduced risk of rainfall variability, and opportunity for harvesting multi -cropping and more remunerative cash crops [69].',
+          'Quantity and quality of water is crucial for sustainable agriculture. // Increase in agriculture productivity can help to address water scarcity and meet water -use efficiency in agriculture and vice -versa // The small poor farmers and their farming practices are vulnerable due to their high reliance on rain -fed agriculture. The extremity and unreliability on the climatic conditions because of climate change could further deteriorate the livelihood of poor and least resilient farmers [65\u201368]. [...] Effective management of water is crucial to maintain water use efficiency, increase agricultural productivity due to reduced risk of rainfall variability, and opportunity for harvesting multi -cropping and more remunerative cash crops [69].',
           '',
           'Find out more information on the role of context in identifying interlinkages between SDG 2 and 6 (goals and targets) in the publication, which analyses Voluntary National Reviews (VNRs).',
           'Sustainable and efficient water use is interlinked with agricultural productivity (synergy) // access to services such as food can have negative impacts on water availability [...] if care is not taken to reduce pollution, use water sustainably and protect ecosystems (mixed) // Positive linkage between using more efficient water technologies and support to poor (synergy) // To enable a safe and sustainable increase in productivity, best practices in terms of soil, water and waste management must be universally adopted.',
@@ -3195,7 +3858,7 @@ export const LinkageData2023 = [
       {
         target: '2.5',
         description: [
-          'Higher food production [...] may be achieved by expanding the use of agro-chemical and increasing agricultural outputs through larger farms with more mechanization, and the wider use of Genetically Modified Organisms (GMO) (Adenle and Ammann, 2015).However, Target 2.3 constrains this approach by requiring more small-scale producer development which may also reduce environmental degradation and health risks (e.g., Sheahan et al., 2016). This [...] would promote sustainable (organic), smallscale agriculture which can enhance agricultural productivity while reducing environmental impacts and protecting small scale food producers (Rockstr\u00f6m et al., 2017). GMOs carry the added risk that they could threaten the long-term sustainability of plant and animal biodiversity (Azadi et al., 2015), affecting the achievement of target 2.5.',
+          'Higher food production [...] may be achieved by expanding the use of agro-chemical and increasing agricultural outputs through larger farms with more mechanization, and the wider use of Genetically Modified Organisms (GMO) (Adenle and Ammann, 2015).However, Target 2.3 constrains this approach by requiring more small-scale producer development which may also reduce environmental degradation and health risks (e.g., Sheahan et al., 2016). This [\u2026] would promote sustainable (organic), smallscale agriculture which can enhance agricultural productivity while reducing environmental impacts and protecting small scale food producers (Rockstr\u00f6m et al., 2017). GMOs carry the added risk that they could threaten the long-term sustainability of plant and animal biodiversity (Azadi et al., 2015), affecting the achievement of target 2.5.',
           '',
         ],
       },
@@ -3230,7 +3893,7 @@ export const LinkageData2023 = [
         target: '7.1',
         description: [
           '',
-          "Increasing food productivity and farmers' revenues may enable the increase of renewable energy in the global energy mix via biofuel production. This may also increase access to affordable, reliable and modern energy services [synergy] // Competition over land and water can results in trade-offs. Doubling agricultural production may constrain the use of water at the expense of increasing renewable energy sources (e.g. hydropower) or the use of other water-related energy sources [trade-off].",
+          'Increasing food productivity and farmers\u2019 revenues may enable the increase of renewable energy in the global energy mix via biofuel production. This may also increase access to affordable, reliable and modern energy services [synergy] // Competition over land and water can results in trade-offs. Doubling agricultural production may constrain the use of water at the expense of increasing renewable energy sources (e.g. hydropower) or the use of other water-related energy sources [trade-off].',
           'Access to clean and affordable energy is a key enabler/is crucial in achieving agriculture productivity. // Energy prices influence food prices and therefore, types of energy uses may also impact nutrition. // Meeting the target of ensuring universal access to nutritious and sufficient food and increasing agriculture productivity could increase energy demand along the food supply chain, and this could stress the energy system. There could be some trade -offs among the target of ending hunger and energy production, especially in countries that rely on biofuel to expand energy access (competition for land). [...] However, with holistic thinking and careful planning, agriculture residues and animal dung can be used for energy production, viz. biogas, which can help in promoting renewable energy and increasing the energy efficiency of traditional biomass utilization. This would create synergetic impact [4].',
         ],
       },
@@ -3238,7 +3901,7 @@ export const LinkageData2023 = [
         target: '7.2',
         description: [
           '',
-          "Greater agricultural productivities for all types of crops, particularly bioenergy, can aid the achievement of the renewable energy target by allowing as much bioenergy to be produced on as little land as possible, thereby minimising land use competition. Energy efficiency improvements can also reinforce agricultural productivity by reducing the energy inputs needed. Bioenergy production from agricultural and forest wastes could increase productivity and efficiency in rural areas. {n.a.} --- Increasing food productivity and farmers' revenues may enable the increase of renewable energy in the global energy mix via biofuel production. This may also increase access to affordable, reliable and modern energy services [synergy] // Competition over land and water can results in trade-offs. Doubling agricultural production may constrain the use of water at the expense of increasing renewable energy sources (e.g. hydropower) or the use of other water-related energy sources [trade-off]. {n.a.}",
+          'Greater agricultural productivities for all types of crops, particularly bioenergy, can aid the achievement of the renewable energy target by allowing as much bioenergy to be produced on as little land as possible, thereby minimising land use competition. Energy efficiency improvements can also reinforce agricultural productivity by reducing the energy inputs needed. Bioenergy production from agricultural and forest wastes could increase productivity and efficiency in rural areas. {n.a.} --- Increasing food productivity and farmers\u2019 revenues may enable the increase of renewable energy in the global energy mix via biofuel production. This may also increase access to affordable, reliable and modern energy services [synergy] // Competition over land and water can results in trade-offs. Doubling agricultural production may constrain the use of water at the expense of increasing renewable energy sources (e.g. hydropower) or the use of other water-related energy sources [trade-off]. {n.a.}',
           'Increasing food/agriculture productivity may enable the increase of renewable energy in the overall energy set via biofuel production.',
           'Access to clean and affordable energy is a key enabler/is crucial in achieving agriculture productivity. // Energy prices influence food prices and therefore, types of energy uses may also impact nutrition. // Meeting the target of ensuring universal access to nutritious and sufficient food and increasing agriculture productivity could increase energy demand along the food supply chain, and this could stress the energy system. There could be some trade -offs among the target of ending hunger and energy production, especially in countries that rely on biofuel to expand energy access (competition for land). [...] However, with holistic thinking and careful planning, agriculture residues and animal dung can be used for energy production, viz. biogas, which can help in promoting renewable energy and increasing the energy efficiency of traditional biomass utilization. This would create synergetic impact [4].',
           '',
@@ -3248,7 +3911,7 @@ export const LinkageData2023 = [
       {
         target: '7.a',
         description: [
-          'Energy infrastructure aids in the provisioning of food [...] resources.',
+          'Energy infrastructure aids in the provisioning of food [\u2026] resources.',
           '',
         ],
       },
@@ -3287,13 +3950,13 @@ export const LinkageData2023 = [
       {
         target: '5.5',
         description: [
-          "Promoting investment in rural infrastructure, securing equal access to productive resources (including land), and increasing income strengthens women's empowerment and gender equality.",
+          'Promoting investment in rural infrastructure, securing equal access to productive resources (including land), and increasing income strengthens women\u2019s empowerment and gender equality.',
         ],
       },
       {
         target: '5.a',
         description: [
-          "Promoting investment in rural infrastructure, securing equal access to productive resources (including land), and increasing income strengthens women's empowerment and gender equality.",
+          'Promoting investment in rural infrastructure, securing equal access to productive resources (including land), and increasing income strengthens women\u2019s empowerment and gender equality.',
         ],
       },
       {
@@ -3371,7 +4034,7 @@ export const LinkageData2023 = [
         description: [
           '',
           '',
-          'Unsustainable agriculture focusing solely on productivity may counteract climate adaption by increasing climate instability and extreme events. {n.a.} --- Deforestation due to intense agricultural/ pasture expansion highlights how target can counteract combatting climate change and can constrain climate adaption by increasing climate instability and disasters. [...] A possible explanation for the precipitation reductions observed in the last two decades over the southern and south-eastern Amazon could be the change in albedo between forests and pasture. In all countries with a large part of territory belonging to the Amazon (Brazil, Columbia, Peru, Bolivia, Ecuador), agriculture, forest and land use change account for over 83% of total ghg emissions. These countries rely heavily on agriculture and forestry for climate change mitigation. However, mitigation solutions in these sectors imply a high level of technological complexity. {Amazon}',
+          'Unsustainable agriculture focusing solely on productivity may counteract climate adaption by increasing climate instability and extreme events. {n.a.} --- Deforestation due to intense agricultural/ pasture expansion highlights how target can counteract combatting climate change and can constrain climate adaption by increasing climate instability and disasters. [\u2026] A possible explanation for the precipitation reductions observed in the last two decades over the southern and south-eastern Amazon could be the change in albedo between forests and pasture. In all countries with a large part of territory belonging to the Amazon (Brazil, Columbia, Peru, Bolivia, Ecuador), agriculture, forest and land use change account for over 83% of total ghg emissions. These countries rely heavily on agriculture and forestry for climate change mitigation. However, mitigation solutions in these sectors imply a high level of technological complexity. {Amazon}',
           'Expansion of agricultural land, as well as erosion induced in the process of agricultural intensification to double productivity might negatively influence resilience to natural disasters. On contrary, doubling productivity based on sustainable agricultural practices might enhance the resilience.',
         ],
       },
@@ -3379,14 +4042,14 @@ export const LinkageData2023 = [
         target: '15.1',
         description: [
           '',
-          'Land use conversion for agriculture purposes such as cattle ranching or soybean production may counteract the maintaining of ecosystems and forest conservation/protection. [...] Post-logging timber species composition and the total value of forest stands do not recover beyond the firstcut, suggesting that the most valuable (in commercial terms) timber species become rare or even disappear in old logging frontiers (Richardson and Peres, 2016). {Amazon} --- Intense agriculture and revenue increase based solely on agricultural productivity without sustainability may counteract ecosystem protection/restoration, and increase deforestation and land degradation. {n.a.}',
+          'Land use conversion for agriculture purposes such as cattle ranching or soybean production may counteract the maintaining of ecosystems and forest conservation/protection. [\u2026] Post-logging timber species composition and the total value of forest stands do not recover beyond the firstcut, suggesting that the most valuable (in commercial terms) timber species become rare or even disappear in old logging frontiers (Richardson and Peres, 2016). {Amazon} --- Intense agriculture and revenue increase based solely on agricultural productivity without sustainability may counteract ecosystem protection/restoration, and increase deforestation and land degradation. {n.a.}',
         ],
       },
       {
         target: '15.2',
         description: [
           '',
-          'Land use conversion for agriculture purposes such as cattle ranching or soybean production may counteract the maintaining of ecosystems and forest conservation/protection. [...] Post-logging timber species composition and the total value of forest stands do not recover beyond the firstcut, suggesting that the most valuable (in commercial terms) timber species become rare or even disappear in old logging frontiers (Richardson and Peres, 2016). {Amazon} --- Intense agriculture and revenue increase based solely on agricultural productivity without sustainability may counteract ecosystem protection/restoration, and increase deforestation and land degradation. {n.a.}',
+          'Land use conversion for agriculture purposes such as cattle ranching or soybean production may counteract the maintaining of ecosystems and forest conservation/protection. [\u2026] Post-logging timber species composition and the total value of forest stands do not recover beyond the firstcut, suggesting that the most valuable (in commercial terms) timber species become rare or even disappear in old logging frontiers (Richardson and Peres, 2016). {Amazon} --- Intense agriculture and revenue increase based solely on agricultural productivity without sustainability may counteract ecosystem protection/restoration, and increase deforestation and land degradation. {n.a.}',
           'Unsustainable agricultural practice to aiming to improve agricultural productivity would negatively affect land degradation, while sustainable practices would reverse degradation trends.',
         ],
       },
@@ -3403,7 +4066,7 @@ export const LinkageData2023 = [
         target: '15.5',
         description: [
           '',
-          'Intense agriculture and revenue increase based solely on agricultural productivity without sustainability may counteract ecosystem protection/restoration, and increase deforestation and land degradation. {n.a.} --- Land use conversion for agriculture purposes such as cattle ranching or soybean production may counteract the maintaining of ecosystems and forest conservation/protection. [...] Post-logging timber species composition and the total value of forest stands do not recover beyond the firstcut, suggesting that the most valuable (in commercial terms) timber species become rare or even disappear in old logging frontiers (Richardson and Peres, 2016). [...] In particular counteract target 15.5 on the reduction of habitat degradation, halting the loss of biodiversity and the extinction of threatened species. {Amazon}',
+          'Intense agriculture and revenue increase based solely on agricultural productivity without sustainability may counteract ecosystem protection/restoration, and increase deforestation and land degradation. {n.a.} --- Land use conversion for agriculture purposes such as cattle ranching or soybean production may counteract the maintaining of ecosystems and forest conservation/protection. [\u2026] Post-logging timber species composition and the total value of forest stands do not recover beyond the firstcut, suggesting that the most valuable (in commercial terms) timber species become rare or even disappear in old logging frontiers (Richardson and Peres, 2016). [\u2026] In particular counteract target 15.5 on the reduction of habitat degradation, halting the loss of biodiversity and the extinction of threatened species. {Amazon}',
           'Expansion of agricultural land to achieve higher productivity would directly undermine target 15.5, while achieving higher productivity by increasing yield on existing areas would support 15.5.',
         ],
       },
@@ -3411,7 +4074,7 @@ export const LinkageData2023 = [
         target: '6.3',
         description: [
           '',
-          'Pollution due to unsustainable agriculture can constrain or even counteract the reduction of water pollution and the protection / restoration of water and related ecosystems. {n.a.} --- Fertilisers and animal waste run-off may pollute surface water. Agriculture constrains access to clean drinking water, a health concern being addressed through regulatory measures. With a dry climate, water is an essential resource for agricultural productivity and climate resilience in California. [...] Nitrate leaching into groundwater in regions with intensive agricultural crop and livestock production leads to groundwaters that exceed drinking water quality standards (Harter et al., 2012). As many people outside large urban centres depend on wells for drinking water, agricultural practices constrain access improving water quality through reducing pollution. To reduce nitrate leaching from fertiliser use, policy responses being considered include increasing taxes on nitrogen fertilisers and increased regulatory measures in the form of grower nutrient management plans. {California}',
+          'Pollution due to unsustainable agriculture can constrain or even counteract the reduction of water pollution and the protection / restoration of water and related ecosystems. {n.a.} --- Fertilisers and animal waste run-off may pollute surface water. Agriculture constrains access to clean drinking water, a health concern being addressed through regulatory measures. With a dry climate, water is an essential resource for agricultural productivity and climate resilience in California. [\u2026] Nitrate leaching into groundwater in regions with intensive agricultural crop and livestock production leads to groundwaters that exceed drinking water quality standards (Harter et al., 2012). As many people outside large urban centres depend on wells for drinking water, agricultural practices constrain access improving water quality through reducing pollution. To reduce nitrate leaching from fertiliser use, policy responses being considered include increasing taxes on nitrogen fertilisers and increased regulatory measures in the form of grower nutrient management plans. {California}',
           'Sustainable agricultural practices lead to prevention of water pollution and rational use of aquifers. On the contrary, unsustainable practices lead to water contamination caused by excessive use of chemicals and lowering underground water levels. Doubling productivity based on unsustainable practices negatively affects quality and quantity of water available for agriculture and human consumption.',
           'Find out more information on the role of context in identifying interlinkages between SDG 2 and 6 (goals and targets) in the publication, which analyses Voluntary National Reviews (VNRs).',
           'Substantially increasing recycling and safe reuse is interlinked with agricultural productivity (synergy) // access to services such as food can have negative impacts on water quality [...] if care is not taken to reduce pollution, use water sustainably and protect ecosystems (mixed) // Positive linkage between using more efficient water technologies and support to poor (synergy) // To enable a safe and sustainable increase in productivity, best practices in terms of soil, water and waste management must be universally adopted. Technologies and management approaches that allow, for example, the safe use of wastewater as a water and nutrient source for irrigation [6.3] have the potential to contribute to the realization of these targets. The principles of a circular economy for sustainable resource use can guide this type of transformation (synergy) // increased agricultural production may increase total wastewater generation and the risk of pollution (trade-off) // recycling and safe use of wastewater can greatly increase food production in water-scarce areas while reducing pollution and demand on freshwater resources (synergy) // Safely treated faecal sludge and wastewater can be a useful supply of nutrients and water for agriculture and energy security (for example, to produce nutrient-rich organic compost or energy in the form of heat, biogas and biofuels) (synergy).',
@@ -3424,9 +4087,9 @@ export const LinkageData2023 = [
           '',
           'Agriculture is a major user of freshwater, challenging sustainable water withdrawal and supply. Of the total estimated surface water available, from runoff stored in reservoirs and from stream flow, agriculture withdraws 40%, while the environment accounts for 50%, with the urban sector accounting for the remaining balance (California Department of Water Resources, 2013). In normal water years, about 70% of developed water use (surface + groundwater) is for irrigated agriculture. However, in periods of drought, less water is allocated to irrigation districts and the share of irrigation water declines to 50% or less. In normal years, about one third of total developed water is from groundwater; the level increases to 50% or more in periods of drought such as in the last few years. Increased reliance on groundwater constrains ensuring sustainable withdrawals and supply of freshwater to address water scarcity. {California} --- Competition over water can result in trade-offs. Intensive conventional agriculture can constrain and in some cases counteract access to safe drinking water, proper sanitation, and the fight against water scarcity. {n.a.}',
           '',
-          'Quantity and quality of water is crucial for sustainable agriculture. // Increase in agriculture productivity can help to address water scarcity and meet water -use efficiency in agriculture and vice -versa // The small poor farmers and their farming practices are vulnerable due to their high reliance on rain -fed agriculture. The extremity and unreliability on the climatic conditions because of climate change could further deteriorate the livelihood of poor and least resilient farmers [65-68]. [...] Effective management of water is crucial to maintain water use efficiency, increase agricultural productivity due to reduced risk of rainfall variability, and opportunity for harvesting multi -cropping and more remunerative cash crops [69].',
+          'Quantity and quality of water is crucial for sustainable agriculture. // Increase in agriculture productivity can help to address water scarcity and meet water -use efficiency in agriculture and vice -versa // The small poor farmers and their farming practices are vulnerable due to their high reliance on rain -fed agriculture. The extremity and unreliability on the climatic conditions because of climate change could further deteriorate the livelihood of poor and least resilient farmers [65\u201368]. [...] Effective management of water is crucial to maintain water use efficiency, increase agricultural productivity due to reduced risk of rainfall variability, and opportunity for harvesting multi -cropping and more remunerative cash crops [69].',
           'Efficient and sustainable use of water in process of increasing productivity would positively affect 6.4, while excess use of water would affect it negatively.',
-          "The increased paddy rice cultivation was favourable for the nation's food security. However, groundwater withdrawals, which are needed to support this crop cultivation, caused groundwater depletion. [...] Continuous withdrawal has led to a substantial depletion of groundwater resources in these regions, and at present groundwater abstraction is about 70% above the annual recharge, which is largely driven by the need to irrigate rice. [...] The extensive groundwater extraction for rice cultivation can lead to severe water scarcity in the region [...].",
+          'The increased paddy rice cultivation was favourable for the nation\u2019s food security. However, groundwater withdrawals, which are needed to support this crop cultivation, caused groundwater depletion. [\u2026] Continuous withdrawal has led to a substantial depletion of groundwater resources in these regions, and at present groundwater abstraction is about 70% above the annual recharge, which is largely driven by the need to irrigate rice. [...] The extensive groundwater extraction for rice cultivation can lead to severe water scarcity in the region [...].',
           'Find out more information on the role of context in identifying interlinkages between SDG 2 and 6 (goals and targets) in the publication, which analyses Voluntary National Reviews (VNRs).',
           'Sustainable and efficient water use is interlinked with agricultural productivity (synergy) // access to services such as food can have negative impacts on water availability [...] if care is not taken to reduce pollution, use water sustainably and protect ecosystems (mixed) // Positive linkage between using more efficient water technologies and support to poor (synergy) // To enable a safe and sustainable increase in productivity, best practices in terms of soil, water and waste management must be universally adopted.',
           'Doubling agricultural productivity and incomes of small-scale food producers could likely use more water in farming and processing the products, which shows the dilemma faced with having direct links between two such targets. However, if water use efficiency were achieved through simple and affordable technology and better methods, then this could have an important direct influence on doubling agriculture productivity and incomes.',
@@ -3443,11 +4106,11 @@ export const LinkageData2023 = [
         target: '6.6',
         description: [
           '',
-          'Competition for resources [...] based on the assumption that the fight against rural poverty, malnutrition, and hunger in the framework of the current economic system is likely to be addressed by increases in cheap food production and not by redistribution of resources, means, or food. Achievement of these targets [...] has a negative, draining effect on resources and implies a risk [...] such as issues of water quality and over-extraction. [...] The goal to protect ecosystems yet establish high yield agriculture that satisfies global hunger issues is challenging, especially if high yields are achieved by conventional (agrochemical intensive) agriculture.',
+          'Competition for resources [\u2026] based on the assumption that the fight against rural poverty, malnutrition, and hunger in the framework of the current economic system is likely to be addressed by increases in cheap food production and not by redistribution of resources, means, or food. Achievement of these targets [\u2026] has a negative, draining effect on resources and implies a risk [\u2026] such as issues of water quality and over-extraction. [\u2026] The goal to protect ecosystems yet establish high yield agriculture that satisfies global hunger issues is challenging, especially if high yields are achieved by conventional (agrochemical intensive) agriculture.',
           'Pollution due to unsustainable agriculture can constrain or even counteract the reduction of water pollution and the protection / restoration of water and related ecosystems.',
           '',
           'Sustainable agricultural practices lead to prevention of water pollution and rationale use of aquifers. On the contrary, unsustainable practices lead to water contamination caused by excessive use of chemicals and lowering underground water levels. Doubling productivity based on unsustainable practices negatively affects quality and quantity of water available for agriculture and human consumption.',
-          "The increased paddy rice cultivation was favourable for the nation's food security. However, groundwater withdrawals, which are needed to support this crop cultivation, caused groundwater depletion. [...] Continuous withdrawal has led to a substantial depletion of groundwater resources in these regions, and at present groundwater abstraction is about 70% above the annual recharge, which is largely driven by the need to irrigate rice. [...] The extensive groundwater extraction for rice cultivation can lead to severe water scarcity in the region [...].",
+          'The increased paddy rice cultivation was favourable for the nation\u2019s food security. However, groundwater withdrawals, which are needed to support this crop cultivation, caused groundwater depletion. [\u2026] Continuous withdrawal has led to a substantial depletion of groundwater resources in these regions, and at present groundwater abstraction is about 70% above the annual recharge, which is largely driven by the need to irrigate rice. [...] The extensive groundwater extraction for rice cultivation can lead to severe water scarcity in the region [...].',
           'Find out more information on the role of context in identifying interlinkages between SDG 2 and 6 (goals and targets) in the publication, which analyses Voluntary National Reviews (VNRs).',
           'Protecting water-related ecosystems is interlinked with agricultural productivity (synergy) // access to services such as food can have negative impacts on ecosystems [...] if care is not taken to reduce pollution, use water sustainably and protect ecosystems (mixed) // Healthy water-related ecosystems, including natural and constructed wetlands, can support agricultural productivity.',
           'Water use and pollution in intensive agriculture counteract protecting and restoring water-related ecosystems.',
@@ -3492,16 +4155,16 @@ export const LinkageData2023 = [
         target: '3.9',
         description: [
           '',
-          'Land use conversion for agricultural purposes increase in exposure to mercury contamination of soil . [...] In the Tapajos Amazon region, conversion of forest to pasture results in soil erosion and the transfer of soil sediments into waterways, causing mercury pollution. Inorganic mercury, which is naturally present in the soil, is then transformed into methylmercury through bacterial activity and enters the aquatic food web, with the highest mercury concentrations occurring in the top predators at the ends of food chains. The majority of riverside dwellers eat fish several times per week. Methylmercury is a neurotoxin, and various studies have reported nervous system dysfunction associated with mercury exposure among these communities. {Amazon} --- Intensive peri-urban agriculture using fertilisers and pesticides to increase productivity and therefore farming revenue constrains water quality and drinking water and increases associated diseases. A survey of the marketgardening systems in Pikine (a suburb of Dakar) showed that nearly 7% of produce (lettuce) was contaminated by Salmonella, a human pathogen. {Senegal} --- Increasing agricultural productivity via conventional agriculture can increase soil and water pollution constraining the reduction of deaths and illness caused by hazardous chemicals. Such chemicals can adversely affect human health, particularly of newborns, but can also affect perinatal death and cancer outcomes in the overall population // Agriculture labour may expose people to hazardous chemicals. {n.a.}',
+          'Land use conversion for agricultural purposes increase in exposure to mercury contamination of soil . [\u2026] In the Tapajos Amazon region, conversion of forest to pasture results in soil erosion and the transfer of soil sediments into waterways, causing mercury pollution. Inorganic mercury, which is naturally present in the soil, is then transformed into methylmercury through bacterial activity and enters the aquatic food web, with the highest mercury concentrations occurring in the top predators at the ends of food chains. The majority of riverside dwellers eat fish several times per week. Methylmercury is a neurotoxin, and various studies have reported nervous system dysfunction associated with mercury exposure among these communities. {Amazon} --- Intensive peri-urban agriculture using fertilisers and pesticides to increase productivity and therefore farming revenue constrains water quality and drinking water and increases associated diseases. A survey of the marketgardening systems in Pikine (a suburb of Dakar) showed that nearly 7% of produce (lettuce) was contaminated by Salmonella, a human pathogen. {Senegal} --- Increasing agricultural productivity via conventional agriculture can increase soil and water pollution constraining the reduction of deaths and illness caused by hazardous chemicals. Such chemicals can adversely affect human health, particularly of newborns, but can also affect perinatal death and cancer outcomes in the overall population // Agriculture labour may expose people to hazardous chemicals. {n.a.}',
           'Agricultural production might negatively affect water, soil and air pollution. Excessive and inappropriate handling and use of pesticides might have negative impact on health of producers and consumers. Doubling productivity based on overuse of inputs, and inappropriate use of chemicals might negatively affect target 3.9.',
-          '[after 2009] The desire to increase rice production have shifted rice harvest dates to later in the year and concentrated residue burning into a narrower time window. Higher rice production has increased rice residue burning, which has contributed substantially to extreme levels of air pollution in northern India. The amount of residue burned is approximately 1.5-2.5 times higher than the actual grain yield. In turn, this has increased the levels of air pollution in Delhi; the peak of PM2.5 in this megalopolis significantly coincides with the peak of residue burning in Punjab and Haryana. [...] Urgent need for sustainable and effective crop residue management practices to curb current trends of air pollution. If ignored, the current burning practices will further deteriorate the air quality and increasingly threaten public health in the region.',
+          '[after 2009] The desire to increase rice production have shifted rice harvest dates to later in the year and concentrated residue burning into a narrower time window. Higher rice production has increased rice residue burning, which has contributed substantially to extreme levels of air pollution in northern India. The amount of residue burned is approximately 1.5\u20132.5 times higher than the actual grain yield. In turn, this has increased the levels of air pollution in Delhi; the peak of PM2.5 in this megalopolis significantly coincides with the peak of residue burning in Punjab and Haryana. [...] Urgent need for sustainable and effective crop residue management practices to curb current trends of air pollution. If ignored, the current burning practices will further deteriorate the air quality and increasingly threaten public health in the region.',
         ],
       },
       {
         target: '6.1',
         description: [
           '',
-          'Intensive peri-urban agriculture using fertilisers and pesticides to increase productivity and therefore farming revenue increases water-borne diseases. A survey of the marketgardening systems in Pikine (a suburb of Dakar) showed that nearly 7% of produce (lettuce) was contaminated by Salmonella, a human pathogen. {Senegal} --- Competition over water can result in trade-offs. Intensive conventional agriculture can constrain and in some cases counteract access to safe drinking water, proper sanitation, and the fight against water scarcity. {n.a.} --- Nitrate leaching from fertiliser use and animal production contaminates drinking water. Agriculture constrains access to clean drinking water, a health concern being addressed through regulatory measures. With a dry climate, water is an essential resource for agricultural productivity and climate resilience in California. [...] Nitrate leaching into groundwater in regions with intensive agricultural crop and livestock production leads to groundwaters that exceed drinking water quality standards (Harter et al., 2012). As many people outside large urban centres depend on wells for drinking water, agricultural practices constrain access to safe and clean drinking water. To reduce nitrate leaching from fertiliser use, policy responses being considered include increasing taxes on nitrogen fertilisers and increased regulatory measures in the form of grower nutrient management plans. // Of the total estimated surface water available, from runoff stored in reservoirs and from stream flow, agriculture withdraws 40%, while the environment accounts for 50%, with the urban sector accounting for the remaining balance. [...] In normal years, about one third of total developed water is from groundwater; the level increases to 50% or more in periods of drought such as in the last few years. Increased reliance on groundwater constrains access to clean drinking water. {California}',
+          'Intensive peri-urban agriculture using fertilisers and pesticides to increase productivity and therefore farming revenue increases water-borne diseases. A survey of the marketgardening systems in Pikine (a suburb of Dakar) showed that nearly 7% of produce (lettuce) was contaminated by Salmonella, a human pathogen. {Senegal} --- Competition over water can result in trade-offs. Intensive conventional agriculture can constrain and in some cases counteract access to safe drinking water, proper sanitation, and the fight against water scarcity. {n.a.} --- Nitrate leaching from fertiliser use and animal production contaminates drinking water. Agriculture constrains access to clean drinking water, a health concern being addressed through regulatory measures. With a dry climate, water is an essential resource for agricultural productivity and climate resilience in California. [\u2026] Nitrate leaching into groundwater in regions with intensive agricultural crop and livestock production leads to groundwaters that exceed drinking water quality standards (Harter et al., 2012). As many people outside large urban centres depend on wells for drinking water, agricultural practices constrain access to safe and clean drinking water. To reduce nitrate leaching from fertiliser use, policy responses being considered include increasing taxes on nitrogen fertilisers and increased regulatory measures in the form of grower nutrient management plans. // Of the total estimated surface water available, from runoff stored in reservoirs and from stream flow, agriculture withdraws 40%, while the environment accounts for 50%, with the urban sector accounting for the remaining balance. [\u2026] In normal years, about one third of total developed water is from groundwater; the level increases to 50% or more in periods of drought such as in the last few years. Increased reliance on groundwater constrains access to clean drinking water. {California}',
           'Intensive conventional agriculture can in some cases counteract the access to safe drinking water where competition over water can result in trade-offs.',
           'Find out more information on the role of context in identifying interlinkages between SDG 2 and 6 (goals and targets) in the publication, which analyses Voluntary National Reviews (VNRs).',
           'Achieving universal and equitable access to safe and affordable drinking water for all can counteract adequate water supply for intensive agriculture, and vice versa.',
@@ -3511,30 +4174,30 @@ export const LinkageData2023 = [
         target: '2.1',
         description: [
           '',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs. // Ending malnutrition in northern Canada will require all three input groups as water, land and soil, and electricity and fuel will be required [...]. Similarly, all three input groups are required to double agriculture productivity and income [...]. Therefore, the two targets are in competition for all three resources. [...] In terms of infrastructure needs, all three infrastructure groups are also deemed necessary to end malnutrition. Health care would be needed to assess the prevalence of malnutrition among northern residents and possibly provide nutritional supplements to address and mitigate malnutrition. Technology and research would be required to increase food production, while streets, rails, airports, or other types of gray infrastructure would be required to transport food and health care to northern regions with limited access. Increasing food production and distribution would also require education, technology, and research as well as gray infrastructure to produce, transport, and sell commercial food products. Therefore, there are two infrastructure synergies [...].Ending malnutrition could pose benefits and risks to provisioning services as there would be benefits from greater food production, but achieving this could also reduce the availability of other resources or raw materials such as water and forested land. Achieving target 2.3 could pose similar risks and benefits to provisioning services as ending malnutrition. Therefore, the presence of both risks and benefits for each target results in a zero-sum impact.',
-          'Ending hunger does result from increased productivity as it provides the producers with either higher income, which can be used for food purchase or with more food produce (consumption of own food produce) [synergy] // .... while the increase in productivity might positively or negatively affect food safety. Overuse of pesticides, and not respecting preharvest interval might lead to food poisoning. Also lack of appropriate storage facilities for increased amounts of cereals produced can lead to increased risk of aflatoxin, which negatively affects food safety. [trade-off] // ... increase in productivity might positively or negatively affect nutritious characteristics. When improvements in productivity is based solely on improvement of staple cereals, at the expense of food produce with higher nutritive values, the overall effect will result in lower nutritive values. On the other hand, when increasing productivity targets nutritive dense foods, the overall effect will result in higher nutritive values. [trade-off].',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs. // Ending malnutrition in northern Canada will require all three input groups as water, land and soil, and electricity and fuel will be required [\u2026]. Similarly, all three input groups are required to double agriculture productivity and income [\u2026]. Therefore, the two targets are in competition for all three resources. [\u2026] In terms of infrastructure needs, all three infrastructure groups are also deemed necessary to end malnutrition. Health care would be needed to assess the prevalence of malnutrition among northern residents and possibly provide nutritional supplements to address and mitigate malnutrition. Technology and research would be required to increase food production, while streets, rails, airports, or other types of gray infrastructure would be required to transport food and health care to northern regions with limited access. Increasing food production and distribution would also require education, technology, and research as well as gray infrastructure to produce, transport, and sell commercial food products. Therefore, there are two infrastructure synergies [\u2026].Ending malnutrition could pose benefits and risks to provisioning services as there would be benefits from greater food production, but achieving this could also reduce the availability of other resources or raw materials such as water and forested land. Achieving target 2.3 could pose similar risks and benefits to provisioning services as ending malnutrition. Therefore, the presence of both risks and benefits for each target results in a zero-sum impact.',
+          'Ending hunger does result from increased productivity as it provides the producers with either higher income, which can be used for food purchase or with more food produce (consumption of own food produce) [synergy] // \u2026. while the increase in productivity might positively or negatively affect food safety. Overuse of pesticides, and not respecting preharvest interval might lead to food poisoning. Also lack of appropriate storage facilities for increased amounts of cereals produced can lead to increased risk of aflatoxin, which negatively affects food safety. [trade-off] // \u2026 increase in productivity might positively or negatively affect nutritious characteristics. When improvements in productivity is based solely on improvement of staple cereals, at the expense of food produce with higher nutritive values, the overall effect will result in lower nutritive values. On the other hand, when increasing productivity targets nutritive dense foods, the overall effect will result in higher nutritive values. [trade-off].',
         ],
       },
       {
         target: '2.2',
         description: [
           '',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
           'Doubling productivity of an appropriate bundle of agricultural products would lead to ending all forms of malnutrition. In case of increased production, undernourishment related conditions will improve. [synergy] // However, doubling productivity of a narrow staple food products, such as wheat, maize and rice, might not appropriately address micronutrient deficiency and overnutrition. In some cases, it could even worsen those. [trade-off].',
         ],
       },
       {
         target: '2.b',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
         target: '2.c',
         description: [
           '',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
@@ -3546,7 +4209,7 @@ export const LinkageData2023 = [
       {
         target: '1.5',
         description: [
-          'Increasing agricultural productivity without sustainability will increase vulnerability to climaterelated extreme events and other shocks - primarily in developing countries and for poor segments of societies.',
+          'Increasing agricultural productivity without sustainability will increase vulnerability to climaterelated extreme events and other shocks \u2013 primarily in developing countries and for poor segments of societies.',
           'Doubling productivity by applying sustainable agricultural practices would positively affect this target, while productivity based on exploitation and destruction of natural resources would have a negative impact. For example, sustainable practices lead to increased resilience to soil erosion and mitigate damage to crops and livelihoods caused by erosion. On the other hand, agricultural practices based on depletion of natural resources lead to higher probability of erosion and its effects, which have negative impacts to crops and livelihoods, and resilience in general.',
         ],
       },
@@ -3565,7 +4228,7 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          'Extensification of agriculture may increase deforestation. Often accompanied by irrigation, intensification can, in some regions, increase the incidence of waterborne diseases if no hazard mitigation measures are taken, leading to an increase in communicable diseases such as malaria, counteracting its prevention // Increased agricultural production, even at the small scale, can create new pathogen habitats, increase the risk of animal-human disease transmission, damage ecosystems, promote antimicrobial resistance in pathogens and insecticide resistance in vectors, and pollute drinking water, all of which can expose people to the risk of communicable disease. {n.a.} --- Land use conversion for agricultural purposes increase in exposure to malaria risk. [...]. A recent study on the border between Brazil and French Guiana summarised the links between land use change and an increase in exposure to malaria risk: deforested areas provide favourable conditions for malaria vector breeding and feeding, while forest and secondary forest can provide resting sites for adult mosquitoes after feeding. Consequently, the more the forest and secondary forest patches interact with deforested patches, the more the landscape is favourable to vectors and vector-human encounters. {Amazon}',
+          'Extensification of agriculture may increase deforestation. Often accompanied by irrigation, intensification can, in some regions, increase the incidence of waterborne diseases if no hazard mitigation measures are taken, leading to an increase in communicable diseases such as malaria, counteracting its prevention // Increased agricultural production, even at the small scale, can create new pathogen habitats, increase the risk of animal-human disease transmission, damage ecosystems, promote antimicrobial resistance in pathogens and insecticide resistance in vectors, and pollute drinking water, all of which can expose people to the risk of communicable disease. {n.a.} --- Land use conversion for agricultural purposes increase in exposure to malaria risk. [\u2026]. A recent study on the border between Brazil and French Guiana summarised the links between land use change and an increase in exposure to malaria risk: deforested areas provide favourable conditions for malaria vector breeding and feeding, while forest and secondary forest can provide resting sites for adult mosquitoes after feeding. Consequently, the more the forest and secondary forest patches interact with deforested patches, the more the landscape is favourable to vectors and vector-human encounters. {Amazon}',
           'Double agricultural productivity and small farm income (2.3) > May counteract ending epidemics and other communicable diseases (3.3). Negative interaction depending on practices around use of antibiotics in animal husbandry.',
           'The paddy paradox no longer applies. The rice-cultivating share of the local population reports more fever. {Ruhuha} --- Higher living standards in rice-cultivaitng communiteis allow higher investments in malaria prevention (e.g., ITNs, mosquito-proof housing) and treatment [synergy] // Expansion of irrigated rice paddies creates new breeding grounds for Anopheles mosquitoes, increasing the vectos population and thereby malaria infection risk (both indoor and outdoor biting). {Rwanda}',
         ],
@@ -3573,7 +4236,7 @@ export const LinkageData2023 = [
       {
         target: '3.4',
         description: [
-          'Increasing agricultural productivity via conventional agriculture can increase soil and water pollution constraining the reduction of deaths and illness caused by hazardous chemicals. Such chemicals can adversely affect human health, particularly of newborns, but can also affect perinatal death and cancer outcomes in the overall population// Doubling agriculture productivity by mainly focusing on low nutrient and energy-rich foods (calories) will constrain the fight against non-communicable diseases. This interaction is also counterbalanced by targets on nutrition. {n.a.} --- Land use conversion for agricultural purposes increase in exposure to mercury contamination of soil . [...] In the Tapajos Amazon region, conversion of forest to pasture results in soil erosion and the transfer of soil sediments into waterways, causing mercury pollution. Inorganic mercury, which is naturally present in the soil, is then transformed into methylmercury through bacterial activity and enters the aquatic food web, with the highest mercury concentrations occurring in the top predators at the ends of food chains. The majority of riverside dwellers eat fish several times per week. Methylmercury is a neurotoxin, and various studies have reported nervous system dysfunction associated with mercury exposure among these communities. {Amazon}',
+          'Increasing agricultural productivity via conventional agriculture can increase soil and water pollution constraining the reduction of deaths and illness caused by hazardous chemicals. Such chemicals can adversely affect human health, particularly of newborns, but can also affect perinatal death and cancer outcomes in the overall population// Doubling agriculture productivity by mainly focusing on low nutrient and energy-rich foods (calories) will constrain the fight against non-communicable diseases. This interaction is also counterbalanced by targets on nutrition. {n.a.} --- Land use conversion for agricultural purposes increase in exposure to mercury contamination of soil . [\u2026] In the Tapajos Amazon region, conversion of forest to pasture results in soil erosion and the transfer of soil sediments into waterways, causing mercury pollution. Inorganic mercury, which is naturally present in the soil, is then transformed into methylmercury through bacterial activity and enters the aquatic food web, with the highest mercury concentrations occurring in the top predators at the ends of food chains. The majority of riverside dwellers eat fish several times per week. Methylmercury is a neurotoxin, and various studies have reported nervous system dysfunction associated with mercury exposure among these communities. {Amazon}',
         ],
       },
       {
@@ -3587,15 +4250,15 @@ export const LinkageData2023 = [
       {
         target: '7.1',
         description: [
-          "Increasing food productivity and farmers' revenues may enable the increase of renewable energy in the global energy mix via biofuel production. This may also increase access to affordable, reliable and modern energy services [synergy] // Competition over land and water can results in trade-offs. Doubling agricultural production may constrain the use of water at the expense of increasing renewable energy sources (e.g. hydropower) or the use of other water-related energy sources [trade-off].",
+          'Increasing food productivity and farmers\u2019 revenues may enable the increase of renewable energy in the global energy mix via biofuel production. This may also increase access to affordable, reliable and modern energy services [synergy] // Competition over land and water can results in trade-offs. Doubling agricultural production may constrain the use of water at the expense of increasing renewable energy sources (e.g. hydropower) or the use of other water-related energy sources [trade-off].',
           'Access to clean and affordable energy is a key enabler/is crucial in achieving agriculture productivity. // Energy prices influence food prices and therefore, types of energy uses may also impact nutrition. // Meeting the target of ensuring universal access to nutritious and sufficient food and increasing agriculture productivity could increase energy demand along the food supply chain, and this could stress the energy system. There could be some trade -offs among the target of ending hunger and energy production, especially in countries that rely on biofuel to expand energy access (competition for land). [...] However, with holistic thinking and careful planning, agriculture residues and animal dung can be used for energy production, viz. biogas, which can help in promoting renewable energy and increasing the energy efficiency of traditional biomass utilization. This would create synergetic impact [4].',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
         target: '7.2',
         description: [
-          "Increasing food productivity and farmers' revenues may enable the increase of renewable energy in the global energy mix via biofuel production. This may also increase access to affordable, reliable and modern energy services [synergy] // Competition over land and water can results in trade-offs. Doubling agricultural production may constrain the use of water at the expense of increasing renewable energy sources (e.g. hydropower) or the use of other water-related energy sources [trade-off].",
+          'Increasing food productivity and farmers\u2019 revenues may enable the increase of renewable energy in the global energy mix via biofuel production. This may also increase access to affordable, reliable and modern energy services [synergy] // Competition over land and water can results in trade-offs. Doubling agricultural production may constrain the use of water at the expense of increasing renewable energy sources (e.g. hydropower) or the use of other water-related energy sources [trade-off].',
           'Access to clean and affordable energy is a key enabler/is crucial in achieving agriculture productivity. // Energy prices influence food prices and therefore, types of energy uses may also impact nutrition. // Meeting the target of ensuring universal access to nutritious and sufficient food and increasing agriculture productivity could increase energy demand along the food supply chain, and this could stress the energy system. There could be some trade -offs among the target of ending hunger and energy production, especially in countries that rely on biofuel to expand energy access (competition for land). [...] However, with holistic thinking and careful planning, agriculture residues and animal dung can be used for energy production, viz. biogas, which can help in promoting renewable energy and increasing the energy efficiency of traditional biomass utilization. This would create synergetic impact [4].',
           'In many cases, energy and food compete for land and water resources. Growing plants for biofuels, for example, requires land and water that otherwise can be used for agriculture [39,40]. [...] replacing a significant amount of petroleum with ethanol production from corn and biodiesel production from soybean in the US cannot be done without affecting food supplies [41].',
         ],
@@ -3628,6 +4291,14 @@ export const LinkageData2023 = [
         target: '15.8',
         description: [
           'Unintentional use of contaminated seeds or intentional use of alien varieties and breeds to double productivity might negatively affect 15.8.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '5.a',
+        description: [
+          '',
         ],
       },
     ],
@@ -3681,7 +4352,7 @@ export const LinkageData2023 = [
         target: '6.3',
         description: [
           '',
-          'In farming, fertilizers, and pesticides from farm operations find their way into water courses and eventually to lakes or coastal areas where their accumulated effects result in phytoplankton blooms and even eutrophication. [...]. Overall, [...] the growth of organic agriculture [...] should improve the general trend in water quality.',
+          'In farming, fertilizers, and pesticides from farm operations find their way into water courses and eventually to lakes or coastal areas where their accumulated effects result in phytoplankton blooms and even eutrophication. [...]. Overall, [\u2026] the growth of organic agriculture [\u2026] should improve the general trend in water quality.',
           'Sustainable agriculture enables the improvement of water quality by reducing pollution.',
           '',
           '',
@@ -3696,8 +4367,8 @@ export const LinkageData2023 = [
         description: [
           '',
           '',
-          'Agricultural needs plus an easily accessible supply of energy [...] may create a situation where water resources are overused. Areas with food insecurity are often those with the greatest water loss and therefore smart approaches to water use in agriculture are needed (Ringler et al., 2013).',
-          'Quantity and quality of water is crucial for sustainable agriculture. // Increase in sustainable food production practices can help to address water scarcity and meet water efficiency in agriculture and vice -versa // Small poor farmers and their farming practices are vulnerable due to their high reliance on rain -fed agriculture. The extremity and unreliability on the climatic conditions because of climate change could further deteriorate the livelihood of poor and least resilient farmers [65-68]. [...] Effective management of water is crucial to maintain water use efficiency, increase agricultural productivity due to reduced risk of rainfall variability, and opportunity for harvesting multi -cropping and more remunerative cash crops [69].',
+          'Agricultural needs plus an easily accessible supply of energy [\u2026] may create a situation where water resources are overused. Areas with food insecurity are often those with the greatest water loss and therefore smart approaches to water use in agriculture are needed (Ringler et al., 2013).',
+          'Quantity and quality of water is crucial for sustainable agriculture. // Increase in sustainable food production practices can help to address water scarcity and meet water efficiency in agriculture and vice -versa // Small poor farmers and their farming practices are vulnerable due to their high reliance on rain -fed agriculture. The extremity and unreliability on the climatic conditions because of climate change could further deteriorate the livelihood of poor and least resilient farmers [65\u201368]. [...] Effective management of water is crucial to maintain water use efficiency, increase agricultural productivity due to reduced risk of rainfall variability, and opportunity for harvesting multi -cropping and more remunerative cash crops [69].',
           '',
           'Find out more information on the role of context in identifying interlinkages between SDG 2 and 6 (goals and targets) in the publication, which analyses Voluntary National Reviews (VNRs).',
           'Sustainable and efficient water use is interlinked with sustainable and resilient agricultural practices. [...] Sustainable farming, if well managed, can significantly reduce water demands, thus contributing to sustainable water use // strong interdependencies (are mutually supportive).',
@@ -3774,7 +4445,7 @@ export const LinkageData2023 = [
           'The remaining digestate was spread on nearby farm fields, reducing the need for fertilizer.',
           '',
           'In case electricity access for providing that electricity is provided with non carbon neutral sources, 2.4 could have (limited) trade-offs with Target 7.2.',
-          "Increasing food productivity and farmers' revenues may enable the increase of renewable energy in the global energy mix via biofuel production. This may also increase access to affordable, reliable and modern energy services. {n.a.} --- Greater agricultural productivities for all types of crops, particularly bioenergy, can aid the achievement of the renewable energy target by allowing as much bioenergy to be produced on as little land as possible, thereby minimising land use competition. Energy efficiency improvements can also reinforce agricultural productivity by reducing the energy inputs needed. Bioenergy production from agricultural and forest wastes could increase productivity and efficiency in rural areas. {n.a.}",
+          'Increasing food productivity and farmers\u2019 revenues may enable the increase of renewable energy in the global energy mix via biofuel production. This may also increase access to affordable, reliable and modern energy services. {n.a.} --- Greater agricultural productivities for all types of crops, particularly bioenergy, can aid the achievement of the renewable energy target by allowing as much bioenergy to be produced on as little land as possible, thereby minimising land use competition. Energy efficiency improvements can also reinforce agricultural productivity by reducing the energy inputs needed. Bioenergy production from agricultural and forest wastes could increase productivity and efficiency in rural areas. {n.a.}',
           '',
           'Access to clean and affordable energy is a key enabler/is crucial in achieving SDG2. // Energy prices influence food prices and therefore, types of energy uses may also impact nutrition. // Meeting the target of ensuring universal access to nutritious and sufficient food and increasing agriculture productivity could increase energy demand along the food supply chain, and this could stress the energy system. There could be some trade -offs among the target of ending hunger and energy production, especially in countries that rely on biofuel to expand energy access (competition for land). [...] However, with holistic thinking and careful planning, agriculture residues and animal dung can be used for energy production, viz. biogas, which can help in promoting renewable energy and increasing the energy efficiency of traditional biomass utilization. This would create synergetic impact [4]. // Minimizing the dependencies of agriculture sector on fossil fuel by providing access to local renewable energy resources could help to improve food security and decrease environmental impacts.',
           '',
@@ -3785,7 +4456,7 @@ export const LinkageData2023 = [
         description: [
           '',
           '',
-          'Sustainable land management and improving land and soil quality can play a major role in food security and poverty alleviation in urban and peri-urban areas. [...] Peri-urban agriculture is a source of revenue for the poorest households in urban areas.',
+          'Sustainable land management and improving land and soil quality can play a major role in food security and poverty alleviation in urban and peri-urban areas. [\u2026] Peri-urban agriculture is a source of revenue for the poorest households in urban areas.',
           '',
         ],
       },
@@ -4097,7 +4768,7 @@ export const LinkageData2023 = [
         target: '7.1',
         description: [
           '',
-          "Increasing food productivity and farmers' revenues may enable the increase of renewable energy in the global energy mix via biofuel production. This may also increase access to affordable, reliable and modern energy services.",
+          'Increasing food productivity and farmers\u2019 revenues may enable the increase of renewable energy in the global energy mix via biofuel production. This may also increase access to affordable, reliable and modern energy services.',
           'Access to clean and affordable energy is a key enabler/is crucial in achieving better nutrition. // Energy prices influence food prices and therefore, types of energy uses may also impact nutrition. // Meeting the target of ensuring universal access to nutritious and sufficient food and increasing agriculture productivity could increase energy demand along the food supply chain, and this could stress the energy system. There could be some trade -offs among the target of ending hunger and energy production, especially in countries that rely on biofuel to expand energy access (competition for land). [...] However, with holistic thinking and careful planning, agriculture residues and animal dung can be used for energy production, viz. biogas, which can help in promoting renewable energy and increasing the energy efficiency of traditional biomass utilization. This would create synergetic impact [4].',
           '',
         ],
@@ -4105,7 +4776,7 @@ export const LinkageData2023 = [
       {
         target: '7.a',
         description: [
-          'Energy infrastructure aids in the provisioning of food [...] resources.',
+          'Energy infrastructure aids in the provisioning of food [\u2026] resources.',
           '',
         ],
       },
@@ -4119,7 +4790,7 @@ export const LinkageData2023 = [
       {
         target: '1.1',
         description: [
-          'Sustainable land management and improving land and soil quality can play a major role in food security and poverty alleviation in urban and peri-urban areas. [...] Peri-urban agriculture is a source of revenue for the poorest households in urban areas.',
+          'Sustainable land management and improving land and soil quality can play a major role in food security and poverty alleviation in urban and peri-urban areas. [\u2026] Peri-urban agriculture is a source of revenue for the poorest households in urban areas.',
         ],
       },
       {
@@ -4230,6 +4901,20 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '1.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.5',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       1,
       3,
@@ -4243,7 +4928,7 @@ export const LinkageData2023 = [
         description: [
           '',
           '',
-          "[synergy] Countries and communities that maintain their indigenous food systems are better able to conserve local breeds and experience less undernutrition and fewer diet-related diseases (FAO 2010). Half of the breeds of the world's domesticated species have been lost (Mbow et al. 2019). Such species have been used for human consumption for thousands of years (FAO 2010). However, biodiversity loss through anthropogenic drivers of change including urbanization, climate change and the simplification of food consumption [...] is threatening food security, health and nutrition. This occurs not only through the loss of species but also through the loss in quality of local breeds consumed by communities, leading to negative health impacts, including undernutrition. [...] The number of undernourished people in a country increases in tandem with increases in the proportion of local breeds at risk of extinction. // [trade-off prevalence of undernourishment and risk of extinction] unexpected results that are difficult to explain.",
+          '[synergy] Countries and communities that maintain their indigenous food systems are better able to conserve local breeds and experience less undernutrition and fewer diet-related diseases (FAO 2010). Half of the breeds of the world\u2019s domesticated species have been lost (Mbow et al. 2019). Such species have been used for human consumption for thousands of years (FAO 2010). However, biodiversity loss through anthropogenic drivers of change including urbanization, climate change and the simplification of food consumption [\u2026] is threatening food security, health and nutrition. This occurs not only through the loss of species but also through the loss in quality of local breeds consumed by communities, leading to negative health impacts, including undernutrition. [\u2026] The number of undernourished people in a country increases in tandem with increases in the proportion of local breeds at risk of extinction. // [trade-off prevalence of undernourishment and risk of extinction] unexpected results that are difficult to explain.',
         ],
       },
       {
@@ -4256,7 +4941,7 @@ export const LinkageData2023 = [
       {
         target: '2.3',
         description: [
-          'Higher food production [...] may be achieved by expanding the use of agro-chemical and increasing agricultural outputs through larger farms with more mechanization, and the wider use of Genetically Modified Organisms (GMO) (Adenle and Ammann, 2015).However, Target 2.3 constrains this approach by requiring more small-scale producer development which may also reduce environmental degradation and health risks (e.g., Sheahan et al., 2016). This [...] would promote sustainable (organic), smallscale agriculture which can enhance agricultural productivity while reducing environmental impacts and protecting small scale food producers (Rockstr\u00f6m et al., 2017). GMOs carry the added risk that they could threaten the long-term sustainability of plant and animal biodiversity (Azadi et al., 2015), affecting the achievement of target 2.5.',
+          'Higher food production [...] may be achieved by expanding the use of agro-chemical and increasing agricultural outputs through larger farms with more mechanization, and the wider use of Genetically Modified Organisms (GMO) (Adenle and Ammann, 2015).However, Target 2.3 constrains this approach by requiring more small-scale producer development which may also reduce environmental degradation and health risks (e.g., Sheahan et al., 2016). This [\u2026] would promote sustainable (organic), smallscale agriculture which can enhance agricultural productivity while reducing environmental impacts and protecting small scale food producers (Rockstr\u00f6m et al., 2017). GMOs carry the added risk that they could threaten the long-term sustainability of plant and animal biodiversity (Azadi et al., 2015), affecting the achievement of target 2.5.',
           '',
           'Autochthonous genetic diversity is essential source of genetic material which is used in improvement of current varieties, and their resilience to pests and climatic shocks.',
         ],
@@ -4363,7 +5048,7 @@ export const LinkageData2023 = [
       {
         target: '7.a',
         description: [
-          'Energy infrastructure aids in the provisioning of food [...] resources.',
+          'Energy infrastructure aids in the provisioning of food [\u2026] resources.',
           '',
         ],
       },
@@ -4397,7 +5082,21 @@ export const LinkageData2023 = [
       {
         target: '2.1',
         description: [
-          "Unexpected results that are difficult to explain. {Global} --- [synergy] Countries and communities that maintain their indigenous food systems are better able to conserve local breeds and experience less undernutrition and fewer diet-related diseases (FAO 2010). Half of the breeds of the world's domesticated species have been lost (Mbow et al. 2019). Such species have been used for human consumption for thousands of years (FAO 2010). However, biodiversity loss through anthropogenic drivers of change including urbanization, climate change and the simplification of food consumption [...] is threatening food security, health and nutrition. This occurs not only through the loss of species but also through the loss in quality of local breeds consumed by communities, leading to negative health impacts, including undernutrition. [...] The number of undernourished people in a country increases in tandem with increases in the proportion of local breeds at risk of extinction. // [trade-off prevalence of undernourishment and risk of extinction] unexpected results that are difficult to explain. {Global}",
+          'Unexpected results that are difficult to explain. {Global} --- [synergy] Countries and communities that maintain their indigenous food systems are better able to conserve local breeds and experience less undernutrition and fewer diet-related diseases (FAO 2010). Half of the breeds of the world\u2019s domesticated species have been lost (Mbow et al. 2019). Such species have been used for human consumption for thousands of years (FAO 2010). However, biodiversity loss through anthropogenic drivers of change including urbanization, climate change and the simplification of food consumption [\u2026] is threatening food security, health and nutrition. This occurs not only through the loss of species but also through the loss in quality of local breeds consumed by communities, leading to negative health impacts, including undernutrition. [\u2026] The number of undernourished people in a country increases in tandem with increases in the proportion of local breeds at risk of extinction. // [trade-off prevalence of undernourishment and risk of extinction] unexpected results that are difficult to explain. {Global}',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '15.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.3',
+        description: [
+          '',
         ],
       },
     ],
@@ -4725,7 +5424,7 @@ export const LinkageData2023 = [
       {
         target: '7.a',
         description: [
-          'Energy infrastructure aids in the provisioning of food [...] resources.',
+          'Energy infrastructure aids in the provisioning of food [\u2026] resources.',
           '',
         ],
       },
@@ -4751,7 +5450,7 @@ export const LinkageData2023 = [
       {
         target: '5.b',
         description: [
-          "Access to technology is an important lever to enable women's empowerment in agriculture and overall - the two means of implementation mutually reinforce each other.",
+          'Access to technology is an important lever to enable women\u2019s empowerment in agriculture and overall \u2013 the two means of implementation mutually reinforce each other.',
         ],
       },
       {
@@ -4795,11 +5494,37 @@ export const LinkageData2023 = [
       {
         target: '2.b',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
         target: '6.b',
+        description: [
+          '',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '6.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.a',
         description: [
           '',
         ],
@@ -4933,82 +5658,82 @@ export const LinkageData2023 = [
       {
         target: '2.1',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
         target: '2.2',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
         target: '2.3',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
         target: '2.a',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
         target: '2.c',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
         target: '6.1',
         description: [
-          '[Water resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Water resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
         target: '6.2',
         description: [
-          '[Water resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Water resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
         target: '6.6',
         description: [
-          '[Water resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Water resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
         target: '6.a',
         description: [
-          '[Water resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Water resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
         target: '7.1',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
         target: '7.2',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
         target: '7.3',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
         target: '7.b',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
@@ -5018,6 +5743,7 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [],
     coordinates: [
       1,
       6,
@@ -5130,7 +5856,7 @@ export const LinkageData2023 = [
       {
         target: '7.a',
         description: [
-          'Energy infrastructure aids in the provisioning of food [...] resources.',
+          'Energy infrastructure aids in the provisioning of food [\u2026] resources.',
           '',
         ],
       },
@@ -5157,40 +5883,48 @@ export const LinkageData2023 = [
       {
         target: '15.2',
         description: [
-          'Easy access to markets and proper functioning of food commodity markets [...] may lead to deforestation.',
+          'Easy access to markets and proper functioning of food commodity markets [\u2026] may lead to deforestation.',
         ],
       },
       {
         target: '2.1',
         description: [
           '',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
         target: '2.2',
         description: [
           '',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
         target: '2.3',
         description: [
           '',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
         target: '2.b',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
         target: '10.a',
         description: [
           '[In low-income countries]Government assistance to tradable agriculture [...] sometimes occurs in the form of trade protection such as through import tariffs or export subsidies. In the short run, this support can lead to increased consumer food prices, affecting food security, nutritional status, and poverty.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '9.2',
+        description: [
+          '',
         ],
       },
     ],
@@ -5229,13 +5963,13 @@ export const LinkageData2023 = [
       {
         target: '5.1',
         description: [
-          "Access to maternal health (3.1) and sexual and reproductive health care services (3.7) <> Enables and enabled by women's full participation in economic and political life (5.5) and ending discrimination against women (5.1). Generally applicable.",
+          'Access to maternal health (3.1) and sexual and reproductive health care services (3.7) <> Enables and enabled by women\u2019s full participation in economic and political life (5.5) and ending discrimination against women (5.1). Generally applicable.',
         ],
       },
       {
         target: '5.5',
         description: [
-          "Access to maternal health (3.1) and sexual and reproductive health care services (3.7) <> Enables and enabled by women's full participation in economic and political life (5.5) and ending discrimination against women (5.1). Generally applicable. Women's full participation in economic and political life (5.5) < Better maternal health (3.1) enables women to participate in the labour force. Mostly a factor in low-income countries, but generally applicable.",
+          'Access to maternal health (3.1) and sexual and reproductive health care services (3.7) <> Enables and enabled by women\u2019s full participation in economic and political life (5.5) and ending discrimination against women (5.1). Generally applicable. Women\u2019s full participation in economic and political life (5.5) < Better maternal health (3.1) enables women to participate in the labour force. Mostly a factor in low-income countries, but generally applicable.',
         ],
       },
       {
@@ -5276,7 +6010,7 @@ export const LinkageData2023 = [
       {
         target: '6.3',
         description: [
-          'An important emerging issue is the overuse of antibiotics to fight disease, which results in the build-up of antimicrobial resistance. Antibiotic residuals and resistant bacteria are observed in freshwaters. // Efforts to combat illness under Goal 3 are expected to increase health care and stimulate antibiotic use, especially in developing countries. Overuse of antibiotics and other medicines used for addressing illnesses of humans and animals has caused the spread of antimicrobial resistance, the ability of bacteria and other organisms to resist elimination by conventional antibiotics and other antimicrobial agents. Contamination of surface waters. To reduce this trade-off, it is necessary to reduce the flux of antibiotics and resistant organisms to the water environment. [...] Controlling their entry into the water environment by expanding or upgrading wastewater treatment.',
+          'An important emerging issue is the overuse of antibiotics to fight disease, which results in the build-up of antimicrobial resistance. Antibiotic residuals and resistant bacteria are observed in freshwaters. // Efforts to combat illness under Goal 3 are expected to increase health care and stimulate antibiotic use, especially in developing countries. Overuse of antibiotics and other medicines used for addressing illnesses of humans and animals has caused the spread of antimicrobial resistance, the ability of bacteria and other organisms to resist elimination by conventional antibiotics and other antimicrobial agents. Contamination of surface waters. To reduce this trade-off, it is necessary to reduce the flux of antibiotics and resistant organisms to the water environment. [\u2026] Controlling their entry into the water environment by expanding or upgrading wastewater treatment.',
         ],
       },
       {
@@ -5289,6 +6023,243 @@ export const LinkageData2023 = [
         target: '7.2',
         description: [
           'In case electricity access for providing that electricity is provided with non carbon neutral sources, 3.1 could have (limited) trade-offs with Target 7.2.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '1.3',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '5.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.b',
+        description: [
+          'Women and girls. {n.a.}',
+        ],
+      },
+      {
+        target: '17.18',
+        description: [
+          'Policy. {n.a.}',
+        ],
+      },
+      {
+        target: '2.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.c',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.6',
+        description: [
+          '',
         ],
       },
     ],
@@ -5329,7 +6300,7 @@ export const LinkageData2023 = [
         description: [
           'Target calls for action in sanitation for environments that are safe from pathogens [call for action] // Multiple synergies, including in safe sanitation in hospitals, and for the development of handwashing facilities and practices [synergy].',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports target. Implementing WASH alleviates diarrhoea and malnutrition, which are leading causes of death among children under five. [...] reducing the risk of water-borne diseases.',
-          "Improved access to safe water in home, health-care facilities, and schools will directly support several targets on nutrition and health. {Global} --- A decrease of the 'proportion of population practicing open defecation' leads to a decline of the 'under-five mortality rate'. High income countries have a high density of sanitation services and low under-five mortality rates, whereas low-income countries (LIC) exhibit a lower density of sanitation services and higher under-five mortality rates [...] it is clear that LIC need capacity building on clean sanitation solutions, resulting in synergistic effects on improved children's health. {Global}",
+          "Improved access to safe water in home, health-care facilities, and schools will directly support several targets on nutrition and health. {Global} --- A decrease of the \u201cproportion of population practicing open defecation\u201d leads to a decline of the \u201cunder-five mortality rate\u201d. High income countries have a high density of sanitation services and low under-five mortality rates, whereas low-income countries (LIC) exhibit a lower density of sanitation services and higher under-five mortality rates [...] it is clear that LIC need capacity building on clean sanitation solutions, resulting in synergistic effects on improved children's health. {Global}",
         ],
       },
       {
@@ -5378,6 +6349,189 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '17.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.5',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '1.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.2',
+        description: [
+          'Gender-specific. {n.a.}',
+        ],
+      },
+      {
+        target: '5.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '7.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '7.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.1',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       2,
       1,
@@ -5389,13 +6543,13 @@ export const LinkageData2023 = [
       {
         target: '12.4',
         description: [
-          "Efforts to end NTDs align with this target in two important ways, the first being the responsible production, use and disposal of pesticides. Insecticide resistance [...] is a major cause of concern for NTD and malaria programmes [147-149]. WHO's work in this area focuses on the WHO Pesticide Evaluation Scheme (WHOPES) [...] established the Global Collaboration for the Development of Pesticides for Public Health (GCDPP) in response to the need to stimulate the development of alternative insecticides and application technologies [150] [...] Pesticide product development and the sound management of pesticides, to discuss and strengthen collaboration on critical vector control issues // Waste disposal, focusing on the sustainable production and recycling of rubber tyres, plastic bottles and other containers as a part of vector control efforts designed to halt the global spread of Aedes mosquitos [151, 152]. Ae. aegypti proliferates in [...] used tyres, discarded food and beverage containers, blocked gutters and buildings under construction.",
+          'Efforts to end NTDs align with this target in two important ways, the first being the responsible production, use and disposal of pesticides. Insecticide resistance [\u2026] is a major cause of concern for NTD and malaria programmes [147\u2013149]. WHO\u2019s work in this area focuses on the WHO Pesticide Evaluation Scheme (WHOPES) [\u2026] established the Global Collaboration for the Development of Pesticides for Public Health (GCDPP) in response to the need to stimulate the development of alternative insecticides and application technologies [150] [\u2026] Pesticide product development and the sound management of pesticides, to discuss and strengthen collaboration on critical vector control issues // Waste disposal, focusing on the sustainable production and recycling of rubber tyres, plastic bottles and other containers as a part of vector control efforts designed to halt the global spread of Aedes mosquitos [151, 152]. Ae. aegypti proliferates in [\u2026] used tyres, discarded food and beverage containers, blocked gutters and buildings under construction.',
         ],
       },
       {
         target: '3.8',
         description: [
-          'Ensuring that essential services reach all those who need them is at the heart of NTD response efforts [48]. [...] NTD strategies, programmes and interventions are closely aligned with UHC goals or have components that have relevance for UHC. These include: defining and delivering an essential package of quality interventions across the full continuum of services; expanding coverage of services to ensure they reach all who need them; and providing financial protection to minimize out-of-pocket (OOP) payments and financial hardship. The notion of equitable access is woven into the fabric of the NTD agenda, serving as a constant reminder that costeffectiveness is not the sole criterion for prioritisation of services, and that explicit consideration must be given to the most disadvantaged groups, including the lowincome, rural and marginalised communities most at risk of NTDs.',
+          'Ensuring that essential services reach all those who need them is at the heart of NTD response efforts [48]. [\u2026] NTD strategies, programmes and interventions are closely aligned with UHC goals or have components that have relevance for UHC. These include: defining and delivering an essential package of quality interventions across the full continuum of services; expanding coverage of services to ensure they reach all who need them; and providing financial protection to minimize out-of-pocket (OOP) payments and financial hardship. The notion of equitable access is woven into the fabric of the NTD agenda, serving as a constant reminder that costeffectiveness is not the sole criterion for prioritisation of services, and that explicit consideration must be given to the most disadvantaged groups, including the lowincome, rural and marginalised communities most at risk of NTDs.',
         ],
       },
       {
@@ -5407,55 +6561,55 @@ export const LinkageData2023 = [
       {
         target: '1.3',
         description: [
-          "Eradicating poverty [...] is a prerequisite to improving health. Poverty and HIV have a complex and bi-directional relationship; both are influenced by the same systemic inequalities and power dynamics. Healthcare services, schools and sanitation are often inaccessible for people living in poverty [...]. Poverty disproportionately affects women [...]. Poverty can also be a driver of transactional sex - the exchanging of sex for material goods including food, gifts and cash - which in turn increases the risk of HIV acquisition. Social protection systems, which attempt to reduce social and economic vulnerability of the most marginalized groups, [...] can reduce HIV risk behaviours, as well as improve adherence to ART for adolescents. While cash transfers alone may have some impact on HIV risk, combining cash with 'care' interventions - psychosocial support, such as from parents or teachers - more effectively reduce HIV risk for male and female adolescents. Social protection systems have been shown to improve adolescent health outcomes [...]. There is clear potential for organizations working on poverty reduction to use social protection interventions to support the achievement of [the end of the AIDS epidemics] for adolescents by reducing HIV risk behaviours and increasing treatment adherence.",
+          'Eradicating poverty [\u2026] is a prerequisite to improving health. Poverty and HIV have a complex and bi-directional relationship; both are influenced by the same systemic inequalities and power dynamics. Healthcare services, schools and sanitation are often inaccessible for people living in poverty [\u2026]. Poverty disproportionately affects women [\u2026]. Poverty can also be a driver of transactional sex \u2013 the exchanging of sex for material goods including food, gifts and cash \u2013 which in turn increases the risk of HIV acquisition. Social protection systems, which attempt to reduce social and economic vulnerability of the most marginalized groups, [\u2026] can reduce HIV risk behaviours, as well as improve adherence to ART for adolescents. While cash transfers alone may have some impact on HIV risk, combining cash with \u201ccare\u201d interventions \u2013 psychosocial support, such as from parents or teachers \u2013 more effectively reduce HIV risk for male and female adolescents. Social protection systems have been shown to improve adolescent health outcomes [\u2026]. There is clear potential for organizations working on poverty reduction to use social protection interventions to support the achievement of [the end of the AIDS epidemics] for adolescents by reducing HIV risk behaviours and increasing treatment adherence.',
         ],
       },
       {
         target: '10.2',
         description: [
-          'Transgender women may be more likely to experience intimate partner violence and are almost 49 times more likely to acquire HIV, yet are often left out of programming and decision-making. // Aim to equip young people with the skills and resources to design and implement programmes which are bottom-up and youth-led [...] This includes technical as well as financial support for community- led and youth-led service delivery. Establishing mechanisms for sustainable and meaningful youth engagement in development furthers [...] political inclusion, while also supporting the achievement of [the end of the AIDS epidemics] in a comprehensive and collaborative way. We must pay particular attention to facilitating participation of young people living with, and most affected by, HIV, including adolescent girls and young women, LGBTI people, people with disabilities and migrants, who are further excluded from participating in decision making. Efforts should be made to fit engagement opportunities into the daily lives of young people, for example at schools, clinics and community centres.',
+          'Transgender women may be more likely to experience intimate partner violence and are almost 49 times more likely to acquire HIV, yet are often left out of programming and decision-making. // Aim to equip young people with the skills and resources to design and implement programmes which are bottom-up and youth-led [\u2026] This includes technical as well as financial support for community- led and youth-led service delivery. Establishing mechanisms for sustainable and meaningful youth engagement in development furthers [\u2026] political inclusion, while also supporting the achievement of [the end of the AIDS epidemics] in a comprehensive and collaborative way. We must pay particular attention to facilitating participation of young people living with, and most affected by, HIV, including adolescent girls and young women, LGBTI people, people with disabilities and migrants, who are further excluded from participating in decision making. Efforts should be made to fit engagement opportunities into the daily lives of young people, for example at schools, clinics and community centres.',
         ],
       },
       {
         target: '10.3',
         description: [
-          "Service delivery, advocacy and programming for young people must take place within an enabling legal and policy environment that recognizes young people's right to live free from violence and discrimination, and to safely exercise their rights, including their reproductive rights. Progressive laws, which protect human rights and ensure access to clinical care and other forms of support, are necessary to end the HIV epidemic. The elimination of discriminatory laws and policies reduce inequalities of outcome. In 72 countries, young people under a certain age must seek parental consent before accessing one or more SRHR service. Such policies have been widely condemned by the global health community, including the Committee on the Rights of the Child, and act as a significant barrier to young people's access to care. Globally, 44% of new HIV infections occur in key populations - sex workers, people who inject drugs, transgender people and men who have sex with men - and their sexual partners. Criminalization of behaviours like sex work and drug use perpetuates stigma and restricts uptake of services. HIV programming should therefore include political advocacy at the highest levels to repeal and reform all laws that restrict these rights.",
+          'Service delivery, advocacy and programming for young people must take place within an enabling legal and policy environment that recognizes young people\u2019s right to live free from violence and discrimination, and to safely exercise their rights, including their reproductive rights. Progressive laws, which protect human rights and ensure access to clinical care and other forms of support, are necessary to end the HIV epidemic. The elimination of discriminatory laws and policies reduce inequalities of outcome. In 72 countries, young people under a certain age must seek parental consent before accessing one or more SRHR service. Such policies have been widely condemned by the global health community, including the Committee on the Rights of the Child, and act as a significant barrier to young people\u2019s access to care. Globally, 44% of new HIV infections occur in key populations \u2013 sex workers, people who inject drugs, transgender people and men who have sex with men \u2013 and their sexual partners. Criminalization of behaviours like sex work and drug use perpetuates stigma and restricts uptake of services. HIV programming should therefore include political advocacy at the highest levels to repeal and reform all laws that restrict these rights.',
         ],
       },
       {
         target: '16.6',
         description: [
-          "HIV programming should [...] strengthen justice systems and improve young people's access to formal redress and accountability mechanisms for rights violations.",
+          'HIV programming should [\u2026] strengthen justice systems and improve young people\u2019s access to formal redress and accountability mechanisms for rights violations.',
         ],
       },
       {
         target: '16.7',
         description: [
-          "As we work towards ending the HIV epidemic for adolescents and young people, it is our responsibility to use a bottom-up approach, ensuring that advocacy and programming reflects the voices of young people who are most at risk of HIV. Meaningful youth engagement in design and delivery of HIV interventions can lead to increased acceptance from other young people, as well as higher levels of uptake and effectiveness. It also fulfils young people's right under the Convention on the Rights of the Child to freely express their views on topics that affect them, and to have those views listened to. [...] Aim to equip young people with the skills and resources to design and implement programmes which are bottom-up and youth-led [...] This includes technical as well as financial support for community- led and youth-led service delivery. Establishing mechanisms for sustainable and meaningful youth engagement in development furthers [...] political inclusion, while also supporting the achievement of [the end of the AIDS epidemics] in a comprehensive and collaborative way. We must pay particular attention to facilitating participation of young people living with, and most affected by, HIV, including adolescent girls and young women, LGBTI people, people with disabilities and migrants, who are further excluded from participating in decision making. Efforts should be made to fit engagement opportunities into the daily lives of young people, for example at schools, clinics and community centres.",
+          'As we work towards ending the HIV epidemic for adolescents and young people, it is our responsibility to use a bottom-up approach, ensuring that advocacy and programming reflects the voices of young people who are most at risk of HIV. Meaningful youth engagement in design and delivery of HIV interventions can lead to increased acceptance from other young people, as well as higher levels of uptake and effectiveness. It also fulfils young people\u2019s right under the Convention on the Rights of the Child to freely express their views on topics that affect them, and to have those views listened to. [\u2026] Aim to equip young people with the skills and resources to design and implement programmes which are bottom-up and youth-led [\u2026] This includes technical as well as financial support for community- led and youth-led service delivery. Establishing mechanisms for sustainable and meaningful youth engagement in development furthers [\u2026] political inclusion, while also supporting the achievement of [the end of the AIDS epidemics] in a comprehensive and collaborative way. We must pay particular attention to facilitating participation of young people living with, and most affected by, HIV, including adolescent girls and young women, LGBTI people, people with disabilities and migrants, who are further excluded from participating in decision making. Efforts should be made to fit engagement opportunities into the daily lives of young people, for example at schools, clinics and community centres.',
         ],
       },
       {
         target: '17.18',
         description: [
-          "We will not end AIDS among young people without an accurate and comprehensive picture of what is going on in young people's lives, the factors that increase their risk and vulnerability to HIV and violence, and the key barriers to progress. There is an urgent need for data on young people - in particular 10 to 14 and 15 to 19 year olds - that is disaggregated by age, sex and key population status. It is also important to support young people to develop skills to collect and analyze their own data, as this can give insight into their lives that is not reflected in large scale surveys, and also allows a transition to the third lens of youth engagement, with young people designing and implementing programmes based on their unique needs and experiences.",
+          'We will not end AIDS among young people without an accurate and comprehensive picture of what is going on in young people\u2019s lives, the factors that increase their risk and vulnerability to HIV and violence, and the key barriers to progress. There is an urgent need for data on young people \u2013 in particular 10 to 14 and 15 to 19 year olds \u2013 that is disaggregated by age, sex and key population status. It is also important to support young people to develop skills to collect and analyze their own data, as this can give insight into their lives that is not reflected in large scale surveys, and also allows a transition to the third lens of youth engagement, with young people designing and implementing programmes based on their unique needs and experiences.',
         ],
       },
       {
         target: '3.7',
         description: [
-          "Young people's access to SRH and family planning services can be improved by combining these services with HIV prevention, treatment and support. // Comprehensive sexuality education (CSE) is a crucial intervention for the HIV response. // Links between HIV and sexual and reproductive health and rights (SRHR), are widely acknowledged. Poor sexual health has many of the same structural drivers as HIV, including gender-based violence, inequality and criminalization of behaviours including same-sex relationships, sex work and drug use. Bi-directional integration of HIV and SRHR programmes can lead to increased uptake of services, increased condom use, better HIV testing outcomes and reduction in HIV-related stigma, as well increasing cost-effectiveness. Integration of HIV services into maternal health and family planning services may also be a useful entry point for women. For young people, integrating HIV and SRHR services has been shown to improve health outcomes due to increased uptake of services, the ability to access multiple services at one time, and improved healthcare provider attitudes.",
+          'Young people\u2019s access to SRH and family planning services can be improved by combining these services with HIV prevention, treatment and support. // Comprehensive sexuality education (CSE) is a crucial intervention for the HIV response. // Links between HIV and sexual and reproductive health and rights (SRHR), are widely acknowledged. Poor sexual health has many of the same structural drivers as HIV, including gender-based violence, inequality and criminalization of behaviours including same-sex relationships, sex work and drug use. Bi-directional integration of HIV and SRHR programmes can lead to increased uptake of services, increased condom use, better HIV testing outcomes and reduction in HIV-related stigma, as well increasing cost-effectiveness. Integration of HIV services into maternal health and family planning services may also be a useful entry point for women. For young people, integrating HIV and SRHR services has been shown to improve health outcomes due to increased uptake of services, the ability to access multiple services at one time, and improved healthcare provider attitudes.',
         ],
       },
       {
         target: '4.1',
         description: [
-          'Strengthening education systems can have significant impacts on HIV. [...] Young women who had missed a school grade or who had missed more than 4 days of school in the last month were significantly more likely to be living with HIV than those who had not, indicating that remaining in school can protect young girls against HIV infection. [...] Formal education is a key pathway to economic empowerment for young women and girls, contributing to higher self-esteem, increased uptake of SRHR services, and delayed marriage and childbirth. However, there are immense economic and social barriers that affect school attendance, especially for young girls who may be forced into early marriage or domestic work. To end the HIV epidemic among adolescents and youth, investments in education, and in addressing the structural barriers that keep young girls out of school, are therefore critical. {n.a.} --- Increased educational attainment at neighbourhood level was linked to lower HIV prevalence among young women. {Zambia}',
+          'Strengthening education systems can have significant impacts on HIV. [\u2026] Young women who had missed a school grade or who had missed more than 4 days of school in the last month were significantly more likely to be living with HIV than those who had not, indicating that remaining in school can protect young girls against HIV infection. [\u2026] Formal education is a key pathway to economic empowerment for young women and girls, contributing to higher self-esteem, increased uptake of SRHR services, and delayed marriage and childbirth. However, there are immense economic and social barriers that affect school attendance, especially for young girls who may be forced into early marriage or domestic work. To end the HIV epidemic among adolescents and youth, investments in education, and in addressing the structural barriers that keep young girls out of school, are therefore critical. {n.a.} --- Increased educational attainment at neighbourhood level was linked to lower HIV prevalence among young women. {Zambia}',
         ],
       },
       {
         target: '4.7',
         description: [
-          'Strengthening education systems can have significant impacts on HIV. [...] Despite the fact that AIDS is a leading cause of death for young people globally, education on HIV is dangerously inadequate. Only 36% of young men and 30% of young women aged 15 to 24 have comprehensive knowledge of HIV and how to prevent it. Comprehensive sexuality education (CSE) is a crucial intervention for the HIV response[...]. CSE can contribute to reducing sexually transmitted infections (including HIV) and unintended pregnancy, increasing condom use, increasing self-esteem, and promoting gender equality and more equitable social norms, which in turn can improve health outcomes. We must expand access to CSE, in particular for young women and girls, key populations and out-of-school youth, as this is a key pathway to prevent HIV, reduce HIV stigma and link young people to care and support. Engaging young people in the design, implementation and evaluation of CSE programmes can ensure that material is taught in age appropriate, culturally sensitive ways, which adequately meet the needs of young people.',
+          'Strengthening education systems can have significant impacts on HIV. [\u2026] Despite the fact that AIDS is a leading cause of death for young people globally, education on HIV is dangerously inadequate. Only 36% of young men and 30% of young women aged 15 to 24 have comprehensive knowledge of HIV and how to prevent it. Comprehensive sexuality education (CSE) is a crucial intervention for the HIV response[\u2026]. CSE can contribute to reducing sexually transmitted infections (including HIV) and unintended pregnancy, increasing condom use, increasing self-esteem, and promoting gender equality and more equitable social norms, which in turn can improve health outcomes. We must expand access to CSE, in particular for young women and girls, key populations and out-of-school youth, as this is a key pathway to prevent HIV, reduce HIV stigma and link young people to care and support. Engaging young people in the design, implementation and evaluation of CSE programmes can ensure that material is taught in age appropriate, culturally sensitive ways, which adequately meet the needs of young people.',
         ],
       },
       {
@@ -5467,13 +6621,13 @@ export const LinkageData2023 = [
       {
         target: '5.3',
         description: [
-          'It will be impossible to end AIDS without addressing gender inequality, a primary structural driver of the epidemic. [...] Girls forced into early marriage have restricted access to education and employment, and usually do not have the power to negotiate safe sex, increasing their risk and vulnerability to HIV and other STIs.',
+          'It will be impossible to end AIDS without addressing gender inequality, a primary structural driver of the epidemic. [\u2026] Girls forced into early marriage have restricted access to education and employment, and usually do not have the power to negotiate safe sex, increasing their risk and vulnerability to HIV and other STIs.',
         ],
       },
       {
         target: '5.6',
         description: [
-          'Transgender women may be more likely to experience intimate partner violence and are almost 49 times more likely to acquire HIV, yet are often left out of programming and decision-making. Gender equality for women and for transgender, intersex and non-binary people is central to ending the AIDS epidemic, and the importance of tackling these gendered barriers to sexual and reproductive health information and services cannot be overstated. [...] HIV programming must understand how gender inequalities influence the HIV epidemic, and how women and girls seek out HIV prevention, testing and treatment services. // Links between HIV and sexual and reproductive health and rights (SRHR), are widely acknowledged. Poor sexual health has many of the same structural drivers as HIV, including gender-based violence, inequality and criminalization of behaviours including same-sex relationships, sex work and drug use. Bi-directional integration of HIV and SRHR programmes can lead to increased uptake of services, increased condom use, better HIV testing outcomes and reduction in HIV-related stigma, as well increasing cost-effectiveness. Integration of HIV services into maternal health and family planning services may also be a useful entry point for women. For young people, integrating HIV and SRHR services has been shown to improve health outcomes due to increased uptake of services, the ability to access multiple services at one time, and improved healthcare provider attitudes.',
+          'Transgender women may be more likely to experience intimate partner violence and are almost 49 times more likely to acquire HIV, yet are often left out of programming and decision-making. Gender equality for women and for transgender, intersex and non-binary people is central to ending the AIDS epidemic, and the importance of tackling these gendered barriers to sexual and reproductive health information and services cannot be overstated. [\u2026] HIV programming must understand how gender inequalities influence the HIV epidemic, and how women and girls seek out HIV prevention, testing and treatment services. // Links between HIV and sexual and reproductive health and rights (SRHR), are widely acknowledged. Poor sexual health has many of the same structural drivers as HIV, including gender-based violence, inequality and criminalization of behaviours including same-sex relationships, sex work and drug use. Bi-directional integration of HIV and SRHR programmes can lead to increased uptake of services, increased condom use, better HIV testing outcomes and reduction in HIV-related stigma, as well increasing cost-effectiveness. Integration of HIV services into maternal health and family planning services may also be a useful entry point for women. For young people, integrating HIV and SRHR services has been shown to improve health outcomes due to increased uptake of services, the ability to access multiple services at one time, and improved healthcare provider attitudes.',
         ],
       },
       {
@@ -5582,7 +6736,7 @@ export const LinkageData2023 = [
       {
         target: '6.3',
         description: [
-          'An important emerging issue is the overuse of antibiotics to fight disease, which results in the build-up of antimicrobial resistance. Antibiotic residuals and resistant bacteria are observed in freshwaters. // Efforts to combat illness under Goal 3 are expected to increase health care and stimulate antibiotic use, especially in developing countries. Overuse of antibiotics and other medicines used for addressing illnesses of humans and animals has caused the spread of antimicrobial resistance, the ability of bacteria and other organisms to resist elimination by conventional antibiotics and other antimicrobial agents. Contamination of surface waters. To reduce this trade-off, it is necessary to reduce the flux of antibiotics and resistant organisms to the water environment. [...] Controlling their entry into the water environment by expanding or upgrading wastewater treatment.',
+          'An important emerging issue is the overuse of antibiotics to fight disease, which results in the build-up of antimicrobial resistance. Antibiotic residuals and resistant bacteria are observed in freshwaters. // Efforts to combat illness under Goal 3 are expected to increase health care and stimulate antibiotic use, especially in developing countries. Overuse of antibiotics and other medicines used for addressing illnesses of humans and animals has caused the spread of antimicrobial resistance, the ability of bacteria and other organisms to resist elimination by conventional antibiotics and other antimicrobial agents. Contamination of surface waters. To reduce this trade-off, it is necessary to reduce the flux of antibiotics and resistant organisms to the water environment. [\u2026] Controlling their entry into the water environment by expanding or upgrading wastewater treatment.',
         ],
       },
       {
@@ -5611,6 +6765,189 @@ export const LinkageData2023 = [
       },
       {
         target: '8.1',
+        description: [
+          '',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '1.3',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '10.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '7.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.1',
         description: [
           '',
         ],
@@ -5678,7 +7015,238 @@ export const LinkageData2023 = [
       {
         target: '6.3',
         description: [
-          'An important emerging issue is the overuse of antibiotics to fight disease, which results in the build-up of antimicrobial resistance. Antibiotic residuals and resistant bacteria are observed in freshwaters. // Efforts to combat illness under Goal 3 are expected to increase health care and stimulate antibiotic use, especially in developing countries. Overuse of antibiotics and other medicines used for addressing illnesses of humans and animals has caused the spread of antimicrobial resistance, the ability of bacteria and other organisms to resist elimination by conventional antibiotics and other antimicrobial agents. Contamination of surface waters. To reduce this trade-off, it is necessary to reduce the flux of antibiotics and resistant organisms to the water environment. [...] Controlling their entry into the water environment by expanding or upgrading wastewater treatment.',
+          'An important emerging issue is the overuse of antibiotics to fight disease, which results in the build-up of antimicrobial resistance. Antibiotic residuals and resistant bacteria are observed in freshwaters. // Efforts to combat illness under Goal 3 are expected to increase health care and stimulate antibiotic use, especially in developing countries. Overuse of antibiotics and other medicines used for addressing illnesses of humans and animals has caused the spread of antimicrobial resistance, the ability of bacteria and other organisms to resist elimination by conventional antibiotics and other antimicrobial agents. Contamination of surface waters. To reduce this trade-off, it is necessary to reduce the flux of antibiotics and resistant organisms to the water environment. [\u2026] Controlling their entry into the water environment by expanding or upgrading wastewater treatment.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '1.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '12.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '13.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '13.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '13.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.1',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '16.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.c',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.1',
+        description: [
+          '',
         ],
       },
     ],
@@ -5754,6 +7322,104 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '1.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.5',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       2,
       4,
@@ -5782,6 +7448,21 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '11.2',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '9.1',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       2,
       5,
@@ -5793,7 +7474,7 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          "Young people's access to SRH and family planning services can be improved by combining these services with HIV prevention, treatment and support. // Comprehensive sexuality education (CSE) is a crucial intervention for the HIV response. // Links between HIV and sexual and reproductive health and rights (SRHR), are widely acknowledged. Poor sexual health has many of the same structural drivers as HIV, including gender-based violence, inequality and criminalization of behaviours including same-sex relationships, sex work and drug use. Bi-directional integration of HIV and SRHR programmes can lead to increased uptake of services, increased condom use, better HIV testing outcomes and reduction in HIV-related stigma, as well increasing cost-effectiveness. Integration of HIV services into maternal health and family planning services may also be a useful entry point for women. For young people, integrating HIV and SRHR services has been shown to improve health outcomes due to increased uptake of services, the ability to access multiple services at one time, and improved healthcare provider attitudes.",
+          'Young people\u2019s access to SRH and family planning services can be improved by combining these services with HIV prevention, treatment and support. // Comprehensive sexuality education (CSE) is a crucial intervention for the HIV response. // Links between HIV and sexual and reproductive health and rights (SRHR), are widely acknowledged. Poor sexual health has many of the same structural drivers as HIV, including gender-based violence, inequality and criminalization of behaviours including same-sex relationships, sex work and drug use. Bi-directional integration of HIV and SRHR programmes can lead to increased uptake of services, increased condom use, better HIV testing outcomes and reduction in HIV-related stigma, as well increasing cost-effectiveness. Integration of HIV services into maternal health and family planning services may also be a useful entry point for women. For young people, integrating HIV and SRHR services has been shown to improve health outcomes due to increased uptake of services, the ability to access multiple services at one time, and improved healthcare provider attitudes.',
           'Targets around reproductive and sexual healthcare provision will assist in reducing maternal mortality and help control communicable disease.',
         ],
       },
@@ -5824,13 +7505,13 @@ export const LinkageData2023 = [
       {
         target: '5.1',
         description: [
-          "Access to maternal health (3.1) and sexual and reproductive health care services (3.7) <> Enables and enabled by women's full participation in economic and political life (5.5) and ending discrimination against women (5.1). Generally applicable.",
+          'Access to maternal health (3.1) and sexual and reproductive health care services (3.7) <> Enables and enabled by women\u2019s full participation in economic and political life (5.5) and ending discrimination against women (5.1). Generally applicable.',
         ],
       },
       {
         target: '5.5',
         description: [
-          "Access to maternal health (3.1) and sexual and reproductive health care services (3.7) <> Enables and enabled by women's full participation in economic and political life (5.5) and ending discrimination against women (5.1). Generally applicable.",
+          'Access to maternal health (3.1) and sexual and reproductive health care services (3.7) <> Enables and enabled by women\u2019s full participation in economic and political life (5.5) and ending discrimination against women (5.1). Generally applicable.',
         ],
       },
       {
@@ -5847,6 +7528,177 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.6',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '10.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.18',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.c',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '7.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.5',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       2,
       6,
@@ -5858,7 +7710,7 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          'Ensuring that essential services reach all those who need them is at the heart of NTD response efforts [48]. [...] NTD strategies, programmes and interventions are closely aligned with UHC goals or have components that have relevance for UHC. These include: defining and delivering an essential package of quality interventions across the full continuum of services; expanding coverage of services to ensure they reach all who need them; and providing financial protection to minimize out-of-pocket (OOP) payments and financial hardship. The notion of equitable access is woven into the fabric of the NTD agenda, serving as a constant reminder that costeffectiveness is not the sole criterion for prioritisation of services, and that explicit consideration must be given to the most disadvantaged groups, including the lowincome, rural and marginalised communities most at risk of NTDs.',
+          'Ensuring that essential services reach all those who need them is at the heart of NTD response efforts [48]. [\u2026] NTD strategies, programmes and interventions are closely aligned with UHC goals or have components that have relevance for UHC. These include: defining and delivering an essential package of quality interventions across the full continuum of services; expanding coverage of services to ensure they reach all who need them; and providing financial protection to minimize out-of-pocket (OOP) payments and financial hardship. The notion of equitable access is woven into the fabric of the NTD agenda, serving as a constant reminder that costeffectiveness is not the sole criterion for prioritisation of services, and that explicit consideration must be given to the most disadvantaged groups, including the lowincome, rural and marginalised communities most at risk of NTDs.',
           'Provision of universal healthcare will assist to achieve most other targets.',
         ],
       },
@@ -6041,13 +7893,207 @@ export const LinkageData2023 = [
       {
         target: '6.3',
         description: [
-          'An important emerging issue is the overuse of antibiotics to fight disease, which results in the build-up of antimicrobial resistance. Antibiotic residuals and resistant bacteria are observed in freshwaters. // Efforts to combat illness under Goal 3 are expected to increase health care and stimulate antibiotic use, especially in developing countries. Overuse of antibiotics and other medicines used for addressing illnesses of humans and animals has caused the spread of antimicrobial resistance, the ability of bacteria and other organisms to resist elimination by conventional antibiotics and other antimicrobial agents. Contamination of surface waters. To reduce this trade-off, it is necessary to reduce the flux of antibiotics and resistant organisms to the water environment. [...] Controlling their entry into the water environment by expanding or upgrading wastewater treatment.',
+          'An important emerging issue is the overuse of antibiotics to fight disease, which results in the build-up of antimicrobial resistance. Antibiotic residuals and resistant bacteria are observed in freshwaters. // Efforts to combat illness under Goal 3 are expected to increase health care and stimulate antibiotic use, especially in developing countries. Overuse of antibiotics and other medicines used for addressing illnesses of humans and animals has caused the spread of antimicrobial resistance, the ability of bacteria and other organisms to resist elimination by conventional antibiotics and other antimicrobial agents. Contamination of surface waters. To reduce this trade-off, it is necessary to reduce the flux of antibiotics and resistant organisms to the water environment. [\u2026] Controlling their entry into the water environment by expanding or upgrading wastewater treatment.',
         ],
       },
       {
         target: '7.2',
         description: [
           'In case electricity access for providing that electricity is provided with non carbon neutral sources, 3.8 could have (limited) trade-offs with Target 7.2.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '1.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.18',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.c',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '7.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.5',
+        description: [
+          '',
         ],
       },
     ],
@@ -6104,13 +8150,13 @@ export const LinkageData2023 = [
       {
         target: '3.2',
         description: [
-          "Policies aimed at reducing exposure to hazardous chemical substances in the water, air and soil also assist countries towards meeting targets around infant health, as shown by the experience of the United States' Clean Air Act of 1970. [...] Air pollution is associated with increased post-neonatal infant mortality, including sudden infant death syndrome. Exposure to air pollution negatively affects lung growth and places children at greater risk of development of respiratory symptoms including asthma. In adults, exposure to air pollution promotes the development of high blood pressure, heart disease and stroke; elderly people are at particular risk (Ross et al., 2012; Shah et al., 2013). Policies to reduce air pollution thus are highly supportive of health. The US Clean Air Act became law in 1970 and was strengthened in 1990, giving the Federal Government the authority to enforce regulations to limit air pollution. The reduction in particulate matter had an immediate impact on health. For example, it is estimated that 1300 fewer infants died in 1972 than would have done in the absence of the Clean Air Act. In 2010 alone, reductions in fine particle matter and ozone pollution resulting from the 1990 Clean Air Act amendments prevented more than 160,000 cases of premature mortality, 130,000 heart attacks, 13 million lost work days, and 1.7 million asthma attacks.",
+          'Policies aimed at reducing exposure to hazardous chemical substances in the water, air and soil also assist countries towards meeting targets around infant health, as shown by the experience of the United States\u2019 Clean Air Act of 1970. [\u2026] Air pollution is associated with increased post-neonatal infant mortality, including sudden infant death syndrome. Exposure to air pollution negatively affects lung growth and places children at greater risk of development of respiratory symptoms including asthma. In adults, exposure to air pollution promotes the development of high blood pressure, heart disease and stroke; elderly people are at particular risk (Ross et al., 2012; Shah et al., 2013). Policies to reduce air pollution thus are highly supportive of health. The US Clean Air Act became law in 1970 and was strengthened in 1990, giving the Federal Government the authority to enforce regulations to limit air pollution. The reduction in particulate matter had an immediate impact on health. For example, it is estimated that 1300 fewer infants died in 1972 than would have done in the absence of the Clean Air Act. In 2010 alone, reductions in fine particle matter and ozone pollution resulting from the 1990 Clean Air Act amendments prevented more than 160,000 cases of premature mortality, 130,000 heart attacks, 13 million lost work days, and 1.7 million asthma attacks.',
         ],
       },
       {
         target: '3.4',
         description: [
-          "Policies aimed at reducing exposure to hazardous chemical substances in the water, air and soil also assist countries towards meeting targets around noncommunicable diseases, as shown by the experience of the United States' Clean Air Act of 1970. [...] Air pollution is associated with increased post-neonatal infant mortality, including sudden infant death syndrome. Exposure to air pollution negatively affects lung growth and places children at greater risk of development of respiratory symptoms including asthma. In adults, exposure to air pollution promotes the development of high blood pressure, heart disease and stroke; elderly people are at particular risk (Ross et al., 2012; Shah et al., 2013). Policies to reduce air pollution thus are highly supportive of health. The US Clean Air Act became law in 1970 and was strengthened in 1990, giving the Federal Government the authority to enforce regulations to limit air pollution. The reduction in particulate matter had an immediate impact on health. For example, it is estimated that 1300 fewer infants died in 1972 than would have done in the absence of the Clean Air Act. In 2010 alone, reductions in fine particle matter and ozone pollution resulting from the 1990 Clean Air Act amendments prevented more than 160,000 cases of premature mortality, 130,000 heart attacks, 13 million lost work days, and 1.7 million asthma attacks.",
+          'Policies aimed at reducing exposure to hazardous chemical substances in the water, air and soil also assist countries towards meeting targets around noncommunicable diseases, as shown by the experience of the United States\u2019 Clean Air Act of 1970. [\u2026] Air pollution is associated with increased post-neonatal infant mortality, including sudden infant death syndrome. Exposure to air pollution negatively affects lung growth and places children at greater risk of development of respiratory symptoms including asthma. In adults, exposure to air pollution promotes the development of high blood pressure, heart disease and stroke; elderly people are at particular risk (Ross et al., 2012; Shah et al., 2013). Policies to reduce air pollution thus are highly supportive of health. The US Clean Air Act became law in 1970 and was strengthened in 1990, giving the Federal Government the authority to enforce regulations to limit air pollution. The reduction in particulate matter had an immediate impact on health. For example, it is estimated that 1300 fewer infants died in 1972 than would have done in the absence of the Clean Air Act. In 2010 alone, reductions in fine particle matter and ozone pollution resulting from the 1990 Clean Air Act amendments prevented more than 160,000 cases of premature mortality, 130,000 heart attacks, 13 million lost work days, and 1.7 million asthma attacks.',
         ],
       },
       {
@@ -6200,6 +8246,118 @@ export const LinkageData2023 = [
       },
       {
         target: '1.5',
+        description: [
+          '',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '12.4',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '1.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '14.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '15.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.2',
         description: [
           '',
         ],
@@ -6353,6 +8511,7 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [],
     coordinates: [
       2,
       9,
@@ -6432,7 +8591,7 @@ export const LinkageData2023 = [
       {
         target: '6.3',
         description: [
-          'An important emerging issue is the overuse of antibiotics to fight disease, which results in the build-up of antimicrobial resistance. Antibiotic residuals and resistant bacteria are observed in freshwaters. // Efforts to combat illness under Goal 3 are expected to increase health care and stimulate antibiotic use, especially in developing countries. Overuse of antibiotics and other medicines used for addressing illnesses of humans and animals has caused the spread of antimicrobial resistance, the ability of bacteria and other organisms to resist elimination by conventional antibiotics and other antimicrobial agents. Contamination of surface waters. To reduce this trade-off, it is necessary to reduce the flux of antibiotics and resistant organisms to the water environment. [...] Controlling their entry into the water environment by expanding or upgrading wastewater treatment.',
+          'An important emerging issue is the overuse of antibiotics to fight disease, which results in the build-up of antimicrobial resistance. Antibiotic residuals and resistant bacteria are observed in freshwaters. // Efforts to combat illness under Goal 3 are expected to increase health care and stimulate antibiotic use, especially in developing countries. Overuse of antibiotics and other medicines used for addressing illnesses of humans and animals has caused the spread of antimicrobial resistance, the ability of bacteria and other organisms to resist elimination by conventional antibiotics and other antimicrobial agents. Contamination of surface waters. To reduce this trade-off, it is necessary to reduce the flux of antibiotics and resistant organisms to the water environment. [\u2026] Controlling their entry into the water environment by expanding or upgrading wastewater treatment.',
         ],
       },
       {
@@ -6451,6 +8610,80 @@ export const LinkageData2023 = [
         target: '7.2',
         description: [
           'In case electricity access for providing that electricity is provided with non carbon neutral sources, 3.b could have (limited) trade-offs with Target 7.2.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '1.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.5',
+        description: [
+          '',
         ],
       },
     ],
@@ -6530,6 +8763,32 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '5.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.6',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       2,
       11,
@@ -6559,6 +8818,38 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '14.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '13.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '13.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       2,
       12,
@@ -6582,7 +8873,7 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          'Strengthening education systems can have significant impacts on HIV. [...] Young women who had missed a school grade or who had missed more than 4 days of school in the last month were significantly more likely to be living with HIV than those who had not, indicating that remaining in school can protect young girls against HIV infection. [...] Formal education is a key pathway to economic empowerment for young women and girls, contributing to higher self-esteem, increased uptake of SRHR services, and delayed marriage and childbirth. However, there are immense economic and social barriers that affect school attendance, especially for young girls who may be forced into early marriage or domestic work. To end the HIV epidemic among adolescents and youth, investments in education, and in addressing the structural barriers that keep young girls out of school, are therefore critical. {n.a.} --- Increased educational attainment at neighbourhood level was linked to lower HIV prevalence among young women. {Zambia}',
+          'Strengthening education systems can have significant impacts on HIV. [\u2026] Young women who had missed a school grade or who had missed more than 4 days of school in the last month were significantly more likely to be living with HIV than those who had not, indicating that remaining in school can protect young girls against HIV infection. [\u2026] Formal education is a key pathway to economic empowerment for young women and girls, contributing to higher self-esteem, increased uptake of SRHR services, and delayed marriage and childbirth. However, there are immense economic and social barriers that affect school attendance, especially for young girls who may be forced into early marriage or domestic work. To end the HIV epidemic among adolescents and youth, investments in education, and in addressing the structural barriers that keep young girls out of school, are therefore critical. {n.a.} --- Increased educational attainment at neighbourhood level was linked to lower HIV prevalence among young women. {Zambia}',
           'Investing in education encourages community health and well-being by disseminating knowledge about sustainable living habits.',
         ],
       },
@@ -6591,7 +8882,7 @@ export const LinkageData2023 = [
         description: [
           'Ensuring that girls and boys complete education requires action in sanitation, including investment in sanitation facilities in schools [call for action]// Multiple synergies, including where absence of or inadequate sanitation is a cause of school absenteeism; sex-specific toilets encourage attendance among girls; health education in schools contributes to better hygiene and can trigger sanitation and hygiene improvements at home [synergy] // Potential trade-offs may include situations where certain types of health education reproduce sanitation and hygiene issues such as stigmas around menstruation [trade-off].',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports target the target of SDG 4. Water supply, sanitation and hygiene services are key factors in improving student health and thus educational outcomes.',
-          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [...] education.',
+          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [\u2026] education.',
         ],
       },
       {
@@ -6604,7 +8895,7 @@ export const LinkageData2023 = [
         target: '6.1',
         description: [
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports the target of SDG 4. Water supply, sanitation and hygiene services are key factors in improving student health and thus educational outcomes.',
-          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [...] education.',
+          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [\u2026] education.',
         ],
       },
       {
@@ -6634,7 +8925,7 @@ export const LinkageData2023 = [
       {
         target: '8.1',
         description: [
-          "Cat Ba Island's key strength lies in its continuing economic growth, which acts as the impetus to facilitate inclusive education for community members thereby feeding back towards more resilient green growth.",
+          'Cat Ba Island\u2019s key strength lies in its continuing economic growth, which acts as the impetus to facilitate inclusive education for community members thereby feeding back towards more resilient green growth.',
         ],
       },
       {
@@ -6724,6 +9015,56 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '8.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       3,
       0,
@@ -6749,7 +9090,7 @@ export const LinkageData2023 = [
         description: [
           'Target calls for action in sanitation for ensuring the development of children who are particularly vulnerable to poor sanitation conditions [call for action] // Synergies where higher access to sanitation and hygiene support child growth [synergy].',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports the target of SDG 4.',
-          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [...] education.',
+          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [\u2026] education.',
         ],
       },
       {
@@ -6762,7 +9103,7 @@ export const LinkageData2023 = [
         target: '6.1',
         description: [
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports the target of SDG 4.',
-          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [...] education.',
+          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [\u2026] education.',
         ],
       },
     ],
@@ -6777,6 +9118,38 @@ export const LinkageData2023 = [
         target: '7.3',
         description: [
           'In case electricity access for providing that electricity is provided predominantly with non-renewable energy sources and inefficient energy appliances, 4.2 could have (limited) trade-offs with Targets 7.2.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '17.12',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
         ],
       },
     ],
@@ -6812,7 +9185,7 @@ export const LinkageData2023 = [
         description: [
           'Target calls for action in sanitation to support access to tertiary education systems where absence or inadequate sanitation in households and/or in education facilities is a cause of absenteeism [call for action]// Evidence that sanitation that is adequate for different users (including persons with disabilties) leads to the elimination of discrimination and ensures equal access to tertiary education [synergy].',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports the target of SDG 4. Water supply, sanitation and hygiene services are key factors in improving student health and thus educational outcomes.',
-          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [...] education.',
+          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [\u2026] education.',
         ],
       },
       {
@@ -6825,7 +9198,7 @@ export const LinkageData2023 = [
         target: '6.1',
         description: [
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports the target of SDG 4. Water supply, sanitation and hygiene services are key factors in improving student health and thus educational outcomes.',
-          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [...] education.',
+          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [\u2026] education.',
         ],
       },
     ],
@@ -6840,6 +9213,50 @@ export const LinkageData2023 = [
         target: '7.3',
         description: [
           'In case electricity access for providing that electricity is provided predominantly with non-renewable energy sources and inefficient energy appliances, 4.3 could have (limited) trade-offs with Targets 7.3.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.c',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
         ],
       },
     ],
@@ -7018,6 +9435,32 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '8.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       3,
       3,
@@ -7068,6 +9511,50 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '8.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '15.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.18',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '7.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       3,
       4,
@@ -7106,6 +9593,38 @@ export const LinkageData2023 = [
         target: '7.3',
         description: [
           'In case electricity access for providing that electricity is provided predominantly with non-renewable energy sources and inefficient energy appliances, 4.6 could have (limited) trade-offs with Targets 7.3.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
         ],
       },
     ],
@@ -7154,7 +9673,7 @@ export const LinkageData2023 = [
         description: [
           '',
           '',
-          'The responsibility of educational bodies [...] inter-sectoral approaches are required.',
+          'The responsibility of educational bodies [\u2026] inter-sectoral approaches are required.',
         ],
       },
       {
@@ -7341,7 +9860,7 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          'Strengthening education systems can have significant impacts on HIV. [...] Despite the fact that AIDS is a leading cause of death for young people globally, education on HIV is dangerously inadequate. Only 36% of young men and 30% of young women aged 15 to 24 have comprehensive knowledge of HIV and how to prevent it. Comprehensive sexuality education (CSE) is a crucial intervention for the HIV response[...]. CSE can contribute to reducing sexually transmitted infections (including HIV) and unintended pregnancy, increasing condom use, increasing self-esteem, and promoting gender equality and more equitable social norms, which in turn can improve health outcomes. We must expand access to CSE, in particular for young women and girls, key populations and out-of-school youth, as this is a key pathway to prevent HIV, reduce HIV stigma and link young people to care and support. Engaging young people in the design, implementation and evaluation of CSE programmes can ensure that material is taught in age appropriate, culturally sensitive ways, which adequately meet the needs of young people.',
+          'Strengthening education systems can have significant impacts on HIV. [\u2026] Despite the fact that AIDS is a leading cause of death for young people globally, education on HIV is dangerously inadequate. Only 36% of young men and 30% of young women aged 15 to 24 have comprehensive knowledge of HIV and how to prevent it. Comprehensive sexuality education (CSE) is a crucial intervention for the HIV response[\u2026]. CSE can contribute to reducing sexually transmitted infections (including HIV) and unintended pregnancy, increasing condom use, increasing self-esteem, and promoting gender equality and more equitable social norms, which in turn can improve health outcomes. We must expand access to CSE, in particular for young women and girls, key populations and out-of-school youth, as this is a key pathway to prevent HIV, reduce HIV stigma and link young people to care and support. Engaging young people in the design, implementation and evaluation of CSE programmes can ensure that material is taught in age appropriate, culturally sensitive ways, which adequately meet the needs of young people.',
         ],
       },
       {
@@ -7493,6 +10012,38 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '12.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       3,
       6,
@@ -7544,6 +10095,26 @@ export const LinkageData2023 = [
         target: '7.3',
         description: [
           'In case electricity access for providing that electricity is provided predominantly with non-renewable energy sources and inefficient energy appliances, 4.a could have (limited) trade-offs with Targets 7.3.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '15.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.3',
+        description: [
+          '',
         ],
       },
     ],
@@ -7599,6 +10170,14 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '17.11',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       3,
       8,
@@ -7610,11 +10189,37 @@ export const LinkageData2023 = [
       {
         target: '6.2',
         description: [
-          "Target calls for action in sanitation where poor conditions negatively affect teachers' decisions of their teaching location [call for action]// Possible synergies where teachers benefiting from trainings are introduced to health education that will benefit themselves and possibly communities in their home country or that toilets/safe facilities is a pull factor for teachers [synergy].",
+          'Target calls for action in sanitation where poor conditions negatively affect teachers\u2019 decisions of their teaching location [call for action]// Possible synergies where teachers benefiting from trainings are introduced to health education that will benefit themselves and possibly communities in their home country or that toilets/safe facilities is a pull factor for teachers [synergy].',
         ],
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '11.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.12',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.18',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       3,
       9,
@@ -7681,7 +10286,7 @@ export const LinkageData2023 = [
       {
         target: '5.5',
         description: [
-          "Ending all forms of discrimination against women and girls is absolutely necessary for ensuring women's full and effective Participation in society.",
+          'Ending all forms of discrimination against women and girls is absolutely necessary for ensuring women\u2019s full and effective Participation in society.',
         ],
       },
       {
@@ -7699,19 +10304,19 @@ export const LinkageData2023 = [
       {
         target: '2.1',
         description: [
-          "Ending discrimination against women (5.1) > Women's empowerment and control reinforces the nutritional health of their children (2.1). Applicable in food-insecure communities and countries.",
+          'Ending discrimination against women (5.1) > Women\u2019s empowerment and control reinforces the nutritional health of their children (2.1). Applicable in food-insecure communities and countries.',
         ],
       },
       {
         target: '3.1',
         description: [
-          "Access to maternal health (3.1) and sexual and reproductive health care services (3.7) <> Enables and enabled by women's full participation in economic and political life (5.5) and ending discrimination against women (5.1). Generally applicable.",
+          'Access to maternal health (3.1) and sexual and reproductive health care services (3.7) <> Enables and enabled by women\u2019s full participation in economic and political life (5.5) and ending discrimination against women (5.1). Generally applicable.',
         ],
       },
       {
         target: '3.7',
         description: [
-          "Access to maternal health (3.1) and sexual and reproductive health care services (3.7) <> Enables and enabled by women's full participation in economic and political life (5.5) and ending discrimination against women (5.1). Generally applicable.",
+          'Access to maternal health (3.1) and sexual and reproductive health care services (3.7) <> Enables and enabled by women\u2019s full participation in economic and political life (5.5) and ending discrimination against women (5.1). Generally applicable.',
         ],
       },
       {
@@ -7759,7 +10364,7 @@ export const LinkageData2023 = [
       {
         target: '6.2',
         description: [
-          "Target calls for action in sanitation to end discrimination and recognise women and girls' special needs [call for action]// Multiple synergies for example, in MHM [synergy]// But also trade-offs if improved access to sanitation perpetuates discrimination towards women, for example, if improvements made at community-level but impedes inspirations at individual level, or if the process does not encourage them to participate [trade-off].",
+          'Target calls for action in sanitation to end discrimination and recognise women and girls\u2019 special needs [call for action]// Multiple synergies for example, in MHM [synergy]// But also trade-offs if improved access to sanitation perpetuates discrimination towards women, for example, if improvements made at community-level but impedes inspirations at individual level, or if the process does not encourage them to participate [trade-off].',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports target. Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life.',
           'Nepal faces a serious problem of inadequate sanitation and hygiene, especially for girls. Several survey findings have shown that girls perform poorly at school when they menstruate because they fear it will become a trigger for ridicule or discrimination by boys.',
         ],
@@ -7787,7 +10392,45 @@ export const LinkageData2023 = [
       {
         target: '6.2',
         description: [
-          "Target calls for action in sanitation to end discrimination and recognise women and girls' special needs [call for action]// Multiple synergies for example, in MHM [synergy]// But also trade-offs if improved access to sanitation perpetuates discrimination towards women, for example, if improvements made at community-level but impedes inspirations at individual level, or if the process does not encourage them to participate [trade-off].",
+          'Target calls for action in sanitation to end discrimination and recognise women and girls\u2019 special needs [call for action]// Multiple synergies for example, in MHM [synergy]// But also trade-offs if improved access to sanitation perpetuates discrimination towards women, for example, if improvements made at community-level but impedes inspirations at individual level, or if the process does not encourage them to participate [trade-off].',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
         ],
       },
     ],
@@ -7859,6 +10502,62 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '12.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.c',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          'Gender-specific. {n.a.}',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       4,
       1,
@@ -7870,11 +10569,67 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          'It will be impossible to end AIDS without addressing gender inequality, a primary structural driver of the epidemic. [...] Girls forced into early marriage have restricted access to education and employment, and usually do not have the power to negotiate safe sex, increasing their risk and vulnerability to HIV and other STIs.',
+          'It will be impossible to end AIDS without addressing gender inequality, a primary structural driver of the epidemic. [\u2026] Girls forced into early marriage have restricted access to education and employment, and usually do not have the power to negotiate safe sex, increasing their risk and vulnerability to HIV and other STIs.',
         ],
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '10.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.c',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       4,
       2,
@@ -8001,6 +10756,32 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '4.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       4,
       3,
@@ -8036,26 +10817,26 @@ export const LinkageData2023 = [
       {
         target: '3.1',
         description: [
-          "Leveraging effect of women's participation in leadership roles on several targets within SDG 3 related to maternal mortality. Several studies demonstrate the potential benefits of women's leadership in governmental organizations responsible for policies that are more supportive of women and children.",
-          "Access to maternal health (3.1) and sexual and reproductive health care services (3.7) <> Enables and enabled by women's full participation in economic and political life (5.5) and ending discrimination against women (5.1). Generally applicable.",
+          'Leveraging effect of women\u2019s participation in leadership roles on several targets within SDG 3 related to maternal mortality. Several studies demonstrate the potential benefits of women\u2019s leadership in governmental organizations responsible for policies that are more supportive of women and children.',
+          'Access to maternal health (3.1) and sexual and reproductive health care services (3.7) <> Enables and enabled by women\u2019s full participation in economic and political life (5.5) and ending discrimination against women (5.1). Generally applicable.',
         ],
       },
       {
         target: '3.2',
         description: [
-          "Leveraging effect of women's participation in leadership roles on several targets within SDG 3 related to maternal mortality. Several studies demonstrate the potential benefits of women's leadership in governmental organizations responsible for policies that are more supportive of women and children.",
+          'Leveraging effect of women\u2019s participation in leadership roles on several targets within SDG 3 related to maternal mortality. Several studies demonstrate the potential benefits of women\u2019s leadership in governmental organizations responsible for policies that are more supportive of women and children.',
         ],
       },
       {
         target: '3.c',
         description: [
-          "Leveraging effect of women's participation in leadership roles on several targets within SDG 3 related to maternal mortality. Several studies demonstrate the potential benefits of women's leadership in governmental organizations responsible for policies that are more supportive of women and children.",
+          'Leveraging effect of women\u2019s participation in leadership roles on several targets within SDG 3 related to maternal mortality. Several studies demonstrate the potential benefits of women\u2019s leadership in governmental organizations responsible for policies that are more supportive of women and children.',
         ],
       },
       {
         target: '3.d',
         description: [
-          "Leveraging effect of women's participation in leadership roles on several targets within SDG 3 related to maternal mortality. Several studies demonstrate the potential benefits of women's leadership in governmental organizations responsible for policies that are more supportive of women and children.",
+          'Leveraging effect of women\u2019s participation in leadership roles on several targets within SDG 3 related to maternal mortality. Several studies demonstrate the potential benefits of women\u2019s leadership in governmental organizations responsible for policies that are more supportive of women and children.',
         ],
       },
       {
@@ -8087,7 +10868,7 @@ export const LinkageData2023 = [
         target: '16.6',
         description: [
           '',
-          "Women's full participation in economic and political life (5.5) <> Small but significant relationship between rising female political and workforce participation and lower levels of corruption (16.5; 16.6). Generally applicable.",
+          'Women\u2019s full participation in economic and political life (5.5) <> Small but significant relationship between rising female political and workforce participation and lower levels of corruption (16.5; 16.6). Generally applicable.',
           '',
         ],
       },
@@ -8112,51 +10893,51 @@ export const LinkageData2023 = [
       {
         target: '16.5',
         description: [
-          "Women's full participation in economic and political life (5.5) <> Small but significant relationship between rising female political and workforce participation and lower levels of corruption (16.5; 16.6). Generally applicable.",
+          'Women\u2019s full participation in economic and political life (5.5) <> Small but significant relationship between rising female political and workforce participation and lower levels of corruption (16.5; 16.6). Generally applicable.',
         ],
       },
       {
         target: '2.3',
         description: [
-          "Women's full participation in economic and political life (5.5) > Reinforces agricultural productivity in smallholder farms (2.3). That achieving gender equality could increase agricultural profits and yields is generally true but connection is strongest in economies dominated by agriculture.",
+          'Women\u2019s full participation in economic and political life (5.5) > Reinforces agricultural productivity in smallholder farms (2.3). That achieving gender equality could increase agricultural profits and yields is generally true but connection is strongest in economies dominated by agriculture.',
         ],
       },
       {
         target: '3.7',
         description: [
-          "Access to maternal health (3.1) and sexual and reproductive health care services (3.7) <> Enables and enabled by women's full participation in economic and political life (5.5) and ending discrimination against women (5.1). Generally applicable.",
+          'Access to maternal health (3.1) and sexual and reproductive health care services (3.7) <> Enables and enabled by women\u2019s full participation in economic and political life (5.5) and ending discrimination against women (5.1). Generally applicable.',
         ],
       },
       {
         target: '8.2',
         description: [
-          "Women's full participation in economic and political life (5.5) > Reinforces productivity increases in the economy (8.2) and decent job creation (8.3) (Ramos 2014)(Ramos 2014). Generally applicable and strong effect across all types of economies.",
+          'Women\u2019s full participation in economic and political life (5.5) > Reinforces productivity increases in the economy (8.2) and decent job creation (8.3) (Ramos 2014)(Ramos 2014). Generally applicable and strong effect across all types of economies.',
         ],
       },
       {
         target: '8.3',
         description: [
-          "Women's full participation in economic and political life (5.5) > Reinforces productivity increases in the economy (8.2) and decent job creation (8.3) (Ramos 2014)(Ramos 2014). Generally applicable and strong effect across all types of economies.",
+          'Women\u2019s full participation in economic and political life (5.5) > Reinforces productivity increases in the economy (8.2) and decent job creation (8.3) (Ramos 2014)(Ramos 2014). Generally applicable and strong effect across all types of economies.',
         ],
       },
       {
         target: '9.1',
         description: [
-          "Women's full participation in economic and political life (5.5) > Greater political representation of women is associated with provision of a different mix of infrastructure (9.1 and 9.4). Depends significantly on geographical and cultural context.",
+          'Women\u2019s full participation in economic and political life (5.5) > Greater political representation of women is associated with provision of a different mix of infrastructure (9.1 and 9.4). Depends significantly on geographical and cultural context.',
         ],
       },
       {
         target: '9.4',
         description: [
-          "Women's full participation in economic and political life (5.5) > Greater political representation of women is associated with provision of a different mix of infrastructure (9.1 and 9.4). Depends significantly on geographical and cultural context.",
+          'Women\u2019s full participation in economic and political life (5.5) > Greater political representation of women is associated with provision of a different mix of infrastructure (9.1 and 9.4). Depends significantly on geographical and cultural context.',
         ],
       },
       {
         target: '6.2',
         description: [
-          "Call for action in sanitation where poor conditions put barriers to women's empowerment, for example, where a lack of facilities impedes everyday activities and prevents them from participating to public life [call for action]// Synergies where improved access to sanitation pays attention to women's needs so they have equal opportunities, or where the sanitation sector gives opportunities to women for them to participate and have access to leadership roles [synergy] // Possible trade-offs if further disproportionate responsibilities are added to women [trade-off].",
+          'Call for action in sanitation where poor conditions put barriers to women\u2019s empowerment, for example, where a lack of facilities impedes everyday activities and prevents them from participating to public life [call for action]// Synergies where improved access to sanitation pays attention to women\u2019s needs so they have equal opportunities, or where the sanitation sector gives opportunities to women for them to participate and have access to leadership roles [synergy] // Possible trade-offs if further disproportionate responsibilities are added to women [trade-off].',
           "Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports target [women's participation].",
-          "Ensuring women's full and effective participation and equal opportunities for leadership at all levels of decision-making in government, business and community groups/councils would at least indirectly positively reinforce the achievement of universal and equitable access to safe and affordable drinking water since a disproportionate percentage of women deal directly with water access issue for their households.",
+          'Ensuring women\u2019s full and effective participation and equal opportunities for leadership at all levels of decision-making in government, business and community groups/councils would at least indirectly positively reinforce the achievement of universal and equitable access to safe and affordable drinking water since a disproportionate percentage of women deal directly with water access issue for their households.',
           'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on gender equality.',
         ],
       },
@@ -8170,7 +10951,7 @@ export const LinkageData2023 = [
         target: '6.1',
         description: [
           "Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports target [women's participation].",
-          "Ensuring women's full and effective participation and equal opportunities for leadership at all levels of decision-making in government, business and community groups/councils would at least indirectly positively reinforce the achievement of universal and equitable access to safe and affordable drinking water since a disproportionate percentage of women deal directly with water access issue for their households.",
+          'Ensuring women\u2019s full and effective participation and equal opportunities for leadership at all levels of decision-making in government, business and community groups/councils would at least indirectly positively reinforce the achievement of universal and equitable access to safe and affordable drinking water since a disproportionate percentage of women deal directly with water access issue for their households.',
           'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on gender equality.',
         ],
       },
@@ -8184,7 +10965,7 @@ export const LinkageData2023 = [
       {
         target: '6.a',
         description: [
-          "Ensuring women's full and effective participation and equal opportunities for leadership at all levels of decision-making in political, economic and public life (such as in government leadership roles, corporate roles, local leadership roles) can be directly linked to foreign ODA directed at water and sanitation system improvement as women are closer to this problem and bear the burden more often than men.",
+          'Ensuring women\u2019s full and effective participation and equal opportunities for leadership at all levels of decision-making in political, economic and public life (such as in government leadership roles, corporate roles, local leadership roles) can be directly linked to foreign ODA directed at water and sanitation system improvement as women are closer to this problem and bear the burden more often than men.',
         ],
       },
       {
@@ -8331,7 +11112,45 @@ export const LinkageData2023 = [
       {
         target: '6.2',
         description: [
-          "Call for action in sanitation where poor conditions put barriers to women's empowerment, for example, where a lack of facilities impedes everyday activities and prevents them from participating to public life [call for action]// Synergies where improved access to sanitation pays attention to women's needs so they have equal opportunities, or where the sanitation sector gives opportunities to women for them to participate and have access to leadership roles [synergy] // Possible trade-offs if further disproportionate responsibilities are added to women [trade-off].",
+          'Call for action in sanitation where poor conditions put barriers to women\u2019s empowerment, for example, where a lack of facilities impedes everyday activities and prevents them from participating to public life [call for action]// Synergies where improved access to sanitation pays attention to women\u2019s needs so they have equal opportunities, or where the sanitation sector gives opportunities to women for them to participate and have access to leadership roles [synergy] // Possible trade-offs if further disproportionate responsibilities are added to women [trade-off].',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
         ],
       },
     ],
@@ -8346,7 +11165,7 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          'Transgender women may be more likely to experience intimate partner violence and are almost 49 times more likely to acquire HIV, yet are often left out of programming and decision-making. Gender equality for women and for transgender, intersex and non-binary people is central to ending the AIDS epidemic, and the importance of tackling these gendered barriers to sexual and reproductive health information and services cannot be overstated. [...] HIV programming must understand how gender inequalities influence the HIV epidemic, and how women and girls seek out HIV prevention, testing and treatment services. // Links between HIV and sexual and reproductive health and rights (SRHR), are widely acknowledged. Poor sexual health has many of the same structural drivers as HIV, including gender-based violence, inequality and criminalization of behaviours including same-sex relationships, sex work and drug use. Bi-directional integration of HIV and SRHR programmes can lead to increased uptake of services, increased condom use, better HIV testing outcomes and reduction in HIV-related stigma, as well increasing cost-effectiveness. Integration of HIV services into maternal health and family planning services may also be a useful entry point for women. For young people, integrating HIV and SRHR services has been shown to improve health outcomes due to increased uptake of services, the ability to access multiple services at one time, and improved healthcare provider attitudes.',
+          'Transgender women may be more likely to experience intimate partner violence and are almost 49 times more likely to acquire HIV, yet are often left out of programming and decision-making. Gender equality for women and for transgender, intersex and non-binary people is central to ending the AIDS epidemic, and the importance of tackling these gendered barriers to sexual and reproductive health information and services cannot be overstated. [\u2026] HIV programming must understand how gender inequalities influence the HIV epidemic, and how women and girls seek out HIV prevention, testing and treatment services. // Links between HIV and sexual and reproductive health and rights (SRHR), are widely acknowledged. Poor sexual health has many of the same structural drivers as HIV, including gender-based violence, inequality and criminalization of behaviours including same-sex relationships, sex work and drug use. Bi-directional integration of HIV and SRHR programmes can lead to increased uptake of services, increased condom use, better HIV testing outcomes and reduction in HIV-related stigma, as well increasing cost-effectiveness. Integration of HIV services into maternal health and family planning services may also be a useful entry point for women. For young people, integrating HIV and SRHR services has been shown to improve health outcomes due to increased uptake of services, the ability to access multiple services at one time, and improved healthcare provider attitudes.',
           'Access to sexual and reproductive health and rights (5.6) > Reinforces ending communicable diseases such as HIV / AIDS (3.3). Generally applicable and strongest reinforcement where current access is lowest.',
         ],
       },
@@ -8370,6 +11189,45 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '3.7',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '15.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       4,
       5,
@@ -8401,7 +11259,7 @@ export const LinkageData2023 = [
       {
         target: '6.1',
         description: [
-          "Women's equal rights to land ownership and control will enable women to manage to get safe and affordable drinking water.",
+          'Women\u2019s equal rights to land ownership and control will enable women to manage to get safe and affordable drinking water.',
         ],
       },
       {
@@ -8448,6 +11306,38 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       4,
       6,
@@ -8459,7 +11349,7 @@ export const LinkageData2023 = [
       {
         target: '2.a',
         description: [
-          "Access to technology is an important lever to enable women's empowerment in agriculture and overall - the two means of implementation mutually reinforce each other.",
+          'Access to technology is an important lever to enable women\u2019s empowerment in agriculture and overall \u2013 the two means of implementation mutually reinforce each other.',
         ],
       },
       {
@@ -8512,6 +11402,32 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '1.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       4,
       7,
@@ -8553,6 +11469,32 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       4,
       8,
@@ -8613,7 +11555,7 @@ export const LinkageData2023 = [
         target: '3.9',
         description: [
           '',
-          'The microbial contamination of drinking water remains a risk, and bore water may contain naturally high levels of chemical contaminants. [...] In the parts Northern Territory, Queensland and Western Australia where groundwater is the principal source of drinking and household water supply, some communities have been identified as exceeding Australian standards for nitrates and uranium. {Indigenous Australia} --- Residents of remote Australian communities, especially Indigenous Australians, continue to experience chronic and hygiene-related diseases at rates higher than the wider Australian population. Water contamination has been proposed as one of the causes [...]. Studies have found that drinking water supplies can be contaminated by microbes or naturally-occurring chemical [...]. For example, [...] many WA Indigenous communities had nitrate levels in their groundwater-sourced drinking water that were above the safe level for bottle-fed babies [...]; over half of remote communities rated their housing as unsafe or unhealthy, due to environmental risks from dust, water, and sanitation [...]; gastroenteritis and other viral infectious to be the most common causes [of paediatric admissions] with a disproportionate rate of presentation and admission among Indigenous children. Pre-existing multiple morbidity in Aboriginal populations causes a disproportionately increasing incidence of Melioidosis, a soil-based bacterial infection associated with tropical flood waters, and a potential mortality rate of 40%. {Indigenous Australia}',
+          'The microbial contamination of drinking water remains a risk, and bore water may contain naturally high levels of chemical contaminants. [...] In the parts Northern Territory, Queensland and Western Australia where groundwater is the principal source of drinking and household water supply, some communities have been identified as exceeding Australian standards for nitrates and uranium. {Indigenous Australia} --- Residents of remote Australian communities, especially Indigenous Australians, continue to experience chronic and hygiene-related diseases at rates higher than the wider Australian population. Water contamination has been proposed as one of the causes [\u2026]. Studies have found that drinking water supplies can be contaminated by microbes or naturally-occurring chemical [...]. For example, [\u2026] many WA Indigenous communities had nitrate levels in their groundwater-sourced drinking water that were above the safe level for bottle-fed babies [\u2026]; over half of remote communities rated their housing as unsafe or unhealthy, due to environmental risks from dust, water, and sanitation [\u2026]; gastroenteritis and other viral infectious to be the most common causes [of paediatric admissions] with a disproportionate rate of presentation and admission among Indigenous children. Pre-existing multiple morbidity in Aboriginal populations causes a disproportionately increasing incidence of Melioidosis, a soil-based bacterial infection associated with tropical flood waters, and a potential mortality rate of 40%. {Indigenous Australia}',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports target [...] reducing the risk of water-borne diseases.',
           'Universal and equitable access to safe and affordable drinking water can directly reduce the number of deaths and illnesses from hazardous chemical and contamination, particularly since many, if not most hazardous chemicals end up with water resources that people use for direct consumption.',
           '',
@@ -8638,7 +11580,7 @@ export const LinkageData2023 = [
         description: [
           '',
           'The progress on access to safely managed WASH systems will increase the adaptive capacity and decrease the sensitivity which will ensure greater resilience in terms of water availability for drinking and health consequences in front of climate change-related risks.',
-          "Implementation of Fiji's Green Growth Framework // Safe and affordable drinking water supporting more equitable, efficient and lowcarbon economic growth.",
+          'Implementation of Fiji\u2019s Green Growth Framework // Safe and affordable drinking water supporting more equitable, efficient and lowcarbon economic growth.',
         ],
       },
       {
@@ -8721,7 +11663,7 @@ export const LinkageData2023 = [
         target: '7.1',
         description: [
           '',
-          'The price of electricity significantly influences the cost of water delivery.[...] Reducing the electricity cost is key for assuring affordable water supply. // Access to modern energy is crucial in the development of a supply chain for water (viz., pumping the ground water, water treatment or desalination plant, and also its distribution).',
+          'The price of electricity significantly influences the cost of water delivery.[\u2026] Reducing the electricity cost is key for assuring affordable water supply. // Access to modern energy is crucial in the development of a supply chain for water (viz., pumping the ground water, water treatment or desalination plant, and also its distribution).',
           '',
           'Water as a source to produce energy, and vice versa (United Nations, 2018a; UN-Water, 2016; WWAP, 2014).',
         ],
@@ -8753,14 +11695,14 @@ export const LinkageData2023 = [
       {
         target: '7.b',
         description: [
-          'Energy infrastructure aids in the provisioning of [...] water resources [...] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
+          'Energy infrastructure aids in the provisioning of [\u2026] water resources [\u2026] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
           '',
         ],
       },
       {
         target: '3.3',
         description: [
-          "Data regarding the 274 remote Indigenous communities in Western Australia indicated that the quality of drinking water supplied to some communities did not meet Australian standards approximately 30% of the time. Further, E. coli and/or Naegleria microbes were detected in at least one community each month over a two-year monitoring period, indicating faecal contamina-tion of the drinking water. The microbial water-borne disease, Cryptosporidiosis, was found to be disproportionately high in remote Indigenous communities, compared to the non-Indigenous urban population in Western Australia. Other enteric pathogens identified in contaminated water in remote Indigenous communities include Salmonella, Shigella, Campylobacter, E. coli and Rotavirus. {Indigenous Australia} --- Soil-transmitted helminthiases (STH) infection risk factors involve those living in poverty and the associated lack of access to clean water and toilets, which contribute to unhygienic practices. In Australia, STH [...] are endemic in some Indigenous communities [...]. The worm can contribute to mortality and morbidity, particularly in immune-suppressed patients, but the cycle of infection is effectively disrupted by the introduction of sewerage systems. Trachoma eye infection remains in some of Australia's Indigenous communities [...] Infection is correlated with a range of WASH-related factors including limited access to clean water [...]. It is caused by a bacterium that inflames the eye, and recurrent infections cause scarring of the eye and structural changes to the eyelid that can result in blindness. [...] The presence of both trachoma and skin infections are indicative of the ongoing need to provide sustainable washing facilities. {Indigenous Australia}",
+          'Data regarding the 274 remote Indigenous communities in Western Australia indicated that the quality of drinking water supplied to some communities did not meet Australian standards approximately 30% of the time. Further, E. coli and/or Naegleria microbes were detected in at least one community each month over a two-year monitoring period, indicating faecal contamina-tion of the drinking water. The microbial water-borne disease, Cryptosporidiosis, was found to be disproportionately high in remote Indigenous communities, compared to the non-Indigenous urban population in Western Australia. Other enteric pathogens identified in contaminated water in remote Indigenous communities include Salmonella, Shigella, Campylobacter, E. coli and Rotavirus. {Indigenous Australia} --- Soil-transmitted helminthiases (STH) infection risk factors involve those living in poverty and the associated lack of access to clean water and toilets, which contribute to unhygienic practices. In Australia, STH [\u2026] are endemic in some Indigenous communities [\u2026]. The worm can contribute to mortality and morbidity, particularly in immune-suppressed patients, but the cycle of infection is effectively disrupted by the introduction of sewerage systems. Trachoma eye infection remains in some of Australia\u2019s Indigenous communities [\u2026] Infection is correlated with a range of WASH-related factors including limited access to clean water [...]. It is caused by a bacterium that inflames the eye, and recurrent infections cause scarring of the eye and structural changes to the eyelid that can result in blindness. [\u2026] The presence of both trachoma and skin infections are indicative of the ongoing need to provide sustainable washing facilities. {Indigenous Australia}',
           'End epidemics (3.3) and preventable child deaths (3.2) < Indivisible from access to safe water (6.1) and sanitation and hygiene (6.2). Generally applicable.',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports target.',
           'The health situation is uplifted by ensuring equitable access to safe drinking water.',
@@ -8789,38 +11731,38 @@ export const LinkageData2023 = [
       {
         target: '4.1',
         description: [
-          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [...] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [...] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
+          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [\u2026] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [\u2026] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports the target of SDG 4. Water supply, sanitation and hygiene services are key factors in improving student health and thus educational outcomes.',
-          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [...] education.',
+          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [\u2026] education.',
         ],
       },
       {
         target: '4.2',
         description: [
-          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [...] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. This is especially prevalent in the Arab LDCs and in countries facing armed conflicts and fluxes of refugees. [...] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
+          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [\u2026] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. This is especially prevalent in the Arab LDCs and in countries facing armed conflicts and fluxes of refugees. [\u2026] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports the target of SDG 4.',
           'Having access to safe drinking water will help to ensure that children under 5 years of age has developmentally on track in health.',
-          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [...] education.',
+          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [\u2026] education.',
         ],
       },
       {
         target: '4.3',
         description: [
-          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [...] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [...] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
+          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [\u2026] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [\u2026] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports the target of SDG 4. Water supply, sanitation and hygiene services are key factors in improving student health and thus educational outcomes.',
-          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [...] education.',
+          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [\u2026] education.',
         ],
       },
       {
         target: '4.4',
         description: [
-          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [...] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [...] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
+          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [\u2026] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [\u2026] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
         ],
       },
       {
         target: '4.5',
         description: [
-          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [...] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [...] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
+          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [\u2026] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [\u2026] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports the target of SDG 4. Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life.',
           'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on gender equality.',
         ],
@@ -8984,7 +11926,7 @@ export const LinkageData2023 = [
       {
         target: '8.8',
         description: [
-          "Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life // a strong positive impact on workers' health and thus their productivity.",
+          'Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life // a strong positive impact on workers\u2019 health and thus their productivity.',
         ],
       },
       {
@@ -9045,7 +11987,7 @@ export const LinkageData2023 = [
       {
         target: '8.4',
         description: [
-          "Implementation of Fiji's Green Growth Framework // Safe and affordable drinking water supporting more equitable, efficient and lowcarbon economic growth.",
+          'Implementation of Fiji\u2019s Green Growth Framework // Safe and affordable drinking water supporting more equitable, efficient and lowcarbon economic growth.',
         ],
       },
     ],
@@ -9054,7 +11996,7 @@ export const LinkageData2023 = [
         target: '2.3',
         description: [
           '',
-          'The higher the increase in domestic water demand the lower the current agricultural production and the higher the current prevalence of undernourishment. Countries underperforming in SDG2-highly water-dependent SDG-will face enormous water competition between domestic and agricultural use: SDG2 and SDG6 counteract each other.',
+          'The higher the increase in domestic water demand the lower the current agricultural production and the higher the current prevalence of undernourishment. Countries underperforming in SDG2\u2014highly water-dependent SDG\u2014will face enormous water competition between domestic and agricultural use: SDG2 and SDG6 counteract each other.',
           'Find out more information on the role of context in identifying interlinkages between SDG 2 and 6 (goals and targets) in the publication, which analyses Voluntary National Reviews (VNRs).',
           'Achieving universal and equitable access to safe and affordable drinking water for all can counteract adequate water supply for intensive agriculture, and vice versa.',
         ],
@@ -9062,7 +12004,7 @@ export const LinkageData2023 = [
       {
         target: '2.b',
         description: [
-          '[Water resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Water resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
@@ -9076,7 +12018,7 @@ export const LinkageData2023 = [
       {
         target: '2.1',
         description: [
-          'The higher the increase in domestic water demand the lower the current agricultural production and the higher the current prevalence of undernourishment. Countries underperforming in SDG2-highly water-dependent SDG-will face enormous water competition between domestic and agricultural use: SDG2 and SDG6 counteract each other.',
+          'The higher the increase in domestic water demand the lower the current agricultural production and the higher the current prevalence of undernourishment. Countries underperforming in SDG2\u2014highly water-dependent SDG\u2014will face enormous water competition between domestic and agricultural use: SDG2 and SDG6 counteract each other.',
           '',
         ],
       },
@@ -9089,7 +12031,7 @@ export const LinkageData2023 = [
       {
         target: '7.1',
         description: [
-          'Countries performing worse on SDG7-clean energy access-will face higher increase in domestic water demand. Importantly, if SDG7 planning in water scarce regions goes hand in hand with SDG6, negative outcomes could be minimized-e.g. by fostering other renewables for energy production: SDG6 constrains SDG7 but does not cancel it.',
+          'Countries performing worse on SDG7\u2014clean energy access\u2014will face higher increase in domestic water demand. Importantly, if SDG7 planning in water scarce regions goes hand in hand with SDG6, negative outcomes could be minimized\u2014e.g. by fostering other renewables for energy production: SDG6 constrains SDG7 but does not cancel it.',
         ],
       },
       {
@@ -9108,6 +12050,68 @@ export const LinkageData2023 = [
         target: '15.1',
         description: [
           'Achieving universal and equitable access to safe and affordable drinking water for all in regions with water scarcity counteracts the conservation, restoration and sustainable use of terrestrial and inland freshwater ecosystem (demand of drinking water vs. demand for water for nature), and vice versa.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '16.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.11',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.9',
+        description: [
+          '',
         ],
       },
     ],
@@ -9304,7 +12308,7 @@ export const LinkageData2023 = [
       {
         target: '7.a',
         description: [
-          'Energy infrastructure aids in the provisioning of [...] water resources [...] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
+          'Energy infrastructure aids in the provisioning of [\u2026] water resources [\u2026] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
           '',
           'Synergies include international cooperation having enabled renewable energy development using human excreta and urine for energy production, knowledge exchange and subsequent investment in such type of energy infrastructure and technology.',
         ],
@@ -9320,7 +12324,7 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          "Scabies is a hygiene-related disease caused by a human itch mite infestation of the skin, usually spread by skin-to-skin contact. [...] Remote Indigenous communities of northern Australia have the highest rates of scabies globally, with hyper-endemic rates in many remote communities. A key contributor to scabies and other skin infections in remote Indigenous populations has been noted to be residential over-crowding [...]. Soil-transmitted helminthiases (STH) infection risk factors involve those living in poverty and the associated lack of access to clean water and toilets, which contribute to unhygienic practices. In Australia, STH [...] are endemic in some Indigenous communities [...]. The worm can contribute to mortality and morbidity, particularly in immune-suppressed patients, but the cycle of infection is effectively disrupted by the introduction of sewerage systems. Trachoma eye infection remains in some of Australia's Indigenous communities [...] Infection is correlated with a range of WASH-related factors including irregular washing [...] and crowded housing. It is caused by a bacterium that inflames the eye, and recurrent infections cause scarring of the eye and structural changes to the eyelid that can result in blindness. [...] Chronic infections in early childhood are often linked to vulnerability to other diseases in later life. [...] The presence of both trachoma and skin infections are indicative of the ongoing need to provide sustainable washing facilities. {Indigenous Australia} --- A significant impact on sanitation and hygiene in remote communities is domestic over-crowding. [...] Significant crowding limits the ability of individuals to maintain personal and environmental hygiene conditions that can negatively affect health [...] 28% were living in a dwelling in which one or more of the facilities for washing people, clothes and bedding, for safely removing waste, and/or for enabling the safe storage and cooking of food was not available or did not work. Regarding the ability to wash hands, faces and bodies with soap and water to prevent such infections as trachoma, very few households in Central Australian remote communities were found to possess soap on a regular basis [...] crowding impacts on 'health hardware', the housing infrastructure that enables the washing of people and clothes, and enables safe preparation of food. {Indigenous Australia}",
+          'Scabies is a hygiene-related disease caused by a human itch mite infestation of the skin, usually spread by skin-to-skin contact. [\u2026] Remote Indigenous communities of northern Australia have the highest rates of scabies globally, with hyper-endemic rates in many remote communities. A key contributor to scabies and other skin infections in remote Indigenous populations has been noted to be residential over-crowding [\u2026]. Soil-transmitted helminthiases (STH) infection risk factors involve those living in poverty and the associated lack of access to clean water and toilets, which contribute to unhygienic practices. In Australia, STH [\u2026] are endemic in some Indigenous communities [\u2026]. The worm can contribute to mortality and morbidity, particularly in immune-suppressed patients, but the cycle of infection is effectively disrupted by the introduction of sewerage systems. Trachoma eye infection remains in some of Australia\u2019s Indigenous communities [\u2026] Infection is correlated with a range of WASH-related factors including irregular washing [...] and crowded housing. It is caused by a bacterium that inflames the eye, and recurrent infections cause scarring of the eye and structural changes to the eyelid that can result in blindness. [\u2026] Chronic infections in early childhood are often linked to vulnerability to other diseases in later life. [...] The presence of both trachoma and skin infections are indicative of the ongoing need to provide sustainable washing facilities. {Indigenous Australia} --- A significant impact on sanitation and hygiene in remote communities is domestic over-crowding. [\u2026] Significant crowding limits the ability of individuals to maintain personal and environmental hygiene conditions that can negatively affect health [\u2026] 28% were living in a dwelling in which one or more of the facilities for washing people, clothes and bedding, for safely removing waste, and/or for enabling the safe storage and cooking of food was not available or did not work. Regarding the ability to wash hands, faces and bodies with soap and water to prevent such infections as trachoma, very few households in Central Australian remote communities were found to possess soap on a regular basis [\u2026] crowding impacts on \u2018health hardware\u2019, the housing infrastructure that enables the washing of people and clothes, and enables safe preparation of food. {Indigenous Australia}',
           'End epidemics (3.3) and preventable child deaths (3.2) < Indivisible from access to safe water (6.1) and sanitation and hygiene (6.2). Generally applicable.',
           'Target calls for action for cleaner water, including through treatment of pathogens [call for action]// Multiple synergies, including in the development of treatment systems for wastewater that contains human waste [synergy].',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports target [...] reducing the risk of water-borne diseases.',
@@ -9331,7 +12335,7 @@ export const LinkageData2023 = [
       {
         target: '3.9',
         description: [
-          'Residents of remote Australian communities, especially Indigenous Australians, continue to experience chronic and hygiene-related diseases at rates higher than the wider Australian population. Water contamination has been proposed as one of the causes [...]. Over half of remote communities rated their housing as unsafe or unhealthy, due to environmental risks from dust, water, and sanitation [...]; gastroenteritis and other viral infectious to be the most common causes [of paediatric admissions] with a disproportionate rate of presentation and admission among Indigenous children.',
+          'Residents of remote Australian communities, especially Indigenous Australians, continue to experience chronic and hygiene-related diseases at rates higher than the wider Australian population. Water contamination has been proposed as one of the causes [\u2026]. Over half of remote communities rated their housing as unsafe or unhealthy, due to environmental risks from dust, water, and sanitation [\u2026]; gastroenteritis and other viral infectious to be the most common causes [of paediatric admissions] with a disproportionate rate of presentation and admission among Indigenous children.',
           'Target calls for action in sanitation where there is pollution caused by unsafe human waste disposal and leading to various illnesses and diseases [call for action] //  Multiple synergies exist, for example, with treatment, re-use and safe diposal of faeces and urine to reduce water and soil pollution and contamination [synergy].',
           'Intrinsically related per definition.',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports target [...] reducing the risk of water-borne diseases.',
@@ -9366,42 +12370,42 @@ export const LinkageData2023 = [
       {
         target: '4.1',
         description: [
-          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [...] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [...] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
+          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [\u2026] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [\u2026] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
           'Ensuring that girls and boys complete education requires action in sanitation, including investment in sanitation facilities in schools [call for action]// Multiple synergies, including where absence of or inadequate sanitation is a cause of school absenteeism; sex-specific toilets encourage attendance among girls; health education in schools contributes to better hygiene and can trigger sanitation and hygiene improvements at home [synergy] // Potential trade-offs may include situations where certain types of health education reproduce sanitation and hygiene issues such as stigmas around menstruation [trade-off].',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports target the target of SDG 4. Water supply, sanitation and hygiene services are key factors in improving student health and thus educational outcomes.',
-          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [...] education.',
+          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [\u2026] education.',
         ],
       },
       {
         target: '4.2',
         description: [
-          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [...] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [...] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
+          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [\u2026] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [\u2026] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
           'Target calls for action in sanitation for ensuring the development of children who are particularly vulnerable to poor sanitation conditions [call for action] // Synergies where higher access to sanitation and hygiene support child growth [synergy].',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports the target of SDG 4.',
           'Achieving access to adequate and equitable sanitation and hygiene and end open defecation will directly impact the programs to ensure that children under 5 years of age have developmentally on track in health.',
-          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [...] education.',
+          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [\u2026] education.',
         ],
       },
       {
         target: '4.3',
         description: [
-          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [...] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [...] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
+          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [\u2026] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [\u2026] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
           'Target calls for action in sanitation to support access to tertiary education systems where absence or inadequate sanitation in households and/or in education facilities is a cause of absenteeism [call for action]// Evidence that sanitation that is adequate for different users (including persons with disabilties) leads to the elimination of discrimination and ensures equal access to tertiary education [synergy].',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports the target of SDG 4. Water supply, sanitation and hygiene services are key factors in improving student health and thus educational outcomes.',
-          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [...] education.',
+          'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on [\u2026] education.',
         ],
       },
       {
         target: '4.4',
         description: [
-          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [...] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [...] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
+          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [\u2026] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [\u2026] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
           'Synergies include job formations benefiting the sanitation sector (e.g masonry); or where the sanitation sector boosts employability of individuals, for example, through provision of trainings; or where sanitation-related formations triggers behaviour change in hygiene practices.',
         ],
       },
       {
         target: '4.5',
         description: [
-          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [...] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [...] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
+          'Access to safe WASH services at domicile will help to ensure that children and adults, and particularly girls and women, are not spending their time collecting drinking water from a source outside the house. Carrying water consumes time and valuable personal energy that can prevent (mainly) girls from attending schools. [\u2026] Paths to water sources are long and in many cases are passing through remote areas which may put women and girls at risk of physical violence. [\u2026] In many locations, men, women, as well as boys and girls under 15 years age, are responsible for collecting water from the source and bringing it to the house one or more times each day. This time for water collection is in most cases at the account of the children education time. It is important to mention that, in addition to the water collection time, the time lost due to illness caused by poor water quality (e.g. water borne diseases) might also account for the children lost education time.',
           'Target calls for action in sanitation to support access to tertiary education systems where absence or inadequate sanitation in households and/or in education facilities is a cause of absenteeism [call for action]// Ensuring that girls and boys complete education requires action in sanitation, including investment in sanitation facilities in schools [call for action]// Multiple synergies, including where absence of or inadequate sanitation is a cause of school absenteeism; sex-specific toilets encourage attendance among girls; health education in schools contributes to better hygiene and can trigger sanitation and hygiene improvements at home [synergy] //Evidence that sanitation that is adequate for different users (including persons with disabilties) leads to the elimination of discrimination and ensures equal access to tertiary education // Synergies include job formations benefiting the sanitation sector (e.g masonry); or where the sanitation sector boosts employability of individuals, for example, through provision of trainings; or where sanitation-related formations triggers behaviour change in hygiene practices.',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports the target of SDG 4. Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life.',
           'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on gender equality.',
@@ -9427,7 +12431,7 @@ export const LinkageData2023 = [
         target: '11.5',
         description: [
           '',
-          "Target calls for action in sanitation to reduce the impacts of disasters, for example where pathogen risks are higher, where disasters affect sanitation facilities and services, or where they lead to populations' displacement which require the creation of emergency services [call for action] // Multiple synergies, for example, in building resilient sanitation infrastructure, in triggering early warnings to empty latrines, and, from a social learning perspective, in developing management systems that are less exposed to risks [synergy].",
+          'Target calls for action in sanitation to reduce the impacts of disasters, for example where pathogen risks are higher, where disasters affect sanitation facilities and services, or where they lead to populations\u2019 displacement which require the creation of emergency services [call for action] // Multiple synergies, for example, in building resilient sanitation infrastructure, in triggering early warnings to empty latrines, and, from a social learning perspective, in developing management systems that are less exposed to risks [synergy].',
           'Achieving access to adequate and equitable sanitation and hygiene and end open defecation has a direct relationship with reducing the number of death caused by disasters, including water-related disasters. This increases the resilience of countries / cities to climate change and other natural disasters, as one of the greatest causes of death during disaster response and recovery period is from dirty and unsafe water used for human consumption.',
         ],
       },
@@ -9459,7 +12463,7 @@ export const LinkageData2023 = [
           'Target calls for action in sanitation for environments that are safe from pathogens [call for action] // Multiple synergies, including in safe sanitation in hospitals, and for the development of handwashing facilities and practices [synergy].',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports target. Implementing WASH alleviates diarrhoea and malnutrition, which are leading causes of death among children under five. [...] reducing the risk of water-borne diseases.',
           '9% of post neonatal death caused by Diarrhoea. Access to adequate and equitable sanitation and hygiene can directly and significantly the risk to diarrhoea and mortality from diarrhoea, or other gastro-intestinal problems arising from ingesting contaminated water and food.',
-          "Improved access to safe water in home, health-care facilities, and schools will directly support several targets on nutrition and health. {Global} --- A decrease of the 'proportion of population practicing open defecation' leads to a decline of the 'under-five mortality rate'. High income countries have a high density of sanitation services and low under-five mortality rates, whereas low-income countries (LIC) exhibit a lower density of sanitation services and higher under-five mortality rates [...] it is clear that LIC need capacity building on clean sanitation solutions, resulting in synergistic effects on improved children's health. {Global}",
+          "Improved access to safe water in home, health-care facilities, and schools will directly support several targets on nutrition and health. {Global} --- A decrease of the \u201cproportion of population practicing open defecation\u201d leads to a decline of the \u201cunder-five mortality rate\u201d. High income countries have a high density of sanitation services and low under-five mortality rates, whereas low-income countries (LIC) exhibit a lower density of sanitation services and higher under-five mortality rates [...] it is clear that LIC need capacity building on clean sanitation solutions, resulting in synergistic effects on improved children's health. {Global}",
         ],
       },
       {
@@ -9499,14 +12503,14 @@ export const LinkageData2023 = [
       {
         target: '10.3',
         description: [
-          "Multiple possible synergie include toilet construction laws, policies and practices that particularly target the poorest, or women and girls [synergy] // Possible trade-offs include the same as for Target 10.2, where attempt to address discrimination to one segment of the populations may increase that of another's [trade-off].",
+          'Multiple possible synergie include toilet construction laws, policies and practices that particularly target the poorest, or women and girls [synergy] // Possible trade-offs include the same as for Target 10.2, where attempt to address discrimination to one segment of the populations may increase that of another\u2019s [trade-off].',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports target. Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life.',
         ],
       },
       {
         target: '10.4',
         description: [
-          "Target calls for action in sanitation for inclusive policies to meet workers' needs [call for action] // Synergies where social protection policies ensure minimum sanitation for the most vulnerable, or regulations that specifically target the sanitation labour market and protect sanitation workers from law wages and precarious working conditions [synergy].",
+          'Target calls for action in sanitation for inclusive policies to meet workers\u2019 needs [call for action] // Synergies where social protection policies ensure minimum sanitation for the most vulnerable, or regulations that specifically target the sanitation labour market and protect sanitation workers from law wages and precarious working conditions [synergy].',
         ],
       },
       {
@@ -9518,7 +12522,7 @@ export const LinkageData2023 = [
       {
         target: '10.b',
         description: [
-          "Synergies exist if Official Development Assistance (ODA) is targeted towards achieving access to sanitation [synergy]// Also potential trade-offs if ODA comes with certain conditions which do not match local population's aspirations (even if conditions are in accordance with national plans), for example, ending open defecation, or promoting sewers versus on-site sanitation [trade-off].",
+          'Synergies exist if Official Development Assistance (ODA) is targeted towards achieving access to sanitation [synergy]// Also potential trade-offs if ODA comes with certain conditions which do not match local population\u2019s aspirations (even if conditions are in accordance with national plans), for example, ending open defecation, or promoting sewers versus on-site sanitation [trade-off].',
         ],
       },
       {
@@ -9646,7 +12650,7 @@ export const LinkageData2023 = [
       {
         target: '14.7',
         description: [
-          "Call for action in societies whose livelihood directly depends on wastewater aquaculture [call for action] // Evidence that fisheries relying on wastewater can constitute a sustainable form of aquaculture and plays a part in poor populations' livelihood [synergy].",
+          'Call for action in societies whose livelihood directly depends on wastewater aquaculture [call for action] // Evidence that fisheries relying on wastewater can constitute a sustainable form of aquaculture and plays a part in poor populations\u2019 livelihood [synergy].',
         ],
       },
       {
@@ -9901,13 +12905,13 @@ export const LinkageData2023 = [
       {
         target: '4.c',
         description: [
-          "Target calls for action in sanitation where poor conditions negatively affect teachers' decisions of their teaching location [call for action]// Possible synergies where teachers benefiting from trainings are introduced to health education that will benefit themselves and possibly communities in their home country or that toilets/safe facilities is a pull factor for teachers [synergy].",
+          'Target calls for action in sanitation where poor conditions negatively affect teachers\u2019 decisions of their teaching location [call for action]// Possible synergies where teachers benefiting from trainings are introduced to health education that will benefit themselves and possibly communities in their home country or that toilets/safe facilities is a pull factor for teachers [synergy].',
         ],
       },
       {
         target: '5.1',
         description: [
-          "Target calls for action in sanitation to end discrimination and recognise women and girls' special needs [call for action]// Multiple synergies for example, in MHM [synergy]// But also trade-offs if improved access to sanitation perpetuates discrimination towards women, for example, if improvements made at community-level but impedes inspirations at individual level, or if the process does not encourage them to participate [trade-off].",
+          'Target calls for action in sanitation to end discrimination and recognise women and girls\u2019 special needs [call for action]// Multiple synergies for example, in MHM [synergy]// But also trade-offs if improved access to sanitation perpetuates discrimination towards women, for example, if improvements made at community-level but impedes inspirations at individual level, or if the process does not encourage them to participate [trade-off].',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports target. Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life.',
           'Nepal faces a serious problem of inadequate sanitation and hygiene, especially for girls. Several survey findings have shown that girls perform poorly at school when they menstruate because they fear it will become a trigger for ridicule or discrimination by boys.',
         ],
@@ -9931,7 +12935,7 @@ export const LinkageData2023 = [
       {
         target: '5.5',
         description: [
-          "Call for action in sanitation where poor conditions put barriers to women's empowerment, for example, where a lack of facilities impedes everyday activities and prevents them from participating to public life [call for action]// Synergies where improved access to sanitation pays attention to women's needs so they have equal opportunities, or where the sanitation sector gives opportunities to women for them to participate and have access to leadership roles [synergy] // Possible trade-offs if further disproportionate responsibilities are added to women [trade-off].",
+          'Call for action in sanitation where poor conditions put barriers to women\u2019s empowerment, for example, where a lack of facilities impedes everyday activities and prevents them from participating to public life [call for action]// Synergies where improved access to sanitation pays attention to women\u2019s needs so they have equal opportunities, or where the sanitation sector gives opportunities to women for them to participate and have access to leadership roles [synergy] // Possible trade-offs if further disproportionate responsibilities are added to women [trade-off].',
           "Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports target [women's participation].",
           'Improved access to safe water in home, health-care facilities, and schools will directly support several targets on gender equality.',
         ],
@@ -10009,8 +13013,8 @@ export const LinkageData2023 = [
       {
         target: '8.8',
         description: [
-          "The target calls for sanitation workers to work in safe and secure working environments [call for action] // Improvements of sanitation systems for workers will contribute to this target, while the achievement of this target will include improvement of sanitation workers' conditions [synergy].",
-          "Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life // a strong positive impact on workers' health and thus their productivity.",
+          'The target calls for sanitation workers to work in safe and secure working environments [call for action] // Improvements of sanitation systems for workers will contribute to this target, while the achievement of this target will include improvement of sanitation workers\u2019 conditions [synergy].',
+          'Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life // a strong positive impact on workers\u2019 health and thus their productivity.',
         ],
       },
       {
@@ -10080,7 +13084,7 @@ export const LinkageData2023 = [
       {
         target: '2.b',
         description: [
-          '[Water resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Water resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
@@ -10093,13 +13097,13 @@ export const LinkageData2023 = [
       {
         target: '2.1',
         description: [
-          'The higher the increase in domestic water demand the lower the current agricultural production and the higher the current prevalence of undernourishment. Countries underperforming in SDG2-highly water-dependent SDG-will face enormous water competition between domestic and agricultural use: SDG2 and SDG6 counteract each other.',
+          'The higher the increase in domestic water demand the lower the current agricultural production and the higher the current prevalence of undernourishment. Countries underperforming in SDG2\u2014highly water-dependent SDG\u2014will face enormous water competition between domestic and agricultural use: SDG2 and SDG6 counteract each other.',
         ],
       },
       {
         target: '2.3',
         description: [
-          'The higher the increase in domestic water demand the lower the current agricultural production and the higher the current prevalence of undernourishment. Countries underperforming in SDG2-highly water-dependent SDG-will face enormous water competition between domestic and agricultural use: SDG2 and SDG6 counteract each other.',
+          'The higher the increase in domestic water demand the lower the current agricultural production and the higher the current prevalence of undernourishment. Countries underperforming in SDG2\u2014highly water-dependent SDG\u2014will face enormous water competition between domestic and agricultural use: SDG2 and SDG6 counteract each other.',
           'Synergies exist, for example, where treated sewage is used to increase yield production (e.g. excreta re-use to produce protein feeds for livestock using black soldier flies) and helps nourishing soils (e.g. composted excreta) [synergy]//  Trade-offs might exist where conflicts over land-use emerge between agriculture and sanitation- related developments [trade-off].',
           'The demand of water in sanitation and hygiene systems may counteract the adequate water supply for intensive agriculture, and vice versa.',
         ],
@@ -10113,7 +13117,7 @@ export const LinkageData2023 = [
       {
         target: '7.1',
         description: [
-          'Countries performing worse on SDG7-clean energy access-will face higher increase in domestic water demand. Importantly, if SDG7 planning in water scarce regions goes hand in hand with SDG6, negative outcomes could be minimized-e.g. by fostering other renewables for energy production: SDG6 constrains SDG7 but does not cancel it.',
+          'Countries performing worse on SDG7\u2014clean energy access\u2014will face higher increase in domestic water demand. Importantly, if SDG7 planning in water scarce regions goes hand in hand with SDG6, negative outcomes could be minimized\u2014e.g. by fostering other renewables for energy production: SDG6 constrains SDG7 but does not cancel it.',
           'Safely treated faecal sludge and wastewater can be a useful supply of nutrients and water for agriculture and energy security (for example, to produce nutrient-rich organic compost or energy in the form of heat, biogas and biofuels).',
         ],
       },
@@ -10156,13 +13160,13 @@ export const LinkageData2023 = [
       {
         target: '10.3',
         description: [
-          "Multiple possible synergie include toilet construction laws, policies and practices that particularly target the poorest, or women and girls [synergy] // Possible trade-offs include the same as for Target 10.2, where attempt to address discrimination to one segment of the populations may increase that of another's [trade-off].",
+          'Multiple possible synergie include toilet construction laws, policies and practices that particularly target the poorest, or women and girls [synergy] // Possible trade-offs include the same as for Target 10.2, where attempt to address discrimination to one segment of the populations may increase that of another\u2019s [trade-off].',
         ],
       },
       {
         target: '10.b',
         description: [
-          "Synergies exist if Official Development Assistance (ODA) is targeted towards achieving access to sanitation [synergy]// Also potential trade-offs if ODA comes with certain conditions which do not match local population's aspirations (even if conditions are in accordance with national plans), for example, ending open defecation, or promoting sewers versus on-site sanitation [trade-off].",
+          'Synergies exist if Official Development Assistance (ODA) is targeted towards achieving access to sanitation [synergy]// Also potential trade-offs if ODA comes with certain conditions which do not match local population\u2019s aspirations (even if conditions are in accordance with national plans), for example, ending open defecation, or promoting sewers versus on-site sanitation [trade-off].',
         ],
       },
       {
@@ -10210,7 +13214,7 @@ export const LinkageData2023 = [
       {
         target: '5.1',
         description: [
-          "Target calls for action in sanitation to end discrimination and recognise women and girls' special needs [call for action]// Multiple synergies for example, in MHM [synergy]// But also trade-offs if improved access to sanitation perpetuates discrimination towards women, for example, if improvements made at community-level but impedes inspirations at individual level, or if the process does not encourage them to participate [trade-off].",
+          'Target calls for action in sanitation to end discrimination and recognise women and girls\u2019 special needs [call for action]// Multiple synergies for example, in MHM [synergy]// But also trade-offs if improved access to sanitation perpetuates discrimination towards women, for example, if improvements made at community-level but impedes inspirations at individual level, or if the process does not encourage them to participate [trade-off].',
         ],
       },
       {
@@ -10222,7 +13226,7 @@ export const LinkageData2023 = [
       {
         target: '5.5',
         description: [
-          "Call for action in sanitation where poor conditions put barriers to women's empowerment, for example, where a lack of facilities impedes everyday activities and prevents them from participating to public life [call for action]// Synergies where improved access to sanitation pays attention to women's needs so they have equal opportunities, or where the sanitation sector gives opportunities to women for them to participate and have access to leadership roles [synergy] // Possible trade-offs if further disproportionate responsibilities are added to women [trade-off].",
+          'Call for action in sanitation where poor conditions put barriers to women\u2019s empowerment, for example, where a lack of facilities impedes everyday activities and prevents them from participating to public life [call for action]// Synergies where improved access to sanitation pays attention to women\u2019s needs so they have equal opportunities, or where the sanitation sector gives opportunities to women for them to participate and have access to leadership roles [synergy] // Possible trade-offs if further disproportionate responsibilities are added to women [trade-off].',
         ],
       },
       {
@@ -10283,6 +13287,98 @@ export const LinkageData2023 = [
         target: '14.1',
         description: [
           'Achieving access to adequate sanitation for all reinforces or constraints preventing and reducing marine pollution from human waste, depending on the sewage treatment efficiencies.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '1.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '7.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.b',
+        description: [
+          '',
         ],
       },
     ],
@@ -10400,7 +13496,7 @@ export const LinkageData2023 = [
       {
         target: '15.9',
         description: [
-          "Water quality is an important 'ecosystem value'.",
+          'Water quality is an important \u2018ecosystem value\u2019.',
         ],
       },
       {
@@ -10437,7 +13533,7 @@ export const LinkageData2023 = [
         target: '3.3',
         description: [
           'Explicit connection.',
-          "Soil-transmitted helminthiases (STH) infection risk factors involve those living in poverty and the associated lack of access to clean water and toilets, which contribute to unhygienic practices. In Australia, STH [...] are endemic in some Indigenous communities [...]. The worm can contribute to mortality and morbidity, particularly in immune-suppressed patients, but the cycle of infection is effectively disrupted by the introduction of sewerage systems. Trachoma eye infection remains in some of Australia's Indigenous communities [...] Infection is correlated with a range of WASH-related factors [...]. It is caused by a bacterium that inflames the eye, and recurrent infections cause scarring of the eye and structural changes to the eyelid that can result in blindness. [...] The presence of both trachoma and skin infections are indicative of the ongoing need to provide sustainable washing facilities. {Indigenous Australia} --- Sanitation has improved with the increasing installation of centralised wastewater treatment replacing onsite septic tanks, yet concerns remain regarding contamination and poor maintenance: In 2006, the majority of remote Aboriginal communities relied on septic tanks as their main sewerage system, while a smaller number used pit toilets and a handful of communities did not have any organised sewerage system. This has now changed following the implementation of state- and territory-funded programmes [...] Despite the improvement of these wastewater services, there has been evidence of poor maintenance of wastewater treatment facilities. For example, a 2015 audit from Western Australia noted a high rate of communities that did not meet national standards-with reported drinking water contamination from sewage-derived E. coli or Naegleria sp. microbes at least once in 68 communities in the two-year period of reporting. {Indigenous Australia}",
+          'Soil-transmitted helminthiases (STH) infection risk factors involve those living in poverty and the associated lack of access to clean water and toilets, which contribute to unhygienic practices. In Australia, STH [\u2026] are endemic in some Indigenous communities [\u2026]. The worm can contribute to mortality and morbidity, particularly in immune-suppressed patients, but the cycle of infection is effectively disrupted by the introduction of sewerage systems. Trachoma eye infection remains in some of Australia\u2019s Indigenous communities [\u2026] Infection is correlated with a range of WASH-related factors [...]. It is caused by a bacterium that inflames the eye, and recurrent infections cause scarring of the eye and structural changes to the eyelid that can result in blindness. [\u2026] The presence of both trachoma and skin infections are indicative of the ongoing need to provide sustainable washing facilities. {Indigenous Australia} --- Sanitation has improved with the increasing installation of centralised wastewater treatment replacing onsite septic tanks, yet concerns remain regarding contamination and poor maintenance: In 2006, the majority of remote Aboriginal communities relied on septic tanks as their main sewerage system, while a smaller number used pit toilets and a handful of communities did not have any organised sewerage system. This has now changed following the implementation of state- and territory-funded programmes [\u2026] Despite the improvement of these wastewater services, there has been evidence of poor maintenance of wastewater treatment facilities. For example, a 2015 audit from Western Australia noted a high rate of communities that did not meet national standards\u2014with reported drinking water contamination from sewage-derived E. coli or Naegleria sp. microbes at least once in 68 communities in the two-year period of reporting. {Indigenous Australia}',
           'Ensuring WASH services are combined with safe treatment and disposal or use of wastewater amplifies health gains by reducing the burden of [waterborne] disease.',
           'Proper treatment of wastewater and halting direct discharge of polluted waste and effluent from livestock yards, etc. will directly contribute to reducing water-borne diseases.',
           '',
@@ -10447,7 +13543,7 @@ export const LinkageData2023 = [
         target: '3.9',
         description: [
           'Explicit connection because consumption of, or contact with, contaminated water (pathogens, toxins) is a major source of disease and illness. Therefore, improving health care requires good quality water.',
-          'Residents of remote Australian communities, especially Indigenous Australians, continue to experience chronic and hygiene-related diseases at rates higher than the wider Australian population. Water contamination has been proposed as one of the causes [...]. Studies have found that drinking water supplies can be contaminated by microbes or naturally-occurring chemical and wastewater treatment can be poorly maintained with irregular monitoring. For example, [...] many WA Indigenous communities had nitrate levels in their groundwater-sourced drinking water that were above the safe level for bottle-fed babies [...]; over half of remote communities rated their housing as unsafe or unhealthy, due to environmental risks from dust, water, and sanitation [...]; gastroenteritis and other viral infectious to be the most common causes [of paediatric admissions] with a disproportionate rate of presentation and admission among Indigenous children. Pre-existing multiple morbidity in Aboriginal populations causes a disproportionately increasing incidence of Melioidosis, a soil-based bacterial infection associated with tropical flood waters, and a potential mortality rate of 40%.',
+          'Residents of remote Australian communities, especially Indigenous Australians, continue to experience chronic and hygiene-related diseases at rates higher than the wider Australian population. Water contamination has been proposed as one of the causes [\u2026]. Studies have found that drinking water supplies can be contaminated by microbes or naturally-occurring chemical and wastewater treatment can be poorly maintained with irregular monitoring. For example, [\u2026] many WA Indigenous communities had nitrate levels in their groundwater-sourced drinking water that were above the safe level for bottle-fed babies [\u2026]; over half of remote communities rated their housing as unsafe or unhealthy, due to environmental risks from dust, water, and sanitation [\u2026]; gastroenteritis and other viral infectious to be the most common causes [of paediatric admissions] with a disproportionate rate of presentation and admission among Indigenous children. Pre-existing multiple morbidity in Aboriginal populations causes a disproportionately increasing incidence of Melioidosis, a soil-based bacterial infection associated with tropical flood waters, and a potential mortality rate of 40%.',
           'Ensuring WASH services are combined with safe treatment and disposal or use of wastewater amplifies health gains by reducing the burden of [waterborne] disease.',
           'Reducing pollution entering into water systems through halting illegal or unsustainable discharges and safely treating wastewater will improve water quality and directly reduce the number of deaths and illnesses from hazardous chemical and contamination.',
           'Water quality for reduction of waterborne diseases. {Tajikistan}',
@@ -10575,7 +13671,7 @@ export const LinkageData2023 = [
           'Removal of waste streams from the land prevented run-off or leaching of nutrients into groundwater. {China --- Brazil} --- Woody energy crops, such as willows or poplars, can be planted to filter wastewater with the added benefit of providing biomass for energy. {Sweden}',
           'Water quality is often diminished by using water to dilute and dispose thermal and chemical by-products from thermal power plants. [...]. Overall, reduced use of thermal power stations to produce electrical energy as a result of increasing share of non-thermal renewables should improve the general trend in water quality.',
           '',
-          'The resource inputs deemed necessary for target 6.3 were electricity and fuel, which could be used to reduce the amount of untreated wastewater, a component of the target, in order to improve water quality. Target 7.2 could require water as a renewable energy source, while the other input groups were deemed unnecessary as any land, soil, electricity, or fuel requirements would be negligible. Therefore, the two targets do not share any input needs and no negative score is attributed to the total interaction. In terms of infrastructure, health care and hospitals would not be required for either target. Education, research, and technology could help reduce pollutants, treat wastewater, and increase recycling to improve water quality while also helping develop and establish renewable energy sources. Similarly, gray infrastructure such as pipes, sewage, and water treatment facilities could improve water quality while energy production infrastructure could aid the development of renewable energy sources. Therefore [...] two shared infrastructure needs. Neither target poses risks toward any ecosystem service group but they do provide benefits. Improving water quality would benefit both provisioning and regulating services, while implementing renewable energy sources would reduce pollution produced from non-renewable energy sources in the region and therefore benefit regulating services. Therefore, achieving targets 6.3 and 7.2 would have a net positive effect on ecosystem services.',
+          'The resource inputs deemed necessary for target 6.3 were electricity and fuel, which could be used to reduce the amount of untreated wastewater, a component of the target, in order to improve water quality. Target 7.2 could require water as a renewable energy source, while the other input groups were deemed unnecessary as any land, soil, electricity, or fuel requirements would be negligible. Therefore, the two targets do not share any input needs and no negative score is attributed to the total interaction. In terms of infrastructure, health care and hospitals would not be required for either target. Education, research, and technology could help reduce pollutants, treat wastewater, and increase recycling to improve water quality while also helping develop and establish renewable energy sources. Similarly, gray infrastructure such as pipes, sewage, and water treatment facilities could improve water quality while energy production infrastructure could aid the development of renewable energy sources. Therefore [\u2026] two shared infrastructure needs. Neither target poses risks toward any ecosystem service group but they do provide benefits. Improving water quality would benefit both provisioning and regulating services, while implementing renewable energy sources would reduce pollution produced from non-renewable energy sources in the region and therefore benefit regulating services. Therefore, achieving targets 6.3 and 7.2 would have a net positive effect on ecosystem services.',
           'Some renewable energy sources, including hydropower and bioenergy, can also have significant impacts on land and water resources and ecosystems, and care should be taken to minimize these impacts. // Safely treated faecal sludge and wastewater can be a useful supply of nutrients and water for agriculture and energy security (for example, to produce nutrient-rich organic compost or energy in the form of heat, biogas and biofuels) (synergy).',
         ],
       },
@@ -10583,20 +13679,20 @@ export const LinkageData2023 = [
         target: '12.4',
         description: [
           '',
-          "Ensuring WASH services are combined with safe treatment and disposal or use of wastewater amplifies health gains by reducing the burden of disease. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries. // Wastewater generation must be mitigated with strategies for prevention (product replacement or use of less harmful chemicals in industrial processes), reduction (wastewater treatment, agricultural best practices) // interdependent on 6.3.",
+          'Ensuring WASH services are combined with safe treatment and disposal or use of wastewater amplifies health gains by reducing the burden of disease. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries. // Wastewater generation must be mitigated with strategies for prevention (product replacement or use of less harmful chemicals in industrial processes), reduction (wastewater treatment, agricultural best practices) // interdependent on 6.3.',
         ],
       },
       {
         target: '12.5',
         description: [
           '',
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries. // Wastewater generation must be mitigated with strategies for recycling (closed-loop industrial processes) and reuse (safe wastewater use in agriculture and aquaculture) // interdependent on 6.3.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries. // Wastewater generation must be mitigated with strategies for recycling (closed-loop industrial processes) and reuse (safe wastewater use in agriculture and aquaculture) // interdependent on 6.3.',
         ],
       },
       {
         target: '2.4',
         description: [
-          'In farming, fertilizers, and pesticides from farm operations find their way into water courses and eventually to lakes or coastal areas where their accumulated effects result in phytoplankton blooms and even eutrophication. [...]. Overall, [...] the growth of organic agriculture [...] should improve the general trend in water quality.',
+          'In farming, fertilizers, and pesticides from farm operations find their way into water courses and eventually to lakes or coastal areas where their accumulated effects result in phytoplankton blooms and even eutrophication. [...]. Overall, [\u2026] the growth of organic agriculture [\u2026] should improve the general trend in water quality.',
           '',
           '',
           'Find out more information on the role of context in identifying interlinkages between SDG 2 and 6 (goals and targets) in the publication, which analyses Voluntary National Reviews (VNRs).',
@@ -10644,7 +13740,7 @@ export const LinkageData2023 = [
       {
         target: '7.a',
         description: [
-          'Enhance international cooperation to facilitate clean energy research and technology, if achieved, will increase and improve clean energy sources that will reduce the burden on water resources and the degradation of ecosystems caused by energy production based on fossil fuels. // Energy infrastructure aids in the provisioning of [...] water resources [...] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
+          'Enhance international cooperation to facilitate clean energy research and technology, if achieved, will increase and improve clean energy sources that will reduce the burden on water resources and the degradation of ecosystems caused by energy production based on fossil fuels. // Energy infrastructure aids in the provisioning of [\u2026] water resources [\u2026] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
           '',
         ],
       },
@@ -10714,20 +13810,20 @@ export const LinkageData2023 = [
       {
         target: '12.1',
         description: [
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
         ],
       },
       {
         target: '12.2',
         description: [
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
           'Sustainable management and efficient use of natural resources (e.g., nutrients, water) reinforce improving water quality by reducing pollution, and vice versa.',
         ],
       },
       {
         target: '12.3',
         description: [
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
         ],
       },
       {
@@ -10782,7 +13878,7 @@ export const LinkageData2023 = [
         target: '8.1',
         description: [
           'Sustaining economic growth [8.1] needs to be achieved in such a way as to not jeopardize water quality [6.3] // economic growth may increase total wastewater generation and the risk of pollution (trade-off).',
-          'Sustaining green economic growth via [...] improved water quality through comprehensive wastewater treatment, which can improve water renewability and access-related issues for society.',
+          'Sustaining green economic growth via [\u2026] improved water quality through comprehensive wastewater treatment, which can improve water renewability and access-related issues for society.',
         ],
       },
       {
@@ -10807,7 +13903,7 @@ export const LinkageData2023 = [
       {
         target: '8.8',
         description: [
-          "Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life // a strong positive impact on workers' health and thus their productivity.",
+          'Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life // a strong positive impact on workers\u2019 health and thus their productivity.',
         ],
       },
       {
@@ -10844,7 +13940,7 @@ export const LinkageData2023 = [
       {
         target: '11.4',
         description: [
-          "Significant reduction in pollution to water resources in all aspects will directly contribute to the protection and safeguarding of the world's cultural and natural heritage.",
+          'Significant reduction in pollution to water resources in all aspects will directly contribute to the protection and safeguarding of the world\u2019s cultural and natural heritage.',
         ],
       },
       {
@@ -10961,6 +14057,75 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '12.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '12.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.9',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '1.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '13.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '14.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '15.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '15.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.d',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       5,
       2,
@@ -11029,7 +14194,7 @@ export const LinkageData2023 = [
           '',
           '',
           '',
-          'Quantity and quality of water is crucial for sustainable agriculture. // Increase in agriculture productivity can help to address water scarcity and meet water -use efficiency in agriculture and vice -versa // The small poor farmers and their farming practices are vulnerable due to their high reliance on rain -fed agriculture. The extremity and unreliability on the climatic conditions because of climate change could further deteriorate the livelihood of poor and least resilient farmers [65-68]. [...] Effective management of water is crucial to maintain water use efficiency, increase agricultural productivity due to reduced risk of rainfall variability, and opportunity for harvesting multi -cropping and more remunerative cash crops [69].',
+          'Quantity and quality of water is crucial for sustainable agriculture. // Increase in agriculture productivity can help to address water scarcity and meet water -use efficiency in agriculture and vice -versa // The small poor farmers and their farming practices are vulnerable due to their high reliance on rain -fed agriculture. The extremity and unreliability on the climatic conditions because of climate change could further deteriorate the livelihood of poor and least resilient farmers [65\u201368]. [...] Effective management of water is crucial to maintain water use efficiency, increase agricultural productivity due to reduced risk of rainfall variability, and opportunity for harvesting multi -cropping and more remunerative cash crops [69].',
           '',
           'Meeting target 6.4 would help in increasing agricultural productivity, as irrigation plays a very important role in agricultural production.',
           'Find out more information on the role of context in identifying interlinkages between SDG 2 and 6 (goals and targets) in the publication, which analyses Voluntary National Reviews (VNRs).',
@@ -11041,9 +14206,9 @@ export const LinkageData2023 = [
         description: [
           '',
           '',
-          'Agricultural needs plus an easily accessible supply of energy [...] may create a situation where water resources are overused. Areas with food insecurity are often those with the greatest water loss and therefore smart approaches to water use in agriculture are needed (Ringler et al., 2013).',
+          'Agricultural needs plus an easily accessible supply of energy [\u2026] may create a situation where water resources are overused. Areas with food insecurity are often those with the greatest water loss and therefore smart approaches to water use in agriculture are needed (Ringler et al., 2013).',
           '',
-          'Quantity and quality of water is crucial for sustainable agriculture. // Increase in sustainable food production practices can help to address water scarcity and meet water efficiency in agriculture and vice -versa // Small poor farmers and their farming practices are vulnerable due to their high reliance on rain -fed agriculture. The extremity and unreliability on the climatic conditions because of climate change could further deteriorate the livelihood of poor and least resilient farmers [65-68]. [...] Effective management of water is crucial to maintain water use efficiency, increase agricultural productivity due to reduced risk of rainfall variability, and opportunity for harvesting multi -cropping and more remunerative cash crops [69].',
+          'Quantity and quality of water is crucial for sustainable agriculture. // Increase in sustainable food production practices can help to address water scarcity and meet water efficiency in agriculture and vice -versa // Small poor farmers and their farming practices are vulnerable due to their high reliance on rain -fed agriculture. The extremity and unreliability on the climatic conditions because of climate change could further deteriorate the livelihood of poor and least resilient farmers [65\u201368]. [...] Effective management of water is crucial to maintain water use efficiency, increase agricultural productivity due to reduced risk of rainfall variability, and opportunity for harvesting multi -cropping and more remunerative cash crops [69].',
           '',
           'Find out more information on the role of context in identifying interlinkages between SDG 2 and 6 (goals and targets) in the publication, which analyses Voluntary National Reviews (VNRs).',
           'Sustainable and efficient water use is interlinked with sustainable and resilient agricultural practices. [...] Sustainable farming, if well managed, can significantly reduce water demands, thus contributing to sustainable water use // strong interdependencies (are mutually supportive).',
@@ -11098,7 +14263,7 @@ export const LinkageData2023 = [
         description: [
           '',
           '',
-          "Reducing food waste, if well managed, can significantly reduce water demands, thus contributing to sustainable water use. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Reducing food waste, if well managed, can significantly reduce water demands, thus contributing to sustainable water use. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
           'Substantially increasing water-use efficiency and sustainable management of natural resources across all sectors to ensure sustainable withdrawals and supply of freshwater to address water scarcity is directly supportive with sustainable management and efficient use of natural resources.',
           'Increasing water-use efficiency reinforces sustainable management of efficient use of natural resources, and vice versa.',
         ],
@@ -11156,7 +14321,7 @@ export const LinkageData2023 = [
         target: '2.1',
         description: [
           '',
-          'Agricultural needs plus an easily accessible supply of energy [...] may create a situation where water resources are overused. Areas with food insecurity are often those with the greatest water loss and therefore smart approaches to water use in agriculture are needed (Ringler et al., 2013).',
+          'Agricultural needs plus an easily accessible supply of energy [\u2026] may create a situation where water resources are overused. Areas with food insecurity are often those with the greatest water loss and therefore smart approaches to water use in agriculture are needed (Ringler et al., 2013).',
           '',
           '',
           'Find out more information on the role of context in identifying interlinkages between SDG 2 and 6 (goals and targets) in the publication, which analyses Voluntary National Reviews (VNRs).',
@@ -11197,7 +14362,7 @@ export const LinkageData2023 = [
           '',
           '',
           '',
-          "Support to water efficiency programmes included in Target 6.a definition >40% and 50% of surveyed agencies consider, respectively, water use efficiency and sustainable withdrawals and integrated water resource management implementation as 'very high' priority areas (GLAAS, 2017). ODA effectiveness might become negative as countries scale up the income ladder (Gopalan and Rajan, 2016).",
+          'Support to water efficiency programmes included in Target 6.a definition >40% and 50% of surveyed agencies consider, respectively, water use efficiency and sustainable withdrawals and integrated water resource management implementation as \u201cvery high\u201d priority areas (GLAAS, 2017). ODA effectiveness might become negative as countries scale up the income ladder (Gopalan and Rajan, 2016).',
         ],
       },
       {
@@ -11277,7 +14442,7 @@ export const LinkageData2023 = [
       {
         target: '7.a',
         description: [
-          'Enhance international cooperation to facilitate clean energy research and technology, if achieved, will increase and improve clean energy sources that will reduce the burden on water resources and the degradation of ecosystems caused by energy production based on fossil fuels. // Energy infrastructure aids in the provisioning of [...] water resources [...] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
+          'Enhance international cooperation to facilitate clean energy research and technology, if achieved, will increase and improve clean energy sources that will reduce the burden on water resources and the degradation of ecosystems caused by energy production based on fossil fuels. // Energy infrastructure aids in the provisioning of [\u2026] water resources [\u2026] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
           '',
         ],
       },
@@ -11325,7 +14490,7 @@ export const LinkageData2023 = [
         description: [
           'An increase in 8.1.1 might enhance technological advancements that can improve efficiency in using water and, thus, reduce the exploitation of water resources (El Khanji, 2016; FAO, 2018).',
           'Sustaining economic growth [8.1] needs to be achieved in such a way as to not jeopardize the sustainable supply of freshwater.',
-          'Sustaining green economic growth via water-use efficiency [...] through comprehensive wastewater treatment, which can improve water renewability and access-related issues for society.',
+          'Sustaining green economic growth via water-use efficiency [\u2026] through comprehensive wastewater treatment, which can improve water renewability and access-related issues for society.',
         ],
       },
       {
@@ -11386,25 +14551,25 @@ export const LinkageData2023 = [
       {
         target: '12.1',
         description: [
-          "Reducing food waste, if well managed, can significantly reduce water demands, thus contributing to sustainable water use. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Reducing food waste, if well managed, can significantly reduce water demands, thus contributing to sustainable water use. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
         ],
       },
       {
         target: '12.3',
         description: [
-          "Reducing food waste, if well managed, can significantly reduce water demands, thus contributing to sustainable water use. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Reducing food waste, if well managed, can significantly reduce water demands, thus contributing to sustainable water use. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
         ],
       },
       {
         target: '12.4',
         description: [
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
         ],
       },
       {
         target: '12.5',
         description: [
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
           'Improving water-use efficiency and sustainable withdrawals and supply of freshwater reinforces reducing waste from water consumption and food production through prevention, reduction, recycling and reuse, and vice versa.',
         ],
       },
@@ -11460,7 +14625,7 @@ export const LinkageData2023 = [
       {
         target: '11.4',
         description: [
-          "Ensuring the sustainable withdrawals of water from water resources (through increased water use efficiency) can directly contribute to the protection of the world's cultural and natural heritage.",
+          'Ensuring the sustainable withdrawals of water from water resources (through increased water use efficiency) can directly contribute to the protection of the world\u2019s cultural and natural heritage.',
         ],
       },
     ],
@@ -11489,7 +14654,7 @@ export const LinkageData2023 = [
       {
         target: '2.3',
         description: [
-          'Quantity and quality of water is crucial for sustainable agriculture. // Increase in agriculture productivity can help to address water scarcity and meet water -use efficiency in agriculture and vice -versa // The small poor farmers and their farming practices are vulnerable due to their high reliance on rain -fed agriculture. The extremity and unreliability on the climatic conditions because of climate change could further deteriorate the livelihood of poor and least resilient farmers [65-68]. [...] Effective management of water is crucial to maintain water use efficiency, increase agricultural productivity due to reduced risk of rainfall variability, and opportunity for harvesting multi -cropping and more remunerative cash crops [69].',
+          'Quantity and quality of water is crucial for sustainable agriculture. // Increase in agriculture productivity can help to address water scarcity and meet water -use efficiency in agriculture and vice -versa // The small poor farmers and their farming practices are vulnerable due to their high reliance on rain -fed agriculture. The extremity and unreliability on the climatic conditions because of climate change could further deteriorate the livelihood of poor and least resilient farmers [65\u201368]. [...] Effective management of water is crucial to maintain water use efficiency, increase agricultural productivity due to reduced risk of rainfall variability, and opportunity for harvesting multi -cropping and more remunerative cash crops [69].',
           'Find out more information on the role of context in identifying interlinkages between SDG 2 and 6 (goals and targets) in the publication, which analyses Voluntary National Reviews (VNRs).',
           'Sustainable and efficient water use is interlinked with agricultural productivity (synergy) // access to services such as food can have negative impacts on water availability [...] if care is not taken to reduce pollution, use water sustainably and protect ecosystems (mixed) // Positive linkage between using more efficient water technologies and support to poor (synergy) // To enable a safe and sustainable increase in productivity, best practices in terms of soil, water and waste management must be universally adopted.',
         ],
@@ -11565,6 +14730,32 @@ export const LinkageData2023 = [
         target: '6.6',
         description: [
           'There is a highly competitive relationship between the development and utilization of freshwater resources and the ecological water demand of ecosystems. Within the range of available water resources, the higher the development and utilization of freshwater resources, the less water is left for the ecosystem. Hence, water stress caused by increased freshwater withdrawal has potentially negative effects on the sustainability of natural water resources (UNSD 2020a).',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '12.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.3',
+        description: [
+          '',
         ],
       },
     ],
@@ -11856,7 +15047,7 @@ export const LinkageData2023 = [
         target: '10.1',
         description: [
           'Importance of improving implementing integrated water resources management to sustain income growth.',
-          "Water (and sanitation) is essential to reduce inequalities. Integrated water resource management (IWRM) concept calls to 'leave no one behind'. This highlights overlapping aspects between IWRM and the human rights-based approach to water and sanitation (i.e. equality, equity, participation, and governance) (WWAP, 2019).",
+          'Water (and sanitation) is essential to reduce inequalities. Integrated water resource management (IWRM) concept calls to \u201cleave no one behind\u201d. This highlights overlapping aspects between IWRM and the human rights\u2013based approach to water and sanitation (i.e. equality, equity, participation, and governance) (WWAP, 2019).',
           'Implementing IWRM can support avoiding any potential conflict with Goal 6 and other targets related to sustainable management of natural resources by bringing together different sectors and stakeholders at all levels. [More direct impacts of economic development, mainly from water use and pollution, can cross jurisdictional borders, so it is important that water is managed following hydrological boundaries].',
         ],
       },
@@ -11876,7 +15067,7 @@ export const LinkageData2023 = [
       {
         target: '16.6',
         description: [
-          'The Integrated water resources management framework can support the development of institutional capacity and participatory processes and provide tools for effective, accountable and transparent institutions. [....] However, attaining the required effects through shifting in behaviors and attitudes necessitates additional time and effort.',
+          'The Integrated water resources management framework can support the development of institutional capacity and participatory processes and provide tools for effective, accountable and transparent institutions. [\u2026.] However, attaining the required effects through shifting in behaviors and attitudes necessitates additional time and effort.',
           'An IWRM [6.5] approach both promotes and is reinforced by institutional capacity.',
           '',
         ],
@@ -11891,14 +15082,14 @@ export const LinkageData2023 = [
       {
         target: '8.1',
         description: [
-          'Water is important for sustaining economic growth, it is embodied in agriculture, industry, energy production and all other economic activities. Within the Arab states, same as worldwide, economic growth is a priority for all countries, the interlinkages of water with economic growth in the region have particular importance due to water scarcity. [...] With increasing prosperity, the total water withdrawals per capita will also increase for a certain per capita GDP level [...] Once the per capita GDP reaches a certain high level, it is assumed that the per capita water consumption will decrease or remain constant [...], however, this decrease may be offset by the fact that people might use more water due to lifestyle changes. //Water-economic-environmental accounting is an important tool that might be applied [...] coupled with input-output analysis framework, to improve (lower) the quantification of the embodied water use for GD [...], water use in the different economic activities.',
+          'Water is important for sustaining economic growth, it is embodied in agriculture, industry, energy production and all other economic activities. Within the Arab states, same as worldwide, economic growth is a priority for all countries, the interlinkages of water with economic growth in the region have particular importance due to water scarcity. [...] With increasing prosperity, the total water withdrawals per capita will also increase for a certain per capita GDP level [...] Once the per capita GDP reaches a certain high level, it is assumed that the per capita water consumption will decrease or remain constant [...], however, this decrease may be offset by the fact that people might use more water due to lifestyle changes. //Water-economic-environmental accounting is an important tool that might be applied [\u2026] coupled with input-output analysis framework, to improve (lower) the quantification of the embodied water use for GD [\u2026], water use in the different economic activities.',
           'Implementing IWRM can support avoiding any potential conflict with Goal 6 and other targets related to sustainable management of natural resources by bringing together different sectors and stakeholders at all levels. [More direct impacts of economic development, mainly from water use and pollution, can cross jurisdictional borders, so it is important that water is managed following hydrological boundaries].',
         ],
       },
       {
         target: '8.2',
         description: [
-          'Water is important for sustaining economic growth, it is embodied in agriculture, industry, energy production and all other economic activities. Within the Arab states, same as worldwide, economic growth is a priority for all countries, the interlinkages of water with economic growth in the region have particular importance due to water scarcity. [...] With increasing prosperity, the total water withdrawals per capita will also increase for a certain per capita GDP level [...] Once the per capita GDP reaches a certain high level, it is assumed that the per capita water consumption will decrease or remain constant [...], however, this decrease may be offset by the fact that people might use more water due to lifestyle changes. //Water-economic-environmental accounting is an important tool that might be applied [...] coupled with input-output analysis framework, to improve (lower) the quantification of the embodied water use for GD [...], water use in the different economic activities.',
+          'Water is important for sustaining economic growth, it is embodied in agriculture, industry, energy production and all other economic activities. Within the Arab states, same as worldwide, economic growth is a priority for all countries, the interlinkages of water with economic growth in the region have particular importance due to water scarcity. [...] With increasing prosperity, the total water withdrawals per capita will also increase for a certain per capita GDP level [...] Once the per capita GDP reaches a certain high level, it is assumed that the per capita water consumption will decrease or remain constant [...], however, this decrease may be offset by the fact that people might use more water due to lifestyle changes. //Water-economic-environmental accounting is an important tool that might be applied [\u2026] coupled with input-output analysis framework, to improve (lower) the quantification of the embodied water use for GD [\u2026], water use in the different economic activities.',
         ],
       },
       {
@@ -11938,7 +15129,7 @@ export const LinkageData2023 = [
         target: '1.5',
         description: [
           'Implementing IWRM is interlinked with helping build the resilience of the poor.',
-          "Implementation of IWRM, as it is defined internationally, would have a direct impact on the building the resilience of the poor and those in vulnerable situations in order to reduce their exposure and vulnerability to climate-related extreme events and other economic, social and environmental shocks and disasters due to the very 'integrated' nature of IWRM is the coordinated development and management of water, land and related resources, in order to maximize the resultant economic and social welfare in an equitable manner without compromising the sustainability of key ecosystems.",
+          'Implementation of IWRM, as it is defined internationally, would have a direct impact on the building the resilience of the poor and those in vulnerable situations in order to reduce their exposure and vulnerability to climate-related extreme events and other economic, social and environmental shocks and disasters due to the very \u201cintegrated\u201d nature of IWRM is the coordinated development and management of water, land and related resources, in order to maximize the resultant economic and social welfare in an equitable manner without compromising the sustainability of key ecosystems.',
           'Implementing integrated water resources management at all levels enables building the resilience of the poor and those in vulnerable situations.',
           '',
         ],
@@ -11990,14 +15181,14 @@ export const LinkageData2023 = [
       {
         target: '12.1',
         description: [
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
           '',
         ],
       },
       {
         target: '12.2',
         description: [
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
           'Implement integrated water resources management at all levels, including through transboundary cooperation as appropriate directly supports the sustainable management and efficient use of natural resources, especially water.',
           'The development of an integrated water resources monitoring and management mechanism would feed back into the review of water governance policies.',
           'Sustainable management and efficient use of surface and groundwater resources are indivisible from improving water use efficiency and sustainable water withdraws and supply, and vice versa.',
@@ -12006,19 +15197,19 @@ export const LinkageData2023 = [
       {
         target: '12.3',
         description: [
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
         ],
       },
       {
         target: '12.4',
         description: [
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries. // interdependent on target 6.5.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries. // interdependent on target 6.5.',
         ],
       },
       {
         target: '12.5',
         description: [
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries. // interdependent on target 6.5.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries. // interdependent on target 6.5.',
           'Implementing integrated water resources management enables reducing waste from water consumption.',
           '',
         ],
@@ -12107,7 +15298,7 @@ export const LinkageData2023 = [
       {
         target: '8.8',
         description: [
-          "Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life // a strong positive impact on workers' health and thus their productivity.",
+          'Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life // a strong positive impact on workers\u2019 health and thus their productivity.',
         ],
       },
       {
@@ -12132,7 +15323,7 @@ export const LinkageData2023 = [
       {
         target: '11.4',
         description: [
-          "Implement IWRM at all levels, including through transboundary cooperation, can directly contribute to the protection and safeguarding of the world's cultural and natural heritage.",
+          'Implement IWRM at all levels, including through transboundary cooperation, can directly contribute to the protection and safeguarding of the world\u2019s cultural and natural heritage.',
         ],
       },
       {
@@ -12204,6 +15395,32 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '9.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       5,
       4,
@@ -12239,7 +15456,7 @@ export const LinkageData2023 = [
           '',
           '',
           'Strong synergies.',
-          'Forest certification would be expected to influence [...] water extent. This would be both directly, as water management is a criterion in such schemes (e.g. Forest Stewardship Council 2015), and indirectly, where this is related to greater forest area, leading to higher water retention and therefore contributing to an increase in water body extent. In an EU-wide study (EEA 2015), water retention was 25 per cent and 50 per cent higher in catchments that had 30 per cent and 70 per cent forest cover, respectively, compared with a catchment with only 10 per cent forest cover. Moreover, catchments with any forest cover had 25 per cent greater water retention in the summer compared with the winter.',
+          'Forest certification would be expected to influence [\u2026] water extent. This would be both directly, as water management is a criterion in such schemes (e.g. Forest Stewardship Council 2015), and indirectly, where this is related to greater forest area, leading to higher water retention and therefore contributing to an increase in water body extent. In an EU-wide study (EEA 2015), water retention was 25 per cent and 50 per cent higher in catchments that had 30 per cent and 70 per cent forest cover, respectively, compared with a catchment with only 10 per cent forest cover. Moreover, catchments with any forest cover had 25 per cent greater water retention in the summer compared with the winter.',
           'Sustainable management of forests reinforces protecting and restoring water-related ecosystems, and vice versa.',
           '',
         ],
@@ -12306,7 +15523,7 @@ export const LinkageData2023 = [
         target: '1.5',
         description: [
           '',
-          "The significantly negative relationship observed [...] may reflect that most countries are better at reducing deaths in water-related disasters than other types of disasters. // Humans are prone to living and working in water-rich areas, which leads to higher human exposure to water-related disasters. According to UN-Water, around 74 per cent of all natural disasters between 2001 and 2018 were water-related, and during the past 20 years floods and droughts affected over 3 billion people (UNESCO and UN-Water 2020). Although governments and communities may have developed various measures to reduce or avoid deaths caused by these disasters - such as through improved early warning systems - people's livelihoods might be disrupted or destroyed to a greater extent in the future, with higher human exposure to water-related disasters than other kinds of disasters. This may explain why a significantly positive relationship was observed with respect to economic impacts, but a negative one was apparent with respect to mortality. [...] (UNESCO) estimated that by 2050, population growth in flood-prone lands, climate change, deforestation, loss of wetlands and rising sea levels would increase the number of people vulnerable to flood disaster to 2 billion (WWAP 2012). {Global} --- The significant negative relationship that was observed between economic loss (both direct economic loss and direct agriculture loss) due to disasters and water body extent suggests that economic development may be more susceptible to disasters in areas where water resources are not abundant, such as in sub-Saharan Africa [...] (Shiferaw et al. 2014). In these areas, it may make sense to give more attention to disaster risk reduction and prevention strategies related to drought, for example by adapting existing modes of production to address a higher incidence of water scarcity and by protecting limited water resources. For instance, integrated water management at the basin level can reduce disaster risks and its economic impact, through adopting measures and building infrastructure to retain water surplus. Retaining water surplus helps avoid flooding and can be used during drought periods (UNECE and UNISDR 2018). UN-Water (UNESCO and UN-Water 2020) suggests climate-smart agriculture (CSA) practices that could reduce the impact of disasters. [...] The relationship between water body extent and direct economic loss to other damaged or destroyed productive assets was observed to be positive. This may be due to the fact that productive assets are prone to be located near to water-abundant areas to reduce production costs. {Global}",
+          'The significantly negative relationship observed [\u2026] may reflect that most countries are better at reducing deaths in water-related disasters than other types of disasters. // Humans are prone to living and working in water-rich areas, which leads to higher human exposure to water-related disasters. According to UN-Water, around 74 per cent of all natural disasters between 2001 and 2018 were water-related, and during the past 20 years floods and droughts affected over 3 billion people (UNESCO and UN-Water 2020). Although governments and communities may have developed various measures to reduce or avoid deaths caused by these disasters \u2013 such as through improved early warning systems \u2013 people\u2019s livelihoods might be disrupted or destroyed to a greater extent in the future, with higher human exposure to water-related disasters than other kinds of disasters. This may explain why a significantly positive relationship was observed with respect to economic impacts, but a negative one was apparent with respect to mortality. [\u2026] (UNESCO) estimated that by 2050, population growth in flood-prone lands, climate change, deforestation, loss of wetlands and rising sea levels would increase the number of people vulnerable to flood disaster to 2 billion (WWAP 2012). {Global} --- The significant negative relationship that was observed between economic loss (both direct economic loss and direct agriculture loss) due to disasters and water body extent suggests that economic development may be more susceptible to disasters in areas where water resources are not abundant, such as in sub-Saharan Africa [\u2026] (Shiferaw et al. 2014). In these areas, it may make sense to give more attention to disaster risk reduction and prevention strategies related to drought, for example by adapting existing modes of production to address a higher incidence of water scarcity and by protecting limited water resources. For instance, integrated water management at the basin level can reduce disaster risks and its economic impact, through adopting measures and building infrastructure to retain water surplus. Retaining water surplus helps avoid flooding and can be used during drought periods (UNECE and UNISDR 2018). UN-Water (UNESCO and UN-Water 2020) suggests climate-smart agriculture (CSA) practices that could reduce the impact of disasters. [\u2026] The relationship between water body extent and direct economic loss to other damaged or destroyed productive assets was observed to be positive. This may be due to the fact that productive assets are prone to be located near to water-abundant areas to reduce production costs. {Global}',
           'Protecting and restoring water-related ecosystems reinforces building the resilience of the poor and those in vulnerable situations.',
           '',
         ],
@@ -12336,7 +15553,7 @@ export const LinkageData2023 = [
         description: [
           '',
           '',
-          "Reducing food waste, if well managed, can significantly reduce water demands, thus contributing to sustainable water use. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Reducing food waste, if well managed, can significantly reduce water demands, thus contributing to sustainable water use. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
         ],
       },
       {
@@ -12551,7 +15768,7 @@ export const LinkageData2023 = [
         description: [
           '',
           '',
-          "Protecting and restoration of water-related ecosystems, including mountains, forests, wetlands, rivers, aquifers and lakes, will also help to ensure availability of water for all directly, given the fact that most of Asia's population (over 60%) currently or soon will be living in cities. Where will these cities get their water? Some will come from desalinisation. Some from recycling of waste water. But this will not be enough without natural sources from mountains, wetlands, and other sources.",
+          'Protecting and restoration of water-related ecosystems, including mountains, forests, wetlands, rivers, aquifers and lakes, will also help to ensure availability of water for all directly, given the fact that most of Asia\u2019s population (over 60%) currently or soon will be living in cities. Where will these cities get their water? Some will come from desalinisation. Some from recycling of waste water. But this will not be enough without natural sources from mountains, wetlands, and other sources.',
         ],
       },
       {
@@ -12589,7 +15806,7 @@ export const LinkageData2023 = [
       {
         target: '7.a',
         description: [
-          'Enhance international cooperation to facilitate clean energy research and technology, if achieved, will increase and improve clean energy sources that will reduce the burden on water resources and the degradation of ecosystems caused by energy production based on fossil fuels. // Energy infrastructure aids in the provisioning of [...] water resources [...] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
+          'Enhance international cooperation to facilitate clean energy research and technology, if achieved, will increase and improve clean energy sources that will reduce the burden on water resources and the degradation of ecosystems caused by energy production based on fossil fuels. // Energy infrastructure aids in the provisioning of [\u2026] water resources [\u2026] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
           '',
         ],
       },
@@ -12678,7 +15895,7 @@ export const LinkageData2023 = [
         target: '12.4',
         description: [
           'Strong interdependencies (are mutually supportive) with those targets under Goal 6 that relate to reducing pollution and increasing reuse [6.3], sustainable and efficient use [6.4], IWRM [6.5] and protecting freshwater ecosystems [6.6] // interdependent on target 6.6.',
-          'The unlawful discharge of untreated hazardous waste from various sources is a major threat to water-related ecosystems, causing adverse deleterious impacts. In developing countries, hazardous chemicals from fertilizers and pesticides used in agricultural activities present a significant source of water pollution. This can be attributed to the fact that hazardous waste is being generated and disposed of into the environment at rates greater than they can be safely managed, leading to the release of toxic substances that end up in water streams. Examples include the disposal of inorganic fluorine compounds used in a variety of industrial and manufacturing processes [...] (Ascend Waste and Environment 2015). An increase in recycling rates of e-waste over time and proper handling and disposal can help minimize resource extraction by re-introducing the recycled products into the market, and reducing the disposal of contaminated material into water streams.',
+          'The unlawful discharge of untreated hazardous waste from various sources is a major threat to water-related ecosystems, causing adverse deleterious impacts. In developing countries, hazardous chemicals from fertilizers and pesticides used in agricultural activities present a significant source of water pollution. This can be attributed to the fact that hazardous waste is being generated and disposed of into the environment at rates greater than they can be safely managed, leading to the release of toxic substances that end up in water streams. Examples include the disposal of inorganic fluorine compounds used in a variety of industrial and manufacturing processes [\u2026] (Ascend Waste and Environment 2015). An increase in recycling rates of e-waste over time and proper handling and disposal can help minimize resource extraction by re-introducing the recycled products into the market, and reducing the disposal of contaminated material into water streams.',
         ],
       },
       {
@@ -12759,7 +15976,7 @@ export const LinkageData2023 = [
       {
         target: '11.4',
         description: [
-          "By adequately and permanently protecting / restoring water related ecosystems at the country level, this would protect and safeguard the world's cultural and natural heritage.",
+          'By adequately and permanently protecting / restoring water related ecosystems at the country level, this would protect and safeguard the world\u2019s cultural and natural heritage.',
         ],
       },
       {
@@ -12786,7 +16003,7 @@ export const LinkageData2023 = [
         target: '2.3',
         description: [
           '',
-          'Competition for resources [...] based on the assumption that the fight against rural poverty, malnutrition, and hunger in the framework of the current economic system is likely to be addressed by increases in cheap food production and not by redistribution of resources, means, or food. Achievement of these targets [...] has a negative, draining effect on resources and implies a risk [...] such as issues of water quality and over-extraction. [...] The goal to protect ecosystems yet establish high yield agriculture that satisfies global hunger issues is challenging, especially if high yields are achieved by conventional (agrochemical intensive) agriculture.',
+          'Competition for resources [\u2026] based on the assumption that the fight against rural poverty, malnutrition, and hunger in the framework of the current economic system is likely to be addressed by increases in cheap food production and not by redistribution of resources, means, or food. Achievement of these targets [\u2026] has a negative, draining effect on resources and implies a risk [\u2026] such as issues of water quality and over-extraction. [\u2026] The goal to protect ecosystems yet establish high yield agriculture that satisfies global hunger issues is challenging, especially if high yields are achieved by conventional (agrochemical intensive) agriculture.',
           'Find out more information on the role of context in identifying interlinkages between SDG 2 and 6 (goals and targets) in the publication, which analyses Voluntary National Reviews (VNRs).',
           'Protecting water-related ecosystems is interlinked with agricultural productivity (synergy) // access to services such as food can have negative impacts on ecosystems [...] if care is not taken to reduce pollution, use water sustainably and protect ecosystems (mixed) // Healthy water-related ecosystems, including natural and constructed wetlands, can support agricultural productivity.',
         ],
@@ -12794,20 +16011,20 @@ export const LinkageData2023 = [
       {
         target: '2.1',
         description: [
-          'Potential negative consequences for regulating ecosystem services (e.g., water quality) if food security would be achieved by intensification or deforestation. // Competition for resources [...] based on the assumption that the fight against rural poverty, malnutrition, and hunger in the framework of the current economic system is likely to be addressed by increases in cheap food production and not by redistribution of resources, means, or food. Achievement of these targets [...] has a negative, draining effect on resources and implies a risk [...] such as issues of water quality and over-extraction. [...] The goal to protect ecosystems yet establish high yield agriculture that satisfies global hunger issues is challenging, especially if high yields are achieved by conventional (agrochemical intensive) agriculture.',
+          'Potential negative consequences for regulating ecosystem services (e.g., water quality) if food security would be achieved by intensification or deforestation. // Competition for resources [\u2026] based on the assumption that the fight against rural poverty, malnutrition, and hunger in the framework of the current economic system is likely to be addressed by increases in cheap food production and not by redistribution of resources, means, or food. Achievement of these targets [\u2026] has a negative, draining effect on resources and implies a risk [\u2026] such as issues of water quality and over-extraction. [\u2026] The goal to protect ecosystems yet establish high yield agriculture that satisfies global hunger issues is challenging, especially if high yields are achieved by conventional (agrochemical intensive) agriculture.',
           'An adequate and reliable water resource is a prerequisite for the production of food [...] increases in demand (of water) for agricultural production can all put pressure on water availability, water quality and freshwater ecosystems [...] if care is not taken to reduce pollution, use water sustainably and protect ecosystems (mixed) // Substantially increasing recycling and safe reuse is interlinked with ending hunger (synergy) // Healthy water-related ecosystems, including natural and constructed wetlands, can support agricultural productivity.',
         ],
       },
       {
         target: '2.2',
         description: [
-          'Competition for resources [...] based on the assumption that the fight against rural poverty, malnutrition, and hunger in the framework of the current economic system is likely to be addressed by increases in cheap food production and not by redistribution of resources, means, or food. Achievement of these targets [...] has a negative, draining effect on resources and implies a risk [...] such as issues of water quality and over-extraction. [...] The goal to protect ecosystems yet establish high yield agriculture that satisfies global hunger issues is challenging, especially if high yields are achieved by conventional (agrochemical intensive) agriculture.',
+          'Competition for resources [\u2026] based on the assumption that the fight against rural poverty, malnutrition, and hunger in the framework of the current economic system is likely to be addressed by increases in cheap food production and not by redistribution of resources, means, or food. Achievement of these targets [\u2026] has a negative, draining effect on resources and implies a risk [\u2026] such as issues of water quality and over-extraction. [\u2026] The goal to protect ecosystems yet establish high yield agriculture that satisfies global hunger issues is challenging, especially if high yields are achieved by conventional (agrochemical intensive) agriculture.',
         ],
       },
       {
         target: '2.b',
         description: [
-          '[Water resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Water resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
@@ -12870,7 +16087,7 @@ export const LinkageData2023 = [
         target: '8.9',
         description: [
           'All Goal 6 targets have positive implications for business. Protecting water-related ecosystems supports resilient economies.',
-          'As demand for water activities grows, improved infrastructure and services are needed to accommodate the influx of tourists to water-related sites. For instance, the tourism industry in the Republic of South Africa employs around 10 per cent of South Africans, yet freshwater ecosystems degradation is tangible [...] (increasing river pollution) (Houdet, Lewis and Browne 2020). [...] Swimming, boating and angling are all touristic activities that have a significant impact on water ecosystems, through the discharge of nutrients, fuel discharge through the increased number of commercial touristic boats, power boats or fishing boats, and the introduction of new fish species to attract tourists (Dokulil 2014). In [...] Viet Nam for instance, pollution from wastewater originating from tourist boats is contributing to 30 per cent of the pollution load from the local population in Ha Long Bay (WTO 2020b). [...] a small forested mountain catchment in the Black Forest in Germany has indicated that water quality in the uninhabited catchment has been contaminated by bacteria and turbidity, ammonium nitrogen and total nitrogen from the construction site of a new restaurant to serve tourists (Siegwald and de Jong 2020).',
+          'As demand for water activities grows, improved infrastructure and services are needed to accommodate the influx of tourists to water-related sites. For instance, the tourism industry in the Republic of South Africa employs around 10 per cent of South Africans, yet freshwater ecosystems degradation is tangible [\u2026] (increasing river pollution) (Houdet, Lewis and Browne 2020). [\u2026] Swimming, boating and angling are all touristic activities that have a significant impact on water ecosystems, through the discharge of nutrients, fuel discharge through the increased number of commercial touristic boats, power boats or fishing boats, and the introduction of new fish species to attract tourists (Dokulil 2014). In [\u2026] Viet Nam for instance, pollution from wastewater originating from tourist boats is contributing to 30 per cent of the pollution load from the local population in Ha Long Bay (WTO 2020b). [\u2026] a small forested mountain catchment in the Black Forest in Germany has indicated that water quality in the uninhabited catchment has been contaminated by bacteria and turbidity, ammonium nitrogen and total nitrogen from the construction site of a new restaurant to serve tourists (Siegwald and de Jong 2020).',
         ],
       },
       {
@@ -12888,7 +16105,7 @@ export const LinkageData2023 = [
       {
         target: '1.5',
         description: [
-          "The significantly negative relationship observed [...] may reflect that most countries are better at reducing deaths in water-related disasters than other types of disasters. // Humans are prone to living and working in water-rich areas, which leads to higher human exposure to water-related disasters. According to UN-Water, around 74 per cent of all natural disasters between 2001 and 2018 were water-related, and during the past 20 years floods and droughts affected over 3 billion people (UNESCO and UN-Water 2020). Although governments and communities may have developed various measures to reduce or avoid deaths caused by these disasters - such as through improved early warning systems - people's livelihoods might be disrupted or destroyed to a greater extent in the future, with higher human exposure to water-related disasters than other kinds of disasters. This may explain why a significantly positive relationship was observed with respect to economic impacts, but a negative one was apparent with respect to mortality. [...] (UNESCO) estimated that by 2050, population growth in flood-prone lands, climate change, deforestation, loss of wetlands and rising sea levels would increase the number of people vulnerable to flood disaster to 2 billion (WWAP 2012). {Global} --- The significant negative relationship that was observed between economic loss (both direct economic loss and direct agriculture loss) due to disasters and water body extent suggests that economic development may be more susceptible to disasters in areas where water resources are not abundant, such as in sub-Saharan Africa [...] (Shiferaw et al. 2014). In these areas, it may make sense to give more attention to disaster risk reduction and prevention strategies related to drought, for example by adapting existing modes of production to address a higher incidence of water scarcity and by protecting limited water resources. For instance, integrated water management at the basin level can reduce disaster risks and its economic impact, through adopting measures and building infrastructure to retain water surplus. Retaining water surplus helps avoid flooding and can be used during drought periods (UNECE and UNISDR 2018). UN-Water (UNESCO and UN-Water 2020) suggests climate-smart agriculture (CSA) practices that could reduce the impact of disasters. [...] The relationship between water body extent and direct economic loss to other damaged or destroyed productive assets was observed to be positive. This may be due to the fact that productive assets are prone to be located near to water-abundant areas to reduce production costs. {Global}",
+          'The significantly negative relationship observed [\u2026] may reflect that most countries are better at reducing deaths in water-related disasters than other types of disasters. // Humans are prone to living and working in water-rich areas, which leads to higher human exposure to water-related disasters. According to UN-Water, around 74 per cent of all natural disasters between 2001 and 2018 were water-related, and during the past 20 years floods and droughts affected over 3 billion people (UNESCO and UN-Water 2020). Although governments and communities may have developed various measures to reduce or avoid deaths caused by these disasters \u2013 such as through improved early warning systems \u2013 people\u2019s livelihoods might be disrupted or destroyed to a greater extent in the future, with higher human exposure to water-related disasters than other kinds of disasters. This may explain why a significantly positive relationship was observed with respect to economic impacts, but a negative one was apparent with respect to mortality. [\u2026] (UNESCO) estimated that by 2050, population growth in flood-prone lands, climate change, deforestation, loss of wetlands and rising sea levels would increase the number of people vulnerable to flood disaster to 2 billion (WWAP 2012). {Global} --- The significant negative relationship that was observed between economic loss (both direct economic loss and direct agriculture loss) due to disasters and water body extent suggests that economic development may be more susceptible to disasters in areas where water resources are not abundant, such as in sub-Saharan Africa [\u2026] (Shiferaw et al. 2014). In these areas, it may make sense to give more attention to disaster risk reduction and prevention strategies related to drought, for example by adapting existing modes of production to address a higher incidence of water scarcity and by protecting limited water resources. For instance, integrated water management at the basin level can reduce disaster risks and its economic impact, through adopting measures and building infrastructure to retain water surplus. Retaining water surplus helps avoid flooding and can be used during drought periods (UNECE and UNISDR 2018). UN-Water (UNESCO and UN-Water 2020) suggests climate-smart agriculture (CSA) practices that could reduce the impact of disasters. [\u2026] The relationship between water body extent and direct economic loss to other damaged or destroyed productive assets was observed to be positive. This may be due to the fact that productive assets are prone to be located near to water-abundant areas to reduce production costs. {Global}',
         ],
       },
       {
@@ -12899,6 +16116,14 @@ export const LinkageData2023 = [
       },
       {
         target: '1.3',
+        description: [
+          '',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '15.1',
         description: [
           '',
         ],
@@ -13001,7 +16226,7 @@ export const LinkageData2023 = [
           '',
           '',
           '',
-          "Support to water efficiency programmes included in Target 6.a definition >40% and 50% of surveyed agencies consider, respectively, water use efficiency and sustainable withdrawals and integrated water resource management implementation as 'very high' priority areas (GLAAS, 2017). ODA effectiveness might become negative as countries scale up the income ladder (Gopalan and Rajan, 2016).",
+          'Support to water efficiency programmes included in Target 6.a definition >40% and 50% of surveyed agencies consider, respectively, water use efficiency and sustainable withdrawals and integrated water resource management implementation as \u201cvery high\u201d priority areas (GLAAS, 2017). ODA effectiveness might become negative as countries scale up the income ladder (Gopalan and Rajan, 2016).',
           'Official Development Assistance (ODA) for water and sanitation related activities and Programmes can help to build capacity of local community in efficient use of water through sharing of know-how, technologies, knowledge and research.',
           'Water -use efficiency enhanced by capacity-building support for water harvesting, desalination, recycling and waste-water treatments. {Tajikistan}',
         ],
@@ -13142,7 +16367,7 @@ export const LinkageData2023 = [
       {
         target: '10.1',
         description: [
-          'Service delivery to the most vulnerable as a "very high "priority for 67% of the surveyed agencies. ODA plays an important role in reducing gender inequalities and rural-urban disparities in social and human development (Ndikumana andPickbourn, 2017).',
+          'Service delivery to the most vulnerable as a "very high "priority for 67% of the surveyed agencies. ODA plays an important role in reducing gender inequalities and rural\u2013urban disparities in social and human development (Ndikumana andPickbourn, 2017).',
         ],
       },
       {
@@ -13180,7 +16405,7 @@ export const LinkageData2023 = [
       {
         target: '10.b',
         description: [
-          'Expanding international cooperation and capacity-building support specifically targeted at water- and sanitation-related activities and programmes, can directly encourage ODA and financial flows, including foreign direct investment, to States where the need is greatest, ... in accordance with their national plans and programmes.',
+          'Expanding international cooperation and capacity-building support specifically targeted at water- and sanitation-related activities and programmes, can directly encourage ODA and financial flows, including foreign direct investment, to States where the need is greatest, \u2026 in accordance with their national plans and programmes.',
         ],
       },
       {
@@ -13322,7 +16547,7 @@ export const LinkageData2023 = [
       {
         target: '2.b',
         description: [
-          '[Water resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Water resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
@@ -13342,6 +16567,20 @@ export const LinkageData2023 = [
         target: '10.b',
         description: [
           'ODA, FDI, Resources mobilisation. {Sri Lanka}',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '9.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
         ],
       },
     ],
@@ -13688,6 +16927,26 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '17.16',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       5,
       7,
@@ -13815,7 +17074,7 @@ export const LinkageData2023 = [
         target: '13.1',
         description: [
           '',
-          'Universal access to energy services may mean a negative impact on the [...] climate, causing an increase of energy consumption on the basis of CO2 intensive resources like oil.',
+          'Universal access to energy services may mean a negative impact on the [\u2026] climate, causing an increase of energy consumption on the basis of CO2 intensive resources like oil.',
           '',
         ],
       },
@@ -13859,7 +17118,7 @@ export const LinkageData2023 = [
         target: '17.6',
         description: [
           '',
-          "With a marginal increase in the 'proportion of the population with access to electricity', the 'fixed internet broadband subscriptions per 100 inhabitants' can grow disproportional across countries. [This] elucidate[s] an effective way of exploiting potential synergies for internet connectivity with marginal investments in electricity.",
+          'With a marginal increase in the \u201cproportion of the population with access to electricity\u201d, the \u201cfixed internet broadband subscriptions per 100 inhabitants\u201d can grow disproportional across countries. [This] elucidate[s] an effective way of exploiting potential synergies for internet connectivity with marginal investments in electricity.',
         ],
       },
       {
@@ -13878,7 +17137,7 @@ export const LinkageData2023 = [
         target: '3.8',
         description: [
           '',
-          "Universal energy access enables the provision of food, medicines and vaccines because mechanised refrigeration is essential for effective storage +1 Develop energy access policies to facilitate the spread of refrigeration in rural areas, which will be beneficial for food preservation (to reduce the amounts of food that normally go to waste) and the storage of life-saving medicines and vaccines 7.1, 7.2, 7.3 3.9 In most cases, efforts to provide energy access, expand renewables, and promote energy efficiency will lead to simultaneous reductions in air pollutant emissions; thus the targets are reinforcing +2 Draw up legislation promoting renewable energy and energy efficiency across multiple sectors to reduce negative impacts on the health of rural and urban populations. Pay particular attention to those sectors that are currently the most energy-intensive and energy-polluting, such as buildings, industry and transport in densely populated urban areas, as well as those rural areas with a high use of chemicals for agricultural production Energy access policies that promote the use of cleaner energy and which are less-polluting can significantly reduce premature mortality. Policies targeting those sectors of the population with highest exposure to indoor and outdoor pollution will be most beneficial 7.3 3.4 Energy-saving measures related to 'active travel' (cycling and walking) can lead to improved health and well-being by lowering rates of diabetes, heart disease, dementia, and some cancers +1 Where possible, ensure urban planning and land use management policies encourage energy-saving 'active travel' modes (cycling and walking). This will benefit community health, in terms of lower rates of diabetes, heart disease, dementia, and some cancers 7.3 3.6 Energy-saving measures related to 'active travel' (cycling and walking) can constrain efforts to reduce deaths and injuries from road traffic accidents, if the provided infrastructure is unsatisfactory and if higher air quality standards are not required.",
+          'Universal energy access enables the provision of food, medicines and vaccines because mechanised refrigeration is essential for effective storage +1 Develop energy access policies to facilitate the spread of refrigeration in rural areas, which will be beneficial for food preservation (to reduce the amounts of food that normally go to waste) and the storage of life-saving medicines and vaccines 7.1, 7.2, 7.3 3.9 In most cases, efforts to provide energy access, expand renewables, and promote energy efficiency will lead to simultaneous reductions in air pollutant emissions; thus the targets are reinforcing +2 Draw up legislation promoting renewable energy and energy efficiency across multiple sectors to reduce negative impacts on the health of rural and urban populations. Pay particular attention to those sectors that are currently the most energy-intensive and energy-polluting, such as buildings, industry and transport in densely populated urban areas, as well as those rural areas with a high use of chemicals for agricultural production Energy access policies that promote the use of cleaner energy and which are less-polluting can significantly reduce premature mortality. Policies targeting those sectors of the population with highest exposure to indoor and outdoor pollution will be most beneficial 7.3 3.4 Energy-saving measures related to \u2018active travel\u2019 (cycling and walking) can lead to improved health and well-being by lowering rates of diabetes, heart disease, dementia, and some cancers +1 Where possible, ensure urban planning and land use management policies encourage energy-saving \u2018active travel\u2019 modes (cycling and walking). This will benefit community health, in terms of lower rates of diabetes, heart disease, dementia, and some cancers 7.3 3.6 Energy-saving measures related to \u2018active travel\u2019 (cycling and walking) can constrain efforts to reduce deaths and injuries from road traffic accidents, if the provided infrastructure is unsatisfactory and if higher air quality standards are not required.',
         ],
       },
       {
@@ -14000,7 +17259,7 @@ export const LinkageData2023 = [
         target: '6.1',
         description: [
           '',
-          'The price of electricity significantly influences the cost of water delivery.[...] Reducing the electricity cost is key for assuring affordable water supply. // Access to modern energy is crucial in the development of a supply chain for water (viz., pumping the ground water, water treatment or desalination plant, and also its distribution).',
+          'The price of electricity significantly influences the cost of water delivery.[\u2026] Reducing the electricity cost is key for assuring affordable water supply. // Access to modern energy is crucial in the development of a supply chain for water (viz., pumping the ground water, water treatment or desalination plant, and also its distribution).',
           '',
           'Water as a source to produce energy, and vice versa (United Nations, 2018a; UN-Water, 2016; WWAP, 2014).',
           'With universal availability to affordable and reliable modern energy services there should be a proportional increased ability to scale up the treatment of water to make water safe for drinking at an affordable price for most people. This of course depends on the source, type and relative cost of energy that is utilized for this purpose If from renewable sources such as solar, wind, biomass or local micro-hydro, and the infrastructure in localized, then this can more easily have direct impact on this target.',
@@ -14024,7 +17283,7 @@ export const LinkageData2023 = [
           '',
           '',
           'Increases in demand (of water) for electricity generation can put pressure on water availability, water quality and freshwater ecosystems [...] if care is not taken to reduce pollution, use water sustainably and protect ecosystems (mixed). // Increasing fossil fuel-based energy generation can increase demands on water, particularly for cooling of thermoelectric power plants (trade-off)// An adequate and reliable water resource is a prerequisite for the production of energy (synergy).',
-          "With increased access to affordable, reliable and modern energy services there can easily be seen a direct impact on water-use efficiency in a number of sectors (Industrial, agriculture, mining etc.), depending on the source and rate of electricity. However, If subsidized and/or relatively inexpensive, there could be a tendency to be wasteful with water pumping and over exploit water resources - what is often referred to as the 'rebound effect' - i.e. the saving you get in one areas is neutralized by shafting the cost to another area, often unrealized.",
+          'With increased access to affordable, reliable and modern energy services there can easily be seen a direct impact on water-use efficiency in a number of sectors (Industrial, agriculture, mining etc.), depending on the source and rate of electricity. However, If subsidized and/or relatively inexpensive, there could be a tendency to be wasteful with water pumping and over exploit water resources \u2013 what is often referred to as the \u201crebound effect\u201d \u2013 i.e. the saving you get in one areas is neutralized by shafting the cost to another area, often unrealized.',
         ],
       },
       {
@@ -14091,7 +17350,7 @@ export const LinkageData2023 = [
         target: '3.9',
         description: [
           '',
-          'Recent commitments to address climate change and the prospects for rapidly increasing energy demand, which is expected to double in India within the next two decades, have triggered a wave of planned reforms of the energy system. These include [...] expanding efforts to provide universal access to modern energy forms, particularly to those in rural areas relying on traditional and dirty fuels (firewood, charcoal, crop residues, and dung; Bonjour et al., 2013) for cooking and heating. The number of premature deaths in India due to indoor and near-household air pollution from the use of traditional solid fuels is around 1 million annually, the highest of any country in the world [...]. The main cause is exposure to poor combustion of solid fuels in inefficient cooking-stoves. India has tried to address this issue by providing subsidised liquefied petroleum gas. {India (rural)} --- In most cases, efforts to provide energy access, expand renewables, and promote energy efficiency will lead to simultaneous reductions in air pollutant emissions; thus the targets are reinforcing. {n.a.}',
+          'Recent commitments to address climate change and the prospects for rapidly increasing energy demand, which is expected to double in India within the next two decades, have triggered a wave of planned reforms of the energy system. These include [\u2026] expanding efforts to provide universal access to modern energy forms, particularly to those in rural areas relying on traditional and dirty fuels (firewood, charcoal, crop residues, and dung; Bonjour et al., 2013) for cooking and heating. The number of premature deaths in India due to indoor and near-household air pollution from the use of traditional solid fuels is around 1 million annually, the highest of any country in the world [\u2026]. The main cause is exposure to poor combustion of solid fuels in inefficient cooking-stoves. India has tried to address this issue by providing subsidised liquefied petroleum gas. {India (rural)} --- In most cases, efforts to provide energy access, expand renewables, and promote energy efficiency will lead to simultaneous reductions in air pollutant emissions; thus the targets are reinforcing. {n.a.}',
         ],
       },
       {
@@ -14134,7 +17393,7 @@ export const LinkageData2023 = [
       {
         target: '17.8',
         description: [
-          "With a marginal increase in the 'proportion of the population with access to electricity', the 'proportion of individuals using the internet' can grow disproportional across countries. [This] elucidate[s] an effective way of exploiting potential synergies for internet connectivity with marginal investments in electricity.",
+          'With a marginal increase in the \u201cproportion of the population with access to electricity\u201d, the \u201cproportion of individuals using the internet\u201d can grow disproportional across countries. [This] elucidate[s] an effective way of exploiting potential synergies for internet connectivity with marginal investments in electricity.',
         ],
       },
     ],
@@ -14174,13 +17433,13 @@ export const LinkageData2023 = [
         target: '13.1',
         description: [
           '',
-          'Universal access to energy services may mean a negative impact on the [...] climate, causing an increase of energy consumption on the basis of CO2 intensive resources like oil.',
+          'Universal access to energy services may mean a negative impact on the [\u2026] climate, causing an increase of energy consumption on the basis of CO2 intensive resources like oil.',
         ],
       },
       {
         target: '2.b',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
@@ -14212,21 +17471,21 @@ export const LinkageData2023 = [
         target: '2.1',
         description: [
           'Access to clean and affordable energy is a key enabler/is crucial in achieving food security // Meeting the target of ensuring universal access to nutritious and sufficient food and increasing agriculture productivity could increase energy demand along the food supply chain, and this could stress the energy system. There could be some trade -offs among the target of ending hunger and energy production, especially in countries that rely on biofuel to expand energy access (competition for land). [...] However, with holistic thinking and careful planning, agriculture residues and animal dung can be used for energy production, viz. biogas, which can help in promoting renewable energy and increasing the energy efficiency of traditional biomass utilization. This would create synergetic impact [4].',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
         target: '2.2',
         description: [
           'Access to clean and affordable energy is a key enabler/is crucial in achieving better nutrition. // Energy prices influence food prices and therefore, types of energy uses may also impact nutrition. // Meeting the target of ensuring universal access to nutritious and sufficient food and increasing agriculture productivity could increase energy demand along the food supply chain, and this could stress the energy system. There could be some trade -offs among the target of ending hunger and energy production, especially in countries that rely on biofuel to expand energy access (competition for land). [...] However, with holistic thinking and careful planning, agriculture residues and animal dung can be used for energy production, viz. biogas, which can help in promoting renewable energy and increasing the energy efficiency of traditional biomass utilization. This would create synergetic impact [4].',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
         target: '2.3',
         description: [
           'Access to clean and affordable energy is a key enabler/is crucial in achieving agriculture productivity. // Energy prices influence food prices and therefore, types of energy uses may also impact nutrition. // Meeting the target of ensuring universal access to nutritious and sufficient food and increasing agriculture productivity could increase energy demand along the food supply chain, and this could stress the energy system. There could be some trade -offs among the target of ending hunger and energy production, especially in countries that rely on biofuel to expand energy access (competition for land). [...] However, with holistic thinking and careful planning, agriculture residues and animal dung can be used for energy production, viz. biogas, which can help in promoting renewable energy and increasing the energy efficiency of traditional biomass utilization. This would create synergetic impact [4].',
-          'Negative interactions [...] due to significant amount of resources needed to achieve targets in SDG. [...] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
+          'Negative interactions [\u2026] due to significant amount of resources needed to achieve targets in SDG. [\u2026] These targets require intensive resource inputs such as land, water, energy, and fuel in order to be met, and since there is a limited amount of these inputs available, trade-offs occur between the targets that need and consume these scarce resources. For example, in order to eliminate hunger, a strategy may be to increase agricultural production. However, increased agricultural output may require a greater use of inputs (e.g., synthetic fertilizer), which necessitates increased energy consumption and may pose adverse effects on water quality and quantity, both resulting in trade-offs.',
         ],
       },
       {
@@ -14245,7 +17504,7 @@ export const LinkageData2023 = [
         target: '6.4',
         description: [
           'Increases in demand (of water) for electricity generation can put pressure on water availability, water quality and freshwater ecosystems [...] if care is not taken to reduce pollution, use water sustainably and protect ecosystems (mixed). // Increasing fossil fuel-based energy generation can increase demands on water, particularly for cooling of thermoelectric power plants (trade-off)// An adequate and reliable water resource is a prerequisite for the production of energy (synergy).',
-          "With increased access to affordable, reliable and modern energy services there can easily be seen a direct impact on water-use efficiency in a number of sectors (Industrial, agriculture, mining etc.), depending on the source and rate of electricity. However, If subsidized and/or relatively inexpensive, there could be a tendency to be wasteful with water pumping and over exploit water resources - what is often referred to as the 'rebound effect' - i.e. the saving you get in one areas is neutralized by shafting the cost to another area, often unrealized.",
+          'With increased access to affordable, reliable and modern energy services there can easily be seen a direct impact on water-use efficiency in a number of sectors (Industrial, agriculture, mining etc.), depending on the source and rate of electricity. However, If subsidized and/or relatively inexpensive, there could be a tendency to be wasteful with water pumping and over exploit water resources \u2013 what is often referred to as the \u201crebound effect\u201d \u2013 i.e. the saving you get in one areas is neutralized by shafting the cost to another area, often unrealized.',
         ],
       },
       {
@@ -14264,13 +17523,81 @@ export const LinkageData2023 = [
       {
         target: '15.2',
         description: [
-          'Although small-scale production of biofuels may be sustainable and have many beneficial applications, there have been concerns about the sustainability of large-scale production of biofuels, such as biodiversity loss, conflicts with food security and increased net greenhouse gas emissions (Webb and Coates 2012). [...] Fuelwood removal is responsible for 5 per cent of deforestation (UNFCCC 2007). [...] Expansion in biofuels use, and biodiesel in particular, has also been linked to deforestation in many areas around the world, including Brazil and South-East Asia (Gao et al. 2011). [...] The lack of fast progress in access to clean fuels and technologies is holding back both the efficiency of the global energy system and the improvements in the sustainability of biomass uses (Bull 2018). {Global} --- Though there is a positive trend in the proportion of a population with primary reliance on clean fuels, the relative proportion of reliance on biomass fuels or non-renewable resources (especially in low- and middle-income countries) is still larger (International Institute for Sustainable Development [IISD] 2017), leading to a decrease in forest area and above-ground biomass in forest per hectare (tons per hectare). As this reliance on biomass fuels persists, forests are threatened by inefficient and unsustainable wood collection practices (FAO and UNEP 2020). {Global}',
+          'Although small-scale production of biofuels may be sustainable and have many beneficial applications, there have been concerns about the sustainability of large-scale production of biofuels, such as biodiversity loss, conflicts with food security and increased net greenhouse gas emissions (Webb and Coates 2012). [\u2026] Fuelwood removal is responsible for 5 per cent of deforestation (UNFCCC 2007). [\u2026] Expansion in biofuels use, and biodiesel in particular, has also been linked to deforestation in many areas around the world, including Brazil and South-East Asia (Gao et al. 2011). [...] The lack of fast progress in access to clean fuels and technologies is holding back both the efficiency of the global energy system and the improvements in the sustainability of biomass uses (Bull 2018). {Global} --- Though there is a positive trend in the proportion of a population with primary reliance on clean fuels, the relative proportion of reliance on biomass fuels or non-renewable resources (especially in low- and middle-income countries) is still larger (International Institute for Sustainable Development [IISD] 2017), leading to a decrease in forest area and above-ground biomass in forest per hectare (tons per hectare). As this reliance on biomass fuels persists, forests are threatened by inefficient and unsustainable wood collection practices (FAO and UNEP 2020). {Global}',
         ],
       },
       {
         target: '12.4',
         description: [
           'Target 12.4 aims to minimize electronic waste or maximize the amount of e-waste being recycled. However, e-waste is one of the fastestgrowing waste streams globally in terms of volume, and only 17.4% of global e-waste is appropriately recycled. Economic growth and urbanization, through access to electricity lead to an exponential generation of electronic equipment.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '1.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
         ],
       },
     ],
@@ -14291,7 +17618,7 @@ export const LinkageData2023 = [
           'Water quality is often diminished by using water to dilute and dispose thermal and chemical by-products from thermal power plants. [...]. Overall, reduced use of thermal power stations to produce electrical energy as a result of increasing share of non-thermal renewables should improve the general trend in water quality.',
           'Renewables and energy efficiency will, in most instances, reinforce targets related to water pollution and aquatic ecosystems by reducing levels of chemical and thermal pollution (compared to a less-efficient fossil energy supply system).',
           'Access to modern energy is required in pumping the ground water, water treatment and its distribution.',
-          'The resource inputs deemed necessary for target 6.3 were electricity and fuel, which could be used to reduce the amount of untreated wastewater, a component of the target, in order to improve water quality. Target 7.2 could require water as a renewable energy source, while the other input groups were deemed unnecessary as any land, soil, electricity, or fuel requirements would be negligible. Therefore, the two targets do not share any input needs and no negative score is attributed to the total interaction. In terms of infrastructure, health care and hospitals would not be required for either target. Education, research, and technology could help reduce pollutants, treat wastewater, and increase recycling to improve water quality while also helping develop and establish renewable energy sources. Similarly, gray infrastructure such as pipes, sewage, and water treatment facilities could improve water quality while energy production infrastructure could aid the development of renewable energy sources. Therefore [...] two shared infrastructure needs. Neither target poses risks toward any ecosystem service group but they do provide benefits. Improving water quality would benefit both provisioning and regulating services, while implementing renewable energy sources would reduce pollution produced from non-renewable energy sources in the region and therefore benefit regulating services. Therefore, achieving targets 6.3 and 7.2 would have a net positive effect on ecosystem services.',
+          'The resource inputs deemed necessary for target 6.3 were electricity and fuel, which could be used to reduce the amount of untreated wastewater, a component of the target, in order to improve water quality. Target 7.2 could require water as a renewable energy source, while the other input groups were deemed unnecessary as any land, soil, electricity, or fuel requirements would be negligible. Therefore, the two targets do not share any input needs and no negative score is attributed to the total interaction. In terms of infrastructure, health care and hospitals would not be required for either target. Education, research, and technology could help reduce pollutants, treat wastewater, and increase recycling to improve water quality while also helping develop and establish renewable energy sources. Similarly, gray infrastructure such as pipes, sewage, and water treatment facilities could improve water quality while energy production infrastructure could aid the development of renewable energy sources. Therefore [\u2026] two shared infrastructure needs. Neither target poses risks toward any ecosystem service group but they do provide benefits. Improving water quality would benefit both provisioning and regulating services, while implementing renewable energy sources would reduce pollution produced from non-renewable energy sources in the region and therefore benefit regulating services. Therefore, achieving targets 6.3 and 7.2 would have a net positive effect on ecosystem services.',
           'Some renewable energy sources, including hydropower and bioenergy, can also have significant impacts on land and water resources and ecosystems, and care should be taken to minimize these impacts. // Safely treated faecal sludge and wastewater can be a useful supply of nutrients and water for agriculture and energy security (for example, to produce nutrient-rich organic compost or energy in the form of heat, biogas and biofuels) (synergy).',
           'Higher share of renewable energy in the overall energy mix will have a direct impact on the level and types of pollution released to the environment (air, water, soil) either from the power plant or energy users. Burning of coal , oil and nuclear energy all have very negative impacts on water quality.',
           'Increased use of renewable energy may reduce the nitrogen emissions from energy use and thus reinforces reducing water pollution from atmospheric nitrogen deposition.',
@@ -14352,7 +17679,7 @@ export const LinkageData2023 = [
         target: '10.1',
         description: [
           'Increase in income for lower-income households.',
-          "Development of decentralized bioenergy systems, particularly in developing regions and rural towns, improves local economic opportunities for low-income populations and can enable a more democratic and participatory approach to management of energy and resources. Impacts are amplified when biomass supply is local. If land access is improved to supply local bioenergy system, empowerment and equalization of marginalized populations is possible. (score: +1) // If land is taken from marginalized populations to supply large scale bioenergy and biofuel facilities, this reinforces, or 'locks-in', current structures of unequal distribution of power and resources. (score: -1).",
+          'Development of decentralized bioenergy systems, particularly in developing regions and rural towns, improves local economic opportunities for low-income populations and can enable a more democratic and participatory approach to management of energy and resources. Impacts are amplified when biomass supply is local. If land access is improved to supply local bioenergy system, empowerment and equalization of marginalized populations is possible. (score: +1) // If land is taken from marginalized populations to supply large scale bioenergy and biofuel facilities, this reinforces, or \u2018locks-in\u2019, current structures of unequal distribution of power and resources. (score: -1).',
           'If the sustained income growth is powered with non-renewable sources, 10.1 could have trade-offs with Target 7.2.',
           '',
         ],
@@ -14360,7 +17687,7 @@ export const LinkageData2023 = [
       {
         target: '10.2',
         description: [
-          "Development of decentralized bioenergy systems, particularly in developing regions and rural towns, improves local economic opportunities for low-income populations and can enable a more democratic and participatory approach to management of energy and resources. Impacts are amplified when biomass supply is local. If land access is improved to supply local bioenergy system, empowerment and equalization of marginalized populations is possible. (score: +1) // If land is taken from marginalized populations to supply large scale bioenergy and biofuel facilities, this reinforces, or 'locks-in', current structures of unequal distribution of power and resources. (score: -1).",
+          'Development of decentralized bioenergy systems, particularly in developing regions and rural towns, improves local economic opportunities for low-income populations and can enable a more democratic and participatory approach to management of energy and resources. Impacts are amplified when biomass supply is local. If land access is improved to supply local bioenergy system, empowerment and equalization of marginalized populations is possible. (score: +1) // If land is taken from marginalized populations to supply large scale bioenergy and biofuel facilities, this reinforces, or \u2018locks-in\u2019, current structures of unequal distribution of power and resources. (score: -1).',
         ],
       },
       {
@@ -14392,7 +17719,7 @@ export const LinkageData2023 = [
           'Increased shares of renewable energy (7.2) can benefit urban and peri-urban development by helping to greatly reduce the environmental impact of cities (11.6); this in turn can contribute to a more sustainable economy (8.4), thereby supporting further energy decarbonization.',
           '',
           '',
-          'Renewable energy sources relying on non-oxidative processes - including hydropower, wind and solar - can contribute to a substantial decrease in air pollution, in contrast to biomass fuel burning. [...] As the share of renewable energy includes all types of renewable energy sources (including dirty fuels), it is important to interpret this result with caution.',
+          'Renewable energy sources relying on non-oxidative processes \u2013 including hydropower, wind and solar \u2013 can contribute to a substantial decrease in air pollution, in contrast to biomass fuel burning. [...] As the share of renewable energy includes all types of renewable energy sources (including dirty fuels), it is important to interpret this result with caution.',
         ],
       },
       {
@@ -14484,7 +17811,7 @@ export const LinkageData2023 = [
         target: '13.2',
         description: [
           'Bioenergy may be supported as part of a national or sub-national risk reduction strategy or climate change mitigation or adaptation plan. (score:+2) // Policies aimed at emission reduction in the energy sector may lead to land-use change or increased emissions in another region/country, or competition for biomass between bioenergy and other bioproducts (score: -2).',
-          'Policy coherence for sustainable development (17.14) and sustainable resource use (12.2) can be directed to support renewables (7.2) and efficiency (7.3) in the energy sector, which in turn would strengthen national climate policies (13.2)-which could again reinforce policy coherence (17.14) and sustainable resource use (12.2).',
+          'Policy coherence for sustainable development (17.14) and sustainable resource use (12.2) can be directed to support renewables (7.2) and efficiency (7.3) in the energy sector, which in turn would strengthen national climate policies (13.2)\u2014which could again reinforce policy coherence (17.14) and sustainable resource use (12.2).',
           '',
         ],
       },
@@ -14527,7 +17854,7 @@ export const LinkageData2023 = [
         description: [
           'Unsustainable forest biomass harvest/removal could lead to deforestation or loss of biodiversity. Conversion from natural forest to plantation in response to increased biomass demand could also lead to biodiversity losses (score: -1) // Biomass supply could be limited by the existence of, or put pressure on, protected areas. (score:-1) // A market for biomass provides opportunities for improved forest management and may also mean that more areas remain forested if profitability is improved due to biomass value. (score: +1).',
           '',
-          "If a country's renewable energy is weighted more heavily towards nonoxidative RES (e.g. wind and/or solar energy) rather than oxidative RES (e.g. biomass burning practices), this would reduce the pressure on forest resources in a country.",
+          'If a country\u2019s renewable energy is weighted more heavily towards nonoxidative RES (e.g. wind and/or solar energy) rather than oxidative RES (e.g. biomass burning practices), this would reduce the pressure on forest resources in a country.',
         ],
       },
       {
@@ -14644,7 +17971,7 @@ export const LinkageData2023 = [
           'Improved indoor air quality through improving cookstoves and transitioning to cleaner biofuels.',
           'Modern bioenergy equipment can reduce health risks and mortality related to contamination air pollution and indoor smoke when replacing diesel, fuel oil, kerosene or traditional biomass. (score: +2) //Energy crops can remove pollution (e.g. particulate matter, NOx, SOx) from the atmosphere and water, and remove heavy metals from soil. (score: +1) // Safeguard Pesticides, fertilizer and fossil fuels used to grow and harvest energy crops could increase soil, water and air pollution. (score: -1) // Incineration of waste may increase air pollution and soil contamination. Digestate can be high in heavy metals and must be properly dealt with. (score: -1).',
           '',
-          "In most cases, efforts to provide energy access, expand renewables, and promote energy efficiency will lead to simultaneous reductions in air pollutant emissions; thus the targets are reinforcing. {n.a.} --- Recent commitments to address climate change and the prospects for rapidly increasing energy demand, which is expected to double in India within the next two decades, have triggered a wave of planned reforms of the energy system. These include boosting the share of renewables in the country's energy mix [...], particularly to those in rural areas relying on traditional and dirty fuels (firewood, charcoal, crop residues, and dung; Bonjour et al., 2013) for cooking and heating. The number of premature deaths in India due to indoor and near-household air pollution from the use of traditional solid fuels is around 1 million annually, the highest of any country in the world [...]. The main cause is exposure to poor combustion of solid fuels in inefficient cooking-stoves. India has tried to address this issue by providing subsidised liquefied petroleum gas. {India (rural)}",
+          'In most cases, efforts to provide energy access, expand renewables, and promote energy efficiency will lead to simultaneous reductions in air pollutant emissions; thus the targets are reinforcing. {n.a.} --- Recent commitments to address climate change and the prospects for rapidly increasing energy demand, which is expected to double in India within the next two decades, have triggered a wave of planned reforms of the energy system. These include boosting the share of renewables in the country\u2019s energy mix [\u2026], particularly to those in rural areas relying on traditional and dirty fuels (firewood, charcoal, crop residues, and dung; Bonjour et al., 2013) for cooking and heating. The number of premature deaths in India due to indoor and near-household air pollution from the use of traditional solid fuels is around 1 million annually, the highest of any country in the world [\u2026]. The main cause is exposure to poor combustion of solid fuels in inefficient cooking-stoves. India has tried to address this issue by providing subsidised liquefied petroleum gas. {India (rural)}',
         ],
       },
       {
@@ -14691,7 +18018,7 @@ export const LinkageData2023 = [
           '',
           'Water is used for non-renewable energy generation (e.g. extractive industries or for power plants), but for renewable energy generation as well (e.g. input for energy crops or driving force for hydroelectric turbines) (WWAP, 2014) Potential conflict, as hydropower and bio-energy might have significant impacts on land and water resources and ecosystems (UN-Water, 2016) Tendency of lower levels of water stress when increasing 7.2.1 (see Supplementary Material Table S5).',
           'Some renewable energy sources, including hydropower and bioenergy, can also have significant impacts on land and water resources and ecosystems, and care should be taken to minimize these impacts.',
-          "By increasing renewable energy's share in the total final energy consumption (%)\" or \"renewable energy share in the total primary energy consumption (%) there can be a direct link to water use efficiency across all sectors, especially in regards to water extraction and waste water recycling and reuse.",
+          'By increasing renewable energy\u2019s share in the total final energy consumption (%)" or "renewable energy share in the total primary energy consumption (%) there can be a direct link to water use efficiency across all sectors, especially in regards to water extraction and waste water recycling and reuse.',
           'Increasing the share of renewable energy reinforces/counteracts improving water-use efficiency and reducing water scarcity. For example, building multipurpose hydropower reservoirs helps to increase water use efficiency while producing renewable energy. However, when reservoirs in upstream take too much water for other purposes, there is a risk of water scarcity in downstream.',
         ],
       },
@@ -14734,7 +18061,7 @@ export const LinkageData2023 = [
         description: [
           'Increased biomass demand may result in economic growth at the community and regional level, especially in rural areas, due to significant employment opportunities associated with biomass supply. Community-scale bioenergy projects can create local opportunities for apprenticeships and revenues for municipalities. (score: +2).',
           '',
-          "Over the past few decades, it has seen some of the greatest deployment of wind, solar, bioenergy, and other forms of renewables of any major economy, and is a major producer of renewable energy technologies. The so-called 'Energiewende', has also had a marked impact on employment within Germany - in most ways positive. [...] Key pieces of energy legislation have led to considerable job creation in Germany [...]. Wind power and bioenergy have been the biggest contributors to job growth, with hydropower and geothermal energy playing relatively small roles. In all cases, the number of jobs has grown fairly consistently over time. {Germany} --- Design, manufacture, and installation of renewables and energy efficient technologies can create conditions for new and higherpaying jobs; although some businesses will need to re-tool, and some workers will need to re-train. Strengthened financial institutions in developing country communities are necessary for providing capital, credit, and insurance to local entrepreneurs attempting to enact change. {n.a.}",
+          'Over the past few decades, it has seen some of the greatest deployment of wind, solar, bioenergy, and other forms of renewables of any major economy, and is a major producer of renewable energy technologies. The so-called \u2018Energiewende\u2019, has also had a marked impact on employment within Germany \u2013 in most ways positive. [\u2026] Key pieces of energy legislation have led to considerable job creation in Germany [\u2026]. Wind power and bioenergy have been the biggest contributors to job growth, with hydropower and geothermal energy playing relatively small roles. In all cases, the number of jobs has grown fairly consistently over time. {Germany} --- Design, manufacture, and installation of renewables and energy efficient technologies can create conditions for new and higherpaying jobs; although some businesses will need to re-tool, and some workers will need to re-train. Strengthened financial institutions in developing country communities are necessary for providing capital, credit, and insurance to local entrepreneurs attempting to enact change. {n.a.}',
         ],
       },
       {
@@ -14751,7 +18078,7 @@ export const LinkageData2023 = [
         description: [
           'Increased biomass demand may result in economic growth at the community and regional level, especially in rural areas, due to significant employment opportunities associated with biomass supply. Community-scale bioenergy projects can create local opportunities for apprenticeships and revenues for municipalities. (score: +2).',
           '',
-          "Over the past few decades, it has seen some of the greatest deployment of wind, solar, bioenergy, and other forms of renewables of any major economy, and is a major producer of renewable energy technologies. The so-called 'Energiewende', has also had a marked impact on employment within Germany - in most ways positive. [...] Key pieces of energy legislation have led to considerable job creation in Germany [...]. Wind power and bioenergy have been the biggest contributors to job growth, with hydropower and geothermal energy playing relatively small roles. In all cases, the number of jobs has grown fairly consistently over time. {Germany} --- Design, manufacture, and installation of renewables and energy efficient technologies can create conditions for new and higherpaying jobs; although some businesses will need to re-tool, and some workers will need to re-train. Strengthened financial institutions in developing country communities are necessary for providing capital, credit, and insurance to local entrepreneurs attempting to enact change [synergy] // Phase-out of fossil fuels especially coal and tar sands may represent a permanent loss of jobs in mining regions. What these jobs are replaced by will determine the net impact. [trade-offs]. {n.a.}",
+          'Over the past few decades, it has seen some of the greatest deployment of wind, solar, bioenergy, and other forms of renewables of any major economy, and is a major producer of renewable energy technologies. The so-called \u2018Energiewende\u2019, has also had a marked impact on employment within Germany \u2013 in most ways positive. [\u2026] Key pieces of energy legislation have led to considerable job creation in Germany [\u2026]. Wind power and bioenergy have been the biggest contributors to job growth, with hydropower and geothermal energy playing relatively small roles. In all cases, the number of jobs has grown fairly consistently over time. {Germany} --- Design, manufacture, and installation of renewables and energy efficient technologies can create conditions for new and higherpaying jobs; although some businesses will need to re-tool, and some workers will need to re-train. Strengthened financial institutions in developing country communities are necessary for providing capital, credit, and insurance to local entrepreneurs attempting to enact change [synergy] // Phase-out of fossil fuels especially coal and tar sands may represent a permanent loss of jobs in mining regions. What these jobs are replaced by will determine the net impact. [trade-offs]. {n.a.}',
           '',
         ],
       },
@@ -14759,7 +18086,7 @@ export const LinkageData2023 = [
         target: '8.6',
         description: [
           'Increased biomass demand may result in economic growth at the community and regional level, especially in rural areas, due to significant employment opportunities associated with biomass supply. Community-scale bioenergy projects can create local opportunities for apprenticeships and revenues for municipalities. (score: +2).',
-          "Over the past few decades, it has seen some of the greatest deployment of wind, solar, bioenergy, and other forms of renewables of any major economy, and is a major producer of renewable energy technologies. The so-called 'Energiewende', has also had a marked impact on employment within Germany - in most ways positive. [...] Key pieces of energy legislation have led to considerable job creation in Germany [...]. Wind power and bioenergy have been the biggest contributors to job growth, with hydropower and geothermal energy playing relatively small roles. In all cases, the number of jobs has grown fairly consistently over time. {Germany} --- Design, manufacture, and installation of renewables and energy efficient technologies can create conditions for new and higherpaying jobs; although some businesses will need to re-tool, and some workers will need to re-train. Strengthened financial institutions in developing country communities are necessary for providing capital, credit, and insurance to local entrepreneurs attempting to enact change. {n.a.}",
+          'Over the past few decades, it has seen some of the greatest deployment of wind, solar, bioenergy, and other forms of renewables of any major economy, and is a major producer of renewable energy technologies. The so-called \u2018Energiewende\u2019, has also had a marked impact on employment within Germany \u2013 in most ways positive. [\u2026] Key pieces of energy legislation have led to considerable job creation in Germany [\u2026]. Wind power and bioenergy have been the biggest contributors to job growth, with hydropower and geothermal energy playing relatively small roles. In all cases, the number of jobs has grown fairly consistently over time. {Germany} --- Design, manufacture, and installation of renewables and energy efficient technologies can create conditions for new and higherpaying jobs; although some businesses will need to re-tool, and some workers will need to re-train. Strengthened financial institutions in developing country communities are necessary for providing capital, credit, and insurance to local entrepreneurs attempting to enact change. {n.a.}',
         ],
       },
       {
@@ -14966,7 +18293,7 @@ export const LinkageData2023 = [
       {
         target: '14.b',
         description: [
-          'Energy access [...] is an important driver of market access for small-scale artisanal fishers. Depending how that access is provided this could present Trade-offs with 7.2.',
+          'Energy access [\u2026] is an important driver of market access for small-scale artisanal fishers. Depending how that access is provided this could present Trade-offs with 7.2.',
         ],
       },
       {
@@ -15032,7 +18359,7 @@ export const LinkageData2023 = [
       {
         target: '8.3',
         description: [
-          "Over the past few decades, it has seen some of the greatest deployment of wind, solar, bioenergy, and other forms of renewables of any major economy, and is a major producer of renewable energy technologies. The so-called 'Energiewende', has also had a marked impact on employment within Germany - in most ways positive. [...] Key pieces of energy legislation have led to considerable job creation in Germany [...]. Wind power and bioenergy have been the biggest contributors to job growth, with hydropower and geothermal energy playing relatively small roles. In all cases, the number of jobs has grown fairly consistently over time. {Germany} --- Design, manufacture, and installation of renewables and energy efficient technologies can create conditions for new and higherpaying jobs; although some businesses will need to re-tool, and some workers will need to re-train. Strengthened financial institutions in developing country communities are necessary for providing capital, credit, and insurance to local entrepreneurs attempting to enact change. {n.a.}",
+          'Over the past few decades, it has seen some of the greatest deployment of wind, solar, bioenergy, and other forms of renewables of any major economy, and is a major producer of renewable energy technologies. The so-called \u2018Energiewende\u2019, has also had a marked impact on employment within Germany \u2013 in most ways positive. [\u2026] Key pieces of energy legislation have led to considerable job creation in Germany [\u2026]. Wind power and bioenergy have been the biggest contributors to job growth, with hydropower and geothermal energy playing relatively small roles. In all cases, the number of jobs has grown fairly consistently over time. {Germany} --- Design, manufacture, and installation of renewables and energy efficient technologies can create conditions for new and higherpaying jobs; although some businesses will need to re-tool, and some workers will need to re-train. Strengthened financial institutions in developing country communities are necessary for providing capital, credit, and insurance to local entrepreneurs attempting to enact change. {n.a.}',
         ],
       },
       {
@@ -15111,14 +18438,14 @@ export const LinkageData2023 = [
       {
         target: '10.1',
         description: [
-          "Development of decentralized bioenergy systems, particularly in developing regions and rural towns, improves local economic opportunities for low-income populations and can enable a more democratic and participatory approach to management of energy and resources. Impacts are amplified when biomass supply is local. If land access is improved to supply local bioenergy system, empowerment and equalization of marginalized populations is possible. (score: +1) // If land is taken from marginalized populations to supply large scale bioenergy and biofuel facilities, this reinforces, or 'locks-in', current structures of unequal distribution of power and resources. (score: -1).",
+          'Development of decentralized bioenergy systems, particularly in developing regions and rural towns, improves local economic opportunities for low-income populations and can enable a more democratic and participatory approach to management of energy and resources. Impacts are amplified when biomass supply is local. If land access is improved to supply local bioenergy system, empowerment and equalization of marginalized populations is possible. (score: +1) // If land is taken from marginalized populations to supply large scale bioenergy and biofuel facilities, this reinforces, or \u2018locks-in\u2019, current structures of unequal distribution of power and resources. (score: -1).',
           'If the sustained income growth is powered with non-renewable sources, 10.1 could have trade-offs with Target 7.2.',
         ],
       },
       {
         target: '10.2',
         description: [
-          "Development of decentralized bioenergy systems, particularly in developing regions and rural towns, improves local economic opportunities for low-income populations and can enable a more democratic and participatory approach to management of energy and resources. Impacts are amplified when biomass supply is local. If land access is improved to supply local bioenergy system, empowerment and equalization of marginalized populations is possible. (score: +1) // If land is taken from marginalized populations to supply large scale bioenergy and biofuel facilities, this reinforces, or 'locks-in', current structures of unequal distribution of power and resources. (score: -1).",
+          'Development of decentralized bioenergy systems, particularly in developing regions and rural towns, improves local economic opportunities for low-income populations and can enable a more democratic and participatory approach to management of energy and resources. Impacts are amplified when biomass supply is local. If land access is improved to supply local bioenergy system, empowerment and equalization of marginalized populations is possible. (score: +1) // If land is taken from marginalized populations to supply large scale bioenergy and biofuel facilities, this reinforces, or \u2018locks-in\u2019, current structures of unequal distribution of power and resources. (score: -1).',
         ],
       },
       {
@@ -15200,7 +18527,7 @@ export const LinkageData2023 = [
           '',
           'Land use conversion for biofuel production (7.2) may counteract the maintaining of ecosystems and forest conservation/protection // Hydroelectric power generation (7.2), can lead to the flooding of forested areas counteracting the pursuit of forest conservation / protection.',
           'Wood is currently the most important source of renewable energy in Finland. The wording of the target is about increasing the global proportion of renewable energy but the evaluation focused on potential implications at a national level. In addition to influencing negatively water quality (targets 6.6 and 14.1), biodiversity is likely to be negatively influenced (target 15.5).',
-          "If countries' renewable energy is more dependent on oxidative RES, this could result in the unsustainable harvesting and management of forest resources, by decreasing forest area due to unsustainable biomass burning practices and leading to negative impacts on biodiversity. The removal of trees and change in land use to accommodate biofuels production (a renewable energy source) have indeed resulted in damage to habitat and biodiversity loss (Gallagher 2008; The Royal Society, Science Policy Section 2008). For instance, the oil palm plantations in Malaysia and the Republic of Indonesia provide less complex habitat and host fewer species of birds and butterflies compared to primary forests (Braimoh et al. 2010). (need to consider the percentage of RES in conjunction with the percentage of clean fuel use).",
+          'If countries\u2019 renewable energy is more dependent on oxidative RES, this could result in the unsustainable harvesting and management of forest resources, by decreasing forest area due to unsustainable biomass burning practices and leading to negative impacts on biodiversity. The removal of trees and change in land use to accommodate biofuels production (a renewable energy source) have indeed resulted in damage to habitat and biodiversity loss (Gallagher 2008; The Royal Society, Science Policy Section 2008). For instance, the oil palm plantations in Malaysia and the Republic of Indonesia provide less complex habitat and host fewer species of birds and butterflies compared to primary forests (Braimoh et al. 2010). (need to consider the percentage of RES in conjunction with the percentage of clean fuel use).',
           '',
         ],
       },
@@ -15239,7 +18566,7 @@ export const LinkageData2023 = [
         description: [
           'Areas could be reforested, or left as forest, in order to supply biomass. Depending on species of tree and location, this could have a positive impact on regional water levels and quality. (score: +1) // If forest biomass harvest and cultivation practices are carried out unsustainably (e.g. excessive fertilizer or pesticide application) or too close to a water body, there could be a negative impact on water quality. (score: -1) // Waste streams (e.g. leachate, manure) may be diverted from water bodies to capture energy potential. (score: +1)// Incineration and other waste to energy (WTE) facilities can cause soil and water pollution through leaching, similar to landfills. (score: -1) // Indiscriminate removal of residues can increase runoff and soil erosion, impacting the quality of nearby bodies of water. Evapotranspiration may increase and ability of soil to retain water may decrease, therefore increasing the need for water inputs. Impacts from residue removal depend on local factors including soil type, topography, and climate. (score: -2) // Energy crops may filter pollutants, reduce runoff, or even treat wastewater, particularly if planted on degraded land or to replace annual agriculture crops, thereby improving water quality and helping to protect important ecosystems. (score: +2) //Planting energy crops could increase evapotranspiration or use of water for irrigation, leading to the overuse of freshwater and ground water resources, particularly if forests or other natural ecosystems are displaced. Pesticides and fertilizers applied to energy crops may make it into bodies of water, and cause ecotoxicity.(score: -2).',
           'Some renewable energy sources, including hydropower and bioenergy, can also have significant impacts on land and water resources and ecosystems, and care should be taken to minimize these impacts.',
-          "By increasing renewable energy's share in the total final energy consumption (%)\" or \"renewable energy share in the total primary energy consumption (%) there can be a direct link to water use efficiency across all sectors, especially in regards to water extraction and waste water recycling and reuse.",
+          'By increasing renewable energy\u2019s share in the total final energy consumption (%)" or "renewable energy share in the total primary energy consumption (%) there can be a direct link to water use efficiency across all sectors, especially in regards to water extraction and waste water recycling and reuse.',
           'Increasing the share of renewable energy reinforces/counteracts improving water-use efficiency and reducing water scarcity. For example, building multipurpose hydropower reservoirs helps to increase water use efficiency while producing renewable energy. However, when reservoirs in upstream take too much water for other purposes, there is a risk of water scarcity in downstream.',
         ],
       },
@@ -15274,7 +18601,7 @@ export const LinkageData2023 = [
         target: '8.4',
         description: [
           'Use of residues for energy results in more efficient use of resources, and lower material footprint than extracting and burning fossil fuel, especially if residue previously unused or burnt. (score:+2) // Use of residues for energy results in more efficient use of resources, and lower material footprint than extracting and burning fossil fuel, especially if residue previously unused or burnt. (score: -2).',
-          "Decarbonising energy systems through an up-scaling of renewables and energy efficiency could constrain countries' economic growth, if only slightly. However, strong growth decoupled from environmental degradation is possible.",
+          'Decarbonising energy systems through an up-scaling of renewables and energy efficiency could constrain countries\u2019 economic growth, if only slightly. However, strong growth decoupled from environmental degradation is possible.',
         ],
       },
       {
@@ -15292,7 +18619,7 @@ export const LinkageData2023 = [
       {
         target: '2.b',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
@@ -15304,7 +18631,7 @@ export const LinkageData2023 = [
       {
         target: '14.b',
         description: [
-          'Energy access [...] is an important driver of market access for small-scale artisanal fishers. Depending how that access is provided this could present Trade-offs with 7.2.',
+          'Energy access [\u2026] is an important driver of market access for small-scale artisanal fishers. Depending how that access is provided this could present Trade-offs with 7.2.',
         ],
       },
       {
@@ -15400,7 +18727,7 @@ export const LinkageData2023 = [
       {
         target: '2.3',
         description: [
-          'Hydroelectric power generation, can lead to a decrease in agricultural productivity in the lowland Amazon floodplains due to the retention of nutrients by reservoirs. This endangers food production, because floodplains contain most of the traditional agriculture, coupled with fishing livelihoods (fish disappear after dam construction), hunting and forest product gathering, with major seasonal variations driven by the annual flood cycle, also affected by the dams. [...] Water use to increase the share of renewable energy via hydroelectricity, may constrain the capacity for small-scale food producers to increase their food production and revenues.',
+          'Hydroelectric power generation, can lead to a decrease in agricultural productivity in the lowland Amazon floodplains due to the retention of nutrients by reservoirs. This endangers food production, because floodplains contain most of the traditional agriculture, coupled with fishing livelihoods (fish disappear after dam construction), hunting and forest product gathering, with major seasonal variations driven by the annual flood cycle, also affected by the dams. [\u2026] Water use to increase the share of renewable energy via hydroelectricity, may constrain the capacity for small-scale food producers to increase their food production and revenues.',
           'Access to clean and affordable energy is a key enabler/is crucial in achieving agriculture productivity. // Energy prices influence food prices and therefore, types of energy uses may also impact nutrition. // Meeting the target of ensuring universal access to nutritious and sufficient food and increasing agriculture productivity could increase energy demand along the food supply chain, and this could stress the energy system. There could be some trade -offs among the target of ending hunger and energy production, especially in countries that rely on biofuel to expand energy access (competition for land). [...] However, with holistic thinking and careful planning, agriculture residues and animal dung can be used for energy production, viz. biogas, which can help in promoting renewable energy and increasing the energy efficiency of traditional biomass utilization. This would create synergetic impact [4].',
           'In many cases, energy and food compete for land and water resources. Growing plants for biofuels, for example, requires land and water that otherwise can be used for agriculture [39,40]. [...] replacing a significant amount of petroleum with ethanol production from corn and biodiesel production from soybean in the US cannot be done without affecting food supplies [41].',
         ],
@@ -15408,7 +18735,7 @@ export const LinkageData2023 = [
       {
         target: '8.1',
         description: [
-          "Decarbonising energy systems through an up-scaling of renewables and energy efficiency could constrain countries' economic growth, if only slightly. However, strong growth decoupled from environmental degradation is possible.",
+          'Decarbonising energy systems through an up-scaling of renewables and energy efficiency could constrain countries\u2019 economic growth, if only slightly. However, strong growth decoupled from environmental degradation is possible.',
         ],
       },
       {
@@ -15462,6 +18789,26 @@ export const LinkageData2023 = [
       },
       {
         target: '6.5',
+        description: [
+          '',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '17.11',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
         description: [
           '',
         ],
@@ -15543,7 +18890,7 @@ export const LinkageData2023 = [
       {
         target: '13.2',
         description: [
-          'Policy coherence for sustainable development (17.14) and sustainable resource use (12.2) can be directed to support renewables (7.2) and efficiency (7.3) in the energy sector, which in turn would strengthen national climate policies (13.2)-which could again reinforce policy coherence (17.14) and sustainable resource use (12.2).',
+          'Policy coherence for sustainable development (17.14) and sustainable resource use (12.2) can be directed to support renewables (7.2) and efficiency (7.3) in the energy sector, which in turn would strengthen national climate policies (13.2)\u2014which could again reinforce policy coherence (17.14) and sustainable resource use (12.2).',
           '',
           '',
         ],
@@ -15974,7 +19321,7 @@ export const LinkageData2023 = [
       {
         target: '3.4',
         description: [
-          "Energy-saving measures related to 'active travel' (cycling and walking) can lead to improved health and well-being by lowering rates of diabetes, heart disease, dementia, and some cancers.",
+          'Energy-saving measures related to \u2018active travel\u2019 (cycling and walking) can lead to improved health and well-being by lowering rates of diabetes, heart disease, dementia, and some cancers.',
         ],
       },
       {
@@ -16037,7 +19384,7 @@ export const LinkageData2023 = [
       {
         target: '2.b',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
       {
@@ -16128,19 +19475,19 @@ export const LinkageData2023 = [
       {
         target: '3.6',
         description: [
-          "Energy-saving measures related to 'active travel' (cycling and walking) can constrain efforts to reduce deaths and injuries from road traffic accidents, if the provided infrastructure is unsatisfactory and if higher air quality standards are not required.",
+          'Energy-saving measures related to \u2018active travel\u2019 (cycling and walking) can constrain efforts to reduce deaths and injuries from road traffic accidents, if the provided infrastructure is unsatisfactory and if higher air quality standards are not required.',
         ],
       },
       {
         target: '8.1',
         description: [
-          "Decarbonising energy systems through an up-scaling of renewables and energy efficiency could constrain countries' economic growth, if only slightly. However, strong growth decoupled from environmental degradation is possible.",
+          'Decarbonising energy systems through an up-scaling of renewables and energy efficiency could constrain countries\u2019 economic growth, if only slightly. However, strong growth decoupled from environmental degradation is possible.',
         ],
       },
       {
         target: '8.4',
         description: [
-          "Decarbonising energy systems through an up-scaling of renewables and energy efficiency could constrain countries' economic growth, if only slightly. However, strong growth decoupled from environmental degradation is possible.",
+          'Decarbonising energy systems through an up-scaling of renewables and energy efficiency could constrain countries\u2019 economic growth, if only slightly. However, strong growth decoupled from environmental degradation is possible.',
         ],
       },
       {
@@ -16186,6 +19533,14 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '8.5',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       6,
       2,
@@ -16198,7 +19553,7 @@ export const LinkageData2023 = [
         target: '6.3',
         description: [
           'Depending on the future mix of energy (especially the degree to which bioenergy is employed) may lead to an increase or decrease in water pollution.',
-          'Enhance international cooperation to facilitate clean energy research and technology, if achieved, will increase and improve clean energy sources that will reduce the burden on water resources and the degradation of ecosystems caused by energy production based on fossil fuels. // Energy infrastructure aids in the provisioning of [...] water resources [...] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
+          'Enhance international cooperation to facilitate clean energy research and technology, if achieved, will increase and improve clean energy sources that will reduce the burden on water resources and the degradation of ecosystems caused by energy production based on fossil fuels. // Energy infrastructure aids in the provisioning of [\u2026] water resources [\u2026] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
           '',
           'International cooperation that facilities clean energy research and technology may reduce the nitrogen emissions from energy use and thus enables reducing water pollution from atmospheric nitrogen deposition.',
         ],
@@ -16255,7 +19610,7 @@ export const LinkageData2023 = [
         target: '2.1',
         description: [
           '',
-          'Energy infrastructure aids in the provisioning of food [...] resources.',
+          'Energy infrastructure aids in the provisioning of food [\u2026] resources.',
           '',
         ],
       },
@@ -16263,7 +19618,7 @@ export const LinkageData2023 = [
         target: '2.3',
         description: [
           '',
-          'Energy infrastructure aids in the provisioning of food [...] resources.',
+          'Energy infrastructure aids in the provisioning of food [\u2026] resources.',
           '',
         ],
       },
@@ -16271,7 +19626,7 @@ export const LinkageData2023 = [
         target: '2.4',
         description: [
           '',
-          'Energy infrastructure aids in the provisioning of food [...] resources.',
+          'Energy infrastructure aids in the provisioning of food [\u2026] resources.',
           '',
         ],
       },
@@ -16480,28 +19835,28 @@ export const LinkageData2023 = [
       {
         target: '2.2',
         description: [
-          'Energy infrastructure aids in the provisioning of food [...] resources.',
+          'Energy infrastructure aids in the provisioning of food [\u2026] resources.',
           '',
         ],
       },
       {
         target: '2.5',
         description: [
-          'Energy infrastructure aids in the provisioning of food [...] resources.',
+          'Energy infrastructure aids in the provisioning of food [\u2026] resources.',
           '',
         ],
       },
       {
         target: '2.a',
         description: [
-          'Energy infrastructure aids in the provisioning of food [...] resources.',
+          'Energy infrastructure aids in the provisioning of food [\u2026] resources.',
           '',
         ],
       },
       {
         target: '2.c',
         description: [
-          'Energy infrastructure aids in the provisioning of food [...] resources.',
+          'Energy infrastructure aids in the provisioning of food [\u2026] resources.',
           '',
         ],
       },
@@ -16515,7 +19870,7 @@ export const LinkageData2023 = [
       {
         target: '6.2',
         description: [
-          'Energy infrastructure aids in the provisioning of [...] water resources [...] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
+          'Energy infrastructure aids in the provisioning of [\u2026] water resources [\u2026] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
           '',
           'Synergies include international cooperation having enabled renewable energy development using human excreta and urine for energy production, knowledge exchange and subsequent investment in such type of energy infrastructure and technology.',
         ],
@@ -16523,7 +19878,7 @@ export const LinkageData2023 = [
       {
         target: '6.4',
         description: [
-          'Enhance international cooperation to facilitate clean energy research and technology, if achieved, will increase and improve clean energy sources that will reduce the burden on water resources and the degradation of ecosystems caused by energy production based on fossil fuels. // Energy infrastructure aids in the provisioning of [...] water resources [...] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
+          'Enhance international cooperation to facilitate clean energy research and technology, if achieved, will increase and improve clean energy sources that will reduce the burden on water resources and the degradation of ecosystems caused by energy production based on fossil fuels. // Energy infrastructure aids in the provisioning of [\u2026] water resources [\u2026] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
           '',
         ],
       },
@@ -16537,7 +19892,7 @@ export const LinkageData2023 = [
       {
         target: '6.6',
         description: [
-          'Enhance international cooperation to facilitate clean energy research and technology, if achieved, will increase and improve clean energy sources that will reduce the burden on water resources and the degradation of ecosystems caused by energy production based on fossil fuels. // Energy infrastructure aids in the provisioning of [...] water resources [...] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
+          'Enhance international cooperation to facilitate clean energy research and technology, if achieved, will increase and improve clean energy sources that will reduce the burden on water resources and the degradation of ecosystems caused by energy production based on fossil fuels. // Energy infrastructure aids in the provisioning of [\u2026] water resources [\u2026] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
           '',
         ],
       },
@@ -16612,6 +19967,7 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [],
     coordinates: [
       6,
       3,
@@ -16636,7 +19992,7 @@ export const LinkageData2023 = [
       {
         target: '5.a',
         description: [
-          "The ice-making system improves women NGOs' access to economic resources.",
+          'The ice-making system improves women NGOs\u2019 access to economic resources.',
         ],
       },
       {
@@ -16805,7 +20161,7 @@ export const LinkageData2023 = [
       {
         target: '6.1',
         description: [
-          'Energy infrastructure aids in the provisioning of [...] water resources [...] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
+          'Energy infrastructure aids in the provisioning of [\u2026] water resources [\u2026] The use of fresh water within the energy industry impacts water quality and quantity, such as the large amounts of water used in the process of converting coal or uranium into electricity (Yillia, 2016). Efficient and clean energy use technologies will typically result in a lower burden on water input needs (Cooley and Donnelly, 2013).',
           '',
         ],
       },
@@ -16926,10 +20282,11 @@ export const LinkageData2023 = [
       {
         target: '2.b',
         description: [
-          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [...] leading to expansion and intensification of agriculture, [...] if not combined with strong environmental laws.',
+          '[Natural resources] may require protection from uncontrolled globalization/market liberalization [\u2026] leading to expansion and intensification of agriculture, [\u2026] if not combined with strong environmental laws.',
         ],
       },
     ],
+    notSpecified: [],
     coordinates: [
       6,
       4,
@@ -16988,7 +20345,7 @@ export const LinkageData2023 = [
       {
         target: '10.1',
         description: [
-          "Boosting GDP can also help to fulfil Target 10.1 on achieving and sustaining income growth among the bottom 40% of a nation's population at a rate higher than the national average.",
+          'Boosting GDP can also help to fulfil Target 10.1 on achieving and sustaining income growth among the bottom 40% of a nation\u2019s population at a rate higher than the national average.',
           '',
         ],
       },
@@ -17025,7 +20382,7 @@ export const LinkageData2023 = [
       {
         target: '9.2',
         description: [
-          "Investment in industry boosts GDP, all other factors being equal, and assists with meeting Target 9.2 on raising industry's share in gross domestic product.",
+          'Investment in industry boosts GDP, all other factors being equal, and assists with meeting Target 9.2 on raising industry\u2019s share in gross domestic product.',
         ],
       },
       {
@@ -17194,7 +20551,7 @@ export const LinkageData2023 = [
       {
         target: '4.1',
         description: [
-          "Cat Ba Island's key strength lies in its continuing economic growth, which acts as the impetus to facilitate inclusive education for community members.",
+          'Cat Ba Island\u2019s key strength lies in its continuing economic growth, which acts as the impetus to facilitate inclusive education for community members.',
         ],
       },
       {
@@ -17354,6 +20711,62 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '10.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       7,
       0,
@@ -17492,6 +20905,38 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       7,
       1,
@@ -17576,6 +21021,44 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.2',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       7,
       2,
@@ -17587,7 +21070,7 @@ export const LinkageData2023 = [
       {
         target: '6.3',
         description: [
-          "As efficiency improves, fewer materials per service are used, and wastewater produced per service is also likely to decrease. This relationship has been verified as part of 'Cleaner Production' research.",
+          'As efficiency improves, fewer materials per service are used, and wastewater produced per service is also likely to decrease. This relationship has been verified as part of \u2018Cleaner Production\u2019 research.',
           '',
           'Sustainable and efficient use of natural resources (including water) // strong interdependencies (are mutually supportive) with those targets under Goal 6 that relate to reducing pollution and increasing reuse // interdependent on 6.3.',
           'Improved global resource efficiency in consumption and production and work to decouple economic growth from environmental degradation, in accordance with the 10-year framework of programmes on sustainable consumption and production will likely have direct positive impact on overall water quality improvement as pollution will be greatly reduced due to many reasons, including recycling / up-cycling of waste water and other materials and implementation of circular economic thinking and practice.',
@@ -17834,7 +21317,7 @@ export const LinkageData2023 = [
       {
         target: '15.1',
         description: [
-          "An increase in the DMC of crops, metal ores and wood often goes hand in hand with a reduction in the available forest area. Hence, a positive correlation is rather surprising. Nevertheless, in cases where imports of these materials far exceed domestic extraction, it would be possible to see an increase in DMC while domestic forests are growing. In such a situation, the country of interest would be 'outsourcing' the extraction and related impacts to other countries (Bruckner et al. 2015).",
+          'An increase in the DMC of crops, metal ores and wood often goes hand in hand with a reduction in the available forest area. Hence, a positive correlation is rather surprising. Nevertheless, in cases where imports of these materials far exceed domestic extraction, it would be possible to see an increase in DMC while domestic forests are growing. In such a situation, the country of interest would be \u2018outsourcing\u2019 the extraction and related impacts to other countries (Bruckner et al. 2015).',
         ],
       },
       {
@@ -17968,6 +21451,26 @@ export const LinkageData2023 = [
         target: '17.11',
         description: [
           'That increased exports from developing countries would make it more difficult to achieve the SDGs in Sweden (and viceversa), can be explained by the fact that potential benefits from trade are poorly captured in the 2030 Agenda.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '12.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '12.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
         ],
       },
     ],
@@ -18329,6 +21832,111 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '10.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '7.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '7.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       7,
       4,
@@ -18399,6 +22007,38 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '11.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.c',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       7,
       5,
@@ -18415,6 +22055,26 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '10.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.c',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       7,
       6,
@@ -18606,30 +22266,56 @@ export const LinkageData2023 = [
       {
         target: '6.2',
         description: [
-          "The target calls for sanitation workers to work in safe and secure working environments [call for action] // Improvements of sanitation systems for workers will contribute to this target, while the achievement of this target will include improvement of sanitation workers' conditions [synergy].",
-          "Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life // a strong positive impact on workers' health and thus their productivity.",
+          'The target calls for sanitation workers to work in safe and secure working environments [call for action] // Improvements of sanitation systems for workers will contribute to this target, while the achievement of this target will include improvement of sanitation workers\u2019 conditions [synergy].',
+          'Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life // a strong positive impact on workers\u2019 health and thus their productivity.',
         ],
       },
       {
         target: '6.1',
         description: [
-          "Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life // a strong positive impact on workers' health and thus their productivity.",
+          'Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life // a strong positive impact on workers\u2019 health and thus their productivity.',
         ],
       },
       {
         target: '6.3',
         description: [
-          "Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life // a strong positive impact on workers' health and thus their productivity.",
+          'Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life // a strong positive impact on workers\u2019 health and thus their productivity.',
         ],
       },
       {
         target: '6.5',
         description: [
-          "Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life // a strong positive impact on workers' health and thus their productivity.",
+          'Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life // a strong positive impact on workers\u2019 health and thus their productivity.',
         ],
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.6',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       7,
       7,
@@ -18721,19 +22407,39 @@ export const LinkageData2023 = [
         target: '6.6',
         description: [
           'All Goal 6 targets have positive implications for business. Protecting water-related ecosystems supports resilient economies.',
-          'As demand for water activities grows, improved infrastructure and services are needed to accommodate the influx of tourists to water-related sites. For instance, the tourism industry in the Republic of South Africa employs around 10 per cent of South Africans, yet freshwater ecosystems degradation is tangible [...] (increasing river pollution) (Houdet, Lewis and Browne 2020). [...] Swimming, boating and angling are all touristic activities that have a significant impact on water ecosystems, through the discharge of nutrients, fuel discharge through the increased number of commercial touristic boats, power boats or fishing boats, and the introduction of new fish species to attract tourists (Dokulil 2014). In [...] Viet Nam for instance, pollution from wastewater originating from tourist boats is contributing to 30 per cent of the pollution load from the local population in Ha Long Bay (WTO 2020b). [...] a small forested mountain catchment in the Black Forest in Germany has indicated that water quality in the uninhabited catchment has been contaminated by bacteria and turbidity, ammonium nitrogen and total nitrogen from the construction site of a new restaurant to serve tourists (Siegwald and de Jong 2020).',
+          'As demand for water activities grows, improved infrastructure and services are needed to accommodate the influx of tourists to water-related sites. For instance, the tourism industry in the Republic of South Africa employs around 10 per cent of South Africans, yet freshwater ecosystems degradation is tangible [\u2026] (increasing river pollution) (Houdet, Lewis and Browne 2020). [\u2026] Swimming, boating and angling are all touristic activities that have a significant impact on water ecosystems, through the discharge of nutrients, fuel discharge through the increased number of commercial touristic boats, power boats or fishing boats, and the introduction of new fish species to attract tourists (Dokulil 2014). In [\u2026] Viet Nam for instance, pollution from wastewater originating from tourist boats is contributing to 30 per cent of the pollution load from the local population in Ha Long Bay (WTO 2020b). [\u2026] a small forested mountain catchment in the Black Forest in Germany has indicated that water quality in the uninhabited catchment has been contaminated by bacteria and turbidity, ammonium nitrogen and total nitrogen from the construction site of a new restaurant to serve tourists (Siegwald and de Jong 2020).',
         ],
       },
       {
         target: '15.1',
         description: [
-          'In [...] Nepal, [...] The tourism sector impacted forest size through tree-cutting to provide firewood for cooking and heating and timber for building accommodation. [...] a study indicated that the greater the distance from touristic villages, the less forest was removed (Chaplin and Brabyn 2013). [...] the growing popularity of winter sports impacts forests further through the clearing of terrains and the use of heavy machinery to level and prepare the terrain for ski runs.',
+          'In [\u2026] Nepal, [\u2026] The tourism sector impacted forest size through tree-cutting to provide firewood for cooking and heating and timber for building accommodation. [\u2026] a study indicated that the greater the distance from touristic villages, the less forest was removed (Chaplin and Brabyn 2013). [\u2026] the growing popularity of winter sports impacts forests further through the clearing of terrains and the use of heavy machinery to level and prepare the terrain for ski runs.',
         ],
       },
       {
         target: '15.5',
         description: [
           'Touristic areas are expanding at the expense of animal habitats, whether through the expansion of touristic facilities and services in ecosystems that were once inhabited by animal species, through the insertion of touristic activities into remote areas that were once inaccessible to humans, or through animal hunting. These pressures force animals into migrating and can cause animal species sizes to shrink. For instance, a study conducted on birds indicated that 63 critically endangered and endangered bird species of marine, coastal and aquatic birds were threatened by tourism in hotspots in Polynesia- Micronesia and the Mediterranean Basin (Steven and Castley 2013.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '12.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '14.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
         ],
       },
     ],
@@ -18746,6 +22452,7 @@ export const LinkageData2023 = [
     id: 'Target 8.10',
     synergies: [],
     tradeOffs: [],
+    notSpecified: [],
     coordinates: [
       7,
       9,
@@ -18781,6 +22488,26 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '2.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.a',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       7,
       10,
@@ -18797,6 +22524,7 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [],
     coordinates: [
       7,
       11,
@@ -18970,15 +22698,15 @@ export const LinkageData2023 = [
         target: '2.1',
         description: [
           '',
-          'Improvements in transport infrastructure can improve logistical chains and reduce backloading, all of which have impact on agricultural productivity [...] through time // Improved access to electricity, transportation [...] provides means to drive innovation and technological changes in food production, processing, and retail (overall SDG 2) // upgrading the infrastructure [...] can take place independently of progress toward zero hunger (overall SDG 2).',
-          "Develop infrastructure (9.1) > Better transport infrastructure reinforces access to food (2.1) and farmers' access to markets (2.3). Mostly a concern in countries with infrastructure deficit.",
+          'Improvements in transport infrastructure can improve logistical chains and reduce backloading, all of which have impact on agricultural productivity [\u2026] through time // Improved access to electricity, transportation [\u2026] provides means to drive innovation and technological changes in food production, processing, and retail (overall SDG 2) // upgrading the infrastructure [...] can take place independently of progress toward zero hunger (overall SDG 2).',
+          'Develop infrastructure (9.1) > Better transport infrastructure reinforces access to food (2.1) and farmers\u2019 access to markets (2.3). Mostly a concern in countries with infrastructure deficit.',
         ],
       },
       {
         target: '2.2',
         description: [
           '',
-          'Improved access to electricity, transportation [...] provides means to drive innovation and technological changes in food production, processing, and retail (overall SDG 2). // Reliable road infrastructure can also help reduce and minimize malnutrition // Quality and sustainable infrastructure has enormous potential to mitigate obesity by enabling healthier more active lifestyles // upgrading the infrastructure [...] can take place independently of progress toward zero hunger (overall SDG 2).',
+          'Improved access to electricity, transportation [\u2026] provides means to drive innovation and technological changes in food production, processing, and retail (overall SDG 2). // Reliable road infrastructure can also help reduce and minimize malnutrition // Quality and sustainable infrastructure has enormous potential to mitigate obesity by enabling healthier more active lifestyles // upgrading the infrastructure [...] can take place independently of progress toward zero hunger (overall SDG 2).',
           'End malnutrition in children (2.2) < Malnutrition is not only undernutrition. Mitigating obesity is promoted by quality and sustainable infrastructure (9.1) that enables healthier, more active lifestyles. Obesity is a highly complex development problem as countries move from low to middle and high income. But also in low-income countries, the issue is of growing concern.',
         ],
       },
@@ -18986,9 +22714,9 @@ export const LinkageData2023 = [
         target: '2.3',
         description: [
           '',
-          'A backbone of supportive infrastructure is needed in development corridors to mobilise an enabling environment for businesses / support (agricultural) value chain development [synergy] // Achieving secure and equal access to land is inextricably linked to achievement of equitable development through corridors [...] corridors to be directly compromising progress towards SDG2.3, as insecure or unenforceable land and resource rights and competition for land from infrastructure, [...] and ineffective compensation schemes threaten access to land and natural resources that corridor communities depend upon for their livelihoods.',
-          "Improvements in transport infrastructure can improve logistical chains and reduce backloading, all of which have impact on [...] farmers' income through time // Improved access to electricity, transportation [...] provides means to drive innovation and technological changes in food production, processing, and retail (overall SDG 2). // upgrading the infrastructure [...] can take place independently of progress toward zero hunger (overall SDG 2).",
-          "Reinforced by access of small scale enterprises to financial services (9.2) and by infrastructure developments (9.1). Credit and market access are critical barriers.  Develop infrastructure (9.1) > Better transport infrastructure reinforces access to food (2.1) and farmers' access to markets (2.3). Mostly a concern in countries with infrastructure deficit.",
+          'A backbone of supportive infrastructure is needed in development corridors to mobilise an enabling environment for businesses / support (agricultural) value chain development [synergy] // Achieving secure and equal access to land is inextricably linked to achievement of equitable development through corridors [\u2026] corridors to be directly compromising progress towards SDG2.3, as insecure or unenforceable land and resource rights and competition for land from infrastructure, [\u2026] and ineffective compensation schemes threaten access to land and natural resources that corridor communities depend upon for their livelihoods.',
+          "Improvements in transport infrastructure can improve logistical chains and reduce backloading, all of which have impact on [\u2026] farmers' income through time // Improved access to electricity, transportation [\u2026] provides means to drive innovation and technological changes in food production, processing, and retail (overall SDG 2). // upgrading the infrastructure [...] can take place independently of progress toward zero hunger (overall SDG 2).",
+          'Reinforced by access of small scale enterprises to financial services (9.2) and by infrastructure developments (9.1). Credit and market access are critical barriers.  Develop infrastructure (9.1) > Better transport infrastructure reinforces access to food (2.1) and farmers\u2019 access to markets (2.3). Mostly a concern in countries with infrastructure deficit.',
           'Infrastructure is essential part in market access. The more perishable and fragile the agricultural product is, the more important role infrastructure has.',
         ],
       },
@@ -19023,7 +22751,7 @@ export const LinkageData2023 = [
         target: '7.2',
         description: [
           '',
-          'Clear interlinkages between the development of infrastructure [...] with early retirement of fossil energy infrastructure and increase the share of renewable energy in the global energy mix.',
+          'Clear interlinkages between the development of infrastructure [\u2026] with early retirement of fossil energy infrastructure and increase the share of renewable energy in the global energy mix.',
         ],
       },
       {
@@ -19206,7 +22934,7 @@ export const LinkageData2023 = [
       {
         target: '2.5',
         description: [
-          'Improved access to electricity, transportation [...] provides means to drive innovation and technological changes in food production, processing, and retail (overall SDG 2). // upgrading the infrastructure [...] can take place independently of progress toward zero hunger (overall SDG 2).',
+          'Improved access to electricity, transportation [\u2026] provides means to drive innovation and technological changes in food production, processing, and retail (overall SDG 2). // upgrading the infrastructure [...] can take place independently of progress toward zero hunger (overall SDG 2).',
         ],
       },
       {
@@ -19223,8 +22951,8 @@ export const LinkageData2023 = [
           'For communities living in rural areas, low-cost and efficient transport infrastructure and services [...] can enhance access to water and sanitation facilities. Sustainable and safe transport is profoundly fundamental to reducing the costs and time spent to accessing water supply and sanitation services in rural areas, particularly for women and girls.',
           'Target calls for change in infrastruture (e.g. toilets, treatment plants) [call for action] // Evidence that sanitation infrastructure supports human wellbeing[synergy] // Possible trade-offs, for example, where focus on infrastructure prevents progress somewhere else along the sanitation chain (e.g. behaviour change, capacity-building, financing). Other potential trade-offs where pressure of ensuring access to sanitation occurs through infrastructure that is not of good quality, reliable, sustainable, or resilient and adds further risks to development and wellbeing [trade-off].',
           'An adequate and reliable water resource is a prerequisite for industry. Designing, building and retrofitting resilient infrastructure [9.1] is central to the provision of basic services such as water, sanitation and wastewater treatment.',
-          "If so called 'resilient and sustainable \"infrastructure development addresses the SDGs and directed at local community sanitation then this will have a direct impact on reduced open defecation and improved sanitation.",
-          'Modernizing of sewerage plants prompts a sustainable sanitation system for household use. // Desalination pursued via renewable energy [...] a policy to install desalination plants in selected islands could be done, which would lead to sustainable sanitation systems for Fiji overall.',
+          'If so called \u201cresilient and sustainable "infrastructure development addresses the SDGs and directed at local community sanitation then this will have a direct impact on reduced open defecation and improved sanitation.',
+          'Modernizing of sewerage plants prompts a sustainable sanitation system for household use. // Desalination pursued via renewable energy [\u2026] a policy to install desalination plants in selected islands could be done, which would lead to sustainable sanitation systems for Fiji overall.',
         ],
       },
       {
@@ -19274,7 +23002,7 @@ export const LinkageData2023 = [
       {
         target: '5.5',
         description: [
-          "Women's full participation in economic and political life (5.5) < Employment of women reinforced by industrialization (9.1) and trade liberalization (17.11; 17.12) as many industries hire women, who are perceived to be more productive than men. This positive association is strongest in labour abundant economies in transition, but there is a risk of reversal when industries upgrade (Braunstein and Houston 2015).  Develop infrastructure for transport (9.1) > Public infrastructure enables participation of women in the workforce and in political life (5.5) (United Nations 2016) Generally applicable.",
+          'Women\u2019s full participation in economic and political life (5.5) < Employment of women reinforced by industrialization (9.1) and trade liberalization (17.11; 17.12) as many industries hire women, who are perceived to be more productive than men. This positive association is strongest in labour abundant economies in transition, but there is a risk of reversal when industries upgrade (Braunstein and Houston 2015).  Develop infrastructure for transport (9.1) > Public infrastructure enables participation of women in the workforce and in political life (5.5) (United Nations 2016) Generally applicable.',
         ],
       },
       {
@@ -19312,7 +23040,7 @@ export const LinkageData2023 = [
       {
         target: '2.3',
         description: [
-          'A backbone of supportive infrastructure is needed in development corridors to mobilise an enabling environment for businesses / support (agricultural) value chain development [synergy] // Achieving secure and equal access to land is inextricably linked to achievement of equitable development through corridors [...] corridors to be directly compromising progress towards SDG2.3, as insecure or unenforceable land and resource rights and competition for land from infrastructure, [...] and ineffective compensation schemes threaten access to land and natural resources that corridor communities depend upon for their livelihoods.',
+          'A backbone of supportive infrastructure is needed in development corridors to mobilise an enabling environment for businesses / support (agricultural) value chain development [synergy] // Achieving secure and equal access to land is inextricably linked to achievement of equitable development through corridors [\u2026] corridors to be directly compromising progress towards SDG2.3, as insecure or unenforceable land and resource rights and competition for land from infrastructure, [\u2026] and ineffective compensation schemes threaten access to land and natural resources that corridor communities depend upon for their livelihoods.',
         ],
       },
       {
@@ -19383,6 +23111,68 @@ export const LinkageData2023 = [
         target: '14.5',
         description: [
           'The reactive nitrogen emissions from energy use in the industrial sector and transportation network may pollute water and the development of marine traffic thus constrain conserving marine and coastal areas.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '6.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
         ],
       },
     ],
@@ -19462,7 +23252,7 @@ export const LinkageData2023 = [
       {
         target: '8.1',
         description: [
-          "Investment in industry boosts GDP, all other factors being equal, and assists with meeting Target 9.2 on raising industry's share in gross domestic product.",
+          'Investment in industry boosts GDP, all other factors being equal, and assists with meeting Target 9.2 on raising industry\u2019s share in gross domestic product.',
           'Promote inclusive industrialization (9.2) > Reinforces economic growth (8.1) through improving productivity in the economy. Generally applicable.',
         ],
       },
@@ -19610,13 +23400,13 @@ export const LinkageData2023 = [
       {
         target: '14.4',
         description: [
-          "Synergy: Boost industrialization and industry's share of GDP (9.2) > Enables ocean and fisheries management (14.4 and 14.6) by reducing emphasis on primary resource extraction in the economy. Dependent on value-adding activities as part of industrialization strategy. However, see also potential counteraction below.  Trade-off: Boost industrialization and industry's share of GDP (9.2) > Can counteract ocean and fisheries management (14.4 and 14.6) by 'technologization' of fisheries, which has historically led to overfishing. Counteraction occurs where strong institutions for managing stocks are missing, such as in international waters.",
+          'Synergy: Boost industrialization and industry\u2019s share of GDP (9.2) > Enables ocean and fisheries management (14.4 and 14.6) by reducing emphasis on primary resource extraction in the economy. Dependent on value-adding activities as part of industrialization strategy. However, see also potential counteraction below.  Trade-off: Boost industrialization and industry\u2019s share of GDP (9.2) > Can counteract ocean and fisheries management (14.4 and 14.6) by \u201ctechnologization\u201d of fisheries, which has historically led to overfishing. Counteraction occurs where strong institutions for managing stocks are missing, such as in international waters.',
         ],
       },
       {
         target: '14.6',
         description: [
-          "Synergy: Boost industrialization and industry's share of GDP (9.2) > Enables ocean and fisheries management (14.4 and 14.6) by reducing emphasis on primary resource extraction in the economy. Dependent on value-adding activities as part of industrialization strategy. However, see also potential counteraction below.  Trade-off: Prevention of marine pollution (14.1), protection of coastal ecosystems (14.2) and conservation (14.5) > Constrain the development and promotion of industrial activity, in particular in coastal areas (9.2). Affects mostly coastal areas, although upstream catchment areas must be considered. Zoning in permitting and planning that gives industry clear guidelines can minimize this constraint.",
+          'Synergy: Boost industrialization and industry\u2019s share of GDP (9.2) > Enables ocean and fisheries management (14.4 and 14.6) by reducing emphasis on primary resource extraction in the economy. Dependent on value-adding activities as part of industrialization strategy. However, see also potential counteraction below.  Trade-off: Prevention of marine pollution (14.1), protection of coastal ecosystems (14.2) and conservation (14.5) > Constrain the development and promotion of industrial activity, in particular in coastal areas (9.2). Affects mostly coastal areas, although upstream catchment areas must be considered. Zoning in permitting and planning that gives industry clear guidelines can minimize this constraint.',
         ],
       },
       {
@@ -19637,22 +23427,22 @@ export const LinkageData2023 = [
       {
         target: '12.4',
         description: [
-          "Overall, a country's higher level of industrialization is linked with increased E-waste per capita generation - with average Manufacturing value-added per capita and E-waste per capita much higher for higher income countries. However, the variations across countries are quite substantial. For example, for low-income and upper middle income countries the correlation between industrialization and e-waste is strong and significant, whereas for high-income countries it is negative but statistically insignificant.",
-          "Overall, a country's higher level of industrialization is linked with increased E-waste per capita generation - with average Manufacturing value-added per capita and E-waste per capita much higher for higher income countries. However, the variations across countries are quite substantial. For example, for low-income and upper middle income countries the correlation between industrialization and e-waste is strong and significant, whereas for high-income countries it is negative but statistically insignificant.",
+          'Overall, a country\u2019s higher level of industrialization is linked with increased E-waste per capita generation \u2013 with average Manufacturing value-added per capita and E-waste per capita much higher for higher income countries. However, the variations across countries are quite substantial. For example, for low-income and upper middle income countries the correlation between industrialization and e-waste is strong and significant, whereas for high-income countries it is negative but statistically insignificant.',
+          'Overall, a country\u2019s higher level of industrialization is linked with increased E-waste per capita generation \u2013 with average Manufacturing value-added per capita and E-waste per capita much higher for higher income countries. However, the variations across countries are quite substantial. For example, for low-income and upper middle income countries the correlation between industrialization and e-waste is strong and significant, whereas for high-income countries it is negative but statistically insignificant.',
         ],
       },
       {
         target: '13.2',
         description: [
           '',
-          "Boost industrialization and industry's share of GDP (9.2) > Can counteract climate action measures (13.2) and sustainability of terrestrial ecosystems (15.1). Industrial impacts on the environment are by definition very strongly dependent on which technologies are used, and whether proper environmental incentives and regulations are deployed.",
+          'Boost industrialization and industry\u2019s share of GDP (9.2) > Can counteract climate action measures (13.2) and sustainability of terrestrial ecosystems (15.1). Industrial impacts on the environment are by definition very strongly dependent on which technologies are used, and whether proper environmental incentives and regulations are deployed.',
         ],
       },
       {
         target: '15.1',
         description: [
           '',
-          "Boost industrialization and industry's share of GDP (9.2) > Can counteract climate action measures (13.2) and sustainability of terrestrial ecosystems (15.1). Industrial impacts on the environment are by definition very strongly dependent on which technologies are used, and whether proper environmental incentives and regulations are deployed.",
+          'Boost industrialization and industry\u2019s share of GDP (9.2) > Can counteract climate action measures (13.2) and sustainability of terrestrial ecosystems (15.1). Industrial impacts on the environment are by definition very strongly dependent on which technologies are used, and whether proper environmental incentives and regulations are deployed.',
         ],
       },
       {
@@ -19725,13 +23515,13 @@ export const LinkageData2023 = [
       {
         target: '14.4',
         description: [
-          "Synergy: Boost industrialization and industry's share of GDP (9.2) > Enables ocean and fisheries management (14.4 and 14.6) by reducing emphasis on primary resource extraction in the economy. Dependent on value-adding activities as part of industrialization strategy. However, see also potential counteraction below.  Trade-off: Boost industrialization and industry's share of GDP (9.2) > Can counteract ocean and fisheries management (14.4 and 14.6) by 'technologization' of fisheries, which has historically led to overfishing. Counteraction occurs where strong institutions for managing stocks are missing, such as in international waters.",
+          'Synergy: Boost industrialization and industry\u2019s share of GDP (9.2) > Enables ocean and fisheries management (14.4 and 14.6) by reducing emphasis on primary resource extraction in the economy. Dependent on value-adding activities as part of industrialization strategy. However, see also potential counteraction below.  Trade-off: Boost industrialization and industry\u2019s share of GDP (9.2) > Can counteract ocean and fisheries management (14.4 and 14.6) by \u201ctechnologization\u201d of fisheries, which has historically led to overfishing. Counteraction occurs where strong institutions for managing stocks are missing, such as in international waters.',
         ],
       },
       {
         target: '14.6',
         description: [
-          "Synergy: Boost industrialization and industry's share of GDP (9.2) > Enables ocean and fisheries management (14.4 and 14.6) by reducing emphasis on primary resource extraction in the economy. Dependent on value-adding activities as part of industrialization strategy. However, see also potential counteraction below.  Trade-off: Prevention of marine pollution (14.1), protection of coastal ecosystems (14.2) and conservation (14.5) > Constrain the development and promotion of industrial activity, in particular in coastal areas (9.2). Affects mostly coastal areas, although upstream catchment areas must be considered. Zoning in permitting and planning that gives industry clear guidelines can minimize this constraint.",
+          'Synergy: Boost industrialization and industry\u2019s share of GDP (9.2) > Enables ocean and fisheries management (14.4 and 14.6) by reducing emphasis on primary resource extraction in the economy. Dependent on value-adding activities as part of industrialization strategy. However, see also potential counteraction below.  Trade-off: Prevention of marine pollution (14.1), protection of coastal ecosystems (14.2) and conservation (14.5) > Constrain the development and promotion of industrial activity, in particular in coastal areas (9.2). Affects mostly coastal areas, although upstream catchment areas must be considered. Zoning in permitting and planning that gives industry clear guidelines can minimize this constraint.',
         ],
       },
       {
@@ -19744,6 +23534,38 @@ export const LinkageData2023 = [
         target: '6.4',
         description: [
           'All Goal 6 targets have positive implications for business (synergy). An adequate and reliable water resource is a prerequisite for industry. sustainable infrastructure and industrialization, if well managed, can significantly reduce water demands, thus contributing to sustainable water use.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '12.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.11',
+        description: [
+          'Manufacturing is strongly connected to developing countries.',
+        ],
+      },
+      {
+        target: '2.c',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
         ],
       },
     ],
@@ -19912,7 +23734,7 @@ export const LinkageData2023 = [
       {
         target: '5.5',
         description: [
-          "Women's full participation in economic and political life (5.5) < Enabled by access of small-scale enterprise to financial services (9.3). Generally applicable.",
+          'Women\u2019s full participation in economic and political life (5.5) < Enabled by access of small-scale enterprise to financial services (9.3). Generally applicable.',
         ],
       },
       {
@@ -19968,6 +23790,20 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '8.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       8,
       2,
@@ -19992,7 +23828,7 @@ export const LinkageData2023 = [
           'Energy crop reduce CO2 intensity. {United States} --- Residues were removed from fields and burnt, landfilled, or otherwise disposed prior to use for bioenergy. Therefore, any negative impacts related to unsustainable residue removal rates avoided and reductions in carbon emissions may be achieved. {Kenya --- China --- South Africa --- Austria --- Denmark --- Netherlands} --- Residues were removed from fields and burnt, landfilled, or otherwise disposed prior to use for bioenergy. Therefore, any negative impacts related to unsustainable residue removal rates avoided and reductions in carbon emissions may be achieved. // Energy crop reduce CO2 intensity. {Italy}',
           '',
           '',
-          'Clear interlinkages between [...] upgrade of infrastructure with early retirement of fossil energy infrastructure and increase the share of renewable energy in the global energy mix.',
+          'Clear interlinkages between [\u2026] upgrade of infrastructure with early retirement of fossil energy infrastructure and increase the share of renewable energy in the global energy mix.',
           '',
         ],
       },
@@ -20191,7 +24027,7 @@ export const LinkageData2023 = [
         target: '2.1',
         description: [
           '',
-          'Improvements in transport infrastructure can improve logistical chains and reduce backloading, all of which have impact on agricultural productivity [...] through time // Improved access to [...] modern ICT (target 9.c) provides means to drive innovation and technological changes in food production, processing, and retail (overall SDG 2).// upgrading the infrastructure [...] can take place independently of progress toward zero hunger (overall SDG 2).',
+          'Improvements in transport infrastructure can improve logistical chains and reduce backloading, all of which have impact on agricultural productivity [\u2026] through time // Improved access to [...] modern ICT (target 9.c) provides means to drive innovation and technological changes in food production, processing, and retail (overall SDG 2).// upgrading the infrastructure [...] can take place independently of progress toward zero hunger (overall SDG 2).',
         ],
       },
       {
@@ -20205,7 +24041,7 @@ export const LinkageData2023 = [
         target: '2.3',
         description: [
           '',
-          "Improvements in transport infrastructure can improve logistical chains and reduce backloading, all of which have impact on [...] farmers' income through time // upgrading the infrastructure [...] can take place independently of progress toward zero hunger (overall SDG 2).",
+          "Improvements in transport infrastructure can improve logistical chains and reduce backloading, all of which have impact on [\u2026] farmers' income through time // upgrading the infrastructure [...] can take place independently of progress toward zero hunger (overall SDG 2).",
         ],
       },
       {
@@ -20416,7 +24252,7 @@ export const LinkageData2023 = [
         description: [
           'For communities living in rural areas, low-cost and efficient transport infrastructure and services [...] can enhance access to water and sanitation facilities. Sustainable and safe transport is profoundly fundamental to reducing the costs and time spent to accessing water supply and sanitation services in rural areas, particularly for women and girls.',
           'Target calls for action to develop industries for more resource efficient and environmentally sound practices [call for action] // Synergies that have been researched include that of human waste used as a combustible in industrial kilns, or used as a fertiliser in the food industry [synergy] // Upgrading infrastructure and retrofitting industries so to make their sanitation systems sustainable might require a lot of investment, including in many Global North contexts [call for action].',
-          'Desalination pursued via renewable energy [...] a policy to install desalination plants in selected islands could be done, which would lead to sustainable sanitation systems for Fiji overall.',
+          'Desalination pursued via renewable energy [\u2026] a policy to install desalination plants in selected islands could be done, which would lead to sustainable sanitation systems for Fiji overall.',
         ],
       },
       {
@@ -20514,6 +24350,26 @@ export const LinkageData2023 = [
       },
       {
         target: '11.6',
+        description: [
+          '',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '17.11',
+        description: [
+          'Manufacturing is strongly connected to developing countries.',
+        ],
+      },
+      {
+        target: '6.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
         description: [
           '',
         ],
@@ -20980,7 +24836,7 @@ export const LinkageData2023 = [
       {
         target: '8.2',
         description: [
-          'Enhance science, technology, innovation (9.5) > Indivisible from productivity increases (8.2) - as in the long term innovation is a key source of productivity growth. Many dependencies related to technology and governance, in particular scaling capacities.',
+          'Enhance science, technology, innovation (9.5) > Indivisible from productivity increases (8.2) \u2013 as in the long term innovation is a key source of productivity growth. Many dependencies related to technology and governance, in particular scaling capacities.',
         ],
       },
       {
@@ -21038,6 +24894,50 @@ export const LinkageData2023 = [
         target: '5.5',
         description: [
           'Enhance science, technology and innovation (9.5) > Technological progress may benefit mostly skilled workers and constrain inclusion of new groups into the formal economy ,such as women (5.5) (Andrews et al. 2016).  Programmes for training and education of women to enable their entry into the skilled work force.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '12.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '14.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.11',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
         ],
       },
     ],
@@ -21250,7 +25150,7 @@ export const LinkageData2023 = [
         target: '7.2',
         description: [
           '',
-          'Clear interlinkages between the development of infrastructure [...] with early retirement of fossil energy infrastructure and increase the share of renewable energy in the global energy mix.',
+          'Clear interlinkages between the development of infrastructure [\u2026] with early retirement of fossil energy infrastructure and increase the share of renewable energy in the global energy mix.',
           'Official development assistance and foreign direct investment support for renewable energy technology development can induce the development of renewable energy-based desalination technologies.',
         ],
       },
@@ -21442,6 +25342,56 @@ export const LinkageData2023 = [
       },
       {
         target: '6.6',
+        description: [
+          '',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '17.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '7.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
         description: [
           '',
         ],
@@ -21742,6 +25692,20 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '1.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       8,
       6,
@@ -21959,6 +25923,32 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '10.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '14.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       8,
       7,
@@ -21978,7 +25968,7 @@ export const LinkageData2023 = [
       {
         target: '8.1',
         description: [
-          "Boosting GDP can also help to fulfil Target 10.1 on achieving and sustaining income growth among the bottom 40% of a nation's population at a rate higher than the national average.",
+          'Boosting GDP can also help to fulfil Target 10.1 on achieving and sustaining income growth among the bottom 40% of a nation\u2019s population at a rate higher than the national average.',
           '',
         ],
       },
@@ -22055,7 +26045,7 @@ export const LinkageData2023 = [
       {
         target: '6.5',
         description: [
-          "Water (and sanitation) is essential to reduce inequalities. Integrated water resource management (IWRM) concept calls to 'leave no one behind'. This highlights overlapping aspects between IWRM and the human rights-based approach to water and sanitation (i.e. equality, equity, participation, and governance) (WWAP, 2019).",
+          'Water (and sanitation) is essential to reduce inequalities. Integrated water resource management (IWRM) concept calls to \u201cleave no one behind\u201d. This highlights overlapping aspects between IWRM and the human rights\u2013based approach to water and sanitation (i.e. equality, equity, participation, and governance) (WWAP, 2019).',
           'Implementing IWRM can support avoiding any potential conflict with Goal 6 and other targets related to sustainable management of natural resources by bringing together different sectors and stakeholders at all levels. [More direct impacts of economic development, mainly from water use and pollution, can cross jurisdictional borders, so it is important that water is managed following hydrological boundaries].',
           'Income growth of the poor enables the achievement of SDG 6 targets by supporting the poor with more access to knowledge, technologies, infrastructure and services for sustainable water management.',
         ],
@@ -22063,7 +26053,7 @@ export const LinkageData2023 = [
       {
         target: '6.a',
         description: [
-          'Service delivery to the most vulnerable as a "very high "priority for 67% of the surveyed agencies. ODA plays an important role in reducing gender inequalities and rural-urban disparities in social and human development (Ndikumana andPickbourn, 2017).',
+          'Service delivery to the most vulnerable as a "very high "priority for 67% of the surveyed agencies. ODA plays an important role in reducing gender inequalities and rural\u2013urban disparities in social and human development (Ndikumana andPickbourn, 2017).',
           'Income growth of the poor enables the achievement of SDG 6 targets by supporting the poor with more access to knowledge, technologies, infrastructure and services for sustainable water management.',
         ],
       },
@@ -22230,6 +26220,56 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.9',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       9,
       0,
@@ -22307,7 +26347,7 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          'Transgender women may be more likely to experience intimate partner violence and are almost 49 times more likely to acquire HIV, yet are often left out of programming and decision-making. // Aim to equip young people with the skills and resources to design and implement programmes which are bottom-up and youth-led [...] This includes technical as well as financial support for community- led and youth-led service delivery. Establishing mechanisms for sustainable and meaningful youth engagement in development furthers [...] political inclusion, while also supporting the achievement of [the end of the AIDS epidemics] in a comprehensive and collaborative way. We must pay particular attention to facilitating participation of young people living with, and most affected by, HIV, including adolescent girls and young women, LGBTI people, people with disabilities and migrants, who are further excluded from participating in decision making. Efforts should be made to fit engagement opportunities into the daily lives of young people, for example at schools, clinics and community centres.',
+          'Transgender women may be more likely to experience intimate partner violence and are almost 49 times more likely to acquire HIV, yet are often left out of programming and decision-making. // Aim to equip young people with the skills and resources to design and implement programmes which are bottom-up and youth-led [\u2026] This includes technical as well as financial support for community- led and youth-led service delivery. Establishing mechanisms for sustainable and meaningful youth engagement in development furthers [\u2026] political inclusion, while also supporting the achievement of [the end of the AIDS epidemics] in a comprehensive and collaborative way. We must pay particular attention to facilitating participation of young people living with, and most affected by, HIV, including adolescent girls and young women, LGBTI people, people with disabilities and migrants, who are further excluded from participating in decision making. Efforts should be made to fit engagement opportunities into the daily lives of young people, for example at schools, clinics and community centres.',
         ],
       },
       {
@@ -22344,6 +26384,68 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '1.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.9',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       9,
       1,
@@ -22355,7 +26457,7 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          "Service delivery, advocacy and programming for young people must take place within an enabling legal and policy environment that recognizes young people's right to live free from violence and discrimination, and to safely exercise their rights, including their reproductive rights. Progressive laws, which protect human rights and ensure access to clinical care and other forms of support, are necessary to end the HIV epidemic. The elimination of discriminatory laws and policies reduce inequalities of outcome. In 72 countries, young people under a certain age must seek parental consent before accessing one or more SRHR service. Such policies have been widely condemned by the global health community, including the Committee on the Rights of the Child, and act as a significant barrier to young people's access to care. Globally, 44% of new HIV infections occur in key populations - sex workers, people who inject drugs, transgender people and men who have sex with men - and their sexual partners. Criminalization of behaviours like sex work and drug use perpetuates stigma and restricts uptake of services. HIV programming should therefore include political advocacy at the highest levels to repeal and reform all laws that restrict these rights.",
+          'Service delivery, advocacy and programming for young people must take place within an enabling legal and policy environment that recognizes young people\u2019s right to live free from violence and discrimination, and to safely exercise their rights, including their reproductive rights. Progressive laws, which protect human rights and ensure access to clinical care and other forms of support, are necessary to end the HIV epidemic. The elimination of discriminatory laws and policies reduce inequalities of outcome. In 72 countries, young people under a certain age must seek parental consent before accessing one or more SRHR service. Such policies have been widely condemned by the global health community, including the Committee on the Rights of the Child, and act as a significant barrier to young people\u2019s access to care. Globally, 44% of new HIV infections occur in key populations \u2013 sex workers, people who inject drugs, transgender people and men who have sex with men \u2013 and their sexual partners. Criminalization of behaviours like sex work and drug use perpetuates stigma and restricts uptake of services. HIV programming should therefore include political advocacy at the highest levels to repeal and reform all laws that restrict these rights.',
         ],
       },
       {
@@ -22367,7 +26469,7 @@ export const LinkageData2023 = [
       {
         target: '6.2',
         description: [
-          "Multiple possible synergie include toilet construction laws, policies and practices that particularly target the poorest, or women and girls [synergy] // Possible trade-offs include the same as for Target 10.2, where attempt to address discrimination to one segment of the populations may increase that of another's [trade-off].",
+          'Multiple possible synergie include toilet construction laws, policies and practices that particularly target the poorest, or women and girls [synergy] // Possible trade-offs include the same as for Target 10.2, where attempt to address discrimination to one segment of the populations may increase that of another\u2019s [trade-off].',
           'Achieving universal access to safe WASH services in homes, healthcare facilities, schools and workplaces directly supports target. Implementing WASH facilities in the public sphere, including facilities for menstrual hygiene management, supports effective participation of women and girls at all levels in educational, political, economic and public life.',
           'Ensuring equal opportunity for all and reducing inequalities of outcome, including by eliminating discriminatory laws, policies and practices and promoting appropriate legislation, policies and action can have a direct and significant impact access to adequate and equitable sanitation and hygiene and end open defecation , especially for the poorest and most marginalized communities.',
         ],
@@ -22396,7 +26498,69 @@ export const LinkageData2023 = [
       {
         target: '6.2',
         description: [
-          "Multiple possible synergie include toilet construction laws, policies and practices that particularly target the poorest, or women and girls [synergy] // Possible trade-offs include the same as for Target 10.2, where attempt to address discrimination to one segment of the populations may increase that of another's [trade-off].",
+          'Multiple possible synergie include toilet construction laws, policies and practices that particularly target the poorest, or women and girls [synergy] // Possible trade-offs include the same as for Target 10.2, where attempt to address discrimination to one segment of the populations may increase that of another\u2019s [trade-off].',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.9',
+        description: [
+          '',
         ],
       },
     ],
@@ -22471,11 +26635,67 @@ export const LinkageData2023 = [
       {
         target: '6.2',
         description: [
-          "Target calls for action in sanitation for inclusive policies to meet workers' needs [call for action] // Synergies where social protection policies ensure minimum sanitation for the most vulnerable, or regulations that specifically target the sanitation labour market and protect sanitation workers from law wages and precarious working conditions [synergy].",
+          'Target calls for action in sanitation for inclusive policies to meet workers\u2019 needs [call for action] // Synergies where social protection policies ensure minimum sanitation for the most vulnerable, or regulations that specifically target the sanitation labour market and protect sanitation workers from law wages and precarious working conditions [synergy].',
         ],
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '8.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.c',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       9,
       3,
@@ -22504,6 +26724,7 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [],
     coordinates: [
       9,
       4,
@@ -22583,6 +26804,14 @@ export const LinkageData2023 = [
         target: '7.1',
         description: [
           'Negatively associated with neonatal and child mortality, epidemics, mortality due to pollution, and support for medical research.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '16.8',
+        description: [
+          '',
         ],
       },
     ],
@@ -22681,6 +26910,14 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       9,
       6,
@@ -22710,6 +26947,56 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.c',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.b',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       9,
       7,
@@ -22721,7 +27008,7 @@ export const LinkageData2023 = [
       {
         target: '6.3',
         description: [
-          'Perhaps a connection with development assistance and financial flows [...]. This aid can be used, in principle, for water pollution control and management (but no evidence found in literature).',
+          'Perhaps a connection with development assistance and financial flows [\u2026]. This aid can be used, in principle, for water pollution control and management (but no evidence found in literature).',
           'Increasing ODA and financial flows, including FDI, can directly improve the technology for treating waste water and processing hazardous chemicals and materials so that they do not end up dumped into water sources. Thus water pollution should reduce and overall water quality improved.',
         ],
       },
@@ -23002,7 +27289,7 @@ export const LinkageData2023 = [
       {
         target: '6.2',
         description: [
-          "Synergies exist if Official Development Assistance (ODA) is targeted towards achieving access to sanitation [synergy]// Also potential trade-offs if ODA comes with certain conditions which do not match local population's aspirations (even if conditions are in accordance with national plans), for example, ending open defecation, or promoting sewers versus on-site sanitation [trade-off].",
+          'Synergies exist if Official Development Assistance (ODA) is targeted towards achieving access to sanitation [synergy]// Also potential trade-offs if ODA comes with certain conditions which do not match local population\u2019s aspirations (even if conditions are in accordance with national plans), for example, ending open defecation, or promoting sewers versus on-site sanitation [trade-off].',
         ],
       },
       {
@@ -23040,7 +27327,21 @@ export const LinkageData2023 = [
       {
         target: '6.2',
         description: [
-          "Synergies exist if Official Development Assistance (ODA) is targeted towards achieving access to sanitation [synergy]// Also potential trade-offs if ODA comes with certain conditions which do not match local population's aspirations (even if conditions are in accordance with national plans), for example, ending open defecation, or promoting sewers versus on-site sanitation [trade-off].",
+          'Synergies exist if Official Development Assistance (ODA) is targeted towards achieving access to sanitation [synergy]// Also potential trade-offs if ODA comes with certain conditions which do not match local population\u2019s aspirations (even if conditions are in accordance with national plans), for example, ending open defecation, or promoting sewers versus on-site sanitation [trade-off].',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '16.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
         ],
       },
     ],
@@ -23053,6 +27354,14 @@ export const LinkageData2023 = [
     id: 'Target 10.c',
     synergies: [],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '5.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       9,
       9,
@@ -23290,6 +27599,92 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '1.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.c',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       10,
       0,
@@ -23447,7 +27842,7 @@ export const LinkageData2023 = [
       {
         target: '2.3',
         description: [
-          "A backbone of supportive infrastructure is needed in development corridors to mobilise an enabling environment for businesses / support (agricultural) value chain development [synergy] // Trade-off with factor 3 \" Development corridors exacerbate inequalities and will not deliver on the Agenda 2030 pledge to 'leave no one behind'\".",
+          "A backbone of supportive infrastructure is needed in development corridors to mobilise an enabling environment for businesses / support (agricultural) value chain development [synergy] // Trade-off with factor 3 \" Development corridors exacerbate inequalities and will not deliver on the Agenda 2030 pledge to \u2018leave no one behind'\".",
         ],
       },
       {
@@ -23579,7 +27974,7 @@ export const LinkageData2023 = [
       {
         target: '2.3',
         description: [
-          "A backbone of supportive infrastructure is needed in development corridors to mobilise an enabling environment for businesses / support (agricultural) value chain development [synergy] // Trade-off with factor 3 \" Development corridors exacerbate inequalities and will not deliver on the Agenda 2030 pledge to 'leave no one behind'\".",
+          "A backbone of supportive infrastructure is needed in development corridors to mobilise an enabling environment for businesses / support (agricultural) value chain development [synergy] // Trade-off with factor 3 \" Development corridors exacerbate inequalities and will not deliver on the Agenda 2030 pledge to \u2018leave no one behind'\".",
         ],
       },
       {
@@ -23590,6 +27985,27 @@ export const LinkageData2023 = [
       },
       {
         target: '7.2',
+        description: [
+          '',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '3.6',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '9.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
         description: [
           '',
         ],
@@ -23848,6 +28264,20 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       10,
       2,
@@ -23876,6 +28306,7 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [],
     coordinates: [
       10,
       3,
@@ -23956,7 +28387,7 @@ export const LinkageData2023 = [
         target: '6.2',
         description: [
           '',
-          "Target calls for action in sanitation to reduce the impacts of disasters, for example where pathogen risks are higher, where disasters affect sanitation facilities and services, or where they lead to populations' displacement which require the creation of emergency services [call for action] // Multiple synergies, for example, in building resilient sanitation infrastructure, in triggering early warnings to empty latrines, and, from a social learning perspective, in developing management systems that are less exposed to risks [synergy].",
+          'Target calls for action in sanitation to reduce the impacts of disasters, for example where pathogen risks are higher, where disasters affect sanitation facilities and services, or where they lead to populations\u2019 displacement which require the creation of emergency services [call for action] // Multiple synergies, for example, in building resilient sanitation infrastructure, in triggering early warnings to empty latrines, and, from a social learning perspective, in developing management systems that are less exposed to risks [synergy].',
         ],
       },
       {
@@ -23991,6 +28422,50 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '13.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '13.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       10,
       4,
@@ -24014,7 +28489,7 @@ export const LinkageData2023 = [
           'Reduced open-air burning of crop residues improves local air quality. {Denmark -- Netherlands -- China} --- Improvements in air quality by using farming residues for energy, reducing the particulate matter emissions produced by open-air burning. {Switzerland -- Sweden -- Canada}',
           '',
           '',
-          'Renewable energy sources relying on non-oxidative processes - including hydropower, wind and solar - can contribute to a substantial decrease in air pollution, in contrast to biomass fuel burning. [...] As the share of renewable energy includes all types of renewable energy sources (including dirty fuels), it is important to interpret this result with caution.',
+          'Renewable energy sources relying on non-oxidative processes \u2013 including hydropower, wind and solar \u2013 can contribute to a substantial decrease in air pollution, in contrast to biomass fuel burning. [...] As the share of renewable energy includes all types of renewable energy sources (including dirty fuels), it is important to interpret this result with caution.',
         ],
       },
       {
@@ -24287,7 +28762,7 @@ export const LinkageData2023 = [
       {
         target: '12.4',
         description: [
-          'Sound environmental disposal or treatment of hazardous waste, which then leads to decreased levels of particulate matter in the air. [...] hazardous waste can cause an increase in particulate matter due to its radioactive and flammable properties when it is dumped, disposed of or processed inappropriately (United Nations 2010). It may be expected that as hazardous waste generation increases, air pollution would increase, yet this was not the case from the results. This might be related to the collection and disposal facilities for hazardous waste that are usually located outside urban areas, making the impact on urban particulate matter levels rather limited.',
+          'Sound environmental disposal or treatment of hazardous waste, which then leads to decreased levels of particulate matter in the air. [\u2026] hazardous waste can cause an increase in particulate matter due to its radioactive and flammable properties when it is dumped, disposed of or processed inappropriately (United Nations 2010). It may be expected that as hazardous waste generation increases, air pollution would increase, yet this was not the case from the results. This might be related to the collection and disposal facilities for hazardous waste that are usually located outside urban areas, making the impact on urban particulate matter levels rather limited.',
         ],
       },
     ],
@@ -24295,12 +28770,56 @@ export const LinkageData2023 = [
       {
         target: '12.4',
         description: [
-          'Sound environmental disposal or treatment of hazardous waste, which then leads to decreased levels of particulate matter in the air. [...] hazardous waste can cause an increase in particulate matter due to its radioactive and flammable properties when it is dumped, disposed of or processed inappropriately (United Nations 2010). It may be expected that as hazardous waste generation increases, air pollution would increase, yet this was not the case from the results. This might be related to the collection and disposal facilities for hazardous waste that are usually located outside urban areas, making the impact on urban particulate matter levels rather limited.',
+          'Sound environmental disposal or treatment of hazardous waste, which then leads to decreased levels of particulate matter in the air. [\u2026] hazardous waste can cause an increase in particulate matter due to its radioactive and flammable properties when it is dumped, disposed of or processed inappropriately (United Nations 2010). It may be expected that as hazardous waste generation increases, air pollution would increase, yet this was not the case from the results. This might be related to the collection and disposal facilities for hazardous waste that are usually located outside urban areas, making the impact on urban particulate matter levels rather limited.',
           '',
         ],
       },
       {
         target: '12.5',
+        description: [
+          '',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '12.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '15.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.c',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
         description: [
           '',
         ],
@@ -24401,6 +28920,14 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       10,
       6,
@@ -24450,6 +28977,20 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       10,
       7,
@@ -24648,6 +29189,14 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '3.d',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       10,
       8,
@@ -24709,6 +29258,7 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [],
     coordinates: [
       10,
       9,
@@ -24721,7 +29271,7 @@ export const LinkageData2023 = [
         target: '6.3',
         description: [
           'General agreement that sustainable consumption and production practices can lead to better water quality, if quality is not already high. Indirect connection.',
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
           'The 10YFSCP is an international framework for developing, replicating, and scaling up SCP and resource efficiency at national and regional levels, and decoupling environmental degradation and resource use from economic growth, so if this framework is increasingly implemented there will be a direct improvement in water quality from pollution, illegal dumping and release of hazardous chemicals and materials into the environment.',
           'Implement programmes on sustainable consumption and production enables improving water quality by reducing water pollution from for example food production and consumption.',
         ],
@@ -24793,7 +29343,7 @@ export const LinkageData2023 = [
       {
         target: '14.1',
         description: [
-          "G7 Action Plan to Combat Marine Litter enable the achievement of target 14.1 through addressing sustainable consumption and production patterns [...]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: improving countries' systems for waste management, reducing waste generation, and encouraging reuse and recycling; incorporating waste management activities into international development assistance and investments and supporting the implementation of pilot projects where appropriate; investigating sustainable and cost-effective solutions to reduce and prevent sewage and stormwater-related waste, including microplastics entering the marine environment; encouraging industry to develop sustainable packaging and remove ingredients from products to gain environmental benefits, such as by voluntary phase-out of microbeads; promoting best practice along the whole plastics manufacturing and value chain from production to transport, such as aiming for zero pellet loss; assessing and analysing removal data to support and target outreach efforts, potential policy options, and other means.",
+          'G7 Action Plan to Combat Marine Litter enable the achievement of target 14.1 through addressing sustainable consumption and production patterns [\u2026]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: improving countries\u2019 systems for waste management, reducing waste generation, and encouraging reuse and recycling; incorporating waste management activities into international development assistance and investments and supporting the implementation of pilot projects where appropriate; investigating sustainable and cost-effective solutions to reduce and prevent sewage and stormwater-related waste, including microplastics entering the marine environment; encouraging industry to develop sustainable packaging and remove ingredients from products to gain environmental benefits, such as by voluntary phase-out of microbeads; promoting best practice along the whole plastics manufacturing and value chain from production to transport, such as aiming for zero pellet loss; assessing and analysing removal data to support and target outreach efforts, potential policy options, and other means.',
           'Sustainable production and consumption, sustainable management of natural resources, recycling, and sound management of chemicals and wastes will help prevent marine pollution.',
           'Implement programmes on sustainable consumption and production enables preventing and reducing marine pollution by reducing water pollution from for example food production and consumption.',
           '',
@@ -24802,7 +29352,7 @@ export const LinkageData2023 = [
       {
         target: '6.4',
         description: [
-          "Reducing food waste, if well managed, can significantly reduce water demands, thus contributing to sustainable water use. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Reducing food waste, if well managed, can significantly reduce water demands, thus contributing to sustainable water use. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
           'The 10YFSCP is an international framework for developing, replicating, and scaling up SCP and resource efficiency at national and regional levels. This includes water use efficiency in factories and other business operations and products. If the 1oYFSCP is fully implemented by countries it will directly and significantly improve water use efficiency in all sectors and reduce stress on local / regional water resources.',
           'Implement programmes on sustainable consumption and production enables improving water use efficiency and sustainable withdrawals and supply of freshwater.',
         ],
@@ -24810,7 +29360,7 @@ export const LinkageData2023 = [
       {
         target: '6.5',
         description: [
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
           'Implement programmes on sustainable consumption and production enables implementing integrated water resources management at all levels.',
           '',
         ],
@@ -24997,6 +29547,20 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '8.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       11,
       0,
@@ -25009,7 +29573,7 @@ export const LinkageData2023 = [
         target: '6.3',
         description: [
           'General agreement that sustainable consumption and production practices can lead to better water quality, if quality is not already high. Indirect connection.',
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
           'The sustainable management and efficient use of natural resources will likely have a direct and positive impact on improvement of water quality by significantly reducing pollution and hazardous chemical inputs into water sources as a result of more eco-efficient and clean technology manufacturing processes. Sustainable values will be crucial to make this happen.',
           'Sustainable management and efficient use of natural resources (e.g., nutrients, water) reinforces improving water quality by reducing pollution, and vice versa.',
         ],
@@ -25018,7 +29582,7 @@ export const LinkageData2023 = [
         target: '7.2',
         description: [
           'Biorefining by-product stream converted to biogas. contributions to SDG 9 were found (cases 1, 28, and 31) as GHG emissions reductions were associated with the implementation of these bioenergy systems. {Germany}',
-          'Policy coherence for sustainable development (17.14) and sustainable resource use (12.2) can be directed to support renewables (7.2) and efficiency (7.3) in the energy sector, which in turn would strengthen national climate policies (13.2)-which could again reinforce policy coherence (17.14) and sustainable resource use (12.2).',
+          'Policy coherence for sustainable development (17.14) and sustainable resource use (12.2) can be directed to support renewables (7.2) and efficiency (7.3) in the energy sector, which in turn would strengthen national climate policies (13.2)\u2014which could again reinforce policy coherence (17.14) and sustainable resource use (12.2).',
           'An increase in the use of renewable energy sourced from biomass or water may be achieved using unsustainable methods should good environmental management be overlooked in a bid to achieve the target. At the same time, by increasing the share of energy from renewable sources the use of fossil fuels should decrease, indirectly supporting target 12.2.',
         ],
       },
@@ -25101,7 +29665,7 @@ export const LinkageData2023 = [
       {
         target: '7.3',
         description: [
-          'Policy coherence for sustainable development (17.14) and sustainable resource use (12.2) can be directed to support renewables (7.2) and efficiency (7.3) in the energy sector, which in turn would strengthen national climate policies (13.2)-which could again reinforce policy coherence (17.14) and sustainable resource use (12.2).',
+          'Policy coherence for sustainable development (17.14) and sustainable resource use (12.2) can be directed to support renewables (7.2) and efficiency (7.3) in the energy sector, which in turn would strengthen national climate policies (13.2)\u2014which could again reinforce policy coherence (17.14) and sustainable resource use (12.2).',
           '',
           '',
         ],
@@ -25256,7 +29820,7 @@ export const LinkageData2023 = [
         description: [
           '',
           '',
-          "Reducing food waste, if well managed, can significantly reduce water demands, thus contributing to sustainable water use. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Reducing food waste, if well managed, can significantly reduce water demands, thus contributing to sustainable water use. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
           'Resource use efficiency. {Global --- Sri Lanka}',
           'Increasing water-use efficiency reinforces sustainable management of efficient use of natural resources, and vice versa.',
         ],
@@ -25325,7 +29889,7 @@ export const LinkageData2023 = [
       {
         target: '14.4',
         description: [
-          'Collaboration between scientific, legal and regulatory and industrial spheres to achieve the best outcome. [...] New partnerships and investment in both science and engagement will reap the highest rewards for those seeking to implement the SDGs and SCP in the most successful manner.',
+          'Collaboration between scientific, legal and regulatory and industrial spheres to achieve the best outcome. [\u2026] New partnerships and investment in both science and engagement will reap the highest rewards for those seeking to implement the SDGs and SCP in the most successful manner.',
           'Sustainable fisheries contribute to sustainable management of natural resources. Specific management measures, such as discard bans or selective fishing methods reduce food losses along the production chain.',
           'Japan, as a large consumer of marine products, faces a serious problem of illegal, unreported and unregulated fishing reflecting a need to change production and consumption patterns.',
           'Effectively regulating harvesting and ending overfishing in the marine ecosystems reinforces achieving sustainable management and efficient use of natural resources (e.g., fish), and vice versa.',
@@ -25367,7 +29931,7 @@ export const LinkageData2023 = [
       {
         target: '6.5',
         description: [
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
           'Sustainable management and efficient use of surface and groundwater resources are indivisible from improving water use efficiency and sustainable water withdraws and supply, and vice versa.',
         ],
       },
@@ -25387,19 +29951,19 @@ export const LinkageData2023 = [
       {
         target: '16.7',
         description: [
-          "The review of Fiji's water governance policies would facilitate better coordination of roles and responsibilities among stakeholders.",
+          'The review of Fiji\u2019s water governance policies would facilitate better coordination of roles and responsibilities among stakeholders.',
         ],
       },
       {
         target: '17.14',
         description: [
-          "The review of Fiji's water governance policies would facilitate better coordination of roles and responsibilities among stakeholders.",
+          'The review of Fiji\u2019s water governance policies would facilitate better coordination of roles and responsibilities among stakeholders.',
         ],
       },
       {
         target: '17.16',
         description: [
-          "The review of Fiji's water governance policies would facilitate better coordination of roles and responsibilities among stakeholders.",
+          'The review of Fiji\u2019s water governance policies would facilitate better coordination of roles and responsibilities among stakeholders.',
         ],
       },
     ],
@@ -25435,6 +29999,38 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '5.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       11,
       1,
@@ -25447,7 +30043,7 @@ export const LinkageData2023 = [
         target: '6.3',
         description: [
           'General agreement that sustainable consumption and production practices can lead to better water quality, if quality is not already high. Indirect connection. Halving global food waste and thereby proportionally reducing the impact of agriculture on water pollution.',
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
           'Reduce food waste in the food production-consumption chain reinforces improving water quality.',
         ],
       },
@@ -25668,7 +30264,7 @@ export const LinkageData2023 = [
         description: [
           '',
           '',
-          "Reducing food waste, if well managed, can significantly reduce water demands, thus contributing to sustainable water use. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Reducing food waste, if well managed, can significantly reduce water demands, thus contributing to sustainable water use. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
         ],
       },
       {
@@ -25738,13 +30334,13 @@ export const LinkageData2023 = [
       {
         target: '6.4',
         description: [
-          "Reducing food waste, if well managed, can significantly reduce water demands, thus contributing to sustainable water use. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Reducing food waste, if well managed, can significantly reduce water demands, thus contributing to sustainable water use. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
         ],
       },
       {
         target: '6.5',
         description: [
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
         ],
       },
       {
@@ -25755,6 +30351,7 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [],
     coordinates: [
       11,
       2,
@@ -25768,7 +30365,7 @@ export const LinkageData2023 = [
         description: [
           'General agreement that sustainable consumption and production practices can lead to better water quality, if quality is not already high.',
           '',
-          "Ensuring WASH services are combined with safe treatment and disposal or use of wastewater amplifies health gains by reducing the burden of disease. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries. // Wastewater generation must be mitigated with strategies for prevention (product replacement or use of less harmful chemicals in industrial processes), reduction (wastewater treatment, agricultural best practices) // interdependent on 6.3.",
+          'Ensuring WASH services are combined with safe treatment and disposal or use of wastewater amplifies health gains by reducing the burden of disease. [...] Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries. // Wastewater generation must be mitigated with strategies for prevention (product replacement or use of less harmful chemicals in industrial processes), reduction (wastewater treatment, agricultural best practices) // interdependent on 6.3.',
           'Ensuring environmentally sound management of chemicals and all wastes throughout their life cycle will directly contribute to improving water quality by reducing pollution from hazardous chemicals and materials.',
           '',
         ],
@@ -25776,8 +30373,8 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          "Efforts to end NTDs align with this target in two important ways, the first being the responsible production, use and disposal of pesticides. Insecticide resistance [...] is a major cause of concern for NTD and malaria programmes [147-149]. WHO's work in this area focuses on the WHO Pesticide Evaluation Scheme (WHOPES) [...] established the Global Collaboration for the Development of Pesticides for Public Health (GCDPP) in response to the need to stimulate the development of alternative insecticides and application technologies [150] [...] Pesticide product development and the sound management of pesticides, to discuss and strengthen collaboration on critical vector control issues // Waste disposal, focusing on the sustainable production and recycling of rubber tyres, plastic bottles and other containers as a part of vector control efforts designed to halt the global spread of Aedes mosquitos [151, 152]. Ae. aegypti proliferates in [...] used tyres, discarded food and beverage containers, blocked gutters and buildings under construction.",
-          'A study of porcelain and plastic household wastes serving as larval habitats of vectors of Aedes-borne diseases in rural and urban areas found that porcelain and plastic wastes were more productive (i.e., more larvae developed in them) in urban areas compared to rural areas. The risk of dengue epidemics was expected to increase if waste generation continued without appropriate measures being applied to limit the addition of such waste to the environment. The study suggested that increase use of biodegradable containers might reduce the problem of waste and mosquito production [154]. {Kolkata, India} --- The provision of [...] efficient domestic waste management, will lead to fewer larval habitats for Ae. aegypti. {n.a.}',
+          'Efforts to end NTDs align with this target in two important ways, the first being the responsible production, use and disposal of pesticides. Insecticide resistance [\u2026] is a major cause of concern for NTD and malaria programmes [147\u2013149]. WHO\u2019s work in this area focuses on the WHO Pesticide Evaluation Scheme (WHOPES) [\u2026] established the Global Collaboration for the Development of Pesticides for Public Health (GCDPP) in response to the need to stimulate the development of alternative insecticides and application technologies [150] [\u2026] Pesticide product development and the sound management of pesticides, to discuss and strengthen collaboration on critical vector control issues // Waste disposal, focusing on the sustainable production and recycling of rubber tyres, plastic bottles and other containers as a part of vector control efforts designed to halt the global spread of Aedes mosquitos [151, 152]. Ae. aegypti proliferates in [\u2026] used tyres, discarded food and beverage containers, blocked gutters and buildings under construction.',
+          'A study of porcelain and plastic household wastes serving as larval habitats of vectors of Aedes-borne diseases in rural and urban areas found that porcelain and plastic wastes were more productive (i.e., more larvae developed in them) in urban areas compared to rural areas. The risk of dengue epidemics was expected to increase if waste generation continued without appropriate measures being applied to limit the addition of such waste to the environment. The study suggested that increase use of biodegradable containers might reduce the problem of waste and mosquito production [154]. {Kolkata, India} --- The provision of [\u2026] efficient domestic waste management, will lead to fewer larval habitats for Ae. aegypti. {n.a.}',
         ],
       },
       {
@@ -25839,7 +30436,7 @@ export const LinkageData2023 = [
         target: '14.1',
         description: [
           '',
-          "G7 Action Plan to Combat Marine Litter enable the achievement of target 14.1 through addressing sustainable consumption and production patterns [...]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: investigating sustainable and cost-effective solutions to reduce and prevent sewage and stormwater-related waste, including microplastics entering the marine environment; improving countries' systems for waste management, reducing waste generation, and encouraging reuse and recycling; promoting relevant regulations and incentives to reduce the use of disposable single-use and other items, which impact the marine environment.",
+          'G7 Action Plan to Combat Marine Litter enable the achievement of target 14.1 through addressing sustainable consumption and production patterns [\u2026]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: investigating sustainable and cost-effective solutions to reduce and prevent sewage and stormwater-related waste, including microplastics entering the marine environment; improving countries\u2019 systems for waste management, reducing waste generation, and encouraging reuse and recycling; promoting relevant regulations and incentives to reduce the use of disposable single-use and other items, which impact the marine environment.',
           'Sustainable production and consumption, sustainable management of natural resources, recycling, and sound management of chemicals and wastes will help prevent marine pollution.',
         ],
       },
@@ -25861,40 +30458,40 @@ export const LinkageData2023 = [
         target: '15.1',
         description: [
           'Target 12.4 approaches water issues from the perspective of the environmentally sound management of water resources, which aligns with Target 15.1 on the conservation, restoration, and sustainable use of terrestrial and inland freshwater ecosystems and their services.',
-          "Air pollutants stemming from hazardous pollutants have been shown to cause changes in tree conditions, tree physiology and biogeochemical cycling which affect a tree's vulnerability to biological and environmental stressors. Forests are also susceptible to acid rain, which weakens trees by damaging their leaves and limiting nutrient availability. On the other hand, hazardous waste and more specifically e-waste contain hazardous substances such as lead, cadmium, mercury, persistent organic pollutants (POPs), asbestos and chlorofluorocarbons (CFCs) (UNEP 2019c). The capacity for environmentally sound management of such hazardous waste is still lacking in many developing countries and countries with economies in transition (UNEP 2019).",
+          'Air pollutants stemming from hazardous pollutants have been shown to cause changes in tree conditions, tree physiology and biogeochemical cycling which affect a tree\u2019s vulnerability to biological and environmental stressors. Forests are also susceptible to acid rain, which weakens trees by damaging their leaves and limiting nutrient availability. On the other hand, hazardous waste and more specifically e-waste contain hazardous substances such as lead, cadmium, mercury, persistent organic pollutants (POPs), asbestos and chlorofluorocarbons (CFCs) (UNEP 2019c). The capacity for environmentally sound management of such hazardous waste is still lacking in many developing countries and countries with economies in transition (UNEP 2019).',
           '',
         ],
       },
       {
         target: '6.4',
         description: [
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
         ],
       },
       {
         target: '6.5',
         description: [
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries. // interdependent on target 6.5.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries. // interdependent on target 6.5.',
         ],
       },
       {
         target: '6.6',
         description: [
           'Strong interdependencies (are mutually supportive) with those targets under Goal 6 that relate to reducing pollution and increasing reuse [6.3], sustainable and efficient use [6.4], IWRM [6.5] and protecting freshwater ecosystems [6.6] // interdependent on target 6.6.',
-          'The unlawful discharge of untreated hazardous waste from various sources is a major threat to water-related ecosystems, causing adverse deleterious impacts. In developing countries, hazardous chemicals from fertilizers and pesticides used in agricultural activities present a significant source of water pollution. This can be attributed to the fact that hazardous waste is being generated and disposed of into the environment at rates greater than they can be safely managed, leading to the release of toxic substances that end up in water streams. Examples include the disposal of inorganic fluorine compounds used in a variety of industrial and manufacturing processes [...] (Ascend Waste and Environment 2015). An increase in recycling rates of e-waste over time and proper handling and disposal can help minimize resource extraction by re-introducing the recycled products into the market, and reducing the disposal of contaminated material into water streams.',
+          'The unlawful discharge of untreated hazardous waste from various sources is a major threat to water-related ecosystems, causing adverse deleterious impacts. In developing countries, hazardous chemicals from fertilizers and pesticides used in agricultural activities present a significant source of water pollution. This can be attributed to the fact that hazardous waste is being generated and disposed of into the environment at rates greater than they can be safely managed, leading to the release of toxic substances that end up in water streams. Examples include the disposal of inorganic fluorine compounds used in a variety of industrial and manufacturing processes [\u2026] (Ascend Waste and Environment 2015). An increase in recycling rates of e-waste over time and proper handling and disposal can help minimize resource extraction by re-introducing the recycled products into the market, and reducing the disposal of contaminated material into water streams.',
           'Environmentally sound management of chemicals and all wastes throughout their life cycle will directly help in protecting and conserving water-related ecosystems, including mountains, forests, wetlands, rivers, aquifers and lakes since chemical pollutants are probably the most ubiquitous (after plastic) pollution affecting water.',
         ],
       },
       {
         target: '11.6',
         description: [
-          'Sound environmental disposal or treatment of hazardous waste, which then leads to decreased levels of particulate matter in the air. [...] hazardous waste can cause an increase in particulate matter due to its radioactive and flammable properties when it is dumped, disposed of or processed inappropriately (United Nations 2010). It may be expected that as hazardous waste generation increases, air pollution would increase, yet this was not the case from the results. This might be related to the collection and disposal facilities for hazardous waste that are usually located outside urban areas, making the impact on urban particulate matter levels rather limited.',
+          'Sound environmental disposal or treatment of hazardous waste, which then leads to decreased levels of particulate matter in the air. [\u2026] hazardous waste can cause an increase in particulate matter due to its radioactive and flammable properties when it is dumped, disposed of or processed inappropriately (United Nations 2010). It may be expected that as hazardous waste generation increases, air pollution would increase, yet this was not the case from the results. This might be related to the collection and disposal facilities for hazardous waste that are usually located outside urban areas, making the impact on urban particulate matter levels rather limited.',
         ],
       },
       {
         target: '15.5',
         description: [
-          'Widespread use of pesticides significantly affects all species as they move along food chains and are biomagnified as they transfer from one species to the next. The contamination of polar bears in the Arctic is an example. [...] The hazardous chemicals in pesticides have the ability to result in suppressed immune function, endocrine disruption, reproduction-organ shrinkage, hermaphroditism and increased death in young of all species (Center for Biological Diversity n.d.). [...] appropriate treatment and recycling leads to reduced quantities of hazardous and e-waste dumped in nature that pose a threat to species.',
+          'Widespread use of pesticides significantly affects all species as they move along food chains and are biomagnified as they transfer from one species to the next. The contamination of polar bears in the Arctic is an example. [\u2026] The hazardous chemicals in pesticides have the ability to result in suppressed immune function, endocrine disruption, reproduction-organ shrinkage, hermaphroditism and increased death in young of all species (Center for Biological Diversity n.d.). [\u2026] appropriate treatment and recycling leads to reduced quantities of hazardous and e-waste dumped in nature that pose a threat to species.',
           '',
         ],
       },
@@ -25907,7 +30504,7 @@ export const LinkageData2023 = [
       {
         target: '13.1',
         description: [
-          "With most plastic today still produced from petrochemicals, plastic production and after-use of plastics account for greenhouse gas emissions equivalent to about 400 million tonnes of CO2 globally every year (European Commission 2018). Increasing the share of more sustainable alternatives could therefore also strengthen the EU's resilience to climate-related hazards and natural disasters.",
+          'With most plastic today still produced from petrochemicals, plastic production and after-use of plastics account for greenhouse gas emissions equivalent to about 400 million tonnes of CO2 globally every year (European Commission 2018). Increasing the share of more sustainable alternatives could therefore also strengthen the EU\u2019s resilience to climate-related hazards and natural disasters.',
         ],
       },
       {
@@ -25933,20 +30530,20 @@ export const LinkageData2023 = [
       {
         target: '9.2',
         description: [
-          "Overall, a country's higher level of industrialization is linked with increased E-waste per capita generation - with average Manufacturing value-added per capita and E-waste per capita much higher for higher income countries. However, the variations across countries are quite substantial. For example, for low-income and upper middle income countries the correlation between industrialization and e-waste is strong and significant, whereas for high-income countries it is negative but statistically insignificant.",
-          "Overall, a country's higher level of industrialization is linked with increased E-waste per capita generation - with average Manufacturing value-added per capita and E-waste per capita much higher for higher income countries. However, the variations across countries are quite substantial. For example, for low-income and upper middle income countries the correlation between industrialization and e-waste is strong and significant, whereas for high-income countries it is negative but statistically insignificant.",
+          'Overall, a country\u2019s higher level of industrialization is linked with increased E-waste per capita generation \u2013 with average Manufacturing value-added per capita and E-waste per capita much higher for higher income countries. However, the variations across countries are quite substantial. For example, for low-income and upper middle income countries the correlation between industrialization and e-waste is strong and significant, whereas for high-income countries it is negative but statistically insignificant.',
+          'Overall, a country\u2019s higher level of industrialization is linked with increased E-waste per capita generation \u2013 with average Manufacturing value-added per capita and E-waste per capita much higher for higher income countries. However, the variations across countries are quite substantial. For example, for low-income and upper middle income countries the correlation between industrialization and e-waste is strong and significant, whereas for high-income countries it is negative but statistically insignificant.',
         ],
       },
       {
         target: '11.6',
         description: [
-          'Sound environmental disposal or treatment of hazardous waste, which then leads to decreased levels of particulate matter in the air. [...] hazardous waste can cause an increase in particulate matter due to its radioactive and flammable properties when it is dumped, disposed of or processed inappropriately (United Nations 2010). It may be expected that as hazardous waste generation increases, air pollution would increase, yet this was not the case from the results. This might be related to the collection and disposal facilities for hazardous waste that are usually located outside urban areas, making the impact on urban particulate matter levels rather limited.',
+          'Sound environmental disposal or treatment of hazardous waste, which then leads to decreased levels of particulate matter in the air. [\u2026] hazardous waste can cause an increase in particulate matter due to its radioactive and flammable properties when it is dumped, disposed of or processed inappropriately (United Nations 2010). It may be expected that as hazardous waste generation increases, air pollution would increase, yet this was not the case from the results. This might be related to the collection and disposal facilities for hazardous waste that are usually located outside urban areas, making the impact on urban particulate matter levels rather limited.',
         ],
       },
       {
         target: '15.1',
         description: [
-          "Air pollutants stemming from hazardous pollutants have been shown to cause changes in tree conditions, tree physiology and biogeochemical cycling which affect a tree's vulnerability to biological and environmental stressors. Forests are also susceptible to acid rain, which weakens trees by damaging their leaves and limiting nutrient availability. On the other hand, hazardous waste and more specifically e-waste contain hazardous substances such as lead, cadmium, mercury, persistent organic pollutants (POPs), asbestos and chlorofluorocarbons (CFCs) (UNEP 2019c). The capacity for environmentally sound management of such hazardous waste is still lacking in many developing countries and countries with economies in transition (UNEP 2019).",
+          'Air pollutants stemming from hazardous pollutants have been shown to cause changes in tree conditions, tree physiology and biogeochemical cycling which affect a tree\u2019s vulnerability to biological and environmental stressors. Forests are also susceptible to acid rain, which weakens trees by damaging their leaves and limiting nutrient availability. On the other hand, hazardous waste and more specifically e-waste contain hazardous substances such as lead, cadmium, mercury, persistent organic pollutants (POPs), asbestos and chlorofluorocarbons (CFCs) (UNEP 2019c). The capacity for environmentally sound management of such hazardous waste is still lacking in many developing countries and countries with economies in transition (UNEP 2019).',
         ],
       },
       {
@@ -25980,6 +30577,33 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '3.9',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.2',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       11,
       3,
@@ -25993,7 +30617,7 @@ export const LinkageData2023 = [
         description: [
           'General agreement that sustainable consumption and production practices can lead to better water quality, if quality is not already high. Indirect connection.',
           '',
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries. // Wastewater generation must be mitigated with strategies for recycling (closed-loop industrial processes) and reuse (safe wastewater use in agriculture and aquaculture) // interdependent on 6.3.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries. // Wastewater generation must be mitigated with strategies for recycling (closed-loop industrial processes) and reuse (safe wastewater use in agriculture and aquaculture) // interdependent on 6.3.',
           'Improve water quality by reducing pollution, eliminating dumping and minimizing release of hazardous chemicals and materials, halving the proportion of untreated wastewater and substantially increasing recycling and safe reuse globally directly reduces waster generation.',
           'Reduce food waste in the food production-consumption chain reinforces improving water quality.',
         ],
@@ -26214,7 +30838,7 @@ export const LinkageData2023 = [
       {
         target: '14.1',
         description: [
-          "G7 Action Plan to Combat Marine Litter e nable the achievement of target 14.1 through addressing sustainable consumption and production patterns [...]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: promoting relevant regulations and incentives to reduce the use of disposable single-use and other items, which impact the marine environment; improving countries' systems for waste management, reducing waste generation, and encouraging reuse and recycling; encouraging industry to develop sustainable packaging and remove ingredients from products to gain environmental benefits, such as by voluntary phase-out of microbeads.",
+          'G7 Action Plan to Combat Marine Litter e nable the achievement of target 14.1 through addressing sustainable consumption and production patterns [\u2026]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: promoting relevant regulations and incentives to reduce the use of disposable single-use and other items, which impact the marine environment; improving countries\u2019 systems for waste management, reducing waste generation, and encouraging reuse and recycling; encouraging industry to develop sustainable packaging and remove ingredients from products to gain environmental benefits, such as by voluntary phase-out of microbeads.',
           'Sustainable production and consumption, sustainable management of natural resources, recycling, and sound management of chemicals and wastes will help prevent marine pollution.',
           'Reducing food waste in the food production-consumption chain reinforces preventing and reducing marine pollution from food waste.',
           '',
@@ -26231,14 +30855,14 @@ export const LinkageData2023 = [
       {
         target: '6.4',
         description: [
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries.',
           'Improving water-use efficiency and sustainable withdrawals and supply of freshwater reinforces reducing waste from water consumption and food production through prevention, reduction, recycling and reuse, and vice versa.',
         ],
       },
       {
         target: '6.5',
         description: [
-          "Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The 'water footprint' concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries. // interdependent on target 6.5.",
+          'Consumers and producers can have huge impacts on both water quantity and quality. Far more water is embedded in the food we eat and products we buy than that which we obtain from the tap. Furthermore, water is often used to grow food or make products in one country that are then exported for consumption elsewhere. There is, therefore, high interdependency between targets on sustainable consumption and production and targets on water quality, sustainable water use and ecosystem protection. The \u201cwater footprint\u201d concept is a useful tool to analyse water-related impacts of consumption and production both within and between countries. // interdependent on target 6.5.',
           '',
         ],
       },
@@ -26320,6 +30944,20 @@ export const LinkageData2023 = [
         target: '17.11',
         description: [
           'That increased exports from developing countries would make it more difficult to achieve the SDGs in Sweden (and viceversa), can be explained by the fact that potential benefits from trade are poorly captured in the 2030 Agenda.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.a',
+        description: [
+          '',
         ],
       },
     ],
@@ -26690,7 +31328,7 @@ export const LinkageData2023 = [
       {
         target: '14.1',
         description: [
-          'G7 Action Plan to Combat Marine Litter enable the achievement of target 14.1 through addressing sustainable consumption and production patterns [...]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: encouraging industry to develop sustainable packaging and remove ingredients from products to gain environmental benefits, such as by voluntary phase-out of microbeads; promoting best practice along the whole plastics manufacturing and value chain from production to transport, such as aiming for zero pellet loss; assessing and analysing removal data to support and target outreach efforts, potential policy options, and other means.',
+          'G7 Action Plan to Combat Marine Litter enable the achievement of target 14.1 through addressing sustainable consumption and production patterns [\u2026]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: encouraging industry to develop sustainable packaging and remove ingredients from products to gain environmental benefits, such as by voluntary phase-out of microbeads; promoting best practice along the whole plastics manufacturing and value chain from production to transport, such as aiming for zero pellet loss; assessing and analysing removal data to support and target outreach efforts, potential policy options, and other means.',
         ],
       },
       {
@@ -26719,6 +31357,26 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       11,
       5,
@@ -26802,6 +31460,7 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [],
     coordinates: [
       11,
       6,
@@ -26866,7 +31525,7 @@ export const LinkageData2023 = [
         description: [
           '',
           '',
-          'The responsibility of educational bodies [...] inter-sectoral approaches are required.',
+          'The responsibility of educational bodies [\u2026] inter-sectoral approaches are required.',
         ],
       },
       {
@@ -27178,6 +31837,14 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '4.7',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       11,
       7,
@@ -27438,7 +32105,7 @@ export const LinkageData2023 = [
       {
         target: '14.1',
         description: [
-          'G7 Action Plan to Combat Marine Litter enable the achievement of target 14.1 through addressing sustainable consumption and production patterns [...]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: incorporating waste management activities into international development assistance and investments and supporting the implementation of pilot projects where appropriate.',
+          'G7 Action Plan to Combat Marine Litter enable the achievement of target 14.1 through addressing sustainable consumption and production patterns [\u2026]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: incorporating waste management activities into international development assistance and investments and supporting the implementation of pilot projects where appropriate.',
           'The scientific and technological support for more sustainable patterns of consumption and production enables, preventing and reducing marine pollution from human activities.',
         ],
       },
@@ -27481,6 +32148,14 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       11,
       8,
@@ -27533,6 +32208,7 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [],
     coordinates: [
       11,
       9,
@@ -27592,6 +32268,7 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [],
     coordinates: [
       11,
       10,
@@ -27863,7 +32540,7 @@ export const LinkageData2023 = [
         description: [
           '',
           'Action taken to strengthen the health of coastal and marine ecosystems including fish stocks will reinforce the strengthening of environmental and societal resilience and adaptive capacities to climate change, and vice versa.',
-          'Some measures that improve resilience and adaptive capacity to climate disasters - for example to protect against tidal flooding and storms - could also enable better management and protection of marine and coastal ecosystems.',
+          'Some measures that improve resilience and adaptive capacity to climate disasters \u2013 for example to protect against tidal flooding and storms \u2013 could also enable better management and protection of marine and coastal ecosystems.',
         ],
       },
       {
@@ -28080,13 +32757,13 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          "SYNERGIES: There is a positive relationship between climate change mitigation and adaptation, and preparedness for large-scale public health risks. [...] Taking direct climate action is likely to reduce overall global temperature rise, which can lower communication rates for vector- borne diseases such as malaria[...]Covid-19 pandemic as an example of a large-scale public health risk. Specifically, [...] climate change mitigation and adaptation measures reduce the impact of climate-related events and therefore reduce strain on health infrastructure, better equipping the UK to deal with non-climate related public health crises.[...] as-yet unclear links between Covid-19 lockdowns and pollution-related illnesses, where improving ambient air quality, may also reduce both the morbidity and mortality rate of SARS-type viruses.  Taking direct climate action is likely to reduce overall global temperature rise, which can lower communication rates for vector- borne diseases such as malaria. Climate action reduces deforestation which has been linked to zoonotic diseases e.g. SARS-Cov 1 & 2. By improving our resilience to the impacts of climate change, we will likely also improve our resilience to public health pandemics (improved healthcare, for example). // TRADE-OFFS: In terms of trade-offs, a rapid climate transition without sufficient space for considered policy and decision-making processes could cause financial and economic disruption (e.g. rapid devaluation in fossil-related stocks and shares), which in turn could limit the UK government's capacity to allocate funds on early warning and risk management processes across the economy [...]  Policies such as the restoration of wetlands could, if mismanaged, promote the spread of vector-borne diseases.",
+          'SYNERGIES: There is a positive relationship between climate change mitigation and adaptation, and preparedness for large-scale public health risks. [...] Taking direct climate action is likely to reduce overall global temperature rise, which can lower communication rates for vector- borne diseases such as malaria[\u2026]Covid-19 pandemic as an example of a large-scale public health risk. Specifically, [\u2026] climate change mitigation and adaptation measures reduce the impact of climate-related events and therefore reduce strain on health infrastructure, better equipping the UK to deal with non-climate related public health crises.[\u2026] as-yet unclear links between Covid-19 lockdowns and pollution-related illnesses, where improving ambient air quality, may also reduce both the morbidity and mortality rate of SARS-type viruses.  Taking direct climate action is likely to reduce overall global temperature rise, which can lower communication rates for vector- borne diseases such as malaria. Climate action reduces deforestation which has been linked to zoonotic diseases e.g. SARS-Cov 1 & 2. By improving our resilience to the impacts of climate change, we will likely also improve our resilience to public health pandemics (improved healthcare, for example). // TRADE-OFFS: In terms of trade-offs, a rapid climate transition without sufficient space for considered policy and decision-making processes could cause financial and economic disruption (e.g. rapid devaluation in fossil-related stocks and shares), which in turn could limit the UK government\u2019s capacity to allocate funds on early warning and risk management processes across the economy [...]  Policies such as the restoration of wetlands could, if mismanaged, promote the spread of vector-borne diseases.',
         ],
       },
       {
         target: '3.4',
         description: [
-          "SYNERGIES: Incorporating climate policy into the domestic policy approach would result in wide-reaching positive impacts for physical and mental health [...] e.g. impact of climate policies on transport, where the promotion of active travel modes such as walking or cycling alongside the curtailment of individual, fossil-fuelled private mobility will reduce non-communicable disease incidence rates (e.g. obesity, diabetes, cardiovascular diseases from sedentary lifestyles and respiratory diseases from poor ambient air quality). Equally, policies which discourage high levels of carbon intensive food consumption, such as a red meat, are also likely to reduce rates of cardiovascular disease [more synergies] There will be a buffering effect from improved climate hazard management on food supply/price variability. Tins will help to stabilize pricing and consumption, ensuring access to nutritious food. More sustainable food systems, improved animal standards, sustainable agriculture. Improved adaptive capacity and climate change mitigation protects physical and mental health of citizens.  Climate action prioritises active travel and deprioritises private mobility, creating a positive health impact overall.  Climate policies prevent chronic disease (e.g. active transport prevents diabetes).  Nature-based solutions (e.g. afforestation) lead to positive effects on wellbeing and mental health.  Improved climate hazard management stabilizes food prices and supply - benefits on nutrition.  Several policies that address climate change also address the prevention of chronic diseases (e.g. active transport prevents diabetes, obesity, CVD; decrease in meat intake prevents CVD and reduces GHG emissions).  // TRADE-OFFS: There is a material risk for the fuel poor as a result of decarbonising electricity and heat, due to the associated mental and physical health impacts of higher energy prices (e.g. cardiovascular and respiratory disease and anxiety). [...] Respondents argued that electricity costs are likely to continue falling and so this trade-off will diminish over time. [...]there is a risk that any move to absorb heat decarbonisation costs through consumer bills will increase heating costs and therefore the extent of fuel poverty. [...] several supporting measures (such as improved energy efficiency) are likely to help offset future increases in heating fuel costs. The second example trade-off provided concerns the potential mismanagement of bioenergy and the potentially negative impact on human health, for example via air and water pollution.[...] Relatedly, there was additional concern around the associated land-use impacts of certain forms of bioenergy, e.g. biofuel production, and the impact this could have on human health through its interaction with arable land and therefore food price and availability, particularly as the UK begins to warm and the risk of pestilence, crop failure and drought increase. Finally, [...] potential trade-off could be the mental health (stress, anxiety, depression) as well as the subsequent and associated physical health impacts of unemployment in carbon intensive sectors. [...]special attention must be given by policy makers to both the speed at which the net zero transition occurs and the suite of policies implemented. For example, policies which properly account for the risk of rapid job insecurity in fossil-related sectors and so invest adequately in concurrent re-skilling/re-training programmes could effectively support these communities and reduce the negative health (as well as socio-economic) impacts, ensuring a 'just' transition. [more trade-ofs] Adaptation through regulating house building so as not to be on hood plains could raise housing costs Decarbonising energy risks increase fuel costs, impacting health of fuel poor. Job losses from carbon-intensive sectors could lead to chronic stress and depression.  Restricting house building to lower risk areas (e.g. away from floodplains) restricts supply and impacts health. Shift to EVs and banning of ICEs could hamper access for more remote households unless infrastructure built.  Mismanaging the deployment of bioenergy has the capacity to damage human health through environmental pollution (e.g. air and water). Local pollution also a risk frOm local mining / production / recycling of extractive resources associated with low-carbon technologies e.g. Lithium deposit mines, nuclear technology waste treatment sites. Increased demand for bioenergy and afforestation places pressure on food prices, which could impact health.  There may be unknown impacts of new building designs/retrofitting (e.g. heat stress, poor ventilation, damp etc.)  Carbon tax likely to impact those already on low incomes, who may already have a disproportional number of health problems. Developing climate policies raises profile of issue and can exacerbate climate anxiety (mental health impact).  There are several 'fragile' sectors that could be adversely impacted by climate policies. E.g. oil and petroleum, mining, or agri\u00adfood industry where as the effects of climate change worsen, and could be pushed into further economic hardship, as well as physical and mental work\u00adrelated stress.  If we insulate buildings but do not design them to also be cool and well ventilated, then this could increase heat stress during the summer months, especially as the climate continues to warm.  The expansion of bioenergy may also have other health-related trade-offs, particularly around limiting access to nature necessary for mental wellbeing and restricting areas of arable land important for nutrition.",
+          "SYNERGIES: Incorporating climate policy into the domestic policy approach would result in wide-reaching positive impacts for physical and mental health [\u2026] e.g. impact of climate policies on transport, where the promotion of active travel modes such as walking or cycling alongside the curtailment of individual, fossil-fuelled private mobility will reduce non-communicable disease incidence rates (e.g. obesity, diabetes, cardiovascular diseases from sedentary lifestyles and respiratory diseases from poor ambient air quality). Equally, policies which discourage high levels of carbon intensive food consumption, such as a red meat, are also likely to reduce rates of cardiovascular disease [more synergies] There will be a buffering effect from improved climate hazard management on food supply/price variability. Tins will help to stabilize pricing and consumption, ensuring access to nutritious food. More sustainable food systems, improved animal standards, sustainable agriculture. Improved adaptive capacity and climate change mitigation protects physical and mental health of citizens.  Climate action prioritises active travel and deprioritises private mobility, creating a positive health impact overall.  Climate policies prevent chronic disease (e.g. active transport prevents diabetes).  Nature-based solutions (e.g. afforestation) lead to positive effects on wellbeing and mental health.  Improved climate hazard management stabilizes food prices and supply - benefits on nutrition.  Several policies that address climate change also address the prevention of chronic diseases (e.g. active transport prevents diabetes, obesity, CVD; decrease in meat intake prevents CVD and reduces GHG emissions).  // TRADE-OFFS: There is a material risk for the fuel poor as a result of decarbonising electricity and heat, due to the associated mental and physical health impacts of higher energy prices (e.g. cardiovascular and respiratory disease and anxiety). [\u2026] Respondents argued that electricity costs are likely to continue falling and so this trade-off will diminish over time. [\u2026]there is a risk that any move to absorb heat decarbonisation costs through consumer bills will increase heating costs and therefore the extent of fuel poverty. [\u2026] several supporting measures (such as improved energy efficiency) are likely to help offset future increases in heating fuel costs. The second example trade-off provided concerns the potential mismanagement of bioenergy and the potentially negative impact on human health, for example via air and water pollution.[\u2026] Relatedly, there was additional concern around the associated land-use impacts of certain forms of bioenergy, e.g. biofuel production, and the impact this could have on human health through its interaction with arable land and therefore food price and availability, particularly as the UK begins to warm and the risk of pestilence, crop failure and drought increase. Finally, [\u2026] potential trade-off could be the mental health (stress, anxiety, depression) as well as the subsequent and associated physical health impacts of unemployment in carbon intensive sectors. [\u2026]special attention must be given by policy makers to both the speed at which the net zero transition occurs and the suite of policies implemented. For example, policies which properly account for the risk of rapid job insecurity in fossil-related sectors and so invest adequately in concurrent re-skilling/re-training programmes could effectively support these communities and reduce the negative health (as well as socio-economic) impacts, ensuring a \u2018just\u2019 transition. [more trade-ofs] Adaptation through regulating house building so as not to be on hood plains could raise housing costs Decarbonising energy risks increase fuel costs, impacting health of fuel poor. Job losses from carbon-intensive sectors could lead to chronic stress and depression.  Restricting house building to lower risk areas (e.g. away from floodplains) restricts supply and impacts health. Shift to EVs and banning of ICEs could hamper access for more remote households unless infrastructure built.  Mismanaging the deployment of bioenergy has the capacity to damage human health through environmental pollution (e.g. air and water). Local pollution also a risk frOm local mining / production / recycling of extractive resources associated with low-carbon technologies e.g. Lithium deposit mines, nuclear technology waste treatment sites. Increased demand for bioenergy and afforestation places pressure on food prices, which could impact health.  There may be unknown impacts of new building designs/retrofitting (e.g. heat stress, poor ventilation, damp etc.)  Carbon tax likely to impact those already on low incomes, who may already have a disproportional number of health problems. Developing climate policies raises profile of issue and can exacerbate climate anxiety (mental health impact).  There are several 'fragile' sectors that could be adversely impacted by climate policies. E.g. oil and petroleum, mining, or agri\u00adfood industry where as the effects of climate change worsen, and could be pushed into further economic hardship, as well as physical and mental work\u00adrelated stress.  If we insulate buildings but do not design them to also be cool and well ventilated, then this could increase heat stress during the summer months, especially as the climate continues to warm.  The expansion of bioenergy may also have other health-related trade-offs, particularly around limiting access to nature necessary for mental wellbeing and restricting areas of arable land important for nutrition.",
         ],
       },
       {
@@ -28104,7 +32781,7 @@ export const LinkageData2023 = [
       {
         target: '3.d',
         description: [
-          "SYNERGIES: There is a clear relationship between climate change and public health. This is true both in terms of the physical effects, such as injury or death from flooding, and the mental effects, such as stress and anxiety. Developing appropriate climate mitigation and adaptation policies is therefore an essential component of managing national and global health risks.  // [trade-off] \"Law of unintended consequences' I e. inability to think through all risks and trade-offs could heighten the riskiness. E.g. rapid transition could cause disruption leading to financial sector and real economy downturn and limit capacity to spend on early warning and risk management processes in other sectors. there may be detrimental net environmental climate effects from our mitigation efforts (e.g. through unmanaged offshoring).",
+          'SYNERGIES: There is a clear relationship between climate change and public health. This is true both in terms of the physical effects, such as injury or death from flooding, and the mental effects, such as stress and anxiety. Developing appropriate climate mitigation and adaptation policies is therefore an essential component of managing national and global health risks.  // [trade-off] "Law of unintended consequences\u201d I e. inability to think through all risks and trade-offs could heighten the riskiness. E.g. rapid transition could cause disruption leading to financial sector and real economy downturn and limit capacity to spend on early warning and risk management processes in other sectors. there may be detrimental net environmental climate effects from our mitigation efforts (e.g. through unmanaged offshoring).',
         ],
       },
       {
@@ -28197,13 +32874,13 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          "SYNERGIES: There is a positive relationship between climate change mitigation and adaptation, and preparedness for large-scale public health risks. [...] Taking direct climate action is likely to reduce overall global temperature rise, which can lower communication rates for vector- borne diseases such as malaria[...]Covid-19 pandemic as an example of a large-scale public health risk. Specifically, [...] climate change mitigation and adaptation measures reduce the impact of climate-related events and therefore reduce strain on health infrastructure, better equipping the UK to deal with non-climate related public health crises.[...] as-yet unclear links between Covid-19 lockdowns and pollution-related illnesses, where improving ambient air quality, may also reduce both the morbidity and mortality rate of SARS-type viruses.  Taking direct climate action is likely to reduce overall global temperature rise, which can lower communication rates for vector- borne diseases such as malaria. Climate action reduces deforestation which has been linked to zoonotic diseases e.g. SARS-Cov 1 & 2. By improving our resilience to the impacts of climate change, we will likely also improve our resilience to public health pandemics (improved healthcare, for example). // TRADE-OFFS: In terms of trade-offs, a rapid climate transition without sufficient space for considered policy and decision-making processes could cause financial and economic disruption (e.g. rapid devaluation in fossil-related stocks and shares), which in turn could limit the UK government's capacity to allocate funds on early warning and risk management processes across the economy [...]  Policies such as the restoration of wetlands could, if mismanaged, promote the spread of vector-borne diseases.",
+          'SYNERGIES: There is a positive relationship between climate change mitigation and adaptation, and preparedness for large-scale public health risks. [...] Taking direct climate action is likely to reduce overall global temperature rise, which can lower communication rates for vector- borne diseases such as malaria[\u2026]Covid-19 pandemic as an example of a large-scale public health risk. Specifically, [\u2026] climate change mitigation and adaptation measures reduce the impact of climate-related events and therefore reduce strain on health infrastructure, better equipping the UK to deal with non-climate related public health crises.[\u2026] as-yet unclear links between Covid-19 lockdowns and pollution-related illnesses, where improving ambient air quality, may also reduce both the morbidity and mortality rate of SARS-type viruses.  Taking direct climate action is likely to reduce overall global temperature rise, which can lower communication rates for vector- borne diseases such as malaria. Climate action reduces deforestation which has been linked to zoonotic diseases e.g. SARS-Cov 1 & 2. By improving our resilience to the impacts of climate change, we will likely also improve our resilience to public health pandemics (improved healthcare, for example). // TRADE-OFFS: In terms of trade-offs, a rapid climate transition without sufficient space for considered policy and decision-making processes could cause financial and economic disruption (e.g. rapid devaluation in fossil-related stocks and shares), which in turn could limit the UK government\u2019s capacity to allocate funds on early warning and risk management processes across the economy [...]  Policies such as the restoration of wetlands could, if mismanaged, promote the spread of vector-borne diseases.',
         ],
       },
       {
         target: '3.4',
         description: [
-          "SYNERGIES: Incorporating climate policy into the domestic policy approach would result in wide-reaching positive impacts for physical and mental health [...] e.g. impact of climate policies on transport, where the promotion of active travel modes such as walking or cycling alongside the curtailment of individual, fossil-fuelled private mobility will reduce non-communicable disease incidence rates (e.g. obesity, diabetes, cardiovascular diseases from sedentary lifestyles and respiratory diseases from poor ambient air quality). Equally, policies which discourage high levels of carbon intensive food consumption, such as a red meat, are also likely to reduce rates of cardiovascular disease [more synergies] There will be a buffering effect from improved climate hazard management on food supply/price variability. Tins will help to stabilize pricing and consumption, ensuring access to nutritious food. More sustainable food systems, improved animal standards, sustainable agriculture. Improved adaptive capacity and climate change mitigation protects physical and mental health of citizens.  Climate action prioritises active travel and deprioritises private mobility, creating a positive health impact overall.  Climate policies prevent chronic disease (e.g. active transport prevents diabetes).  Nature-based solutions (e.g. afforestation) lead to positive effects on wellbeing and mental health.  Improved climate hazard management stabilizes food prices and supply - benefits on nutrition.  Several policies that address climate change also address the prevention of chronic diseases (e.g. active transport prevents diabetes, obesity, CVD; decrease in meat intake prevents CVD and reduces GHG emissions).  // TRADE-OFFS: There is a material risk for the fuel poor as a result of decarbonising electricity and heat, due to the associated mental and physical health impacts of higher energy prices (e.g. cardiovascular and respiratory disease and anxiety). [...] Respondents argued that electricity costs are likely to continue falling and so this trade-off will diminish over time. [...]there is a risk that any move to absorb heat decarbonisation costs through consumer bills will increase heating costs and therefore the extent of fuel poverty. [...] several supporting measures (such as improved energy efficiency) are likely to help offset future increases in heating fuel costs. The second example trade-off provided concerns the potential mismanagement of bioenergy and the potentially negative impact on human health, for example via air and water pollution.[...] Relatedly, there was additional concern around the associated land-use impacts of certain forms of bioenergy, e.g. biofuel production, and the impact this could have on human health through its interaction with arable land and therefore food price and availability, particularly as the UK begins to warm and the risk of pestilence, crop failure and drought increase. Finally, [...] potential trade-off could be the mental health (stress, anxiety, depression) as well as the subsequent and associated physical health impacts of unemployment in carbon intensive sectors. [...]special attention must be given by policy makers to both the speed at which the net zero transition occurs and the suite of policies implemented. For example, policies which properly account for the risk of rapid job insecurity in fossil-related sectors and so invest adequately in concurrent re-skilling/re-training programmes could effectively support these communities and reduce the negative health (as well as socio-economic) impacts, ensuring a 'just' transition. [more trade-ofs] Adaptation through regulating house building so as not to be on hood plains could raise housing costs Decarbonising energy risks increase fuel costs, impacting health of fuel poor. Job losses from carbon-intensive sectors could lead to chronic stress and depression.  Restricting house building to lower risk areas (e.g. away from floodplains) restricts supply and impacts health. Shift to EVs and banning of ICEs could hamper access for more remote households unless infrastructure built.  Mismanaging the deployment of bioenergy has the capacity to damage human health through environmental pollution (e.g. air and water). Local pollution also a risk frOm local mining / production / recycling of extractive resources associated with low-carbon technologies e.g. Lithium deposit mines, nuclear technology waste treatment sites. Increased demand for bioenergy and afforestation places pressure on food prices, which could impact health.  There may be unknown impacts of new building designs/retrofitting (e.g. heat stress, poor ventilation, damp etc.)  Carbon tax likely to impact those already on low incomes, who may already have a disproportional number of health problems. Developing climate policies raises profile of issue and can exacerbate climate anxiety (mental health impact).  There are several 'fragile' sectors that could be adversely impacted by climate policies. E.g. oil and petroleum, mining, or agri\u00adfood industry where as the effects of climate change worsen, and could be pushed into further economic hardship, as well as physical and mental work\u00adrelated stress.  If we insulate buildings but do not design them to also be cool and well ventilated, then this could increase heat stress during the summer months, especially as the climate continues to warm.  The expansion of bioenergy may also have other health-related trade-offs, particularly around limiting access to nature necessary for mental wellbeing and restricting areas of arable land important for nutrition.",
+          "SYNERGIES: Incorporating climate policy into the domestic policy approach would result in wide-reaching positive impacts for physical and mental health [\u2026] e.g. impact of climate policies on transport, where the promotion of active travel modes such as walking or cycling alongside the curtailment of individual, fossil-fuelled private mobility will reduce non-communicable disease incidence rates (e.g. obesity, diabetes, cardiovascular diseases from sedentary lifestyles and respiratory diseases from poor ambient air quality). Equally, policies which discourage high levels of carbon intensive food consumption, such as a red meat, are also likely to reduce rates of cardiovascular disease [more synergies] There will be a buffering effect from improved climate hazard management on food supply/price variability. Tins will help to stabilize pricing and consumption, ensuring access to nutritious food. More sustainable food systems, improved animal standards, sustainable agriculture. Improved adaptive capacity and climate change mitigation protects physical and mental health of citizens.  Climate action prioritises active travel and deprioritises private mobility, creating a positive health impact overall.  Climate policies prevent chronic disease (e.g. active transport prevents diabetes).  Nature-based solutions (e.g. afforestation) lead to positive effects on wellbeing and mental health.  Improved climate hazard management stabilizes food prices and supply - benefits on nutrition.  Several policies that address climate change also address the prevention of chronic diseases (e.g. active transport prevents diabetes, obesity, CVD; decrease in meat intake prevents CVD and reduces GHG emissions).  // TRADE-OFFS: There is a material risk for the fuel poor as a result of decarbonising electricity and heat, due to the associated mental and physical health impacts of higher energy prices (e.g. cardiovascular and respiratory disease and anxiety). [\u2026] Respondents argued that electricity costs are likely to continue falling and so this trade-off will diminish over time. [\u2026]there is a risk that any move to absorb heat decarbonisation costs through consumer bills will increase heating costs and therefore the extent of fuel poverty. [\u2026] several supporting measures (such as improved energy efficiency) are likely to help offset future increases in heating fuel costs. The second example trade-off provided concerns the potential mismanagement of bioenergy and the potentially negative impact on human health, for example via air and water pollution.[\u2026] Relatedly, there was additional concern around the associated land-use impacts of certain forms of bioenergy, e.g. biofuel production, and the impact this could have on human health through its interaction with arable land and therefore food price and availability, particularly as the UK begins to warm and the risk of pestilence, crop failure and drought increase. Finally, [\u2026] potential trade-off could be the mental health (stress, anxiety, depression) as well as the subsequent and associated physical health impacts of unemployment in carbon intensive sectors. [\u2026]special attention must be given by policy makers to both the speed at which the net zero transition occurs and the suite of policies implemented. For example, policies which properly account for the risk of rapid job insecurity in fossil-related sectors and so invest adequately in concurrent re-skilling/re-training programmes could effectively support these communities and reduce the negative health (as well as socio-economic) impacts, ensuring a \u2018just\u2019 transition. [more trade-ofs] Adaptation through regulating house building so as not to be on hood plains could raise housing costs Decarbonising energy risks increase fuel costs, impacting health of fuel poor. Job losses from carbon-intensive sectors could lead to chronic stress and depression.  Restricting house building to lower risk areas (e.g. away from floodplains) restricts supply and impacts health. Shift to EVs and banning of ICEs could hamper access for more remote households unless infrastructure built.  Mismanaging the deployment of bioenergy has the capacity to damage human health through environmental pollution (e.g. air and water). Local pollution also a risk frOm local mining / production / recycling of extractive resources associated with low-carbon technologies e.g. Lithium deposit mines, nuclear technology waste treatment sites. Increased demand for bioenergy and afforestation places pressure on food prices, which could impact health.  There may be unknown impacts of new building designs/retrofitting (e.g. heat stress, poor ventilation, damp etc.)  Carbon tax likely to impact those already on low incomes, who may already have a disproportional number of health problems. Developing climate policies raises profile of issue and can exacerbate climate anxiety (mental health impact).  There are several 'fragile' sectors that could be adversely impacted by climate policies. E.g. oil and petroleum, mining, or agri\u00adfood industry where as the effects of climate change worsen, and could be pushed into further economic hardship, as well as physical and mental work\u00adrelated stress.  If we insulate buildings but do not design them to also be cool and well ventilated, then this could increase heat stress during the summer months, especially as the climate continues to warm.  The expansion of bioenergy may also have other health-related trade-offs, particularly around limiting access to nature necessary for mental wellbeing and restricting areas of arable land important for nutrition.",
         ],
       },
       {
@@ -28221,7 +32898,7 @@ export const LinkageData2023 = [
       {
         target: '3.d',
         description: [
-          "SYNERGIES: There is a clear relationship between climate change and public health. This is true both in terms of the physical effects, such as injury or death from flooding, and the mental effects, such as stress and anxiety. Developing appropriate climate mitigation and adaptation policies is therefore an essential component of managing national and global health risks.  // [trade-off] \"Law of unintended consequences' I e. inability to think through all risks and trade-offs could heighten the riskiness. E.g. rapid transition could cause disruption leading to financial sector and real economy downturn and limit capacity to spend on early warning and risk management processes in other sectors. there may be detrimental net environmental climate effects from our mitigation efforts (e.g. through unmanaged offshoring).",
+          'SYNERGIES: There is a clear relationship between climate change and public health. This is true both in terms of the physical effects, such as injury or death from flooding, and the mental effects, such as stress and anxiety. Developing appropriate climate mitigation and adaptation policies is therefore an essential component of managing national and global health risks.  // [trade-off] "Law of unintended consequences\u201d I e. inability to think through all risks and trade-offs could heighten the riskiness. E.g. rapid transition could cause disruption leading to financial sector and real economy downturn and limit capacity to spend on early warning and risk management processes in other sectors. there may be detrimental net environmental climate effects from our mitigation efforts (e.g. through unmanaged offshoring).',
         ],
       },
       {
@@ -28232,6 +32909,26 @@ export const LinkageData2023 = [
       },
       {
         target: '9.4',
+        description: [
+          '',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '9.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.d',
         description: [
           '',
         ],
@@ -28336,7 +33033,7 @@ export const LinkageData2023 = [
         target: '12.2',
         description: [
           'Strengthen national climate policies (13.2) could reinforce policy coherence (17.14) and sustainable resource use (12.2).',
-          "Implementation of Fiji's Green Growth Framework would increase the reviewing of policies related to the governance of water and services.",
+          'Implementation of Fiji\u2019s Green Growth Framework would increase the reviewing of policies related to the governance of water and services.',
           '',
         ],
       },
@@ -28392,7 +33089,7 @@ export const LinkageData2023 = [
       {
         target: '17.14',
         description: [
-          'Policy coherence for sustainable development (17.14) and sustainable resource use (12.2) can be directed to support renewables (7.2) and efficiency (7.3) in the energy sector, which in turn would strengthen national climate policies (13.2)-which could again reinforce policy coherence (17.14) and sustainable resource use (12.2).',
+          'Policy coherence for sustainable development (17.14) and sustainable resource use (12.2) can be directed to support renewables (7.2) and efficiency (7.3) in the energy sector, which in turn would strengthen national climate policies (13.2)\u2014which could again reinforce policy coherence (17.14) and sustainable resource use (12.2).',
         ],
       },
       {
@@ -28455,7 +33152,7 @@ export const LinkageData2023 = [
         target: '8.4',
         description: [
           '',
-          "SYNERGIES: Policies which promote climate action are likely to improve global resource efficiency in consumption and production, such as the use of bioenergy systems which reduce food waste whilst generating low carbon heat and power. Lifestyle changes, the increased deployment of renewable energy and improvements in resource efficiency, supported by suitable climate action policy, will lower resource demand as well as rates of environmental degradation Certain climate change mitigation measures, such as energy efficiency improvements, can also result in improved productivity (and therefore economic growth).  // No known trade- offs, only potential: Measures which effectively decoupled emissions and economic growth could simply lead to the offshoring of emissions elsewhere. [...] despite international emissions accounting frameworks this is still a very real risk in terms of domestic greenhouse emission reductions. [...] the risks of offshoring must be properly incorporated into policy assessment and design. Secondly, certain high carbon UK sectors that pose an inverse correlation risk, such as agriculture, where growth of the sector may actually drive environmental degradation [...] although future technological developments promise to reduce the carbon intensity and environmental damage caused by operations within these sectors, there are questions around when these will reach technological readiness and the environmental impact of growth in high carbon sectors in the interim. [...] without some shift away from orthodox economic thinking, growth and environmental degradation cannot be decoupled. [...] there may be some very real but as-yet unknown non-energy impacts of improving resource efficiency through climate policies. For example, as energy efficiency improves people may consume more, resulting in negative impacts outside of energy (e.g. land use, water or wider environment). Decarbonising certain industries is likely to have considerable impacts in terms of unemployment. Where no alternative, state-funded retraining is provided, there is a risk that such climate action works against job security and economic growth.  There is a risk that measures to decouple economic growth and emissions in the UK, without due accounting for supply chain emissions (as currently under discussed at UNFCCC, for example) will simply offshore emissions to other countries.  It may be that we cannot achieve the necessary degree of climate action whilst pursuing current rates of economic growth.  Economic growth, especially in the UK agricultural sector is a significant driver of environmental degradation.  The Jevons paradox/rebound effect - even as we become more efficient in our technologies and reduce energy demand, there may be some unforeseen impact of no longer constrained consumption.  It's not clear that, the more efficiently we use resources the lower consumption rates will be. In fact, if improved efficiency= economic growth then consumption is likely to increase. This must be managed by intelligent policy design and behavioural shifts.",
+          "SYNERGIES: Policies which promote climate action are likely to improve global resource efficiency in consumption and production, such as the use of bioenergy systems which reduce food waste whilst generating low carbon heat and power. Lifestyle changes, the increased deployment of renewable energy and improvements in resource efficiency, supported by suitable climate action policy, will lower resource demand as well as rates of environmental degradation Certain climate change mitigation measures, such as energy efficiency improvements, can also result in improved productivity (and therefore economic growth).  // No known trade- offs, only potential: Measures which effectively decoupled emissions and economic growth could simply lead to the offshoring of emissions elsewhere. [\u2026] despite international emissions accounting frameworks this is still a very real risk in terms of domestic greenhouse emission reductions. [\u2026] the risks of offshoring must be properly incorporated into policy assessment and design. Secondly, certain high carbon UK sectors that pose an inverse correlation risk, such as agriculture, where growth of the sector may actually drive environmental degradation [\u2026] although future technological developments promise to reduce the carbon intensity and environmental damage caused by operations within these sectors, there are questions around when these will reach technological readiness and the environmental impact of growth in high carbon sectors in the interim. [\u2026] without some shift away from orthodox economic thinking, growth and environmental degradation cannot be decoupled. [\u2026] there may be some very real but as-yet unknown non-energy impacts of improving resource efficiency through climate policies. For example, as energy efficiency improves people may consume more, resulting in negative impacts outside of energy (e.g. land use, water or wider environment). Decarbonising certain industries is likely to have considerable impacts in terms of unemployment. Where no alternative, state-funded retraining is provided, there is a risk that such climate action works against job security and economic growth.  There is a risk that measures to decouple economic growth and emissions in the UK, without due accounting for supply chain emissions (as currently under discussed at UNFCCC, for example) will simply offshore emissions to other countries.  It may be that we cannot achieve the necessary degree of climate action whilst pursuing current rates of economic growth.  Economic growth, especially in the UK agricultural sector is a significant driver of environmental degradation.  The Jevons paradox/rebound effect - even as we become more efficient in our technologies and reduce energy demand, there may be some unforeseen impact of no longer constrained consumption.  It's not clear that, the more efficiently we use resources the lower consumption rates will be. In fact, if improved efficiency= economic growth then consumption is likely to increase. This must be managed by intelligent policy design and behavioural shifts.",
           '',
           '',
         ],
@@ -28624,13 +33321,13 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          "SYNERGIES: There is a positive relationship between climate change mitigation and adaptation, and preparedness for large-scale public health risks. [...] Taking direct climate action is likely to reduce overall global temperature rise, which can lower communication rates for vector- borne diseases such as malaria[...]Covid-19 pandemic as an example of a large-scale public health risk. Specifically, [...] climate change mitigation and adaptation measures reduce the impact of climate-related events and therefore reduce strain on health infrastructure, better equipping the UK to deal with non-climate related public health crises.[...] as-yet unclear links between Covid-19 lockdowns and pollution-related illnesses, where improving ambient air quality, may also reduce both the morbidity and mortality rate of SARS-type viruses.  Taking direct climate action is likely to reduce overall global temperature rise, which can lower communication rates for vector- borne diseases such as malaria. Climate action reduces deforestation which has been linked to zoonotic diseases e.g. SARS-Cov 1 & 2. By improving our resilience to the impacts of climate change, we will likely also improve our resilience to public health pandemics (improved healthcare, for example). // TRADE-OFFS: In terms of trade-offs, a rapid climate transition without sufficient space for considered policy and decision-making processes could cause financial and economic disruption (e.g. rapid devaluation in fossil-related stocks and shares), which in turn could limit the UK government's capacity to allocate funds on early warning and risk management processes across the economy [...]  Policies such as the restoration of wetlands could, if mismanaged, promote the spread of vector-borne diseases.",
+          'SYNERGIES: There is a positive relationship between climate change mitigation and adaptation, and preparedness for large-scale public health risks. [...] Taking direct climate action is likely to reduce overall global temperature rise, which can lower communication rates for vector- borne diseases such as malaria[\u2026]Covid-19 pandemic as an example of a large-scale public health risk. Specifically, [\u2026] climate change mitigation and adaptation measures reduce the impact of climate-related events and therefore reduce strain on health infrastructure, better equipping the UK to deal with non-climate related public health crises.[\u2026] as-yet unclear links between Covid-19 lockdowns and pollution-related illnesses, where improving ambient air quality, may also reduce both the morbidity and mortality rate of SARS-type viruses.  Taking direct climate action is likely to reduce overall global temperature rise, which can lower communication rates for vector- borne diseases such as malaria. Climate action reduces deforestation which has been linked to zoonotic diseases e.g. SARS-Cov 1 & 2. By improving our resilience to the impacts of climate change, we will likely also improve our resilience to public health pandemics (improved healthcare, for example). // TRADE-OFFS: In terms of trade-offs, a rapid climate transition without sufficient space for considered policy and decision-making processes could cause financial and economic disruption (e.g. rapid devaluation in fossil-related stocks and shares), which in turn could limit the UK government\u2019s capacity to allocate funds on early warning and risk management processes across the economy [...]  Policies such as the restoration of wetlands could, if mismanaged, promote the spread of vector-borne diseases.',
         ],
       },
       {
         target: '3.4',
         description: [
-          "SYNERGIES: Incorporating climate policy into the domestic policy approach would result in wide-reaching positive impacts for physical and mental health [...] e.g. impact of climate policies on transport, where the promotion of active travel modes such as walking or cycling alongside the curtailment of individual, fossil-fuelled private mobility will reduce non-communicable disease incidence rates (e.g. obesity, diabetes, cardiovascular diseases from sedentary lifestyles and respiratory diseases from poor ambient air quality). Equally, policies which discourage high levels of carbon intensive food consumption, such as a red meat, are also likely to reduce rates of cardiovascular disease [more synergies] There will be a buffering effect from improved climate hazard management on food supply/price variability. Tins will help to stabilize pricing and consumption, ensuring access to nutritious food. More sustainable food systems, improved animal standards, sustainable agriculture. Improved adaptive capacity and climate change mitigation protects physical and mental health of citizens.  Climate action prioritises active travel and deprioritises private mobility, creating a positive health impact overall.  Climate policies prevent chronic disease (e.g. active transport prevents diabetes).  Nature-based solutions (e.g. afforestation) lead to positive effects on wellbeing and mental health.  Improved climate hazard management stabilizes food prices and supply - benefits on nutrition.  Several policies that address climate change also address the prevention of chronic diseases (e.g. active transport prevents diabetes, obesity, CVD; decrease in meat intake prevents CVD and reduces GHG emissions).  // TRADE-OFFS: There is a material risk for the fuel poor as a result of decarbonising electricity and heat, due to the associated mental and physical health impacts of higher energy prices (e.g. cardiovascular and respiratory disease and anxiety). [...] Respondents argued that electricity costs are likely to continue falling and so this trade-off will diminish over time. [...]there is a risk that any move to absorb heat decarbonisation costs through consumer bills will increase heating costs and therefore the extent of fuel poverty. [...] several supporting measures (such as improved energy efficiency) are likely to help offset future increases in heating fuel costs. The second example trade-off provided concerns the potential mismanagement of bioenergy and the potentially negative impact on human health, for example via air and water pollution.[...] Relatedly, there was additional concern around the associated land-use impacts of certain forms of bioenergy, e.g. biofuel production, and the impact this could have on human health through its interaction with arable land and therefore food price and availability, particularly as the UK begins to warm and the risk of pestilence, crop failure and drought increase. Finally, [...] potential trade-off could be the mental health (stress, anxiety, depression) as well as the subsequent and associated physical health impacts of unemployment in carbon intensive sectors. [...]special attention must be given by policy makers to both the speed at which the net zero transition occurs and the suite of policies implemented. For example, policies which properly account for the risk of rapid job insecurity in fossil-related sectors and so invest adequately in concurrent re-skilling/re-training programmes could effectively support these communities and reduce the negative health (as well as socio-economic) impacts, ensuring a 'just' transition. [more trade-ofs] Adaptation through regulating house building so as not to be on hood plains could raise housing costs Decarbonising energy risks increase fuel costs, impacting health of fuel poor. Job losses from carbon-intensive sectors could lead to chronic stress and depression.  Restricting house building to lower risk areas (e.g. away from floodplains) restricts supply and impacts health. Shift to EVs and banning of ICEs could hamper access for more remote households unless infrastructure built.  Mismanaging the deployment of bioenergy has the capacity to damage human health through environmental pollution (e.g. air and water). Local pollution also a risk frOm local mining / production / recycling of extractive resources associated with low-carbon technologies e.g. Lithium deposit mines, nuclear technology waste treatment sites. Increased demand for bioenergy and afforestation places pressure on food prices, which could impact health.  There may be unknown impacts of new building designs/retrofitting (e.g. heat stress, poor ventilation, damp etc.)  Carbon tax likely to impact those already on low incomes, who may already have a disproportional number of health problems. Developing climate policies raises profile of issue and can exacerbate climate anxiety (mental health impact).  There are several 'fragile' sectors that could be adversely impacted by climate policies. E.g. oil and petroleum, mining, or agri\u00adfood industry where as the effects of climate change worsen, and could be pushed into further economic hardship, as well as physical and mental work\u00adrelated stress.  If we insulate buildings but do not design them to also be cool and well ventilated, then this could increase heat stress during the summer months, especially as the climate continues to warm.  The expansion of bioenergy may also have other health-related trade-offs, particularly around limiting access to nature necessary for mental wellbeing and restricting areas of arable land important for nutrition.",
+          "SYNERGIES: Incorporating climate policy into the domestic policy approach would result in wide-reaching positive impacts for physical and mental health [\u2026] e.g. impact of climate policies on transport, where the promotion of active travel modes such as walking or cycling alongside the curtailment of individual, fossil-fuelled private mobility will reduce non-communicable disease incidence rates (e.g. obesity, diabetes, cardiovascular diseases from sedentary lifestyles and respiratory diseases from poor ambient air quality). Equally, policies which discourage high levels of carbon intensive food consumption, such as a red meat, are also likely to reduce rates of cardiovascular disease [more synergies] There will be a buffering effect from improved climate hazard management on food supply/price variability. Tins will help to stabilize pricing and consumption, ensuring access to nutritious food. More sustainable food systems, improved animal standards, sustainable agriculture. Improved adaptive capacity and climate change mitigation protects physical and mental health of citizens.  Climate action prioritises active travel and deprioritises private mobility, creating a positive health impact overall.  Climate policies prevent chronic disease (e.g. active transport prevents diabetes).  Nature-based solutions (e.g. afforestation) lead to positive effects on wellbeing and mental health.  Improved climate hazard management stabilizes food prices and supply - benefits on nutrition.  Several policies that address climate change also address the prevention of chronic diseases (e.g. active transport prevents diabetes, obesity, CVD; decrease in meat intake prevents CVD and reduces GHG emissions).  // TRADE-OFFS: There is a material risk for the fuel poor as a result of decarbonising electricity and heat, due to the associated mental and physical health impacts of higher energy prices (e.g. cardiovascular and respiratory disease and anxiety). [\u2026] Respondents argued that electricity costs are likely to continue falling and so this trade-off will diminish over time. [\u2026]there is a risk that any move to absorb heat decarbonisation costs through consumer bills will increase heating costs and therefore the extent of fuel poverty. [\u2026] several supporting measures (such as improved energy efficiency) are likely to help offset future increases in heating fuel costs. The second example trade-off provided concerns the potential mismanagement of bioenergy and the potentially negative impact on human health, for example via air and water pollution.[\u2026] Relatedly, there was additional concern around the associated land-use impacts of certain forms of bioenergy, e.g. biofuel production, and the impact this could have on human health through its interaction with arable land and therefore food price and availability, particularly as the UK begins to warm and the risk of pestilence, crop failure and drought increase. Finally, [\u2026] potential trade-off could be the mental health (stress, anxiety, depression) as well as the subsequent and associated physical health impacts of unemployment in carbon intensive sectors. [\u2026]special attention must be given by policy makers to both the speed at which the net zero transition occurs and the suite of policies implemented. For example, policies which properly account for the risk of rapid job insecurity in fossil-related sectors and so invest adequately in concurrent re-skilling/re-training programmes could effectively support these communities and reduce the negative health (as well as socio-economic) impacts, ensuring a \u2018just\u2019 transition. [more trade-ofs] Adaptation through regulating house building so as not to be on hood plains could raise housing costs Decarbonising energy risks increase fuel costs, impacting health of fuel poor. Job losses from carbon-intensive sectors could lead to chronic stress and depression.  Restricting house building to lower risk areas (e.g. away from floodplains) restricts supply and impacts health. Shift to EVs and banning of ICEs could hamper access for more remote households unless infrastructure built.  Mismanaging the deployment of bioenergy has the capacity to damage human health through environmental pollution (e.g. air and water). Local pollution also a risk frOm local mining / production / recycling of extractive resources associated with low-carbon technologies e.g. Lithium deposit mines, nuclear technology waste treatment sites. Increased demand for bioenergy and afforestation places pressure on food prices, which could impact health.  There may be unknown impacts of new building designs/retrofitting (e.g. heat stress, poor ventilation, damp etc.)  Carbon tax likely to impact those already on low incomes, who may already have a disproportional number of health problems. Developing climate policies raises profile of issue and can exacerbate climate anxiety (mental health impact).  There are several 'fragile' sectors that could be adversely impacted by climate policies. E.g. oil and petroleum, mining, or agri\u00adfood industry where as the effects of climate change worsen, and could be pushed into further economic hardship, as well as physical and mental work\u00adrelated stress.  If we insulate buildings but do not design them to also be cool and well ventilated, then this could increase heat stress during the summer months, especially as the climate continues to warm.  The expansion of bioenergy may also have other health-related trade-offs, particularly around limiting access to nature necessary for mental wellbeing and restricting areas of arable land important for nutrition.",
         ],
       },
       {
@@ -28642,7 +33339,7 @@ export const LinkageData2023 = [
       {
         target: '3.d',
         description: [
-          "SYNERGIES: There is a clear relationship between climate change and public health. This is true both in terms of the physical effects, such as injury or death from flooding, and the mental effects, such as stress and anxiety. Developing appropriate climate mitigation and adaptation policies is therefore an essential component of managing national and global health risks.  // [trade-off] \"Law of unintended consequences' I e. inability to think through all risks and trade-offs could heighten the riskiness. E.g. rapid transition could cause disruption leading to financial sector and real economy downturn and limit capacity to spend on early warning and risk management processes in other sectors. there may be detrimental net environmental climate effects from our mitigation efforts (e.g. through unmanaged offshoring).",
+          'SYNERGIES: There is a clear relationship between climate change and public health. This is true both in terms of the physical effects, such as injury or death from flooding, and the mental effects, such as stress and anxiety. Developing appropriate climate mitigation and adaptation policies is therefore an essential component of managing national and global health risks.  // [trade-off] "Law of unintended consequences\u201d I e. inability to think through all risks and trade-offs could heighten the riskiness. E.g. rapid transition could cause disruption leading to financial sector and real economy downturn and limit capacity to spend on early warning and risk management processes in other sectors. there may be detrimental net environmental climate effects from our mitigation efforts (e.g. through unmanaged offshoring).',
         ],
       },
       {
@@ -28724,7 +33421,7 @@ export const LinkageData2023 = [
         target: '3.4',
         description: [
           'Integrating climate change measures into national policies has some costs. Reducing emissions may lead to job losses in some industries, which could negatively affect the economy and indirectly constrain health care.',
-          "SYNERGIES: Incorporating climate policy into the domestic policy approach would result in wide-reaching positive impacts for physical and mental health [...] e.g. impact of climate policies on transport, where the promotion of active travel modes such as walking or cycling alongside the curtailment of individual, fossil-fuelled private mobility will reduce non-communicable disease incidence rates (e.g. obesity, diabetes, cardiovascular diseases from sedentary lifestyles and respiratory diseases from poor ambient air quality). Equally, policies which discourage high levels of carbon intensive food consumption, such as a red meat, are also likely to reduce rates of cardiovascular disease [more synergies] There will be a buffering effect from improved climate hazard management on food supply/price variability. Tins will help to stabilize pricing and consumption, ensuring access to nutritious food. More sustainable food systems, improved animal standards, sustainable agriculture. Improved adaptive capacity and climate change mitigation protects physical and mental health of citizens.  Climate action prioritises active travel and deprioritises private mobility, creating a positive health impact overall.  Climate policies prevent chronic disease (e.g. active transport prevents diabetes).  Nature-based solutions (e.g. afforestation) lead to positive effects on wellbeing and mental health.  Improved climate hazard management stabilizes food prices and supply - benefits on nutrition.  Several policies that address climate change also address the prevention of chronic diseases (e.g. active transport prevents diabetes, obesity, CVD; decrease in meat intake prevents CVD and reduces GHG emissions).  // TRADE-OFFS: There is a material risk for the fuel poor as a result of decarbonising electricity and heat, due to the associated mental and physical health impacts of higher energy prices (e.g. cardiovascular and respiratory disease and anxiety). [...] Respondents argued that electricity costs are likely to continue falling and so this trade-off will diminish over time. [...]there is a risk that any move to absorb heat decarbonisation costs through consumer bills will increase heating costs and therefore the extent of fuel poverty. [...] several supporting measures (such as improved energy efficiency) are likely to help offset future increases in heating fuel costs. The second example trade-off provided concerns the potential mismanagement of bioenergy and the potentially negative impact on human health, for example via air and water pollution.[...] Relatedly, there was additional concern around the associated land-use impacts of certain forms of bioenergy, e.g. biofuel production, and the impact this could have on human health through its interaction with arable land and therefore food price and availability, particularly as the UK begins to warm and the risk of pestilence, crop failure and drought increase. Finally, [...] potential trade-off could be the mental health (stress, anxiety, depression) as well as the subsequent and associated physical health impacts of unemployment in carbon intensive sectors. [...]special attention must be given by policy makers to both the speed at which the net zero transition occurs and the suite of policies implemented. For example, policies which properly account for the risk of rapid job insecurity in fossil-related sectors and so invest adequately in concurrent re-skilling/re-training programmes could effectively support these communities and reduce the negative health (as well as socio-economic) impacts, ensuring a 'just' transition. [more trade-ofs] Adaptation through regulating house building so as not to be on hood plains could raise housing costs Decarbonising energy risks increase fuel costs, impacting health of fuel poor. Job losses from carbon-intensive sectors could lead to chronic stress and depression.  Restricting house building to lower risk areas (e.g. away from floodplains) restricts supply and impacts health. Shift to EVs and banning of ICEs could hamper access for more remote households unless infrastructure built.  Mismanaging the deployment of bioenergy has the capacity to damage human health through environmental pollution (e.g. air and water). Local pollution also a risk frOm local mining / production / recycling of extractive resources associated with low-carbon technologies e.g. Lithium deposit mines, nuclear technology waste treatment sites. Increased demand for bioenergy and afforestation places pressure on food prices, which could impact health.  There may be unknown impacts of new building designs/retrofitting (e.g. heat stress, poor ventilation, damp etc.)  Carbon tax likely to impact those already on low incomes, who may already have a disproportional number of health problems. Developing climate policies raises profile of issue and can exacerbate climate anxiety (mental health impact).  There are several 'fragile' sectors that could be adversely impacted by climate policies. E.g. oil and petroleum, mining, or agri\u00adfood industry where as the effects of climate change worsen, and could be pushed into further economic hardship, as well as physical and mental work\u00adrelated stress.  If we insulate buildings but do not design them to also be cool and well ventilated, then this could increase heat stress during the summer months, especially as the climate continues to warm.  The expansion of bioenergy may also have other health-related trade-offs, particularly around limiting access to nature necessary for mental wellbeing and restricting areas of arable land important for nutrition.",
+          "SYNERGIES: Incorporating climate policy into the domestic policy approach would result in wide-reaching positive impacts for physical and mental health [\u2026] e.g. impact of climate policies on transport, where the promotion of active travel modes such as walking or cycling alongside the curtailment of individual, fossil-fuelled private mobility will reduce non-communicable disease incidence rates (e.g. obesity, diabetes, cardiovascular diseases from sedentary lifestyles and respiratory diseases from poor ambient air quality). Equally, policies which discourage high levels of carbon intensive food consumption, such as a red meat, are also likely to reduce rates of cardiovascular disease [more synergies] There will be a buffering effect from improved climate hazard management on food supply/price variability. Tins will help to stabilize pricing and consumption, ensuring access to nutritious food. More sustainable food systems, improved animal standards, sustainable agriculture. Improved adaptive capacity and climate change mitigation protects physical and mental health of citizens.  Climate action prioritises active travel and deprioritises private mobility, creating a positive health impact overall.  Climate policies prevent chronic disease (e.g. active transport prevents diabetes).  Nature-based solutions (e.g. afforestation) lead to positive effects on wellbeing and mental health.  Improved climate hazard management stabilizes food prices and supply - benefits on nutrition.  Several policies that address climate change also address the prevention of chronic diseases (e.g. active transport prevents diabetes, obesity, CVD; decrease in meat intake prevents CVD and reduces GHG emissions).  // TRADE-OFFS: There is a material risk for the fuel poor as a result of decarbonising electricity and heat, due to the associated mental and physical health impacts of higher energy prices (e.g. cardiovascular and respiratory disease and anxiety). [\u2026] Respondents argued that electricity costs are likely to continue falling and so this trade-off will diminish over time. [\u2026]there is a risk that any move to absorb heat decarbonisation costs through consumer bills will increase heating costs and therefore the extent of fuel poverty. [\u2026] several supporting measures (such as improved energy efficiency) are likely to help offset future increases in heating fuel costs. The second example trade-off provided concerns the potential mismanagement of bioenergy and the potentially negative impact on human health, for example via air and water pollution.[\u2026] Relatedly, there was additional concern around the associated land-use impacts of certain forms of bioenergy, e.g. biofuel production, and the impact this could have on human health through its interaction with arable land and therefore food price and availability, particularly as the UK begins to warm and the risk of pestilence, crop failure and drought increase. Finally, [\u2026] potential trade-off could be the mental health (stress, anxiety, depression) as well as the subsequent and associated physical health impacts of unemployment in carbon intensive sectors. [\u2026]special attention must be given by policy makers to both the speed at which the net zero transition occurs and the suite of policies implemented. For example, policies which properly account for the risk of rapid job insecurity in fossil-related sectors and so invest adequately in concurrent re-skilling/re-training programmes could effectively support these communities and reduce the negative health (as well as socio-economic) impacts, ensuring a \u2018just\u2019 transition. [more trade-ofs] Adaptation through regulating house building so as not to be on hood plains could raise housing costs Decarbonising energy risks increase fuel costs, impacting health of fuel poor. Job losses from carbon-intensive sectors could lead to chronic stress and depression.  Restricting house building to lower risk areas (e.g. away from floodplains) restricts supply and impacts health. Shift to EVs and banning of ICEs could hamper access for more remote households unless infrastructure built.  Mismanaging the deployment of bioenergy has the capacity to damage human health through environmental pollution (e.g. air and water). Local pollution also a risk frOm local mining / production / recycling of extractive resources associated with low-carbon technologies e.g. Lithium deposit mines, nuclear technology waste treatment sites. Increased demand for bioenergy and afforestation places pressure on food prices, which could impact health.  There may be unknown impacts of new building designs/retrofitting (e.g. heat stress, poor ventilation, damp etc.)  Carbon tax likely to impact those already on low incomes, who may already have a disproportional number of health problems. Developing climate policies raises profile of issue and can exacerbate climate anxiety (mental health impact).  There are several 'fragile' sectors that could be adversely impacted by climate policies. E.g. oil and petroleum, mining, or agri\u00adfood industry where as the effects of climate change worsen, and could be pushed into further economic hardship, as well as physical and mental work\u00adrelated stress.  If we insulate buildings but do not design them to also be cool and well ventilated, then this could increase heat stress during the summer months, especially as the climate continues to warm.  The expansion of bioenergy may also have other health-related trade-offs, particularly around limiting access to nature necessary for mental wellbeing and restricting areas of arable land important for nutrition.",
         ],
       },
       {
@@ -28760,7 +33457,7 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          "SYNERGIES: There is a positive relationship between climate change mitigation and adaptation, and preparedness for large-scale public health risks. [...] Taking direct climate action is likely to reduce overall global temperature rise, which can lower communication rates for vector- borne diseases such as malaria[...]Covid-19 pandemic as an example of a large-scale public health risk. Specifically, [...] climate change mitigation and adaptation measures reduce the impact of climate-related events and therefore reduce strain on health infrastructure, better equipping the UK to deal with non-climate related public health crises.[...] as-yet unclear links between Covid-19 lockdowns and pollution-related illnesses, where improving ambient air quality, may also reduce both the morbidity and mortality rate of SARS-type viruses.  Taking direct climate action is likely to reduce overall global temperature rise, which can lower communication rates for vector- borne diseases such as malaria. Climate action reduces deforestation which has been linked to zoonotic diseases e.g. SARS-Cov 1 & 2. By improving our resilience to the impacts of climate change, we will likely also improve our resilience to public health pandemics (improved healthcare, for example). // TRADE-OFFS: In terms of trade-offs, a rapid climate transition without sufficient space for considered policy and decision-making processes could cause financial and economic disruption (e.g. rapid devaluation in fossil-related stocks and shares), which in turn could limit the UK government's capacity to allocate funds on early warning and risk management processes across the economy [...]  Policies such as the restoration of wetlands could, if mismanaged, promote the spread of vector-borne diseases.",
+          'SYNERGIES: There is a positive relationship between climate change mitigation and adaptation, and preparedness for large-scale public health risks. [...] Taking direct climate action is likely to reduce overall global temperature rise, which can lower communication rates for vector- borne diseases such as malaria[\u2026]Covid-19 pandemic as an example of a large-scale public health risk. Specifically, [\u2026] climate change mitigation and adaptation measures reduce the impact of climate-related events and therefore reduce strain on health infrastructure, better equipping the UK to deal with non-climate related public health crises.[\u2026] as-yet unclear links between Covid-19 lockdowns and pollution-related illnesses, where improving ambient air quality, may also reduce both the morbidity and mortality rate of SARS-type viruses.  Taking direct climate action is likely to reduce overall global temperature rise, which can lower communication rates for vector- borne diseases such as malaria. Climate action reduces deforestation which has been linked to zoonotic diseases e.g. SARS-Cov 1 & 2. By improving our resilience to the impacts of climate change, we will likely also improve our resilience to public health pandemics (improved healthcare, for example). // TRADE-OFFS: In terms of trade-offs, a rapid climate transition without sufficient space for considered policy and decision-making processes could cause financial and economic disruption (e.g. rapid devaluation in fossil-related stocks and shares), which in turn could limit the UK government\u2019s capacity to allocate funds on early warning and risk management processes across the economy [...]  Policies such as the restoration of wetlands could, if mismanaged, promote the spread of vector-borne diseases.',
         ],
       },
       {
@@ -28778,7 +33475,7 @@ export const LinkageData2023 = [
       {
         target: '3.d',
         description: [
-          "SYNERGIES: There is a clear relationship between climate change and public health. This is true both in terms of the physical effects, such as injury or death from flooding, and the mental effects, such as stress and anxiety. Developing appropriate climate mitigation and adaptation policies is therefore an essential component of managing national and global health risks.  // [trade-off] \"Law of unintended consequences' I e. inability to think through all risks and trade-offs could heighten the riskiness. E.g. rapid transition could cause disruption leading to financial sector and real economy downturn and limit capacity to spend on early warning and risk management processes in other sectors. there may be detrimental net environmental climate effects from our mitigation efforts (e.g. through unmanaged offshoring).",
+          'SYNERGIES: There is a clear relationship between climate change and public health. This is true both in terms of the physical effects, such as injury or death from flooding, and the mental effects, such as stress and anxiety. Developing appropriate climate mitigation and adaptation policies is therefore an essential component of managing national and global health risks.  // [trade-off] "Law of unintended consequences\u201d I e. inability to think through all risks and trade-offs could heighten the riskiness. E.g. rapid transition could cause disruption leading to financial sector and real economy downturn and limit capacity to spend on early warning and risk management processes in other sectors. there may be detrimental net environmental climate effects from our mitigation efforts (e.g. through unmanaged offshoring).',
         ],
       },
       {
@@ -28814,7 +33511,7 @@ export const LinkageData2023 = [
       {
         target: '8.4',
         description: [
-          "SYNERGIES: Policies which promote climate action are likely to improve global resource efficiency in consumption and production, such as the use of bioenergy systems which reduce food waste whilst generating low carbon heat and power. Lifestyle changes, the increased deployment of renewable energy and improvements in resource efficiency, supported by suitable climate action policy, will lower resource demand as well as rates of environmental degradation Certain climate change mitigation measures, such as energy efficiency improvements, can also result in improved productivity (and therefore economic growth).  // No known trade- offs, only potential: Measures which effectively decoupled emissions and economic growth could simply lead to the offshoring of emissions elsewhere. [...] despite international emissions accounting frameworks this is still a very real risk in terms of domestic greenhouse emission reductions. [...] the risks of offshoring must be properly incorporated into policy assessment and design. Secondly, certain high carbon UK sectors that pose an inverse correlation risk, such as agriculture, where growth of the sector may actually drive environmental degradation [...] although future technological developments promise to reduce the carbon intensity and environmental damage caused by operations within these sectors, there are questions around when these will reach technological readiness and the environmental impact of growth in high carbon sectors in the interim. [...] without some shift away from orthodox economic thinking, growth and environmental degradation cannot be decoupled. [...] there may be some very real but as-yet unknown non-energy impacts of improving resource efficiency through climate policies. For example, as energy efficiency improves people may consume more, resulting in negative impacts outside of energy (e.g. land use, water or wider environment). Decarbonising certain industries is likely to have considerable impacts in terms of unemployment. Where no alternative, state-funded retraining is provided, there is a risk that such climate action works against job security and economic growth.  There is a risk that measures to decouple economic growth and emissions in the UK, without due accounting for supply chain emissions (as currently under discussed at UNFCCC, for example) will simply offshore emissions to other countries.  It may be that we cannot achieve the necessary degree of climate action whilst pursuing current rates of economic growth.  Economic growth, especially in the UK agricultural sector is a significant driver of environmental degradation.  The Jevons paradox/rebound effect - even as we become more efficient in our technologies and reduce energy demand, there may be some unforeseen impact of no longer constrained consumption.  It's not clear that, the more efficiently we use resources the lower consumption rates will be. In fact, if improved efficiency= economic growth then consumption is likely to increase. This must be managed by intelligent policy design and behavioural shifts.",
+          "SYNERGIES: Policies which promote climate action are likely to improve global resource efficiency in consumption and production, such as the use of bioenergy systems which reduce food waste whilst generating low carbon heat and power. Lifestyle changes, the increased deployment of renewable energy and improvements in resource efficiency, supported by suitable climate action policy, will lower resource demand as well as rates of environmental degradation Certain climate change mitigation measures, such as energy efficiency improvements, can also result in improved productivity (and therefore economic growth).  // No known trade- offs, only potential: Measures which effectively decoupled emissions and economic growth could simply lead to the offshoring of emissions elsewhere. [\u2026] despite international emissions accounting frameworks this is still a very real risk in terms of domestic greenhouse emission reductions. [\u2026] the risks of offshoring must be properly incorporated into policy assessment and design. Secondly, certain high carbon UK sectors that pose an inverse correlation risk, such as agriculture, where growth of the sector may actually drive environmental degradation [\u2026] although future technological developments promise to reduce the carbon intensity and environmental damage caused by operations within these sectors, there are questions around when these will reach technological readiness and the environmental impact of growth in high carbon sectors in the interim. [\u2026] without some shift away from orthodox economic thinking, growth and environmental degradation cannot be decoupled. [\u2026] there may be some very real but as-yet unknown non-energy impacts of improving resource efficiency through climate policies. For example, as energy efficiency improves people may consume more, resulting in negative impacts outside of energy (e.g. land use, water or wider environment). Decarbonising certain industries is likely to have considerable impacts in terms of unemployment. Where no alternative, state-funded retraining is provided, there is a risk that such climate action works against job security and economic growth.  There is a risk that measures to decouple economic growth and emissions in the UK, without due accounting for supply chain emissions (as currently under discussed at UNFCCC, for example) will simply offshore emissions to other countries.  It may be that we cannot achieve the necessary degree of climate action whilst pursuing current rates of economic growth.  Economic growth, especially in the UK agricultural sector is a significant driver of environmental degradation.  The Jevons paradox/rebound effect - even as we become more efficient in our technologies and reduce energy demand, there may be some unforeseen impact of no longer constrained consumption.  It's not clear that, the more efficiently we use resources the lower consumption rates will be. In fact, if improved efficiency= economic growth then consumption is likely to increase. This must be managed by intelligent policy design and behavioural shifts.",
         ],
       },
       {
@@ -28855,6 +33552,26 @@ export const LinkageData2023 = [
       },
       {
         target: '15.5',
+        description: [
+          '',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.1',
         description: [
           '',
         ],
@@ -29186,7 +33903,7 @@ export const LinkageData2023 = [
       {
         target: '3.4',
         description: [
-          "SYNERGIES: Improving awareness, education and institutional capacity on climate change mitigation, adaptation and impact reduction is likely to have an indirect benefit on human health and well-being. Most obviously, this is because improving our capacity for impact reduction will protect human life from the effects of climate change (e.g. flooding). [...] institutional capacity for adaptation improves, policies which have a positive impact on human health and well-being will emerge-for example, incorporating proper ventilation and cooling into building design, which will reduce heat stress.  Climate policies tackle physical and mental health impacts and promotes socio-political action. Mitigating climate change and its effects will reduce heat stress (heat exhaustion/stroke) in buildings where we live and work.  // no known TRADE-OFFS: Messaging around climate action is a very challenging communications task, and if mismanaged, can create panic, hysteria, and support the spread of misinformation. This is likely to have a material impact on the mental health and well-being of citizens, in the form of 'climate anxiety' and stress.",
+          'SYNERGIES: Improving awareness, education and institutional capacity on climate change mitigation, adaptation and impact reduction is likely to have an indirect benefit on human health and well-being. Most obviously, this is because improving our capacity for impact reduction will protect human life from the effects of climate change (e.g. flooding). [\u2026] institutional capacity for adaptation improves, policies which have a positive impact on human health and well-being will emerge\u2014for example, incorporating proper ventilation and cooling into building design, which will reduce heat stress.  Climate policies tackle physical and mental health impacts and promotes socio-political action. Mitigating climate change and its effects will reduce heat stress (heat exhaustion/stroke) in buildings where we live and work.  // no known TRADE-OFFS: Messaging around climate action is a very challenging communications task, and if mismanaged, can create panic, hysteria, and support the spread of misinformation. This is likely to have a material impact on the mental health and well-being of citizens, in the form of \u2018climate anxiety\u2019 and stress.',
         ],
       },
       {
@@ -29255,7 +33972,39 @@ export const LinkageData2023 = [
       {
         target: '3.4',
         description: [
-          "SYNERGIES: Improving awareness, education and institutional capacity on climate change mitigation, adaptation and impact reduction is likely to have an indirect benefit on human health and well-being. Most obviously, this is because improving our capacity for impact reduction will protect human life from the effects of climate change (e.g. flooding). [...] institutional capacity for adaptation improves, policies which have a positive impact on human health and well-being will emerge-for example, incorporating proper ventilation and cooling into building design, which will reduce heat stress.  Climate policies tackle physical and mental health impacts and promotes socio-political action. Mitigating climate change and its effects will reduce heat stress (heat exhaustion/stroke) in buildings where we live and work.  // no known TRADE-OFFS: Messaging around climate action is a very challenging communications task, and if mismanaged, can create panic, hysteria, and support the spread of misinformation. This is likely to have a material impact on the mental health and well-being of citizens, in the form of 'climate anxiety' and stress.",
+          'SYNERGIES: Improving awareness, education and institutional capacity on climate change mitigation, adaptation and impact reduction is likely to have an indirect benefit on human health and well-being. Most obviously, this is because improving our capacity for impact reduction will protect human life from the effects of climate change (e.g. flooding). [\u2026] institutional capacity for adaptation improves, policies which have a positive impact on human health and well-being will emerge\u2014for example, incorporating proper ventilation and cooling into building design, which will reduce heat stress.  Climate policies tackle physical and mental health impacts and promotes socio-political action. Mitigating climate change and its effects will reduce heat stress (heat exhaustion/stroke) in buildings where we live and work.  // no known TRADE-OFFS: Messaging around climate action is a very challenging communications task, and if mismanaged, can create panic, hysteria, and support the spread of misinformation. This is likely to have a material impact on the mental health and well-being of citizens, in the form of \u2018climate anxiety\u2019 and stress.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '12.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.d',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
         ],
       },
     ],
@@ -29299,6 +34048,7 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [],
     coordinates: [
       12,
       3,
@@ -29600,6 +34350,14 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       12,
       4,
@@ -29644,7 +34402,7 @@ export const LinkageData2023 = [
         target: '14.2',
         description: [
           '',
-          'Reduction of marine pollution is critical for the conservation and sustainability of the oceans, seas and marine resources. [...] Marine and coastal areas are vulnerable to the pollution from land- and marine-based activities, including from urban areas that have limited wastewater infrastructure and release sewage untreated.[...] Pollution also affects the protection of marine and coastal areas.',
+          'Reduction of marine pollution is critical for the conservation and sustainability of the oceans, seas and marine resources. [...] Marine and coastal areas are vulnerable to the pollution from land- and marine-based activities, including from urban areas that have limited wastewater infrastructure and release sewage untreated.[\u2026] Pollution also affects the protection of marine and coastal areas.',
           '',
           '',
           '',
@@ -29684,7 +34442,7 @@ export const LinkageData2023 = [
         target: '12.4',
         description: [
           '',
-          "G7 Action Plan to Combat Marine Litter enable the achievement of target 14.1 through addressing sustainable consumption and production patterns [...]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: investigating sustainable and cost-effective solutions to reduce and prevent sewage and stormwater-related waste, including microplastics entering the marine environment; improving countries' systems for waste management, reducing waste generation, and encouraging reuse and recycling; promoting relevant regulations and incentives to reduce the use of disposable single-use and other items, which impact the marine environment.",
+          'G7 Action Plan to Combat Marine Litter enable the achievement of target 14.1 through addressing sustainable consumption and production patterns [\u2026]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: investigating sustainable and cost-effective solutions to reduce and prevent sewage and stormwater-related waste, including microplastics entering the marine environment; improving countries\u2019 systems for waste management, reducing waste generation, and encouraging reuse and recycling; promoting relevant regulations and incentives to reduce the use of disposable single-use and other items, which impact the marine environment.',
           'Sustainable production and consumption, sustainable management of natural resources, recycling, and sound management of chemicals and wastes will help prevent marine pollution.',
           '',
         ],
@@ -29715,7 +34473,7 @@ export const LinkageData2023 = [
       {
         target: '12.1',
         description: [
-          "G7 Action Plan to Combat Marine Litter enable the achievement of target 14.1 through addressing sustainable consumption and production patterns [...]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: improving countries' systems for waste management, reducing waste generation, and encouraging reuse and recycling; incorporating waste management activities into international development assistance and investments and supporting the implementation of pilot projects where appropriate; investigating sustainable and cost-effective solutions to reduce and prevent sewage and stormwater-related waste, including microplastics entering the marine environment; encouraging industry to develop sustainable packaging and remove ingredients from products to gain environmental benefits, such as by voluntary phase-out of microbeads; promoting best practice along the whole plastics manufacturing and value chain from production to transport, such as aiming for zero pellet loss; assessing and analysing removal data to support and target outreach efforts, potential policy options, and other means.",
+          'G7 Action Plan to Combat Marine Litter enable the achievement of target 14.1 through addressing sustainable consumption and production patterns [\u2026]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: improving countries\u2019 systems for waste management, reducing waste generation, and encouraging reuse and recycling; incorporating waste management activities into international development assistance and investments and supporting the implementation of pilot projects where appropriate; investigating sustainable and cost-effective solutions to reduce and prevent sewage and stormwater-related waste, including microplastics entering the marine environment; encouraging industry to develop sustainable packaging and remove ingredients from products to gain environmental benefits, such as by voluntary phase-out of microbeads; promoting best practice along the whole plastics manufacturing and value chain from production to transport, such as aiming for zero pellet loss; assessing and analysing removal data to support and target outreach efforts, potential policy options, and other means.',
           'Sustainable production and consumption, sustainable management of natural resources, recycling, and sound management of chemicals and wastes will help prevent marine pollution.',
           '',
         ],
@@ -29738,7 +34496,7 @@ export const LinkageData2023 = [
       {
         target: '12.5',
         description: [
-          "G7 Action Plan to Combat Marine Litter e nable the achievement of target 14.1 through addressing sustainable consumption and production patterns [...]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: promoting relevant regulations and incentives to reduce the use of disposable single-use and other items, which impact the marine environment; improving countries' systems for waste management, reducing waste generation, and encouraging reuse and recycling; encouraging industry to develop sustainable packaging and remove ingredients from products to gain environmental benefits, such as by voluntary phase-out of microbeads.",
+          'G7 Action Plan to Combat Marine Litter e nable the achievement of target 14.1 through addressing sustainable consumption and production patterns [\u2026]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: promoting relevant regulations and incentives to reduce the use of disposable single-use and other items, which impact the marine environment; improving countries\u2019 systems for waste management, reducing waste generation, and encouraging reuse and recycling; encouraging industry to develop sustainable packaging and remove ingredients from products to gain environmental benefits, such as by voluntary phase-out of microbeads.',
           'Sustainable production and consumption, sustainable management of natural resources, recycling, and sound management of chemicals and wastes will help prevent marine pollution.',
           '',
         ],
@@ -29746,13 +34504,13 @@ export const LinkageData2023 = [
       {
         target: '12.6',
         description: [
-          'G7 Action Plan to Combat Marine Litter enable the achievement of target 14.1 through addressing sustainable consumption and production patterns [...]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: encouraging industry to develop sustainable packaging and remove ingredients from products to gain environmental benefits, such as by voluntary phase-out of microbeads; promoting best practice along the whole plastics manufacturing and value chain from production to transport, such as aiming for zero pellet loss; assessing and analysing removal data to support and target outreach efforts, potential policy options, and other means.',
+          'G7 Action Plan to Combat Marine Litter enable the achievement of target 14.1 through addressing sustainable consumption and production patterns [\u2026]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: encouraging industry to develop sustainable packaging and remove ingredients from products to gain environmental benefits, such as by voluntary phase-out of microbeads; promoting best practice along the whole plastics manufacturing and value chain from production to transport, such as aiming for zero pellet loss; assessing and analysing removal data to support and target outreach efforts, potential policy options, and other means.',
         ],
       },
       {
         target: '12.a',
         description: [
-          'G7 Action Plan to Combat Marine Litter enable the achievement of target 14.1 through addressing sustainable consumption and production patterns [...]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: incorporating waste management activities into international development assistance and investments and supporting the implementation of pilot projects where appropriate.',
+          'G7 Action Plan to Combat Marine Litter enable the achievement of target 14.1 through addressing sustainable consumption and production patterns [\u2026]. Action outside the traditional regulatory scope of regional seas conventions or other ocean governance bodies and supports an integrated, crosssectoral approach to reducing marine pollution. Actions that support target 14.1 and at the same time directly contribute to SDG 12 include: incorporating waste management activities into international development assistance and investments and supporting the implementation of pilot projects where appropriate.',
         ],
       },
       {
@@ -29764,13 +34522,13 @@ export const LinkageData2023 = [
       {
         target: '14.4',
         description: [
-          "Healthy fish stocks are negatively affected by pollution and contamination, which can lead in extreme cases to 'dead zones' devoid of marine life.",
+          'Healthy fish stocks are negatively affected by pollution and contamination, which can lead in extreme cases to \u2018dead zones\u2019 devoid of marine life.',
         ],
       },
       {
         target: '14.5',
         description: [
-          'Reduction of marine pollution is critical for the conservation and sustainability of the oceans, seas and marine resources. [...] Marine and coastal areas are vulnerable to the pollution from land- and marine-based activities, including from urban areas that have limited wastewater infrastructure and release sewage untreated.[...] Pollution also affects the protection of marine and coastal areas.',
+          'Reduction of marine pollution is critical for the conservation and sustainability of the oceans, seas and marine resources. [...] Marine and coastal areas are vulnerable to the pollution from land- and marine-based activities, including from urban areas that have limited wastewater infrastructure and release sewage untreated.[\u2026] Pollution also affects the protection of marine and coastal areas.',
           '',
         ],
       },
@@ -29935,7 +34693,7 @@ export const LinkageData2023 = [
       {
         target: '3.4',
         description: [
-          "For more information see reference(s) >> There's a growing body of evidence linking non-communicable diseases (e.g. diabetes and CVD) and exposure to environmental pollutants (e.g. mercury, POPs etc...). Fish consumption is usually the primary exposure vector to these contaminants. See for example: Rylander, L. et al 2005. A cross-sectional study of the association between persistent organochlorine pollutants and diabetes.",
+          "For more information see reference(s) >> There's a growing body of evidence linking non-communicable diseases (e.g. diabetes and CVD) and exposure to environmental pollutants (e.g. mercury, POPs etc\u2026). Fish consumption is usually the primary exposure vector to these contaminants. See for example: Rylander, L. et al 2005. A cross-sectional study of the association between persistent organochlorine pollutants and diabetes.",
         ],
       },
       {
@@ -29983,13 +34741,21 @@ export const LinkageData2023 = [
       {
         target: '9.2',
         description: [
-          "Boost industrialization and industry's share of GDP (9.2) < Industrial activities may be constrained by the prevention of marine pollution from land-based activities (14.1) and conservation of coastal areas (14.5). A concern universally where there are coastal areas in need of conservation. Zoning of industrial permits and implementing regulation of pollution.  Prevention of marine pollution (14.1), protection of coastal ecosystems (14.2) and conservation (14.5) > Constrain the development and promotion of industrial activity, in particular in coastal areas (9.2). Affects mostly coastal areas, although upstream catchment areas must be considered. Zoning in permitting and planning that gives industry clear guidelines can minimize this constraint.",
+          'Boost industrialization and industry\u2019s share of GDP (9.2) < Industrial activities may be constrained by the prevention of marine pollution from land-based activities (14.1) and conservation of coastal areas (14.5). A concern universally where there are coastal areas in need of conservation. Zoning of industrial permits and implementing regulation of pollution.  Prevention of marine pollution (14.1), protection of coastal ecosystems (14.2) and conservation (14.5) > Constrain the development and promotion of industrial activity, in particular in coastal areas (9.2). Affects mostly coastal areas, although upstream catchment areas must be considered. Zoning in permitting and planning that gives industry clear guidelines can minimize this constraint.',
         ],
       },
       {
         target: '11.1',
         description: [
           'Access to adequate, safe and affordable housing and basic services (e.g. sanitation) reinforces or counteracts preventing and reducing marine pollution from human activities, and vice versa, depending on the pollution management in cities (e.g., wastewater treatment).',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '3.9',
+        description: [
+          '',
         ],
       },
     ],
@@ -30265,7 +35031,7 @@ export const LinkageData2023 = [
         target: '14.7',
         description: [
           'The long-term sustainability of fisheries in SIDS has been threatened by overexploitation of living marine resources, land-based pollution, and inadequate fisheries monitoring, control and surveillance systems.',
-          "Promote economic activities vs conserve oceans' ecosystems.",
+          'Promote economic activities vs conserve oceans\u2019 ecosystems.',
           '',
         ],
       },
@@ -30508,7 +35274,7 @@ export const LinkageData2023 = [
       {
         target: '14.7',
         description: [
-          "Promote economic activities vs conserve oceans' ecosystems.",
+          'Promote economic activities vs conserve oceans\u2019 ecosystems.',
         ],
       },
       {
@@ -30531,6 +35297,14 @@ export const LinkageData2023 = [
       },
       {
         target: '13.2',
+        description: [
+          '',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '6.3',
         description: [
           '',
         ],
@@ -30614,7 +35388,7 @@ export const LinkageData2023 = [
       {
         target: '14.2',
         description: [
-          'Ocean acidification combined with effects of climate change can result in interactive, complex, and amplified impacts for marine species and ecosystems, such as coral reefs, which could bring significant biodiversity [...] losses.',
+          'Ocean acidification combined with effects of climate change can result in interactive, complex, and amplified impacts for marine species and ecosystems, such as coral reefs, which could bring significant biodiversity [\u2026] losses.',
           '',
         ],
       },
@@ -30628,7 +35402,7 @@ export const LinkageData2023 = [
       {
         target: '14.7',
         description: [
-          'Ocean acidification negatively affect benefits to SIDS and LDCs from the exploitation of natural resources. //  Ocean acidification combined with effects of climate change can result in interactive, complex, and amplified impacts for marine species and ecosystems [...] which could bring significant biodiversity and economic losses. Acidification reduces access to resources in two ways. The absolute amount of resources [...] and the resilience of the ecosystems is also reduced, so that resources that are left can only sustain reduced rates of exploitation. [...] The fisheries sector is particularly important for SIDS. For example, [...] tuna fishery industry [...].',
+          'Ocean acidification negatively affect benefits to SIDS and LDCs from the exploitation of natural resources. //  Ocean acidification combined with effects of climate change can result in interactive, complex, and amplified impacts for marine species and ecosystems [...] which could bring significant biodiversity and economic losses. Acidification reduces access to resources in two ways. The absolute amount of resources [...] and the resilience of the ecosystems is also reduced, so that resources that are left can only sustain reduced rates of exploitation. [...] The fisheries sector is particularly important for SIDS. For example, [\u2026] tuna fishery industry [\u2026].',
           '',
         ],
       },
@@ -30744,6 +35518,7 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [],
     coordinates: [
       13,
       2,
@@ -30772,14 +35547,14 @@ export const LinkageData2023 = [
         description: [
           '',
           'Action taken to strengthen the health of coastal and marine ecosystems including fish stocks will reinforce the strengthening of environmental and societal resilience and adaptive capacities to climate change, and vice versa.',
-          "For more information see reference(s) >>[Dey, Madan Mohan et al. 2016. 'Economic Impact of Climate Change and Climate Change Adaptation Strategies for Fisheries Sector in Solomon Islands: Implication for Food Security.'].",
+          'For more information see reference(s) >>[Dey, Madan Mohan et al. 2016. \u201cEconomic Impact of Climate Change and Climate Change Adaptation Strategies for Fisheries Sector in Solomon Islands: Implication for Food Security.\u201d].',
         ],
       },
       {
         target: '14.2',
         description: [
           '',
-          'Ocean-based activities such as fisheries extract resources, add pollution, and change species composition. // Sustainable management of local fisheries for migratory fish stocks. //  Small-scale fish handling and processing generate waste inputs (water, fuelwood, etc.),which could be reduced through the promotion of environmentally sustainable practices within an ecosystem approach. // Capture fisheries have multiple impacts on marine ecosystems [...]effects on target species; effects on other species through change in marine food chains; effects on non-target species as a result of by-catches; perturbation of habitat and perturbation of seabed (benthic) communities; and others. Therefore, fisheries affect the way marine and coastal ecosystems are managed.',
+          'Ocean-based activities such as fisheries extract resources, add pollution, and change species composition. // Sustainable management of local fisheries for migratory fish stocks. //  Small-scale fish handling and processing generate waste inputs (water, fuelwood, etc.),which could be reduced through the promotion of environmentally sustainable practices within an ecosystem approach. // Capture fisheries have multiple impacts on marine ecosystems [\u2026]effects on target species; effects on other species through change in marine food chains; effects on non-target species as a result of by-catches; perturbation of habitat and perturbation of seabed (benthic) communities; and others. Therefore, fisheries affect the way marine and coastal ecosystems are managed.',
           'Regulating illegal harvest and overfishing is a prerequisite for restoring marine ecosystems.',
           '',
         ],
@@ -30788,7 +35563,7 @@ export const LinkageData2023 = [
         target: '14.b',
         description: [
           '',
-          'Small-scale fishing communities are very vulnerable to the major threats to healthy oceans, including [...] degradation.',
+          'Small-scale fishing communities are very vulnerable to the major threats to healthy oceans, including [\u2026] degradation.',
         ],
       },
       {
@@ -30810,7 +35585,7 @@ export const LinkageData2023 = [
           '',
           'For the last ten years, beach management units have been established in Kenya and Tanzania as a co-management approach between government and local communities to share responsibilities for resource management and the conservation of fish stocks for enhanced food security and sustainable livelihoods. [...] The bmu approach can play a critical enabling role to address threats from deteriorating aquatic habitats and to enhance food security. {Kenya, Tanzania} --- Sustainable fisheries are inextricably linked to fish availability and food security. {n.a.}',
           'Regulate harvesting, end overfishing etc. (14.4) > Reinforces food security and access to food for vulnerable groups (2.1). Food security depends on status of stocks. Short-term trade-offs might occur in terms of local livelihoods, but absolutely critical positive interaction in the long term. Depends on differentiated policies and in particular regulation of industrial scale fishing fleets on international waters.',
-          "For more information see reference(s) >> Combating illegal fishing and overfishing includes combating illegal labour practices (making addressing this target a prerequisite for ending modern slavery - SDGs 8.7 and 16.2), will allow children and other people who otherwise would have spent their time working on boats access to education (SDGs 4.1 and 4.3), will allow for more reliable and bountiful seafood production needed for people to access food and end malnutrition (SDGs 2.1 and 2.2), and will lead to fishing systems guaranteed for future generations, preserving biological and cultural heritage (SDG 11.4). [References for 2.1: Dulvy, Nicholas, and Edward Allison. 2009. 'A Place at the Table?'; Golden, Christopher et al. 2016. 'Fall in Fish Catch Threatens Human Health.'; B\u00e9n\u00e9, Christophe et al. 2016. 'Contribution of Fisheries and Aquaculture to Food Security and Poverty Reduction: Assessing the Current Evidence.'; Cisneros-Montemayor, A.M. et al. 'A Global Estimate of Seafood Consumption by Coastal Indigenous Peoples.'; Harper, Sarahet al. 2013. 'Women and Fisheries: Contribution to Food Security and Local Economies.'].",
+          'For more information see reference(s) >> Combating illegal fishing and overfishing includes combating illegal labour practices (making addressing this target a prerequisite for ending modern slavery \u2013 SDGs 8.7 and 16.2), will allow children and other people who otherwise would have spent their time working on boats access to education (SDGs 4.1 and 4.3), will allow for more reliable and bountiful seafood production needed for people to access food and end malnutrition (SDGs 2.1 and 2.2), and will lead to fishing systems guaranteed for future generations, preserving biological and cultural heritage (SDG 11.4). [References for 2.1: Dulvy, Nicholas, and Edward Allison. 2009. \u201cA Place at the Table?\u201d; Golden, Christopher et al. 2016. \u201cFall in Fish Catch Threatens Human Health.\u201d; B\u00e9n\u00e9, Christophe et al. 2016. \u201cContribution of Fisheries and Aquaculture to Food Security and Poverty Reduction: Assessing the Current Evidence.\u201d; Cisneros-Montemayor, A.M. et al. \u201cA Global Estimate of Seafood Consumption by Coastal Indigenous Peoples.\u201d; Harper, Sarahet al. 2013. \u201cWomen and Fisheries: Contribution to Food Security and Local Economies.\u201d].',
         ],
       },
       {
@@ -30818,7 +35593,7 @@ export const LinkageData2023 = [
         description: [
           '',
           'Fish and fishery products directly enable the provision of micronutrients.',
-          'Combating illegal fishing and overfishing includes combating illegal labour practices (making addressing this target a prerequisite for ending modern slavery - SDGs 8.7 and 16.2), will allow children and other people who otherwise would have spent their time working on boats access to education (SDGs 4.1 and 4.3), will allow for more reliable and bountiful seafood production needed for people to access food and end malnutrition (SDGs 2.1 and 2.2), and will lead to fishing systems guaranteed for future generations, preserving biological and cultural heritage (SDG 11.4).',
+          'Combating illegal fishing and overfishing includes combating illegal labour practices (making addressing this target a prerequisite for ending modern slavery \u2013 SDGs 8.7 and 16.2), will allow children and other people who otherwise would have spent their time working on boats access to education (SDGs 4.1 and 4.3), will allow for more reliable and bountiful seafood production needed for people to access food and end malnutrition (SDGs 2.1 and 2.2), and will lead to fishing systems guaranteed for future generations, preserving biological and cultural heritage (SDG 11.4).',
           '',
         ],
       },
@@ -30845,7 +35620,7 @@ export const LinkageData2023 = [
       {
         target: '12.2',
         description: [
-          'Collaboration between scientific, legal and regulatory and industrial spheres to achieve the best outcome. [...] New partnerships and investment in both science and engagement will reap the highest rewards for those seeking to implement the SDGs and SCP in the most successful manner.',
+          'Collaboration between scientific, legal and regulatory and industrial spheres to achieve the best outcome. [\u2026] New partnerships and investment in both science and engagement will reap the highest rewards for those seeking to implement the SDGs and SCP in the most successful manner.',
           'Sustainable fisheries contribute to sustainable management of natural resources. Specific management measures, such as discard bans or selective fishing methods reduce food losses along the production chain.',
           '',
           'Effectively regulating harvesting and ending overfishing in the marine ecosystems reinforces achieving sustainable management and efficient use of natural resources (e.g., fish), and vice versa.',
@@ -30856,7 +35631,7 @@ export const LinkageData2023 = [
         target: '1.1',
         description: [
           'Sustainable fisheries stabilise income and create opportunities for value-addition [synergy] // Higher value-added economic activities may displace livelihoods and increase poverty [trade-off].',
-          "For more information see reference(s) >> [B\u00e9n\u00e9, Christophe. 2003. 'When Fishery Rhymes with Poverty: A First Step Beyond the Old Paradigm on Poverty in Small-Scale Fisheries.'; B\u00e9n\u00e9, Christophe et al. 2016. 'Contribution of Fisheries and Aquaculture to Food Security and Poverty Reduction: Assessing the Current Evidence.'; Allison, Edward et al. 2009. 'Vulnerability of National Economies to the Impacts of Climate Change on Fisheries.'; Allison, Edward et al. 2012. 'Rights-Based Fisheries Governance: From Fishing Rights to Human Rights.'].",
+          'For more information see reference(s) >> [B\u00e9n\u00e9, Christophe. 2003. \u201cWhen Fishery Rhymes with Poverty: A First Step Beyond the Old Paradigm on Poverty in Small-Scale Fisheries.\u201d; B\u00e9n\u00e9, Christophe et al. 2016. \u201cContribution of Fisheries and Aquaculture to Food Security and Poverty Reduction: Assessing the Current Evidence.\u201d; Allison, Edward et al. 2009. \u201cVulnerability of National Economies to the Impacts of Climate Change on Fisheries.\u201d; Allison, Edward et al. 2012. \u201cRights-Based Fisheries Governance: From Fishing Rights to Human Rights.\u201d].',
         ],
       },
       {
@@ -30883,7 +35658,7 @@ export const LinkageData2023 = [
         target: '8.1',
         description: [
           'Sustainable fisheries, aquaculture and tourism will contribute to economic growth and to achieving full employment and vice versa.',
-          "For more information see reference(s) >> [Crul, M. R. M., and J. C. Diehl. 2006. Design for Sustainability: A Practical Approach for Developing Economies; Sumaila, U.R. et al. 2015. 'Eco2: A Simple Index of Economic-Ecological Deficits.'].",
+          'For more information see reference(s) >> [Crul, M. R. M., and J. C. Diehl. 2006. Design for Sustainability: A Practical Approach for Developing Economies; Sumaila, U.R. et al. 2015. \u201cEco2: A Simple Index of Economic-Ecological Deficits.\u201d].',
         ],
       },
       {
@@ -30897,8 +35672,8 @@ export const LinkageData2023 = [
         target: '14.7',
         description: [
           'Fisheries are  extremely important for many SIDS.',
-          "Promote economic activities vs conserve oceans' ecosystems.",
-          "For more information see reference(s) >> [Hanich, Quentin. 2012. 'Distributing the Bigeye Conservation Burden in the Western and Central Pacific Fisheries.'].",
+          'Promote economic activities vs conserve oceans\u2019 ecosystems.',
+          'For more information see reference(s) >> [Hanich, Quentin. 2012. \u201cDistributing the Bigeye Conservation Burden in the Western and Central Pacific Fisheries.\u201d].',
         ],
       },
       {
@@ -30912,7 +35687,7 @@ export const LinkageData2023 = [
         target: '14.6',
         description: [
           '',
-          "For more information see reference(s) >> These two [targets of sdg 14] are inextricably linked. If fisheries are sustainable then there is reduced/no requirement for subsidies [Cisneros-Montemayor, Andr\u00e9s M. et al. 2016. 'Strategies and Rationale for Fishery Subsidy Reform.'; Sumaila, U. Rashid et al. 2016. 'Global Fisheries Subsidies: An Updated Estimate.\"].",
+          'For more information see reference(s) >> These two [targets of sdg 14] are inextricably linked. If fisheries are sustainable then there is reduced/no requirement for subsidies [Cisneros-Montemayor, Andr\u00e9s M. et al. 2016. \u201cStrategies and Rationale for Fishery Subsidy Reform.\u201d; Sumaila, U. Rashid et al. 2016. \u201cGlobal Fisheries Subsidies: An Updated Estimate."].',
         ],
       },
       {
@@ -30924,7 +35699,7 @@ export const LinkageData2023 = [
       {
         target: '1.3',
         description: [
-          "For more information see reference(s) >> In order to achieve better fishing systems, we need better governance and the creation of sustainable fishing systems will strengthen overall community governance (and social protection) in some contexts: B\u00e9n\u00e9, Christophe et al. 2015. 'Social Protection and Sustainable Natural Resource Management: Initial Findings and Good Practices from Small-Scale Fisheries.'.",
+          'For more information see reference(s) >> In order to achieve better fishing systems, we need better governance and the creation of sustainable fishing systems will strengthen overall community governance (and social protection) in some contexts: B\u00e9n\u00e9, Christophe et al. 2015. \u201cSocial Protection and Sustainable Natural Resource Management: Initial Findings and Good Practices from Small-Scale Fisheries.\u201d.',
         ],
       },
       {
@@ -30936,7 +35711,7 @@ export const LinkageData2023 = [
       {
         target: '10.2',
         description: [
-          "For more information see reference(s) >> [Jentoft, Svein. 2005. 'Fisheries Co-Management as Empowerment.'; Cisneros-Montemayor, A.M. et al. 'A Global Estimate of Seafood Consumption by Coastal Indigenous Peoples.'].",
+          'For more information see reference(s) >> [Jentoft, Svein. 2005. \u201cFisheries Co-Management as Empowerment.\u201d; Cisneros-Montemayor, A.M. et al. \u201cA Global Estimate of Seafood Consumption by Coastal Indigenous Peoples.\u201d].',
         ],
       },
       {
@@ -30960,7 +35735,7 @@ export const LinkageData2023 = [
       {
         target: '11.4',
         description: [
-          "For more information see reference(s) >> Combating illegal fishing and overfishing includes combating illegal labour practices (making addressing this target a prerequisite for ending modern slavery - SDGs 8.7 and 16.2), will allow children and other people who otherwise would have spent their time working on boats access to education (SDGs 4.1 and 4.3), will allow for more reliable and bountiful seafood production needed for people to access food and end malnutrition (SDGs 2.1 and 2.2), and will lead to fishing systems guaranteed for future generations, preserving biological and cultural heritage (SDG 11.4). [References for target 11.4: Cisneros-Montemayor, A.M. et al. 'A Global Estimate of Seafood Consumption by Coastal Indigenous Peoples.'; Yoshitaka, O. 2006. 'Fluid Bodies in the Sea: An Ethnography of Underwater Spear Gun Fishing in Palau, Micronesia.' ].",
+          'For more information see reference(s) >> Combating illegal fishing and overfishing includes combating illegal labour practices (making addressing this target a prerequisite for ending modern slavery \u2013 SDGs 8.7 and 16.2), will allow children and other people who otherwise would have spent their time working on boats access to education (SDGs 4.1 and 4.3), will allow for more reliable and bountiful seafood production needed for people to access food and end malnutrition (SDGs 2.1 and 2.2), and will lead to fishing systems guaranteed for future generations, preserving biological and cultural heritage (SDG 11.4). [References for target 11.4: Cisneros-Montemayor, A.M. et al. \u201cA Global Estimate of Seafood Consumption by Coastal Indigenous Peoples.\u201d; Yoshitaka, O. 2006. \u201cFluid Bodies in the Sea: An Ethnography of Underwater Spear Gun Fishing in Palau, Micronesia.\u201d ].',
         ],
       },
       {
@@ -30972,7 +35747,7 @@ export const LinkageData2023 = [
       {
         target: '14.1',
         description: [
-          "For more information see reference(s) >> Reducing overcapacity in fishing fleets [Sunderland, Elsie M. et al. 2009. 'Mercury Sources, Distribution, and Bioavailability in the North Pacific Ocean: Insights from Data and Models: MERCURY IN THE NORTH PACIFIC OCEAN.'].",
+          'For more information see reference(s) >> Reducing overcapacity in fishing fleets [Sunderland, Elsie M. et al. 2009. \u201cMercury Sources, Distribution, and Bioavailability in the North Pacific Ocean: Insights from Data and Models: MERCURY IN THE NORTH PACIFIC OCEAN.\u201d].',
         ],
       },
       {
@@ -31004,7 +35779,7 @@ export const LinkageData2023 = [
       {
         target: '15.7',
         description: [
-          "For more information see reference(s) >> n.a. [Vincent, Amanda et al. 2013. 'The Role of CITES in the Conservation of Marine Fishes Subject to International Trade.'].",
+          'For more information see reference(s) >> n.a. [Vincent, Amanda et al. 2013. \u201cThe Role of CITES in the Conservation of Marine Fishes Subject to International Trade.\u201d].',
         ],
       },
       {
@@ -31022,7 +35797,7 @@ export const LinkageData2023 = [
       {
         target: '16.2',
         description: [
-          "For more information see reference(s) >> Combating illegal fishing and overfishing includes combating illegal labour practices (making addressing this target a prerequisite for ending modern slavery - SDGs 8.7 and 16.2), will allow children and other people who otherwise would have spent their time working on boats access to education (SDGs 4.1 and 4.3), will allow for more reliable and bountiful seafood production needed for people to access food and end malnutrition (SDGs 2.1 and 2.2), and will lead to fishing systems guaranteed for future generations, preserving biological and cultural heritage (SDG 11.4). [References for target 16.2: Brashares, Justin S. et al. 2014. 'Wildlife Decline and Social Conflict.'; 2013. Caught at Sea: Forced Labour and Trafficking in Fisheries. Geneva: ILO.].",
+          'For more information see reference(s) >> Combating illegal fishing and overfishing includes combating illegal labour practices (making addressing this target a prerequisite for ending modern slavery \u2013 SDGs 8.7 and 16.2), will allow children and other people who otherwise would have spent their time working on boats access to education (SDGs 4.1 and 4.3), will allow for more reliable and bountiful seafood production needed for people to access food and end malnutrition (SDGs 2.1 and 2.2), and will lead to fishing systems guaranteed for future generations, preserving biological and cultural heritage (SDG 11.4). [References for target 16.2: Brashares, Justin S. et al. 2014. \u201cWildlife Decline and Social Conflict.\u201d; 2013. Caught at Sea: Forced Labour and Trafficking in Fisheries. Geneva: ILO.].',
         ],
       },
       {
@@ -31040,7 +35815,7 @@ export const LinkageData2023 = [
       {
         target: '16.5',
         description: [
-          "For more information see reference(s) >> n.a. [Kolstad, I., and T. Soreide. 2009. 'Corruption in Natural Resource Management: Implications for Policy Makers.'; Pitcher, Tony et al. 2009. 'Not Honouring the Code.'].",
+          'For more information see reference(s) >> n.a. [Kolstad, I., and T. Soreide. 2009. \u201cCorruption in Natural Resource Management: Implications for Policy Makers.\u201d; Pitcher, Tony et al. 2009. \u201cNot Honouring the Code.\u201d].',
         ],
       },
       {
@@ -31058,31 +35833,31 @@ export const LinkageData2023 = [
       {
         target: '2.5',
         description: [
-          "For more information see reference(s) >> [Pauly, Daniel et al. 2002. 'Towards Sustainability in World Fisheries.'; FAO. 2016. 'The State of World Fisheries and Aquaculture 2016. Contributing to Food Security and Nutrition for All.'].",
+          'For more information see reference(s) >> [Pauly, Daniel et al. 2002. \u201cTowards Sustainability in World Fisheries.\u201d; FAO. 2016. \u201cThe State of World Fisheries and Aquaculture 2016. Contributing to Food Security and Nutrition for All.\u201d].',
         ],
       },
       {
         target: '3.2',
         description: [
-          "For more information see reference(s) >> Micronutrient deficiency, but dependent on how dependent people are to fish diets [Golden, Christopher et al. 2016. 'Fall in Fish Catch Threatens Human Health.' ].",
+          'For more information see reference(s) >> Micronutrient deficiency, but dependent on how dependent people are to fish diets [Golden, Christopher et al. 2016. \u201cFall in Fish Catch Threatens Human Health.\u201d ].',
         ],
       },
       {
         target: '3.8',
         description: [
-          "For more information see reference(s) >> Stabilizing fisher income (through better fish productivity) can access better health care in systems that are specifically created for fishing communities [Gal\u00e1n-Rodas, Ed\u00e9n. 2013. 'Seguro Social Del Pescador Artesanal: Herramienta de Inclusi\u00f3n Social Y Ciudadan\u00eda.'].",
+          'For more information see reference(s) >> Stabilizing fisher income (through better fish productivity) can access better health care in systems that are specifically created for fishing communities [Gal\u00e1n-Rodas, Ed\u00e9n. 2013. \u201cSeguro Social Del Pescador Artesanal: Herramienta de Inclusi\u00f3n Social Y Ciudadan\u00eda.\u201d].',
         ],
       },
       {
         target: '4.1',
         description: [
-          'Combating illegal fishing and overfishing includes combating illegal labour practices (making addressing this target a prerequisite for ending modern slavery - SDGs 8.7 and 16.2), will allow children and other people who otherwise would have spent their time working on boats access to education (SDGs 4.1 and 4.3), will allow for more reliable and bountiful seafood production needed for people to access food and end malnutrition (SDGs 2.1 and 2.2), and will lead to fishing systems guaranteed for future generations, preserving biological and cultural heritage (SDG 11.4).',
+          'Combating illegal fishing and overfishing includes combating illegal labour practices (making addressing this target a prerequisite for ending modern slavery \u2013 SDGs 8.7 and 16.2), will allow children and other people who otherwise would have spent their time working on boats access to education (SDGs 4.1 and 4.3), will allow for more reliable and bountiful seafood production needed for people to access food and end malnutrition (SDGs 2.1 and 2.2), and will lead to fishing systems guaranteed for future generations, preserving biological and cultural heritage (SDG 11.4).',
         ],
       },
       {
         target: '4.3',
         description: [
-          'Combating illegal fishing and overfishing includes combating illegal labour practices (making addressing this target a prerequisite for ending modern slavery - SDGs 8.7 and 16.2), will allow children and other people who otherwise would have spent their time working on boats access to education (SDGs 4.1 and 4.3), will allow for more reliable and bountiful seafood production needed for people to access food and end malnutrition (SDGs 2.1 and 2.2), and will lead to fishing systems guaranteed for future generations, preserving biological and cultural heritage (SDG 11.4).',
+          'Combating illegal fishing and overfishing includes combating illegal labour practices (making addressing this target a prerequisite for ending modern slavery \u2013 SDGs 8.7 and 16.2), will allow children and other people who otherwise would have spent their time working on boats access to education (SDGs 4.1 and 4.3), will allow for more reliable and bountiful seafood production needed for people to access food and end malnutrition (SDGs 2.1 and 2.2), and will lead to fishing systems guaranteed for future generations, preserving biological and cultural heritage (SDG 11.4).',
         ],
       },
       {
@@ -31100,7 +35875,7 @@ export const LinkageData2023 = [
       {
         target: '5.5',
         description: [
-          "For more information see reference(s) >> Women are important and underrecognized agents in fisheries (especially small scale fisheries) [Harper, Sarah et al. 2013. 'Women and Fisheries: Contribution to Food Security and Local Economies.'; Teh, Lydia C L, and U R Sumaila. 2013. 'Contribution of Marine Fisheries to Worldwide Employment: Global Marine Fisheries Employment.'].",
+          'For more information see reference(s) >> Women are important and underrecognized agents in fisheries (especially small scale fisheries) [Harper, Sarah et al. 2013. \u201cWomen and Fisheries: Contribution to Food Security and Local Economies.\u201d; Teh, Lydia C L, and U R Sumaila. 2013. \u201cContribution of Marine Fisheries to Worldwide Employment: Global Marine Fisheries Employment.\u201d].',
         ],
       },
       {
@@ -31112,25 +35887,25 @@ export const LinkageData2023 = [
       {
         target: '8.3',
         description: [
-          "For more information see reference(s) >> If you regulate harvest specifically to reduce overfishing, that can have more widespread policy implications for development [B\u00e9n\u00e9, Christophe, Bj\u00f8rn Hersoug, and Edward H. Allison. 2010. 'Not by Rent Alone: Analysing the pro-Poor Functions of Small-Scale Fisheries in Developing Countries.'; Mograbi, Jonathan, and Christian M. Rogerson. 2007. 'Maximising the Local Pro-Poor Impacts of Dive Tourism: Sodwana Bay, South Africa.'].",
+          'For more information see reference(s) >> If you regulate harvest specifically to reduce overfishing, that can have more widespread policy implications for development [B\u00e9n\u00e9, Christophe, Bj\u00f8rn Hersoug, and Edward H. Allison. 2010. \u201cNot by Rent Alone: Analysing the pro-Poor Functions of Small-Scale Fisheries in Developing Countries.\u201d; Mograbi, Jonathan, and Christian M. Rogerson. 2007. \u201cMaximising the Local Pro-Poor Impacts of Dive Tourism: Sodwana Bay, South Africa.\u201d].',
         ],
       },
       {
         target: '8.7',
         description: [
-          "For more information see reference(s) >> Combating illegal fishing and overfishing includes combating illegal labour practices (making addressing this target a prerequisite for ending modern slavery - SDGs 8.7 and 16.2), will allow children and other people who otherwise would have spent their time working on boats access to education (SDGs 4.1 and 4.3), will allow for more reliable and bountiful seafood production needed for people to access food and end malnutrition (SDGs 2.1 and 2.2), and will lead to fishing systems guaranteed for future generations, preserving biological and cultural heritage (SDG 11.4). [References for target 8.7: Adger, W. et al. 2014. 'Human Security.'; FAO. 2015. Voluntary Guidelines for Securing Sustainable Small-Scale Fisheries in the Context of Food Security and Poverty Eradication; McClanahan, Tim et al. 2015. 'Managing Fisheries for Human and Food Security.'].",
+          'For more information see reference(s) >> Combating illegal fishing and overfishing includes combating illegal labour practices (making addressing this target a prerequisite for ending modern slavery \u2013 SDGs 8.7 and 16.2), will allow children and other people who otherwise would have spent their time working on boats access to education (SDGs 4.1 and 4.3), will allow for more reliable and bountiful seafood production needed for people to access food and end malnutrition (SDGs 2.1 and 2.2), and will lead to fishing systems guaranteed for future generations, preserving biological and cultural heritage (SDG 11.4). [References for target 8.7: Adger, W. et al. 2014. \u201cHuman Security.\u201d; FAO. 2015. Voluntary Guidelines for Securing Sustainable Small-Scale Fisheries in the Context of Food Security and Poverty Eradication; McClanahan, Tim et al. 2015. \u201cManaging Fisheries for Human and Food Security.\u201d].',
         ],
       },
       {
         target: '8.8',
         description: [
-          "For more information see reference(s) >> Find more info in the references. [Brashares, Justin S. et al. 2014. 'Wildlife Decline and Social Conflict.'; ILO, 2013. Caught at Sea: Forced Labour and Trafficking in Fisheries. Geneva: ILO.].",
+          'For more information see reference(s) >> Find more info in the references. [Brashares, Justin S. et al. 2014. \u201cWildlife Decline and Social Conflict.\u201d; ILO, 2013. Caught at Sea: Forced Labour and Trafficking in Fisheries. Geneva: ILO.].',
         ],
       },
       {
         target: '8.9',
         description: [
-          "For more information see reference(s) >> [Cisneros-Montemayor, Andr\u00e9s M. et al. 2013. 'Global Economic Value of Shark Ecotourism: Implications for Conservation.'; Cisneros-Montemayor, Andr\u00e9s M., et al. 2013. 'Economic Use Value of the Belize Marine Ecosystem: Potential Risks and Benefits from Offshore Oil Exploration.'; Cisneros-Montemayor, Andr\u00e9s M., and U. Rashid Sumaila. 2010. 'A Global Estimate of Benefits from Ecosystem-Based Marine Recreation: Potential Impacts and Implications for Management.'; Carter, R.W. et al. 2015. 'Sustainable Tourism and Its Use as a Development Strategy in Cambodia: A Systematic Literature Review.'; Clifton, Julian, and Angela Benson. 2006. 'Planning for Sustainable Ecotourism: The Case for Research Ecotourism in Developing Country Destinations.'; Eagles, P. F. J., and S. F. McCool. 2003. Sustainable Tourism in Protected Area: Guidelines for Planning and Management; Neto, Federico. 2003. 'A New Approach to Sustainable Tourism Development: Moving beyond Environmental Protection.'].",
+          'For more information see reference(s) >> [Cisneros-Montemayor, Andr\u00e9s M. et al. 2013. \u201cGlobal Economic Value of Shark Ecotourism: Implications for Conservation.\u201d; Cisneros-Montemayor, Andr\u00e9s M., et al. 2013. \u201cEconomic Use Value of the Belize Marine Ecosystem: Potential Risks and Benefits from Offshore Oil Exploration.\u201d; Cisneros-Montemayor, Andr\u00e9s M., and U. Rashid Sumaila. 2010. \u201cA Global Estimate of Benefits from Ecosystem-Based Marine Recreation: Potential Impacts and Implications for Management.\u201d; Carter, R.W. et al. 2015. \u201cSustainable Tourism and Its Use as a Development Strategy in Cambodia: A Systematic Literature Review.\u201d; Clifton, Julian, and Angela Benson. 2006. \u201cPlanning for Sustainable Ecotourism: The Case for Research Ecotourism in Developing Country Destinations.\u201d; Eagles, P. F. J., and S. F. McCool. 2003. Sustainable Tourism in Protected Area: Guidelines for Planning and Management; Neto, Federico. 2003. \u201cA New Approach to Sustainable Tourism Development: Moving beyond Environmental Protection.\u201d].',
         ],
       },
       {
@@ -31192,7 +35967,7 @@ export const LinkageData2023 = [
       {
         target: '14.7',
         description: [
-          "Promote economic activities vs conserve oceans' ecosystems.",
+          'Promote economic activities vs conserve oceans\u2019 ecosystems.',
         ],
       },
       {
@@ -31205,6 +35980,32 @@ export const LinkageData2023 = [
         target: '2.3',
         description: [
           'Regulating harvesting and ending overfishing can counteract increasing productivity of aquaculture. Overfishing in aquaculture to improve agricultural productivity can counteract regulating harvesting and ending overfishing.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '12.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.c',
+        description: [
+          '',
         ],
       },
     ],
@@ -31298,7 +36099,7 @@ export const LinkageData2023 = [
       {
         target: '14.4',
         description: [
-          'Many MPAs do not to reach their full potential because they [...] are affected by illegal harvesting.',
+          'Many MPAs do not to reach their full potential because they [\u2026] are affected by illegal harvesting.',
           'For more information see reference(s) >> [Claudet, J. et al. 2008. Marine reserves: size and age do matter; Rife, A.N., et al. 2013. Long-term effectiveness of a multi-use marine protected area on reef fish assemblages and fisheries landings; Christie, P. 2004. Marine protected areas as biological successes and social failures in southeast asia.].',
         ],
       },
@@ -31312,7 +36113,7 @@ export const LinkageData2023 = [
       {
         target: '14.b',
         description: [
-          'Many MPAs do not to reach their full potential because they fail to consider local livelihoods. [...] Equity and the need to share benefits of the MPA locally are key factors [...]. Some MPAs provide benefits to communities through tourism revenue and increased fish catches from spillover effects. They may also empower communities through-management or community-based management arrangements. But poorly governed and designed MPAs may also disrupt traditional livelihoods and change existing economic and social structures, including through redistribution of access rights, wealth and jobs [...] depending on governance. // Small-scale fishing communities are very vulnerable to the major threats to healthy oceans [...] (dependent on a healthy marine environment).',
+          'Many MPAs do not to reach their full potential because they fail to consider local livelihoods. [\u2026] Equity and the need to share benefits of the MPA locally are key factors [\u2026]. Some MPAs provide benefits to communities through tourism revenue and increased fish catches from spillover effects. They may also empower communities through-management or community-based management arrangements. But poorly governed and designed MPAs may also disrupt traditional livelihoods and change existing economic and social structures, including through redistribution of access rights, wealth and jobs [...] depending on governance. // Small-scale fishing communities are very vulnerable to the major threats to healthy oceans [...] (dependent on a healthy marine environment).',
           '',
         ],
       },
@@ -31606,7 +36407,7 @@ export const LinkageData2023 = [
       {
         target: '14.4',
         description: [
-          'Many MPAs do not to reach their full potential because they [...] are affected by illegal harvesting.',
+          'Many MPAs do not to reach their full potential because they [\u2026] are affected by illegal harvesting.',
         ],
       },
       {
@@ -31618,7 +36419,7 @@ export const LinkageData2023 = [
       {
         target: '14.b',
         description: [
-          'Many MPAs do not to reach their full potential because they fail to consider local livelihoods. [...] Equity and the need to share benefits of the MPA locally are key factors [...]. Some MPAs provide benefits to communities through tourism revenue and increased fish catches from spillover effects. They may also empower communities through-management or community-based management arrangements. But poorly governed and designed MPAs may also disrupt traditional livelihoods and change existing economic and social structures, including through redistribution of access rights, wealth and jobs [...] depending on governance. // Small-scale fishing communities are very vulnerable to the major threats to healthy oceans [...] (dependent on a healthy marine environment).',
+          'Many MPAs do not to reach their full potential because they fail to consider local livelihoods. [\u2026] Equity and the need to share benefits of the MPA locally are key factors [\u2026]. Some MPAs provide benefits to communities through tourism revenue and increased fish catches from spillover effects. They may also empower communities through-management or community-based management arrangements. But poorly governed and designed MPAs may also disrupt traditional livelihoods and change existing economic and social structures, including through redistribution of access rights, wealth and jobs [...] depending on governance. // Small-scale fishing communities are very vulnerable to the major threats to healthy oceans [...] (dependent on a healthy marine environment).',
           '',
         ],
       },
@@ -31632,7 +36433,7 @@ export const LinkageData2023 = [
       {
         target: '9.2',
         description: [
-          "Boost industrialization and industry's share of GDP (9.2) < Industrial activities may be constrained by the prevention of marine pollution from land-based activities (14.1) and conservation of coastal areas (14.5). A concern universally where there are coastal areas in need of conservation. Zoning of industrial permits and implementing regulation of pollution.  Prevention of marine pollution (14.1), protection of coastal ecosystems (14.2) and conservation (14.5) > Constrain the development and promotion of industrial activity, in particular in coastal areas (9.2). Affects mostly coastal areas, although upstream catchment areas must be considered. Zoning in permitting and planning that gives industry clear guidelines can minimize this constraint.",
+          'Boost industrialization and industry\u2019s share of GDP (9.2) < Industrial activities may be constrained by the prevention of marine pollution from land-based activities (14.1) and conservation of coastal areas (14.5). A concern universally where there are coastal areas in need of conservation. Zoning of industrial permits and implementing regulation of pollution.  Prevention of marine pollution (14.1), protection of coastal ecosystems (14.2) and conservation (14.5) > Constrain the development and promotion of industrial activity, in particular in coastal areas (9.2). Affects mostly coastal areas, although upstream catchment areas must be considered. Zoning in permitting and planning that gives industry clear guidelines can minimize this constraint.',
         ],
       },
       {
@@ -31663,6 +36464,20 @@ export const LinkageData2023 = [
         target: '16.1',
         description: [
           'If resource disparities are enhanced through limiting access to marine resources, then the risk of resource-based conflict might also increase, negatively affecting SDG targets aimed at reducing conflict and violence.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '17.11',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.d',
+        description: [
+          '',
         ],
       },
     ],
@@ -31698,7 +36513,7 @@ export const LinkageData2023 = [
       {
         target: '14.4',
         description: [
-          'The effect of fisheries subsidies on fish stocks can be positive or negative, depending on the intended effect and on the design of the subsidy - whether intended to maintain excess capacity or limit it.',
+          'The effect of fisheries subsidies on fish stocks can be positive or negative, depending on the intended effect and on the design of the subsidy \u2013 whether intended to maintain excess capacity or limit it.',
           '',
           '',
         ],
@@ -31713,8 +36528,8 @@ export const LinkageData2023 = [
       {
         target: '14.7',
         description: [
-          'Reforms to reduce the effort and mobility of large-scale harvesters could provide benefits to SIDs and LDCs and small-scale fisher communities in those countries, by allowing them access to resources no longer taken by distant-water fleets. [...] Fishery subsidies can also impact economic benefits for SIDS and LDCs.',
-          "Promote economic activities vs conserve oceans' ecosystems.",
+          'Reforms to reduce the effort and mobility of large-scale harvesters could provide benefits to SIDs and LDCs and small-scale fisher communities in those countries, by allowing them access to resources no longer taken by distant-water fleets. [\u2026] Fishery subsidies can also impact economic benefits for SIDS and LDCs.',
+          'Promote economic activities vs conserve oceans\u2019 ecosystems.',
           '',
         ],
       },
@@ -31874,14 +36689,14 @@ export const LinkageData2023 = [
       {
         target: '14.4',
         description: [
-          'The effect of fisheries subsidies on fish stocks can be positive or negative, depending on the intended effect and on the design of the subsidy - whether intended to maintain excess capacity or limit it.',
+          'The effect of fisheries subsidies on fish stocks can be positive or negative, depending on the intended effect and on the design of the subsidy \u2013 whether intended to maintain excess capacity or limit it.',
         ],
       },
       {
         target: '14.7',
         description: [
-          'Reforms to reduce the effort and mobility of large-scale harvesters could provide benefits to SIDs and LDCs and small-scale fisher communities in those countries, by allowing them access to resources no longer taken by distant-water fleets. [...] Fishery subsidies can also impact economic benefits for SIDS and LDCs.',
-          "Promote economic activities vs conserve oceans' ecosystems.",
+          'Reforms to reduce the effort and mobility of large-scale harvesters could provide benefits to SIDs and LDCs and small-scale fisher communities in those countries, by allowing them access to resources no longer taken by distant-water fleets. [\u2026] Fishery subsidies can also impact economic benefits for SIDS and LDCs.',
+          'Promote economic activities vs conserve oceans\u2019 ecosystems.',
         ],
       },
       {
@@ -31906,6 +36721,20 @@ export const LinkageData2023 = [
         target: '2.3',
         description: [
           'Prohibiting certain forms of fisheries subsidies may constrain increasing productivity in aquaculture.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '12.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.6',
+        description: [
+          '',
         ],
       },
     ],
@@ -31998,14 +36827,14 @@ export const LinkageData2023 = [
       {
         target: '14.2',
         description: [
-          "Promote economic activities vs conserve oceans' ecosystems.",
+          'Promote economic activities vs conserve oceans\u2019 ecosystems.',
           '',
         ],
       },
       {
         target: '14.4',
         description: [
-          "Promote economic activities vs conserve oceans' ecosystems.",
+          'Promote economic activities vs conserve oceans\u2019 ecosystems.',
           '',
         ],
       },
@@ -32024,7 +36853,7 @@ export const LinkageData2023 = [
       {
         target: '6.2',
         description: [
-          "Call for action in societies whose livelihood directly depends on wastewater aquaculture [call for action] // Evidence that fisheries relying on wastewater can constitute a sustainable form of aquaculture and plays a part in poor populations' livelihood [synergy].",
+          'Call for action in societies whose livelihood directly depends on wastewater aquaculture [call for action] // Evidence that fisheries relying on wastewater can constitute a sustainable form of aquaculture and plays a part in poor populations\u2019 livelihood [synergy].',
           '',
         ],
       },
@@ -32279,13 +37108,27 @@ export const LinkageData2023 = [
       {
         target: '14.2',
         description: [
-          "Promote economic activities vs conserve oceans' ecosystems.",
+          'Promote economic activities vs conserve oceans\u2019 ecosystems.',
         ],
       },
       {
         target: '14.4',
         description: [
-          "Promote economic activities vs conserve oceans' ecosystems.",
+          'Promote economic activities vs conserve oceans\u2019 ecosystems.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '12.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.9',
+        description: [
+          '',
         ],
       },
     ],
@@ -32412,6 +37255,7 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [],
     coordinates: [
       13,
       7,
@@ -32442,14 +37286,14 @@ export const LinkageData2023 = [
         target: '14.2',
         description: [
           '',
-          "Promote economic activities vs conserve oceans' ecosystems.",
+          'Promote economic activities vs conserve oceans\u2019 ecosystems.',
         ],
       },
       {
         target: '14.4',
         description: [
           '',
-          "Promote economic activities vs conserve oceans' ecosystems.",
+          'Promote economic activities vs conserve oceans\u2019 ecosystems.',
         ],
       },
       {
@@ -32491,7 +37335,7 @@ export const LinkageData2023 = [
       {
         target: '7.2',
         description: [
-          'Energy access [...] is an important driver of market access for small-scale artisanal fishers. Depending how that access is provided this could present Trade-offs with 7.2.',
+          'Energy access [\u2026] is an important driver of market access for small-scale artisanal fishers. Depending how that access is provided this could present Trade-offs with 7.2.',
         ],
       },
       {
@@ -32506,22 +37350,23 @@ export const LinkageData2023 = [
       {
         target: '7.2',
         description: [
-          'Energy access [...] is an important driver of market access for small-scale artisanal fishers. Depending how that access is provided this could present Trade-offs with 7.2.',
+          'Energy access [\u2026] is an important driver of market access for small-scale artisanal fishers. Depending how that access is provided this could present Trade-offs with 7.2.',
         ],
       },
       {
         target: '14.2',
         description: [
-          "Promote economic activities vs conserve oceans' ecosystems.",
+          'Promote economic activities vs conserve oceans\u2019 ecosystems.',
         ],
       },
       {
         target: '14.4',
         description: [
-          "Promote economic activities vs conserve oceans' ecosystems.",
+          'Promote economic activities vs conserve oceans\u2019 ecosystems.',
         ],
       },
     ],
+    notSpecified: [],
     coordinates: [
       13,
       8,
@@ -32533,13 +37378,13 @@ export const LinkageData2023 = [
       {
         target: '14.1',
         description: [
-          'UNCLOS requires States to take, individually or jointly as appropriate, all measures consistent with UNCLOS that are necessary to prevent, reduce and control pollution of the marine environment from any source[...] these measures include those necessary to protect and preserve rare or fragile ecosystems as well as the habitat of depleted, threatened or endangered species and other forms of marine life.',
+          'UNCLOS requires States to take, individually or jointly as appropriate, all measures consistent with UNCLOS that are necessary to prevent, reduce and control pollution of the marine environment from any source[\u2026] these measures include those necessary to protect and preserve rare or fragile ecosystems as well as the habitat of depleted, threatened or endangered species and other forms of marine life.',
         ],
       },
       {
         target: '14.2',
         description: [
-          'Of particular relevance is the legal framework for the protection and preservation of the marine environment [...]. It sets out the general obligation for States to protect and preserve the marine environment. [...] UNCLOS requires States to take, individually or jointly as appropriate, all measures consistent with UNCLOS that are necessary to prevent, reduce and control pollution of the marine environment from any source[...] these measures include those necessary to protect and preserve rare or fragile ecosystems as well as the habitat of depleted, threatened or endangered species and other forms of marine life.',
+          'Of particular relevance is the legal framework for the protection and preservation of the marine environment [\u2026]. It sets out the general obligation for States to protect and preserve the marine environment. [...] UNCLOS requires States to take, individually or jointly as appropriate, all measures consistent with UNCLOS that are necessary to prevent, reduce and control pollution of the marine environment from any source[\u2026] these measures include those necessary to protect and preserve rare or fragile ecosystems as well as the habitat of depleted, threatened or endangered species and other forms of marine life.',
           '',
         ],
       },
@@ -32552,14 +37397,14 @@ export const LinkageData2023 = [
       {
         target: '14.4',
         description: [
-          'Of particular relevance is the legal framework for the protection and preservation of the marine environment [...]. It sets out the general obligation for States to protect and preserve the marine environment. [...] UNCLOS requires States to take, individually or jointly as appropriate, all measures consistent with UNCLOS that are necessary to prevent, reduce and control pollution of the marine environment from any source[...] these measures include those necessary to protect and preserve rare or fragile ecosystems as well as the habitat of depleted, threatened or endangered species and other forms of marine life.',
+          'Of particular relevance is the legal framework for the protection and preservation of the marine environment [\u2026]. It sets out the general obligation for States to protect and preserve the marine environment. [...] UNCLOS requires States to take, individually or jointly as appropriate, all measures consistent with UNCLOS that are necessary to prevent, reduce and control pollution of the marine environment from any source[\u2026] these measures include those necessary to protect and preserve rare or fragile ecosystems as well as the habitat of depleted, threatened or endangered species and other forms of marine life.',
           '',
         ],
       },
       {
         target: '14.5',
         description: [
-          'Of particular relevance is the legal framework for the protection and preservation of the marine environment [...]. It sets out the general obligation for States to protect and preserve the marine environment.',
+          'Of particular relevance is the legal framework for the protection and preservation of the marine environment [\u2026]. It sets out the general obligation for States to protect and preserve the marine environment.',
         ],
       },
       {
@@ -32572,7 +37417,7 @@ export const LinkageData2023 = [
       {
         target: '14.7',
         description: [
-          'UNCLOS provides that States shall promote the development of the marine scientific and technological capacity of States which may need and request technical assistance in this field, particularly developing States [...], positively impact the benefits that SIDS and LDCs derive from the use of marine resources.',
+          'UNCLOS provides that States shall promote the development of the marine scientific and technological capacity of States which may need and request technical assistance in this field, particularly developing States [\u2026], positively impact the benefits that SIDS and LDCs derive from the use of marine resources.',
         ],
       },
       {
@@ -32616,13 +37461,13 @@ export const LinkageData2023 = [
       {
         target: '14.1',
         description: [
-          'UNCLOS requires States to take, individually or jointly as appropriate, all measures consistent with UNCLOS that are necessary to prevent, reduce and control pollution of the marine environment from any source[...] these measures include those necessary to protect and preserve rare or fragile ecosystems as well as the habitat of depleted, threatened or endangered species and other forms of marine life.',
+          'UNCLOS requires States to take, individually or jointly as appropriate, all measures consistent with UNCLOS that are necessary to prevent, reduce and control pollution of the marine environment from any source[\u2026] these measures include those necessary to protect and preserve rare or fragile ecosystems as well as the habitat of depleted, threatened or endangered species and other forms of marine life.',
         ],
       },
       {
         target: '14.2',
         description: [
-          'Of particular relevance is the legal framework for the protection and preservation of the marine environment [...]. It sets out the general obligation for States to protect and preserve the marine environment. [...] UNCLOS requires States to take, individually or jointly as appropriate, all measures consistent with UNCLOS that are necessary to prevent, reduce and control pollution of the marine environment from any source[...] these measures include those necessary to protect and preserve rare or fragile ecosystems as well as the habitat of depleted, threatened or endangered species and other forms of marine life.',
+          'Of particular relevance is the legal framework for the protection and preservation of the marine environment [\u2026]. It sets out the general obligation for States to protect and preserve the marine environment. [...] UNCLOS requires States to take, individually or jointly as appropriate, all measures consistent with UNCLOS that are necessary to prevent, reduce and control pollution of the marine environment from any source[\u2026] these measures include those necessary to protect and preserve rare or fragile ecosystems as well as the habitat of depleted, threatened or endangered species and other forms of marine life.',
         ],
       },
       {
@@ -32634,13 +37479,13 @@ export const LinkageData2023 = [
       {
         target: '14.4',
         description: [
-          'Of particular relevance is the legal framework for the protection and preservation of the marine environment [...]. It sets out the general obligation for States to protect and preserve the marine environment. [...] UNCLOS requires States to take, individually or jointly as appropriate, all measures consistent with UNCLOS that are necessary to prevent, reduce and control pollution of the marine environment from any source[...] these measures include those necessary to protect and preserve rare or fragile ecosystems as well as the habitat of depleted, threatened or endangered species and other forms of marine life.',
+          'Of particular relevance is the legal framework for the protection and preservation of the marine environment [\u2026]. It sets out the general obligation for States to protect and preserve the marine environment. [...] UNCLOS requires States to take, individually or jointly as appropriate, all measures consistent with UNCLOS that are necessary to prevent, reduce and control pollution of the marine environment from any source[\u2026] these measures include those necessary to protect and preserve rare or fragile ecosystems as well as the habitat of depleted, threatened or endangered species and other forms of marine life.',
         ],
       },
       {
         target: '14.5',
         description: [
-          'Of particular relevance is the legal framework for the protection and preservation of the marine environment [...]. It sets out the general obligation for States to protect and preserve the marine environment.',
+          'Of particular relevance is the legal framework for the protection and preservation of the marine environment [\u2026]. It sets out the general obligation for States to protect and preserve the marine environment.',
         ],
       },
       {
@@ -32652,7 +37497,7 @@ export const LinkageData2023 = [
       {
         target: '14.7',
         description: [
-          'UNCLOS provides that States shall promote the development of the marine scientific and technological capacity of States which may need and request technical assistance in this field, particularly developing States [...], positively impact the benefits that SIDS and LDCs derive from the use of marine resources.',
+          'UNCLOS provides that States shall promote the development of the marine scientific and technological capacity of States which may need and request technical assistance in this field, particularly developing States [\u2026], positively impact the benefits that SIDS and LDCs derive from the use of marine resources.',
         ],
       },
       {
@@ -32668,6 +37513,7 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [],
     coordinates: [
       13,
       9,
@@ -32985,7 +37831,7 @@ export const LinkageData2023 = [
         target: '7.2',
         description: [
           '',
-          "If a country's renewable energy is weighted more heavily towards nonoxidative RES (e.g. wind and/or solar energy) rather than oxidative RES (e.g. biomass burning practices), this would reduce the pressure on forest resources in a country.",
+          'If a country\u2019s renewable energy is weighted more heavily towards nonoxidative RES (e.g. wind and/or solar energy) rather than oxidative RES (e.g. biomass burning practices), this would reduce the pressure on forest resources in a country.',
         ],
       },
       {
@@ -32998,14 +37844,14 @@ export const LinkageData2023 = [
         target: '12.4',
         description: [
           'Target 12.4 approaches water issues from the perspective of the environmentally sound management of water resources, which aligns with Target 15.1 on the conservation, restoration, and sustainable use of terrestrial and inland freshwater ecosystems and their services.',
-          "Air pollutants stemming from hazardous pollutants have been shown to cause changes in tree conditions, tree physiology and biogeochemical cycling which affect a tree's vulnerability to biological and environmental stressors. Forests are also susceptible to acid rain, which weakens trees by damaging their leaves and limiting nutrient availability. On the other hand, hazardous waste and more specifically e-waste contain hazardous substances such as lead, cadmium, mercury, persistent organic pollutants (POPs), asbestos and chlorofluorocarbons (CFCs) (UNEP 2019c). The capacity for environmentally sound management of such hazardous waste is still lacking in many developing countries and countries with economies in transition (UNEP 2019).",
+          'Air pollutants stemming from hazardous pollutants have been shown to cause changes in tree conditions, tree physiology and biogeochemical cycling which affect a tree\u2019s vulnerability to biological and environmental stressors. Forests are also susceptible to acid rain, which weakens trees by damaging their leaves and limiting nutrient availability. On the other hand, hazardous waste and more specifically e-waste contain hazardous substances such as lead, cadmium, mercury, persistent organic pollutants (POPs), asbestos and chlorofluorocarbons (CFCs) (UNEP 2019c). The capacity for environmentally sound management of such hazardous waste is still lacking in many developing countries and countries with economies in transition (UNEP 2019).',
           '',
         ],
       },
       {
         target: '8.4',
         description: [
-          "An increase in the DMC of crops, metal ores and wood often goes hand in hand with a reduction in the available forest area. Hence, a positive correlation is rather surprising. Nevertheless, in cases where imports of these materials far exceed domestic extraction, it would be possible to see an increase in DMC while domestic forests are growing. In such a situation, the country of interest would be 'outsourcing' the extraction and related impacts to other countries (Bruckner et al. 2015).",
+          'An increase in the DMC of crops, metal ores and wood often goes hand in hand with a reduction in the available forest area. Hence, a positive correlation is rather surprising. Nevertheless, in cases where imports of these materials far exceed domestic extraction, it would be possible to see an increase in DMC while domestic forests are growing. In such a situation, the country of interest would be \u2018outsourcing\u2019 the extraction and related impacts to other countries (Bruckner et al. 2015).',
         ],
       },
       {
@@ -33074,13 +37920,13 @@ export const LinkageData2023 = [
       {
         target: '12.4',
         description: [
-          "Air pollutants stemming from hazardous pollutants have been shown to cause changes in tree conditions, tree physiology and biogeochemical cycling which affect a tree's vulnerability to biological and environmental stressors. Forests are also susceptible to acid rain, which weakens trees by damaging their leaves and limiting nutrient availability. On the other hand, hazardous waste and more specifically e-waste contain hazardous substances such as lead, cadmium, mercury, persistent organic pollutants (POPs), asbestos and chlorofluorocarbons (CFCs) (UNEP 2019c). The capacity for environmentally sound management of such hazardous waste is still lacking in many developing countries and countries with economies in transition (UNEP 2019).",
+          'Air pollutants stemming from hazardous pollutants have been shown to cause changes in tree conditions, tree physiology and biogeochemical cycling which affect a tree\u2019s vulnerability to biological and environmental stressors. Forests are also susceptible to acid rain, which weakens trees by damaging their leaves and limiting nutrient availability. On the other hand, hazardous waste and more specifically e-waste contain hazardous substances such as lead, cadmium, mercury, persistent organic pollutants (POPs), asbestos and chlorofluorocarbons (CFCs) (UNEP 2019c). The capacity for environmentally sound management of such hazardous waste is still lacking in many developing countries and countries with economies in transition (UNEP 2019).',
         ],
       },
       {
         target: '2.1',
         description: [
-          'For decades, deforestation has played a critical role in boosting food production. Agriculture accounted for around 80 per cent of deforestation worldwide (Hosonuma et al. 2012). [...] Especially in Latin America, the development of the local economy through harvesting of both wood and crops can help local people overcome poverty, thus leading to reduced prevalence of undernourishment (Sharma, Dwivedi and Singh 2016).',
+          'For decades, deforestation has played a critical role in boosting food production. Agriculture accounted for around 80 per cent of deforestation worldwide (Hosonuma et al. 2012). [\u2026] Especially in Latin America, the development of the local economy through harvesting of both wood and crops can help local people overcome poverty, thus leading to reduced prevalence of undernourishment (Sharma, Dwivedi and Singh 2016).',
         ],
       },
       {
@@ -33092,7 +37938,7 @@ export const LinkageData2023 = [
       {
         target: '8.9',
         description: [
-          'In [...] Nepal, [...] The tourism sector impacted forest size through tree-cutting to provide firewood for cooking and heating and timber for building accommodation. [...] a study indicated that the greater the distance from touristic villages, the less forest was removed (Chaplin and Brabyn 2013). [...] the growing popularity of winter sports impacts forests further through the clearing of terrains and the use of heavy machinery to level and prepare the terrain for ski runs.',
+          'In [\u2026] Nepal, [\u2026] The tourism sector impacted forest size through tree-cutting to provide firewood for cooking and heating and timber for building accommodation. [\u2026] a study indicated that the greater the distance from touristic villages, the less forest was removed (Chaplin and Brabyn 2013). [\u2026] the growing popularity of winter sports impacts forests further through the clearing of terrains and the use of heavy machinery to level and prepare the terrain for ski runs.',
         ],
       },
       {
@@ -33104,6 +37950,32 @@ export const LinkageData2023 = [
       },
       {
         target: '13.2',
+        description: [
+          '',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '6.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.11',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.5',
         description: [
           '',
         ],
@@ -33138,7 +38010,7 @@ export const LinkageData2023 = [
         description: [
           '',
           '',
-          'The Republic of Belarus emerges as a positive outlier in the correlation between sustainable forest management and species extinction risk. The country is home to substantial temperate and boreal forest ecosystems [...]. Several species have been successfully protected and some removed from the Red Data Book as the result of a number of conservation projects (CBD n.d.b) [...] Particularly notable has been the reduction of extinction risk facing the European Bison (Bison bonasus)[...]. Biodiversity concerns in the Republic of Belarus are addressed to a considerable degree by the national system of protected areas (UNDP Belarus n.d.). {Belarus} --- Importance of forests in providing habitats for species. [...] surprisingly, 15.2.1 sub-indicators (iv) on implementation of long-term forest management plans and (iii) on proportion of forest area located within legally established protected areas were apparently negatively correlated with the Red List Index, contrary to what would be expected. [...] The Red List Index is driven by changes in extinction risk for species in all environments, not just forests. That said, the performance of protected areas in terms of biodiversity outcomes is influenced by a range of local and national factors such as location, deforestation pressure and enforcement. {Global}',
+          'The Republic of Belarus emerges as a positive outlier in the correlation between sustainable forest management and species extinction risk. The country is home to substantial temperate and boreal forest ecosystems [\u2026]. Several species have been successfully protected and some removed from the Red Data Book as the result of a number of conservation projects (CBD n.d.b) [\u2026] Particularly notable has been the reduction of extinction risk facing the European Bison (Bison bonasus)[\u2026]. Biodiversity concerns in the Republic of Belarus are addressed to a considerable degree by the national system of protected areas (UNDP Belarus n.d.). {Belarus} --- Importance of forests in providing habitats for species. [\u2026] surprisingly, 15.2.1 sub-indicators (iv) on implementation of long-term forest management plans and (iii) on proportion of forest area located within legally established protected areas were apparently negatively correlated with the Red List Index, contrary to what would be expected. [\u2026] The Red List Index is driven by changes in extinction risk for species in all environments, not just forests. That said, the performance of protected areas in terms of biodiversity outcomes is influenced by a range of local and national factors such as location, deforestation pressure and enforcement. {Global}',
           '',
         ],
       },
@@ -33315,7 +38187,7 @@ export const LinkageData2023 = [
         description: [
           '',
           'Strong synergies.',
-          'Forest certification would be expected to influence [...] water extent. This would be both directly, as water management is a criterion in such schemes (e.g. Forest Stewardship Council 2015), and indirectly, where this is related to greater forest area, leading to higher water retention and therefore contributing to an increase in water body extent. In an EU-wide study (EEA 2015), water retention was 25 per cent and 50 per cent higher in catchments that had 30 per cent and 70 per cent forest cover, respectively, compared with a catchment with only 10 per cent forest cover. Moreover, catchments with any forest cover had 25 per cent greater water retention in the summer compared with the winter.',
+          'Forest certification would be expected to influence [\u2026] water extent. This would be both directly, as water management is a criterion in such schemes (e.g. Forest Stewardship Council 2015), and indirectly, where this is related to greater forest area, leading to higher water retention and therefore contributing to an increase in water body extent. In an EU-wide study (EEA 2015), water retention was 25 per cent and 50 per cent higher in catchments that had 30 per cent and 70 per cent forest cover, respectively, compared with a catchment with only 10 per cent forest cover. Moreover, catchments with any forest cover had 25 per cent greater water retention in the summer compared with the winter.',
           'Strengthening the implementation of sustainable management of all types of forests, halt deforestation, restore degraded forests will directly contribute to adequate and sustained protection and restoration of water related ecosystems as this target is at the core of sustainable management.',
           'Sustainable management of forests reinforces protecting and restoring water-related ecosystems, and vice versa.',
           '',
@@ -33425,19 +38297,19 @@ export const LinkageData2023 = [
       {
         target: '15.5',
         description: [
-          'Importance of forests in providing habitats for species. [...] surprisingly, 15.2.1 sub-indicators (iv) on implementation of long-term forest management plans and (iii) on proportion of forest area located within legally established protected areas were apparently negatively correlated with the Red List Index, contrary to what would be expected. [...] The Red List Index is driven by changes in extinction risk for species in all environments, not just forests. That said, the performance of protected areas in terms of biodiversity outcomes is influenced by a range of local and national factors such as location, deforestation pressure and enforcement.',
+          'Importance of forests in providing habitats for species. [\u2026] surprisingly, 15.2.1 sub-indicators (iv) on implementation of long-term forest management plans and (iii) on proportion of forest area located within legally established protected areas were apparently negatively correlated with the Red List Index, contrary to what would be expected. [\u2026] The Red List Index is driven by changes in extinction risk for species in all environments, not just forests. That said, the performance of protected areas in terms of biodiversity outcomes is influenced by a range of local and national factors such as location, deforestation pressure and enforcement.',
         ],
       },
       {
         target: '2.1',
         description: [
-          'For decades, deforestation has played a critical role in boosting food production. Agriculture accounted for around 80 per cent of deforestation worldwide (Hosonuma et al. 2012). [...] Especially in Latin America, the development of the local economy through harvesting of both wood and crops can help local people overcome poverty, thus leading to reduced prevalence of undernourishment (Sharma, Dwivedi and Singh 2016).// However, halting deforestation is also essential for the sustainable transformation of food systems, through legal and sustainable forest value chains (FAO 2020e).',
+          'For decades, deforestation has played a critical role in boosting food production. Agriculture accounted for around 80 per cent of deforestation worldwide (Hosonuma et al. 2012). [\u2026] Especially in Latin America, the development of the local economy through harvesting of both wood and crops can help local people overcome poverty, thus leading to reduced prevalence of undernourishment (Sharma, Dwivedi and Singh 2016).// However, halting deforestation is also essential for the sustainable transformation of food systems, through legal and sustainable forest value chains (FAO 2020e).',
         ],
       },
       {
         target: '7.1',
         description: [
-          'Although small-scale production of biofuels may be sustainable and have many beneficial applications, there have been concerns about the sustainability of large-scale production of biofuels, such as biodiversity loss, conflicts with food security and increased net greenhouse gas emissions (Webb and Coates 2012). [...] Fuelwood removal is responsible for 5 per cent of deforestation (UNFCCC 2007). [...] Expansion in biofuels use, and biodiesel in particular, has also been linked to deforestation in many areas around the world, including Brazil and South-East Asia (Gao et al. 2011). [...] The lack of fast progress in access to clean fuels and technologies is holding back both the efficiency of the global energy system and the improvements in the sustainability of biomass uses (Bull 2018). {Global} --- Though there is a positive trend in the proportion of a population with primary reliance on clean fuels, the relative proportion of reliance on biomass fuels or non-renewable resources (especially in low- and middle-income countries) is still larger (International Institute for Sustainable Development [IISD] 2017), leading to a decrease in forest area and above-ground biomass in forest per hectare (tons per hectare). As this reliance on biomass fuels persists, forests are threatened by inefficient and unsustainable wood collection practices (FAO and UNEP 2020). {Global}',
+          'Although small-scale production of biofuels may be sustainable and have many beneficial applications, there have been concerns about the sustainability of large-scale production of biofuels, such as biodiversity loss, conflicts with food security and increased net greenhouse gas emissions (Webb and Coates 2012). [\u2026] Fuelwood removal is responsible for 5 per cent of deforestation (UNFCCC 2007). [\u2026] Expansion in biofuels use, and biodiesel in particular, has also been linked to deforestation in many areas around the world, including Brazil and South-East Asia (Gao et al. 2011). [...] The lack of fast progress in access to clean fuels and technologies is holding back both the efficiency of the global energy system and the improvements in the sustainability of biomass uses (Bull 2018). {Global} --- Though there is a positive trend in the proportion of a population with primary reliance on clean fuels, the relative proportion of reliance on biomass fuels or non-renewable resources (especially in low- and middle-income countries) is still larger (International Institute for Sustainable Development [IISD] 2017), leading to a decrease in forest area and above-ground biomass in forest per hectare (tons per hectare). As this reliance on biomass fuels persists, forests are threatened by inefficient and unsustainable wood collection practices (FAO and UNEP 2020). {Global}',
         ],
       },
       {
@@ -33454,6 +38326,32 @@ export const LinkageData2023 = [
       },
       {
         target: '7.2',
+        description: [
+          '',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '12.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '2.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.6',
         description: [
           '',
         ],
@@ -33697,6 +38595,20 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '12.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.9',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       14,
       2,
@@ -33833,6 +38745,32 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '12.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.1',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       14,
       3,
@@ -33950,7 +38888,7 @@ export const LinkageData2023 = [
         target: '15.2',
         description: [
           '',
-          'The Republic of Belarus emerges as a positive outlier in the correlation between sustainable forest management and species extinction risk. The country is home to substantial temperate and boreal forest ecosystems [...]. Several species have been successfully protected and some removed from the Red Data Book as the result of a number of conservation projects (CBD n.d.b) [...] Particularly notable has been the reduction of extinction risk facing the European Bison (Bison bonasus)[...]. Biodiversity concerns in the Republic of Belarus are addressed to a considerable degree by the national system of protected areas (UNDP Belarus n.d.). {Belarus} --- Importance of forests in providing habitats for species. [...] surprisingly, 15.2.1 sub-indicators (iv) on implementation of long-term forest management plans and (iii) on proportion of forest area located within legally established protected areas were apparently negatively correlated with the Red List Index, contrary to what would be expected. [...] The Red List Index is driven by changes in extinction risk for species in all environments, not just forests. That said, the performance of protected areas in terms of biodiversity outcomes is influenced by a range of local and national factors such as location, deforestation pressure and enforcement. {Global}',
+          'The Republic of Belarus emerges as a positive outlier in the correlation between sustainable forest management and species extinction risk. The country is home to substantial temperate and boreal forest ecosystems [\u2026]. Several species have been successfully protected and some removed from the Red Data Book as the result of a number of conservation projects (CBD n.d.b) [\u2026] Particularly notable has been the reduction of extinction risk facing the European Bison (Bison bonasus)[\u2026]. Biodiversity concerns in the Republic of Belarus are addressed to a considerable degree by the national system of protected areas (UNDP Belarus n.d.). {Belarus} --- Importance of forests in providing habitats for species. [\u2026] surprisingly, 15.2.1 sub-indicators (iv) on implementation of long-term forest management plans and (iii) on proportion of forest area located within legally established protected areas were apparently negatively correlated with the Red List Index, contrary to what would be expected. [\u2026] The Red List Index is driven by changes in extinction risk for species in all environments, not just forests. That said, the performance of protected areas in terms of biodiversity outcomes is influenced by a range of local and national factors such as location, deforestation pressure and enforcement. {Global}',
           '',
         ],
       },
@@ -34100,7 +39038,7 @@ export const LinkageData2023 = [
       {
         target: '12.4',
         description: [
-          'Widespread use of pesticides significantly affects all species as they move along food chains and are biomagnified as they transfer from one species to the next. The contamination of polar bears in the Arctic is an example. [...] The hazardous chemicals in pesticides have the ability to result in suppressed immune function, endocrine disruption, reproduction-organ shrinkage, hermaphroditism and increased death in young of all species (Center for Biological Diversity n.d.). [...] appropriate treatment and recycling leads to reduced quantities of hazardous and e-waste dumped in nature that pose a threat to species.',
+          'Widespread use of pesticides significantly affects all species as they move along food chains and are biomagnified as they transfer from one species to the next. The contamination of polar bears in the Arctic is an example. [\u2026] The hazardous chemicals in pesticides have the ability to result in suppressed immune function, endocrine disruption, reproduction-organ shrinkage, hermaphroditism and increased death in young of all species (Center for Biological Diversity n.d.). [\u2026] appropriate treatment and recycling leads to reduced quantities of hazardous and e-waste dumped in nature that pose a threat to species.',
           '',
         ],
       },
@@ -34203,7 +39141,7 @@ export const LinkageData2023 = [
         target: '7.2',
         description: [
           '',
-          "If countries' renewable energy is more dependent on oxidative RES, this could result in the unsustainable harvesting and management of forest resources, by decreasing forest area due to unsustainable biomass burning practices and leading to negative impacts on biodiversity. The removal of trees and change in land use to accommodate biofuels production (a renewable energy source) have indeed resulted in damage to habitat and biodiversity loss (Gallagher 2008; The Royal Society, Science Policy Section 2008). For instance, the oil palm plantations in Malaysia and the Republic of Indonesia provide less complex habitat and host fewer species of birds and butterflies compared to primary forests (Braimoh et al. 2010). (need to consider the percentage of RES in conjunction with the percentage of clean fuel use).",
+          'If countries\u2019 renewable energy is more dependent on oxidative RES, this could result in the unsustainable harvesting and management of forest resources, by decreasing forest area due to unsustainable biomass burning practices and leading to negative impacts on biodiversity. The removal of trees and change in land use to accommodate biofuels production (a renewable energy source) have indeed resulted in damage to habitat and biodiversity loss (Gallagher 2008; The Royal Society, Science Policy Section 2008). For instance, the oil palm plantations in Malaysia and the Republic of Indonesia provide less complex habitat and host fewer species of birds and butterflies compared to primary forests (Braimoh et al. 2010). (need to consider the percentage of RES in conjunction with the percentage of clean fuel use).',
         ],
       },
       {
@@ -34215,13 +39153,13 @@ export const LinkageData2023 = [
       {
         target: '15.2',
         description: [
-          'Importance of forests in providing habitats for species. [...] surprisingly, 15.2.1 sub-indicators (iv) on implementation of long-term forest management plans and (iii) on proportion of forest area located within legally established protected areas were apparently negatively correlated with the Red List Index, contrary to what would be expected. [...] The Red List Index is driven by changes in extinction risk for species in all environments, not just forests. That said, the performance of protected areas in terms of biodiversity outcomes is influenced by a range of local and national factors such as location, deforestation pressure and enforcement.',
+          'Importance of forests in providing habitats for species. [\u2026] surprisingly, 15.2.1 sub-indicators (iv) on implementation of long-term forest management plans and (iii) on proportion of forest area located within legally established protected areas were apparently negatively correlated with the Red List Index, contrary to what would be expected. [\u2026] The Red List Index is driven by changes in extinction risk for species in all environments, not just forests. That said, the performance of protected areas in terms of biodiversity outcomes is influenced by a range of local and national factors such as location, deforestation pressure and enforcement.',
         ],
       },
       {
         target: '15.8',
         description: [
-          'Counterintuitive. [...] It may be due to ecological time lags in the policy response. Watts et al. (2020) acknowledge the challenge of taking the effect of time lags into account when evaluating the effectiveness of conservation actions or when developing indicators and setting targets for biodiversity (Watts et al. 2020). [...] Hence, the positive effects of introducing legislation and resourcing for IAS may simply need a longer time frame to emerge [...]. A [...] potential explanation could be the fact that legislation aimed at Invasive alien species (IAS) control is often only brought in at the point where IAS have become a threat, which would make consequent trends in extinction risk extremely challenging to reverse.',
+          'Counterintuitive. [\u2026] It may be due to ecological time lags in the policy response. Watts et al. (2020) acknowledge the challenge of taking the effect of time lags into account when evaluating the effectiveness of conservation actions or when developing indicators and setting targets for biodiversity (Watts et al. 2020). [\u2026] Hence, the positive effects of introducing legislation and resourcing for IAS may simply need a longer time frame to emerge [\u2026]. A [\u2026] potential explanation could be the fact that legislation aimed at Invasive alien species (IAS) control is often only brought in at the point where IAS have become a threat, which would make consequent trends in extinction risk extremely challenging to reverse.',
         ],
       },
       {
@@ -34249,6 +39187,26 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '12.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '1.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.11',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       14,
       4,
@@ -34271,6 +39229,20 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '2.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.a',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       14,
       5,
@@ -34280,6 +39252,14 @@ export const LinkageData2023 = [
     id: 'Target 15.7',
     synergies: [],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '12.2',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       14,
       6,
@@ -34351,10 +39331,11 @@ export const LinkageData2023 = [
       {
         target: '15.5',
         description: [
-          'Counterintuitive. [...] It may be due to ecological time lags in the policy response. Watts et al. (2020) acknowledge the challenge of taking the effect of time lags into account when evaluating the effectiveness of conservation actions or when developing indicators and setting targets for biodiversity (Watts et al. 2020). [...] Hence, the positive effects of introducing legislation and resourcing for IAS may simply need a longer time frame to emerge [...]. A [...] potential explanation could be the fact that legislation aimed at Invasive alien species (IAS) control is often only brought in at the point where IAS have become a threat, which would make consequent trends in extinction risk extremely challenging to reverse.',
+          'Counterintuitive. [\u2026] It may be due to ecological time lags in the policy response. Watts et al. (2020) acknowledge the challenge of taking the effect of time lags into account when evaluating the effectiveness of conservation actions or when developing indicators and setting targets for biodiversity (Watts et al. 2020). [\u2026] Hence, the positive effects of introducing legislation and resourcing for IAS may simply need a longer time frame to emerge [\u2026]. A [\u2026] potential explanation could be the fact that legislation aimed at Invasive alien species (IAS) control is often only brought in at the point where IAS have become a threat, which would make consequent trends in extinction risk extremely challenging to reverse.',
         ],
       },
     ],
+    notSpecified: [],
     coordinates: [
       14,
       7,
@@ -34366,7 +39347,7 @@ export const LinkageData2023 = [
       {
         target: '6.3',
         description: [
-          "Water quality is an important 'ecosystem value'.",
+          'Water quality is an important \u2018ecosystem value\u2019.',
           'If people, especially company CEOs, mangers, and government policy makers have a stronger environmental ethic and greater ecological literacy, there is a much greater chance that these values will be incorporated into and influence national and local planning, development processes, poverty reduction strategies.',
         ],
       },
@@ -34416,6 +39397,26 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '16.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       14,
       8,
@@ -34427,7 +39428,7 @@ export const LinkageData2023 = [
       {
         target: '6.3',
         description: [
-          "Water quality is an important 'ecosystem value'.",
+          'Water quality is an important \u2018ecosystem value\u2019.',
           'Financial support for conserving and sustainably using biodiversity and ecosystems enables improve water quality through ecosystem functions (e.g., nutrient retention by the land and aquatic ecosystems).',
         ],
       },
@@ -34631,6 +39632,7 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [],
     coordinates: [
       14,
       9,
@@ -34642,7 +39644,7 @@ export const LinkageData2023 = [
       {
         target: '6.3',
         description: [
-          "Water quality is an important 'ecosystem value'.",
+          'Water quality is an important \u2018ecosystem value\u2019.',
         ],
       },
       {
@@ -34665,6 +39667,7 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [],
     coordinates: [
       14,
       10,
@@ -34674,6 +39677,7 @@ export const LinkageData2023 = [
     id: 'Target 15.c',
     synergies: [],
     tradeOffs: [],
+    notSpecified: [],
     coordinates: [
       14,
       11,
@@ -34709,6 +39713,57 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '4.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.19',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '3.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       15,
       0,
@@ -34718,6 +39773,75 @@ export const LinkageData2023 = [
     id: 'Target 16.2',
     synergies: [],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '4.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.3',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '8.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '10.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '12.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '15.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.5',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       15,
       1,
@@ -34778,7 +39902,7 @@ export const LinkageData2023 = [
         target: '6.6',
         description: [
           '',
-          "The rule of law and equality in justice means that everyone, including poor and marginalize communities, will have recourse and legal power to fight polluters who illegally dump waste in their communities' land and water, including protected water ecosystems that are vital for provisioning of ecological services to community social and economic development.",
+          'The rule of law and equality in justice means that everyone, including poor and marginalize communities, will have recourse and legal power to fight polluters who illegally dump waste in their communities\u2019 land and water, including protected water ecosystems that are vital for provisioning of ecological services to community social and economic development.',
         ],
       },
       {
@@ -34802,13 +39926,13 @@ export const LinkageData2023 = [
       {
         target: '6.3',
         description: [
-          "Rule of law and equality in justice means that poor and marginalize communities will have recourse and legal power to fight polluters who illegally dump waste in their communities' land and water.",
+          'Rule of law and equality in justice means that poor and marginalize communities will have recourse and legal power to fight polluters who illegally dump waste in their communities\u2019 land and water.',
         ],
       },
       {
         target: '6.4',
         description: [
-          "Strengthening the rule of law at the national levels can have a direct and substantial impact on water use efficiency (e.g. Bangkok's moratorium on ground water extraction by factories is often ignored and not enforced).",
+          'Strengthening the rule of law at the national levels can have a direct and substantial impact on water use efficiency (e.g. Bangkok\u2019s moratorium on ground water extraction by factories is often ignored and not enforced).',
         ],
       },
       {
@@ -34825,6 +39949,26 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '9.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       15,
       2,
@@ -34913,6 +40057,14 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '3.5',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       15,
       3,
@@ -34926,14 +40078,14 @@ export const LinkageData2023 = [
         description: [
           'Corruption can affect water governance through misappropriation of water management resources and failure to enforce water protection regulations. The result can be unrestricted water pollution. Therefore, reducing corruption might contribute to more effective water management.',
           'Strong synergies.',
-          'A significant reduction in corruption and bribery in all their forms will no doubt directly reduce pollution, and reduce illegal dumping and release of hazardous chemicals and materials in water - related environments.',
+          'A significant reduction in corruption and bribery in all their forms will no doubt directly reduce pollution, and reduce illegal dumping and release of hazardous chemicals and materials in water \u2013 related environments.',
           'Reduce corruption and bribery in all their form enables the achievement of SDG 6 targets by suppressing conflicts of interests, shifting priorities and ensuring unbiased incentives.',
         ],
       },
       {
         target: '5.5',
         description: [
-          "Women's full participation in economic and political life (5.5) <> Small but significant relationship between rising female political and workforce participation and lower levels of corruption (16.5; 16.6). Generally applicable.",
+          'Women\u2019s full participation in economic and political life (5.5) <> Small but significant relationship between rising female political and workforce participation and lower levels of corruption (16.5; 16.6). Generally applicable.',
         ],
       },
       {
@@ -35036,6 +40188,20 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '8.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       15,
       4,
@@ -35281,7 +40447,7 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          "HIV programming should [...] strengthen justice systems and improve young people's access to formal redress and accountability mechanisms for rights violations.",
+          'HIV programming should [\u2026] strengthen justice systems and improve young people\u2019s access to formal redress and accountability mechanisms for rights violations.',
         ],
       },
       {
@@ -35328,7 +40494,7 @@ export const LinkageData2023 = [
         target: '5.5',
         description: [
           '',
-          "Women's full participation in economic and political life (5.5) <> Small but significant relationship between rising female political and workforce participation and lower levels of corruption (16.5; 16.6). Generally applicable.",
+          'Women\u2019s full participation in economic and political life (5.5) <> Small but significant relationship between rising female political and workforce participation and lower levels of corruption (16.5; 16.6). Generally applicable.',
           '',
         ],
       },
@@ -35517,6 +40683,26 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       15,
       5,
@@ -35528,7 +40714,7 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          "As we work towards ending the HIV epidemic for adolescents and young people, it is our responsibility to use a bottom-up approach, ensuring that advocacy and programming reflects the voices of young people who are most at risk of HIV. Meaningful youth engagement in design and delivery of HIV interventions can lead to increased acceptance from other young people, as well as higher levels of uptake and effectiveness. It also fulfils young people's right under the Convention on the Rights of the Child to freely express their views on topics that affect them, and to have those views listened to. [...] Aim to equip young people with the skills and resources to design and implement programmes which are bottom-up and youth-led [...] This includes technical as well as financial support for community- led and youth-led service delivery. Establishing mechanisms for sustainable and meaningful youth engagement in development furthers [...] political inclusion, while also supporting the achievement of [the end of the AIDS epidemics] in a comprehensive and collaborative way. We must pay particular attention to facilitating participation of young people living with, and most affected by, HIV, including adolescent girls and young women, LGBTI people, people with disabilities and migrants, who are further excluded from participating in decision making. Efforts should be made to fit engagement opportunities into the daily lives of young people, for example at schools, clinics and community centres.",
+          'As we work towards ending the HIV epidemic for adolescents and young people, it is our responsibility to use a bottom-up approach, ensuring that advocacy and programming reflects the voices of young people who are most at risk of HIV. Meaningful youth engagement in design and delivery of HIV interventions can lead to increased acceptance from other young people, as well as higher levels of uptake and effectiveness. It also fulfils young people\u2019s right under the Convention on the Rights of the Child to freely express their views on topics that affect them, and to have those views listened to. [\u2026] Aim to equip young people with the skills and resources to design and implement programmes which are bottom-up and youth-led [\u2026] This includes technical as well as financial support for community- led and youth-led service delivery. Establishing mechanisms for sustainable and meaningful youth engagement in development furthers [\u2026] political inclusion, while also supporting the achievement of [the end of the AIDS epidemics] in a comprehensive and collaborative way. We must pay particular attention to facilitating participation of young people living with, and most affected by, HIV, including adolescent girls and young women, LGBTI people, people with disabilities and migrants, who are further excluded from participating in decision making. Efforts should be made to fit engagement opportunities into the daily lives of young people, for example at schools, clinics and community centres.',
         ],
       },
       {
@@ -35565,6 +40751,38 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '10.6',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '11.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '5.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       15,
       6,
@@ -35660,6 +40878,14 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '10.6',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       15,
       7,
@@ -35669,6 +40895,50 @@ export const LinkageData2023 = [
     id: 'Target 16.9',
     synergies: [],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '11.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       15,
       8,
@@ -35678,6 +40948,7 @@ export const LinkageData2023 = [
     id: 'Target 16.10',
     synergies: [],
     tradeOffs: [],
+    notSpecified: [],
     coordinates: [
       15,
       9,
@@ -35687,6 +40958,20 @@ export const LinkageData2023 = [
     id: 'Target 16.a',
     synergies: [],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '11.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '16.1',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       15,
       10,
@@ -35716,6 +41001,20 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '3.1',
+        description: [
+          'Women and girls. {n.a.}',
+        ],
+      },
+      {
+        target: '3.4',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       15,
       11,
@@ -35836,7 +41135,7 @@ export const LinkageData2023 = [
       {
         target: '2.3',
         description: [
-          "Relaxing trade barriers might benefit some countries (net exporters) and damage others (net importers). It would facilitate international market access to the most competitive industries and 'players '. Additionally, it can influence adopting new technologies and increasing efficiency to stay competitive. All those developments lead to improved agricultural productivity among the most efficient producers and would further marginalize the least efficient ones.",
+          'Relaxing trade barriers might benefit some countries (net exporters) and damage others (net importers). It would facilitate international market access to the most competitive industries and \u201cplayers \u201d. Additionally, it can influence adopting new technologies and increasing efficiency to stay competitive. All those developments lead to improved agricultural productivity among the most efficient producers and would further marginalize the least efficient ones.',
         ],
       },
       {
@@ -35869,6 +41168,51 @@ export const LinkageData2023 = [
         target: '6.2',
         description: [
           'Evidence that improved domestic resource mobilisation can improve sanitation systems; and that sanitation sytems may support tax and revenue collection at national level particularly where willingness to pay for such services is high [synergy] // But also trade-offs if taxes add burden on households which are prevented from investing in sanitation; or where national revenues from taxes do not go into sanitation [trade-off].',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '15.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '15.4',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '17.9',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
         ],
       },
     ],
@@ -35949,6 +41293,14 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '4.5',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       16,
       1,
@@ -36292,6 +41644,14 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '1.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       16,
       2,
@@ -36327,6 +41687,7 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [],
     coordinates: [
       16,
       3,
@@ -36476,6 +41837,14 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       16,
       4,
@@ -36526,7 +41895,7 @@ export const LinkageData2023 = [
         description: [
           '',
           '',
-          "With a marginal increase in the 'proportion of the population with access to electricity', the 'fixed internet broadband subscriptions per 100 inhabitants' can grow disproportional across countries. [This] elucidate[s] an effective way of exploiting potential synergies for internet connectivity with marginal investments in electricity.",
+          'With a marginal increase in the \u201cproportion of the population with access to electricity\u201d, the \u201cfixed internet broadband subscriptions per 100 inhabitants\u201d can grow disproportional across countries. [This] elucidate[s] an effective way of exploiting potential synergies for internet connectivity with marginal investments in electricity.',
         ],
       },
       {
@@ -36842,6 +42211,38 @@ export const LinkageData2023 = [
         target: '16.8',
         description: [
           'Negatively associated with neonatal and child mortality, epidemics, mortality due to pollution, and support for medical research.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '1.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.a',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.3',
+        description: [
+          '',
         ],
       },
     ],
@@ -37163,6 +42564,14 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       16,
       6,
@@ -37231,7 +42640,7 @@ export const LinkageData2023 = [
         target: '7.1',
         description: [
           '',
-          "With a marginal increase in the 'proportion of the population with access to electricity', the 'proportion of individuals using the internet' can grow disproportional across countries. [This] elucidate[s] an effective way of exploiting potential synergies for internet connectivity with marginal investments in electricity.",
+          'With a marginal increase in the \u201cproportion of the population with access to electricity\u201d, the \u201cproportion of individuals using the internet\u201d can grow disproportional across countries. [This] elucidate[s] an effective way of exploiting potential synergies for internet connectivity with marginal investments in electricity.',
         ],
       },
       {
@@ -37249,7 +42658,7 @@ export const LinkageData2023 = [
       {
         target: '6.1',
         description: [
-          "If a 'fully operationalized technology bank and science, technology and innovation capacity-building mechanism means all technology available for water and sanitation development for least developed countries , then it will directly support the achievement of universal and equitable safe and affordable drinking water for al.",
+          'If a \u201cfully operationalized technology bank and science, technology and innovation capacity-building mechanism means all technology available for water and sanitation development for least developed countries , then it will directly support the achievement of universal and equitable safe and affordable drinking water for al.',
         ],
       },
       {
@@ -37267,13 +42676,13 @@ export const LinkageData2023 = [
       {
         target: '6.5',
         description: [
-          "Fully operationalizing the technology bank and science, technology and innovation capacity-building mechanism for least developed countries to enhance the use of enabling technology, in particular information and communications technology will directly strengthen governments' ability to develop and implement national and regional transboundary IWRM programmes.",
+          'Fully operationalizing the technology bank and science, technology and innovation capacity-building mechanism for least developed countries to enhance the use of enabling technology, in particular information and communications technology will directly strengthen governments\u2019 ability to develop and implement national and regional transboundary IWRM programmes.',
         ],
       },
       {
         target: '6.6',
         description: [
-          "Fully operationalizing the technology bank and science, technology and innovation capacity-building mechanism for least developed countries to enhance the use of enabling technology, in particular information and communications technology will directly strengthen countries' ability to effectively project their high value water ecosystems.",
+          'Fully operationalizing the technology bank and science, technology and innovation capacity-building mechanism for least developed countries to enhance the use of enabling technology, in particular information and communications technology will directly strengthen countries\u2019 ability to effectively project their high value water ecosystems.',
         ],
       },
       {
@@ -37318,6 +42727,32 @@ export const LinkageData2023 = [
         target: '12.4',
         description: [
           'Target 12.4 aims to minimize electronic waste or maximize the amount of e-waste being recycled. However, e-waste is one of the fastestgrowing waste streams globally in terms of volume, and only 17.4% of global e-waste is appropriately recycled. Economic growth and urbanization, increased access to the internet lead to an exponential generation of electronic equipment.',
+        ],
+      },
+    ],
+    notSpecified: [
+      {
+        target: '8.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '8.8',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
         ],
       },
     ],
@@ -37587,7 +43022,7 @@ export const LinkageData2023 = [
         description: [
           '',
           'International support to countries for implementing effective and targeted capacity-building in support of the implementation of a holistic policy mix directly linked to national plans to implement all the SDGs can directly be applied at the national level earmarked for water and sanitation programme development and improvement.',
-          'ODA, FDI, Resources mobilisation. {Global} --- Public-private partnerships for water governance. {Tajikistan} --- Capacity building can influence water- and sanitation-related activities. {Sri Lanka}',
+          'ODA, FDI, Resources mobilisation. {Global} --- Public\u2013private partnerships for water governance. {Tajikistan} --- Capacity building can influence water- and sanitation-related activities. {Sri Lanka}',
         ],
       },
       {
@@ -37676,6 +43111,14 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '17.1',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       16,
       8,
@@ -37685,6 +43128,7 @@ export const LinkageData2023 = [
     id: 'Target 17.10',
     synergies: [],
     tradeOffs: [],
+    notSpecified: [],
     coordinates: [
       16,
       9,
@@ -37708,7 +43152,7 @@ export const LinkageData2023 = [
       {
         target: '5.5',
         description: [
-          "Women's full participation in economic and political life (5.5) < Employment of women reinforced by industrialization (9.1) and trade liberalization (17.11; 17.12) as many industries hire women, who are perceived to be more productive than men. This positive association is strongest in labour abundant economies in transition, but there is a risk of reversal when industries upgrade (Braunstein and Houston 2015).",
+          'Women\u2019s full participation in economic and political life (5.5) < Employment of women reinforced by industrialization (9.1) and trade liberalization (17.11; 17.12) as many industries hire women, who are perceived to be more productive than men. This positive association is strongest in labour abundant economies in transition, but there is a risk of reversal when industries upgrade (Braunstein and Houston 2015).',
         ],
       },
       {
@@ -37810,6 +43254,62 @@ export const LinkageData2023 = [
         ],
       },
     ],
+    notSpecified: [
+      {
+        target: '14.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '15.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '15.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.1',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '7.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '9.2',
+        description: [
+          'Manufacturing is strongly connected to developing countries.',
+        ],
+      },
+      {
+        target: '9.4',
+        description: [
+          'Manufacturing is strongly connected to developing countries.',
+        ],
+      },
+      {
+        target: '9.5',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       16,
       10,
@@ -37821,7 +43321,7 @@ export const LinkageData2023 = [
       {
         target: '5.5',
         description: [
-          "Women's full participation in economic and political life (5.5) < Employment of women reinforced by industrialization (9.1) and trade liberalization (17.11; 17.12) as many industries hire women, who are perceived to be more productive than men. This positive association is strongest in labour abundant economies in transition, but there is a risk of reversal when industries upgrade (Braunstein and Houston 2015).",
+          'Women\u2019s full participation in economic and political life (5.5) < Employment of women reinforced by industrialization (9.1) and trade liberalization (17.11; 17.12) as many industries hire women, who are perceived to be more productive than men. This positive association is strongest in labour abundant economies in transition, but there is a risk of reversal when industries upgrade (Braunstein and Houston 2015).',
         ],
       },
       {
@@ -37832,6 +43332,20 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '4.2',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.c',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       16,
       11,
@@ -37890,6 +43404,7 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [],
     coordinates: [
       16,
       12,
@@ -38057,13 +43572,13 @@ export const LinkageData2023 = [
       {
         target: '7.2',
         description: [
-          'Policy coherence for sustainable development (17.14) and sustainable resource use (12.2) can be directed to support renewables (7.2) and efficiency (7.3) in the energy sector, which in turn would strengthen national climate policies (13.2)-which could again reinforce policy coherence (17.14) and sustainable resource use (12.2).',
+          'Policy coherence for sustainable development (17.14) and sustainable resource use (12.2) can be directed to support renewables (7.2) and efficiency (7.3) in the energy sector, which in turn would strengthen national climate policies (13.2)\u2014which could again reinforce policy coherence (17.14) and sustainable resource use (12.2).',
         ],
       },
       {
         target: '7.3',
         description: [
-          'Policy coherence for sustainable development (17.14) and sustainable resource use (12.2) can be directed to support renewables (7.2) and efficiency (7.3) in the energy sector, which in turn would strengthen national climate policies (13.2)-which could again reinforce policy coherence (17.14) and sustainable resource use (12.2).',
+          'Policy coherence for sustainable development (17.14) and sustainable resource use (12.2) can be directed to support renewables (7.2) and efficiency (7.3) in the energy sector, which in turn would strengthen national climate policies (13.2)\u2014which could again reinforce policy coherence (17.14) and sustainable resource use (12.2).',
         ],
       },
       {
@@ -38129,7 +43644,7 @@ export const LinkageData2023 = [
       {
         target: '1.b',
         description: [
-          "Sri Lanka's policy coherence affects pro poor policy. {Sri Lanka} --- Policy setting. {Global}",
+          'Sri Lanka\u2019s policy coherence affects pro poor policy. {Sri Lanka} --- Policy setting. {Global}',
         ],
       },
       {
@@ -38146,6 +43661,14 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       16,
       13,
@@ -38163,11 +43686,12 @@ export const LinkageData2023 = [
       {
         target: '6.a',
         description: [
-          "Respect for each country's policy space and leadership to establish and implement policies for poverty eradication and sustainable development directly supports international cooperation and capacity building to support developing countries in water- and sanitation-related activities and programmes.",
+          'Respect for each country\u2019s policy space and leadership to establish and implement policies for poverty eradication and sustainable development directly supports international cooperation and capacity building to support developing countries in water- and sanitation-related activities and programmes.',
         ],
       },
     ],
     tradeOffs: [],
+    notSpecified: [],
     coordinates: [
       16,
       14,
@@ -38338,6 +43862,20 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '6.b',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       16,
       15,
@@ -38445,6 +43983,14 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '6.3',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       16,
       16,
@@ -38456,7 +44002,7 @@ export const LinkageData2023 = [
       {
         target: '3.3',
         description: [
-          "We will not end AIDS among young people without an accurate and comprehensive picture of what is going on in young people's lives, the factors that increase their risk and vulnerability to HIV and violence, and the key barriers to progress. There is an urgent need for data on young people - in particular 10 to 14 and 15 to 19 year olds - that is disaggregated by age, sex and key population status. It is also important to support young people to develop skills to collect and analyze their own data, as this can give insight into their lives that is not reflected in large scale surveys, and also allows a transition to the third lens of youth engagement, with young people designing and implementing programmes based on their unique needs and experiences.",
+          'We will not end AIDS among young people without an accurate and comprehensive picture of what is going on in young people\u2019s lives, the factors that increase their risk and vulnerability to HIV and violence, and the key barriers to progress. There is an urgent need for data on young people \u2013 in particular 10 to 14 and 15 to 19 year olds \u2013 that is disaggregated by age, sex and key population status. It is also important to support young people to develop skills to collect and analyze their own data, as this can give insight into their lives that is not reflected in large scale surveys, and also allows a transition to the third lens of youth engagement, with young people designing and implementing programmes based on their unique needs and experiences.',
         ],
       },
       {
@@ -38473,6 +44019,44 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '1.3',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.5',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '4.c',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.1',
+        description: [
+          'Policy. {n.a.}',
+        ],
+      },
+      {
+        target: '3.7',
+        description: [
+          '',
+        ],
+      },
+      {
+        target: '3.8',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       16,
       17,
@@ -38495,6 +44079,14 @@ export const LinkageData2023 = [
       },
     ],
     tradeOffs: [],
+    notSpecified: [
+      {
+        target: '16.1',
+        description: [
+          '',
+        ],
+      },
+    ],
     coordinates: [
       16,
       18,

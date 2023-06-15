@@ -11,7 +11,7 @@ import {
 import { SectionCard } from './SectionCard';
 import { SectionDiv } from './SectionDiv';
 import { DATASOURCELINK } from '../Constants';
-import { SDGGoalGapList } from '../CurrentGaps/SDGGoalGapList';
+import { SDGTargetsGapVisualization } from '../CurrentGaps/SDGTargetsGapVisualization';
 import { VNRAnalysis } from '../Priorities/VNRAnalysis';
 import { InterlinkagesViz } from '../Interlinkages/InterlinkageViz';
 import { LinkageData2023 } from '../Data/linkages';
@@ -136,7 +136,7 @@ export const ReportView = (props: Props) => {
             contentDiv={(
               <div>
                 {reportData.Trends.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
-                <SDGGoalGapList goalStatuses={goalStatuses} />
+                <SDGTargetsGapVisualization targetStatuses={targetStatuses} />
               </div>
             )}
             color='var(--black)'

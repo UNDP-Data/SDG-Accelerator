@@ -393,7 +393,8 @@ export const SDG_COLOR_ARRAY = [
   '#19486A',
 ];
 
-export const DATASOURCELINK = 'https://raw.githubusercontent.com/UNDP-Data/SDG-Accelerator/production/public';
+// export const DATASOURCELINK = 'https://raw.githubusercontent.com/UNDP-Data/SDG-Accelerator/production/public';
+export const DATASOURCELINK = '../..';
 
 export const SDG_ICON_SIZE = 64;
 
@@ -485,6 +486,37 @@ export const TargetIndicatorCount = [
   },
 ];
 
-export const COUNTRIES_WITH_DOCS = ['IDN', 'IRQ', 'KEN', 'MDA', 'NAM', 'PER', 'ZAF', 'TTO'];
+export const FIVE_P = [
+  {
+    pValue: 'People',
+    totalNoOfTargets: 47,
+    position: [300, 270],
+    goals: ['1', '2', '3', '4', '5'],
+  },
+  {
+    pValue: 'Planet',
+    totalNoOfTargets: 46,
+    position: [260, 405],
+    goals: ['6', '12', '13', '14', '15'],
+  },
+  {
+    pValue: 'Prosperity',
+    totalNoOfTargets: 45,
+    position: [300, 535],
+    goals: ['7', '8', '9', '10', '11'],
+  },
+  {
+    pValue: 'Peace',
+    totalNoOfTargets: 12,
+    position: [350, 375],
+    goals: ['16'],
+  },
+  {
+    pValue: 'Partnership',
+    totalNoOfTargets: 19,
+    position: [355, 445],
+    goals: ['17'],
+  },
+];
 
 export const API_ACCESS_TOKEN = 'ph92BXomD13M0qS9';

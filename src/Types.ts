@@ -54,6 +54,7 @@ export interface LinkageDataType {
   id: string;
   synergies: string[];
   tradeOffs: string[];
+  notSpecified: string[];
   coordinates: [number, number];
 }
 

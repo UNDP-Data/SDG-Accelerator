@@ -84,7 +84,7 @@ export const VNRAnalysis = (props: Props) => {
   const priorityArray = ['High', 'Medium', 'Low', 'No Mention'];
   useEffect(() => {
     setNodeData(null);
-    const dataTemp = JSON.parse(JSON.stringify(dataWithStatuses));
+    const dataTemp = [...dataWithStatuses];
     forceSimulation(dataTemp)
       .force('charge', forceManyBody().strength(2.25))
       .force('y', forceX().strength(1).x((d: any) => (priorityArray.indexOf(d.category) * cellSize + (cellSize / 2))))

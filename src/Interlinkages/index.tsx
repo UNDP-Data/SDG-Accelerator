@@ -33,7 +33,7 @@ export const Interlinkages = (props: Props) => {
   const [year, setYear] = useState('2023');
   const [literatureModal, setLiteratureModal] = useState(false);
   const interlinkageRef = useRef<HTMLDivElement>(null);
-  const [linkageType, setLinkageTypes] = useState<'synergies' | 'tradeOffs'>('synergies');
+  const [linkageType, setLinkageTypes] = useState<'synergies' | 'tradeOffs' | 'notSpecified'>('synergies');
   let TargetMostSynergies = '';
   let mostSynergies = 0;
   LinkageData.forEach((d) => {
@@ -56,6 +56,7 @@ export const Interlinkages = (props: Props) => {
     ...d,
     synergies: d.synergies.map((el) => el.target),
     tradeOffs: d.tradeOffs.map((el) => el.target),
+    notSpecified: d.notSpecified.map((el) => el.target),
   }));
   return (
     <>
@@ -101,6 +102,7 @@ export const Interlinkages = (props: Props) => {
             <Radio.Group onChange={(d) => { setLinkageTypes(d.target.value); }} value={linkageType}>
               <Radio className='undp-radio' value='synergies'>Synergies</Radio>
               <Radio className='undp-radio' value='tradeOffs'>Trade Offs</Radio>
+              <Radio className='undp-radio' value='notSpecified'>Not Specified</Radio>
             </Radio.Group>
           </div>
         </div>

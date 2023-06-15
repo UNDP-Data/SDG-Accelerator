@@ -112,8 +112,8 @@ export const LandingPage = () => {
                       <HomePage
                         countryCode={countryCode}
                         countryFullName={countryFullName}
-                        goalStatuses={statuses.goalStatus}
-                        targetStatuses={statuses.targetStatus}
+                        // goalStatuses={statuses.goalStatus}
+                        // targetStatuses={statuses.targetStatus}
                       />
                   )}
                   />
@@ -126,6 +126,7 @@ export const LandingPage = () => {
                         goalStatuses={statuses.goalStatus}
                         countryFullName={countryFullName}
                         countryCode={countryCode}
+                        targetStatuses={statuses.targetStatus}
                       />
                   )}
                   />

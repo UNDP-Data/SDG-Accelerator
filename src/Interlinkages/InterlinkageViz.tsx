@@ -8,7 +8,7 @@ import { SDGList } from '../Data/SDGGoalList';
 
 interface Props {
   selectedTarget: string;
-  linkageType: 'tradeOffs' | 'synergies';
+  linkageType: 'tradeOffs' | 'synergies' | 'notSpecified';
   // eslint-disable-next-line no-unused-vars
   setSelectedTarget?: (_d: string) => void;
   data: TargetStatusWithDetailsType[];
@@ -451,7 +451,7 @@ export const InterlinkagesViz = (props: Props) => {
                   d={`M${sourceX},${sourceY} C${(destinationX - sourceX) / 3 + sourceX},${sourceY} ${destinationX - (destinationX - sourceX) / 3},${destinationY} ${destinationX},${destinationY}`}
                   fill='none'
                   strokeWidth={2}
-                  stroke={linkageType === 'synergies' ? '#59BA47' : '#D12800'}
+                  stroke={linkageType === 'synergies' ? '#59BA47' : linkageType === 'tradeOffs' ? '#D12800' : '#AAAAAA'}
                 />
               );
             })
