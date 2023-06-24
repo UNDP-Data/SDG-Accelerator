@@ -393,8 +393,8 @@ export const SDG_COLOR_ARRAY = [
   '#19486A',
 ];
 
-export const DATASOURCELINK = 'https://raw.githubusercontent.com/UNDP-Data/SDG-Accelerator/production/public';
-// export const DATASOURCELINK = '../..';
+// export const DATASOURCELINK = 'https://raw.githubusercontent.com/UNDP-Data/SDG-Accelerator/production/public';
+export const DATASOURCELINK = '../..';
 
 export const SDG_ICON_SIZE = 64;
 

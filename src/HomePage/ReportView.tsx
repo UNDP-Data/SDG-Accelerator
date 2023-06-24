@@ -1,12 +1,15 @@
+/* eslint-disable camelcase */
 import { Tabs } from 'antd';
 import { queue } from 'd3-queue';
 import { json } from 'd3-request';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { format } from 'd3-format';
+import UNDPColorModule from 'undp-viz-colors';
 import IMAGES from '../img/images';
 import {
-  GoalStatusType, LinkageDataType, ScenarioDataType, TargetStatusType, TargetStatusWithDetailsType, dataForReportType,
+  GoalStatusType,
+  LinkageDataType, ScenarioDataType, TargetStatusType, TargetStatusWithDetailsType, dataForReportType,
 } from '../Types';
 import { SectionCard } from './SectionCard';
 import { SectionDiv } from './SectionDiv';
@@ -17,13 +20,17 @@ import { InterlinkagesViz } from '../Interlinkages/InterlinkageViz';
 import { LinkageData2023 } from '../Data/linkages';
 import { SDGList } from '../Data/SDGGoalList';
 import { LineChart } from '../FutureScenarios/LineChart';
+import { GDPGraph } from './ReportComponents/GDPGraph';
+import { PeopleGraph } from './ReportComponents/PeopleGraph';
+import { PlanetGraph } from './ReportComponents/PlanetGraph';
+import { FiscalGraph } from './ReportComponents/FiscalGraph';
 
 interface Props {
   countryCode: string;
-  goalStatuses: GoalStatusType[];
   targetStatuses: TargetStatusType[];
-  // eslint-disable-next-line no-unused-vars
-  setError: (_d?: string) => void;
+  countryFullName: string;
+  goalStatuses: GoalStatusType[];
+  reportData: dataForReportType;
 }
 
 const HeroImageEl = styled.div`
@@ -34,32 +41,26 @@ const HeroImageEl = styled.div`
 
 export const ReportView = (props: Props) => {
   const {
-    countryCode, goalStatuses, targetStatuses, setError,
+    countryCode, targetStatuses, countryFullName, reportData, goalStatuses,
   } = props;
-  const [reportData, setReportData] = useState<
-    dataForReportType | undefined
-  >(undefined);
   const [scenarioData, setScenarioData] = useState<ScenarioDataType[] | undefined>(undefined);
   const [priorityData, setPriorityData] = useState<any>(null);
   const [targetStatus, setTargetStatus] = useState<TargetStatusWithDetailsType[] | undefined>(undefined);
   const [activeTab, setActiveTab] = useState('0');
+  const [error, setError] = useState<string | undefined>(undefined);
   useEffect(() => {
-    setReportData(undefined);
     setError(undefined);
     setPriorityData(null);
     queue()
-      .defer(json, `${DATASOURCELINK}/data/ReportPages/${countryCode}.json`)
       .defer(json, `${DATASOURCELINK}/data/PrioritiesData/${countryCode}.json`)
       .defer(json, `${DATASOURCELINK}/data/ScenarioData/${countryCode}.json`)
       .await(
         (
           err: any,
-          data: dataForReportType,
           d: any,
           scenarioDataFromFile: ScenarioDataType[],
         ) => {
           if (err) { setError('Error loading files'); }
-          setReportData(data);
           setPriorityData({ mode: 'defaultDocs', data: d.sdgs, documents: d.doc_name });
 
           const targetStatusTemp: TargetStatusWithDetailsType[] = [];
@@ -79,7 +80,6 @@ export const ReportView = (props: Props) => {
         },
       );
   }, [countryCode]);
-
   return (
     <>
       <HeroImageEl className='undp-hero-image'>
@@ -109,22 +109,35 @@ export const ReportView = (props: Props) => {
             maxWidth: '70rem', margin: 'auto', gap: '1rem',
           }}
         >
-          <SectionCard id='section1' cardTitle='Growth Pathways' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconSnapshot} />
+          <SectionCard id='section1' cardTitle='SDG Moment' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconSnapshot} />
           <SectionCard id='section2' cardTitle='SDG Trends' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconTrends} />
           <SectionCard id='section3' cardTitle='National Priorities' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconPriorities} />
           <SectionCard id='section4' cardTitle='Interlinkages' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconInterlinkages} />
           <SectionCard id='section5' cardTitle='Futures' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconFutures} />
           <SectionCard id='section6' cardTitle='Fiscal/financial constraints' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconConstraints} />
+          <SectionCard id='section7' cardTitle='SDG Stimulus' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconConstraints} />
         </div>
       </div>
-      {reportData && priorityData && targetStatus ? (
+      {reportData && priorityData && targetStatus && !error ? (
         <>
           <SectionDiv
             sectionNo={1}
-            sectionTitle='Growth Pathways'
+            sectionTitle='SDG Moment'
             contentDiv={(
               <div>
-                {reportData['Growth Pathways'].split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
+                <div>
+                  <p className='undp-typography'>
+                    Economic growth serves as an enabler for the SDGs in the short term, while over time
+                    {' '}
+                    <span className='bold'>the SDG agenda itself becomes a catalyst for inclusive and low-carbon growth pathways.</span>
+                  </p>
+                  {reportData.SDGMoment.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
+                </div>
+                <GDPGraph countryCode={countryCode} />
+                <div className='flex-div flex-wrap gap-05' style={{ alignItems: 'stretch' }}>
+                  <PeopleGraph countryCode={countryCode} />
+                  <PlanetGraph countryCode={countryCode} />
+                </div>
               </div>
             )}
             color='var(--white)'
@@ -134,9 +147,24 @@ export const ReportView = (props: Props) => {
             sectionNo={2}
             sectionTitle='Trends'
             contentDiv={(
-              <div>
-                {reportData.Trends.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
-                <SDGTargetsGapVisualization targetStatuses={targetStatuses} />
+              <div className='flex-div flex-wrap gap-07'>
+                <div style={{ flexGrow: 1, width: 'calc(50% - 1rem)', minWidth: '20rem' }}>
+                  <p className='undp-typography'>
+                    {countryFullName}
+                    &apos;s SDG trends are calculated using data and methodology from the UN Statistics Division. SDG progress tracking follows
+                    {' '}
+                    <a href='https://unstats.un.org/sdgs/dataportal' target='_blank' className='undp-style' rel='noreferrer'>UN Stats</a>
+                    {' '}
+                    standards and
+                    {' '}
+                    <a href='https://unstats.un.org/sdgs/report/2022/Progress_Chart_Technical_Note_2022.pdf' target='_blank' className='undp-style' rel='noreferrer'>methodology</a>
+                    , and is aligned with country profiles.
+                  </p>
+                  {reportData.Trends ? reportData.Trends.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>) : null}
+                </div>
+                <div style={{ flexGrow: 1, width: 'calc(50% - 1rem)', minWidth: '20rem' }}>
+                  <SDGTargetsGapVisualization targetStatuses={targetStatuses} />
+                </div>
               </div>
             )}
             color='var(--black)'
@@ -147,7 +175,12 @@ export const ReportView = (props: Props) => {
             sectionTitle='National Priorities'
             contentDiv={(
               <div>
-                {reportData['National Priorities'].split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
+                <p className='undp-typography'>
+                  {countryFullName}
+                  &apos;s
+                  {' '}
+                  national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. It considers 100k+ terms, including phrases and expressions.
+                </p>
                 <VNRAnalysis
                   data={priorityData.data}
                   goalStatuses={goalStatuses}
@@ -166,13 +199,22 @@ export const ReportView = (props: Props) => {
             contentDiv={(
               <div>
                 <p className='undp-typography'>
-                  SDG Interlinkages show how actions directed towards one SDG can influence the others. Uncovering and understanding these interactions helps achieving the 2030 Agenda, avoiding the unintended deterioration of any SDGs.
+                  SDG Interlinkages reveal how actions directed towards one SDG can impact others. Uncovering and understanding these interactions can help
+                  {' '}
+                  {countryFullName}
+                  {' '}
+                  to achieve the 2030 Agenda and navigate trade-offs.
                 </p>
                 <p className='undp-typography'>
-                  The following pages provide insights into the pathways with the most potential to accelerate the SDGs. Building from the national priorities analyzed for South Africa and most critical SDG gaps and enablers, the following section explores the SDG interlinkages of economic growth, income equality, renewable energy and a just transition, combined with effective institutions as key policy areas for acceleration.
+                  Based on a global framework for interlinkages,
+                  {' '}
+                  {countryFullName}
+                  &apos;s SDG progress is color coded at the target level.
                 </p>
                 <p className='undp-typography'>
-                  Interlinkage analysis includes both synergies with positive multiplier effects and trade offs which can prevent effective policy implementation.
+                  Building from national priorities, the following pathways reflect policy investments with the most potential to accelerate the SDGs for
+                  {' '}
+                  {countryFullName}
                 </p>
                 <img src={IMAGES.interlinkageImage} alt='Interlinkage' className='margin-bottom-09' />
                 <Tabs
@@ -197,15 +239,17 @@ export const ReportView = (props: Props) => {
                           <div className='margin-top-09'>
                             <div style={{ backgroundColor: 'var(--white)' }}>
                               <div style={{
-                                backgroundColor: 'var(--dark-green)', color: 'var(--white)', fontWeight: 'bold', textAlign: 'center',
+                                backgroundColor: interlinkage.LinkageType[0] === 'synergies' ? 'var(--dark-green)' : interlinkage.LinkageType[0] === 'tradeOffs' ? 'var(--dark-red)' : 'var(--gray-600)', color: 'var(--white)', fontWeight: 'bold', textAlign: 'center',
                               }}
                               >
-                                Synergies
+                                {
+                                  interlinkage.LinkageType[0] === 'synergies' ? 'Synergies' : interlinkage.LinkageType[0] === 'tradeOffs' ? 'Trade-Offs' : 'Not Specified'
+                                }
                               </div>
                               <div style={{ padding: 'var(--spacing-05)' }}>
                                 <InterlinkagesViz
                                   selectedTarget={`Target ${interlinkage.Target}`}
-                                  linkageType='synergies'
+                                  linkageType={interlinkage.LinkageType[0]}
                                   data={targetStatus}
                                   linkageData={LinkageData2023 as LinkageDataType[]}
                                 />
@@ -215,15 +259,17 @@ export const ReportView = (props: Props) => {
                           <div className='margin-top-09'>
                             <div style={{ backgroundColor: 'var(--white)' }}>
                               <div style={{
-                                backgroundColor: 'var(--dark-red)', color: 'var(--white)', fontWeight: 'bold', textAlign: 'center',
+                                backgroundColor: interlinkage.LinkageType[1] === 'synergies' ? 'var(--dark-green)' : interlinkage.LinkageType[1] === 'tradeOffs' ? 'var(--dark-red)' : 'var(--gray-600)', color: 'var(--white)', fontWeight: 'bold', textAlign: 'center',
                               }}
                               >
-                                Trade-Offs
+                                {
+                                  interlinkage.LinkageType[1] === 'synergies' ? 'Synergies' : interlinkage.LinkageType[1] === 'tradeOffs' ? 'Trade-Offs' : 'Not Specified'
+                                }
                               </div>
                               <div style={{ padding: 'var(--spacing-05)' }}>
                                 <InterlinkagesViz
                                   selectedTarget={`Target ${interlinkage.Target}`}
-                                  linkageType='tradeOffs'
+                                  linkageType={interlinkage.LinkageType[1]}
                                   data={targetStatus}
                                   linkageData={LinkageData2023 as LinkageDataType[]}
                                 />
@@ -244,7 +290,16 @@ export const ReportView = (props: Props) => {
             sectionTitle='Futures'
             contentDiv={(
               <div>
-                {reportData.Futures.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
+                <p className='undp-typography'>
+                  The &apos;SDG Push&apos; is a futures scenario based on 48 integrated accelerators in the areas of Governance, Social Protection, Green Economy and Digital Disruption. It uses national data to explore the impact on human development in 2030 and to 2050 across key SDG indicators.
+                </p>
+                <p className='undp-typography'>
+                  Incorporating &apos;SDG Push&apos; accelerators into development interventions in
+                  {' '}
+                  {countryFullName}
+                  {' '}
+                  can reduce the number of people living in poverty over time.
+                </p>
                 {
                   scenarioData ? (
                     <>
@@ -327,15 +382,65 @@ export const ReportView = (props: Props) => {
             sectionTitle='Fiscal'
             contentDiv={(
               <div>
-                {reportData.Fiscal.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
+                <div>
+                  {reportData.Fiscal.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
+                </div>
+                <div style={{
+                  padding: '2rem',
+                  backgroundColor: UNDPColorModule.graphBackgroundColor,
+                }}
+                >
+                  <FiscalGraph countryCode={countryCode} />
+                </div>
               </div>
             )}
             color='var(--black)'
             background='var(--white)'
           />
+          <SectionDiv
+            sectionNo={7}
+            sectionTitle='SDG Stimulus'
+            contentDiv={(
+              <>
+                <p className='undp-typography'>
+                  Countries are facing reduced fiscal space and high debt levels, rising interest rates, and increasing exposure to climate-related shocks. The acceleration pathways here identified need the appropriate means of implementation to move from aspiration to reality. The
+                  {' '}
+                  <a href='https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/02/SDG-Stimulus-to-Deliver-Agenda-2030.pdf' target='_blank' className='undp-style' rel='noreferrer'>SG’s SDG Stimulus plan</a>
+                  {' '}
+                  lays out a blueprint to provide the means to implement them through four key actions:
+                </p>
+                <ul>
+                  <li>
+                    Provide liquidity to support recovery in the near term.
+                  </li>
+                  <li>
+                    Enhance debt relief for vulnerable countries.
+                  </li>
+                  <li>
+                    Better leverage lending
+                  </li>
+                  <li>
+                    Align financial flows with the SDGs and Paris Agreement, according to country-level priorities and needs, for example through the rollout of the UN INFFs
+                  </li>
+                </ul>
+                <div>
+                  {reportData.SDGStimulus.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
+                </div>
+                {
+                  reportData.SDGStimulusBulletPoints ? (
+                    <ul>
+                      {reportData.SDGStimulusBulletPoints.split('\n').map((d, i) => <li key={i}>{d}</li>)}
+                    </ul>
+                  ) : null
+                }
+              </>
+            )}
+            color='var(--black)'
+            background='var(--gray-200)'
+          />
         </>
       )
-        : (
+        : error ? <h3 className='undp-typography'>There is some error loading data. Please refresh the page or try again later</h3> : (
           <div style={{
             height: '200px', backgroundColor: 'var(--gray-100)', paddingTop: '80px',
           }}

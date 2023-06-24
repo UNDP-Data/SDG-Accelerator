@@ -125,9 +125,11 @@ export interface LiteratureDataType {
   'Full reference': string | null;
 }
 
-export type StatusType = 'On Track' | 'Identified Gap' | 'For Review'
+export type StatusType = 'On Track' | 'Identified Gap' | 'For Review';
 
-export type PriorityType = 'High' | 'Medium' | 'Low'
+export type PriorityType = 'High' | 'Medium' | 'Low';
+
+export type InterlinkageType = 'synergies' | 'tradeOffs' | 'notSpecified';
 
 export interface IndicatorStatusType {
   goal: string;
@@ -231,17 +233,17 @@ export interface CountryGoalStatusType {
 export interface InterlinkagesForReportType {
   'Target': string;
   'Target Text': string;
+  'LinkageType': [InterlinkageType, InterlinkageType];
   'Description': string;
 }
 
 export interface dataForReportType {
-  reportData: any;
-  'Growth Pathways': string;
-  'Trends': string;
-  'National Priorities': string;
-  'Interlinkages': InterlinkagesForReportType[];
-  'Futures': string;
-  'Fiscal': string;
+  SDGMoment: string;
+  Trends?: string;
+  Interlinkages: InterlinkagesForReportType[];
+  Fiscal: string;
+  SDGStimulus: string;
+  SDGStimulusBulletPoints?: string;
 }
 
 export type LanguageList = 'en' | 'ru' | 'fr' | 'es';

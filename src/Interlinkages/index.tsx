@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Modal, Radio } from 'antd';
 import {
   LinkageDataType,
-  TargetStatusType, TargetStatusWithDetailsType,
+  TargetStatusType, TargetStatusWithDetailsType, InterlinkageType,
 } from '../Types';
 import { InterlinkagesViz } from './InterlinkageViz';
 import { SDGList } from '../Data/SDGGoalList';
@@ -33,7 +33,7 @@ export const Interlinkages = (props: Props) => {
   const [year, setYear] = useState('2023');
   const [literatureModal, setLiteratureModal] = useState(false);
   const interlinkageRef = useRef<HTMLDivElement>(null);
-  const [linkageType, setLinkageTypes] = useState<'synergies' | 'tradeOffs' | 'notSpecified'>('synergies');
+  const [linkageType, setLinkageTypes] = useState<InterlinkageType>('synergies');
   let TargetMostSynergies = '';
   let mostSynergies = 0;
   LinkageData.forEach((d) => {
