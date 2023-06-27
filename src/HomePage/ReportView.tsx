@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { format } from 'd3-format';
 import UNDPColorModule from 'undp-viz-colors';
+import { NavLink } from 'react-router-dom';
 import IMAGES from '../img/images';
 import {
   GoalStatusType,
@@ -86,6 +87,8 @@ export const ReportView = (props: Props) => {
         <div className='max-width'>
           <h1 className='undp-typography'>
             Integrated SDG Insights
+            <br />
+            {countryFullName}
           </h1>
         </div>
       </HeroImageEl>
@@ -109,13 +112,13 @@ export const ReportView = (props: Props) => {
             maxWidth: '70rem', margin: 'auto', gap: '1rem',
           }}
         >
-          <SectionCard id='section1' cardTitle='SDG Moment' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconSnapshot} />
-          <SectionCard id='section2' cardTitle='SDG Trends' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconTrends} />
-          <SectionCard id='section3' cardTitle='National Priorities' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconPriorities} />
-          <SectionCard id='section4' cardTitle='Interlinkages' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconInterlinkages} />
-          <SectionCard id='section5' cardTitle='Futures' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconFutures} />
-          <SectionCard id='section6' cardTitle='Fiscal/financial constraints' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconConstraints} />
-          <SectionCard id='section7' cardTitle='SDG Stimulus' cardDescription='Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt' cardIcon={IMAGES.iconConstraints} />
+          <SectionCard id='section1' cardTitle='SDG Moment' cardDescription='Sets the stage by considering economic growth as a catalyst for the SDG agenda.' cardIcon={IMAGES.iconSnapshot} />
+          <SectionCard id='section2' cardTitle='SDG Trends' cardDescription="Leveraging UNDP's Data Futures Platform infrastructure with official UN statistics as the baseline data, member states can contribute data to generate meaningful insights." cardIcon={IMAGES.iconTrends} />
+          <SectionCard id='section3' cardTitle='National Priorities' cardDescription='Utilizing custom-built machine learning, the report analyzes multiple reports and synthesizes the most significant national priorities.' cardIcon={IMAGES.iconPriorities} />
+          <SectionCard id='section4' cardTitle='Interlinkages' cardDescription='Through data visualization, this section connects national priorities to the most relevant SDG targets and maps interconnections, aiding countries in considering various pathways.' cardIcon={IMAGES.iconInterlinkages} />
+          <SectionCard id='section5' cardTitle='Futures' cardDescription="This section generates 'SDG Futures' using modeling analysis to demonstrate how UNDP's flagship report on SDG Push can enhance medium-term development trajectories." cardIcon={IMAGES.iconFutures} />
+          <SectionCard id='section6' cardTitle='Fiscal/financial constraints' cardDescription="National insights via a dashboard that reflects a country's position in terms of both slow-moving indicators (debt-to-GDP ratios) and fast-moving indicators of fiscal/financial stress (bond spreads and credit ratings downgrades)." cardIcon={IMAGES.iconConstraints} />
+          <SectionCard id='section7' cardTitle='SDG Stimulus' cardDescription='SDG Stimulus plan lays out a blueprint to provide the means to implement them through four key actions.' cardIcon={IMAGES.iconConstraints} />
         </div>
       </div>
       {reportData && priorityData && targetStatus && !error ? (
@@ -138,6 +141,13 @@ export const ReportView = (props: Props) => {
                   <PeopleGraph countryCode={countryCode} />
                   <PlanetGraph countryCode={countryCode} />
                 </div>
+                {
+                  reportData.SDGMomentSubtext ? (
+                    <ol style={{ paddingLeft: '1rem' }}>
+                      {reportData.SDGMomentSubtext.split('\n').map((d, i) => <li className='undp-typography small-font italics' key={i}>{d}</li>)}
+                    </ol>
+                  ) : null
+                }
               </div>
             )}
             color='var(--white)'
@@ -145,7 +155,7 @@ export const ReportView = (props: Props) => {
           />
           <SectionDiv
             sectionNo={2}
-            sectionTitle='Trends'
+            sectionTitle='SDG Trends'
             contentDiv={(
               <div className='flex-div flex-wrap gap-07'>
                 <div style={{ flexGrow: 1, width: 'calc(50% - 1rem)', minWidth: '20rem' }}>
@@ -161,6 +171,14 @@ export const ReportView = (props: Props) => {
                     , and is aligned with country profiles.
                   </p>
                   {reportData.Trends ? reportData.Trends.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>) : null}
+                  <NavLink
+                    to={`../../sdg-push-diagnostic/${countryCode}/sdg-trends`}
+                    style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
+                  >
+                    <button type='button' className='undp-button button-primary button-arrow' style={{ color: 'var(--white)' }}>
+                      Explore SDG Trends
+                    </button>
+                  </NavLink>
                 </div>
                 <div style={{ flexGrow: 1, width: 'calc(50% - 1rem)', minWidth: '20rem' }}>
                   <SDGTargetsGapVisualization targetStatuses={targetStatuses} />
@@ -188,6 +206,16 @@ export const ReportView = (props: Props) => {
                   defaultDocs
                   onlyBubbleChart
                 />
+                <div style={{ margin: 'var(--spacing-07) 0 0 var(--spacing-05)' }}>
+                  <NavLink
+                    to={`../../sdg-push-diagnostic/${countryCode}/current-priorities`}
+                    style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
+                  >
+                    <button type='button' className='undp-button button-primary button-arrow margin-top-07' style={{ color: 'var(--white)', marginLeft: '1rem' }}>
+                      Explore Priorities
+                    </button>
+                  </NavLink>
+                </div>
               </div>
             )}
             color='var(--black)'
@@ -216,14 +244,17 @@ export const ReportView = (props: Props) => {
                   {' '}
                   {countryFullName}
                 </p>
-                <img src={IMAGES.interlinkageImage} alt='Interlinkage' className='margin-bottom-09' />
+                <ul>
+                  {reportData.InterlinkageBulletPoints.split('\n').map((d, i) => <li key={i}>{d}</li>)}
+                </ul>
+                <img src={IMAGES.interlinkageImage} alt='Interlinkage' className='margin-bottom-09 margin-top-05 flex-div' style={{ marginLeft: 'auto', marginRight: 'auto' }} />
                 <Tabs
                   activeKey={activeTab}
                   className='undp-tabs'
                   onChange={(d) => { setActiveTab(d); }}
                   items={reportData.Interlinkages.map((interlinkage, i) => (
                     {
-                      label: `Insight ${i + 1}`,
+                      label: `Target ${interlinkage.Target}`,
                       key: `${i}`,
                       children: (
                         <div key={`${i}`}>
@@ -280,6 +311,16 @@ export const ReportView = (props: Props) => {
                       ),
                     }))}
                 />
+                <div style={{ margin: 'var(--spacing-09) 0 0 0' }}>
+                  <NavLink
+                    to={`../../sdg-push-diagnostic/${countryCode}/synergies-and-tradeoffs`}
+                    style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
+                  >
+                    <button type='button' className='undp-button button-primary button-arrow' style={{ color: 'var(--white)' }}>
+                      Explore All Interlinkages
+                    </button>
+                  </NavLink>
+                </div>
               </div>
             )}
             color='var(--black)'
@@ -372,6 +413,16 @@ export const ReportView = (props: Props) => {
                     </>
                   ) : <div className='undp-loader' style={{ margin: 'auto' }} />
                 }
+                <div style={{ margin: 'var(--spacing-09) 0 0 0' }}>
+                  <NavLink
+                    to={`../../sdg-push-diagnostic/${countryCode}/future-scenarios`}
+                    style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
+                  >
+                    <button type='button' className='undp-button button-primary button-arrow' style={{ color: 'var(--white)' }}>
+                      Explore Future Scenarios
+                    </button>
+                  </NavLink>
+                </div>
               </div>
             )}
             color='var(--white)'

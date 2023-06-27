@@ -14,28 +14,36 @@ export const Graph = (props: Props) => {
     <>
       {CarbonIntensityFromFossilFuel.findIndex(
         (d) => d.iso3 === countryCode,
-      ) !== -1
-            && CarbonIntensityFromFossilFuelAndLandUse.findIndex(
-              (d) => d.iso3 === countryCode,
-            ) !== -1 ? (
-              <SlopeGraphCarbonIntensity
-                data={[
-                  CarbonIntensityFromFossilFuel[
-                    CarbonIntensityFromFossilFuel.findIndex(
-                      (d) => d.iso3 === countryCode,
-                    )
-                  ],
-                  CarbonIntensityFromFossilFuelAndLandUse[
-                    CarbonIntensityFromFossilFuelAndLandUse.findIndex(
-                      (d) => d.iso3 === countryCode,
-                    )
-                  ],
-                ]}
-                svgWidth={width}
-                svgHeight={300}
-              />
-        ) : (
+      ) === -1
+        && CarbonIntensityFromFossilFuelAndLandUse.findIndex(
+          (d) => d.iso3 === countryCode,
+        ) === -1 ? (
           <p className='undp-typography bold'>Data Not Available</p>
+        ) : (
+          <SlopeGraphCarbonIntensity
+            data={[
+              CarbonIntensityFromFossilFuel.findIndex(
+                (d) => d.iso3 === countryCode,
+              ) === -1
+                ? undefined
+                : CarbonIntensityFromFossilFuel[
+                  CarbonIntensityFromFossilFuel.findIndex(
+                    (d) => d.iso3 === countryCode,
+                  )
+                ],
+              CarbonIntensityFromFossilFuelAndLandUse.findIndex(
+                (d) => d.iso3 === countryCode,
+              ) === -1
+                ? undefined
+                : CarbonIntensityFromFossilFuelAndLandUse[
+                  CarbonIntensityFromFossilFuelAndLandUse.findIndex(
+                    (d) => d.iso3 === countryCode,
+                  )
+                ],
+            ]}
+            svgWidth={width}
+            svgHeight={300}
+          />
         )}
     </>
   );

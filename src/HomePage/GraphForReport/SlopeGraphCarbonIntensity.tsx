@@ -18,14 +18,18 @@ export function SlopeGraphCarbonIntensity(props: Props) {
   };
   const graphWidth = svgWidth - margin.left - margin.right;
   const graphHeight = svgHeight - margin.top - margin.bottom;
-  const keys = ['From fossil fuels', 'From fossil fuels &\nland-use change'];
-  const columnWid = graphWidth / 2;
+  const keys = [
+    data[0] ? 'From fossil fuels' : undefined,
+    data[1] ? 'From fossil fuels &\nland-use change' : undefined,
+  ].filter((d) => d !== undefined);
+  const columnWid = graphWidth / data.filter((d: any) => d !== undefined).length;
+  const dataFiltered = data.filter((d: any) => d !== undefined);
   const params = [
-    data[0]['2023'],
-    data[0]['2025'],
-    data[1]['2023'],
-    data[1]['2025'],
-  ];
+    data[0] ? data[0]['2023'] : undefined,
+    data[0] ? data[0]['2025'] : undefined,
+    data[1] ? data[1]['2023'] : undefined,
+    data[1] ? data[1]['2025'] : undefined,
+  ].filter((d) => d !== undefined);
   const minParam = Math.min(...params) < 0 ? Math.min(...params) : 0;
   const maxParam = Math.max(...params);
   const y = scaleLinear()
@@ -126,83 +130,84 @@ export function SlopeGraphCarbonIntensity(props: Props) {
             fill: 'none',
           }}
         />
-        {[0, 1].map((d) => (
-          <g
-            key={d}
-            transform={`translate(${d * columnWid + columnWid / 2},0)`}
-          >
-            <line
-              x1={-20}
-              y1={y(data[d]['2023'])}
-              x2={20}
-              y2={y(data[d]['2025'])}
-              strokeWidth={1}
-              fill='none'
-              style={{ stroke: 'var(--gray-500)' }}
-            />
-            <circle
-              cx={-20}
-              cy={y(data[d]['2023'])}
-              r={5}
-              style={{ fill: 'var(--blue-300)' }}
-            />
-            <circle
-              cx={20}
-              cy={y(data[d]['2025'])}
-              r={5}
-              style={{ fill: 'var(--blue-700)' }}
-            />
-            <text
-              x={-20}
-              y={y(data[d]['2023'])}
-              dx={0}
-              dy={-10}
-              style={{
-                fill: 'var(--blue-300)',
-                fontFamily:
-                  'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
-                fontSize: '0.825rem',
-                fontWeight: 'bold',
-                textAnchor: 'middle',
-              }}
-            >
-              {data[d]['2023']}
-            </text>
-            <text
-              x={20}
-              y={y(data[d]['2025'])}
-              dx={0}
-              dy={-10}
-              style={{
-                fill: 'var(--blue-700)',
-                fontFamily:
-                  'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
-                fontWeight: 'bold',
-                fontSize: '0.825rem',
-                textAnchor: 'middle',
-              }}
-            >
-              {data[d]['2025']}
-            </text>
-            {keys[d].split('\n').map((t, j) => (
-              <text
-                x={0}
-                y={graphHeight}
-                dx={0}
-                dy={20 + 15 * j}
-                key={j}
-                style={{
-                  fontFamily:
-                    'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
-                  fill: 'var(--gray-700)',
-                  fontSize: '0.825rem',
-                  fontWeight: 'bold',
-                  textAnchor: 'middle',
-                }}
-              >
-                {t}
-              </text>
-            ))}
+        {keys.map((d, i) => (
+          <g key={i}>
+            {dataFiltered[i] ? (
+              <g transform={`translate(${i * columnWid + columnWid / 2},0)`}>
+                <line
+                  x1={-20}
+                  y1={y(dataFiltered[i]['2023'])}
+                  x2={20}
+                  y2={y(dataFiltered[i]['2025'])}
+                  strokeWidth={1}
+                  fill='none'
+                  style={{ stroke: 'var(--gray-500)' }}
+                />
+                <circle
+                  cx={-20}
+                  cy={y(dataFiltered[i]['2023'])}
+                  r={5}
+                  style={{ fill: 'var(--blue-300)' }}
+                />
+                <circle
+                  cx={20}
+                  cy={y(dataFiltered[i]['2025'])}
+                  r={5}
+                  style={{ fill: 'var(--blue-700)' }}
+                />
+                <text
+                  x={-20}
+                  y={y(dataFiltered[i]['2023'])}
+                  dx={0}
+                  dy={-10}
+                  style={{
+                    fill: 'var(--blue-300)',
+                    fontFamily:
+                      'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
+                    fontSize: '0.825rem',
+                    fontWeight: 'bold',
+                    textAnchor: 'middle',
+                  }}
+                >
+                  {dataFiltered[i]['2023']}
+                </text>
+                <text
+                  x={20}
+                  y={y(dataFiltered[i]['2025'])}
+                  dx={0}
+                  dy={-10}
+                  style={{
+                    fill: 'var(--blue-700)',
+                    fontFamily:
+                      'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
+                    fontWeight: 'bold',
+                    fontSize: '0.825rem',
+                    textAnchor: 'middle',
+                  }}
+                >
+                  {dataFiltered[i]['2025']}
+                </text>
+                {d?.split('\n').map((t, j) => (
+                  <text
+                    x={0}
+                    y={graphHeight}
+                    dx={0}
+                    dy={20 + 15 * j}
+                    key={j}
+                    style={{
+                      fontFamily:
+                        'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
+                      fill: 'var(--gray-700)',
+                      fontSize: '0.825rem',
+                      fontWeight: 'bold',
+                      textAnchor: 'middle',
+                    }}
+                  >
+                    {t}
+                  </text>
+                ))}
+              </g>
+            ) : null}
           </g>
         ))}
       </g>

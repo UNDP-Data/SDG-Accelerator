@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react';
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+import { useEffect, useRef, useState } from 'react';
 import sortBy from 'lodash.sortby';
 import styled from 'styled-components';
 import { StatusesType, TimeSeriesDataTypeWithStatusCode } from '../Types';
@@ -59,6 +61,10 @@ export const SDGGapsData = (props: Props) => {
   const [selectedTarget, setSelectedTarget] = useState(targets[0]);
   const [selectedIndicator, setSelectedIndicator] = useState<any>(targets[0].Indicators[0]);
   const [selectedIndicatorTS, setSelectedIndicatorTS] = useState<any>(countryData.filter((d) => d.indicator === targets[0].Indicators[0].Indicator.split(' ')[1]));
+  const WrapperRef = useRef<HTMLDivElement>(null);
+  const [cursor, setCursor] = useState(
+    'url(https://design.undp.org/static/media/arrow-right.125a0586.svg)',
+  );
   useEffect(() => {
     const targetsUpdated = SDGList[SDGList.findIndex((d) => d.Goal === selectedSDG.split(':')[0])].Targets;
     setSelectedTarget(targetsUpdated[0]);
@@ -187,34 +193,60 @@ export const SDGGapsData = (props: Props) => {
                   {selectedIndicator['Indicator Description']}
                 </p>
               </div>
-              <div className='flex-div undp-scrollbar top-scrollbars' style={{ gap: '2rem', overflow: 'auto', paddingBottom: '0.5rem' }}>
-                {
-                  sortBy(selectedIndicatorTS.concat(AllSeriesForIndicator), 'statusCode').map((d, i: number) => (
-                    <LineChart
-                      data={d}
-                      key={i}
-                      cursor={
-                        selectedIndicatorTS.concat(AllSeriesForIndicator).length === 1
-                          ? 'auto'
-                          : i < selectedIndicatorTS.concat(AllSeriesForIndicator).length - 1
-                            ? 'url(https://design.undp.org/static/media/arrow-right.125a0586.svg), auto'
-                            : 'url(https://design.undp.org/static/media/arrow-left.14de54ea.svg), auto'
-                        }
-                    />
-                  ))
-                }
-                {
-                  selectedIndicatorTS.concat(AllSeriesForIndicator).length === 0
-                    ? (
-                      <div
-                        style={{
-                          width: '85%', flexShrink: 0, minWidth: '50rem', backgroundColor: 'var(--gray-100)', padding: '1rem 2rem',
-                        }}
-                      >
-                        <h6 className='undp-typography margin-top-05'>No Data Available</h6>
-                      </div>
-                    ) : null
-                }
+              <div
+                style={{
+                  cursor: `${cursor}, auto`,
+                }}
+                onClick={(e) => {
+                  if (WrapperRef.current) {
+                    if (e.clientX > window.innerWidth / 2) { WrapperRef.current.scrollBy(50, 0); } else WrapperRef.current.scrollBy(-50, 0);
+                  }
+                }}
+                onMouseMove={(e) => {
+                  if (e.clientX > window.innerWidth / 2) {
+                    setCursor(
+                      'url(https://design.undp.org/static/media/arrow-right.125a0586.svg)',
+                    );
+                  } else {
+                    setCursor(
+                      'url(https://design.undp.org/static/media/arrow-left.14de54ea.svg)',
+                    );
+                  }
+                }}
+              >
+                <div
+                  ref={WrapperRef}
+                  className='flex-div undp-scrollbar top-scrollbars'
+                  style={{
+                    gap: '2rem',
+                    overflow: 'auto',
+                    paddingBottom: '0.5rem',
+                    scrollSnapType: 'x mandatory',
+                    scrollPadding: '0',
+                    scrollPaddingLeft: '0',
+                  }}
+                >
+                  {
+                    sortBy(selectedIndicatorTS.concat(AllSeriesForIndicator), 'statusCode').map((d, i: number) => (
+                      <LineChart
+                        data={d}
+                        key={i}
+                      />
+                    ))
+                  }
+                  {
+                    selectedIndicatorTS.concat(AllSeriesForIndicator).length === 0
+                      ? (
+                        <div
+                          style={{
+                            width: '85%', flexShrink: 0, minWidth: '50rem', backgroundColor: 'var(--gray-100)', padding: '1rem 2rem',
+                          }}
+                        >
+                          <h6 className='undp-typography margin-top-05'>No Data Available</h6>
+                        </div>
+                      ) : null
+                  }
+                </div>
               </div>
             </>
           ) : null

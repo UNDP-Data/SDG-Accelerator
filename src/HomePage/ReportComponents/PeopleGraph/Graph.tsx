@@ -15,31 +15,41 @@ export const Graph = (props: Props) => {
   } = props;
   return (
     <>
-      {Poverty2_15.findIndex((d) => d.iso3 === countryCode) !== -1
-      && Poverty3_65.findIndex((d) => d.iso3 === countryCode) !== -1
-      && Poverty6_85.findIndex((d) => d.iso3 === countryCode) !== -1
-      && Poverty14.findIndex((d) => d.iso3 === countryCode) !== -1 ? (
-        <SlopeGraphPovertySeparated
-          data={[
-            Poverty2_15[
-              Poverty2_15.findIndex((d) => d.iso3 === countryCode)
-            ],
-            Poverty3_65[
-              Poverty3_65.findIndex((d) => d.iso3 === countryCode)
-            ],
-            Poverty6_85[
-              Poverty6_85.findIndex((d) => d.iso3 === countryCode)
-            ],
-            Poverty14[
-              Poverty14.findIndex((d) => d.iso3 === countryCode)
-            ],
-          ]}
-          svgWidth={width}
-          svgHeight={300}
-        />
-        ) : (
-          <p className='undp-typography bold'>Data Not Available</p>
-        )}
+      {
+        Poverty2_15.findIndex((d) => d.iso3 === countryCode) === -1
+          && Poverty3_65.findIndex((d) => d.iso3 === countryCode) === -1
+          && Poverty6_85.findIndex((d) => d.iso3 === countryCode) === -1
+          && Poverty14.findIndex((d) => d.iso3 === countryCode) === -1 ? (
+            <p className='undp-typography bold'>Data Not Available</p>
+          ) : (
+            <SlopeGraphPovertySeparated
+              data={[
+                Poverty2_15.findIndex((d) => d.iso3 === countryCode) !== -1
+                  ? Poverty2_15[
+                    Poverty2_15.findIndex((d) => d.iso3 === countryCode)
+                  ]
+                  : undefined,
+                Poverty3_65.findIndex((d) => d.iso3 === countryCode) !== -1
+                  ? Poverty3_65[
+                    Poverty3_65.findIndex((d) => d.iso3 === countryCode)
+                  ]
+                  : undefined,
+                Poverty6_85.findIndex((d) => d.iso3 === countryCode) !== -1
+                  ? Poverty6_85[
+                    Poverty6_85.findIndex((d) => d.iso3 === countryCode)
+                  ]
+                  : undefined,
+                Poverty14.findIndex((d) => d.iso3 === countryCode) !== -1
+                  ? Poverty14[
+                    Poverty14.findIndex((d) => d.iso3 === countryCode)
+                  ]
+                  : undefined,
+              ]}
+              svgWidth={width}
+              svgHeight={300}
+            />
+          )
+}
     </>
   );
 };

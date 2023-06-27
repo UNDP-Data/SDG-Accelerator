@@ -18,20 +18,26 @@ export function SlopeGraphPovertySeparated(props: Props) {
   };
   const graphWidth = svgWidth - margin.left - margin.right;
   const graphHeight = svgHeight - margin.top - margin.bottom;
+  const dataFiltered = data.filter((d: any) => d !== undefined);
   const params = [
-    data[0]['2023'] * 100,
-    data[0]['2025'] * 100,
-    data[1]['2023'] * 100,
-    data[1]['2025'] * 100,
-    data[2]['2023'] * 100,
-    data[2]['2025'] * 100,
-    data[3]['2023'] * 100,
-    data[3]['2025'] * 100,
-  ];
+    data[0] ? data[0]['2023'] * 100 : undefined,
+    data[0] ? data[0]['2025'] * 100 : undefined,
+    data[1] ? data[1]['2023'] * 100 : undefined,
+    data[1] ? data[1]['2025'] * 100 : undefined,
+    data[2] ? data[2]['2023'] * 100 : undefined,
+    data[2] ? data[2]['2025'] * 100 : undefined,
+    data[3] ? data[3]['2023'] * 100 : undefined,
+    data[3] ? data[3]['2025'] * 100 : undefined,
+  ].filter((d) => d !== undefined);
   const minParam = 0;
-  const maxParam = Math.max(...params);
-  const columnWid = graphWidth / 4;
-  const keys = ['$2.15', '$3.65', '$6.85', '$14'];
+  const maxParam = Math.max(...(params as number[]));
+  const columnWid = graphWidth / data.filter((d: any) => d !== undefined).length;
+  const keys = [
+    data[0] ? '$2.15' : undefined,
+    data[1] ? '$3.65' : undefined,
+    data[2] ? '$6.85' : undefined,
+    data[3] ? '$14' : undefined,
+  ].filter((d) => d !== undefined);
   const y = scaleLinear()
     .domain([minParam, maxParam])
     .range([graphHeight, 0])
@@ -131,82 +137,85 @@ export function SlopeGraphPovertySeparated(props: Props) {
             fill: 'none',
           }}
         />
-        {[0, 1, 2, 3].map((d) => (
-          <g
-            key={d}
-            transform={`translate(${d * columnWid + columnWid / 2},0)`}
-          >
-            <line
-              x1={-20}
-              y1={y(data[d]['2023'] * 100)}
-              x2={20}
-              y2={y(data[d]['2025'] * 100)}
-              strokeWidth={1}
-              fill='none'
-              style={{ stroke: 'var(--gray-500)' }}
-            />
-            <circle
-              cx={-20}
-              cy={y(data[d]['2023'] * 100)}
-              r={5}
-              style={{ fill: 'var(--blue-300)' }}
-            />
-            <circle
-              cx={20}
-              cy={y(data[d]['2025'] * 100)}
-              r={5}
-              style={{ fill: 'var(--blue-700)' }}
-            />
-            <text
-              x={-20}
-              y={y(data[d]['2023'] * 100)}
-              dx={0}
-              dy={-10}
-              style={{
-                fill: 'var(--blue-300)',
-                fontFamily:
-                  'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
-                fontWeight: 'bold',
-                fontSize: '0.825rem',
-                textAnchor: 'middle',
-              }}
-            >
-              {(data[d]['2023'] * 100).toFixed(1)}
-              %
-            </text>
-            <text
-              x={20}
-              y={y(data[d]['2025'] * 100)}
-              dx={0}
-              dy={-10}
-              style={{
-                fill: 'var(--blue-700)',
-                fontFamily:
-                  'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
-                fontWeight: 'bold',
-                fontSize: '0.825rem',
-                textAnchor: 'middle',
-              }}
-            >
-              {(data[d]['2025'] * 100).toFixed(1)}
-              %
-            </text>
-            <text
-              x={0}
-              y={graphHeight}
-              dx={0}
-              dy={20}
-              style={{
-                fontFamily:
-                  'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
-                fill: 'var(--gray-700)',
-                fontSize: '0.825rem',
-                fontWeight: 'bold',
-                textAnchor: 'middle',
-              }}
-            >
-              {keys[d]}
-            </text>
+        {keys.map((d, i) => (
+          <g key={i}>
+            {dataFiltered[i] ? (
+              <g transform={`translate(${i * columnWid + columnWid / 2},0)`}>
+                <line
+                  x1={-20}
+                  y1={y(dataFiltered[i]['2023'] * 100)}
+                  x2={20}
+                  y2={y(dataFiltered[i]['2025'] * 100)}
+                  strokeWidth={1}
+                  fill='none'
+                  style={{ stroke: 'var(--gray-500)' }}
+                />
+                <circle
+                  cx={-20}
+                  cy={y(dataFiltered[i]['2023'] * 100)}
+                  r={5}
+                  style={{ fill: 'var(--blue-300)' }}
+                />
+                <circle
+                  cx={20}
+                  cy={y(dataFiltered[i]['2025'] * 100)}
+                  r={5}
+                  style={{ fill: 'var(--blue-700)' }}
+                />
+                <text
+                  x={-20}
+                  y={y(dataFiltered[i]['2023'] * 100)}
+                  dx={0}
+                  dy={-10}
+                  style={{
+                    fill: 'var(--blue-300)',
+                    fontFamily:
+                      'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
+                    fontWeight: 'bold',
+                    fontSize: '0.825rem',
+                    textAnchor: 'middle',
+                  }}
+                >
+                  {(dataFiltered[i]['2023'] * 100).toFixed(1)}
+                  %
+                </text>
+                <text
+                  x={20}
+                  y={y(dataFiltered[i]['2025'] * 100)}
+                  dx={0}
+                  dy={-10}
+                  style={{
+                    fill: 'var(--blue-700)',
+                    fontFamily:
+                      'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
+                    fontWeight: 'bold',
+                    fontSize: '0.825rem',
+                    textAnchor: 'middle',
+                  }}
+                >
+                  {(dataFiltered[i]['2025'] * 100).toFixed(1)}
+                  %
+                </text>
+                <text
+                  x={0}
+                  y={graphHeight}
+                  dx={0}
+                  dy={20}
+                  style={{
+                    fontFamily:
+                      'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
+                    fill: 'var(--gray-700)',
+                    fontSize: '0.825rem',
+                    fontWeight: 'bold',
+                    textAnchor: 'middle',
+                  }}
+                >
+                  {d}
+                </text>
+              </g>
+            ) : (
+              <g />
+            )}
           </g>
         ))}
       </g>

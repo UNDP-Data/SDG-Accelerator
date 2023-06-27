@@ -24,7 +24,7 @@ export const LandingPage = () => {
   const [error, setError] = useState <any>(null);
   const [statuses, setStatuses] = useState<StatusesType | undefined>(undefined);
   const [countryData, setCountryData] = useState<TimeSeriesDataTypeWithStatusCode[] | undefined>(undefined);
-  const countryFullName = CountryTaxonomy.findIndex((d) => (countryCode === 'IDNWithCountryGovInput' ? d['Alpha-3 code-1'] === 'IDN' : d['Alpha-3 code-1'] === countryCode)) !== -1 ? CountryTaxonomy[CountryTaxonomy.findIndex((d) => (countryCode === 'IDNWithCountryGovInput' ? d['Alpha-3 code-1'] === 'IDN' : d['Alpha-3 code-1'] === countryCode))]['Country or Area'] : '';
+  const countryFullName = CountryTaxonomy.findIndex((d) => (d['Alpha-3 code-1'].replaceAll('WithCountryGovInput', '') === countryCode)) !== -1 ? CountryTaxonomy[CountryTaxonomy.findIndex((d) => (d['Alpha-3 code-1'].replaceAll('WithCountryGovInput', '') === countryCode))]['Country or Area'] : '';
 
   useEffect(() => {
     setStatuses(undefined);
@@ -143,7 +143,7 @@ export const LandingPage = () => {
                     path='/current-priorities'
                     element={(
                       <Priorities
-                        countrySelected={countryCode === 'IDNWithCountryGovInput' ? 'IDN' : countryCode}
+                        countrySelected={countryCode.replaceAll('WithCountryGovInput', '')}
                         goalStatuses={statuses.goalStatus}
                         countryFullName={countryFullName}
                       />
@@ -153,7 +153,7 @@ export const LandingPage = () => {
                     path='/future-scenarios'
                     element={(
                       <FutureScenariosList
-                        countryCode={countryCode === 'IDNWithCountryGovInput' ? 'IDN' : countryCode}
+                        countryCode={countryCode.replaceAll('WithCountryGovInput', '')}
                         countryFullName={countryFullName}
                       />
                   )}

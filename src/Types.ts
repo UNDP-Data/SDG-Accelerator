@@ -202,6 +202,9 @@ export interface TimeSeriesDataType {
   Cities?: 'JOHANNESBURG';
   'Sampling Stations'?: 'ALGOA';
   status?: 'Target Achieved' | 'On Track' | 'Target Not Achieved' | 'Fair progress but acceleration needed' | 'Limited or No Progress' | 'Insufficient Data' | 'No Data After 2015' | 'Deterioration';
+  'Custodian_Agency(ies)': string;
+  'Partner_Agency(ies)': string;
+  'Tier_Classification': string;
 }
 
 export interface TimeSeriesDataTypeWithStatusCode extends TimeSeriesDataType {
@@ -239,7 +242,9 @@ export interface InterlinkagesForReportType {
 
 export interface dataForReportType {
   SDGMoment: string;
+  SDGMomentSubtext?: string;
   Trends?: string;
+  InterlinkageBulletPoints: string;
   Interlinkages: InterlinkagesForReportType[];
   Fiscal: string;
   SDGStimulus: string;
