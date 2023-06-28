@@ -27,20 +27,6 @@ export const GDPGraph = (props: Props) => {
       }}
       ref={graphRef}
     >
-      <h5
-        className='undp-typography'
-        style={{
-          width: '100%',
-          textAlign: 'center',
-          color: 'var(--blue-600)',
-          fontFamily:
-            'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
-          textTransform: 'uppercase',
-          fontWeight: 'bold',
-        }}
-      >
-        GDP
-      </h5>
       <p
         className='undp-typography'
         style={{

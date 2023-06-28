@@ -21,7 +21,7 @@ export const BubbleChart = (props: Props) => {
     setSelectedSDG,
   } = props;
   const [nodeData, setNodeData] = useState<any>(null);
-  const [graphOrientation, setGraphOrientation] = useState<'horizontal' | 'vertical'>('horizontal');
+  const [graphOrientation, setGraphOrientation] = useState<'horizontal' | 'vertical'>(window.innerWidth < 720 ? 'vertical' : 'horizontal');
   const bubbleChartRef = useRef<HTMLDivElement>(null);
   const [highlightSettings, setHighlightSettings] = useState({
     High: true,
@@ -46,9 +46,11 @@ export const BubbleChart = (props: Props) => {
   }, [data, graphOrientation]);
   return (
     <>
-      <div className='max-width-1440 margin-top-09 flex-div' style={{ padding: '0 1rem', gap: 'var(--spacing-05)' }}>
+      <div className='max-width-1440 margin-top-09 flex-div flex-wrap' style={{ padding: '0 1rem', gap: 'var(--spacing-05)' }}>
         <div style={{
           width: 'calc(25% - 1rem)',
+          minWidth: '20rem',
+          flexGrow: 1,
         }}
         >
           <p className='undp-typography italics margin-bottom-05' style={{ fontSize: '1rem', color: 'var(--gray-600)' }}>Click on the icons to view the common words/phrases by SDG</p>
@@ -90,7 +92,7 @@ export const BubbleChart = (props: Props) => {
           <p className='undp-typography label margin-bottom-02'>
             Highlight SDGs by Trends
           </p>
-          <div className='margin-bottom-05' style={{ display: 'grid' }}>
+          <div className='margin-bottom-05 flex-div flex-wrap'>
             <Checkbox
               className='undp-checkbox'
               checked={highlightSettings['On Track']}
@@ -156,11 +158,14 @@ export const BubbleChart = (props: Props) => {
             ? (
               <div
                 style={{
-                  width: '100%', display: 'flex', justifyContent: 'center',
+                  width: 'calc(75% - 1rem)',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  flexGrow: 1,
                 }}
                 ref={bubbleChartRef}
               >
-                <svg width='calc(75% - 1rem)' style={{ maxWidth: graphOrientation === 'horizontal' ? '75rem' : '40rem', margin: 'auto' }} viewBox={graphOrientation === 'horizontal' ? '0 0 450 250' : '0 0 250 450'}>
+                <svg width='100%' style={{ maxWidth: graphOrientation === 'horizontal' ? '75rem' : '40rem', margin: 'auto' }} viewBox={graphOrientation === 'horizontal' ? '0 0 450 250' : '0 0 250 450'}>
                   <g transform={graphOrientation === 'horizontal' ? 'translate(225,125)' : 'translate(125,225)'}>
                     {
                       nodeData.map((d: any, i: number) => (
@@ -194,7 +199,7 @@ export const BubbleChart = (props: Props) => {
             )
             : (
               <div style={{
-                width: 'calc(75% - 1rem)', height: '400px', backgroundColor: 'var(--gray-100)', paddingTop: '80px',
+                width: 'calc(75% - 1rem)', height: '400px', backgroundColor: 'var(--gray-100)', paddingTop: '80px', flexGrow: 1,
               }}
               >
                 <div className='undp-loader' style={{ margin: 'auto' }} />

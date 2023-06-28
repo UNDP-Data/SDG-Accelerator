@@ -9,6 +9,7 @@ interface Props {
   targetStatuses: TargetStatusType[];
   // eslint-disable-next-line no-unused-vars
   setRef?: (_d: HTMLDivElement) => void
+  width?: string;
 }
 
 interface SDGHoveredProps {
@@ -40,7 +41,7 @@ const TooltipEl = styled.div<TooltipElProps>`
 `;
 
 export const SDGTargetsGapVisualization = (props: Props) => {
-  const { targetStatuses, setRef } = props;
+  const { targetStatuses, setRef, width } = props;
   const trendRef = useRef<HTMLDivElement>(null);
   const [hoveredSDG, setHoveredSDG] = useState<null | SDGHoveredProps>(null);
   const radiusScale = 1.25;
@@ -65,7 +66,7 @@ export const SDGTargetsGapVisualization = (props: Props) => {
   }, [trendRef]);
   const iconSize = 24;
   return (
-    <div style={{ width: 'calc(50% - 0.5rem', minWidth: '37.5rem' }}>
+    <div style={{ width: width || 'calc(50% - 0.5rem)', minWidth: '22.5rem' }}>
       <div
         style={{ backgroundColor: 'var(--white)', padding: '1rem' }}
       >
@@ -73,174 +74,174 @@ export const SDGTargetsGapVisualization = (props: Props) => {
           <svg width='100%' viewBox='0 0 595 450'>
             <g transform='translate(0, -160)'>
               {
-              statusByPs.map((d, i) => (
-                <g key={i} transform={`translate(${d.position[0]},${d.position[1]})`}>
-                  {
-                    i < 3
-                      ? (
-                        <g transform='translate(0, -30)'>
-                          <text
-                            x={0 - d.totalNoOfTargets * radiusScale - 15}
-                            y={0}
-                            dy={10}
-                            dx={0}
-                            style={{
-                              fontFamily: 'ProximaNova, proxima-nova, Helvetica Neue, sans-serif', fill: 'var(--gray-700)', textTransform: 'uppercase', fontWeight: 'bold', fontSize: '0.875rem',
-                            }}
-                            textAnchor='end'
-                          >
-                            {d.pValue}
-                          </text>
-                          {d.goals.map((g, indx) => (
-                            <g
-                              key={indx}
-                              transform={`translate(${0 - (d.totalNoOfTargets * radiusScale) - 15 - iconSize - (((indx) % 3) * iconSize)},${15 + Math.floor(indx / 3) * iconSize})`}
+                statusByPs.map((d, i) => (
+                  <g key={i} transform={`translate(${d.position[0]},${d.position[1]})`}>
+                    {
+                      i < 3
+                        ? (
+                          <g transform='translate(0, -30)'>
+                            <text
+                              x={0 - d.totalNoOfTargets * radiusScale - 15}
+                              y={0}
+                              dy={10}
+                              dx={0}
+                              style={{
+                                fontFamily: 'ProximaNova, proxima-nova, Helvetica Neue, sans-serif', fill: 'var(--gray-700)', textTransform: 'uppercase', fontWeight: 'bold', fontSize: '0.875rem',
+                              }}
+                              textAnchor='end'
                             >
-                              {getSDGIconSVG(`SDG ${g}`, iconSize, true)}
-                            </g>
-                          ))}
-                        </g>
-                      ) : (
-                        <g>
-                          <text
-                            y={15}
-                            x={0 + d.totalNoOfTargets * radiusScale + 15}
-                            dy={-25}
-                            style={{
-                              fontFamily: 'ProximaNova, proxima-nova, Helvetica Neue, sans-serif', fill: 'var(--gray-700)', textTransform: 'uppercase', fontWeight: 'bold', fontSize: '0.875rem',
-                            }}
-                            textAnchor='start'
-                          >
-                            {d.pValue}
-                          </text>
-                          {d.goals.map((g, indx) => (
-                            <g
-                              key={indx}
-                              transform={`translate(${d.totalNoOfTargets * radiusScale + 15},-5)`}
+                              {d.pValue}
+                            </text>
+                            {d.goals.map((g, indx) => (
+                              <g
+                                key={indx}
+                                transform={`translate(${0 - (d.totalNoOfTargets * radiusScale) - 15 - iconSize - (((indx) % 3) * iconSize)},${15 + Math.floor(indx / 3) * iconSize})`}
+                              >
+                                {getSDGIconSVG(`SDG ${g}`, iconSize, true)}
+                              </g>
+                            ))}
+                          </g>
+                        ) : (
+                          <g>
+                            <text
+                              y={15}
+                              x={0 + d.totalNoOfTargets * radiusScale + 15}
+                              dy={-25}
+                              style={{
+                                fontFamily: 'ProximaNova, proxima-nova, Helvetica Neue, sans-serif', fill: 'var(--gray-700)', textTransform: 'uppercase', fontWeight: 'bold', fontSize: '0.875rem',
+                              }}
+                              textAnchor='start'
                             >
-                              {getSDGIconSVG(`SDG ${g}`, iconSize, true)}
-                            </g>
-                          ))}
-                        </g>
-                      )
-                  }
-                  <circle
-                    r={d.totalNoOfTargets * radiusScale}
-                    cx={0}
-                    cy={0}
-                    style={{ fillOpacity: 0, stroke: 'var(--gray-400)', strokeWidth: d.totalNoOfTargets > 25 ? 18 : 14 }}
-                  />
-                  <path
-                    d={describeArc(0, 0, d.totalNoOfTargets * radiusScale, 0, (d.onTrack * 360) / d.totalNoOfTargets)}
-                    style={{ fillOpacity: 0, stroke: 'var(--dark-green)', strokeWidth: d.totalNoOfTargets > 25 ? 18 : 14 }}
-                    onMouseEnter={(event) => {
-                      setHoveredSDG({
-                        title: 'On Track',
-                        value: d.onTrack,
-                        percent: d.onTrack / d.totalNoOfTargets,
-                        xPosition: event.clientX,
-                        yPosition: event.clientY,
-                        color: 'var(--dark-green)',
-                        totalValue: d.totalNoOfTargets,
-                      });
-                    }}
-                    onMouseMove={(event) => {
-                      setHoveredSDG({
-                        title: 'On Track',
-                        value: d.onTrack,
-                        percent: d.onTrack / d.totalNoOfTargets,
-                        xPosition: event.clientX,
-                        yPosition: event.clientY,
-                        color: 'var(--dark-green)',
-                        totalValue: d.totalNoOfTargets,
-                      });
-                    }}
-                    onMouseLeave={() => { setHoveredSDG(null); }}
-                  />
-                  <path
-                    d={describeArc(0, 0, d.totalNoOfTargets * radiusScale, (d.onTrack * 360) / d.totalNoOfTargets, ((d.onTrack + d.forReview) * 360) / d.totalNoOfTargets)}
-                    style={{ fillOpacity: 0, stroke: 'var(--dark-yellow)', strokeWidth: d.totalNoOfTargets > 25 ? 18 : 14 }}
-                    onMouseEnter={(event) => {
-                      setHoveredSDG({
-                        title: 'For Review',
-                        value: d.forReview,
-                        percent: d.forReview / d.totalNoOfTargets,
-                        xPosition: event.clientX,
-                        yPosition: event.clientY,
-                        color: 'var(--dark-yellow)',
-                        totalValue: d.totalNoOfTargets,
-                      });
-                    }}
-                    onMouseMove={(event) => {
-                      setHoveredSDG({
-                        title: 'For Review',
-                        value: d.forReview,
-                        percent: d.forReview / d.totalNoOfTargets,
-                        xPosition: event.clientX,
-                        yPosition: event.clientY,
-                        color: 'var(--dark-yellow)',
-                        totalValue: d.totalNoOfTargets,
-                      });
-                    }}
-                    onMouseLeave={() => { setHoveredSDG(null); }}
-                  />
-                  <path
-                    d={describeArc(0, 0, d.totalNoOfTargets * radiusScale, ((d.onTrack + d.forReview) * 360) / d.totalNoOfTargets, ((d.onTrack + d.forReview + d.identifiedGap) * 360) / d.totalNoOfTargets)}
-                    style={{ fillOpacity: 0, stroke: 'var(--dark-red)', strokeWidth: d.totalNoOfTargets > 25 ? 18 : 14 }}
-                    onMouseEnter={(event) => {
-                      setHoveredSDG({
-                        title: 'Identified Gaps',
-                        value: d.identifiedGap,
-                        percent: d.identifiedGap / d.totalNoOfTargets,
-                        xPosition: event.clientX,
-                        yPosition: event.clientY,
-                        color: 'var(--dark-red)',
-                        totalValue: d.totalNoOfTargets,
-                      });
-                    }}
-                    onMouseMove={(event) => {
-                      setHoveredSDG({
-                        title: 'Identified Gaps',
-                        value: d.identifiedGap,
-                        percent: d.identifiedGap / d.totalNoOfTargets,
-                        xPosition: event.clientX,
-                        yPosition: event.clientY,
-                        color: 'var(--dark-red)',
-                        totalValue: d.totalNoOfTargets,
-                      });
-                    }}
-                    onMouseLeave={() => { setHoveredSDG(null); }}
-                  />
-                  <path
-                    d={describeArc(0, 0, d.totalNoOfTargets * radiusScale, ((d.onTrack + d.forReview + d.identifiedGap) * 360) / d.totalNoOfTargets, 360)}
-                    style={{ fillOpacity: 0, stroke: 'var(--gray-400)', strokeWidth: d.totalNoOfTargets > 25 ? 18 : 14 }}
-                    onMouseEnter={(event) => {
-                      setHoveredSDG({
-                        title: 'Gaps NA',
-                        value: d.gapsNA,
-                        percent: d.gapsNA / d.totalNoOfTargets,
-                        xPosition: event.clientX,
-                        yPosition: event.clientY,
-                        color: 'var(--gray-700)',
-                        totalValue: d.totalNoOfTargets,
-                      });
-                    }}
-                    onMouseMove={(event) => {
-                      setHoveredSDG({
-                        title: 'Gaps NA',
-                        value: d.gapsNA,
-                        percent: d.gapsNA / d.totalNoOfTargets,
-                        xPosition: event.clientX,
-                        yPosition: event.clientY,
-                        color: 'var(--gray-700)',
-                        totalValue: d.totalNoOfTargets,
-                      });
-                    }}
-                    onMouseLeave={() => { setHoveredSDG(null); }}
-                  />
-                </g>
-              ))
-            }
+                              {d.pValue}
+                            </text>
+                            {d.goals.map((g, indx) => (
+                              <g
+                                key={indx}
+                                transform={`translate(${d.totalNoOfTargets * radiusScale + 15},-5)`}
+                              >
+                                {getSDGIconSVG(`SDG ${g}`, iconSize, true)}
+                              </g>
+                            ))}
+                          </g>
+                        )
+                    }
+                    <circle
+                      r={d.totalNoOfTargets * radiusScale}
+                      cx={0}
+                      cy={0}
+                      style={{ fillOpacity: 0, stroke: 'var(--gray-400)', strokeWidth: d.totalNoOfTargets > 25 ? 18 : 14 }}
+                    />
+                    <path
+                      d={describeArc(0, 0, d.totalNoOfTargets * radiusScale, 0, (d.onTrack * 360) / d.totalNoOfTargets)}
+                      style={{ fillOpacity: 0, stroke: 'var(--dark-green)', strokeWidth: d.totalNoOfTargets > 25 ? 18 : 14 }}
+                      onMouseEnter={(event) => {
+                        setHoveredSDG({
+                          title: 'On Track',
+                          value: d.onTrack,
+                          percent: d.onTrack / d.totalNoOfTargets,
+                          xPosition: event.clientX,
+                          yPosition: event.clientY,
+                          color: 'var(--dark-green)',
+                          totalValue: d.totalNoOfTargets,
+                        });
+                      }}
+                      onMouseMove={(event) => {
+                        setHoveredSDG({
+                          title: 'On Track',
+                          value: d.onTrack,
+                          percent: d.onTrack / d.totalNoOfTargets,
+                          xPosition: event.clientX,
+                          yPosition: event.clientY,
+                          color: 'var(--dark-green)',
+                          totalValue: d.totalNoOfTargets,
+                        });
+                      }}
+                      onMouseLeave={() => { setHoveredSDG(null); }}
+                    />
+                    <path
+                      d={describeArc(0, 0, d.totalNoOfTargets * radiusScale, (d.onTrack * 360) / d.totalNoOfTargets, ((d.onTrack + d.forReview) * 360) / d.totalNoOfTargets)}
+                      style={{ fillOpacity: 0, stroke: 'var(--dark-yellow)', strokeWidth: d.totalNoOfTargets > 25 ? 18 : 14 }}
+                      onMouseEnter={(event) => {
+                        setHoveredSDG({
+                          title: 'For Review',
+                          value: d.forReview,
+                          percent: d.forReview / d.totalNoOfTargets,
+                          xPosition: event.clientX,
+                          yPosition: event.clientY,
+                          color: 'var(--dark-yellow)',
+                          totalValue: d.totalNoOfTargets,
+                        });
+                      }}
+                      onMouseMove={(event) => {
+                        setHoveredSDG({
+                          title: 'For Review',
+                          value: d.forReview,
+                          percent: d.forReview / d.totalNoOfTargets,
+                          xPosition: event.clientX,
+                          yPosition: event.clientY,
+                          color: 'var(--dark-yellow)',
+                          totalValue: d.totalNoOfTargets,
+                        });
+                      }}
+                      onMouseLeave={() => { setHoveredSDG(null); }}
+                    />
+                    <path
+                      d={describeArc(0, 0, d.totalNoOfTargets * radiusScale, ((d.onTrack + d.forReview) * 360) / d.totalNoOfTargets, ((d.onTrack + d.forReview + d.identifiedGap) * 360) / d.totalNoOfTargets)}
+                      style={{ fillOpacity: 0, stroke: 'var(--dark-red)', strokeWidth: d.totalNoOfTargets > 25 ? 18 : 14 }}
+                      onMouseEnter={(event) => {
+                        setHoveredSDG({
+                          title: 'Identified Gaps',
+                          value: d.identifiedGap,
+                          percent: d.identifiedGap / d.totalNoOfTargets,
+                          xPosition: event.clientX,
+                          yPosition: event.clientY,
+                          color: 'var(--dark-red)',
+                          totalValue: d.totalNoOfTargets,
+                        });
+                      }}
+                      onMouseMove={(event) => {
+                        setHoveredSDG({
+                          title: 'Identified Gaps',
+                          value: d.identifiedGap,
+                          percent: d.identifiedGap / d.totalNoOfTargets,
+                          xPosition: event.clientX,
+                          yPosition: event.clientY,
+                          color: 'var(--dark-red)',
+                          totalValue: d.totalNoOfTargets,
+                        });
+                      }}
+                      onMouseLeave={() => { setHoveredSDG(null); }}
+                    />
+                    <path
+                      d={describeArc(0, 0, d.totalNoOfTargets * radiusScale, ((d.onTrack + d.forReview + d.identifiedGap) * 360) / d.totalNoOfTargets, 360)}
+                      style={{ fillOpacity: 0, stroke: 'var(--gray-400)', strokeWidth: d.totalNoOfTargets > 25 ? 18 : 14 }}
+                      onMouseEnter={(event) => {
+                        setHoveredSDG({
+                          title: 'Gaps NA',
+                          value: d.gapsNA,
+                          percent: d.gapsNA / d.totalNoOfTargets,
+                          xPosition: event.clientX,
+                          yPosition: event.clientY,
+                          color: 'var(--gray-700)',
+                          totalValue: d.totalNoOfTargets,
+                        });
+                      }}
+                      onMouseMove={(event) => {
+                        setHoveredSDG({
+                          title: 'Gaps NA',
+                          value: d.gapsNA,
+                          percent: d.gapsNA / d.totalNoOfTargets,
+                          xPosition: event.clientX,
+                          yPosition: event.clientY,
+                          color: 'var(--gray-700)',
+                          totalValue: d.totalNoOfTargets,
+                        });
+                      }}
+                      onMouseLeave={() => { setHoveredSDG(null); }}
+                    />
+                  </g>
+                ))
+              }
             </g>
           </svg>
 

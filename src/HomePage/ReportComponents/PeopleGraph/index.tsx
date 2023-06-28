@@ -25,6 +25,7 @@ export const PeopleGraph = (props: Props) => {
         color: 'var(--black)',
         minHeight: '10px',
         minWidth: '17.5rem',
+        flexGrow: 1,
       }}
       ref={graphRef}
     >

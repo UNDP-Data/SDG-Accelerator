@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 interface Props {
   cardTitle: string;
   cardDescription: string;
@@ -5,22 +7,26 @@ interface Props {
   id: string;
 }
 
+const Container = styled.div`
+  background-color: var(--gray-200);
+  width: calc(33.33% - 0.67rem);
+  flex-grow: 1;
+  min-width: 20rem;
+  color: var(--black);
+  box-sizing: border-box;
+  display: 'block';
+  cursor: pointer;
+  &:hover {
+    background-color: var(--gray-300);
+  }
+`;
+
 export const SectionCard = (props: Props) => {
   const {
     cardTitle, cardDescription, cardIcon, id,
   } = props;
   return (
-    <div
-      style={{
-        backgroundColor: 'var(--gray-200)',
-        width: 'calc(33.33% - 0.67rem)',
-        flexGrow: '1',
-        minWidth: '20rem',
-        color: 'var(--black)',
-        boxSizing: 'border-box',
-        display: 'block',
-      }}
-    >
+    <Container>
       <a href={`#${id}`} style={{ textDecoration: 'none', color: 'var(--black)' }}>
         <div style={{ padding: '2rem' }}>
           <img src={cardIcon} alt='' style={{ paddingBottom: '1rem' }} />
@@ -28,6 +34,6 @@ export const SectionCard = (props: Props) => {
           <p className='small-font margin-bottom-00'>{ cardDescription }</p>
         </div>
       </a>
-    </div>
+    </Container>
   );
 };

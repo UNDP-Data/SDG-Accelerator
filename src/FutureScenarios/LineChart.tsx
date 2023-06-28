@@ -68,7 +68,7 @@ export const LineChart = (props: Props) => {
       const overlaySelect = select(overlayRect.current);
       overlaySelect
         .transition()
-        .duration(10000)
+        .duration(1000)
         .attr('x', svgWidth + 20);
     }
   }, [inView]);

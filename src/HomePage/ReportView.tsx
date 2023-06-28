@@ -1,10 +1,11 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable camelcase */
 import { Tabs } from 'antd';
 import { queue } from 'd3-queue';
 import { json } from 'd3-request';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { format } from 'd3-format';
 import UNDPColorModule from 'undp-viz-colors';
 import { NavLink } from 'react-router-dom';
 import IMAGES from '../img/images';
@@ -34,6 +35,27 @@ interface Props {
   reportData: dataForReportType;
 }
 
+interface ScrollButtonProps {
+  bottomMargin: string;
+  disabled: boolean;
+}
+
+const ScrollButton = styled.div<ScrollButtonProps>`
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 2rem;
+  background-color: var(--gray-400);
+  position: fixed;
+  right: 1rem;
+  bottom: ${(props) => props.bottomMargin};
+  z-index: 6;
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+  opacity: ${(props) => (props.disabled ? 0.4 : 1)};
+  &:hover {
+    background-color: var(--gray-500);
+  }
+`;
+
 const HeroImageEl = styled.div`
   background: url(${IMAGES.heroImage}) no-repeat center;
   background-size: cover;
@@ -45,10 +67,15 @@ export const ReportView = (props: Props) => {
     countryCode, targetStatuses, countryFullName, reportData, goalStatuses,
   } = props;
   const [scenarioData, setScenarioData] = useState<ScenarioDataType[] | undefined>(undefined);
+  const [sectionNo, setSectionNo] = useState(0);
   const [priorityData, setPriorityData] = useState<any>(null);
   const [targetStatus, setTargetStatus] = useState<TargetStatusWithDetailsType[] | undefined>(undefined);
   const [activeTab, setActiveTab] = useState('0');
   const [error, setError] = useState<string | undefined>(undefined);
+  const WrapperRef = useRef<HTMLDivElement>(null);
+  const [cursor, setCursor] = useState(
+    'url(https://design.undp.org/static/media/arrow-right.125a0586.svg)',
+  );
   useEffect(() => {
     setError(undefined);
     setPriorityData(null);
@@ -96,7 +123,7 @@ export const ReportView = (props: Props) => {
         <div
           className='max-width flex-div flex-wrap flex-space-around'
           style={{
-            maxWidth: '70rem', margin: 'auto', justifyContent: 'space-between', padding: '2rem 0rem', gap: '4rem',
+            maxWidth: '100rem', margin: 'auto', justifyContent: 'space-between', padding: '0 var(--spacing-05)', gap: '4rem',
           }}
         >
           <div className='undp-section-content' style={{ width: 'calc(40% - 2rem)', minWidth: '20rem', flexGrow: 1 }}>
@@ -107,9 +134,9 @@ export const ReportView = (props: Props) => {
           </div>
         </div>
         <div
-          className='max-width-1280 flex-div flex-wrap'
+          className='margin-top-07 flex-div flex-wrap'
           style={{
-            maxWidth: '70rem', margin: 'auto', gap: '1rem',
+            maxWidth: '100rem', margin: 'auto', gap: '1rem', padding: '0 var(--spacing-05)',
           }}
         >
           <SectionCard id='section1' cardTitle='SDG Moment' cardDescription='Sets the stage by considering economic growth as a catalyst for the SDG agenda.' cardIcon={IMAGES.iconSnapshot} />
@@ -124,6 +151,7 @@ export const ReportView = (props: Props) => {
       {reportData && priorityData && targetStatus && !error ? (
         <>
           <SectionDiv
+            setSectionNo={setSectionNo}
             sectionNo={1}
             sectionTitle='SDG Moment'
             contentDiv={(
@@ -134,16 +162,24 @@ export const ReportView = (props: Props) => {
                     {' '}
                     <span className='bold'>the SDG agenda itself becomes a catalyst for inclusive and low-carbon growth pathways.</span>
                   </p>
-                  {reportData.SDGMoment.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
+                  <div className='flex-div flex-wrap gap-07 margin-top-09 margin-bottom-09'>
+                    <div style={{ width: 'calc(33.33% - 1rem)', flexGrow: 1 }}>
+                      {reportData.SDGMomentGDP.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
+                    </div>
+                    <div style={{ width: 'calc(66.67% - 1rem)', flexGrow: 1, minWidth: '20rem' }}>
+                      <GDPGraph countryCode={countryCode} />
+                    </div>
+                  </div>
                 </div>
-                <GDPGraph countryCode={countryCode} />
-                <div className='flex-div flex-wrap gap-05' style={{ alignItems: 'stretch' }}>
+                {reportData.SDGMomentPeoplePlanet.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
+                <div className='flex-div flex-wrap gap-05 margin-bottom-09' style={{ alignItems: 'stretch' }}>
                   <PeopleGraph countryCode={countryCode} />
                   <PlanetGraph countryCode={countryCode} />
                 </div>
+                {reportData.SDGMomentConclusion.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
                 {
                   reportData.SDGMomentSubtext ? (
-                    <ol style={{ paddingLeft: '1rem' }}>
+                    <ol style={{ paddingLeft: '1rem' }} className='margin-top-09'>
                       {reportData.SDGMomentSubtext.split('\n').map((d, i) => <li className='undp-typography small-font italics' key={i}>{d}</li>)}
                     </ol>
                   ) : null
@@ -154,6 +190,7 @@ export const ReportView = (props: Props) => {
             background='var(--blue-600)'
           />
           <SectionDiv
+            setSectionNo={setSectionNo}
             sectionNo={2}
             sectionTitle='SDG Trends'
             contentDiv={(
@@ -180,8 +217,8 @@ export const ReportView = (props: Props) => {
                     </button>
                   </NavLink>
                 </div>
-                <div style={{ flexGrow: 1, width: 'calc(50% - 1rem)', minWidth: '20rem' }}>
-                  <SDGTargetsGapVisualization targetStatuses={targetStatuses} />
+                <div style={{ flexGrow: 1, width: 'calc(50% - 1rem)', minWidth: '22.5rem' }}>
+                  <SDGTargetsGapVisualization width='100%' targetStatuses={targetStatuses} />
                 </div>
               </div>
             )}
@@ -189,6 +226,7 @@ export const ReportView = (props: Props) => {
             background='var(--gray-200)'
           />
           <SectionDiv
+            setSectionNo={setSectionNo}
             sectionNo={3}
             sectionTitle='National Priorities'
             contentDiv={(
@@ -222,6 +260,7 @@ export const ReportView = (props: Props) => {
             background='var(--white)'
           />
           <SectionDiv
+            setSectionNo={setSectionNo}
             sectionNo={4}
             sectionTitle='Interlinkages'
             contentDiv={(
@@ -247,7 +286,7 @@ export const ReportView = (props: Props) => {
                 <ul>
                   {reportData.InterlinkageBulletPoints.split('\n').map((d, i) => <li key={i}>{d}</li>)}
                 </ul>
-                <img src={IMAGES.interlinkageImage} alt='Interlinkage' className='margin-bottom-09 margin-top-05 flex-div' style={{ marginLeft: 'auto', marginRight: 'auto' }} />
+                <img src={IMAGES.interlinkageImage} alt='Interlinkage' className='margin-bottom-09 margin-top-05 flex-div' style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: '100%' }} />
                 <Tabs
                   activeKey={activeTab}
                   className='undp-tabs'
@@ -258,52 +297,103 @@ export const ReportView = (props: Props) => {
                       key: `${i}`,
                       children: (
                         <div key={`${i}`}>
-                          <h3 className='undp-typography'>
-                            Target
-                            {' '}
-                            {interlinkage.Target}
-                          </h3>
                           <p className='bold undp-typography'>
                             {interlinkage['Target Text']}
                           </p>
                           {interlinkage.Description.split('\n').map((d, j) => <p className='undp-typography' key={j}>{d}</p>)}
-                          <div className='margin-top-09'>
-                            <div style={{ backgroundColor: 'var(--white)' }}>
-                              <div style={{
-                                backgroundColor: interlinkage.LinkageType[0] === 'synergies' ? 'var(--dark-green)' : interlinkage.LinkageType[0] === 'tradeOffs' ? 'var(--dark-red)' : 'var(--gray-600)', color: 'var(--white)', fontWeight: 'bold', textAlign: 'center',
+
+                          <div
+                            style={{
+                              cursor: `${cursor}, auto`,
+                            }}
+                            onClick={(e) => {
+                              if (WrapperRef.current) {
+                                if (e.clientX > window.innerWidth / 2) { WrapperRef.current.scrollBy(50, 0); } else WrapperRef.current.scrollBy(-50, 0);
+                              }
+                            }}
+                            onMouseMove={(e) => {
+                              if (e.clientX > window.innerWidth / 2) {
+                                setCursor(
+                                  'url(https://design.undp.org/static/media/arrow-right.125a0586.svg)',
+                                );
+                              } else {
+                                setCursor(
+                                  'url(https://design.undp.org/static/media/arrow-left.14de54ea.svg)',
+                                );
+                              }
+                            }}
+                          >
+                            <div
+                              ref={WrapperRef}
+                              className='flex-div undp-scrollbar top-scrollbars'
+                              style={{
+                                gap: '2rem',
+                                overflow: 'auto',
+                                paddingBottom: '0.5rem',
+                                scrollSnapType: 'x mandatory',
+                                scrollPadding: '0',
+                                scrollPaddingLeft: '0',
                               }}
+                            >
+                              <div
+                                className='margin-top-09'
+                                style={{
+                                  width: '95%',
+                                  flexShrink: 0,
+                                  minWidth: '20rem',
+                                  maxWidth: '75rem',
+                                  backgroundColor: 'var(--gray-100)',
+                                  scrollSnapAlign: 'start',
+                                }}
                               >
-                                {
-                                  interlinkage.LinkageType[0] === 'synergies' ? 'Synergies' : interlinkage.LinkageType[0] === 'tradeOffs' ? 'Trade-Offs' : 'Not Specified'
-                                }
+                                <div style={{ backgroundColor: 'var(--white)' }}>
+                                  <div style={{
+                                    backgroundColor: interlinkage.LinkageType[0] === 'synergies' ? 'var(--dark-green)' : interlinkage.LinkageType[0] === 'tradeOffs' ? 'var(--dark-red)' : 'var(--gray-600)', color: 'var(--white)', fontWeight: 'bold', textAlign: 'center',
+                                  }}
+                                  >
+                                    {
+                                    interlinkage.LinkageType[0] === 'synergies' ? 'Synergies' : interlinkage.LinkageType[0] === 'tradeOffs' ? 'Trade-Offs' : 'Not Specified'
+                                  }
+                                  </div>
+                                  <div style={{ padding: 'var(--spacing-05)' }}>
+                                    <InterlinkagesViz
+                                      selectedTarget={`Target ${interlinkage.Target}`}
+                                      linkageType={interlinkage.LinkageType[0]}
+                                      data={targetStatus}
+                                      linkageData={LinkageData2023 as LinkageDataType[]}
+                                    />
+                                  </div>
+                                </div>
                               </div>
-                              <div style={{ padding: 'var(--spacing-05)' }}>
-                                <InterlinkagesViz
-                                  selectedTarget={`Target ${interlinkage.Target}`}
-                                  linkageType={interlinkage.LinkageType[0]}
-                                  data={targetStatus}
-                                  linkageData={LinkageData2023 as LinkageDataType[]}
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div className='margin-top-09'>
-                            <div style={{ backgroundColor: 'var(--white)' }}>
-                              <div style={{
-                                backgroundColor: interlinkage.LinkageType[1] === 'synergies' ? 'var(--dark-green)' : interlinkage.LinkageType[1] === 'tradeOffs' ? 'var(--dark-red)' : 'var(--gray-600)', color: 'var(--white)', fontWeight: 'bold', textAlign: 'center',
-                              }}
+                              <div
+                                className='margin-top-09'
+                                style={{
+                                  width: '95%',
+                                  flexShrink: 0,
+                                  minWidth: '20rem',
+                                  maxWidth: '75rem',
+                                  backgroundColor: 'var(--gray-100)',
+                                  scrollSnapAlign: 'start',
+                                }}
                               >
-                                {
-                                  interlinkage.LinkageType[1] === 'synergies' ? 'Synergies' : interlinkage.LinkageType[1] === 'tradeOffs' ? 'Trade-Offs' : 'Not Specified'
-                                }
-                              </div>
-                              <div style={{ padding: 'var(--spacing-05)' }}>
-                                <InterlinkagesViz
-                                  selectedTarget={`Target ${interlinkage.Target}`}
-                                  linkageType={interlinkage.LinkageType[1]}
-                                  data={targetStatus}
-                                  linkageData={LinkageData2023 as LinkageDataType[]}
-                                />
+                                <div style={{ backgroundColor: 'var(--white)' }}>
+                                  <div style={{
+                                    backgroundColor: interlinkage.LinkageType[1] === 'synergies' ? 'var(--dark-green)' : interlinkage.LinkageType[1] === 'tradeOffs' ? 'var(--dark-red)' : 'var(--gray-600)', color: 'var(--white)', fontWeight: 'bold', textAlign: 'center',
+                                  }}
+                                  >
+                                    {
+                                      interlinkage.LinkageType[1] === 'synergies' ? 'Synergies' : interlinkage.LinkageType[1] === 'tradeOffs' ? 'Trade-Offs' : 'Not Specified'
+                                    }
+                                  </div>
+                                  <div style={{ padding: 'var(--spacing-05)' }}>
+                                    <InterlinkagesViz
+                                      selectedTarget={`Target ${interlinkage.Target}`}
+                                      linkageType={interlinkage.LinkageType[1]}
+                                      data={targetStatus}
+                                      linkageData={LinkageData2023 as LinkageDataType[]}
+                                    />
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -327,101 +417,40 @@ export const ReportView = (props: Props) => {
             background='var(--gray-200)'
           />
           <SectionDiv
+            setSectionNo={setSectionNo}
             sectionNo={5}
             sectionTitle='Futures'
             contentDiv={(
-              <div>
-                <p className='undp-typography'>
-                  The &apos;SDG Push&apos; is a futures scenario based on 48 integrated accelerators in the areas of Governance, Social Protection, Green Economy and Digital Disruption. It uses national data to explore the impact on human development in 2030 and to 2050 across key SDG indicators.
-                </p>
-                <p className='undp-typography'>
-                  Incorporating &apos;SDG Push&apos; accelerators into development interventions in
-                  {' '}
-                  {countryFullName}
-                  {' '}
-                  can reduce the number of people living in poverty over time.
-                </p>
-                {
-                  scenarioData ? (
-                    <>
-                      <div className='margin-top-09 margin-bottom-09'>
-                        <div className='undp-table-head'>
-                          <div style={{ width: 'calc(50% - 2rem)', color: 'var(--black)', padding: '1rem' }} className='undp-table-head-cell undp-sticky-head-column'>
-                            People living in poverty
-                          </div>
-                          <div style={{ width: 'calc(25% - 2rem)', color: 'var(--black)', padding: '1rem' }} className='undp-table-head-cell undp-sticky-head-column align-right'>
-                            By 2030
-                          </div>
-                          <div style={{ width: 'calc(25% - 2rem)', color: 'var(--black)', padding: '1rem' }} className='undp-table-head-cell undp-sticky-head-column align-right'>
-                            by 2050
-                          </div>
-                        </div>
-                        <div className='undp-table-row' style={{ backgroundColor: 'transparent', color: 'var(--white)' }}>
-                          <div
-                            style={{
-                              width: 'calc(50% - 2rem)', padding: '1rem', backgroundColor: 'transparent', color: 'var(--white)',
-                            }}
-                            className='undp-table-row-cell'
-                          >
-                            Without SDG Push
-                          </div>
-                          <div
-                            style={{
-                              width: 'calc(25% - 2rem)', padding: '1rem', backgroundColor: 'transparent', color: 'var(--white)',
-                            }}
-                            className='undp-table-row-cell align-right'
-                          >
-                            {format('~s')(scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)' && series.scenario === "'COVID Baseline' scenario")[0].data[scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)' && series.scenario === "'COVID Baseline' scenario")[0].data.findIndex((d) => d.year === 2030)].value).replace('G', 'B')}
-                          </div>
-                          <div
-                            style={{
-                              width: 'calc(25% - 2rem)', padding: '1rem', backgroundColor: 'transparent', color: 'var(--white)',
-                            }}
-                            className='undp-table-row-cell align-right'
-                          >
-                            {format('~s')(scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)' && series.scenario === "'COVID Baseline' scenario")[0].data[scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)' && series.scenario === "'COVID Baseline' scenario")[0].data.findIndex((d) => d.year === 2050)].value).replace('G', 'B')}
-                          </div>
-                        </div>
-                        <div className='undp-table-row' style={{ backgroundColor: 'transparent', color: 'var(--white)' }}>
-                          <div
-                            style={{
-                              width: 'calc(50% - 2rem)', padding: '1rem', backgroundColor: 'transparent', color: 'var(--white)',
-                            }}
-                            className='undp-table-row-cell'
-                          >
-                            With SDG Push
-                          </div>
-                          <div
-                            style={{
-                              width: 'calc(25% - 2rem)', padding: '1rem', backgroundColor: 'transparent', color: 'var(--white)',
-                            }}
-                            className='undp-table-row-cell align-right'
-                          >
-                            {format('~s')(scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)' && series.scenario === "'SDG Push' scenario")[0].data[scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)' && series.scenario === "'SDG Push' scenario")[0].data.findIndex((d) => d.year === 2030)].value).replace('G', 'B')}
-                          </div>
-                          <div
-                            style={{
-                              width: 'calc(25% - 2rem)', padding: '1rem', backgroundColor: 'transparent', color: 'var(--white)',
-                            }}
-                            className='undp-table-row-cell align-right'
-                          >
-                            {format('~s')(scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)' && series.scenario === "'SDG Push' scenario")[0].data[scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)' && series.scenario === "'SDG Push' scenario")[0].data.findIndex((d) => d.year === 2050)].value).replace('G', 'B')}
-                          </div>
-                        </div>
-                      </div>
+              <div className='flex-div flex-wrap'>
+                <div style={{ width: 'calc(33.33% - 1rem)', flexGrow: 1 }}>
+                  <p className='undp-typography'>
+                    The &apos;SDG Push&apos; is a futures scenario based on 48 integrated accelerators in the areas of Governance, Social Protection, Green Economy and Digital Disruption. It uses national data to explore the impact on human development in 2030 and to 2050 across key SDG indicators.
+                  </p>
+                  <p className='undp-typography'>
+                    Incorporating &apos;SDG Push&apos; accelerators into development interventions in
+                    {' '}
+                    {countryFullName}
+                    {' '}
+                    can reduce the number of people living in poverty over time.
+                  </p>
+                  <div style={{ margin: 'var(--spacing-09) 0 0 0' }}>
+                    <NavLink
+                      to={`../../sdg-push-diagnostic/${countryCode}/future-scenarios`}
+                      style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
+                    >
+                      <button type='button' className='undp-button button-primary button-arrow' style={{ color: 'var(--white)' }}>
+                        Explore Future Scenarios
+                      </button>
+                    </NavLink>
+                  </div>
+                </div>
+                <div style={{ width: 'calc(66.67% - 1rem)', flexGrow: 1, minWidth: '20rem' }}>
+                  {
+                    scenarioData ? (
                       <LineChart data={scenarioData.filter((series) => series.indicator === 'Poverty <$1.90 per day (number of people)')} />
-                    </>
-                  ) : <div className='undp-loader' style={{ margin: 'auto' }} />
-                }
-                <div style={{ margin: 'var(--spacing-09) 0 0 0' }}>
-                  <NavLink
-                    to={`../../sdg-push-diagnostic/${countryCode}/future-scenarios`}
-                    style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
-                  >
-                    <button type='button' className='undp-button button-primary button-arrow' style={{ color: 'var(--white)' }}>
-                      Explore Future Scenarios
-                    </button>
-                  </NavLink>
+
+                    ) : <div className='undp-loader' style={{ margin: 'auto' }} />
+                  }
                 </div>
               </div>
             )}
@@ -429,15 +458,19 @@ export const ReportView = (props: Props) => {
             background='var(--blue-600)'
           />
           <SectionDiv
+            setSectionNo={setSectionNo}
             sectionNo={6}
             sectionTitle='Fiscal'
             contentDiv={(
-              <div>
-                <div>
+              <div className='flex-div flex-wrap'>
+                <div style={{ width: 'calc(33.33% - 1rem)', flexGrow: 1 }}>
                   {reportData.Fiscal.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
                 </div>
                 <div style={{
                   padding: '2rem',
+                  width: 'calc(66.67% - 5rem)',
+                  flexGrow: 1,
+                  minWidth: '20rem',
                   backgroundColor: UNDPColorModule.graphBackgroundColor,
                 }}
                 >
@@ -449,6 +482,7 @@ export const ReportView = (props: Props) => {
             background='var(--white)'
           />
           <SectionDiv
+            setSectionNo={setSectionNo}
             sectionNo={7}
             sectionTitle='SDG Stimulus'
             contentDiv={(
@@ -535,6 +569,42 @@ export const ReportView = (props: Props) => {
         <h6 className='undp-typography margin-bottom-07'>With the support of the German Federal Ministry for Economic Cooperation and Development</h6>
         <img alt='giz logo' src={IMAGES.gizLogo} style={{ width: '250px', margin: 'auto' }} />
       </div>
+      <ScrollButton
+        bottomMargin='4rem'
+        onClick={(e) => {
+          e.preventDefault();
+          if (sectionNo > 1) { window.location.href = `#section${sectionNo - 1}`; }
+        }}
+        disabled={sectionNo < 2}
+      >
+        <img
+          src='https://design.undp.org/icons/chevron-up.svg'
+          alt='down-up'
+          style={{
+            width: '1.5rem',
+            marginLeft: '9px',
+            marginTop: '12px',
+          }}
+        />
+      </ScrollButton>
+      <ScrollButton
+        bottomMargin='1rem'
+        disabled={sectionNo > 6}
+        onClick={(e) => {
+          e.preventDefault();
+          if (sectionNo < 7) { window.location.href = `#section${sectionNo + 1}`; }
+        }}
+      >
+        <img
+          src='https://design.undp.org/icons/chevron-down.svg'
+          alt='down-arrow'
+          style={{
+            width: '1.5rem',
+            marginLeft: '9px',
+            marginTop: '15px',
+          }}
+        />
+      </ScrollButton>
     </>
   );
 };

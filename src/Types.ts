@@ -241,7 +241,9 @@ export interface InterlinkagesForReportType {
 }
 
 export interface dataForReportType {
-  SDGMoment: string;
+  SDGMomentGDP: string;
+  SDGMomentPeoplePlanet: string;
+  SDGMomentConclusion: string;
   SDGMomentSubtext?: string;
   Trends?: string;
   InterlinkageBulletPoints: string;
