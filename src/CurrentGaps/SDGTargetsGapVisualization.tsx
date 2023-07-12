@@ -41,7 +41,11 @@ const TooltipEl = styled.div<TooltipElProps>`
 `;
 
 export const SDGTargetsGapVisualization = (props: Props) => {
-  const { targetStatuses, setRef, width } = props;
+  const {
+    targetStatuses,
+    setRef,
+    width,
+  } = props;
   const trendRef = useRef<HTMLDivElement>(null);
   const [hoveredSDG, setHoveredSDG] = useState<null | SDGHoveredProps>(null);
   const radiusScale = 1.25;
@@ -66,16 +70,19 @@ export const SDGTargetsGapVisualization = (props: Props) => {
   }, [trendRef]);
   const iconSize = 24;
   return (
-    <div style={{ width: width || 'calc(50% - 0.5rem)', minWidth: '22.5rem' }}>
+    <div style={{ minWidth: '22.5rem', width }}>
       <div
-        style={{ backgroundColor: 'var(--white)', padding: '1rem' }}
+        style={{ backgroundColor: 'var(--white)', padding: '2rem' }}
       >
+        <h3 className='undp-typography' style={{ textAlign: 'left' }}>
+          The SDG targets are organized according to the 5 P&apos;s of sustainable development
+        </h3>
         <div ref={trendRef}>
-          <svg width='100%' viewBox='0 0 595 450'>
-            <g transform='translate(0, -160)'>
+          <svg width='100%' viewBox='0 0 450 450'>
+            <g transform='translate(-80, -180)'>
               {
                 statusByPs.map((d, i) => (
-                  <g key={i} transform={`translate(${d.position[0]},${d.position[1]})`}>
+                  <g className={`p_${d.pValue.replaceAll(' ', '_')} circles`} key={i} transform={`translate(${d.position[0]},${d.position[1]})`}>
                     {
                       i < 3
                         ? (
@@ -190,7 +197,7 @@ export const SDGTargetsGapVisualization = (props: Props) => {
                       style={{ fillOpacity: 0, stroke: 'var(--dark-red)', strokeWidth: d.totalNoOfTargets > 25 ? 18 : 14 }}
                       onMouseEnter={(event) => {
                         setHoveredSDG({
-                          title: 'Identified Gaps',
+                          title: 'Off Track',
                           value: d.identifiedGap,
                           percent: d.identifiedGap / d.totalNoOfTargets,
                           xPosition: event.clientX,
@@ -201,7 +208,7 @@ export const SDGTargetsGapVisualization = (props: Props) => {
                       }}
                       onMouseMove={(event) => {
                         setHoveredSDG({
-                          title: 'Identified Gaps',
+                          title: 'Off Track',
                           value: d.identifiedGap,
                           percent: d.identifiedGap / d.totalNoOfTargets,
                           xPosition: event.clientX,

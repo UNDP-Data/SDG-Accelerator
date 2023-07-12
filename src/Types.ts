@@ -233,14 +233,25 @@ export interface CountryGoalStatusType {
   }[];
 }
 
+export type LinkageTypeData = 'tradeOffs' | 'synergies' | 'notSpecified'
+
 export interface InterlinkagesForReportType {
-  'Target': string;
+  Target: string;
+  Description: string;
   'Target Text': string;
-  'LinkageType': [InterlinkageType, InterlinkageType];
-  'Description': string;
+  LinkageType: [LinkageTypeData, LinkageTypeData];
 }
 
-export interface dataForReportType {
+export interface SummaryReportDataType {
+  SDGMoment: string;
+  InterlinkagesSDG: number[];
+  withoutSDGPush: number;
+  withSDGPush: number;
+  scale: number;
+  Fiscal: string;
+}
+
+export interface DetailedReportDataType {
   SDGMomentGDP: string;
   SDGMomentPeoplePlanet: string;
   SDGMomentConclusion: string;
@@ -251,6 +262,11 @@ export interface dataForReportType {
   Fiscal: string;
   SDGStimulus: string;
   SDGStimulusBulletPoints?: string;
+}
+
+export interface DataForReportType {
+  summaryReport: SummaryReportDataType;
+  detailedReport: DetailedReportDataType;
 }
 
 export type LanguageList = 'en' | 'ru' | 'fr' | 'es';

@@ -1,6 +1,6 @@
 import GDP2023 from '../../Data/GDP-2023.json';
 import GDP2019 from '../../Data/GDP-2019.json';
-import { LineChartGraph } from '../../GraphForReport/LineChartGraph';
+import { LineChartGraph } from './LineChartGraph';
 
 interface Props {
   countryCode: string;

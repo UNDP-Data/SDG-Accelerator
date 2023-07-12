@@ -433,7 +433,7 @@ export const Priorities = (props: Props) => {
       }
       <Modal
         className='undp-modal undp-loading-modal'
-        title='UNDP Modal'
+        title=''
         open={loading}
       >
         <div style={{ margin: 'auto' }}>

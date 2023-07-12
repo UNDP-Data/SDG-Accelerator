@@ -115,7 +115,19 @@ export const LandingPage = () => {
                         targetStatuses={statuses.targetStatus}
                         goalStatuses={statuses.goalStatus}
                       />
-                  )}
+                    )}
+                  />
+                  <Route
+                    path='/detailed-report'
+                    element={(
+                      <HomePage
+                        countryCode={countryCode}
+                        countryFullName={countryFullName}
+                        targetStatuses={statuses.targetStatus}
+                        goalStatuses={statuses.goalStatus}
+                        detailedReportView
+                      />
+                    )}
                   />
                   <Route
                     path='/sdg-trends'
@@ -128,7 +140,7 @@ export const LandingPage = () => {
                         countryCode={countryCode}
                         targetStatuses={statuses.targetStatus}
                       />
-                  )}
+                    )}
                   />
                   <Route
                     path='/synergies-and-tradeoffs'
@@ -137,7 +149,7 @@ export const LandingPage = () => {
                         targetStatuses={statuses.targetStatus}
                         countryFullName={countryFullName}
                       />
-                  )}
+                    )}
                   />
                   <Route
                     path='/current-priorities'
@@ -147,7 +159,7 @@ export const LandingPage = () => {
                         goalStatuses={statuses.goalStatus}
                         countryFullName={countryFullName}
                       />
-                  )}
+                    )}
                   />
                   <Route
                     path='/future-scenarios'
@@ -156,7 +168,7 @@ export const LandingPage = () => {
                         countryCode={countryCode.replaceAll('WithCountryGovInput', '')}
                         countryFullName={countryFullName}
                       />
-                  )}
+                    )}
                   />
                 </Routes>
               </>

@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@react-spring/parallax": "^9.7.3",
+    "@react-spring/web": "^9.7.3",
     "@types/axios": "^0.14.0",
     "@types/d3-array": "^3.0.3",
     "@types/d3-force": "^3.0.3",
@@ -62,6 +64,9 @@
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^8.34.0",
     "react-router-dom": "^6.11.1",
+    "react-scrollama": "^2.3.2",
+    "react-waypoint": "^10.3.0",
+    "reactflow": "^11.7.4",
     "styled-components": "^5.3.3",
     "typescript": "^5.0.3",
     "undp-viz-colors": "^1.0.5",

@@ -4,6 +4,8 @@ import { GlobalHeader } from './Header';
 import { Footer } from './Footer';
 import { DefaultHomePage } from './HomePage/DefaultHomePage';
 
+import './App.css';
+
 const App = () => (
   <div className='undp-container'>
     <Routes>

@@ -8,10 +8,11 @@ import { SlopeGraphPovertySeparated } from '../../GraphForReport/SlopeGraphPover
 interface Props {
   countryCode: string;
   width: number;
+  height: number;
 }
 export const Graph = (props: Props) => {
   const {
-    countryCode, width,
+    countryCode, width, height,
   } = props;
   return (
     <>
@@ -46,7 +47,7 @@ export const Graph = (props: Props) => {
                   : undefined,
               ]}
               svgWidth={width}
-              svgHeight={300}
+              svgHeight={height - 175}
             />
           )
 }

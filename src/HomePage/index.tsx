@@ -1,17 +1,18 @@
-// import { useState } from 'react';
 import { useEffect, useState } from 'react';
 import { json } from 'd3-request';
 import { queue } from 'd3-queue';
 import { DefaultHomePage } from './DefaultHomePage';
 import { DATASOURCELINK } from '../Constants';
-import { ReportView } from './ReportView';
-import { GoalStatusType, TargetStatusType, dataForReportType } from '../Types';
+import { SummaryReportView } from './SummaryReportView';
+import { GoalStatusType, TargetStatusType, DataForReportType } from '../Types';
+import { DetailedReportView } from './DetailedReportView';
 
 interface Props {
   countryCode?: string;
   countryFullName?: string;
   targetStatuses: TargetStatusType[];
   goalStatuses: GoalStatusType[];
+  detailedReportView?: boolean;
 }
 
 export const HomePage = (props: Props) => {
@@ -20,9 +21,10 @@ export const HomePage = (props: Props) => {
     countryFullName,
     targetStatuses,
     goalStatuses,
+    detailedReportView,
   } = props;
   const [reportData, setReportData] = useState<
-    dataForReportType | undefined
+    DataForReportType | undefined
   >(undefined);
   const [error, setError] = useState<string | undefined>(undefined);
   useEffect(() => {
@@ -33,7 +35,7 @@ export const HomePage = (props: Props) => {
       .await(
         (
           err: any,
-          data: dataForReportType,
+          data: DataForReportType,
         ) => {
           if (err) { setError('Error loading files'); }
           setReportData(data);
@@ -44,7 +46,30 @@ export const HomePage = (props: Props) => {
     <>
       {
         countryCode && countryFullName
-          ? reportData || error ? reportData ? <ReportView goalStatuses={goalStatuses} targetStatuses={targetStatuses} countryCode={countryCode} countryFullName={countryFullName} reportData={reportData} /> : <DefaultHomePage countryCode={countryCode} countryFullName={countryFullName} />
+          ? reportData || error ? reportData
+            ? detailedReportView ? (
+              <DetailedReportView
+                goalStatuses={goalStatuses}
+                targetStatuses={targetStatuses}
+                countryCode={countryCode}
+                countryFullName={countryFullName}
+                reportData={reportData.detailedReport}
+              />
+            ) : (
+              <SummaryReportView
+                goalStatuses={goalStatuses}
+                targetStatuses={targetStatuses}
+                countryCode={countryCode}
+                countryFullName={countryFullName}
+                reportData={reportData.summaryReport}
+              />
+            )
+            : (
+              <DefaultHomePage
+                countryCode={countryCode}
+                countryFullName={countryFullName}
+              />
+            )
             : (
               <div style={{ margin: '10rem auto 3rem auto', minHeight: '30rem' }}>
                 <div className='undp-loader' style={{ margin: 'auto' }} />

@@ -13,6 +13,8 @@ interface Props {
   setSelectedTarget?: (_d: string) => void;
   data: TargetStatusWithDetailsType[];
   linkageData: LinkageDataType[];
+  height?: number;
+  width?: number;
 }
 
 export const InterlinkagesViz = (props: Props) => {
@@ -22,6 +24,8 @@ export const InterlinkagesViz = (props: Props) => {
     linkageType,
     data,
     linkageData,
+    height,
+    width,
   } = props;
   const [hoverData, setHoverData] = useState<LinkageHoverDataType | undefined>(undefined);
   const squareSize = 40;
@@ -29,7 +33,7 @@ export const InterlinkagesViz = (props: Props) => {
   const linkTargets = selectedTarget !== 'All Targets' ? uniq(linkageData[linkageData.findIndex((d) => d.id === selectedTarget.split(':')[0])][linkageType]) : [];
   return (
     <>
-      <svg width='100%' viewBox='0 0 1360 1000'>
+      <svg width='100%' height='100%' viewBox={`0 0 ${width || 1360} ${height || 1000}`}>
         <rect
           x={0}
           y={0}

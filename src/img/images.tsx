@@ -19,6 +19,10 @@ const IMAGES = {
   iconSnapshot: new URL('./icons/snapshot.png', import.meta.url).href,
   iconConstraints: new URL('./icons/constraints.png', import.meta.url).href,
   interlinkageImage: new URL('./InterlinkageImage.png', import.meta.url).href,
+  SDGWheel: new URL('./sdg_wheel_print_transparent.png', import.meta.url).href,
+  CurrencyBG: new URL('./fiscalBG.jpg', import.meta.url).href,
+  TrendsBG: new URL('./trendsBG.jpg', import.meta.url).href,
+  PrioritiesBG: new URL('./prioritiesBG.jpg', import.meta.url).href,
 };
 
 export default IMAGES;

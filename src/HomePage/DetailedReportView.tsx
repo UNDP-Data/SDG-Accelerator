@@ -10,11 +10,15 @@ import UNDPColorModule from 'undp-viz-colors';
 import { NavLink } from 'react-router-dom';
 import IMAGES from '../img/images';
 import {
+  DetailedReportDataType,
   GoalStatusType,
-  LinkageDataType, ScenarioDataType, TargetStatusType, TargetStatusWithDetailsType, dataForReportType,
+  LinkageDataType,
+  ScenarioDataType,
+  TargetStatusType,
+  TargetStatusWithDetailsType,
 } from '../Types';
-import { SectionCard } from './SectionCard';
-import { SectionDiv } from './SectionDiv';
+import { SectionCard } from './ReportComponents/SectionCard';
+import { SectionDiv } from './ReportComponents/SectionDiv';
 import { DATASOURCELINK } from '../Constants';
 import { SDGTargetsGapVisualization } from '../CurrentGaps/SDGTargetsGapVisualization';
 import { VNRAnalysis } from '../Priorities/VNRAnalysis';
@@ -32,7 +36,7 @@ interface Props {
   targetStatuses: TargetStatusType[];
   countryFullName: string;
   goalStatuses: GoalStatusType[];
-  reportData: dataForReportType;
+  reportData: DetailedReportDataType;
 }
 
 interface ScrollButtonProps {
@@ -62,9 +66,13 @@ const HeroImageEl = styled.div`
   margin-top: 7.1875rem;
 `;
 
-export const ReportView = (props: Props) => {
+export const DetailedReportView = (props: Props) => {
   const {
-    countryCode, targetStatuses, countryFullName, reportData, goalStatuses,
+    countryCode,
+    targetStatuses,
+    countryFullName,
+    reportData,
+    goalStatuses,
   } = props;
   const [scenarioData, setScenarioData] = useState<ScenarioDataType[] | undefined>(undefined);
   const [sectionNo, setSectionNo] = useState(0);
@@ -172,7 +180,7 @@ export const ReportView = (props: Props) => {
                   </div>
                 </div>
                 {reportData.SDGMomentPeoplePlanet.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
-                <div className='flex-div flex-wrap gap-05 margin-bottom-09' style={{ alignItems: 'stretch' }}>
+                <div className='flex-div flex-wrap gap-07 margin-bottom-09' style={{ alignItems: 'stretch' }}>
                   <PeopleGraph countryCode={countryCode} />
                   <PlanetGraph countryCode={countryCode} />
                 </div>
@@ -421,7 +429,7 @@ export const ReportView = (props: Props) => {
             sectionNo={5}
             sectionTitle='Futures'
             contentDiv={(
-              <div className='flex-div flex-wrap'>
+              <div className='flex-div flex-wrap gap-07'>
                 <div style={{ width: 'calc(33.33% - 1rem)', flexGrow: 1 }}>
                   <p className='undp-typography'>
                     The &apos;SDG Push&apos; is a futures scenario based on 48 integrated accelerators in the areas of Governance, Social Protection, Green Economy and Digital Disruption. It uses national data to explore the impact on human development in 2030 and to 2050 across key SDG indicators.
@@ -462,7 +470,7 @@ export const ReportView = (props: Props) => {
             sectionNo={6}
             sectionTitle='Fiscal'
             contentDiv={(
-              <div className='flex-div flex-wrap'>
+              <div className='flex-div flex-wrap gap-07'>
                 <div style={{ width: 'calc(33.33% - 1rem)', flexGrow: 1 }}>
                   {reportData.Fiscal.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)}
                 </div>
