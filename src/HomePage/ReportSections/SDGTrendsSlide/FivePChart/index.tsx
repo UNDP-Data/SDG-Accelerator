@@ -17,18 +17,31 @@ export const FivePChart = () => {
       <div style={{
         display: 'flex',
         flexDirection: 'column',
-        gap: 'var(--spacing-07)',
         minWidth: '22.5rem',
-        height: 'calc(100vh - 13.5rem)',
+        height: 'calc(100vh - 7.1875rem - 9rem)',
       }}
       >
-        <h5 className='undp-typography margin-bottom-00 bold' style={{ textAlign: 'left', color: 'var(--white)' }}>
+        <h5
+          className='undp-typography margin-bottom-00 bold'
+          style={{
+            fontFamily: 'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
+            color: 'var(--white)',
+            backgroundColor: 'var(--blue-400)',
+            padding: 'var(--spacing-07)',
+          }}
+        >
           The SDG targets are organized according to the 5 P&apos;s of sustainable development
         </h5>
-        <div ref={graphRef} style={{ flexGrow: 1 }}>
+        <div
+          style={{
+            backgroundColor: 'var(--white)',
+            flexGrow: 1,
+          }}
+          ref={graphRef}
+        >
           {
-              !graphWidth || !graphHeight ? <div className='undp-loader' style={{ margin: 'auto' }} /> : <Graph width={graphWidth} height={graphHeight} />
-            }
+            !graphWidth || !graphHeight ? <div className='undp-loader' style={{ margin: 'auto' }} /> : <Graph width={graphWidth} height={graphHeight} />
+          }
         </div>
       </div>
     </div>

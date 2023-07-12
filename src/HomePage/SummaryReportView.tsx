@@ -6,7 +6,6 @@ import {
 import { useInView } from 'react-intersection-observer';
 import styled, { keyframes } from 'styled-components';
 import { useTrail, a } from '@react-spring/web';
-import { NavLink } from 'react-router-dom';
 import IMAGES from '../img/images';
 import {
   GoalStatusType,
@@ -162,39 +161,6 @@ export const SummaryReportView = (props: Props) => {
             <InterlinkagesSlide reportData={reportData} />
             <SDGPushSlide reportData={reportData} countryFullName={countryFullName} />
             <FiscalSlide reportData={reportData} />
-            <div
-              className='margin-bottom-00'
-              style={{
-                width: '100%',
-                backgroundColor: 'var(--gray-300)',
-              }}
-            >
-              <div style={{
-                padding: 'var(--spacing-13) var(--spacing-07)',
-              }}
-              >
-                <NavLink
-                  to='./detailed-report'
-                  style={{
-                    textDecoration: 'none',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <div
-                    className='undp-typography margin-bottom-00 undp-button button-primary'
-                    style={{
-                      textAlign: 'center',
-                      textDecoration: 'none',
-                      fontSize: '1.5rem',
-                    }}
-                  >
-                    See Detailed Report
-                  </div>
-                </NavLink>
-              </div>
-            </div>
           </div>
         ) : null
       }

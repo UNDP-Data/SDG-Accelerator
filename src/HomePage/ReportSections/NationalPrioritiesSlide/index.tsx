@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 import UNDPColorModule from 'undp-viz-colors';
-import IMAGES from '../../../img/images';
 import { NationalPrioritiesBubbleChart } from './NationalPrioritiesBubbleChart';
 import { SDGGOALS } from '../../../Constants';
 
@@ -9,23 +8,21 @@ interface Props {
   priorityData: any;
   countryFullName: string;
 }
-interface BgInterface {
-  bgImage: string;
-}
 
-const SectionEl = styled.div<BgInterface>`
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${(props) => props.bgImage}) no-repeat center;
-  background-size: cover;
-  background-attachment: fixed;
-  min-height: calc(100vh - 7.1875rem);
+const SectionEl = styled.div`
+  background-color: var(--gray-200);
   display: flex;
-  padding-top: 7.1875rem;
+  width: calc(100vw - 1rem);
+  text-align: center;
+  padding: 4rem 0;
+  position: sticky;
+  top: 115px;
   width: calc(100vw - 1rem);
 `;
 
 const P = styled.p`
   color: var(--white);
-  background-color: var(--gray-700);
+  background-color: var(--blue-700);
   padding: var(--spacing-03) var(--spacing-05) !important;
   margin-bottom: 0 !important;
   width: max-content;
@@ -40,17 +37,8 @@ export const NationalPrioritiesSlide = (props: Props) => {
     threshold: 0.5,
   });
   return (
-    <div>
+    <div className='flex-div' style={{ height: 'calc(100vh - 131px)' }}>
       <SectionEl
-        bgImage={IMAGES.PrioritiesBG}
-        style={{
-          textAlign: 'center',
-          padding: '2rem 0',
-          position: 'sticky',
-          top: '115px',
-          width: 'calc(100vw - 1rem)',
-          height: 'calc(100vh - 200px)',
-        }}
         ref={ref}
       >
         <div
@@ -58,7 +46,7 @@ export const NationalPrioritiesSlide = (props: Props) => {
             position: 'sticky',
             display: 'flex',
             gap: 'var(--spacing-05)',
-            alignItems: 'flex-start',
+            alignItems: 'center',
             flexGrow: 1,
             maxWidth: '100rem',
             margin: 'auto',
@@ -66,10 +54,10 @@ export const NationalPrioritiesSlide = (props: Props) => {
         >
           <div style={{ padding: 'var(--spacing-07)' }}>
             <h4
-              className='undp-typography'
+              className='undp-typography bold'
               style={{
                 color: 'var(--white)',
-                backgroundColor: 'var(--gray-700)',
+                backgroundColor: 'var(--blue-700)',
                 width: 'max-content',
                 padding: 'var(--spacing-02) var(--spacing-05)',
                 marginBottom: 0,
@@ -113,7 +101,6 @@ export const NationalPrioritiesSlide = (props: Props) => {
           <div style={{
             flexShrink: 1,
             flexGrow: 1,
-            marginTop: '2rem',
             marginRight: '2rem',
             marginLeft: '2rem',
           }}

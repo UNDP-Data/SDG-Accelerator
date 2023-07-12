@@ -25,39 +25,39 @@ export const GDPGraph = (props: Props) => {
       className='margin-bottom-05'
       style={{
         padding: '1rem',
-        backgroundColor: 'rgba(0,0,0,0.75)',
         color: 'var(--black)',
-        height: 'calc(100vh - 20rem)',
+        maxHeight: 'calc(100vh - 20rem)',
+        minHeight: '40rem',
         display: 'flex',
         flexDirection: 'column',
         gap: '1rem',
       }}
     >
-      <div className='flex-div flex-wrap gap-07' style={{ justifyContent: 'center', color: 'var(--white)' }}>
-        <div className='flex-div gap-03 flex-vert-align-center'>
+      <div className='flex-div flex-wrap gap-05' style={{ color: 'var(--black)' }}>
+        <div className='flex-div gap-03 flex-vert-align-center bold small-font' style={{ color: 'var(--blue-700)' }}>
           <div style={{
-            width: '1rem',
-            height: '1rem',
-            backgroundColor: 'var(--blue-300)',
+            width: '0.825rem',
+            height: '0.825rem',
+            backgroundColor: 'var(--blue-700)',
           }}
           />
           {countryFullName}
           {' '}
           GDP Projection
         </div>
-        <div className='flex-div gap-03 flex-vert-align-center'>
+        <div className='flex-div gap-03 flex-vert-align-center bold small-font' style={{ color: 'var(--gray-600)' }}>
           <div style={{
-            width: '1rem',
-            height: '1rem',
-            backgroundColor: 'var(--gray-400)',
+            width: '0.825rem',
+            height: '0.825rem',
+            backgroundColor: 'var(--gray-600)',
           }}
           />
           World GDP Projection
         </div>
       </div>
       <div
-        style={{ flexGrow: 1 }}
         ref={graphRef}
+        style={{ flexGrow: 1 }}
       >
         {
           !graphWidth && !graphHeight
@@ -71,17 +71,6 @@ export const GDPGraph = (props: Props) => {
               />
             )
         }
-      </div>
-      <div
-        className='small-font'
-        style={{
-          color: 'var(--white)',
-          fontFamily:
-            'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
-        }}
-      >
-        Source: IMF World Economic Outlook (WEO) (April 2023 and October
-        2019).
       </div>
     </div>
   );

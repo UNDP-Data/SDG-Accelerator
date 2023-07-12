@@ -48,11 +48,11 @@ export const Graph = (props: Props) => {
       style={{
         alignItems: 'flex-end',
       }}
-      viewBox={`0 0 ${width} ${height - 50}`}
+      viewBox={`0 0 ${width} ${height}`}
     >
       {
         status.map((d, i) => (
-          <g key={i} transform={`translate(${width / 2},${(height - 50) / 2}) rotate(${72 * (i)})`}>
+          <g key={i} transform={`translate(${width / 2},${(height) / 2}) rotate(${72 * (i)})`}>
             <line
               x1={0}
               x2={0}
@@ -73,7 +73,7 @@ export const Graph = (props: Props) => {
                 dx={i === 2 || i === 1 || i === 3 ? -30 : 30}
                 className={`${d.pValue}Percent`}
                 style={{
-                  fill: 'var(--white)',
+                  fill: colors[i],
                 }}
                 fontSize={18}
                 fontWeight='bold'
@@ -86,7 +86,7 @@ export const Graph = (props: Props) => {
       }
       <circle
         cx={width / 2}
-        cy={(height - 50) / 2}
+        cy={(height) / 2}
         r={24}
         opacity={0.9}
         fill='#fff'

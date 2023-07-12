@@ -34,18 +34,19 @@ const SourceTargetNode = (d: any) => {
   return (
     <>
       <div style={{
-        maxWidth: '15rem',
-        backgroundColor: 'var(--gray-300)',
+        maxWidth: '20rem',
+        backgroundColor: 'var(--white)',
         padding: 'var(--spacing-05)',
+        border: '1px solid var(--gray-500)',
         borderRadius: '4px',
         display: 'flex',
+        flexDirection: 'column',
         gap: 'var(--spacing-05)',
-        alignItems: 'center',
         pointerEvents: 'none',
       }}
       >
-        {getSDGIcon(`SDG ${data.sdg}`, 48)}
-        <p className='undp-typography margin-bottom-00 small-font bold'>
+        {getSDGIcon(`SDG ${data.sdg}`, 64)}
+        <p className='undp-typography margin-bottom-00 bold'>
           {data.label.split(':')[0]}
           <br />
           {data.label.split(':')[1]}
@@ -66,7 +67,7 @@ export const Graph = (props: Props) => {
     {
       id: '1',
       type: 'sourceNode',
-      position: { x: 0, y: 0 },
+      position: { x: 0, y: -75 },
       data: { label: reportData.interlinkages.source.label.replaceAll('\n', ' '), sdg: reportData.interlinkages.source.sdg },
     },
   ];

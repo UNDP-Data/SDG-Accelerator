@@ -14,17 +14,18 @@ interface BgInterface {
 
 const SectionEl = styled.div<BgInterface>`
   background-color: ${(props) => props.bgColor};
-  background-size: cover;
-  background-attachment: fixed;
-  min-height: calc(100vh - 7.1875rem);
+  text-align: center;
+  padding: 4rem 0;
+  position: sticky;
+  top: 115px;
+  width: calc(100vw - 1rem);
   display: flex;
-  padding-top: 7.1875rem;
   width: calc(100vw - 1rem);
 `;
 
 const P = styled.p`
   color: var(--white);
-  background-color: var(--gray-700);
+  background-color: var(--blue-700);
   padding: var(--spacing-03) var(--spacing-05) !important;
   margin-bottom: 0 !important;
   width: max-content;
@@ -37,18 +38,8 @@ export const SDGPushSlide = (props: Props) => {
   } = props;
   const { withSDGPush, withoutSDGPush, scale } = reportData;
   return (
-    <div>
-      <SectionEl
-        bgColor={UNDPColorModule.sdgColors.sdg1}
-        style={{
-          textAlign: 'center',
-          padding: '4rem 0',
-          position: 'sticky',
-          top: '115px',
-          width: 'calc(100vw - 1rem)',
-          height: 'calc(100vh - 200px)',
-        }}
-      >
+    <div className='flex-div' style={{ height: 'calc(100vh - 131px)' }}>
+      <SectionEl bgColor='var(--gray-200)'>
         <div
           style={{
             position: 'sticky',
@@ -62,10 +53,10 @@ export const SDGPushSlide = (props: Props) => {
         >
           <div style={{ padding: 'var(--spacing-07)' }}>
             <h4
-              className='undp-typography'
+              className='undp-typography bold'
               style={{
                 color: 'var(--white)',
-                backgroundColor: 'var(--gray-700)',
+                backgroundColor: 'var(--blue-700)',
                 width: 'max-content',
                 padding: 'var(--spacing-02) var(--spacing-05)',
                 marginBottom: 0,
@@ -74,10 +65,10 @@ export const SDGPushSlide = (props: Props) => {
               Achieving the SDGs
             </h4>
             <h4
-              className='undp-typography'
+              className='undp-typography bold'
               style={{
                 color: 'var(--white)',
-                backgroundColor: 'var(--gray-700)',
+                backgroundColor: 'var(--blue-700)',
                 width: 'max-content',
                 padding: 'var(--spacing-02) var(--spacing-05)',
                 marginBottom: 0,
@@ -101,7 +92,10 @@ export const SDGPushSlide = (props: Props) => {
               digital disruption can reduce poverty.
             </P>
             <P
-              className='undp-typography margin-top-03'
+              className='undp-typography margin-top-03 bold'
+              style={{
+                backgroundColor: UNDPColorModule.sdgColors.sdg1,
+              }}
             >
               With the SDG Push,
               {' '}
@@ -117,7 +111,10 @@ export const SDGPushSlide = (props: Props) => {
               )
             </P>
             <P
-              className='undp-typography'
+              className='undp-typography bold'
+              style={{
+                backgroundColor: UNDPColorModule.sdgColors.sdg1,
+              }}
             >
               fewer people in
               {' '}
@@ -126,7 +123,10 @@ export const SDGPushSlide = (props: Props) => {
               will be living
             </P>
             <P
-              className='undp-typography'
+              className='undp-typography bold'
+              style={{
+                backgroundColor: UNDPColorModule.sdgColors.sdg1,
+              }}
             >
               in poverty by 2030.
             </P>

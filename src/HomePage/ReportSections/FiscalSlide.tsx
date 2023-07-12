@@ -1,33 +1,25 @@
 import styled from 'styled-components';
-import IMAGES from '../../img/images';
+import { NavLink } from 'react-router-dom';
 import { SummaryReportDataType } from '../../Types';
 
 interface Props {
   reportData: SummaryReportDataType;
 }
-interface BgInterface {
-  bgImage: string;
-}
 
-const SectionEl = styled.div<BgInterface>`
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${(props) => props.bgImage}) no-repeat center;
-  background-size: cover;
-  background-attachment: fixed;
-  min-height: calc(100vh - 7.1875rem);
-  display: flex;
-  padding-top: 7.1875rem;
-  width: calc(100vw - 1rem);
+const SectionEl = styled.div`
+  background-color: var(--blue-700);
+  text-align: center;
+  padding: 8rem 0;
+  top: 115px;
+  width: 100%;
 `;
 
-const P = styled.p`
-  color: var(--white);
-  background-color: var(--gray-700);
+const H4 = styled.h4`
+  color: var(--blue-700);
+  background-color: var(--white);
   padding: var(--spacing-03) var(--spacing-05) !important;
   margin-bottom: 0 !important;
   width: max-content;
-  &:last-of-type{
-    padding: var(--spacing-03) var(--spacing-05) var(--spacing-05) var(--spacing-05) !important;
-  }
 `;
 
 export const FiscalSlide = (props: Props) => {
@@ -35,66 +27,61 @@ export const FiscalSlide = (props: Props) => {
     reportData,
   } = props;
   return (
-    <div>
-      <SectionEl
-        bgImage={IMAGES.CurrencyBG}
-        style={{
-          textAlign: 'center',
-          padding: '4rem 0',
-          position: 'sticky',
-          top: '115px',
-          width: 'calc(100vw - 1rem)',
-          height: 'calc(100vh - 200px)',
-        }}
-      >
+    <div className='flex-div' style={{ textAlign: 'center', justifyContent: 'center' }}>
+      <SectionEl>
         <div
+          className='flex-div gap-00'
           style={{
-            position: 'sticky',
-            display: 'flex',
-            gap: 'var(--spacing-05)',
-            alignItems: 'flex-start',
-            flexGrow: 1,
-            maxWidth: '100rem',
-            marginLeft: 'auto',
-            marginRight: 'auto',
+            flexDirection: 'column',
+            alignItems: 'center',
           }}
         >
-          <div style={{ padding: 'var(--spacing-07)' }}>
-            <h4
-              className='undp-typography'
+          <h2
+            className='undp-typography bold margin-bottom-05'
+            style={{
+              color: 'var(--blue-700)',
+              backgroundColor: 'var(--white)',
+              width: 'max-content',
+              padding: 'var(--spacing-02) var(--spacing-05)',
+            }}
+          >
+            But there are fiscal challenges to a win...
+          </h2>
+          {
+            reportData.Fiscal.split('\n').map((d, i) => (
+              <H4
+                className='undp-typography'
+                key={i}
+              >
+                {d}
+              </H4>
+            ))
+          }
+        </div>
+        <div style={{
+          padding: 'var(--spacing-09) var(--spacing-07)',
+        }}
+        >
+          <NavLink
+            to='./detailed-report'
+            style={{
+              textDecoration: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <div
+              className='undp-typography margin-bottom-00 undp-button button-primary'
               style={{
-                color: 'var(--white)',
-                backgroundColor: 'var(--gray-700)',
-                width: 'max-content',
-                padding: 'var(--spacing-02) var(--spacing-05)',
-                marginBottom: 0,
+                textAlign: 'center',
+                textDecoration: 'none',
+                fontSize: '1.5rem',
               }}
             >
-              But there are fiscal
-            </h4>
-            <h4
-              className='undp-typography'
-              style={{
-                color: 'var(--white)',
-                backgroundColor: 'var(--gray-700)',
-                width: 'max-content',
-                padding: 'var(--spacing-02) var(--spacing-05)',
-                marginBottom: 0,
-              }}
-            >
-              challenges to a win...
-            </h4>
-            {
-              reportData.Fiscal.split('\n').map((d, i) => (
-                <P
-                  className='undp-typography'
-                  key={i}
-                >
-                  {d}
-                </P>
-              ))
-            }
-          </div>
+              See Detailed Report
+            </div>
+          </NavLink>
         </div>
       </SectionEl>
     </div>

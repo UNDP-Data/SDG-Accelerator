@@ -24,7 +24,7 @@ export function LineChartGraph(props: Props) {
   } = props;
   const margin = {
     top: 20,
-    bottom: 20,
+    bottom: 60,
     left: 30,
     right: 30,
   };
@@ -33,7 +33,7 @@ export function LineChartGraph(props: Props) {
   });
   const rectRef = useRef(null);
   const graphWidth = svgWidth - margin.left - margin.right;
-  const graphHeight = svgHeight - margin.top - margin.bottom;
+  const graphHeight = Math.min(svgHeight - margin.top - margin.bottom, 500);
   useEffect(() => {
     if (rectRef.current) {
       if (inView) {
@@ -122,7 +122,6 @@ export function LineChartGraph(props: Props) {
     .range([graphHeight, 0])
     .nice();
 
-  const yTicks = y.ticks(5);
   const lineShape = line()
     .defined((d: any) => d.param !== undefined)
     .x((d: any) => x(d.year))
@@ -132,7 +131,7 @@ export function LineChartGraph(props: Props) {
     <svg
       width='100%'
       style={{ alignItems: 'flex-end' }}
-      viewBox={`0 0 ${svgWidth} ${svgHeight}`}
+      viewBox={`0 0 ${svgWidth} ${graphHeight + margin.top + margin.bottom}`}
       ref={ref}
     >
       <g transform={`translate(${margin.left},${margin.top})`}>
@@ -143,7 +142,7 @@ export function LineChartGraph(props: Props) {
               y={graphHeight + 5}
               x={x(minYearFiltered as number)}
               style={{
-                fill: 'var(--white)',
+                fill: 'var(--black-600)',
                 fontFamily:
                     'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
               }}
@@ -159,7 +158,7 @@ export function LineChartGraph(props: Props) {
                 key={i}
                 x={x(d)}
                 style={{
-                  fill: 'var(--white)',
+                  fill: 'var(--black-600)',
                   fontFamily:
                       'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
                 }}
@@ -174,7 +173,7 @@ export function LineChartGraph(props: Props) {
               y={graphHeight + 5}
               x={x(maxYearFiltered as number)}
               style={{
-                fill: 'var(--white)',
+                fill: 'var(--black-600)',
                 fontFamily:
                     'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
               }}
@@ -190,7 +189,7 @@ export function LineChartGraph(props: Props) {
           <path
             d={lineShape(dataFormattedWorldData as any) as string}
             fill='none'
-            style={{ stroke: 'var(--gray-300)' }}
+            style={{ stroke: 'var(--gray-600)' }}
             shapeRendering='geometricPrecision'
             strokeWidth={strokeWidth}
           />
@@ -202,7 +201,7 @@ export function LineChartGraph(props: Props) {
                   cx={x(d.year)}
                   cy={y(d.param as number)}
                   r={4}
-                  style={{ fill: 'var(--gray-300)' }}
+                  style={{ fill: 'var(--gray-600)' }}
                 />
               </g>
             ))}
@@ -210,7 +209,7 @@ export function LineChartGraph(props: Props) {
             d={lineShape(dataFiltered as any) as string}
             fill='none'
             style={{
-              stroke: 'var(--blue-300)',
+              stroke: 'var(--blue-700)',
             }}
             shapeRendering='geometricPrecision'
             strokeWidth={strokeWidth}
@@ -225,7 +224,7 @@ export function LineChartGraph(props: Props) {
                 cy={y(d.param as number)}
                 r={4.5}
                 style={{
-                  fill: 'var(--blue-300)',
+                  fill: 'var(--blue-700)',
                 }}
               />
               <text
@@ -236,7 +235,7 @@ export function LineChartGraph(props: Props) {
                 style={{
                   fontFamily:
                       'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
-                  fill: 'var(--blue-300)',
+                  fill: 'var(--blue-700)',
                   fontWeight: 'bold',
                   fontSize: '1rem',
                   textAnchor: 'middle',
@@ -253,43 +252,10 @@ export function LineChartGraph(props: Props) {
           width={svgWidth + 30}
           height={svgHeight + margin.top}
           style={{
-            fill: 'var(--black)',
+            fill: '#edf6ff',
           }}
           ref={rectRef}
         />
-        {yTicks.map((d, i) => (
-          <g key={i}>
-            <line
-              x1={-30}
-              x2={graphWidth}
-              y1={y(d)}
-              y2={y(d)}
-              style={{
-                strokeWidth: '1px',
-                stroke: 'var(--white)',
-                opacity: 0.3,
-                fill: 'none',
-              }}
-            />
-            <text
-              x={-30}
-              y={y(d)}
-              dx={5}
-              dy={-5}
-              style={{
-                fontFamily:
-                      'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
-                fill: 'var(--white)',
-                fontWeight: 'bold',
-                fontSize: '0.825rem',
-              }}
-            >
-              {d}
-              {' '}
-              %
-            </text>
-          </g>
-        ))}
         <line
           x1={-30}
           x2={graphWidth}
@@ -297,10 +263,23 @@ export function LineChartGraph(props: Props) {
           y2={y(0)}
           style={{
             strokeWidth: '1px',
-            stroke: 'var(--white)',
+            stroke: 'var(--gray-500)',
             fill: 'none',
           }}
         />
+        <text
+          className='small-font'
+          style={{
+            color: 'var(--gray-700)',
+            fontFamily:
+              'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
+          }}
+          x={0 - margin.left}
+          y={graphHeight + 50}
+        >
+          Source: IMF World Economic Outlook (WEO) (April 2023 and October
+          2019).
+        </text>
         <g id='scrolly' />
       </g>
     </svg>

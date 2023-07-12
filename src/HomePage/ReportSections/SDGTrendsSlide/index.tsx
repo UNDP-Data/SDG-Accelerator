@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Scrollama, Step } from 'react-scrollama';
 import styled from 'styled-components';
 import { useState } from 'react';
@@ -11,18 +12,17 @@ interface Props {
   targetStatuses: TargetStatusType[];
   countryFullName: string;
 }
-interface BgInterface {
-  bgImage: string;
-}
 
-const SectionEl = styled.div<BgInterface>`
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${(props) => props.bgImage}) no-repeat center;
-  background-size: cover;
-  background-attachment: fixed;
-  min-height: calc(100vh - 7.1875rem);
+const SectionEl = styled.div`
+  background-color: var(--blue-700);
   display: flex;
-  padding-top: 7.1875rem;
   width: calc(100vw - 1rem);
+  text-align: center;
+  padding: 4rem 0;
+  position: sticky;
+  top: 115px;
+  width: calc(100vw - 1rem);
+  height: calc(100vh - 7.1875rem - 9rem);
 `;
 
 const ScrollyOverlay = styled.div`
@@ -31,19 +31,17 @@ const ScrollyOverlay = styled.div`
   max-width: 40rem;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 40vh;
   height: 50vh;
   background-color: var(--gray-200);
-  opacity: 1;
+  opacity: 0;
 `;
 const P = styled.p`
-  color: var(--white);
-  background-color: var(--gray-700);
+  color: var(--blue-700);
+  background-color: var(--white);
   padding: var(--spacing-03) var(--spacing-05) !important;
   margin-bottom: 0 !important;
   width: max-content;
-  &:last-of-type{
-    padding: var(--spacing-03) var(--spacing-05) var(--spacing-05) var(--spacing-05) !important;
-  }
 `;
 
 export const SDGTrendsSlide = (props: Props) => {
@@ -72,41 +70,31 @@ export const SDGTrendsSlide = (props: Props) => {
   };
   return (
     <div>
-      <SectionEl
-        bgImage={IMAGES.TrendsBG}
-        style={{
-          textAlign: 'center',
-          padding: '2rem 0',
-          position: 'sticky',
-          top: '115px',
-          width: 'calc(100vw - 1rem)',
-          height: 'calc(100vh - 200px)',
-        }}
-      >
+      <SectionEl>
         <div
           style={{
             position: 'sticky',
             display: 'flex',
             gap: 'var(--spacing-05)',
-            alignItems: 'flex-start',
+            alignItems: 'stretch',
             flexGrow: 1,
             maxWidth: '100rem',
             margin: 'auto',
           }}
         >
-          <div style={{ padding: 'var(--spacing-07)' }}>
-            <h3
-              className='undp-typography'
+          <div style={{ padding: '0 var(--spacing-07)', height: 'calc((100vh - 7.1875rem) - 9rem)' }}>
+            <h4
+              className='undp-typography bold'
               style={{
-                color: 'var(--white)',
-                backgroundColor: 'var(--gray-700)',
+                color: 'var(--blue-700)',
+                backgroundColor: 'var(--white)',
                 width: 'max-content',
                 padding: 'var(--spacing-02) var(--spacing-05)',
                 marginBottom: 0,
               }}
             >
               SDG Trends
-            </h3>
+            </h4>
             <P
               className='undp-typography'
             >
@@ -126,19 +114,49 @@ export const SDGTrendsSlide = (props: Props) => {
             >
               which to build SDG policy pathways.
             </P>
+            <P
+              className='undp-typography bold margin-top-03'
+              style={{
+                backgroundColor: 'var(--dark-green)',
+                color: 'var(--white)',
+                opacity: stepValue === 'onTrack' ? 1 : 0.25,
+              }}
+            >
+              Percent of Targets On Track
+            </P>
+            <P
+              className='undp-typography bold margin-top-03'
+              style={{
+                backgroundColor: 'var(--dark-red)',
+                color: 'var(--white)',
+                opacity: stepValue === 'offTrack' ? 1 : 0.25,
+              }}
+            >
+              Percent of Targets Off Track
+            </P>
+            <P
+              className='undp-typography bold margin-top-03'
+              style={{
+                backgroundColor: 'var(--gray-600)',
+                color: 'var(--white)',
+                opacity: stepValue === 'gapsNA' ? 1 : 0.25,
+              }}
+            >
+              Percent of Targets Missing Data
+            </P>
           </div>
           <div style={{
             flexShrink: 1,
             flexGrow: 1,
-            marginTop: '2rem',
             marginRight: '2rem',
             marginLeft: '2rem',
+            height: 'calc(100vh - 7.1875rem - 9rem)',
           }}
           >
             {
-              stepValue === 'all'
-                ? <FivePChart /> : <FlowerChart status={statusByPs} tag={stepValue} />
-            }
+                stepValue === 'all'
+                  ? <FivePChart /> : <FlowerChart status={statusByPs} tag={stepValue} />
+              }
           </div>
         </div>
       </SectionEl>
@@ -147,19 +165,19 @@ export const SDGTrendsSlide = (props: Props) => {
         offset={0.5}
       >
         <Step data='all'>
-          <ScrollyOverlay style={{ opacity: 0 }} />
+          <ScrollyOverlay />
         </Step>
         <Step data='onTrack'>
-          <ScrollyOverlay style={{ opacity: 0 }} />
+          <ScrollyOverlay />
         </Step>
         <Step data='offTrack'>
-          <ScrollyOverlay style={{ opacity: 0 }} />
+          <ScrollyOverlay />
         </Step>
         <Step data='gapsNA'>
-          <ScrollyOverlay style={{ opacity: 0 }} />
+          <ScrollyOverlay />
         </Step>
         <Step data='gapsNA'>
-          <ScrollyOverlay style={{ opacity: 0 }} />
+          <ScrollyOverlay style={{ marginBottom: 0 }} />
         </Step>
       </Scrollama>
     </div>

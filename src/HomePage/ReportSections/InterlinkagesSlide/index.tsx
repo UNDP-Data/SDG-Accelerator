@@ -1,32 +1,28 @@
 import styled from 'styled-components';
 import UNDPColorModule from 'undp-viz-colors';
 import { SummaryReportDataType } from '../../../Types';
-import 'reactflow/dist/style.css';
-
-import IMAGES from '../../../img/images';
 import { InterlinkageGraph } from './InterlinkageGraph';
+import 'reactflow/dist/style.css';
 
 interface Props {
   reportData: SummaryReportDataType;
 }
 
-interface BgInterface {
-  bgImage: string;
-}
-
-const SectionEl = styled.div<BgInterface>`
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${(props) => props.bgImage}) no-repeat center;
-  background-size: cover;
-  background-attachment: fixed;
-  min-height: calc(100vh - 7.1875rem);
+const SectionEl = styled.div`
+  background-color: var(--gray-300);
+  border-top: 1px solid var(--gray-600);
   display: flex;
-  padding-top: 7.1875rem;
+  width: calc(100vw - 1rem);
+  text-align: center;
+  padding: 4rem 0;
+  position: sticky;
+  top: 115px;
   width: calc(100vw - 1rem);
 `;
 
 const P = styled.p`
   color: var(--white);
-  background-color: var(--gray-700);
+  background-color: var(--blue-700);
   padding: var(--spacing-03) var(--spacing-05) !important;
   margin-bottom: 0 !important;
   width: max-content;
@@ -38,24 +34,13 @@ export const InterlinkagesSlide = (props: Props) => {
   } = props;
 
   return (
-    <div className='flex-div'>
-      <SectionEl
-        bgImage={IMAGES.CurrencyBG}
-        style={{
-          textAlign: 'center',
-          padding: '4rem 0',
-          position: 'sticky',
-          top: '115px',
-          width: 'calc(100vw - 1rem)',
-          height: 'calc(100vh - 200px)',
-        }}
-      >
+    <div className='flex-div' style={{ height: 'calc(100vh - 131px)' }}>
+      <SectionEl>
         <div
           style={{
             position: 'sticky',
             display: 'flex',
             gap: 'var(--spacing-05)',
-            alignItems: 'flex-start',
             flexGrow: 1,
             maxWidth: '100rem',
             margin: 'auto',
@@ -63,10 +48,10 @@ export const InterlinkagesSlide = (props: Props) => {
         >
           <div style={{ padding: 'var(--spacing-07)' }}>
             <h4
-              className='undp-typography'
+              className='undp-typography bold'
               style={{
                 color: 'var(--white)',
-                backgroundColor: 'var(--gray-700)',
+                backgroundColor: 'var(--blue-700)',
                 width: 'max-content',
                 padding: 'var(--spacing-02) var(--spacing-05)',
                 marginBottom: 0,
@@ -75,10 +60,10 @@ export const InterlinkagesSlide = (props: Props) => {
               Getting over the finish line
             </h4>
             <h4
-              className='undp-typography'
+              className='undp-typography bold'
               style={{
                 color: 'var(--white)',
-                backgroundColor: 'var(--gray-700)',
+                backgroundColor: 'var(--blue-700)',
                 width: 'max-content',
                 padding: 'var(--spacing-02) var(--spacing-05)',
                 marginBottom: 0,
@@ -100,7 +85,11 @@ export const InterlinkagesSlide = (props: Props) => {
               reportData.interlinkages.source.label.split('\n').map((d, i) => (
                 <P
                   className={`undp-typography ${i === 0 ? 'margin-top-05 ' : ''}padding-top-07 bold`}
-                  style={{ opacity: 1, backgroundColor: (UNDPColorModule.sdgColors as any)[`sdg${reportData.interlinkages.source.sdg}`] }}
+                  style={{
+                    opacity: 1,
+                    backgroundColor: (UNDPColorModule.sdgColors as any)[`sdg${reportData.interlinkages.source.sdg}`],
+                    color: reportData.interlinkages.source.sdg === 7 ? 'var(--gray-700)' : 'var(--white)',
+                  }}
                   key={i}
                 >
                   {d}
@@ -111,7 +100,11 @@ export const InterlinkagesSlide = (props: Props) => {
               reportData.interlinkages.label.split('\n').map((d, i) => (
                 <P
                   className='undp-typography'
-                  style={{ opacity: 1, backgroundColor: (UNDPColorModule.sdgColors as any)[`sdg${reportData.interlinkages.source.sdg}`] }}
+                  style={{
+                    opacity: 1,
+                    backgroundColor: (UNDPColorModule.sdgColors as any)[`sdg${reportData.interlinkages.source.sdg}`],
+                    color: reportData.interlinkages.source.sdg === 7 ? 'var(--gray-700)' : 'var(--white)',
+                  }}
                   key={i}
                 >
                   {d}

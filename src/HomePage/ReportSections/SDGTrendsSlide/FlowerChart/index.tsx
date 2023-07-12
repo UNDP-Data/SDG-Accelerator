@@ -51,12 +51,17 @@ export const FlowerChart = (props: Props) => {
     }
   }, [inView]);
   return (
-    <div ref={ref} style={{ width: '100%', display: 'flex', alignItems: 'stretch' }}>
+    <div
+      ref={ref}
+      style={{
+        width: '100%',
+        display: 'flex',
+        alignItems: 'stretch',
+        height: 'calc(100vh - 16.1875rem)',
+      }}
+    >
       <div
         style={{
-          padding: '2rem',
-          width: 'calc(100% - 4rem)',
-          height: 'calc(100vh - 17.5rem)',
           color: 'var(--black)',
           minHeight: '10px',
           minWidth: '17.5rem',
@@ -65,13 +70,11 @@ export const FlowerChart = (props: Props) => {
           flexDirection: 'column',
           justifyContent: 'space-between',
         }}
-        ref={graphRef}
       >
         <h5
           className='undp-typography margin-bottom-00 bold'
           style={{
-            fontFamily:
-          'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
+            fontFamily: 'ProximaNova, proxima-nova, Helvetica Neue, sans-serif',
             color: 'var(--white)',
             backgroundColor: tag === 'onTrack' ? 'var(--dark-green)' : tag === 'offTrack' ? 'var(--dark-red)' : 'var(--gray-700)',
             padding: 'var(--spacing-04)',
@@ -81,33 +84,35 @@ export const FlowerChart = (props: Props) => {
           {' '}
           {tag === 'onTrack' ? 'On Track' : tag === 'offTrack' ? 'Off Track' : 'Missing Data'}
         </h5>
+        <div className='flex-div gap-07 flex-vert-align-center flex-wrap' style={{ padding: 'var(--spacing-05)', justifyContent: 'center', backgroundColor: 'var(--white)' }}>
+          <div className='flex-div gap-02 flex-vert-align-center' style={{ color: UNDPColorModule.sdgColors.sdg1 }}>
+            <div style={{ width: '1rem', height: '1rem', backgroundColor: UNDPColorModule.sdgColors.sdg1 }} />
+            <p className='undp-typography margin-bottom-00 bold'>People</p>
+          </div>
+          <div className='flex-div gap-02 flex-vert-align-center' style={{ color: UNDPColorModule.categoricalColors.colors[1] }}>
+            <div style={{ width: '1rem', height: '1rem', backgroundColor: UNDPColorModule.categoricalColors.colors[1] }} />
+            <p className='undp-typography margin-bottom-00 bold'>Planet</p>
+          </div>
+          <div className='flex-div gap-02 flex-vert-align-center' style={{ color: UNDPColorModule.categoricalColors.colors[2] }}>
+            <div style={{ width: '1rem', height: '1rem', backgroundColor: UNDPColorModule.categoricalColors.colors[2] }} />
+            <p className='undp-typography margin-bottom-00 bold'>Prosperity</p>
+          </div>
+          <div className='flex-div gap-02 flex-vert-align-center' style={{ color: UNDPColorModule.sdgColors.sdg16 }}>
+            <div style={{ width: '1rem', height: '1rem', backgroundColor: UNDPColorModule.sdgColors.sdg16 }} />
+            <p className='undp-typography margin-bottom-00 bold'>Peace</p>
+          </div>
+          <div className='flex-div gap-02 flex-vert-align-center' style={{ color: UNDPColorModule.sdgColors.sdg17 }}>
+            <div style={{ width: '1rem', height: '1rem', backgroundColor: UNDPColorModule.sdgColors.sdg17 }} />
+            <p className='undp-typography margin-bottom-00 bold'>Partnership</p>
+          </div>
+        </div>
         <div
           style={{
-            backgroundColor: tag === 'onTrack' ? 'rgba(89, 186, 71, 0.2)' : tag === 'offTrack' ? 'rgba(209, 40, 0, 0.2)' : 'rgba(35, 46, 61,0.5)',
+            backgroundColor: 'var(--white)',
+            flexGrow: 1,
           }}
+          ref={graphRef}
         >
-          <div className='flex-div gap-07 flex-vert-align-center flex-wrap' style={{ padding: 'var(--spacing-05)', justifyContent: 'center', backgroundColor: 'rgba(255,255,255,0.9)' }}>
-            <div className='flex-div gap-02 flex-vert-align-center' style={{ color: UNDPColorModule.sdgColors.sdg1 }}>
-              <div style={{ width: '1rem', height: '1rem', backgroundColor: UNDPColorModule.sdgColors.sdg1 }} />
-              <p className='undp-typography margin-bottom-00 small-font bold'>People</p>
-            </div>
-            <div className='flex-div gap-02 flex-vert-align-center' style={{ color: UNDPColorModule.categoricalColors.colors[1] }}>
-              <div style={{ width: '1rem', height: '1rem', backgroundColor: UNDPColorModule.categoricalColors.colors[1] }} />
-              <p className='undp-typography margin-bottom-00 small-font bold'>Planet</p>
-            </div>
-            <div className='flex-div gap-02 flex-vert-align-center' style={{ color: UNDPColorModule.categoricalColors.colors[2] }}>
-              <div style={{ width: '1rem', height: '1rem', backgroundColor: UNDPColorModule.categoricalColors.colors[2] }} />
-              <p className='undp-typography margin-bottom-00 small-font bold'>Prosperity</p>
-            </div>
-            <div className='flex-div gap-02 flex-vert-align-center' style={{ color: UNDPColorModule.sdgColors.sdg16 }}>
-              <div style={{ width: '1rem', height: '1rem', backgroundColor: UNDPColorModule.sdgColors.sdg16 }} />
-              <p className='undp-typography margin-bottom-00 small-font bold'>Peace</p>
-            </div>
-            <div className='flex-div gap-02 flex-vert-align-center' style={{ color: UNDPColorModule.sdgColors.sdg17 }}>
-              <div style={{ width: '1rem', height: '1rem', backgroundColor: UNDPColorModule.sdgColors.sdg17 }} />
-              <p className='undp-typography margin-bottom-00 small-font bold'>Partnership</p>
-            </div>
-          </div>
           {
             !graphWidth || !graphHeight ? <div className='undp-loader' style={{ margin: 'auto' }} /> : <Graph status={status} width={graphWidth} height={graphHeight} tag={tag} />
           }
