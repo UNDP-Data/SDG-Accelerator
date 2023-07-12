@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { TargetStatusType } from '../../../Types';
 import { FIVE_P } from '../../../Constants';
 import IMAGES from '../../../img/images';
-import { FivePCharts } from './FivePCharts';
+import { FivePChart } from './FivePChart';
 import { FlowerChart } from './FlowerChart';
 
 interface Props {
@@ -90,6 +90,8 @@ export const SDGTrendsSlide = (props: Props) => {
             gap: 'var(--spacing-05)',
             alignItems: 'flex-start',
             flexGrow: 1,
+            maxWidth: '100rem',
+            margin: 'auto',
           }}
         >
           <div style={{ padding: 'var(--spacing-07)' }}>
@@ -135,7 +137,7 @@ export const SDGTrendsSlide = (props: Props) => {
           >
             {
               stepValue === 'all'
-                ? <FivePCharts /> : <FlowerChart status={statusByPs} tag={stepValue} />
+                ? <FivePChart /> : <FlowerChart status={statusByPs} tag={stepValue} />
             }
           </div>
         </div>

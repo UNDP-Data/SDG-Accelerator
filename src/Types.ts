@@ -242,9 +242,18 @@ export interface InterlinkagesForReportType {
   LinkageType: [LinkageTypeData, LinkageTypeData];
 }
 
+export interface InterlinkagesForSummaryReportType {
+  source: {
+    label: string;
+    sdg: number;
+  };
+  targets: number[];
+  label: string;
+}
+
 export interface SummaryReportDataType {
   SDGMoment: string;
-  InterlinkagesSDG: number[];
+  interlinkages: InterlinkagesForSummaryReportType;
   withoutSDGPush: number;
   withSDGPush: number;
   scale: number;
@@ -270,3 +279,17 @@ export interface DataForReportType {
 }
 
 export type LanguageList = 'en' | 'ru' | 'fr' | 'es';
+
+export interface NodeData {
+  id: string;
+  type: 'sourceNode' | 'sdgIcon',
+  position: { x: number; y: number },
+  data?: { label: string; sdg: number },
+}
+
+export interface EdgeData {
+  id: string;
+  source: string;
+  target: string;
+  sourceHandle: 'a',
+}

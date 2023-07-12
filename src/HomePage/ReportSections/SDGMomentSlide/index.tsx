@@ -13,7 +13,7 @@ interface BgInterface {
 }
 
 const SectionEl = styled.div<BgInterface>`
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${(props) => props.bgImage}) no-repeat center;
+  background: url(${(props) => props.bgImage}) no-repeat center;
   background-size: cover;
   background-attachment: fixed;
   min-height: calc(100vh - 7.1875rem);
@@ -60,6 +60,8 @@ export const SDGMomentSlide = (props: Props) => {
             gap: 'var(--spacing-05)',
             alignItems: 'flex-start',
             flexGrow: 1,
+            maxWidth: '100rem',
+            margin: 'auto',
           }}
         >
           <div style={{ padding: 'var(--spacing-07)' }}>

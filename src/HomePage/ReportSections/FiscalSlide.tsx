@@ -54,6 +54,9 @@ export const FiscalSlide = (props: Props) => {
             gap: 'var(--spacing-05)',
             alignItems: 'flex-start',
             flexGrow: 1,
+            maxWidth: '100rem',
+            marginLeft: 'auto',
+            marginRight: 'auto',
           }}
         >
           <div style={{ padding: 'var(--spacing-07)' }}>

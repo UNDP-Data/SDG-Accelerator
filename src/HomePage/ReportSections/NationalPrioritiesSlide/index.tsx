@@ -60,6 +60,8 @@ export const NationalPrioritiesSlide = (props: Props) => {
             gap: 'var(--spacing-05)',
             alignItems: 'flex-start',
             flexGrow: 1,
+            maxWidth: '100rem',
+            margin: 'auto',
           }}
         >
           <div style={{ padding: 'var(--spacing-07)' }}>
