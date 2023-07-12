@@ -27220,13 +27220,14 @@
         "normativeDirection": "decrease",
         "CAGRLimit": [
           0.01,
-          -0.005,
+          0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 18.6,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },

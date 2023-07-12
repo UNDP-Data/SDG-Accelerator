@@ -79,7 +79,7 @@
     {
       "goal": 6,
       "noOfIndicatorsWithData": 5,
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": 9,
@@ -506,7 +506,7 @@
     {
       "goal": "6",
       "target": "6.4",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "6",
@@ -1300,7 +1300,7 @@
       "goal": "6",
       "target": "6.4",
       "indicator": "6.4.2",
-      "status": "Identified Gap"
+      "status": "On Track"
     },
     {
       "goal": "6",
@@ -19278,13 +19278,14 @@
         "normativeDirection": "decrease",
         "CAGRLimit": [
           0.01,
-          -0.005,
+          0.005,
           -0.01
         ],
-        "trendMethodology": "CAGRA",
+        "trendMethodology": "CAGRR",
         "baselineYear": {
           "all": 2015
         },
+        "targetValue": 18.6,
         "baseYear": 2015,
         "latestAvailable": 2020.0
       },
@@ -19292,7 +19293,7 @@
       "Partner_Agency(ies)": "UNEP, IUCN,UNSD,OECD,Eurostat",
       "Tier_Classification": "Tier I",
       "currentLevelAssessment": null,
-      "status": "Limited or No Progress"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
