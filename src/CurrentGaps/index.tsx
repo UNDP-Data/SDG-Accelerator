@@ -169,7 +169,7 @@ export const CurrentGaps = (props: Props) => {
                 Download Trends as Image
               </button>
             </div>
-            <SDGTargetsGapVisualization targetStatuses={targetStatuses} setRef={setRef} />
+            <SDGTargetsGapVisualization targetStatuses={targetStatuses} setRef={setRef} width='calc(50% - 0.5rem)' />
           </div>
         </div>
       </div>
