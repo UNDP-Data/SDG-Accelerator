@@ -84,24 +84,24 @@ export const SDGMomentSlide = (props: Props) => {
           >
             <GDPGraph countryCode={countryCode} countryFullName={countryFullName} />
           </div>
-        </div>
-        <div style={{
-          backgroundColor: 'rgba(31, 90, 149, 0.3)',
-          width: '17.5rem',
-          position: 'absolute',
-          bottom: '6rem',
-          right: '2rem',
-          zIndex: '5',
-        }}
-        >
           <div style={{
-            padding: 'var(--spacing-05)',
-            textAlign: 'left',
-            color: 'var(--black)',
-            fontWeight: 'bold',
+            backgroundColor: 'rgba(31, 90, 149, 0.3)',
+            width: '17.5rem',
+            position: 'absolute',
+            bottom: '-5rem',
+            right: '2rem',
+            zIndex: '5',
           }}
           >
-            {reportData.SDGMoment.split('\n\n')[1].replaceAll('\n', ' ')}
+            <div style={{
+              padding: 'var(--spacing-05)',
+              textAlign: 'left',
+              color: 'var(--black)',
+              fontWeight: 'bold',
+            }}
+            >
+              {reportData.SDGMoment.split('\n\n')[1].replaceAll('\n', ' ')}
+            </div>
           </div>
         </div>
       </SectionEl>
