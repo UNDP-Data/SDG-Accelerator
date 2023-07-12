@@ -24,36 +24,19 @@ export const GDPGraph = (props: Props) => {
     <div
       className='margin-bottom-05'
       style={{
-        padding: '1rem',
+        padding: '1rem 1rem 0 1rem',
         color: 'var(--black)',
-        maxHeight: 'calc(100vh - 20rem)',
-        minHeight: '40rem',
         display: 'flex',
         flexDirection: 'column',
-        gap: '1rem',
+        flexGrow: 1,
       }}
     >
       <div className='flex-div flex-wrap gap-05' style={{ color: 'var(--black)' }}>
-        <div className='flex-div gap-03 flex-vert-align-center bold small-font' style={{ color: 'var(--blue-700)' }}>
-          <div style={{
-            width: '0.825rem',
-            height: '0.825rem',
-            backgroundColor: 'var(--blue-700)',
-          }}
-          />
+        <h4 className='bold margin-top-00 margin-bottom-00' style={{ color: 'var(--blue-700)' }}>
           {countryFullName}
           {' '}
           GDP Projection
-        </div>
-        <div className='flex-div gap-03 flex-vert-align-center bold small-font' style={{ color: 'var(--gray-600)' }}>
-          <div style={{
-            width: '0.825rem',
-            height: '0.825rem',
-            backgroundColor: 'var(--gray-600)',
-          }}
-          />
-          World GDP Projection
-        </div>
+        </h4>
       </div>
       <div
         ref={graphRef}
@@ -66,7 +49,7 @@ export const GDPGraph = (props: Props) => {
               <Graph
                 countryCode={countryCode}
                 width={graphWidth}
-                height={graphHeight - 10}
+                height={400}
                 GDP2023={GDP2023}
               />
             )

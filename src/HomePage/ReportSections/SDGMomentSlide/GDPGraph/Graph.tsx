@@ -20,7 +20,6 @@ export const Graph = (props: Props) => {
       }
       svgWidth={width}
       svgHeight={height}
-      strokeWidth={2}
     />
   );
 };

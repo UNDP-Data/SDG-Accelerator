@@ -12,22 +12,22 @@ export const Graph = (props: Props) => {
     width,
     height,
   } = props;
-  const size = Math.min(width / 6, height / 7, 98);
+  const size = Math.min(width / 6, height / 7, 64);
   const colors = [UNDPColorModule.sdgColors.sdg1, UNDPColorModule.categoricalColors.colors[1], UNDPColorModule.categoricalColors.colors[2], UNDPColorModule.sdgColors.sdg16, UNDPColorModule.sdgColors.sdg17];
   return (
-    <div style={{ flexGrow: 1, padding: 'var(--spacing-07)' }}>
+    <div className='flex-div flex-wrap gap-09' style={{ flexGrow: 1, padding: 'var(--spacing-07)' }}>
       {
         FIVE_P.map((d, i) => (
-          <div key={i} className={i === 0 ? '' : 'margin-top-07'}>
-            <h5 className='undp-typography margin-bottom-03 bold' style={{ textAlign: 'left', color: colors[i] }}>
+          <div key={i} style={{ width: 'calc(50% - 1.5rem)' }}>
+            <h6 className='undp-typography margin-bottom-03 bold' style={{ textAlign: 'left', color: colors[i] }}>
               {d.pValue}
               {' '}
               (
               {d.totalNoOfTargets}
               {' '}
               Targets)
-            </h5>
-            <div className='flex-div'>
+            </h6>
+            <div className='flex-div gap-03 flex-wrap'>
               {
                 d.goals.map((g) => getSDGIcon(`SDG ${g}`, size))
               }
