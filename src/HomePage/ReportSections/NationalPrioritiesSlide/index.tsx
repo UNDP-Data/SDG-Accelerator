@@ -69,22 +69,22 @@ export const NationalPrioritiesSlide = (props: Props) => {
               className='undp-typography'
             >
               {countryFullName}
-              &apos;s national priorities are analyzed
+              &apos;s priorities are analyzed by
             </P>
             <P
               className='undp-typography'
             >
-              using machine learning to reveal the most prominent
+              machine learning to synthesize the most
             </P>
             <P
               className='undp-typography'
             >
-              SDGs referenced in national policy documents.
+              significant national priorities.
             </P>
             <P
               className='undp-typography margin-top-05 padding-top-07'
             >
-              SDGs that are high Priority
+              Example of the national priorities include:
             </P>
             {
               priorityData.filter((d: any) => d.category === 'High').map((d: any, i: number) => (
