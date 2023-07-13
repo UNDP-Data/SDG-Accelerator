@@ -147,7 +147,7 @@ export const SummaryReportView = (props: Props) => {
                     Integrated SDG
                   </h2>
                   <h2 className='undp-typography'>
-                    Report
+                    Insights Report
                   </h2>
                   <h2 className='undp-typography'>
                     {countryFullName}
