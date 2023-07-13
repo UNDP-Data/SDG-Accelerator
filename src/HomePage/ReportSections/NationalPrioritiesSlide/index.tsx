@@ -37,7 +37,7 @@ export const NationalPrioritiesSlide = (props: Props) => {
     threshold: 0.5,
   });
   return (
-    <div className='flex-div' style={{ height: 'calc(100vh - 131px)' }}>
+    <div className='flex-div' style={{ height: 'calc(100vh - 131px)', marginTop: '-40vh' }}>
       <SectionEl
         ref={ref}
       >

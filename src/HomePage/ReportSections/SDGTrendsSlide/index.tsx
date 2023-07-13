@@ -1,10 +1,8 @@
-/* eslint-disable no-unused-vars */
-import { Scrollama, Step } from 'react-scrollama';
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { TargetStatusType } from '../../../Types';
 import { FIVE_P } from '../../../Constants';
-import IMAGES from '../../../img/images';
 import { FivePChart } from './FivePChart';
 import { FlowerChart } from './FlowerChart';
 
@@ -32,7 +30,7 @@ const ScrollyOverlay = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40vh;
-  height: 50vh;
+  height: 40vh;
   background-color: var(--gray-200);
   opacity: 0;
 `;
@@ -64,10 +62,39 @@ export const SDGTrendsSlide = (props: Props) => {
     });
   });
   const [stepValue, setStepValue] = useState<'all' | 'onTrack' | 'offTrack' | 'gapsNA'>('all');
-  const onStepEnter = (d: any) => {
-    const { data } = d;
-    setStepValue(data);
-  };
+
+  const ref1 = useInView({
+    threshold: 0.4,
+  });
+  const ref2 = useInView({
+    threshold: 0.4,
+  });
+  const ref3 = useInView({
+    threshold: 0.4,
+  });
+  const ref4 = useInView({
+    threshold: 0.4,
+  });
+  const ref5 = useInView({
+    threshold: 0.4,
+  });
+  useEffect(() => {
+    if (ref1.inView && !ref2.inView && !ref3.inView && !ref4.inView && !ref5.inView) {
+      setStepValue('all');
+    }
+    if (!ref1.inView && ref2.inView && !ref3.inView && !ref4.inView && !ref5.inView) {
+      setStepValue('onTrack');
+    }
+    if (!ref1.inView && !ref2.inView && ref3.inView && !ref4.inView && !ref5.inView) {
+      setStepValue('offTrack');
+    }
+    if (!ref1.inView && !ref2.inView && !ref3.inView && ref4.inView && !ref5.inView) {
+      setStepValue('gapsNA');
+    }
+    if (!ref1.inView && !ref2.inView && !ref3.inView && !ref4.inView && ref5.inView) {
+      setStepValue('gapsNA');
+    }
+  }, [ref1.inView, ref2.inView, ref3.inView, ref4.inView, ref5.inView]);
   return (
     <div>
       <SectionEl>
@@ -160,26 +187,11 @@ export const SDGTrendsSlide = (props: Props) => {
           </div>
         </div>
       </SectionEl>
-      <Scrollama
-        onStepEnter={onStepEnter}
-        offset={0.5}
-      >
-        <Step data='all'>
-          <ScrollyOverlay />
-        </Step>
-        <Step data='onTrack'>
-          <ScrollyOverlay />
-        </Step>
-        <Step data='offTrack'>
-          <ScrollyOverlay />
-        </Step>
-        <Step data='gapsNA'>
-          <ScrollyOverlay />
-        </Step>
-        <Step data='gapsNA'>
-          <ScrollyOverlay style={{ marginBottom: 0 }} />
-        </Step>
-      </Scrollama>
+      <ScrollyOverlay ref={ref1.ref} />
+      <ScrollyOverlay ref={ref2.ref} />
+      <ScrollyOverlay ref={ref3.ref} />
+      <ScrollyOverlay ref={ref4.ref} />
+      <ScrollyOverlay ref={ref5.ref} />
     </div>
   );
 };

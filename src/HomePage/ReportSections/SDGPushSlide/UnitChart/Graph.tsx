@@ -24,7 +24,7 @@ export const Graph = (props: Props) => {
   } = props;
   useEffect(() => {
     if (inView) {
-      const indexToHide = Array.from({ length: Math.round(withoutSDGPush / scale) }, (_, index) => index).filter((d) => d >= Math.round(withSDGPush / scale)).reverse();
+      const indexToHide = Array.from({ length: Math.round((withoutSDGPush - withSDGPush) / scale) }, (_, index) => index);
       indexToHide.forEach((d, i) => {
         selectAll('.peopleIcons')
           .attr('fill', UNDPColorModule.sdgColors.sdg1)
@@ -33,8 +33,7 @@ export const Graph = (props: Props) => {
           .transition()
           .duration(300)
           .delay(i * 300)
-          .attr('fill', UNDPColorModule.categoricalColors.colors[2])
-          .attr('opacity', 0.15);
+          .attr('fill', UNDPColorModule.categoricalColors.colors[2]);
       });
     }
   }, [inView]);

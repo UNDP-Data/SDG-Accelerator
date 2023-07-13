@@ -92,43 +92,40 @@ export const SDGPushSlide = (props: Props) => {
               digital disruption can reduce poverty.
             </P>
             <P
-              className='undp-typography margin-top-03 bold'
+              className='undp-typography margin-top-03'
               style={{
                 backgroundColor: UNDPColorModule.sdgColors.sdg1,
               }}
             >
-              With the SDG Push,
-              {' '}
-              <span className='bold'>{format('~s')(withoutSDGPush - withSDGPush).replace('M', ' million')}</span>
-              {' '}
-              (from
-              {' '}
-              {format('~s')(withoutSDGPush).replace('G', 'B')}
-              {' '}
-              to
-              {' '}
-              {format('~s')(withSDGPush).replace('G', 'B')}
-              )
-            </P>
-            <P
-              className='undp-typography bold'
-              style={{
-                backgroundColor: UNDPColorModule.sdgColors.sdg1,
-              }}
-            >
-              fewer people in
+              With the SDG Push, in
               {' '}
               {countryFullName}
               {' '}
-              will be living
+              no. of people
             </P>
             <P
-              className='undp-typography bold'
+              className='undp-typography'
               style={{
                 backgroundColor: UNDPColorModule.sdgColors.sdg1,
               }}
             >
-              in poverty by 2030.
+              living in poverty by 2030 will reduce from
+            </P>
+            <P
+              className='undp-typography'
+              style={{
+                backgroundColor: UNDPColorModule.sdgColors.sdg1,
+              }}
+            >
+              <span className='bold'>
+                {format('~s')(withoutSDGPush).replace('G', 'B')}
+              </span>
+              {' '}
+              to
+              {' '}
+              <span className='bold'>
+                {format('~s')(withSDGPush).replace('G', 'B')}
+              </span>
             </P>
           </div>
           <div style={{

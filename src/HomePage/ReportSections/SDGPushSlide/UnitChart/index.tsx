@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { format } from 'd3-format';
+import UNDPColorModule from 'undp-viz-colors';
 import { Graph } from './Graph';
 
 interface Props {
@@ -13,11 +15,13 @@ export const UnitChart = (props: Props) => {
     withoutSDGPush,
     scale,
   } = props;
+  const [count, setCount] = useState(0);
+
   const graphRef = useRef<HTMLDivElement>(null);
   const [graphWidth, setGraphWidth] = useState(0);
   const [graphHeight, setGraphHeight] = useState(0);
   const { ref, inView } = useInView({
-    threshold: 0.9,
+    threshold: 0.4,
   });
   useEffect(() => {
     if (graphRef.current) {
@@ -25,8 +29,29 @@ export const UnitChart = (props: Props) => {
       setGraphHeight(graphRef.current.clientHeight);
     }
   }, [graphRef]);
+
+  useEffect(() => {
+    setCount(0);
+    const timer = setInterval(() => {
+      if (count < withoutSDGPush - withSDGPush) { setCount((prevCount) => prevCount + scale / 10); }
+    }, 30);
+    if (!inView) {
+      clearInterval(timer);
+    }
+    // Clean up the timer when the component is unmounted or the count reaches 0
+    return () => clearInterval(timer);
+  }, [inView]);
   return (
-    <div ref={ref} style={{ width: '100%', display: 'flex', alignItems: 'stretch' }}>
+    <div ref={ref} style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
+      <div>
+        With the SDG Push,
+        {' '}
+        <span className='countDownValue bold' style={{ color: UNDPColorModule.categoricalColors.colors[2], fontSize: '1.5rem' }}>{format(',')(Math.min(count, withoutSDGPush - withSDGPush)).replaceAll(',', ' ')}</span>
+        {' '}
+        fewer people in will be
+        <br />
+        living in poverty by 2030
+      </div>
       <div
         style={{
           width: '100%',
