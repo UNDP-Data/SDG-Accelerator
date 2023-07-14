@@ -139,6 +139,7 @@ export const LandingPage = () => {
                         countryFullName={countryFullName}
                         countryCode={countryCode}
                         targetStatuses={statuses.targetStatus}
+                        trendsByGoals={countryCode === 'VNMWithCountryGovInput'}
                       />
                     )}
                   />

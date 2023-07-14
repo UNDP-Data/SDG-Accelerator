@@ -10,6 +10,7 @@ import {
 } from '../Types';
 import IMAGES from '../img/images';
 import { SDGTargetsGapVisualization } from './SDGTargetsGapVisualization';
+import { GoalLevelGapVisualization } from './GoalLevelGapVisualization';
 
 interface Props {
   goalStatuses: GoalStatusType[];
@@ -18,6 +19,7 @@ interface Props {
   countryData: TimeSeriesDataTypeWithStatusCode[];
   countryFullName: string;
   countryCode: string;
+  trendsByGoals?: boolean;
 }
 
 const HeroImageEl = styled.div`
@@ -41,6 +43,7 @@ export const CurrentGaps = (props: Props) => {
     countryFullName,
     countryCode,
     targetStatuses,
+    trendsByGoals,
   } = props;
   const [selectedSDG, setSelectedSDG] = useState('SDG 1: No Poverty');
   const [ref, setRef] = useState<HTMLDivElement | null>(null);
@@ -113,7 +116,7 @@ export const CurrentGaps = (props: Props) => {
         <div className='max-width' style={{ backgroundColor: 'var(--gray-200)', padding: 'var(--spacing-09)' }}>
 
           <div className='flex-div flex-wrap margin-top-00'>
-            <div className='margin-top-00 margin-bottom-00' style={{ width: 'calc(50% - 0.5rem)' }}>
+            <div className='margin-top-00 margin-bottom-00' style={{ width: trendsByGoals ? '100%' : 'calc(50% - 0.5rem)' }}>
               <h2 className='undp-typography'>SDG Trends</h2>
               <div className='margin-bottom-07'>
                 The SDG Trends assessment is based on currently available data in the
@@ -129,36 +132,42 @@ export const CurrentGaps = (props: Props) => {
                 Additional data may be added to address gaps at a government&apos;s request, providing a comprehensive landscape for identification of SDG policy pathways.
                 <br />
                 <br />
-                The SDG targets are organized according to the
-                {' '}
-                <span className='bold'>5 P&apos;s</span>
-                {' '}
-                of sustainable development.
-                <br />
-                <br />
-                <p className='undp-typography italics' style={{ color: 'var(--gray-600)' }}>
-                  The size of the pie chart is determined by the number of SDG targets used to measure each P:
-                  {' '}
-                  <span className='bold' style={{ color: 'var(--gray-700)' }}>People</span>
-                  {' '}
-                  (47 targets),
-                  {' '}
-                  <span className='bold' style={{ color: 'var(--gray-700)' }}>Peace</span>
-                  {' '}
-                  (12 targets),
-                  {' '}
-                  <span className='bold' style={{ color: 'var(--gray-700)' }}>Planet</span>
-                  {' '}
-                  (46 targets),
-                  {' '}
-                  <span className='bold' style={{ color: 'var(--gray-700)' }}>Prosperity</span>
-                  {' '}
-                  (45 targets) and
-                  {' '}
-                  <span className='bold' style={{ color: 'var(--gray-700)' }}>Partnership</span>
-                  {' '}
-                  (19 targets).
-                </p>
+                {
+                  trendsByGoals ? null : (
+                    <>
+                      The SDG targets are organized according to the
+                      {' '}
+                      <span className='bold'>5 P&apos;s</span>
+                      {' '}
+                      of sustainable development.
+                      <br />
+                      <br />
+                      <p className='undp-typography italics' style={{ color: 'var(--gray-600)' }}>
+                        The size of the pie chart is determined by the number of SDG targets used to measure each P:
+                        {' '}
+                        <span className='bold' style={{ color: 'var(--gray-700)' }}>People</span>
+                        {' '}
+                        (47 targets),
+                        {' '}
+                        <span className='bold' style={{ color: 'var(--gray-700)' }}>Peace</span>
+                        {' '}
+                        (12 targets),
+                        {' '}
+                        <span className='bold' style={{ color: 'var(--gray-700)' }}>Planet</span>
+                        {' '}
+                        (46 targets),
+                        {' '}
+                        <span className='bold' style={{ color: 'var(--gray-700)' }}>Prosperity</span>
+                        {' '}
+                        (45 targets) and
+                        {' '}
+                        <span className='bold' style={{ color: 'var(--gray-700)' }}>Partnership</span>
+                        {' '}
+                        (19 targets).
+                      </p>
+                    </>
+                  )
+                }
               </div>
               <button
                 className='undp-button tertiary-button'
@@ -169,7 +178,11 @@ export const CurrentGaps = (props: Props) => {
                 Download Trends as Image
               </button>
             </div>
-            <SDGTargetsGapVisualization targetStatuses={targetStatuses} setRef={setRef} width='calc(50% - 0.5rem)' />
+            {
+              trendsByGoals ? <GoalLevelGapVisualization targetStatuses={targetStatuses} setRef={setRef} width='100%' />
+                : <SDGTargetsGapVisualization targetStatuses={targetStatuses} setRef={setRef} width='calc(50% - 0.5rem)' />
+
+            }
           </div>
         </div>
       </div>
