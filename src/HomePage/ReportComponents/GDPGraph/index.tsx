@@ -36,6 +36,7 @@ export const GDPGraph = (props: Props) => {
         }}
       >
         <span className='bold'>Growth Pathways</span>
+        : Percentage change in the GDP
       </p>
       {
         !graphWidth
