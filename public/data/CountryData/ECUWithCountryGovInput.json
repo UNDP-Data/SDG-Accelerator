@@ -2,34 +2,44 @@
   "countryCode": "ECU",
   "goalStatus": [
     {
+      "goal": 12,
+      "noOfIndicatorsWithData": 7,
+      "status": "For Review"
+    },
+    {
       "goal": 17,
       "noOfIndicatorsWithData": 13,
       "status": "For Review"
     },
     {
-      "goal": 16,
-      "noOfIndicatorsWithData": 6,
-      "status": "Identified Gap"
-    },
-    {
       "goal": 15,
       "noOfIndicatorsWithData": 12,
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
-      "goal": 13,
-      "noOfIndicatorsWithData": 3,
-      "status": "On Track"
-    },
-    {
-      "goal": 9,
-      "noOfIndicatorsWithData": 8,
+      "goal": 16,
+      "noOfIndicatorsWithData": 7,
       "status": "For Review"
     },
     {
       "goal": 6,
       "noOfIndicatorsWithData": 7,
       "status": "For Review"
+    },
+    {
+      "goal": 8,
+      "noOfIndicatorsWithData": 9,
+      "status": "For Review"
+    },
+    {
+      "goal": 9,
+      "noOfIndicatorsWithData": 9,
+      "status": "For Review"
+    },
+    {
+      "goal": 13,
+      "noOfIndicatorsWithData": 3,
+      "status": "On Track"
     },
     {
       "goal": 5,
@@ -39,11 +49,6 @@
     {
       "goal": 3,
       "noOfIndicatorsWithData": 22,
-      "status": "For Review"
-    },
-    {
-      "goal": 12,
-      "noOfIndicatorsWithData": 7,
       "status": "For Review"
     },
     {
@@ -57,11 +62,6 @@
       "status": "For Review"
     },
     {
-      "goal": 8,
-      "noOfIndicatorsWithData": 9,
-      "status": "For Review"
-    },
-    {
       "goal": 1,
       "noOfIndicatorsWithData": 9,
       "status": "For Review"
@@ -69,7 +69,7 @@
     {
       "goal": 11,
       "noOfIndicatorsWithData": 7,
-      "status": "For Review"
+      "status": "On Track"
     },
     {
       "goal": 14,
@@ -89,9 +89,44 @@
   ],
   "targetStatus": [
     {
+      "goal": "12",
+      "target": "12.1",
+      "status": "On Track"
+    },
+    {
       "goal": "17",
       "target": "17.19",
       "status": "For Review"
+    },
+    {
+      "goal": "17",
+      "target": "17.8",
+      "status": "On Track"
+    },
+    {
+      "goal": "15",
+      "target": "15.1",
+      "status": "Identified Gap"
+    },
+    {
+      "goal": "16",
+      "target": "16.9",
+      "status": "Identified Gap"
+    },
+    {
+      "goal": "6",
+      "target": "6.2",
+      "status": "For Review"
+    },
+    {
+      "goal": "8",
+      "target": "8.5",
+      "status": "Identified Gap"
+    },
+    {
+      "goal": "9",
+      "target": "9.5",
+      "status": "On Track"
     },
     {
       "goal": "17",
@@ -104,16 +139,6 @@
       "status": "For Review"
     },
     {
-      "goal": "16",
-      "target": "16.9",
-      "status": null
-    },
-    {
-      "goal": "15",
-      "target": "15.1",
-      "status": "Identified Gap"
-    },
-    {
       "goal": "13",
       "target": "13.2",
       "status": null
@@ -124,11 +149,6 @@
       "status": "Identified Gap"
     },
     {
-      "goal": "6",
-      "target": "6.2",
-      "status": "For Review"
-    },
-    {
       "goal": "5",
       "target": "5.5",
       "status": "Identified Gap"
@@ -137,11 +157,6 @@
       "goal": "3",
       "target": "3.1",
       "status": "For Review"
-    },
-    {
-      "goal": "17",
-      "target": "17.8",
-      "status": "On Track"
     },
     {
       "goal": "12",
@@ -170,22 +185,12 @@
     },
     {
       "goal": "8",
-      "target": "8.5",
-      "status": "Identified Gap"
-    },
-    {
-      "goal": "8",
       "target": "8.6",
       "status": "For Review"
     },
     {
       "goal": "16",
       "target": "16.3",
-      "status": "Identified Gap"
-    },
-    {
-      "goal": "12",
-      "target": "12.1",
       "status": "Identified Gap"
     },
     {
@@ -196,11 +201,6 @@
     {
       "goal": "10",
       "target": "10.1",
-      "status": null
-    },
-    {
-      "goal": "9",
-      "target": "9.5",
       "status": null
     },
     {
@@ -336,7 +336,7 @@
     {
       "goal": "11",
       "target": "11.a",
-      "status": "Identified Gap"
+      "status": "On Track"
     },
     {
       "goal": "12",
@@ -426,17 +426,17 @@
     {
       "goal": "15",
       "target": "15.6",
-      "status": "Identified Gap"
+      "status": "On Track"
     },
     {
       "goal": "15",
       "target": "15.8",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "15",
       "target": "15.9",
-      "status": "Identified Gap"
+      "status": "On Track"
     },
     {
       "goal": "15",
@@ -481,7 +481,7 @@
     {
       "goal": "16",
       "target": "16.a",
-      "status": "Identified Gap"
+      "status": "On Track"
     },
     {
       "goal": "17",
@@ -516,7 +516,7 @@
     {
       "goal": "17",
       "target": "17.18",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "17",
@@ -796,10 +796,52 @@
   ],
   "indicatorStatus": [
     {
+      "goal": "12",
+      "target": "12.1",
+      "indicator": "12.1.1",
+      "status": "On Track"
+    },
+    {
       "goal": "17",
       "target": "17.19",
       "indicator": "17.19.2",
+      "status": "For Review"
+    },
+    {
+      "goal": "17",
+      "target": "17.8",
+      "indicator": "17.8.1",
+      "status": "On Track"
+    },
+    {
+      "goal": "15",
+      "target": "15.1",
+      "indicator": "15.1.2",
+      "status": "For Review"
+    },
+    {
+      "goal": "16",
+      "target": "16.9",
+      "indicator": "16.9.1",
       "status": "Identified Gap"
+    },
+    {
+      "goal": "6",
+      "target": "6.2",
+      "indicator": "6.2.1",
+      "status": "For Review"
+    },
+    {
+      "goal": "8",
+      "target": "8.5",
+      "indicator": "8.5.1",
+      "status": "Identified Gap"
+    },
+    {
+      "goal": "9",
+      "target": "9.5",
+      "indicator": "9.5.2",
+      "status": "On Track"
     },
     {
       "goal": "17",
@@ -814,18 +856,6 @@
       "status": "On Track"
     },
     {
-      "goal": "16",
-      "target": "16.9",
-      "indicator": "16.9.1",
-      "status": null
-    },
-    {
-      "goal": "15",
-      "target": "15.1",
-      "indicator": "15.1.2",
-      "status": "For Review"
-    },
-    {
       "goal": "13",
       "target": "13.2",
       "indicator": "13.2.1",
@@ -838,12 +868,6 @@
       "status": "Identified Gap"
     },
     {
-      "goal": "6",
-      "target": "6.2",
-      "indicator": "6.2.1",
-      "status": "For Review"
-    },
-    {
       "goal": "5",
       "target": "5.5",
       "indicator": "5.5.1",
@@ -853,12 +877,6 @@
       "goal": "3",
       "target": "3.1",
       "indicator": "3.1.1",
-      "status": "On Track"
-    },
-    {
-      "goal": "17",
-      "target": "17.8",
-      "indicator": "17.8.1",
       "status": "On Track"
     },
     {
@@ -893,12 +911,6 @@
     },
     {
       "goal": "8",
-      "target": "8.5",
-      "indicator": "8.5.1",
-      "status": "Identified Gap"
-    },
-    {
-      "goal": "8",
       "target": "8.6",
       "indicator": "8.6.1",
       "status": "For Review"
@@ -916,12 +928,6 @@
       "status": "For Review"
     },
     {
-      "goal": "12",
-      "target": "12.1",
-      "indicator": "12.1.1",
-      "status": "Identified Gap"
-    },
-    {
       "goal": "10",
       "target": "10.4",
       "indicator": "10.4.1",
@@ -931,12 +937,6 @@
       "goal": "10",
       "target": "10.1",
       "indicator": "10.1.1",
-      "status": null
-    },
-    {
-      "goal": "9",
-      "target": "9.5",
-      "indicator": "9.5.2",
       "status": null
     },
     {
@@ -1195,7 +1195,7 @@
       "goal": "11",
       "target": "11.a",
       "indicator": "11.a.1",
-      "status": "Identified Gap"
+      "status": "On Track"
     },
     {
       "goal": "12",
@@ -1327,19 +1327,19 @@
       "goal": "15",
       "target": "15.6",
       "indicator": "15.6.1",
-      "status": "Identified Gap"
+      "status": "On Track"
     },
     {
       "goal": "15",
       "target": "15.8",
       "indicator": "15.8.1",
-      "status": "Identified Gap"
+      "status": "For Review"
     },
     {
       "goal": "15",
       "target": "15.9",
       "indicator": "15.9.1",
-      "status": "Identified Gap"
+      "status": "On Track"
     },
     {
       "goal": "15",
@@ -1417,7 +1417,7 @@
       "goal": "16",
       "target": "16.a",
       "indicator": "16.a.1",
-      "status": "Identified Gap"
+      "status": "On Track"
     },
     {
       "goal": "17",
@@ -1471,7 +1471,7 @@
       "goal": "17",
       "target": "17.18",
       "indicator": "17.18.3",
-      "status": "Identified Gap"
+      "status": "On Track"
     },
     {
       "goal": "17",
@@ -1975,14 +1975,206 @@
   "tsData": [
     {
       "Reporting Type": "G",
-      "series": "[GOV]GPC_HCP_DGCG",
-      "seriesDescription": "Proportion of countries that (a) have conducted at least one population and housing census in the last 10 years; and (b) have achieved 100 per cent birth registration and 80 per cent death registration",
-      "goal": "17",
-      "target": "17.19",
-      "indicator": "17.19.2",
+      "series": "[GOV]HYM_EDH_LVQG",
+      "seriesDescription": "Number of adopted policy instruments aimed at supporting the shift to sustainable consumption and production",
+      "goal": "12",
+      "target": "12.1",
+      "indicator": "12.1.1",
       "Custodian_Agency(ies)": "Country Office",
       "Partner_Agency(ies)": "",
       "Tier_Classification": "",
+      "values": [
+        {
+          "value": 1,
+          "year": 2010,
+          "id": 0,
+          "addedByCO": true
+        },
+        {
+          "value": 1,
+          "year": 2011,
+          "id": 1,
+          "addedByCO": true
+        },
+        {
+          "value": 1,
+          "year": 2012,
+          "id": 2,
+          "addedByCO": true
+        },
+        {
+          "value": 1,
+          "year": 2013,
+          "id": 3,
+          "addedByCO": true
+        },
+        {
+          "value": 1,
+          "year": 2014,
+          "id": 4,
+          "addedByCO": true
+        },
+        {
+          "value": 2,
+          "year": 2015,
+          "id": 5,
+          "addedByCO": true
+        },
+        {
+          "value": 2,
+          "year": 2016,
+          "id": 6,
+          "addedByCO": true
+        },
+        {
+          "value": 3,
+          "year": 2017,
+          "id": 7,
+          "addedByCO": true
+        },
+        {
+          "value": 4,
+          "year": 2018,
+          "id": 8,
+          "addedByCO": true
+        },
+        {
+          "value": 5,
+          "year": 2019,
+          "id": 9,
+          "addedByCO": true
+        },
+        {
+          "value": 6,
+          "year": 2020,
+          "id": 10,
+          "addedByCO": true
+        },
+        {
+          "value": 7,
+          "year": 2021,
+          "id": 11,
+          "addedByCO": true
+        },
+        {
+          "value": 10,
+          "year": 2022,
+          "id": 12,
+          "addedByCO": true
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2022
+      },
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "[GOV]OOV_YKJ_PXTE",
+      "seriesDescription": "Countries that have achieved 80 per cent death registration (1 = YES; 0 = NO)",
+      "goal": "17",
+      "target": "17.19",
+      "indicator": "17.19.2",
+      "values": [
+        {
+          "value": 0,
+          "year": 2010,
+          "id": 0,
+          "addedByCO": true
+        },
+        {
+          "value": 0,
+          "year": 2011,
+          "id": 1,
+          "addedByCO": true
+        },
+        {
+          "value": 0,
+          "year": 2012,
+          "id": 2,
+          "addedByCO": true
+        },
+        {
+          "value": 0,
+          "year": 2013,
+          "id": 3,
+          "addedByCO": true
+        },
+        {
+          "value": 0,
+          "year": 2014,
+          "id": 4,
+          "addedByCO": true
+        },
+        {
+          "value": 0,
+          "year": 2015,
+          "id": 5,
+          "addedByCO": true
+        },
+        {
+          "value": 0,
+          "year": 2016,
+          "id": 6,
+          "addedByCO": true
+        },
+        {
+          "value": 0,
+          "year": 2017,
+          "id": 7,
+          "addedByCO": true
+        },
+        {
+          "value": 1,
+          "year": 2018,
+          "id": 8,
+          "addedByCO": true
+        },
+        {
+          "value": 1,
+          "year": 2019,
+          "id": 9,
+          "addedByCO": true
+        },
+        {
+          "value": 1,
+          "year": 2020,
+          "id": 10,
+          "addedByCO": true
+        },
+        {
+          "value": 1,
+          "year": 2021,
+          "id": 11,
+          "addedByCO": true
+        }
+      ],
+      "methodology": "NA",
+      "Custodian_Agency(ies)": "Country Office",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "",
+      "status": "Methodology Unavailable",
+      "currentLevelAssessment": null
+    },
+    {
+      "Reporting Type": "G",
+      "series": "[GOV]FAB_IAU_REWA",
+      "seriesDescription": "Countries that have achieved 100 per cent birth registration (1 = YES; 0 = NO)",
+      "goal": "17",
+      "target": "17.19",
+      "indicator": "17.19.2",
       "values": [
         {
           "value": 0,
@@ -2058,19 +2250,19 @@
         }
       ],
       "methodology": "NA",
+      "Custodian_Agency(ies)": "Country Office",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "",
       "status": "Methodology Unavailable",
       "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
-      "series": "[GOV]QGE_OKZ_OJOE",
-      "seriesDescription": "Proportion of countries that (a) have conducted at least one population and housing census in the last 10 years; and (b) have achieved 100 per cent birth registration and 80 per cent death registration",
+      "series": "[GOV]CTT_NIM_GITS",
+      "seriesDescription": "Countries that have conducted at least one population and housing census in the last 10 years (1 = YES; 0 = NO)",
       "goal": "17",
       "target": "17.19",
       "indicator": "17.19.2",
-      "Custodian_Agency(ies)": "Country Office",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "",
       "values": [
         {
           "value": 1,
@@ -2152,8 +2344,635 @@
         }
       ],
       "methodology": "NA",
+      "Custodian_Agency(ies)": "Country Office",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "",
       "status": "Methodology Unavailable",
       "currentLevelAssessment": null
+    },
+    {
+      "Reporting Type": "G",
+      "series": "[GOV]BSO_TJK_ZQZD",
+      "seriesDescription": "Proportion of individuals using the Internet",
+      "goal": "17",
+      "target": "17.8",
+      "indicator": "17.8.1",
+      "Custodian_Agency(ies)": "Country Office",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "",
+      "values": [
+        {
+          "value": 45.59,
+          "year": 2014,
+          "id": 0,
+          "addedByCO": true
+        },
+        {
+          "value": 48.94,
+          "year": 2015,
+          "id": 1,
+          "addedByCO": true
+        },
+        {
+          "value": 54.06,
+          "year": 2016,
+          "id": 2,
+          "addedByCO": true
+        },
+        {
+          "value": 57.27,
+          "year": 2017,
+          "id": 3,
+          "addedByCO": true
+        },
+        {
+          "value": 59.18,
+          "year": 2019,
+          "id": 4,
+          "addedByCO": true
+        },
+        {
+          "value": 69.72,
+          "year": 2022,
+          "id": 5,
+          "addedByCO": true
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2022
+      },
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "[GOV]CUP_MDH_HTXF",
+      "seriesDescription": "Proportion of important sites for freshwater biodiversity that are covered by protected areas",
+      "goal": "15",
+      "target": "15.1",
+      "indicator": "15.1.2",
+      "Custodian_Agency(ies)": "Country Office",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "",
+      "values": [
+        {
+          "value": 90.47,
+          "year": 2015,
+          "id": 0,
+          "addedByCO": true
+        },
+        {
+          "value": 90.47,
+          "year": 2016,
+          "id": 1,
+          "addedByCO": true
+        },
+        {
+          "value": 90.47,
+          "year": 2017,
+          "id": 2,
+          "addedByCO": true
+        },
+        {
+          "value": 93.98,
+          "year": 2018,
+          "id": 3,
+          "addedByCO": true
+        },
+        {
+          "value": 93.98,
+          "year": 2019,
+          "id": 4,
+          "addedByCO": true
+        },
+        {
+          "value": 93.98,
+          "year": 2020,
+          "id": 5,
+          "addedByCO": true
+        },
+        {
+          "value": 93.84,
+          "year": 2021,
+          "id": 6,
+          "addedByCO": true
+        },
+        {
+          "value": 89.88,
+          "year": 2022,
+          "id": 7,
+          "addedByCO": true
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2022
+      },
+      "currentLevelAssessment": null,
+      "status": "Limited or No Progress"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "[GOV]RBW_YUU_IMKV",
+      "seriesDescription": "Proportion of important sites for terrestrial biodiversity that are covered by protected areas",
+      "goal": "15",
+      "target": "15.1",
+      "indicator": "15.1.2",
+      "Custodian_Agency(ies)": "Country Office",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "",
+      "values": [
+        {
+          "value": 36.38,
+          "year": 2015,
+          "id": 0,
+          "addedByCO": true
+        },
+        {
+          "value": 36.39,
+          "year": 2016,
+          "id": 1,
+          "addedByCO": true
+        },
+        {
+          "value": 36.56,
+          "year": 2017,
+          "id": 2,
+          "addedByCO": true
+        },
+        {
+          "value": 39.88,
+          "year": 2018,
+          "id": 3,
+          "addedByCO": true
+        },
+        {
+          "value": 39.96,
+          "year": 2019,
+          "id": 4,
+          "addedByCO": true
+        },
+        {
+          "value": 40.56,
+          "year": 2020,
+          "id": 5,
+          "addedByCO": true
+        },
+        {
+          "value": 40.59,
+          "year": 2021,
+          "id": 6,
+          "addedByCO": true
+        },
+        {
+          "value": 40.74,
+          "year": 2022,
+          "id": 7,
+          "addedByCO": true
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2022
+      },
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "[GOV]ONI_IVY_IBWC",
+      "seriesDescription": "Proportion of children under 5 years of age whose births have been registered with a civil authority, by age",
+      "goal": "16",
+      "target": "16.9",
+      "indicator": "16.9.1",
+      "Custodian_Agency(ies)": "Country Office",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "",
+      "values": [
+        {
+          "value": 80.74,
+          "year": 2017,
+          "id": 0,
+          "addedByCO": true
+        },
+        {
+          "value": 82.04,
+          "year": 2018,
+          "id": 1,
+          "addedByCO": true
+        },
+        {
+          "value": 81.93,
+          "year": 2019,
+          "id": 2,
+          "addedByCO": true
+        },
+        {
+          "value": 79.02,
+          "year": 2020,
+          "id": 3,
+          "addedByCO": true
+        },
+        {
+          "value": 78.43,
+          "year": 2021,
+          "id": 4,
+          "addedByCO": true
+        },
+        {
+          "value": 77.31,
+          "year": 2022,
+          "id": 5,
+          "addedByCO": true
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2017,
+        "latestAvailable": 2022
+      },
+      "currentLevelAssessment": null,
+      "status": "Limited or No Progress"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "[GOV]RZM_PED_AOZF",
+      "seriesDescription": "Proportion of population using a hand-washing facility with soap and water",
+      "goal": "6",
+      "target": "6.2",
+      "indicator": "6.2.1",
+      "Custodian_Agency(ies)": "Country Office",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "",
+      "values": [
+        {
+          "value": 85.49,
+          "year": 2016,
+          "id": 0,
+          "addedByCO": true
+        },
+        {
+          "value": 89.08,
+          "year": 2019,
+          "id": 1,
+          "addedByCO": true
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2016,
+        "latestAvailable": 2019
+      },
+      "currentLevelAssessment": null,
+      "status": "On Track"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "[GOV]QEX_VGL_NFAZ",
+      "seriesDescription": "Average hourly earnings of employees, by sex, age, occupation and persons with disabilities",
+      "goal": "8",
+      "target": "8.5",
+      "indicator": "8.5.1",
+      "Sex": "FEMALE",
+      "Custodian_Agency(ies)": "Country Office",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "",
+      "values": [
+        {
+          "value": 1.98,
+          "year": 2010,
+          "id": 0,
+          "addedByCO": true
+        },
+        {
+          "value": 2.02,
+          "year": 2011,
+          "id": 1,
+          "addedByCO": true
+        },
+        {
+          "value": 2.26,
+          "year": 2012,
+          "id": 2,
+          "addedByCO": true
+        },
+        {
+          "value": 2.5,
+          "year": 2013,
+          "id": 3,
+          "addedByCO": true
+        },
+        {
+          "value": 2.61,
+          "year": 2014,
+          "id": 4,
+          "addedByCO": true
+        },
+        {
+          "value": 2.73,
+          "year": 2015,
+          "id": 5,
+          "addedByCO": true
+        },
+        {
+          "value": 2.9,
+          "year": 2016,
+          "id": 6,
+          "addedByCO": true
+        },
+        {
+          "value": 2.8,
+          "year": 2017,
+          "id": 7,
+          "addedByCO": true
+        },
+        {
+          "value": 2.71,
+          "year": 2018,
+          "id": 8,
+          "addedByCO": true
+        },
+        {
+          "value": 2.82,
+          "year": 2019,
+          "id": 9,
+          "addedByCO": true
+        },
+        {
+          "value": 2.57,
+          "year": 2020,
+          "id": 10,
+          "addedByCO": true
+        },
+        {
+          "value": 2.7,
+          "year": 2021,
+          "id": 11,
+          "addedByCO": true
+        },
+        {
+          "value": 2.73,
+          "year": 2022,
+          "id": 12,
+          "addedByCO": true
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2022
+      },
+      "currentLevelAssessment": null,
+      "status": "Limited or No Progress"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "[GOV]CGA_MMC_QIYP",
+      "seriesDescription": "Average hourly earnings of employees, by sex, age, occupation and persons with disabilities",
+      "goal": "8",
+      "target": "8.5",
+      "indicator": "8.5.1",
+      "Sex": "MALE",
+      "Custodian_Agency(ies)": "Country Office",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "",
+      "values": [
+        {
+          "value": 2.1,
+          "year": 2010,
+          "id": 0,
+          "addedByCO": true
+        },
+        {
+          "value": 2.25,
+          "year": 2011,
+          "id": 1,
+          "addedByCO": true
+        },
+        {
+          "value": 2.45,
+          "year": 2012,
+          "id": 2,
+          "addedByCO": true
+        },
+        {
+          "value": 2.73,
+          "year": 2013,
+          "id": 3,
+          "addedByCO": true
+        },
+        {
+          "value": 2.96,
+          "year": 2014,
+          "id": 4,
+          "addedByCO": true
+        },
+        {
+          "value": 3.1,
+          "year": 2015,
+          "id": 5,
+          "addedByCO": true
+        },
+        {
+          "value": 3.02,
+          "year": 2016,
+          "id": 6,
+          "addedByCO": true
+        },
+        {
+          "value": 3.04,
+          "year": 2017,
+          "id": 7,
+          "addedByCO": true
+        },
+        {
+          "value": 2.95,
+          "year": 2018,
+          "id": 8,
+          "addedByCO": true
+        },
+        {
+          "value": 2.9,
+          "year": 2019,
+          "id": 9,
+          "addedByCO": true
+        },
+        {
+          "value": 2.7,
+          "year": 2020,
+          "id": 10,
+          "addedByCO": true
+        },
+        {
+          "value": 2.83,
+          "year": 2021,
+          "id": 11,
+          "addedByCO": true
+        },
+        {
+          "value": 3,
+          "year": 2022,
+          "id": 12,
+          "addedByCO": true
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2022
+      },
+      "currentLevelAssessment": null,
+      "status": "Limited or No Progress"
+    },
+    {
+      "Reporting Type": "G",
+      "series": "[GOV]CYI_QER_UNEU",
+      "seriesDescription": "Researchers (in full-time equivalent) per million inhabitants",
+      "goal": "9",
+      "target": "9.5",
+      "indicator": "9.5.2",
+      "Custodian_Agency(ies)": "Country Office",
+      "Partner_Agency(ies)": "",
+      "Tier_Classification": "",
+      "values": [
+        {
+          "value": 17,
+          "year": 2014,
+          "id": 0,
+          "addedByCO": true
+        },
+        {
+          "value": 107,
+          "year": 2015,
+          "id": 1,
+          "addedByCO": true
+        },
+        {
+          "value": 133,
+          "year": 2016,
+          "id": 2,
+          "addedByCO": true
+        },
+        {
+          "value": 153,
+          "year": 2017,
+          "id": 3,
+          "addedByCO": true
+        },
+        {
+          "value": 249,
+          "year": 2018,
+          "id": 4,
+          "addedByCO": true
+        },
+        {
+          "value": 273,
+          "year": 2019,
+          "id": 5,
+          "addedByCO": true
+        },
+        {
+          "value": 292,
+          "year": 2020,
+          "id": 6,
+          "addedByCO": true
+        },
+        {
+          "value": 311,
+          "year": 2021,
+          "id": 7,
+          "addedByCO": true
+        },
+        {
+          "value": 371,
+          "year": 2022,
+          "id": 8,
+          "addedByCO": true
+        }
+      ],
+      "methodology": {
+        "normativeDirection": "increase",
+        "CAGRLimit": [
+          0.01,
+          0.005,
+          -0.01
+        ],
+        "trendMethodology": "CAGRA",
+        "baselineYear": {
+          "all": 2015
+        },
+        "baseYear": 2015,
+        "latestAvailable": 2022
+      },
+      "currentLevelAssessment": null,
+      "status": "On Track"
     },
     {
       "Reporting Type": "G",
@@ -2312,52 +3131,6 @@
           "value": 3.55,
           "year": 2021,
           "id": 11,
-          "addedByCO": true
-        }
-      ],
-      "methodology": "NA",
-      "status": "Methodology Unavailable",
-      "currentLevelAssessment": null
-    },
-    {
-      "Reporting Type": "G",
-      "series": "[GOV]UKV_QZO_QBFJ",
-      "seriesDescription": "Proportion of children under 5 years of age whose births have been registered with a civil authority",
-      "goal": "16",
-      "target": "16.9",
-      "indicator": "16.9.1",
-      "Custodian_Agency(ies)": "Country Office",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "",
-      "values": [
-        {
-          "value": 82.05,
-          "year": 2018,
-          "id": 0,
-          "addedByCO": true
-        },
-        {
-          "value": 81.93,
-          "year": 2019,
-          "id": 1,
-          "addedByCO": true
-        },
-        {
-          "value": 79.02,
-          "year": 2020,
-          "id": 2,
-          "addedByCO": true
-        },
-        {
-          "value": 78.44,
-          "year": 2021,
-          "id": 3,
-          "addedByCO": true
-        },
-        {
-          "value": 77.31,
-          "year": 2022,
-          "id": 4,
           "addedByCO": true
         }
       ],
@@ -2619,34 +3392,6 @@
     },
     {
       "Reporting Type": "G",
-      "series": "[GOV]HKC_HUK_OZAL",
-      "seriesDescription": "Proportion of population using (a) safely managed sanitation services and (b) a hand-washing facility with soap and water",
-      "goal": "6",
-      "target": "6.2",
-      "indicator": "6.2.1",
-      "Custodian_Agency(ies)": "Country Office",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "",
-      "values": [
-        {
-          "value": 58.49,
-          "year": 2016,
-          "id": 0,
-          "addedByCO": true
-        },
-        {
-          "value": 89.08,
-          "year": 2019,
-          "id": 1,
-          "addedByCO": true
-        }
-      ],
-      "methodology": "NA",
-      "status": "Methodology Unavailable",
-      "currentLevelAssessment": null
-    },
-    {
-      "Reporting Type": "G",
       "series": "[GOV]UFE_LXA_AHFM",
       "seriesDescription": "Proportion of seats held by women in (a) national parliaments and (b) local governments",
       "goal": "5",
@@ -2656,30 +3401,6 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "",
       "values": [
-        {
-          "value": 21.72,
-          "year": 2002,
-          "id": 0,
-          "addedByCO": true
-        },
-        {
-          "value": 27.89,
-          "year": 2004,
-          "id": 1,
-          "addedByCO": true
-        },
-        {
-          "value": 22.37,
-          "year": 2006,
-          "id": 2,
-          "addedByCO": true
-        },
-        {
-          "value": 23.1,
-          "year": 2009,
-          "id": 3,
-          "addedByCO": true
-        },
         {
           "value": 25.66,
           "year": 2014,
@@ -2708,30 +3429,6 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "",
       "values": [
-        {
-          "value": 19.81,
-          "year": 2002,
-          "id": 0,
-          "addedByCO": true
-        },
-        {
-          "value": 27.36,
-          "year": 2006,
-          "id": 1,
-          "addedByCO": true
-        },
-        {
-          "value": 34.62,
-          "year": 2007,
-          "id": 2,
-          "addedByCO": true
-        },
-        {
-          "value": 33.08,
-          "year": 2009,
-          "id": 3,
-          "addedByCO": true
-        },
         {
           "value": 38.46,
           "year": 2013,
@@ -2845,76 +3542,6 @@
     },
     {
       "Reporting Type": "G",
-      "series": "[GOV]IAM_DEB_LQPK",
-      "seriesDescription": "Proportion of individuals using the Internet",
-      "goal": "17",
-      "target": "17.8",
-      "indicator": "17.8.1",
-      "Custodian_Agency(ies)": "Country Office",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "",
-      "values": [
-        {
-          "value": 40.29,
-          "year": 2013,
-          "id": 0,
-          "addedByCO": true
-        },
-        {
-          "value": 45.59,
-          "year": 2014,
-          "id": 1,
-          "addedByCO": true
-        },
-        {
-          "value": 48.94,
-          "year": 2015,
-          "id": 2,
-          "addedByCO": true
-        },
-        {
-          "value": 54.06,
-          "year": 2016,
-          "id": 3,
-          "addedByCO": true
-        },
-        {
-          "value": 57.27,
-          "year": 2017,
-          "id": 4,
-          "addedByCO": true
-        },
-        {
-          "value": 55.89,
-          "year": 2018,
-          "id": 5,
-          "addedByCO": true
-        },
-        {
-          "value": 59.18,
-          "year": 2019,
-          "id": 6,
-          "addedByCO": true
-        },
-        {
-          "value": 70.73,
-          "year": 2020,
-          "id": 7,
-          "addedByCO": true
-        },
-        {
-          "value": 69.72,
-          "year": 2022,
-          "id": 8,
-          "addedByCO": true
-        }
-      ],
-      "methodology": "NA",
-      "status": "Methodology Unavailable",
-      "currentLevelAssessment": null
-    },
-    {
-      "Reporting Type": "G",
       "series": "[GOV]HZB_CID_JOWG",
       "seriesDescription": "Installed renewable energy-generating capacity in developing countries (in watts per capita)",
       "goal": "12",
@@ -2924,66 +3551,6 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "",
       "values": [
-        {
-          "value": 136.83,
-          "year": 2000,
-          "id": 0,
-          "addedByCO": true
-        },
-        {
-          "value": 135.61,
-          "year": 2001,
-          "id": 1,
-          "addedByCO": true
-        },
-        {
-          "value": 133.33,
-          "year": 2002,
-          "id": 2,
-          "addedByCO": true
-        },
-        {
-          "value": 131.08,
-          "year": 2003,
-          "id": 3,
-          "addedByCO": true
-        },
-        {
-          "value": 131.41,
-          "year": 2004,
-          "id": 4,
-          "addedByCO": true
-        },
-        {
-          "value": 133.25,
-          "year": 2005,
-          "id": 5,
-          "addedByCO": true
-        },
-        {
-          "value": 134.24,
-          "year": 2006,
-          "id": 6,
-          "addedByCO": true
-        },
-        {
-          "value": 150.07,
-          "year": 2007,
-          "id": 7,
-          "addedByCO": true
-        },
-        {
-          "value": 149.63,
-          "year": 2008,
-          "id": 8,
-          "addedByCO": true
-        },
-        {
-          "value": 147.13,
-          "year": 2009,
-          "id": 9,
-          "addedByCO": true
-        },
         {
           "value": 156.28,
           "year": 2010,
@@ -3085,66 +3652,6 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "",
       "values": [
-        {
-          "value": 136.83,
-          "year": 2000,
-          "id": 0,
-          "addedByCO": true
-        },
-        {
-          "value": 135.61,
-          "year": 2001,
-          "id": 1,
-          "addedByCO": true
-        },
-        {
-          "value": 133.33,
-          "year": 2002,
-          "id": 2,
-          "addedByCO": true
-        },
-        {
-          "value": 131.08,
-          "year": 2003,
-          "id": 3,
-          "addedByCO": true
-        },
-        {
-          "value": 131.41,
-          "year": 2004,
-          "id": 4,
-          "addedByCO": true
-        },
-        {
-          "value": 133.25,
-          "year": 2005,
-          "id": 5,
-          "addedByCO": true
-        },
-        {
-          "value": 134.24,
-          "year": 2006,
-          "id": 6,
-          "addedByCO": true
-        },
-        {
-          "value": 150.07,
-          "year": 2007,
-          "id": 7,
-          "addedByCO": true
-        },
-        {
-          "value": 149.63,
-          "year": 2008,
-          "id": 8,
-          "addedByCO": true
-        },
-        {
-          "value": 147.13,
-          "year": 2009,
-          "id": 9,
-          "addedByCO": true
-        },
         {
           "value": 156.28,
           "year": 2010,
@@ -3282,24 +3789,6 @@
       "Tier_Classification": "",
       "values": [
         {
-          "value": 21.37,
-          "year": 2007,
-          "id": 0,
-          "addedByCO": true
-        },
-        {
-          "value": 21.86,
-          "year": 2008,
-          "id": 1,
-          "addedByCO": true
-        },
-        {
-          "value": 20.15,
-          "year": 2009,
-          "id": 2,
-          "addedByCO": true
-        },
-        {
           "value": 19.73,
           "year": 2010,
           "id": 3,
@@ -3407,120 +3896,6 @@
       "Tier_Classification": "",
       "values": [
         {
-          "value": 2.22,
-          "year": 1991,
-          "id": 0,
-          "addedByCO": true
-        },
-        {
-          "value": 0.06,
-          "year": 1992,
-          "id": 1,
-          "addedByCO": true
-        },
-        {
-          "value": -0.1,
-          "year": 1993,
-          "id": 2,
-          "addedByCO": true
-        },
-        {
-          "value": 2.12,
-          "year": 1994,
-          "id": 3,
-          "addedByCO": true
-        },
-        {
-          "value": 0.13,
-          "year": 1995,
-          "id": 4,
-          "addedByCO": true
-        },
-        {
-          "value": -0.4,
-          "year": 1996,
-          "id": 5,
-          "addedByCO": true
-        },
-        {
-          "value": 2.12,
-          "year": 1997,
-          "id": 6,
-          "addedByCO": true
-        },
-        {
-          "value": 1.06,
-          "year": 1998,
-          "id": 7,
-          "addedByCO": true
-        },
-        {
-          "value": -6.8,
-          "year": 1999,
-          "id": 8,
-          "addedByCO": true
-        },
-        {
-          "value": -1.12,
-          "year": 2000,
-          "id": 9,
-          "addedByCO": true
-        },
-        {
-          "value": 1.72,
-          "year": 2001,
-          "id": 10,
-          "addedByCO": true
-        },
-        {
-          "value": 1.88,
-          "year": 2002,
-          "id": 11,
-          "addedByCO": true
-        },
-        {
-          "value": 0.98,
-          "year": 2003,
-          "id": 12,
-          "addedByCO": true
-        },
-        {
-          "value": 6.36,
-          "year": 2004,
-          "id": 13,
-          "addedByCO": true
-        },
-        {
-          "value": 3.99,
-          "year": 2005,
-          "id": 14,
-          "addedByCO": true
-        },
-        {
-          "value": 2.58,
-          "year": 2006,
-          "id": 15,
-          "addedByCO": true
-        },
-        {
-          "value": 0.39,
-          "year": 2007,
-          "id": 16,
-          "addedByCO": true
-        },
-        {
-          "value": 4.46,
-          "year": 2008,
-          "id": 17,
-          "addedByCO": true
-        },
-        {
-          "value": -1.25,
-          "year": 2009,
-          "id": 18,
-          "addedByCO": true
-        },
-        {
           "value": 1.64,
           "year": 2010,
           "id": 19,
@@ -3612,133 +3987,8 @@
     },
     {
       "Reporting Type": "G",
-      "series": "[GOV]KHR_PAR_HCGN",
-      "seriesDescription": "Average hourly earnings of employees, by sex, age, occupation and persons with disabilities",
-      "goal": "8",
-      "target": "8.5",
-      "indicator": "8.5.1",
-      "Custodian_Agency(ies)": "Country Office",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "",
-      "values": [
-        {
-          "value": 14.44,
-          "year": 2007,
-          "id": 0,
-          "addedByCO": true
-        },
-        {
-          "value": 11.47,
-          "year": 2008,
-          "id": 1,
-          "addedByCO": true
-        },
-        {
-          "value": 11.04,
-          "year": 2009,
-          "id": 2,
-          "addedByCO": true
-        },
-        {
-          "value": 5.37,
-          "year": 2010,
-          "id": 3,
-          "addedByCO": true
-        },
-        {
-          "value": 10.26,
-          "year": 2011,
-          "id": 4,
-          "addedByCO": true
-        },
-        {
-          "value": 7.73,
-          "year": 2012,
-          "id": 5,
-          "addedByCO": true
-        },
-        {
-          "value": 8.36,
-          "year": 2013,
-          "id": 6,
-          "addedByCO": true
-        },
-        {
-          "value": 11.62,
-          "year": 2014,
-          "id": 7,
-          "addedByCO": true
-        },
-        {
-          "value": 11.83,
-          "year": 2015,
-          "id": 8,
-          "addedByCO": true
-        },
-        {
-          "value": 4.01,
-          "year": 2016,
-          "id": 9,
-          "addedByCO": true
-        },
-        {
-          "value": 7.78,
-          "year": 2017,
-          "id": 10,
-          "addedByCO": true
-        },
-        {
-          "value": 8.01,
-          "year": 2018,
-          "id": 11,
-          "addedByCO": true
-        },
-        {
-          "value": 2.99,
-          "year": 2019,
-          "id": 12,
-          "addedByCO": true
-        },
-        {
-          "value": 4.7,
-          "year": 2020,
-          "id": 13,
-          "addedByCO": true
-        },
-        {
-          "value": 4.85,
-          "year": 2021,
-          "id": 14,
-          "addedByCO": true
-        },
-        {
-          "value": 8.89,
-          "year": 2022,
-          "id": 15,
-          "addedByCO": true
-        }
-      ],
-      "methodology": {
-        "normativeDirection": "decrease",
-        "CAGRLimit": [
-          0.01,
-          0.005,
-          -0.01
-        ],
-        "trendMethodology": "CAGRA",
-        "baselineYear": {
-          "all": 2015
-        },
-        "baseYear": 2015,
-        "latestAvailable": 2022
-      },
-      "currentLevelAssessment": null,
-      "status": "On Track"
-    },
-    {
-      "Reporting Type": "G",
       "series": "[GOV]YAD_JWX_HZXT",
-      "seriesDescription": "Proportion of youth (aged 15\u00ef\u00bf\u00bd24 years) not in education, employment or training",
+      "seriesDescription": "Proportion of youth (aged 15<U+FFFD>24 years) not in education, employment or training",
       "goal": "8",
       "target": "8.6",
       "indicator": "8.6.1",
@@ -3746,24 +3996,6 @@
       "Partner_Agency(ies)": "",
       "Tier_Classification": "",
       "values": [
-        {
-          "value": 16.37,
-          "year": 2007,
-          "id": 0,
-          "addedByCO": true
-        },
-        {
-          "value": 16.39,
-          "year": 2008,
-          "id": 1,
-          "addedByCO": true
-        },
-        {
-          "value": 16.5,
-          "year": 2009,
-          "id": 2,
-          "addedByCO": true
-        },
         {
           "value": 15.6,
           "year": 2010,
@@ -3937,126 +4169,6 @@
       "Tier_Classification": "",
       "values": [
         {
-          "value": 58.16,
-          "year": 1990,
-          "id": 0,
-          "addedByCO": true
-        },
-        {
-          "value": 58.95,
-          "year": 1991,
-          "id": 1,
-          "addedByCO": true
-        },
-        {
-          "value": 60.37,
-          "year": 1992,
-          "id": 2,
-          "addedByCO": true
-        },
-        {
-          "value": 62.04,
-          "year": 1993,
-          "id": 3,
-          "addedByCO": true
-        },
-        {
-          "value": 63.1,
-          "year": 1994,
-          "id": 4,
-          "addedByCO": true
-        },
-        {
-          "value": 64.93,
-          "year": 1995,
-          "id": 5,
-          "addedByCO": true
-        },
-        {
-          "value": 67.59,
-          "year": 1996,
-          "id": 6,
-          "addedByCO": true
-        },
-        {
-          "value": 67.7,
-          "year": 1997,
-          "id": 7,
-          "addedByCO": true
-        },
-        {
-          "value": 68.84,
-          "year": 1998,
-          "id": 8,
-          "addedByCO": true
-        },
-        {
-          "value": 70.09,
-          "year": 1999,
-          "id": 9,
-          "addedByCO": true
-        },
-        {
-          "value": 70.93,
-          "year": 2000,
-          "id": 10,
-          "addedByCO": true
-        },
-        {
-          "value": 71.39,
-          "year": 2001,
-          "id": 11,
-          "addedByCO": true
-        },
-        {
-          "value": 73.7,
-          "year": 2002,
-          "id": 12,
-          "addedByCO": true
-        },
-        {
-          "value": 75.1,
-          "year": 2003,
-          "id": 13,
-          "addedByCO": true
-        },
-        {
-          "value": 76.42,
-          "year": 2004,
-          "id": 14,
-          "addedByCO": true
-        },
-        {
-          "value": 78.55,
-          "year": 2005,
-          "id": 15,
-          "addedByCO": true
-        },
-        {
-          "value": 80.55,
-          "year": 2006,
-          "id": 16,
-          "addedByCO": true
-        },
-        {
-          "value": 85.87,
-          "year": 2007,
-          "id": 17,
-          "addedByCO": true
-        },
-        {
-          "value": 89.3,
-          "year": 2008,
-          "id": 18,
-          "addedByCO": true
-        },
-        {
-          "value": 85.64,
-          "year": 2009,
-          "id": 19,
-          "addedByCO": true
-        },
-        {
           "value": 88.59,
           "year": 2010,
           "id": 20,
@@ -4145,76 +4257,6 @@
       },
       "currentLevelAssessment": null,
       "status": "Limited or No Progress"
-    },
-    {
-      "Reporting Type": "G",
-      "series": "[GOV]FZQ_PYC_ZWII",
-      "seriesDescription": "Number of countries developing, adopting or implementing policy instruments aimed at supporting the shift to sustainable consumption and production",
-      "goal": "12",
-      "target": "12.1",
-      "indicator": "12.1.1",
-      "Custodian_Agency(ies)": "Country Office",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "",
-      "values": [
-        {
-          "value": 1,
-          "year": 2014,
-          "id": 0,
-          "addedByCO": true
-        },
-        {
-          "value": 2,
-          "year": 2015,
-          "id": 1,
-          "addedByCO": true
-        },
-        {
-          "value": 2,
-          "year": 2016,
-          "id": 2,
-          "addedByCO": true
-        },
-        {
-          "value": 3,
-          "year": 2017,
-          "id": 3,
-          "addedByCO": true
-        },
-        {
-          "value": 4,
-          "year": 2018,
-          "id": 4,
-          "addedByCO": true
-        },
-        {
-          "value": 5,
-          "year": 2019,
-          "id": 5,
-          "addedByCO": true
-        },
-        {
-          "value": 6,
-          "year": 2020,
-          "id": 6,
-          "addedByCO": true
-        },
-        {
-          "value": 7,
-          "year": 2021,
-          "id": 7,
-          "addedByCO": true
-        },
-        {
-          "value": 10,
-          "year": 2022,
-          "id": 8,
-          "addedByCO": true
-        }
-      ],
-      "methodology": "NA",
-      "status": "Methodology Unavailable",
-      "currentLevelAssessment": null
     },
     {
       "Reporting Type": "G",
@@ -4359,76 +4401,6 @@
         },
         {
           "value": -1.53,
-          "year": 2022,
-          "id": 8,
-          "addedByCO": true
-        }
-      ],
-      "methodology": "NA",
-      "status": "Methodology Unavailable",
-      "currentLevelAssessment": null
-    },
-    {
-      "Reporting Type": "G",
-      "series": "[GOV]IVX_EVQ_GNPH",
-      "seriesDescription": "Researchers (in full-time equivalent) per million inhabitants",
-      "goal": "9",
-      "target": "9.5",
-      "indicator": "9.5.2",
-      "Custodian_Agency(ies)": "Country Office",
-      "Partner_Agency(ies)": "",
-      "Tier_Classification": "",
-      "values": [
-        {
-          "value": 17,
-          "year": 2014,
-          "id": 0,
-          "addedByCO": true
-        },
-        {
-          "value": 107,
-          "year": 2015,
-          "id": 1,
-          "addedByCO": true
-        },
-        {
-          "value": 133,
-          "year": 2016,
-          "id": 2,
-          "addedByCO": true
-        },
-        {
-          "value": 153,
-          "year": 2017,
-          "id": 3,
-          "addedByCO": true
-        },
-        {
-          "value": 249,
-          "year": 2018,
-          "id": 4,
-          "addedByCO": true
-        },
-        {
-          "value": 273,
-          "year": 2019,
-          "id": 5,
-          "addedByCO": true
-        },
-        {
-          "value": 292,
-          "year": 2020,
-          "id": 6,
-          "addedByCO": true
-        },
-        {
-          "value": 311,
-          "year": 2021,
-          "id": 7,
-          "addedByCO": true
-        },
-        {
-          "value": 419,
           "year": 2022,
           "id": 8,
           "addedByCO": true
@@ -13927,9 +13899,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -13938,7 +13908,7 @@
         "latestAvailable": null
       },
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -13959,9 +13929,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -13970,7 +13938,7 @@
         "latestAvailable": null
       },
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -13991,9 +13959,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -14003,7 +13969,7 @@
       },
       "Policy instruments": "POLICY_MACRO",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -15635,7 +15601,7 @@
     {
       "Reporting Type": "G",
       "series": "EG_EGY_RNEW",
-      "seriesDescription": "Installed renewable\u00ef\u00bf\u00bdelectricity-generating capacity (watts per capita)",
+      "seriesDescription": "Installed renewable<U+FFFD>electricity-generating capacity (watts per capita)",
       "goal": "7",
       "target": "7.b",
       "indicator": "7.b.1",
@@ -15737,7 +15703,7 @@
     {
       "Reporting Type": "G",
       "series": "EG_EGY_RNEW",
-      "seriesDescription": "Installed renewable\u00ef\u00bf\u00bdelectricity-generating capacity (watts per capita)",
+      "seriesDescription": "Installed renewable<U+FFFD>electricity-generating capacity (watts per capita)",
       "goal": "12",
       "target": "12.a",
       "indicator": "12.a.1",
@@ -19736,9 +19702,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -19747,7 +19711,7 @@
         "latestAvailable": null
       },
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -19780,9 +19744,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -19791,7 +19753,7 @@
         "latestAvailable": null
       },
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -19848,9 +19810,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -19859,7 +19819,7 @@
         "latestAvailable": null
       },
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -19940,9 +19900,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -19951,7 +19909,7 @@
         "latestAvailable": null
       },
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -19990,9 +19948,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -20001,7 +19957,7 @@
         "latestAvailable": null
       },
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -20034,9 +19990,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -20045,12 +19999,12 @@
         "latestAvailable": null
       },
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
       "series": "ER_IAS_NATBUD",
-      "seriesDescription": "Countries with an allocation from the national budget to manage the threat of invasive alien species\u00ef\u00bf\u00bd(1 = YES, 0 = NO)",
+      "seriesDescription": "Countries with an allocation from the national budget to manage the threat of invasive alien species<U+FFFD>(1 = YES, 0 = NO)",
       "goal": "15",
       "target": "15.8",
       "indicator": "15.8.1",
@@ -20078,9 +20032,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -20094,7 +20046,7 @@
     {
       "Reporting Type": "G",
       "series": "ER_IAS_GLOFUN",
-      "seriesDescription": "Recipient countries of global funding with access to any funding from global financial mechanisms for projects related to invasive alien species\u00ef\u00bf\u00bd management (1 = YES, 0 = NO)",
+      "seriesDescription": "Recipient countries of global funding with access to any funding from global financial mechanisms for projects related to invasive alien species<U+FFFD> management (1 = YES, 0 = NO)",
       "goal": "15",
       "target": "15.8",
       "indicator": "15.8.1",
@@ -20122,9 +20074,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -20133,7 +20083,7 @@
         "latestAvailable": null
       },
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -20154,9 +20104,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -20166,7 +20114,7 @@
       },
       "Level/Status": "_T",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -20187,9 +20135,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -20199,7 +20145,7 @@
       },
       "Level/Status": "_T",
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -21236,7 +21182,7 @@
     {
       "Reporting Type": "G",
       "series": "VC_VAW_SXVLN",
-      "seriesDescription": "Proportion of population aged 18-29 years who experienced sexual violence by age\u00ef\u00bf\u00bd18, by sex (% of population aged 18-29)",
+      "seriesDescription": "Proportion of population aged 18-29 years who experienced sexual violence by age<U+FFFD>18, by sex (% of population aged 18-29)",
       "goal": "16",
       "target": "16.2",
       "indicator": "16.2.3",
@@ -21642,7 +21588,7 @@
     {
       "Reporting Type": "G",
       "series": "SG_DMK_PARLMP_LC",
-      "seriesDescription": "Ratio for female members of parliaments (Ratio of the proportion of women in parliament in the proportion of women in the national population\u00ef\u00bf\u00bdwith the age of eligibility as a lower bound boundary), Lower Chamber or Unicameral",
+      "seriesDescription": "Ratio for female members of parliaments (Ratio of the proportion of women in parliament in the proportion of women in the national population<U+FFFD>with the age of eligibility as a lower bound boundary), Lower Chamber or Unicameral",
       "goal": "16",
       "target": "16.7",
       "indicator": "16.7.1",
@@ -21689,7 +21635,7 @@
     {
       "Reporting Type": "G",
       "series": "SG_DMK_PARLYR_LC",
-      "seriesDescription": "Ratio of young members in parliament (Ratio of the proportion of young members in parliament (age 45 or below) in the proportion of the national population (age 45 or below)\u00ef\u00bf\u00bdwith the age of eligibility as a lower bound boundary), Lower Chamber or Unicameral",
+      "seriesDescription": "Ratio of young members in parliament (Ratio of the proportion of young members in parliament (age 45 or below) in the proportion of the national population (age 45 or below)<U+FFFD>with the age of eligibility as a lower bound boundary), Lower Chamber or Unicameral",
       "goal": "16",
       "target": "16.7",
       "indicator": "16.7.1",
@@ -21927,9 +21873,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -21938,7 +21882,7 @@
         "latestAvailable": null
       },
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -22053,7 +21997,7 @@
     {
       "Reporting Type": "G",
       "series": "TX_IMP_GBMRCH",
-      "seriesDescription": "Developing countries\u00ef\u00bf\u00bd and least developed countries\u00ef\u00bf\u00bd share of global merchandise imports (%)",
+      "seriesDescription": "Developing countries<U+FFFD> and least developed countries<U+FFFD> share of global merchandise imports (%)",
       "goal": "17",
       "target": "17.11",
       "indicator": "17.11.1",
@@ -22154,7 +22098,7 @@
     {
       "Reporting Type": "G",
       "series": "TX_EXP_GBMRCH",
-      "seriesDescription": "Developing countries\u00ef\u00bf\u00bd and least developed countries\u00ef\u00bf\u00bd share of global merchandise exports (%)",
+      "seriesDescription": "Developing countries<U+FFFD> and least developed countries<U+FFFD> share of global merchandise exports (%)",
       "goal": "17",
       "target": "17.11",
       "indicator": "17.11.1",
@@ -22255,7 +22199,7 @@
     {
       "Reporting Type": "G",
       "series": "TX_EXP_GBSVR",
-      "seriesDescription": "Developing countries\u00ef\u00bf\u00bd and least developed countries\u00ef\u00bf\u00bd share of global services exports (%)",
+      "seriesDescription": "Developing countries<U+FFFD> and least developed countries<U+FFFD> share of global services exports (%)",
       "goal": "17",
       "target": "17.11",
       "indicator": "17.11.1",
@@ -25429,9 +25373,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -25467,9 +25409,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -25478,7 +25418,7 @@
         "latestAvailable": null
       },
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -25505,9 +25445,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -25516,7 +25454,7 @@
         "latestAvailable": null
       },
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -25549,9 +25487,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -25560,7 +25496,7 @@
         "latestAvailable": null
       },
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -25664,9 +25600,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -25726,9 +25660,7 @@
         }
       ],
       "methodology": {
-        "value": [
-          1
-        ],
+        "value": 1,
         "trendMethodology": "Binary",
         "baselineYear": {
           "all": 2015
@@ -25737,7 +25669,7 @@
         "latestAvailable": null
       },
       "currentLevelAssessment": null,
-      "status": "Target Not Achieved"
+      "status": "Target Achieved"
     },
     {
       "Reporting Type": "G",
@@ -35924,7 +35856,7 @@
     {
       "Reporting Type": "G",
       "series": "SE_ACS_CMPTR",
-      "seriesDescription": "Proportion of schools with access to\u00ef\u00bf\u00bdcomputers for pedagogical purposes, by education level (%)",
+      "seriesDescription": "Proportion of schools with access to<U+FFFD>computers for pedagogical purposes, by education level (%)",
       "goal": "4",
       "target": "4.a",
       "indicator": "4.a.1",
@@ -35997,7 +35929,7 @@
     {
       "Reporting Type": "G",
       "series": "SE_ACS_CMPTR",
-      "seriesDescription": "Proportion of schools with access to\u00ef\u00bf\u00bdcomputers for pedagogical purposes, by education level (%)",
+      "seriesDescription": "Proportion of schools with access to<U+FFFD>computers for pedagogical purposes, by education level (%)",
       "goal": "4",
       "target": "4.a",
       "indicator": "4.a.1",
@@ -36064,7 +35996,7 @@
     {
       "Reporting Type": "G",
       "series": "SE_ACS_CMPTR",
-      "seriesDescription": "Proportion of schools with access to\u00ef\u00bf\u00bdcomputers for pedagogical purposes, by education level (%)",
+      "seriesDescription": "Proportion of schools with access to<U+FFFD>computers for pedagogical purposes, by education level (%)",
       "goal": "4",
       "target": "4.a",
       "indicator": "4.a.1",
@@ -36131,7 +36063,7 @@
     {
       "Reporting Type": "G",
       "series": "SE_ACS_CMPTR",
-      "seriesDescription": "Proportion of schools with access to\u00ef\u00bf\u00bdcomputers for pedagogical purposes, by education level (%)",
+      "seriesDescription": "Proportion of schools with access to<U+FFFD>computers for pedagogical purposes, by education level (%)",
       "goal": "4",
       "target": "4.a",
       "indicator": "4.a.1",
@@ -36405,7 +36337,7 @@
     {
       "Reporting Type": "G",
       "series": "SE_ACS_ELECT",
-      "seriesDescription": "Proportion of schools with access to\u00ef\u00bf\u00bdelectricity, by education level (%)",
+      "seriesDescription": "Proportion of schools with access to<U+FFFD>electricity, by education level (%)",
       "goal": "4",
       "target": "4.a",
       "indicator": "4.a.1",
@@ -36478,7 +36410,7 @@
     {
       "Reporting Type": "G",
       "series": "SE_ACS_ELECT",
-      "seriesDescription": "Proportion of schools with access to\u00ef\u00bf\u00bdelectricity, by education level (%)",
+      "seriesDescription": "Proportion of schools with access to<U+FFFD>electricity, by education level (%)",
       "goal": "4",
       "target": "4.a",
       "indicator": "4.a.1",
@@ -36545,7 +36477,7 @@
     {
       "Reporting Type": "G",
       "series": "SE_ACS_ELECT",
-      "seriesDescription": "Proportion of schools with access to\u00ef\u00bf\u00bdelectricity, by education level (%)",
+      "seriesDescription": "Proportion of schools with access to<U+FFFD>electricity, by education level (%)",
       "goal": "4",
       "target": "4.a",
       "indicator": "4.a.1",
@@ -37087,7 +37019,7 @@
     {
       "Reporting Type": "G",
       "series": "SE_ACS_SANIT",
-      "seriesDescription": "Proportion of schools with access to\u00ef\u00bf\u00bdaccess to single-sex basic sanitation, by education level (%)",
+      "seriesDescription": "Proportion of schools with access to<U+FFFD>access to single-sex basic sanitation, by education level (%)",
       "goal": "4",
       "target": "4.a",
       "indicator": "4.a.1",
@@ -37136,7 +37068,7 @@
     {
       "Reporting Type": "G",
       "series": "SE_ACS_SANIT",
-      "seriesDescription": "Proportion of schools with access to\u00ef\u00bf\u00bdaccess to single-sex basic sanitation, by education level (%)",
+      "seriesDescription": "Proportion of schools with access to<U+FFFD>access to single-sex basic sanitation, by education level (%)",
       "goal": "4",
       "target": "4.a",
       "indicator": "4.a.1",
@@ -37179,7 +37111,7 @@
     {
       "Reporting Type": "G",
       "series": "SE_ACS_SANIT",
-      "seriesDescription": "Proportion of schools with access to\u00ef\u00bf\u00bdaccess to single-sex basic sanitation, by education level (%)",
+      "seriesDescription": "Proportion of schools with access to<U+FFFD>access to single-sex basic sanitation, by education level (%)",
       "goal": "4",
       "target": "4.a",
       "indicator": "4.a.1",
@@ -39378,7 +39310,7 @@
     {
       "Reporting Type": "G",
       "series": "SG_LGL_LNDFEMOD",
-      "seriesDescription": "Degree to which the legal framework (including customary law) guarantees women\u00ef\u00bf\u00bds equal rights to land ownership and/or control (1=No evidence to 6=Highest levels of guarantees)",
+      "seriesDescription": "Degree to which the legal framework (including customary law) guarantees women<U+FFFD>s equal rights to land ownership and/or control (1=No evidence to 6=Highest levels of guarantees)",
       "goal": "5",
       "target": "5.a",
       "indicator": "5.a.2",
@@ -39491,9 +39423,9 @@
         "baseYear": 2015,
         "latestAvailable": 2022
       },
-      "comment": "Serie provista por la SNP de informaci\u00ef\u00bf\u00bdn generada por el INEC (https://www.ecuadorencifras.gob.ec/objetivos-de-desarrollo-sostenible/)",
-      "Additional Source": "INEC",
       "Sex": "FEMALE",
+      "comment": "Serie provista por la SNP de informaci<U+FFFD>n generada por el INEC (https://www.ecuadorencifras.gob.ec/objetivos-de-desarrollo-sostenible/)",
+      "Additional Source": "INEC",
       "currentLevelAssessment": null,
       "status": "Fair progress but acceleration needed"
     },
