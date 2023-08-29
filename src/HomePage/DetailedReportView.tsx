@@ -217,7 +217,7 @@ export const DetailedReportView = (props: Props) => {
                   </p>
                   {reportData.Trends ? reportData.Trends.split('\n').map((d, i) => <p className='undp-typography' key={i}>{d}</p>) : null}
                   <NavLink
-                    to={`../../sdg-push-diagnostic/${countryCode}/sdg-trends`}
+                    to={`../../${countryCode}/sdg-trends`}
                     style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
                   >
                     <button type='button' className='undp-button button-primary button-arrow' style={{ color: 'var(--white)' }}>
@@ -254,7 +254,7 @@ export const DetailedReportView = (props: Props) => {
                 />
                 <div style={{ margin: 'var(--spacing-07) 0 0 var(--spacing-05)' }}>
                   <NavLink
-                    to={`../../sdg-push-diagnostic/${countryCode}/current-priorities`}
+                    to={`../../${countryCode}/current-priorities`}
                     style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
                   >
                     <button type='button' className='undp-button button-primary button-arrow margin-top-07' style={{ color: 'var(--white)', marginLeft: '1rem' }}>
@@ -411,7 +411,7 @@ export const DetailedReportView = (props: Props) => {
                 />
                 <div style={{ margin: 'var(--spacing-09) 0 0 0' }}>
                   <NavLink
-                    to={`../../sdg-push-diagnostic/${countryCode}/synergies-and-tradeoffs`}
+                    to={`../../${countryCode}/synergies-and-tradeoffs`}
                     style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
                   >
                     <button type='button' className='undp-button button-primary button-arrow' style={{ color: 'var(--white)' }}>
@@ -443,7 +443,7 @@ export const DetailedReportView = (props: Props) => {
                   </p>
                   <div style={{ margin: 'var(--spacing-09) 0 0 0' }}>
                     <NavLink
-                      to={`../../sdg-push-diagnostic/${countryCode}/future-scenarios`}
+                      to={`../../${countryCode}/future-scenarios`}
                       style={{ color: 'var(--white)', textDecoration: 'none', flexShrink: 0 }}
                     >
                       <button type='button' className='undp-button button-primary button-arrow' style={{ color: 'var(--white)' }}>

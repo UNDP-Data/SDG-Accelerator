@@ -48,7 +48,7 @@ export const DefaultHomePage = (props: Props) => {
                   className='undp-select'
                   placeholder='Select a country to find out more'
                   showSearch
-                  onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
+                  onChange={(value) => { window.open(`../../${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
                   style={{ flexGrow: 1 }}
                 >
                   {
@@ -106,7 +106,7 @@ export const DefaultHomePage = (props: Props) => {
             {
               countryCode ? (
                 <NavLink
-                  to={`../../sdg-push-diagnostic/${countryCode}/sdg-trends`}
+                  to={`../../${countryCode}/sdg-trends`}
                   style={{ color: 'var(--white)', textDecoration: 'none' }}
                 >
                   <button type='button' className='undp-button button-primary button-arrow'>
@@ -121,7 +121,7 @@ export const DefaultHomePage = (props: Props) => {
                     className='undp-select'
                     placeholder='Select Country'
                     showSearch
-                    onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
+                    onChange={(value) => { window.open(`../../${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
                   >
                     {
                       sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
@@ -154,7 +154,7 @@ export const DefaultHomePage = (props: Props) => {
             {
               countryCode ? (
                 <NavLink
-                  to={`../../sdg-push-diagnostic/${countryCode}/current-priorities`}
+                  to={`../../${countryCode}/current-priorities`}
                   style={{ color: 'var(--white)', textDecoration: 'none' }}
                 >
                   <button type='button' className='undp-button button-primary button-arrow'>
@@ -169,7 +169,7 @@ export const DefaultHomePage = (props: Props) => {
                     className='undp-select'
                     placeholder='Select Country'
                     showSearch
-                    onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/current-priorities`, '_self'); }}
+                    onChange={(value) => { window.open(`../../${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/current-priorities`, '_self'); }}
                   >
                     {
                       sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
@@ -201,7 +201,7 @@ export const DefaultHomePage = (props: Props) => {
             {
               countryCode ? (
                 <NavLink
-                  to={`../../sdg-push-diagnostic/${countryCode}/synergies-and-tradeoffs`}
+                  to={`../../${countryCode}/synergies-and-tradeoffs`}
                   style={{ color: 'var(--white)', textDecoration: 'none' }}
                 >
                   <button type='button' className='undp-button button-primary button-arrow'>
@@ -216,7 +216,7 @@ export const DefaultHomePage = (props: Props) => {
                     className='undp-select'
                     placeholder='Select Country'
                     showSearch
-                    onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/synergies-and-tradeoffs`, '_self'); }}
+                    onChange={(value) => { window.open(`../../${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/synergies-and-tradeoffs`, '_self'); }}
                   >
                     {
                       sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
@@ -252,7 +252,7 @@ export const DefaultHomePage = (props: Props) => {
             {
               countryCode ? (
                 <NavLink
-                  to={`../../sdg-push-diagnostic/${countryCode}/future-scenarios`}
+                  to={`../../${countryCode}/future-scenarios`}
                   style={{ color: 'var(--white)', textDecoration: 'none' }}
                 >
                   <button type='button' className='undp-button button-primary button-arrow'>
@@ -267,7 +267,7 @@ export const DefaultHomePage = (props: Props) => {
                     className='undp-select'
                     placeholder='Select Country'
                     showSearch
-                    onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/future-scenarios`, '_self'); }}
+                    onChange={(value) => { window.open(`../../${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/future-scenarios`, '_self'); }}
                   >
                     {
                       sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
@@ -292,7 +292,7 @@ export const DefaultHomePage = (props: Props) => {
                   className='undp-select'
                   showSearch
                   placeholder='Select a country'
-                  onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
+                  onChange={(value) => { window.open(`../../${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
                   style={{ flexGrow: 1 }}
                 >
                   {
