@@ -8,7 +8,6 @@ import { Select } from 'antd';
 import sortBy from 'lodash.sortby';
 import { Header } from './Header';
 import { CurrentGaps } from './CurrentGaps';
-import { HomePage } from './HomePage';
 import { Priorities } from './Priorities';
 import { FutureScenariosList } from './FutureScenarios';
 import { Footer } from './Footer';
@@ -17,6 +16,7 @@ import CountryTaxonomy from './Data/countryTaxonomy.json';
 
 import { Interlinkages } from './Interlinkages';
 import { CountryDataType, StatusesType, TimeSeriesDataTypeWithStatusCode } from './Types';
+import { DefaultHomePage } from './HomePage/DefaultHomePage';
 
 export const LandingPage = () => {
   const countryCode = useParams().country || 'ZAF';
@@ -24,8 +24,7 @@ export const LandingPage = () => {
   const [error, setError] = useState <any>(null);
   const [statuses, setStatuses] = useState<StatusesType | undefined>(undefined);
   const [countryData, setCountryData] = useState<TimeSeriesDataTypeWithStatusCode[] | undefined>(undefined);
-  const countryFullName = CountryTaxonomy.findIndex((d) => (d['Alpha-3 code-1'].replaceAll('WithCountryGovInput', '') === countryCode)) !== -1 ? CountryTaxonomy[CountryTaxonomy.findIndex((d) => (d['Alpha-3 code-1'].replaceAll('WithCountryGovInput', '') === countryCode))]['Country or Area'] : '';
-
+  const countryFullName = CountryTaxonomy.findIndex((d) => (d['Alpha-3 code-1'] === countryCode.replaceAll('WithCountryGovInput', ''))) !== -1 ? CountryTaxonomy[CountryTaxonomy.findIndex((d) => (d['Alpha-3 code-1'] === countryCode.replaceAll('WithCountryGovInput', '')))]['Country or Area'] : '';
   useEffect(() => {
     setStatuses(undefined);
     setError(undefined);
@@ -109,23 +108,9 @@ export const LandingPage = () => {
                   <Route
                     path='/'
                     element={(
-                      <HomePage
+                      <DefaultHomePage
                         countryCode={countryCode}
-                        countryFullName={countryFullName}
-                        targetStatuses={statuses.targetStatus}
-                        goalStatuses={statuses.goalStatus}
-                      />
-                    )}
-                  />
-                  <Route
-                    path='/detailed-report'
-                    element={(
-                      <HomePage
-                        countryCode={countryCode}
-                        countryFullName={countryFullName}
-                        targetStatuses={statuses.targetStatus}
-                        goalStatuses={statuses.goalStatus}
-                        detailedReportView
+                        countryFullName={CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Alpha-3 code-1'] === countryCode.replaceAll('WithCountryGovInput', ''))]['Country or Area']}
                       />
                     )}
                   />

@@ -393,8 +393,8 @@ export const SDG_COLOR_ARRAY = [
   '#19486A',
 ];
 
-export const DATASOURCELINK = 'https://raw.githubusercontent.com/UNDP-Data/SDG-Accelerator/production/public';
-// export const DATASOURCELINK = '../..';
+// export const DATASOURCELINK = 'https://raw.githubusercontent.com/UNDP-Data/SDG-Accelerator/production/public';
+export const DATASOURCELINK = '../..';
 
 export const SDG_ICON_SIZE = 64;
 
@@ -412,7 +412,7 @@ export const TargetIndicatorCount = [
   {
     sdg: 3,
     noOfTargets: 13,
-    noOfIndicators: 26,
+    noOfIndicators: 28,
   },
   {
     sdg: 4,
@@ -437,7 +437,7 @@ export const TargetIndicatorCount = [
   {
     sdg: 8,
     noOfTargets: 12,
-    noOfIndicators: 17,
+    noOfIndicators: 16,
   },
   {
     sdg: 9,
@@ -447,7 +447,7 @@ export const TargetIndicatorCount = [
   {
     sdg: 10,
     noOfTargets: 10,
-    noOfIndicators: 12,
+    noOfIndicators: 14,
   },
   {
     sdg: 11,
@@ -462,7 +462,7 @@ export const TargetIndicatorCount = [
   {
     sdg: 13,
     noOfTargets: 5,
-    noOfIndicators: 9,
+    noOfIndicators: 8,
   },
   {
     sdg: 14,
@@ -477,12 +477,12 @@ export const TargetIndicatorCount = [
   {
     sdg: 16,
     noOfTargets: 12,
-    noOfIndicators: 23,
+    noOfIndicators: 24,
   },
   {
     sdg: 17,
     noOfTargets: 19,
-    noOfIndicators: 25,
+    noOfIndicators: 24,
   },
 ];
 

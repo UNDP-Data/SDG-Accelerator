@@ -5,6 +5,7 @@ import { Footer } from './Footer';
 import { DefaultHomePage } from './HomePage/DefaultHomePage';
 
 import './App.css';
+// import { InsightReportLandingPage } from './InsightReportLandingPage';
 
 const App = () => (
   <div className='undp-container'>
@@ -29,6 +30,20 @@ const App = () => (
           </>
         )}
       />
+      {
+        /*
+          <Route
+            path='/sdg-push-diagnostic/insight-reports/:country'
+            element={(
+              <>
+                <GlobalHeader />
+                <InsightReportLandingPage />
+                <Footer />
+              </>
+            )}
+          />
+        */
+      }
       <Route
         path='/sdg-push-diagnostic/:country/*'
         element={(
