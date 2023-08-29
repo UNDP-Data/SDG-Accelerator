@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Graph } from './Graph';
-import GDP2023 from '../../../Data/GDP-2023.json';
+import GDP2023 from '../../../DataForReport/GDP-2023.json';
 
 interface Props {
   countryCode: string;

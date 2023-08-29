@@ -1,8 +1,8 @@
 /* eslint-disable camelcase */
-import Poverty2_15 from '../../Data/Poverty2_15.json';
-import Poverty3_65 from '../../Data/Poverty3_65.json';
-import Poverty6_85 from '../../Data/Poverty6_85.json';
-import Poverty14 from '../../Data/Poverty14.json';
+import Poverty2_15 from '../../DataForReport/Poverty2_15.json';
+import Poverty3_65 from '../../DataForReport/Poverty3_65.json';
+import Poverty6_85 from '../../DataForReport/Poverty6_85.json';
+import Poverty14 from '../../DataForReport/Poverty14.json';
 import { SlopeGraphPovertySeparated } from '../../GraphForReport/SlopeGraphPovertySeparated';
 
 interface Props {

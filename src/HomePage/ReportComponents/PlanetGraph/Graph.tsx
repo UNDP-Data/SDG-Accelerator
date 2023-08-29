@@ -1,5 +1,5 @@
-import CarbonIntensityFromFossilFuel from '../../Data/CarbonIntensityFromFossilFuel.json';
-import CarbonIntensityFromFossilFuelAndLandUse from '../../Data/CarbonIntensityFromFossilFuelAndLandUse.json';
+import CarbonIntensityFromFossilFuel from '../../DataForReport/CarbonIntensityFromFossilFuel.json';
+import CarbonIntensityFromFossilFuelAndLandUse from '../../DataForReport/CarbonIntensityFromFossilFuelAndLandUse.json';
 import { SlopeGraphCarbonIntensity } from '../../GraphForReport/SlopeGraphCarbonIntensity';
 
 interface Props {

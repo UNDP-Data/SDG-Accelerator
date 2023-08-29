@@ -1,5 +1,5 @@
 import { RadarAndDotPlot } from '../../GraphForReport/RadarAndDotPlot';
-import FiscalData from '../../Data/FiscalData.json';
+import FiscalData from '../../DataForReport/FiscalData.json';
 
 interface Props {
   countryCode: string;
