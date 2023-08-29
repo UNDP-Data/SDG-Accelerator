@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import UNDPColorModule from 'undp-viz-colors';
 import { Graph } from './Graph';
-import FiscalData from '../../DataForReport/FiscalData.json';
+import FiscalData from '../../Data/FiscalData.json';
 
 interface Props {
   countryCode: string;

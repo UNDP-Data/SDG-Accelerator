@@ -1,5 +1,5 @@
-import GDP2023 from '../../DataForReport/GDP-2023.json';
-import GDP2019 from '../../DataForReport/GDP-2019.json';
+import GDP2023 from '../../Data/GDP-2023.json';
+import GDP2019 from '../../Data/GDP-2019.json';
 import { LineChartGraph } from './LineChartGraph';
 
 interface Props {
