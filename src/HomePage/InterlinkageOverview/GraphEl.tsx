@@ -1,4 +1,12 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+import { useState } from 'react';
+import { Modal } from 'antd';
+import sortBy from 'lodash.sortby';
 import { BubbleChart } from './BubbleChart';
+import InterlinkageDataByRegion from './interlinkagePrimaryTargetList.json';
+import CountriesByRegion from './CountriesByRegion.json';
+import { RegionTooltip } from './LinkageTooltip';
 
 interface Props{
     regions: string[];
@@ -7,7 +15,8 @@ interface Props{
 export const GraphEl = (props: Props) => {
   const { regions } = props;
   const gridSize = 100;
-
+  const [mouseOverData, setMouseOverData] = useState<any>(null);
+  const [regionClick, setRegionClick] = useState<string | null>(null);
   return (
     <div className=''>
       <div className='flex-div gap-00 flex-vert-align-center' style={{ padding: '0 var(--spacing-07)' }}>
@@ -417,14 +426,74 @@ export const GraphEl = (props: Props) => {
       {
         regions.map((d, i) => (
           <div key={i} className='flex-div gap-00 flex-vert-align-center margin-bottom-00' style={{ padding: '0 var(--spacing-03)', backgroundColor: i % 2 === 0 ? 'var(--white)' : 'var(--gray-200)' }}>
-            <h6 className='undp-typography' style={{ width: '50px' }}>{d}</h6>
+            <h6
+              className='undp-typography'
+              style={{
+                width: '50px',
+                textDecoration: 'underline',
+                textDecorationStyle: 'dotted',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(event) => {
+                setMouseOverData({
+                  region: d,
+                  noOfReportsTotal: InterlinkageDataByRegion[InterlinkageDataByRegion.findIndex((el) => el.regionOrIncomeGroup === d)].noOfReports,
+                  xPosition: event.clientX,
+                  yPosition: event.clientY,
+                });
+              }}
+              onMouseMove={(event) => {
+                setMouseOverData({
+                  region: d,
+                  noOfReportsTotal: InterlinkageDataByRegion[InterlinkageDataByRegion.findIndex((el) => el.regionOrIncomeGroup === d)].noOfReports,
+                  xPosition: event.clientX,
+                  yPosition: event.clientY,
+                });
+              }}
+              onMouseLeave={() => {
+                setMouseOverData(null);
+              }}
+              onClick={() => { setRegionClick(d); }}
+            >
+              {d}
+            </h6>
             <div style={{ width: 'calc(100% - 50px)' }}>
               <BubbleChart region={d} />
             </div>
           </div>
         ))
       }
+      {
+        mouseOverData
+          ? (
+            <RegionTooltip
+              data={mouseOverData}
+            />
+          )
+          : null
+      }
+      <Modal
+        className='undp-modal'
+        title={`Countries with Report in ${regionClick}`}
+        open={regionClick !== null}
+        onCancel={() => { setRegionClick(null); }}
+        onOk={() => { setRegionClick(null); }}
+        width='80vw'
+      >
+        <div className='flex-div flex-wrap'>
+          {
+            regionClick === 'Global' ? sortBy(CountriesByRegion.filter((el) => el.Region === 'RBA' || el.Region === 'RBLAC' || el.Region === 'RBEC' || el.Region === 'RBAS' || el.Region === 'RBAP'), (d) => d.Country).map((d, i) => (
+              <div className='undp-chip' key={i}>
+                {d.Country}
+              </div>
+            )) : sortBy(CountriesByRegion.filter((el) => el.Region === regionClick), (d) => d.Country).map((d, i) => (
+              <div className='undp-chip' key={i}>
+                {d.Country}
+              </div>
+            ))
+          }
+        </div>
+      </Modal>
     </div>
-
   );
 };

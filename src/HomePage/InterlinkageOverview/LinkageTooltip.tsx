@@ -101,3 +101,66 @@ export const AssociatedTargetTooltip = (props: Props) => {
     </TooltipEl>
   );
 };
+
+export const RegionTooltip = (props: Props) => {
+  const {
+    data,
+  } = props;
+  const regionFullName = [
+    {
+      id: 'Global',
+      region: 'Global',
+    },
+    {
+      id: 'RBA',
+      region: 'Regional Bureau for Africa',
+    },
+    {
+      id: 'RBEC',
+      region: 'Regional Bureau for Europe and Central Asia',
+    },
+    {
+      id: 'RBLAC',
+      region: 'Regional Bureau for Latin America and the Caribbean',
+    },
+    {
+      id: 'RBAS',
+      region: 'Regional Bureau for Arab States',
+    },
+    {
+      id: 'RBAP',
+      region: 'Regional Bureau for Asia and the Pacific',
+    },
+    {
+      id: 'HIC',
+      region: 'High Income Countries',
+    },
+    {
+      id: 'UMIC',
+      region: 'Upper Middle Income Countries',
+    },
+    {
+      id: 'LMIC',
+      region: 'Lower Middle Income Countries',
+    },
+    {
+      id: 'LIC',
+      region: 'Low Income Countries',
+    },
+  ];
+  return (
+    <TooltipEl x={data.xPosition > window.innerWidth / 2 ? data.xPosition - 375 : data.xPosition} y={data.yPosition}>
+      <h6 className='undp-typography margin-bottom-01'>
+        {regionFullName[regionFullName.findIndex((d) => d.id === data.region)].region}
+      </h6>
+      <p className='margin-top-00' style={{ fontSize: '0.875rem' }}>
+        No. of Reports:
+        {' '}
+        <span className='bold'>{data.noOfReportsTotal}</span>
+      </p>
+      <p className='small-font italics margin-bottom-00' style={{ color: 'var(--gray-500)' }}>
+        Click to see the list of countries
+      </p>
+    </TooltipEl>
+  );
+};
