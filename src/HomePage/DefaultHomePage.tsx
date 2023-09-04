@@ -4,6 +4,7 @@ import { Select } from 'antd';
 import sortBy from 'lodash.sortby';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 import IMAGES from '../img/images';
+import { InterlinkageOverview } from './InterlinkageOverview';
 
 interface Props {
   countryCode?: string;
@@ -76,6 +77,12 @@ export const DefaultHomePage = (props: Props) => {
                 </div>
               </div>
             </div>
+          )
+      }
+      {
+        countryCode ? null
+          : (
+            <InterlinkageOverview />
           )
       }
       <div className='margin-top-13 margin-bottom-13 max-width'>
