@@ -495,6 +495,5 @@ export const GraphEl = (props: Props) => {
         </div>
       </Modal>
     </div>
-
   );
 };
