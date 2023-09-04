@@ -16,8 +16,8 @@ export const BubbleChart = (props: Props) => {
   const { region } = props;
   const [selectedTarget, setSelectedTarget] = useState<string | undefined>(undefined);
   const [nodeData, setNodeData] = useState<any>(null);
-  const gridSize = 100;
-  const height = 150;
+  const gridSize = 200;
+  const height = 250;
   const bubbleChartRef = useRef<HTMLDivElement>(null);
   const [hoverData, setHoverData] = useState<any>(undefined);
   const [associatedHoverData, setAssociatedHoverData] = useState<any>(undefined);
@@ -90,17 +90,22 @@ export const BubbleChart = (props: Props) => {
                           <circle
                             cx={0}
                             cy={0}
-                            r={(d.noOfReportsWithTarget / d.noOfReports) * 37.5}
+                            r={(d.noOfReportsWithTarget / d.noOfReports) * (gridSize / 2)}
                             fill={SDG_COLOR_ARRAY[d.sdg - 1]}
                           />
-                          <text
-                            fill='#fff'
-                            textAnchor='middle'
-                            fontSize={12}
-                            dy={3}
-                          >
-                            {d.primaryTargets}
-                          </text>
+                          {
+                            (d.noOfReportsWithTarget / d.noOfReports) * (gridSize / 2) > 20
+                              ? (
+                                <text
+                                  fill='#fff'
+                                  textAnchor='middle'
+                                  fontSize={20}
+                                  dy={5}
+                                >
+                                  {d.primaryTargets}
+                                </text>
+                              ) : null
+                          }
                         </g>
                       ))
                     }

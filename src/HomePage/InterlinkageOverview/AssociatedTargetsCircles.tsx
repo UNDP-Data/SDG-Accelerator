@@ -13,8 +13,8 @@ interface Props {
 export const AssociatedTargetsCircles = (props: Props) => {
   const { data, setAssociatedHoverData, totalNoOfReports } = props;
   const [nodeData, setNodeData] = useState<any>(null);
-  const gridSize = 100;
-  const height = 150;
+  const gridSize = 200;
+  const height = 250;
   useEffect(() => {
     setNodeData(null);
     const dataTemp = JSON.parse(JSON.stringify(data.associatedTargets)).filter((d: any) => (d.noOfReportsWithTarget / totalNoOfReports) > 0.1);
@@ -28,7 +28,7 @@ export const AssociatedTargetsCircles = (props: Props) => {
       .force('charge', forceManyBody().strength(0))
       .force('y', forceX().strength(5).x((d: any) => (((d.sdg - 1) * gridSize) + (gridSize / 2))))
       .force('x', forceY().strength(5).y(height / 2))
-      .force('collision', forceCollide().radius((d: any) => (d.primaryTarget ? ((d.noOfReportsWithTarget / totalNoOfReports) * 37.5) : ((d.noOfReportsWithTarget / totalNoOfReports) * 70) + 3)))
+      .force('collision', forceCollide().radius((d: any) => (d.primaryTarget ? ((d.noOfReportsWithTarget / totalNoOfReports) * 100) : ((d.noOfReportsWithTarget / totalNoOfReports) * 100) + 3)))
       .tick(10)
       .on('end', () => { setNodeData(dataTemp); });
   }, []);
@@ -69,19 +69,24 @@ export const AssociatedTargetsCircles = (props: Props) => {
                     <circle
                       cx={0}
                       cy={0}
-                      r={(d.noOfReportsWithTarget / totalNoOfReports) * 70}
+                      r={(d.noOfReportsWithTarget / totalNoOfReports) * 100}
                       stroke={SDG_COLOR_ARRAY[d.sdg - 1]}
                       strokeWidth={2}
                       fill='#fff'
                     />
-                    <text
-                      fill={SDG_COLOR_ARRAY[d.sdg - 1]}
-                      textAnchor='middle'
-                      fontSize={12}
-                      dy={3}
-                    >
-                      {d.target}
-                    </text>
+                    {
+                      (d.noOfReportsWithTarget / totalNoOfReports) * 100 > 20
+                        ? (
+                          <text
+                            fill={SDG_COLOR_ARRAY[d.sdg - 1]}
+                            textAnchor='middle'
+                            fontSize={20}
+                            dy={5}
+                          >
+                            {d.target}
+                          </text>
+                        ) : null
+                    }
                   </g>
                 ))
               }
