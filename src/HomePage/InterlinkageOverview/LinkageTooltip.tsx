@@ -23,6 +23,18 @@ const TooltipEl = styled.div<TooltipElProps>`
   width: 20rem;
 `;
 
+const TooltipFDGEl = styled.div<TooltipElProps>`
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  font-size: 1rem;
+  background-color: var(--gray-100);
+  word-wrap: break-word;
+  top: ${(props) => props.y - 10}px;
+  left: ${(props) => props.x + 15}px;
+  padding: 0.5rem;
+`;
+
 export const Tooltip = (props: Props) => {
   const {
     data,
@@ -162,5 +174,29 @@ export const RegionTooltip = (props: Props) => {
         Click to see the list of countries
       </p>
     </TooltipEl>
+  );
+};
+
+export const FDGTooltip = (props: Props) => {
+  const {
+    data,
+  } = props;
+  return (
+    <TooltipFDGEl x={data.xPosition} y={data.yPosition}>
+      <div>
+        <p className='small-font margin-top-00 margin-bottom-00'>
+          No of
+          {' '}
+          {data.type === 'primary' ? 'associated targets' : 'primary targets'}
+          {' '}
+          for
+          {' '}
+          {data.id.split('_')[1]}
+        </p>
+        <p className='bold margin-top-00 margin-bottom-00'>
+          {data.associatedTargets.length}
+        </p>
+      </div>
+    </TooltipFDGEl>
   );
 };

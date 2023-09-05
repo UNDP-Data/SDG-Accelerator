@@ -1,11 +1,17 @@
 import { Tabs } from 'antd';
 import { GraphEl } from './GraphEl';
+import { ForceDirectedGraph } from './FDG';
 
 export const InterlinkageOverview = () => {
   const regions = ['Global', 'RBA', 'RBAP', 'RBAS', 'RBEC', 'RBLAC'];
   const incomeGroup = ['Global', 'LIC', 'LMIC', 'UMIC', 'HIC'];
 
   const mainTabs = [
+    {
+      key: 'world',
+      label: 'Global Interlinkages',
+      children: <ForceDirectedGraph />,
+    },
     {
       key: 'regions',
       label: 'By Regions',
@@ -20,7 +26,7 @@ export const InterlinkageOverview = () => {
   return (
     <div className='margin-top-07'>
       <Tabs
-        defaultActiveKey='dataExplorer'
+        defaultActiveKey='world'
         className='undp-tabs'
         items={mainTabs.map((d) => ({
           label: d.label,
