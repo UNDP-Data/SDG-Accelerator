@@ -18,12 +18,21 @@ export const ForceDirectedGraph = () => {
     const links = dataTemp.links.map((d: any) => ({ ...d }));
     const nodes = dataTemp.nodes.map((d: any) => ({ ...d }));
 
+    const boxForce = () => {
+      for (let i = 0; i < nodes.length; i += 1) {
+        const currNode: any = nodes[i];
+        const radius = 50;
+        currNode.x = Math.max(radius, Math.min(width - radius, currNode.x));
+        currNode.y = Math.max(radius, Math.min(height - radius, currNode.y));
+      }
+    };
     forceSimulation(nodes)
       .alpha(1)
       .force('link', forceLink(links).id((d: any) => d.id))
       .force('collide', forceCollide().radius(50))
       .force('charge', forceManyBody())
       .force('center', forceCenter(width / 2, height / 2))
+      .force('boxForce', boxForce)
       .on('end', () => {
         setNodeData({
           nodes,
@@ -43,7 +52,7 @@ export const ForceDirectedGraph = () => {
                 }}
                 ref={bubbleChartRef}
               >
-                <svg width='100%' height='calc(100vh - 100px)' style={{ margin: 'auto' }} viewBox={`0 0 ${width} ${height}`}>
+                <svg width='100%' style={{ margin: 'auto' }} viewBox={`0 0 ${width} ${height}`}>
 
                   {
                     nodeData.links.map((d: any, i: any) => (
