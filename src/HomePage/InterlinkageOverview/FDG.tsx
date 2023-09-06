@@ -4,10 +4,19 @@ import { useEffect, useRef, useState } from 'react';
 import {
   forceCenter, forceManyBody, forceSimulation, forceLink, forceCollide,
 } from 'd3-force';
+import styled from 'styled-components';
 import { FDGData } from './interlinkageDataForFDGGlobal';
 import { SDG_COLOR_ARRAY } from '../../Constants';
 import { FDGTooltip } from './LinkageTooltip';
 import { TargetShortName } from './TargetShortName';
+
+const VizArea = styled.div`
+  width: calc(100% - 22rem);
+  flex-grow: 1;
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+`;
 
 export const ForceDirectedGraph = () => {
   const [nodeData, setNodeData] = useState<any>(null);
@@ -51,13 +60,10 @@ export const ForceDirectedGraph = () => {
           nodeData
             ? (
               <div
-                className='flex-div gap-07'
-                style={{
-                  width: '100%',
-                }}
+                className='flex-div gap-07 flex-wrap'
                 ref={bubbleChartRef}
               >
-                <div style={{ width: 'calc(33.33% - 1rem)', minWidth: '320px', flexGrow: 1 }}>
+                <div style={{ width: '20rem', flexGrow: 1 }}>
                   <h6 className='undp-typography'>Key Primary Targets</h6>
                   <div style={{ cursor: 'pointer', backgroundColor: 'var(--gray-200)' }} className='margin-bottom-05'>
                     <div className='flex-div' style={{ justifyContent: 'space-between', padding: '1rem' }} onClick={() => { setSelectedTarget(selectedTarget === '8.5' ? undefined : '8.5'); }}>
@@ -148,7 +154,7 @@ export const ForceDirectedGraph = () => {
                     }
                   </div>
                 </div>
-                <div style={{ width: 'calc(66.66% - 1rem)', minWidth: '320px', flexGrow: 1 }}>
+                <VizArea>
                   <div className='flex-div flex-wrap margin-bottom-05 gap-05 flex-vert-align-center'>
                     <div className='flex-div gap-03 flex-vert-align-center'>
                       <div
@@ -158,6 +164,7 @@ export const ForceDirectedGraph = () => {
                           border: '1px solid var(--gray-600)',
                           backgroundColor: 'var(--gray-600)',
                           borderRadius: '1.5rem',
+                          flexShrink: 0,
                         }}
                       />
                       <p className='margin-bottom-00 margin-top-00 small-font'>Primary target (most frequently mentioned globally)</p>
@@ -170,6 +177,7 @@ export const ForceDirectedGraph = () => {
                           border: '1px solid var(--gray-600)',
                           backgroundColor: 'var(--white)',
                           borderRadius: '1rem',
+                          flexShrink: 0,
                         }}
                       />
                       <p className='margin-bottom-00 margin-top-00 small-font'>Secondary target (most frequently raised in association with the primary targets)</p>
@@ -270,7 +278,7 @@ export const ForceDirectedGraph = () => {
                   <p className='small-font italics margin-top-08' style={{ color: 'var(--gray-500)' }}>
                     Primary targets are those identified by the machine learning algorithm as most frequently mentioned in countries&apos; policy documents, thus they constitute countries&apos; priority targets. To understand which other targets contribute to and benefit from putting the primary targets into practise, we mapped which targets were most frequently raised in association with the four (or more if tied) most prominent primary targets globally, by region and by income group. These associated targets are what we call secondary targets. Importantly, the association of targets can go both ways, meaning a country may have picked the secondary target as primary target but globally/per group, the trend is reversed.
                   </p>
-                </div>
+                </VizArea>
               </div>
             )
             : (
