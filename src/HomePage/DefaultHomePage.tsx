@@ -234,7 +234,7 @@ export const DefaultHomePage = (props: Props) => {
             }
           </div>
           <div>
-            <img alt='sinterlinkages' src={IMAGES.img04} style={{ width: '100%' }} />
+            <img alt='interlinkages' src={IMAGES.img04} style={{ width: '100%' }} />
           </div>
         </div>
         <div className='undp-section image-left'>

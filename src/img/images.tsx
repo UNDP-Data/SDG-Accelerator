@@ -23,6 +23,7 @@ const IMAGES = {
   CurrencyBG: new URL('./fiscalBG.jpg', import.meta.url).href,
   TrendsBG: new URL('./trendsBG.jpg', import.meta.url).href,
   PrioritiesBG: new URL('./prioritiesBG.jpg', import.meta.url).href,
+  GlobalHomepageBG: new URL('./GlobalPageHeroBG.png', import.meta.url).href,
 };
 
 export default IMAGES;
