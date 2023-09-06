@@ -13,20 +13,35 @@ const HeroImageEl = styled.div`
   background-size: cover;
   margin-top: 116px;
   padding: 10rem 3rem;
+  width: calc(100% - 6rem);
 `;
 
 const FirstColumn = styled.div`
-  width: calc(66.66% - 0.5rem);
-  min-width: 30rem;
+  width: calc(66.66% - 1rem);
+  flex-grow: 1;
   @media (max-width: 600px) {
     width: 100%;
   }
 `;
 const SecondColumn = styled.div`
-  width: calc(33.33% - 0.5rem);
-  min-width: 20rem;
+  width: calc(33.33% - 1rem);
+  flex-grow: 1;
   @media (max-width: 600px) {
     width: 100%;
+  }
+`;
+
+const AccordionColumn = styled.div`
+  width: calc(66.66% - 2rem);
+  @media (max-width: 720px) {
+    width: 100%;
+  }
+`;
+
+const AccordionImageColumn = styled.div`
+  width: 33%;
+  @media (max-width: 720px) {
+    display: none;
   }
 `;
 
@@ -34,7 +49,7 @@ export const GlobalHomePage = () => (
   <>
     <HeroImageEl className='undp-hero-image'>
       <div style={{ maxWidth: '47.5rem' }}>
-        <h1 className='undp-typography'>SDG Push Diagnostic</h1>
+        <h1 className='undp-typography' style={{ wordBreak: 'break-word' }}>SDG Push Diagnostic</h1>
         <p className='undp-typography'>
           The SDG Push Diagnostic reimagines and recalibrates how we determine, interrogate and advance development interventions that put countries on more stable footing.
         </p>
@@ -59,7 +74,7 @@ export const GlobalHomePage = () => (
           <AccordionEl
             title='What is distinct about the Integrated SDG Insight reports?'
             body={(
-              <div className='flex-div flex-wrap' style={{ alignItems: 'stretch' }}>
+              <div className='flex-div flex-wrap gap-07' style={{ alignItems: 'stretch' }}>
                 <FirstColumn>
                   <p className='undp-typography'>
                     The insights are unique — not a statistical gaps report or evaluation of development impact — but a playbook, showing the policy choices that build SDG pathways.
@@ -71,14 +86,12 @@ export const GlobalHomePage = () => (
                     It also includes national analysis of economic growth pathways and fiscal and financial constraints, providing insights that are grounded in the countries&apos; realities.
                   </p>
                 </FirstColumn>
-                <SecondColumn>
-                  <div style={{ backgroundColor: 'var(--gray-200)', alignItems: 'center' }} className='flex-div'>
-                    <div className='stat-card'>
-                      <h2>
-                        93
-                      </h2>
-                      <p>Countries supported by UNDP</p>
-                    </div>
+                <SecondColumn style={{ backgroundColor: 'var(--gray-200)', display: 'flex', alignItems: 'center' }}>
+                  <div className='stat-card'>
+                    <h2>
+                      90+
+                    </h2>
+                    <p>Countries supported by UNDP</p>
                   </div>
                 </SecondColumn>
               </div>
@@ -106,14 +119,16 @@ export const GlobalHomePage = () => (
       <div>
         <div className='flex-div flex-wrap margin-bottom-09 max-width' style={{ padding: '0 1rem' }}>
           <SecondColumn className='undp-section-content'>
-            <h3 className='undp-typography margin-bottom-00'>Emerging Global Pattern</h3>
+            <h3 className='undp-typography margin-bottom-00'>Emerging Pattern</h3>
           </SecondColumn>
           <FirstColumn className='undp-section-content large-font'>
-            Across 90+ reports, common SDG targets emerged as key entry points where investment in one SDG can unlock progress on others. The visuals below shows the key SDG targets and the combination of policy choices that can re-balance social, environmental, and economic achievements.
+            Across 90+ reports, common SDG targets emerged as key entry points where investment in one SDG can unlock progress on others. The visuals below show the key SDG targets and the combination of policy choices that can re-balance social, environmental, and economic achievements.
           </FirstColumn>
         </div>
-        <div className='max-width'>
-          <ForceDirectedGraph />
+        <div style={{ padding: '0 1rem' }}>
+          <div className='max-width'>
+            <ForceDirectedGraph />
+          </div>
         </div>
       </div>
     </div>
@@ -124,7 +139,12 @@ export const GlobalHomePage = () => (
             <h3 className='undp-typography margin-bottom-00'>Regional and Income Group Comparisons</h3>
           </SecondColumn>
           <FirstColumn className='undp-section-content large-font'>
-            Explore the full dataset by region and income classification to show unique entry points for integrated SDG pathways.
+            <p className='undp-typography'>
+              Explore the full dataset by region and income classification to show unique entry points for integrated SDG pathways.
+            </p>
+            <p className='undp-typography italics'>
+              Explore the secondary targets associated to each primary target by clicking on the primary target bubbles below.
+            </p>
           </FirstColumn>
         </div>
         <div className='max-width'>
@@ -147,7 +167,7 @@ export const GlobalHomePage = () => (
             title='SDG Trends'
             body={(
               <div className='flex-div gap-07'>
-                <div style={{ width: 'calc(66.66% - 2rem)' }}>
+                <AccordionColumn>
                   <p className='undp-typography large-font'>
                     Progress on the 17 SDGs are tracked through 169 sub-targets, which in turn are measured using
                     {' '}
@@ -180,10 +200,10 @@ export const GlobalHomePage = () => (
                     sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
                   }
                   </Select>
-                </div>
-                <div style={{ width: '33.33%' }}>
+                </AccordionColumn>
+                <AccordionImageColumn>
                   <img alt='sgd trends' src={IMAGES.imgO1} style={{ width: '100%' }} />
-                </div>
+                </AccordionImageColumn>
               </div>
           )}
           />
@@ -193,7 +213,7 @@ export const GlobalHomePage = () => (
             title='National Priorities'
             body={(
               <div className='flex-div gap-07'>
-                <div style={{ width: 'calc(66.66% - 2rem)' }}>
+                <AccordionColumn>
                   <p className='undp-typography large-font'>
                     Current priorities are analysed using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is based on an improved
                     {' '}
@@ -216,10 +236,10 @@ export const GlobalHomePage = () => (
                   sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
                 }
                   </Select>
-                </div>
-                <div style={{ width: '33.33%' }}>
+                </AccordionColumn>
+                <AccordionImageColumn>
                   <img alt='Future Scenarios' src={IMAGES.img02} style={{ width: '100%' }} />
-                </div>
+                </AccordionImageColumn>
               </div>
           )}
           />
@@ -229,7 +249,7 @@ export const GlobalHomePage = () => (
             title='SDG Interlinkages'
             body={(
               <div className='flex-div gap-07'>
-                <div style={{ width: 'calc(66.66% - 2rem)' }}>
+                <AccordionColumn>
                   <p className='undp-typography large-font'>
                     The SDGs do not exist in silos. Understanding the interactions across social, economic and environmental elements of sustainable development is essential to move the needle on the SDGs. SDG Interlinkages show how actions directed towards one SDG can influence the others. Uncovering and understanding these interactions helps in achieving the 2030 Agenda - avoiding the unintended deterioration of the SDGs and their 169 associated targets.
                     <br />
@@ -257,10 +277,10 @@ export const GlobalHomePage = () => (
                   sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
                 }
                   </Select>
-                </div>
-                <div style={{ width: '33.33%' }}>
+                </AccordionColumn>
+                <AccordionImageColumn>
                   <img alt='interlinkages' src={IMAGES.img04} style={{ width: '100%' }} />
-                </div>
+                </AccordionImageColumn>
               </div>
           )}
           />
@@ -270,7 +290,7 @@ export const GlobalHomePage = () => (
             title='Future Scenarios'
             body={(
               <div className='flex-div gap-07'>
-                <div style={{ width: 'calc(66.66% - 2rem)' }}>
+                <AccordionColumn>
                   <p className='undp-typography large-font'>
                     SDG Push identifies national
                     {' '}
@@ -296,10 +316,10 @@ export const GlobalHomePage = () => (
                   sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
                 }
                   </Select>
-                </div>
-                <div style={{ width: '33.33%' }}>
+                </AccordionColumn>
+                <AccordionImageColumn>
                   <img alt='future scenarios' src={IMAGES.img03} style={{ width: '100%' }} />
-                </div>
+                </AccordionImageColumn>
               </div>
           )}
           />
