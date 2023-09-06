@@ -181,9 +181,9 @@ export const SDGTrendsSlide = (props: Props) => {
           }}
           >
             {
-                stepValue === 'all'
-                  ? <FivePChart /> : <FlowerChart status={statusByPs} tag={stepValue} />
-              }
+              stepValue === 'all'
+                ? <FivePChart /> : <FlowerChart status={statusByPs} tag={stepValue} />
+            }
           </div>
         </div>
       </SectionEl>

@@ -80,8 +80,9 @@ export const AssociatedTargetsCircles = (props: Props) => {
                           <text
                             fill={SDG_COLOR_ARRAY[d.sdg - 1]}
                             textAnchor='middle'
-                            fontSize={20}
-                            dy={5}
+                            fontSize={24}
+                            fontWeight='bold'
+                            dy={7}
                           >
                             {d.target}
                           </text>

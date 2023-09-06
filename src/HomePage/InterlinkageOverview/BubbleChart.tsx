@@ -99,8 +99,9 @@ export const BubbleChart = (props: Props) => {
                                 <text
                                   fill='#fff'
                                   textAnchor='middle'
-                                  fontSize={20}
-                                  dy={5}
+                                  fontSize={24}
+                                  fontWeight='bold'
+                                  dy={7}
                                 >
                                   {d.primaryTargets}
                                 </text>

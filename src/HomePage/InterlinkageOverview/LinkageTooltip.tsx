@@ -183,11 +183,20 @@ export const FDGTooltip = (props: Props) => {
   } = props;
   return (
     <TooltipFDGEl x={data.xPosition} y={data.yPosition}>
+      <h6 className='undp-typography margin-bottom-01'>
+        {data.type === 'primary' ? 'Primary' : 'Secondary'}
+        {' '}
+        Target:
+        {' '}
+        {data.id.split('_')[1]}
+      </h6>
+      <p className='margin-top-00' style={{ fontSize: '0.875rem' }}>{data.description}</p>
+      <hr />
       <div>
         <p className='small-font margin-top-00 margin-bottom-00'>
           No of
           {' '}
-          {data.type === 'primary' ? 'associated targets' : 'primary targets'}
+          {data.type === 'primary' ? 'secondary targets' : 'primary targets'}
           {' '}
           for
           {' '}
@@ -197,6 +206,14 @@ export const FDGTooltip = (props: Props) => {
           {data.associatedTargets.length}
         </p>
       </div>
+      {
+        data.type === 'primary'
+          ? (
+            <p className='small-font italics margin-bottom-00' style={{ color: 'var(--gray-500)' }}>
+              Click to see detail about the primary target
+            </p>
+          ) : null
+      }
     </TooltipFDGEl>
   );
 };

@@ -62,69 +62,6 @@ export const FDGData = {
       ],
     },
     {
-      id: 'primary_9.2',
-      type: 'primary',
-      sdg: 9,
-      associatedTargets: [
-        '8.5',
-        '7.2',
-        '8.1',
-        '6.1',
-        '7.1',
-        '2.3',
-        '8.2',
-        '9.1',
-        '10.2',
-        '15.1',
-        '7.3',
-        '8.3',
-        '8.4',
-        '1.1',
-      ],
-    },
-    {
-      id: 'primary_3.8',
-      type: 'primary',
-      sdg: 3,
-      associatedTargets: [
-        '8.5',
-        '11.1',
-        '16.6',
-        '7.1',
-        '1.1',
-        '7.2',
-        '3.c',
-        '3.4',
-      ],
-    },
-    {
-      id: 'primary_8.2',
-      type: 'primary',
-      sdg: 8,
-      associatedTargets: [
-        '8.5',
-        '4.4',
-        '9.2',
-        '7.2',
-        '8.1',
-        '1.1',
-        '9.1',
-        '9.5',
-        '11.2',
-      ],
-    },
-    {
-      id: 'primary_11.2',
-      type: 'primary',
-      sdg: 11,
-      associatedTargets: [
-        '9.1',
-        '8.5',
-        '8.1',
-        '8.2',
-      ],
-    },
-    {
       id: 'primary_11.1',
       type: 'primary',
       sdg: 11,
@@ -189,9 +126,6 @@ export const FDGData = {
       associatedTargets: [
         '16.6',
         '8.5',
-        '9.2',
-        '8.2',
-        '11.2',
         '9.1',
       ],
     },
@@ -202,9 +136,6 @@ export const FDGData = {
       associatedTargets: [
         '16.6',
         '8.5',
-        '9.2',
-        '3.8',
-        '8.2',
         '9.1',
       ],
     },
@@ -224,7 +155,6 @@ export const FDGData = {
       associatedTargets: [
         '16.6',
         '8.5',
-        '9.2',
         '11.1',
       ],
     },
@@ -279,10 +209,6 @@ export const FDGData = {
       sdg: 8,
       associatedTargets: [
         '16.6',
-        '9.2',
-        '3.8',
-        '8.2',
-        '11.2',
         '11.1',
         '9.1',
       ],
@@ -303,8 +229,6 @@ export const FDGData = {
       associatedTargets: [
         '16.6',
         '8.5',
-        '9.2',
-        '3.8',
       ],
     },
     {
@@ -322,7 +246,6 @@ export const FDGData = {
       sdg: 6,
       associatedTargets: [
         '16.6',
-        '9.2',
         '11.1',
       ],
     },
@@ -333,9 +256,6 @@ export const FDGData = {
       associatedTargets: [
         '16.6',
         '8.5',
-        '9.2',
-        '3.8',
-        '8.2',
       ],
     },
     {
@@ -362,8 +282,6 @@ export const FDGData = {
       sdg: 8,
       associatedTargets: [
         '8.5',
-        '9.2',
-        '11.2',
         '9.1',
       ],
     },
@@ -373,7 +291,6 @@ export const FDGData = {
       sdg: 4,
       associatedTargets: [
         '8.5',
-        '8.2',
       ],
     },
     {
@@ -382,7 +299,6 @@ export const FDGData = {
       sdg: 9,
       associatedTargets: [
         '8.5',
-        '8.2',
         '9.1',
       ],
     },
@@ -392,7 +308,6 @@ export const FDGData = {
       sdg: 8,
       associatedTargets: [
         '8.5',
-        '9.2',
         '9.1',
       ],
     },
@@ -402,9 +317,6 @@ export const FDGData = {
       sdg: 9,
       associatedTargets: [
         '8.5',
-        '9.2',
-        '8.2',
-        '11.2',
         '11.1',
       ],
     },
@@ -414,7 +326,6 @@ export const FDGData = {
       sdg: 7,
       associatedTargets: [
         '8.5',
-        '9.2',
       ],
     },
     {
@@ -431,7 +342,6 @@ export const FDGData = {
       sdg: 2,
       associatedTargets: [
         '8.5',
-        '9.2',
       ],
     },
     {
@@ -456,7 +366,6 @@ export const FDGData = {
       sdg: 11,
       associatedTargets: [
         '8.5',
-        '3.8',
         '9.1',
       ],
     },
@@ -466,7 +375,6 @@ export const FDGData = {
       sdg: 11,
       associatedTargets: [
         '8.5',
-        '8.2',
         '9.1',
       ],
     },
@@ -486,7 +394,6 @@ export const FDGData = {
       sdg: 16,
       associatedTargets: [
         '8.5',
-        '3.8',
       ],
     },
     {
@@ -503,46 +410,6 @@ export const FDGData = {
       sdg: 8,
       associatedTargets: [
         '8.5',
-      ],
-    },
-    {
-      id: 'associated_15.1',
-      type: 'associated',
-      sdg: 15,
-      associatedTargets: [
-        '9.2',
-      ],
-    },
-    {
-      id: 'associated_8.4',
-      type: 'associated',
-      sdg: 8,
-      associatedTargets: [
-        '9.2',
-      ],
-    },
-    {
-      id: 'associated_3.c',
-      type: 'associated',
-      sdg: 3,
-      associatedTargets: [
-        '3.8',
-      ],
-    },
-    {
-      id: 'associated_3.4',
-      type: 'associated',
-      sdg: 3,
-      associatedTargets: [
-        '3.8',
-      ],
-    },
-    {
-      id: 'associated_9.5',
-      type: 'associated',
-      sdg: 9,
-      associatedTargets: [
-        '8.2',
       ],
     },
     {
@@ -796,181 +663,6 @@ export const FDGData = {
     {
       source: 'primary_8.5',
       target: 'associated_9.c',
-      value: 5,
-    },
-    {
-      source: 'primary_9.2',
-      target: 'associated_8.5',
-      value: 15,
-    },
-    {
-      source: 'primary_9.2',
-      target: 'associated_7.2',
-      value: 10,
-    },
-    {
-      source: 'primary_9.2',
-      target: 'associated_8.1',
-      value: 10,
-    },
-    {
-      source: 'primary_9.2',
-      target: 'associated_6.1',
-      value: 9,
-    },
-    {
-      source: 'primary_9.2',
-      target: 'associated_7.1',
-      value: 9,
-    },
-    {
-      source: 'primary_9.2',
-      target: 'associated_2.3',
-      value: 7,
-    },
-    {
-      source: 'primary_9.2',
-      target: 'associated_8.2',
-      value: 7,
-    },
-    {
-      source: 'primary_9.2',
-      target: 'associated_9.1',
-      value: 7,
-    },
-    {
-      source: 'primary_9.2',
-      target: 'associated_10.2',
-      value: 7,
-    },
-    {
-      source: 'primary_9.2',
-      target: 'associated_15.1',
-      value: 7,
-    },
-    {
-      source: 'primary_9.2',
-      target: 'associated_7.3',
-      value: 6,
-    },
-    {
-      source: 'primary_9.2',
-      target: 'associated_8.3',
-      value: 6,
-    },
-    {
-      source: 'primary_9.2',
-      target: 'associated_8.4',
-      value: 6,
-    },
-    {
-      source: 'primary_9.2',
-      target: 'associated_1.1',
-      value: 5,
-    },
-    {
-      source: 'primary_3.8',
-      target: 'associated_8.5',
-      value: 17,
-    },
-    {
-      source: 'primary_3.8',
-      target: 'associated_11.1',
-      value: 8,
-    },
-    {
-      source: 'primary_3.8',
-      target: 'associated_16.6',
-      value: 8,
-    },
-    {
-      source: 'primary_3.8',
-      target: 'associated_7.1',
-      value: 7,
-    },
-    {
-      source: 'primary_3.8',
-      target: 'associated_1.1',
-      value: 6,
-    },
-    {
-      source: 'primary_3.8',
-      target: 'associated_7.2',
-      value: 6,
-    },
-    {
-      source: 'primary_3.8',
-      target: 'associated_3.c',
-      value: 6,
-    },
-    {
-      source: 'primary_3.8',
-      target: 'associated_3.4',
-      value: 5,
-    },
-    {
-      source: 'primary_8.2',
-      target: 'associated_8.5',
-      value: 17,
-    },
-    {
-      source: 'primary_8.2',
-      target: 'associated_4.4',
-      value: 8,
-    },
-    {
-      source: 'primary_8.2',
-      target: 'associated_9.2',
-      value: 7,
-    },
-    {
-      source: 'primary_8.2',
-      target: 'associated_7.2',
-      value: 6,
-    },
-    {
-      source: 'primary_8.2',
-      target: 'associated_8.1',
-      value: 6,
-    },
-    {
-      source: 'primary_8.2',
-      target: 'associated_1.1',
-      value: 5,
-    },
-    {
-      source: 'primary_8.2',
-      target: 'associated_9.1',
-      value: 5,
-    },
-    {
-      source: 'primary_8.2',
-      target: 'associated_9.5',
-      value: 5,
-    },
-    {
-      source: 'primary_8.2',
-      target: 'associated_11.2',
-      value: 5,
-    },
-    {
-      source: 'primary_11.2',
-      target: 'associated_9.1',
-      value: 12,
-    },
-    {
-      source: 'primary_11.2',
-      target: 'associated_8.5',
-      value: 7,
-    },
-    {
-      source: 'primary_11.2',
-      target: 'associated_8.1',
-      value: 5,
-    },
-    {
-      source: 'primary_11.2',
-      target: 'associated_8.2',
       value: 5,
     },
     {

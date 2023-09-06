@@ -2,9 +2,9 @@ import { Routes, Route } from 'react-router-dom';
 import { LandingPage } from './LandingPage';
 import { GlobalHeader } from './Header';
 import { Footer } from './Footer';
-import { DefaultHomePage } from './HomePage/DefaultHomePage';
 
 import './App.css';
+import { GlobalHomePage } from './HomePage/GlobalHomePage';
 // import { InsightReportLandingPage } from './InsightReportLandingPage';
 
 const App = () => (
@@ -15,7 +15,7 @@ const App = () => (
         element={(
           <>
             <GlobalHeader />
-            <DefaultHomePage />
+            <GlobalHomePage />
             <Footer />
           </>
         )}
