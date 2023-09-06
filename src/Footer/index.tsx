@@ -83,7 +83,7 @@ export const Footer = () => {
               >
                 <NavLink
                   key={i}
-                  to={d['Alpha-3 code-1'] === 'IDN' ? '../sdg-push-diagnostic/IDNWithCountryGovInput' : `../sdg-push-diagnostic/${d['Alpha-3 code-1']}`}
+                  to={d['Alpha-3 code-1'] === 'IDN' ? '../IDNWithCountryGovInput' : `../${d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenCountryModal(false); }}
                 >
@@ -97,7 +97,7 @@ export const Footer = () => {
               >
                 <NavLink
                   key={i}
-                  to={d['Alpha-3 code-1'] === 'IDN' ? '../sdg-push-diagnostic/IDNWithCountryGovInput' : `../sdg-push-diagnostic/${d['Alpha-3 code-1']}`}
+                  to={d['Alpha-3 code-1'] === 'IDN' ? '../IDNWithCountryGovInput' : `../${d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenCountryModal(false); }}
                 >

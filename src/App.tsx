@@ -20,20 +20,10 @@ const App = () => (
           </>
         )}
       />
-      <Route
-        path='/sdg-push-diagnostic'
-        element={(
-          <>
-            <GlobalHeader />
-            <GlobalHomePage />
-            <Footer />
-          </>
-        )}
-      />
       {
         /*
           <Route
-            path='/sdg-push-diagnostic/insight-reports/:country'
+            path='/insight-reports/:country'
             element={(
               <>
                 <GlobalHeader />
@@ -45,7 +35,7 @@ const App = () => (
         */
       }
       <Route
-        path='/sdg-push-diagnostic/:country/*'
+        path='/:country/*'
         element={(
           <LandingPage />
         )}
