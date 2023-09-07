@@ -144,6 +144,7 @@ export const GlobalHomePage = () => (
             </p>
             <p className='undp-typography italics'>
               Explore the secondary targets associated to each primary target by clicking on the primary target bubbles below.
+              Click on the regions or income groups to see more detail of the countries analyzed within each group.
             </p>
           </FirstColumn>
         </div>

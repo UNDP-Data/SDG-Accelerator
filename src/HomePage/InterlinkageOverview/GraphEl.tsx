@@ -7,6 +7,7 @@ import { BubbleChart } from './BubbleChart';
 import InterlinkageDataByRegion from './interlinkagePrimaryTargetList.json';
 import CountriesByRegion from './CountriesByRegion.json';
 import { RegionTooltip } from './LinkageTooltip';
+import { REGION_FULL_NAME } from '../../Constants';
 
 interface Props{
     regions: string[];
@@ -474,7 +475,7 @@ export const GraphEl = (props: Props) => {
       }
       <Modal
         className='undp-modal'
-        title={`Countries with Report in ${regionClick}`}
+        title={`Countries with Report in ${REGION_FULL_NAME[REGION_FULL_NAME.findIndex((d) => d.id === regionClick)]?.region}`}
         open={regionClick !== null}
         onCancel={() => { setRegionClick(null); }}
         onOk={() => { setRegionClick(null); }}
