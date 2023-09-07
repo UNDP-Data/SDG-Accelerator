@@ -520,3 +520,46 @@ export const FIVE_P = [
 ];
 
 export const API_ACCESS_TOKEN = 'ph92BXomD13M0qS9';
+
+export const REGION_FULL_NAME = [
+  {
+    id: 'Global',
+    region: 'Global',
+  },
+  {
+    id: 'RBA',
+    region: 'Regional Bureau for Africa',
+  },
+  {
+    id: 'RBEC',
+    region: 'Regional Bureau for Europe and Central Asia',
+  },
+  {
+    id: 'RBLAC',
+    region: 'Regional Bureau for Latin America and the Caribbean',
+  },
+  {
+    id: 'RBAS',
+    region: 'Regional Bureau for Arab States',
+  },
+  {
+    id: 'RBAP',
+    region: 'Regional Bureau for Asia and the Pacific',
+  },
+  {
+    id: 'HIC',
+    region: 'High Income Countries',
+  },
+  {
+    id: 'UMIC',
+    region: 'Upper Middle Income Countries',
+  },
+  {
+    id: 'LMIC',
+    region: 'Lower Middle Income Countries',
+  },
+  {
+    id: 'LIC',
+    region: 'Low Income Countries',
+  },
+];
