@@ -51,7 +51,7 @@ export const Footer = () => {
                   <a className='undp-footer-link undp-footer-right-link' href='https://data.undp.org/' target='_blank' rel='noreferrer'>Data Futures Platform</a>
                 </div>
                 <div>
-                  <a className='undp-footer-link undp-footer-right-link' href='/' target='_blank' rel='noreferrer'>Methodology</a>
+                  <a className='undp-footer-link undp-footer-right-link' href='https://data.undp.org/sdg-push-diagnostic/data/Diagnostic%20Simulator%20Methodological%20Note%20&%20User%20Guide%20V1.4.pdf' target='_blank' rel='noreferrer'>Methodology</a>
                 </div>
               </div>
             </div>

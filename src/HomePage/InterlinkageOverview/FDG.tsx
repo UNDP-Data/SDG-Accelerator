@@ -11,7 +11,7 @@ import { FDGTooltip } from './LinkageTooltip';
 import { TargetShortName } from './TargetShortName';
 
 const VizArea = styled.div`
-  width: calc(100% - 22rem);
+  width: calc(66.66% - 1rem);
   flex-grow: 1;
   @media (max-width: 1024px) {
     width: 100%;
@@ -63,7 +63,7 @@ export const ForceDirectedGraph = () => {
                 className='flex-div gap-07 flex-wrap'
                 ref={bubbleChartRef}
               >
-                <div style={{ width: '20rem', flexGrow: 1 }}>
+                <div style={{ width: 'calc(33.33% - 1rem)', flexGrow: 1 }}>
                   <h6 className='undp-typography'>Key Primary Targets</h6>
                   <div style={{ cursor: 'pointer', backgroundColor: 'var(--gray-200)' }} className='margin-bottom-05'>
                     <div className='flex-div' style={{ justifyContent: 'space-between', padding: '1rem' }} onClick={() => { setSelectedTarget(selectedTarget === '8.5' ? undefined : '8.5'); }}>

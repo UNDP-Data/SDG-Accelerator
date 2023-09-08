@@ -24,7 +24,7 @@ export const BubbleChart = (props: Props) => {
 
   useEffect(() => {
     setNodeData(null);
-    const dataTemp = JSON.parse(JSON.stringify(InterlinkageDataByRegion)).filter((d: any) => d.regionOrIncomeGroup === region);
+    const dataTemp = JSON.parse(JSON.stringify(InterlinkageDataByRegion)).filter((d: any) => d.regionOrIncomeGroup === region.replaceAll('*', ''));
     forceSimulation(dataTemp)
       .force('charge', forceManyBody().strength(0))
       .force('y', forceX().strength(5).x((d: any) => (((d.sdg - 1) * gridSize) + (gridSize / 2))))
@@ -112,7 +112,7 @@ export const BubbleChart = (props: Props) => {
                     }
                   </g>
                   {
-                    InterlinkageAssociatedDataByRegion[InterlinkageAssociatedDataByRegion.findIndex((d) => d.regionOrIncomeGroup === region)].primaryTargets.map((d, i) => <g key={i} style={{ pointerEvents: selectedTarget === d.target ? 'auto' : 'none' }} opacity={selectedTarget === d.target ? 1 : 0}><AssociatedTargetsCircles totalNoOfReports={InterlinkageDataByRegion.filter((el: any) => el.regionOrIncomeGroup === region)[0].noOfReports} setAssociatedHoverData={setAssociatedHoverData} data={d} /></g>)
+                    InterlinkageAssociatedDataByRegion[InterlinkageAssociatedDataByRegion.findIndex((d) => d.regionOrIncomeGroup === region.replaceAll('*', ''))].primaryTargets.map((d, i) => <g key={i} style={{ pointerEvents: selectedTarget === d.target ? 'auto' : 'none' }} opacity={selectedTarget === d.target ? 1 : 0}><AssociatedTargetsCircles totalNoOfReports={InterlinkageDataByRegion.filter((el: any) => el.regionOrIncomeGroup === region.replaceAll('*', ''))[0].noOfReports} setAssociatedHoverData={setAssociatedHoverData} data={d} /></g>)
                   }
                 </svg>
                 {
@@ -128,7 +128,7 @@ export const BubbleChart = (props: Props) => {
                   associatedHoverData
                     ? (
                       <AssociatedTargetTooltip
-                        data={{ ...associatedHoverData, noOfReportsTotal: InterlinkageDataByRegion.filter((d: any) => d.regionOrIncomeGroup === region)[0].noOfReports }}
+                        data={{ ...associatedHoverData, noOfReportsTotal: InterlinkageDataByRegion.filter((d: any) => d.regionOrIncomeGroup === region.replaceAll('*', ''))[0].noOfReports }}
                       />
                     )
                     : null

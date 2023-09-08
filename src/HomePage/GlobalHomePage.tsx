@@ -66,11 +66,19 @@ export const GlobalHomePage = () => (
           <h2 className='undp-typography'>The Integrated SDG Insight reports</h2>
         </SecondColumn>
         <FirstColumn className='undp-section-content large-font'>
-          The Diagnostic powers the Integrated SDG Insights which provide a strong evidence-base and relevant insights to support national ambition at the SDG Summit 2023.
+          <p className='undp-typography'>
+            The Diagnostic powers the Integrated SDG Insights which provide a strong evidence-base and relevant insights to support national ambition at the SDG Summit 2023.
+          </p>
+          <p className='undp-typography'>
+            The methodology for the diagnostics can be found
+            {' '}
+            <a className='undp-style' href='https://data.undp.org/sdg-push-diagnostic/data/Diagnostic%20Simulator%20Methodological%20Note%20&%20User%20Guide%20V1.4.pdf' target='_blank' rel='noreferrer'>here</a>
+            .
+          </p>
         </FirstColumn>
       </div>
       <div className='max-width'>
-        <div className='margin-bottom-07'>
+        <div className='margin-bottom-05'>
           <AccordionEl
             title='What is distinct about the Integrated SDG Insight reports?'
             body={(
@@ -98,7 +106,7 @@ export const GlobalHomePage = () => (
             )}
           />
         </div>
-        <div className='margin-bottom-07'>
+        <div className='margin-bottom-05'>
           <AccordionEl
             title='How SDG interlinkages helped to chart integrated SDG pathways?'
             body={(
@@ -119,7 +127,7 @@ export const GlobalHomePage = () => (
       <div>
         <div className='flex-div flex-wrap margin-bottom-09 max-width' style={{ padding: '0 1rem' }}>
           <SecondColumn className='undp-section-content'>
-            <h3 className='undp-typography margin-bottom-00'>Emerging Pattern</h3>
+            <h3 className='undp-typography margin-bottom-00'>Emerging Patterns</h3>
           </SecondColumn>
           <FirstColumn className='undp-section-content large-font'>
             Across 90+ reports, common SDG targets emerged as key entry points where investment in one SDG can unlock progress on others. The visuals below show the key SDG targets and the combination of policy choices that can re-balance social, environmental, and economic achievements.
@@ -163,7 +171,29 @@ export const GlobalHomePage = () => (
             The SDG Push Diagnostic provides a dynamic visualization of the development landscape to help countries chart acceleration pathways through their policy choices. It integrates multiple data sources to establish a rapid landscape analysis that showcases SDG trends, national priorities, interlinkages, and potential futures.
           </FirstColumn>
         </div>
-        <div className='margin-bottom-07'>
+        <div className='margin-bottom-05'>
+          <AccordionEl
+            title='SDG Moment'
+            body={(
+              <div className='flex-div gap-07'>
+                <AccordionColumn>
+                  <p className='undp-typography large-font'>
+                    Assesses challenges and opportunities in national growth trajectories with insights on environmental sustainability and inclusiveness.
+                    <br />
+                    <br />
+                    <span className='bold'>Data Sources</span>
+                    <br />
+                    Future trajectories to 2025 are based on IMF-WEO GDP projections, distributions of per capita income or consumption from the World Bank, and CO2 emissions from the Global Carbon Budget 2022 and EDGAR (JRC and IEA).
+                  </p>
+                </AccordionColumn>
+                <AccordionImageColumn>
+                  <img alt='sgd moment' src={IMAGES.img06} style={{ width: '100%' }} />
+                </AccordionImageColumn>
+              </div>
+          )}
+          />
+        </div>
+        <div className='margin-bottom-05'>
           <AccordionEl
             title='SDG Trends'
             body={(
@@ -209,7 +239,7 @@ export const GlobalHomePage = () => (
           )}
           />
         </div>
-        <div className='margin-bottom-07'>
+        <div className='margin-bottom-05'>
           <AccordionEl
             title='National Priorities'
             body={(
@@ -245,7 +275,7 @@ export const GlobalHomePage = () => (
           )}
           />
         </div>
-        <div className='margin-bottom-07'>
+        <div className='margin-bottom-05'>
           <AccordionEl
             title='SDG Interlinkages'
             body={(
@@ -286,7 +316,7 @@ export const GlobalHomePage = () => (
           )}
           />
         </div>
-        <div className='margin-bottom-07'>
+        <div className='margin-bottom-05'>
           <AccordionEl
             title='Future Scenarios'
             body={(
@@ -320,6 +350,28 @@ export const GlobalHomePage = () => (
                 </AccordionColumn>
                 <AccordionImageColumn>
                   <img alt='future scenarios' src={IMAGES.img03} style={{ width: '100%' }} />
+                </AccordionImageColumn>
+              </div>
+          )}
+          />
+        </div>
+        <div className='margin-bottom-05'>
+          <AccordionEl
+            title='Finance & Stimulus'
+            body={(
+              <div className='flex-div gap-07'>
+                <AccordionColumn>
+                  <p className='undp-typography large-font'>
+                    Provides insight into indicators of fiscal and financial stress with options (INFF) for stimulus and other means to accelerate progress.
+                    <br />
+                    <br />
+                    <span className='bold'>Data Sources</span>
+                    <br />
+                    Most recent resource data from UNU-WIDER GRD (between 2018 and 2021), debt and revenue from IMF WEO (between 2020 and forecasts for 2023), external debt from IDS (2023), yields from Haver Analytics (8 June 2023), credit ratings from S&P, Moodys and FITCH (2023), and DSA ratings from World Bank/IMF (31 May 2023).
+                  </p>
+                </AccordionColumn>
+                <AccordionImageColumn>
+                  <img alt='finance and stimulus' src={IMAGES.img05} style={{ width: '100%' }} />
                 </AccordionImageColumn>
               </div>
           )}
