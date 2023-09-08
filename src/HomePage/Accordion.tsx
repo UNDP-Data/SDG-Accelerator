@@ -11,8 +11,8 @@ export const AccordionEl = (props: Props) => {
   const { title, body } = props;
   const [openState, setOpenState] = useState(false);
   return (
-    <div style={{ backgroundColor: 'var(--white)' }}>
-      <div className='flex-div' style={{ justifyContent: 'space-between', padding: '2rem' }} onClick={() => { setOpenState(!openState); }}>
+    <div style={{ backgroundColor: 'var(--white)', cursor: 'pointer' }}>
+      <div className='flex-div' style={{ justifyContent: 'space-between', padding: '1.5rem' }} onClick={() => { setOpenState(!openState); }}>
         <h5 className='undp-typography margin-bottom-00'>
           {title}
         </h5>
@@ -25,7 +25,7 @@ export const AccordionEl = (props: Props) => {
       {
         openState
           ? (
-            <div style={{ padding: '0 2rem 2rem' }}>
+            <div style={{ padding: '0 1.5rem 1.5rem' }}>
               {body}
             </div>
           ) : null

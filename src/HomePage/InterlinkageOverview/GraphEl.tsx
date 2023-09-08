@@ -11,10 +11,11 @@ import { REGION_FULL_NAME } from '../../Constants';
 
 interface Props{
     regions: string[];
+    region?: boolean;
 }
 
 export const GraphEl = (props: Props) => {
-  const { regions } = props;
+  const { regions, region } = props;
   const gridSize = 100;
   const [mouseOverData, setMouseOverData] = useState<any>(null);
   const [regionClick, setRegionClick] = useState<string | null>(null);
@@ -473,9 +474,12 @@ export const GraphEl = (props: Props) => {
           )
           : null
       }
+      {
+        region ? <p className='undp-typography small-font italics margin-top-08' style={{ color: 'var(--gray-500)' }}>* Countries in regions as defined by UNDP Regional Bureau</p> : null
+      }
       <Modal
         className='undp-modal'
-        title={`Countries with Report in ${REGION_FULL_NAME[REGION_FULL_NAME.findIndex((d) => d.id === regionClick)]?.region}`}
+        title={`Countries with Report in ${REGION_FULL_NAME[REGION_FULL_NAME.findIndex((d) => d.id === regionClick?.replaceAll('*', ''))]?.region}`}
         open={regionClick !== null}
         onCancel={() => { setRegionClick(null); }}
         onOk={() => { setRegionClick(null); }}
@@ -487,7 +491,7 @@ export const GraphEl = (props: Props) => {
               <div className='undp-chip' key={i}>
                 {d.Country}
               </div>
-            )) : sortBy(CountriesByRegion.filter((el) => el.Region === regionClick), (d) => d.Country).map((d, i) => (
+            )) : sortBy(CountriesByRegion.filter((el) => el.Region === regionClick?.replaceAll('*', '')), (d) => d.Country).map((d, i) => (
               <div className='undp-chip' key={i}>
                 {d.Country}
               </div>

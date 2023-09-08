@@ -2,14 +2,14 @@ import { Tabs } from 'antd';
 import { GraphEl } from './GraphEl';
 
 export const InterlinkageOverview = () => {
-  const regions = ['Global', 'RBA', 'RBAP', 'RBAS', 'RBEC', 'RBLAC'];
+  const regions = ['Global', 'RBA*', 'RBAP*', 'RBAS*', 'RBEC*', 'RBLAC*'];
   const incomeGroup = ['Global', 'LIC', 'LMIC', 'UMIC', 'HIC'];
 
   const mainTabs = [
     {
       key: 'regions',
       label: 'By Regions',
-      children: <GraphEl regions={regions} />,
+      children: <GraphEl regions={regions} region />,
     },
     {
       key: 'incomeGroups',

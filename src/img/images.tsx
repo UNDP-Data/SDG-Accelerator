@@ -9,6 +9,8 @@ const IMAGES = {
   img02: new URL('./02.png', import.meta.url).href,
   img03: new URL('./03.png', import.meta.url).href,
   img04: new URL('./04.png', import.meta.url).href,
+  img05: new URL('./05.jpg', import.meta.url).href,
+  img06: new URL('./06.jpg', import.meta.url).href,
   globeicon: new URL('./globe-icon.svg', import.meta.url).href,
   globeWhite: new URL('./globe-white.svg', import.meta.url).href,
   heroImage: new URL('./UNDP-hero-image.png', import.meta.url).href,
