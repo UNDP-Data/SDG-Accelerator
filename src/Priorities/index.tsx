@@ -193,7 +193,12 @@ export const Priorities = (props: Props) => {
   return (
     <>
       <HeroImageEl className='undp-hero-image'>
-        <div className='max-width-1440' style={{ backgroundColor: 'var(--white)', color: 'var(--black)', padding: 'var(--spacing-06)' }}>
+        <div
+          className='max-width-1440'
+          style={{
+            backgroundColor: 'var(--white)', color: 'var(--black)', padding: 'var(--spacing-06)', margin: 'auto',
+          }}
+        >
           <h1 className='undp-typography'>
             National Priorities For
             {' '}
