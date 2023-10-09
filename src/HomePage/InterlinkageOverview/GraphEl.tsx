@@ -429,7 +429,7 @@ export const GraphEl = (props: Props) => {
         regions.map((d, i) => (
           <div key={i} className='flex-div gap-00 flex-vert-align-center margin-bottom-00' style={{ padding: '0 var(--spacing-03)', backgroundColor: i % 2 === 0 ? 'var(--white)' : 'var(--gray-200)' }}>
             <h6
-              className='undp-typography'
+              className='undp-typography margin-bottom-00'
               style={{
                 width: '50px',
                 textDecoration: 'underline',
@@ -457,7 +457,17 @@ export const GraphEl = (props: Props) => {
               }}
               onClick={() => { setRegionClick(d); }}
             >
-              {d}
+              {d === 'RBA*'
+                ? 'AFrica*'
+                : d === 'RBAP*'
+                  ? 'Asia and the Pacific*'
+                  : d === 'RBAS*'
+                    ? 'Arab States*'
+                    : d === 'RBEC*'
+                      ? 'Europe and Central Asia*'
+                      : d === 'RBLAC*'
+                        ? 'Latin America and the Caribbean*'
+                        : d}
             </h6>
             <div style={{ width: 'calc(100% - 50px)' }}>
               <BubbleChart region={d} />
@@ -475,11 +485,11 @@ export const GraphEl = (props: Props) => {
           : null
       }
       {
-        region ? <p className='undp-typography small-font italics margin-top-08' style={{ color: 'var(--gray-500)' }}>* Countries in regions as defined by UNDP Regional Bureau</p> : null
+        region ? <p className='undp-typography small-font italics margin-top-08' style={{ color: 'var(--gray-500)' }}>* Countries and territories in regions as defined by UNDP Regional Bureau</p> : null
       }
       <Modal
         className='undp-modal'
-        title={`Countries with Report in ${REGION_FULL_NAME[REGION_FULL_NAME.findIndex((d) => d.id === regionClick?.replaceAll('*', ''))]?.region}`}
+        title={`Countries and territories with report in ${REGION_FULL_NAME[REGION_FULL_NAME.findIndex((d) => d.id === regionClick)]?.region}`}
         open={regionClick !== null}
         onCancel={() => { setRegionClick(null); }}
         onOk={() => { setRegionClick(null); }}

@@ -88,7 +88,7 @@ export const GlobalHomePage = () => (
                     The insights are unique — not a statistical gaps report or evaluation of development impact — but a playbook, showing the policy choices that build SDG pathways.
                   </p>
                   <p className='undp-typography'>
-                    UNDP supported over 90+ countries to generate these insights to come to the SDG Summit with a high level of ambition — and evidence-based pathways to achieve it. These insights are a result of country-level and government consultation, data analysis, machine learning, interlinkage mapping, and generating futures scenarios.
+                    UNDP supported 90+ countries to generate these insights to come to the SDG Summit with a high level of ambition — and evidence-based pathways to achieve it. These insights are a result of country-level and government consultation, data analysis, machine learning, interlinkage mapping, and generating futures scenarios.
                   </p>
                   <p className='undp-typography margin-bottom-00'>
                     It also includes national analysis of economic growth pathways and fiscal and financial constraints, providing insights that are grounded in the countries&apos; realities.
@@ -165,10 +165,23 @@ export const GlobalHomePage = () => (
       <div className='max-width'>
         <div className='flex-div flex-wrap margin-bottom-09' style={{ padding: '0 1rem', color: 'var(--white)' }}>
           <SecondColumn className='undp-section-content'>
-            <h2 className='undp-typography margin-bottom-00'>SDG Push Diagnostics Features</h2>
+            <h2 className='undp-typography margin-bottom-00'>SDG Push Diagnostic Features</h2>
           </SecondColumn>
           <FirstColumn className='undp-section-content'>
             The SDG Push Diagnostic provides a dynamic visualization of the development landscape to help countries chart acceleration pathways through their policy choices. It integrates multiple data sources to establish a rapid landscape analysis that showcases SDG trends, national priorities, interlinkages, and potential futures.
+
+            <p className='label margin-top-07'>Select a country or territory to explore</p>
+            <Select
+              style={{ width: '100%' }}
+              className='undp-select'
+              placeholder='Select Country'
+              showSearch
+              onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}`, '_self'); }}
+            >
+              {
+                sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
+              }
+            </Select>
           </FirstColumn>
         </div>
         <div className='margin-bottom-05'>
@@ -219,7 +232,7 @@ export const GlobalHomePage = () => (
                     {' '}
                     from the UN Statistics Division. Additional data may be added to address gaps at government request, to provide a comprehensive landscape for identification of SDG policy pathways.
                   </p>
-                  <p className='label margin-top-07'>Select a country to explore SDG trends </p>
+                  <p className='label margin-top-07'>Select a country or territory to explore SDG trends </p>
                   <Select
                     style={{ width: '100%' }}
                     className='undp-select'
@@ -255,7 +268,7 @@ export const GlobalHomePage = () => (
                     <br />
                     Explore the analysis of these priorities using Machine Learning by country.
                   </p>
-                  <p className='label margin-top-07'>Select a country to explore national priorities</p>
+                  <p className='label margin-top-07'>Select a country or territory to explore national priorities</p>
                   <Select
                     style={{ width: '100%' }}
                     className='undp-select'
@@ -296,7 +309,7 @@ export const GlobalHomePage = () => (
                     {' '}
                     by a team of researchers who retrieved and analysed all relevant scientific and grey literature* on SDG interlinkages, both in Scopus and Google Scholar.
                   </p>
-                  <p className='label margin-top-07'>Select a country to explore SDG interlinkages</p>
+                  <p className='label margin-top-07'>Select a country or territory to explore SDG interlinkages</p>
                   <Select
                     style={{ width: '100%' }}
                     className='undp-select'
@@ -335,7 +348,7 @@ export const GlobalHomePage = () => (
                     <a href='https://korbel.du.edu/pardee/international-futures-platform' target='_blank' className='undp-style' rel='noreferrer'>international futures</a>
                     , SDG Push models the impact that incorporating SDG Push accelerators in development can make, providing valuable insights into systems interactions across the SDGs.
                   </p>
-                  <p className='label margin-top-07'>Select a country to explore future scenarios</p>
+                  <p className='label margin-top-07'>Select a country or territory to explore future scenarios</p>
                   <Select
                     style={{ width: '100%' }}
                     className='undp-select'
