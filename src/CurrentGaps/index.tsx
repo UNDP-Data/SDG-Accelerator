@@ -94,7 +94,7 @@ export const CurrentGaps = (props: Props) => {
                   <>
                     <br />
                     <br />
-                    <NavLink style={{ color: 'var(--white' }} className='undp-style' to={`../../sdg-push-diagnostic/${countryCode}WithCountryGovInput/sdg-trends`}>
+                    <NavLink style={{ color: 'var(--white' }} className='undp-style' to={`../../${countryCode}WithCountryGovInput/sdg-trends`}>
                       Click here
                     </NavLink>
                     {' '}
@@ -107,7 +107,7 @@ export const CurrentGaps = (props: Props) => {
                   <>
                     <br />
                     <br />
-                    <NavLink style={{ color: 'var(--white' }} className='undp-style' to={`../../sdg-push-diagnostic/${countryCode.replaceAll('WithCountryGovInput', '')}/sdg-trends`}>
+                    <NavLink style={{ color: 'var(--white' }} className='undp-style' to={`../../${countryCode.replaceAll('WithCountryGovInput', '')}/sdg-trends`}>
                       Click here
                     </NavLink>
                     {' '}

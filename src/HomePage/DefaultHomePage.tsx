@@ -126,7 +126,7 @@ export const DefaultHomePage = (props: Props) => {
             {
               countryCode ? (
                 <NavLink
-                  to={`../../sdg-push-diagnostic/${countryCode}/sdg-trends`}
+                  to={`../../${countryCode}/sdg-trends`}
                   style={{ color: 'var(--white)', textDecoration: 'none' }}
                 >
                   <button type='button' className='undp-button button-primary button-arrow'>
@@ -174,7 +174,7 @@ export const DefaultHomePage = (props: Props) => {
             {
               countryCode ? (
                 <NavLink
-                  to={`../../sdg-push-diagnostic/${countryCode}/current-priorities`}
+                  to={`../../${countryCode}/current-priorities`}
                   style={{ color: 'var(--white)', textDecoration: 'none' }}
                 >
                   <button type='button' className='undp-button button-primary button-arrow'>
@@ -221,7 +221,7 @@ export const DefaultHomePage = (props: Props) => {
             {
               countryCode ? (
                 <NavLink
-                  to={`../../sdg-push-diagnostic/${countryCode}/synergies-and-tradeoffs`}
+                  to={`../../${countryCode}/synergies-and-tradeoffs`}
                   style={{ color: 'var(--white)', textDecoration: 'none' }}
                 >
                   <button type='button' className='undp-button button-primary button-arrow'>
@@ -272,7 +272,7 @@ export const DefaultHomePage = (props: Props) => {
             {
               countryCode ? (
                 <NavLink
-                  to={`../../sdg-push-diagnostic/${countryCode}/future-scenarios`}
+                  to={`../../${countryCode}/future-scenarios`}
                   style={{ color: 'var(--white)', textDecoration: 'none' }}
                 >
                   <button type='button' className='undp-button button-primary button-arrow'>

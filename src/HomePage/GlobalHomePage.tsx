@@ -176,7 +176,7 @@ export const GlobalHomePage = () => (
               className='undp-select'
               placeholder='Select Country'
               showSearch
-              onChange={(value) => { window.open(`../../sdg-push-diagnostic/${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}`, '_self'); }}
+              onChange={(value) => { window.open(`../../${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}`, '_self'); }}
             >
               {
                 sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
