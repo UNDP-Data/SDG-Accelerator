@@ -40,7 +40,7 @@ export const Header = (props: Props) => {
                     countryFullName
                       ? (
                         <NavLink
-                          to='../'
+                          to='../sdg-push-diagnostic/'
                           className='logo-sub-head'
                         >
                           SDG Push Diagnostic
@@ -49,7 +49,7 @@ export const Header = (props: Props) => {
                   }
                   <span>
                     <NavLink
-                      to={country ? `../${country}` : '..'}
+                      to={country ? `../sdg-push-diagnostic/${country}` : '..'}
                     >
                       {countryFullName || 'SDG Push Diagnostic'}
                     </NavLink>
@@ -61,25 +61,25 @@ export const Header = (props: Props) => {
                   ? (
                     <div className='undp-nav-div'>
                       <NavLink
-                        to={`../${country}/sdg-trends`}
+                        to={`../sdg-push-diagnostic/${country}/sdg-trends`}
                         className={({ isActive }) => (isActive ? 'header-link-active' : 'header-link')}
                       >
                         SDG Trends
                       </NavLink>
                       <NavLink
-                        to={`../${country}/current-priorities`}
+                        to={`../sdg-push-diagnostic/${country}/current-priorities`}
                         className={({ isActive }) => (isActive ? 'header-link-active' : 'header-link')}
                       >
                         National Priorities
                       </NavLink>
                       <NavLink
-                        to={`../${country}/synergies-and-tradeoffs`}
+                        to={`../sdg-push-diagnostic/${country}/synergies-and-tradeoffs`}
                         className={({ isActive }) => (isActive ? 'header-link-active' : 'header-link')}
                       >
                         SDG Interlinkages
                       </NavLink>
                       <NavLink
-                        to={`../${country}/future-scenarios`}
+                        to={`../sdg-push-diagnostic/${country}/future-scenarios`}
                         className={({ isActive }) => (isActive ? 'header-link-active' : 'header-link')}
                       >
                         Future Scenarios
@@ -123,7 +123,7 @@ export const Header = (props: Props) => {
                   <NavLink
                     className='undp-button button-tertiary button-arrow header-link'
                     onClick={() => (setShowMenu(false))}
-                    to={`../${country}/sdg-trends`}
+                    to={`../sdg-push-diagnostic/${country}/sdg-trends`}
                     style={{
                       color: 'var(--black)',
                       backgroundColor: 'transparent',
@@ -137,7 +137,7 @@ export const Header = (props: Props) => {
                   <NavLink
                     className='undp-button button-tertiary button-arrow header-link'
                     onClick={() => (setShowMenu(false))}
-                    to={`../${country}/current-priorities`}
+                    to={`../sdg-push-diagnostic/${country}/current-priorities`}
                     style={{
                       color: 'var(--black)',
                       backgroundColor: 'transparent',
@@ -151,7 +151,7 @@ export const Header = (props: Props) => {
                   <NavLink
                     className='undp-button button-tertiary button-arrow header-link'
                     onClick={() => (setShowMenu(false))}
-                    to={`../${country}/future-scenarios`}
+                    to={`../sdg-push-diagnostic/${country}/future-scenarios`}
                     style={{
                       color: 'var(--black)',
                       backgroundColor: 'transparent',
@@ -165,7 +165,7 @@ export const Header = (props: Props) => {
                   <NavLink
                     className='undp-button button-tertiary button-arrow header-link'
                     onClick={() => (setShowMenu(false))}
-                    to={`../${country}/synergies-and-tradeoffs`}
+                    to={`../sdg-push-diagnostic/${country}/synergies-and-tradeoffs`}
                     style={{
                       color: 'var(--black)',
                       backgroundColor: 'transparent',
@@ -219,7 +219,7 @@ export const Header = (props: Props) => {
               >
                 <NavLink
                   key={i}
-                  to={location.pathname.split('/')[3] ? `../${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}`}
+                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenHeaderCountryModal(false); }}
                 >
@@ -233,7 +233,7 @@ export const Header = (props: Props) => {
               >
                 <NavLink
                   key={i}
-                  to={location.pathname.split('/')[3] ? `../${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}`}
+                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenHeaderCountryModal(false); }}
                 >
@@ -263,7 +263,7 @@ export const GlobalHeader = () => {
                 <div className='undp-site-title'>
                   <span>
                     <NavLink
-                      to='..'
+                      to='../sdg-push-diagnostic/'
                     >
                       SDG Push Diagnostic
                     </NavLink>
@@ -309,7 +309,7 @@ export const GlobalHeader = () => {
               >
                 <NavLink
                   key={i}
-                  to={location.pathname.split('/')[3] ? `../${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}`}
+                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenHeaderCountryModal(false); }}
                 >
@@ -323,7 +323,7 @@ export const GlobalHeader = () => {
               >
                 <NavLink
                   key={i}
-                  to={location.pathname.split('/')[3] ? `../${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}`}
+                  to={location.pathname.split('/')[3] ? `../sdg-push-diagnostic/${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}/${location.pathname.split('/')[3]}` : `../sdg-push-diagnostic/${d['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : d['Alpha-3 code-1']}`}
                   className='undp-style'
                   onClick={() => { setOpenHeaderCountryModal(false); }}
                 >
