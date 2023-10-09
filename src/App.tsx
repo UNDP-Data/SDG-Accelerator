@@ -5,13 +5,14 @@ import { Footer } from './Footer';
 
 import './App.css';
 import { GlobalHomePage } from './HomePage/GlobalHomePage';
+import { InsightReportLandingPage } from './InsightReportLandingPage';
 // import { InsightReportLandingPage } from './InsightReportLandingPage';
 
 const App = () => (
   <div className='undp-container'>
     <Routes>
       <Route
-        path='/'
+        path='/sdg-push-diagnostic'
         element={(
           <>
             <GlobalHeader />
@@ -20,22 +21,18 @@ const App = () => (
           </>
         )}
       />
-      {
-        /*
-          <Route
-            path='/insight-reports/:country'
-            element={(
-              <>
-                <GlobalHeader />
-                <InsightReportLandingPage />
-                <Footer />
-              </>
-            )}
-          />
-        */
-      }
       <Route
-        path='/:country/*'
+        path='/sdg-push-diagnostic/insight-reports/:country'
+        element={(
+          <>
+            <GlobalHeader />
+            <InsightReportLandingPage />
+            <Footer />
+          </>
+        )}
+      />
+      <Route
+        path='/sdg-push-diagnostic/:country/*'
         element={(
           <LandingPage />
         )}

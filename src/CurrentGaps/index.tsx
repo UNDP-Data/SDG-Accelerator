@@ -83,24 +83,31 @@ export const CurrentGaps = (props: Props) => {
               <a className='undp-style' style={{ color: 'var(--white' }} href='mailto:data@undp.org' target='_blank' rel='noreferrer'>data@undp.org</a>
               .
               {
-                countryCode === 'IDN' ? (
+                countryCode === 'EGY'
+                || countryCode === 'NPL'
+                || countryCode === 'IDN'
+                || countryCode === 'MNG'
+                || countryCode === 'JOR'
+                || countryCode === 'TTO'
+                || countryCode === 'ECU'
+                || countryCode === 'VNM' ? (
                   <>
                     <br />
                     <br />
-                    <NavLink style={{ color: 'var(--white' }} className='undp-style' to='../../IDNWithCountryGovInput/sdg-trends'>
+                    <NavLink style={{ color: 'var(--white' }} className='undp-style' to={`../../sdg-push-diagnostic/${countryCode}WithCountryGovInput/sdg-trends`}>
                       Click here
                     </NavLink>
                     {' '}
                     to see the analysis after national level dialogue.
                   </>
-                ) : null
+                  ) : null
               }
               {
-                countryCode === 'IDNWithCountryGovInput' ? (
+                countryCode.includes('WithCountryGovInput') ? (
                   <>
                     <br />
                     <br />
-                    <NavLink style={{ color: 'var(--white' }} className='undp-style' to='../../IDN/sdg-trends'>
+                    <NavLink style={{ color: 'var(--white' }} className='undp-style' to={`../../sdg-push-diagnostic/${countryCode.replaceAll('WithCountryGovInput', '')}/sdg-trends`}>
                       Click here
                     </NavLink>
                     {' '}

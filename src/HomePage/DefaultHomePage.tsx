@@ -5,6 +5,7 @@ import sortBy from 'lodash.sortby';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 import IMAGES from '../img/images';
 import { InterlinkageOverview } from './InterlinkageOverview';
+import { COUNTRIES_WITH_REPORT } from '../Constants';
 
 interface Props {
   countryCode?: string;
@@ -42,22 +43,34 @@ export const DefaultHomePage = (props: Props) => {
             SDG Push reimagines and recalibrates how we determine, interrogate and advance development interventions that put countries on more stable footing. The Diagnostic powers &lsquo;Integrated SDG Insights&lsquo; reports which provide a strong evidence-base and relevant insights to support national ambition at the SDG Summit 2023.
           </h5>
           {
-            countryCode ? null : (
-              <div className='margin-top-09'>
-                <p className='label margin-bottom-03'>Select a country to find out more</p>
-                <Select
-                  className='undp-select'
-                  placeholder='Select a country to find out more'
-                  showSearch
-                  onChange={(value) => { window.open(`../../${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
-                  style={{ flexGrow: 1 }}
-                >
-                  {
+            countryCode
+              ? COUNTRIES_WITH_REPORT.indexOf(countryCode.replaceAll('WithCountryGovInput', '')) !== -1
+                ? (
+                  <a
+                    href={`https://data.undp.org/sdg-push-diagnostic/data/reports/UNDP - SDG ${countryCode.replaceAll('WithCountryGovInput', '')}.pdf`}
+                    target='_blank'
+                    className='undp-button button-arrow button-primary margin-top-07'
+                    style={{ width: 'fit-content', textDecoration: 'none' }}
+                    rel='noreferrer'
+                  >
+                    Read the Integrated SDG Insights Report
+                  </a>
+                ) : null : (
+                  <div className='margin-top-09'>
+                    <p className='label margin-bottom-03'>Select a country to find out more</p>
+                    <Select
+                      className='undp-select'
+                      placeholder='Select a country to find out more'
+                      showSearch
+                      onChange={(value) => { window.open(`../../${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
+                      style={{ flexGrow: 1 }}
+                    >
+                      {
                     sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
                   }
-                </Select>
-              </div>
-            )
+                    </Select>
+                  </div>
+              )
           }
         </div>
       </HeroImageEl>
@@ -113,7 +126,7 @@ export const DefaultHomePage = (props: Props) => {
             {
               countryCode ? (
                 <NavLink
-                  to={`../../${countryCode}/sdg-trends`}
+                  to={`../../sdg-push-diagnostic/${countryCode}/sdg-trends`}
                   style={{ color: 'var(--white)', textDecoration: 'none' }}
                 >
                   <button type='button' className='undp-button button-primary button-arrow'>
@@ -161,7 +174,7 @@ export const DefaultHomePage = (props: Props) => {
             {
               countryCode ? (
                 <NavLink
-                  to={`../../${countryCode}/current-priorities`}
+                  to={`../../sdg-push-diagnostic/${countryCode}/current-priorities`}
                   style={{ color: 'var(--white)', textDecoration: 'none' }}
                 >
                   <button type='button' className='undp-button button-primary button-arrow'>
@@ -208,7 +221,7 @@ export const DefaultHomePage = (props: Props) => {
             {
               countryCode ? (
                 <NavLink
-                  to={`../../${countryCode}/synergies-and-tradeoffs`}
+                  to={`../../sdg-push-diagnostic/${countryCode}/synergies-and-tradeoffs`}
                   style={{ color: 'var(--white)', textDecoration: 'none' }}
                 >
                   <button type='button' className='undp-button button-primary button-arrow'>
@@ -259,7 +272,7 @@ export const DefaultHomePage = (props: Props) => {
             {
               countryCode ? (
                 <NavLink
-                  to={`../../${countryCode}/future-scenarios`}
+                  to={`../../sdg-push-diagnostic/${countryCode}/future-scenarios`}
                   style={{ color: 'var(--white)', textDecoration: 'none' }}
                 >
                   <button type='button' className='undp-button button-primary button-arrow'>
