@@ -33,29 +33,29 @@ export const Header = (props: Props) => {
         <header className='undp-country-header'>
           <div className='undp-header-bg flex-space-between'>
             <div className='flex-div flex-vert-align-center flex-space-between'>
-              <div className='flex-div flex-vert-align-center nav-top-left'>
-                <img src='https://design.undp.org/static/media/undp-logo-blue.4f32e17f.svg' alt='UNDP Logo' />
-                <div className='undp-site-title'>
-                  {
+
+              <NavLink
+                to={country ? `../${country}` : '..'}
+                style={{ textDecoration: 'none' }}
+              >
+                <div className='flex-div flex-vert-align-center nav-top-left'>
+                  <img src='https://design.undp.org/static/media/undp-logo-blue.4f32e17f.svg' alt='UNDP Logo' />
+                  <div className='undp-site-title'>
+                    {
                     countryFullName
                       ? (
-                        <NavLink
-                          to='../'
-                          className='logo-sub-head'
-                        >
+                        <div className='logo-sub-head'>
                           SDG Push Diagnostic
-                        </NavLink>
+                        </div>
                       ) : null
                   }
-                  <span>
-                    <NavLink
-                      to={country ? `../${country}` : '..'}
-                    >
+                    <span style={{ color: 'var(--black)' }}>
                       {countryFullName || 'SDG Push Diagnostic'}
-                    </NavLink>
-                  </span>
+                    </span>
+                  </div>
+
                 </div>
-              </div>
+              </NavLink>
               {
                 country
                   ? (
@@ -258,18 +258,24 @@ export const GlobalHeader = () => {
         <header className='undp-country-header'>
           <div className='undp-header-bg flex-space-between'>
             <div className='flex-div flex-vert-align-center flex-space-between'>
-              <div className='flex-div flex-vert-align-center nav-top-left'>
-                <img src='https://design.undp.org/static/media/undp-logo-blue.4f32e17f.svg' alt='UNDP Logo' />
-                <div className='undp-site-title'>
-                  <span>
-                    <NavLink
-                      to='../'
-                    >
+              <NavLink
+                to='../'
+                style={{
+                  textDecoration: 'none',
+                }}
+              >
+                <div className='flex-div flex-vert-align-center nav-top-left'>
+
+                  <img src='https://design.undp.org/static/media/undp-logo-blue.4f32e17f.svg' alt='UNDP Logo' />
+                  <div
+                    className='undp-site-title'
+                  >
+                    <span style={{ color: 'var(--black)' }}>
                       SDG Push Diagnostic
-                    </NavLink>
-                  </span>
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </NavLink>
               <div className='flex-div flex-vert-align-center nav-top-right'>
                 <a href='https://data.undp.org/' target='_blank' className='undp-button button-secondary' style={{ backgroundColor: 'var(--gray-300)', color: 'var(--gray-700)', textDecoration: 'none' }} rel='noreferrer'>
                   Data Futures Platform

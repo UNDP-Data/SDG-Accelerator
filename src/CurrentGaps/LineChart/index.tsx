@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import uniqBy from 'lodash.uniqby';
 import { useParams } from 'react-router-dom';
+import { Download } from 'lucide-react';
 import { Graph } from './Graph';
 import { KEYSTOAVOID, SERIES_TAGS_LABELS } from '../../Constants';
 import { TimeSeriesDataTypeWithStatusCode } from '../../Types';
@@ -128,11 +129,12 @@ export const LineChart = (props: Props) => {
           values.length !== 0
             ? (
               <button
-                className='undp-button tertiary-button'
+                className='undp-button tertiary-button flex-div gap-03'
                 type='button'
                 style={{ color: 'var(--blue-600)', padding: 'var(--spacing-05) 0' }}
                 onClick={() => { if (graphRef.current) { DownloadImage(graphRef.current, `${data.series}`); } }}
               >
+                <Download strokeWidth={2} size={20} />
                 Download Graph
               </button>
             ) : null

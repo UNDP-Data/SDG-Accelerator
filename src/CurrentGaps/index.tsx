@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Select } from 'antd';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
+import { Download } from 'lucide-react';
 import { SDGGOALS, TargetIndicatorCount } from '../Constants';
 import { SDGGapsData } from './SDGGapsData';
 import { DownloadImage } from '../utils/DownloadImage';
@@ -51,6 +52,19 @@ export const CurrentGaps = (props: Props) => {
     <>
       <HeroImageEl className='undp-hero-image'>
         <div className='max-width'>
+          <div className='undp-breadcrumb margin-bottom-10'>
+            <a href='../'>
+              SDG Push Diagnostics
+            </a>
+            <div className='divider'>/</div>
+            <a href='./'>
+              {countryFullName}
+            </a>
+            <div className='divider'>/</div>
+            <span>
+              Current Gaps
+            </span>
+          </div>
           <h1 className='undp-typography'>
             SDG Trends for
             {' '}
@@ -177,11 +191,12 @@ export const CurrentGaps = (props: Props) => {
                 }
               </div>
               <button
-                className='undp-button tertiary-button'
+                className='undp-button tertiary-button flex-div gap-03'
                 type='button'
                 style={{ color: 'var(--blue-600)', padding: 0 }}
                 onClick={() => { if (ref) { DownloadImage(ref, 'Trends Chart'); } }}
               >
+                <Download strokeWidth={2} size={20} />
                 Download Trends as Image
               </button>
             </div>

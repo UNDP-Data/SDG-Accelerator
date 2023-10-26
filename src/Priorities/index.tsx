@@ -193,6 +193,19 @@ export const Priorities = (props: Props) => {
   return (
     <>
       <HeroImageEl className='undp-hero-image'>
+        <div className='undp-breadcrumb margin-bottom-10 max-width-1440' style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+          <a href='../'>
+            SDG Push Diagnostics
+          </a>
+          <div className='divider'>/</div>
+          <a href='./'>
+            {countryFullName}
+          </a>
+          <div className='divider'>/</div>
+          <span>
+            National Priorities
+          </span>
+        </div>
         <div
           className='max-width-1440'
           style={{

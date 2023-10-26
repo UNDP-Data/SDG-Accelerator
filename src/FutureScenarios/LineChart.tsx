@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from 'react';
 import { select } from 'd3-selection';
 import 'd3-transition';
 import { useInView } from 'react-intersection-observer';
+import { Download } from 'lucide-react';
 import { HoverDataType, ScenarioDataType } from '../Types';
 import { GraphTooltip } from './GraphTooltip';
 import { DownloadImage } from '../utils/DownloadImage';
@@ -239,11 +240,12 @@ export const LineChart = (props: Props) => {
         </>
       </div>
       <button
-        className='undp-button tertiary-button'
+        className='undp-button tertiary-button flex-div gap-03'
         type='button'
         style={{ color: 'var(--blue-600)', padding: 'var(--spacing-05)' }}
         onClick={() => { if (graphRef.current) { DownloadImage(graphRef.current, `${data[0].indicator}`); } }}
       >
+        <Download strokeWidth={2} size={20} />
         Download Graph
       </button>
 

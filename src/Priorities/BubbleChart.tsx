@@ -4,6 +4,7 @@ import {
   forceCollide, forceManyBody, forceSimulation, forceX, forceY,
 } from 'd3-force';
 import { Checkbox, Radio } from 'antd';
+import { Download } from 'lucide-react';
 import { SDG_COLOR_ARRAY } from '../Constants';
 import { getSDGIconSVG } from '../utils/getSDGIcon';
 import { PriorityType, StatusType } from '../Types';
@@ -144,12 +145,13 @@ export const BubbleChart = (props: Props) => {
             </Radio.Group>
           </div>
           <button
-            className='undp-button tertiary-button'
+            className='undp-button tertiary-button flex-div gap-03'
             type='button'
             style={{ color: nodeData === null ? 'var(--gray-400)' : 'var(--blue-600)', padding: 0, textAlign: 'left' }}
             disabled={nodeData === null}
             onClick={() => { if (bubbleChartRef.current) { DownloadImage(bubbleChartRef.current, 'Bubble Chart'); } }}
           >
+            <Download strokeWidth={2} size={20} />
             Download Bubble Chart
           </button>
         </div>

@@ -4,8 +4,19 @@ import { Input, Modal } from 'antd';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import sortBy from 'lodash.sortby';
+import styled from 'styled-components';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 import IMAGES from '../img/images';
+
+const FooterP = styled.p`
+  padding: 0 0.75rem;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1rem !important;
+  &:hover {
+    opacity: 0.7;
+  }
+`;
 
 export const Footer = () => {
   const [searchText, setSearchText] = useState<string | null>(null);
@@ -32,12 +43,17 @@ export const Footer = () => {
           </div>
           <div className='undp-footer'>
             <div className='flex-div flex-space-between margin-bottom-07 flex-wrap' style={{ padding: '0 0.75rem var(--spacing-09) 0.75rem', borderBottom: '1px solid var(--white)' }}>
-              <div className='flex-div flex-vert-align-center' style={{ margin: 0 }}>
-                <img alt='undp logo' src={IMAGES.undpLogoWhite} style={{ width: '72px' }} />
+              <div
+                className='flex-div flex-vert-align-center'
+                style={{ margin: 0 }}
+              >
+                <a href='https://www.undp.org/' target='_blank' rel='noreferrer'>
+                  <img alt='undp logo' src={IMAGES.undpLogoWhite} style={{ width: '72px' }} />
+                </a>
                 <h5 className='undp-typography margin-bottom-00'>
-                  UNDP
+                  United Nations
                   <br />
-                  Data Futures Platform
+                  Development Programme
                 </h5>
               </div>
               <div className='undp-footer-right-container'>
@@ -55,7 +71,26 @@ export const Footer = () => {
                 </div>
               </div>
             </div>
-            <p className='small-font margin-top-05' style={{ padding: '0 0.75rem' }}>© 2021 United Nations Development Programme</p>
+            <div className='flex-div flex-space-between'>
+              <div>
+                <p
+                  className='undp-typography margin-top-05 margin-bottom-00'
+                  style={{ padding: '0 0.75rem', fontSize: '1rem' }}
+                >
+                  © 2023 United Nations Development Programme
+                </p>
+              </div>
+              <a
+                href='https://www.undp.org/copyright-terms-use'
+                target='_blank'
+                rel='noreferrer'
+                style={{ textDecoration: 'none' }}
+              >
+                <FooterP className='undp-typography margin-top-05'>
+                  Terms Of Use
+                </FooterP>
+              </a>
+            </div>
           </div>
         </footer>
       </div>
