@@ -62,7 +62,7 @@ export const Interlinkages = (props: Props) => {
     <>
       <HeroImageEl className='undp-hero-image'>
         <div className='max-width'>
-          <div className='undp-breadcrumb margin-bottom-10'>
+          <div className='undp-breadcrumb-light margin-bottom-10'>
             <a href='../'>
               SDG Push Diagnostics
             </a>

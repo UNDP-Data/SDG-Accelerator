@@ -270,6 +270,9 @@ export const GlobalHeader = () => {
                   <div
                     className='undp-site-title'
                   >
+                    <div className='logo-sub-head'>
+                      Data Futures Platform
+                    </div>
                     <span style={{ color: 'var(--black)' }}>
                       SDG Push Diagnostic
                     </span>

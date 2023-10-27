@@ -193,7 +193,7 @@ export const Priorities = (props: Props) => {
   return (
     <>
       <HeroImageEl className='undp-hero-image'>
-        <div className='undp-breadcrumb margin-bottom-10 max-width-1440' style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+        <div className='undp-breadcrumb-light margin-bottom-10 max-width-1440' style={{ marginLeft: 'auto', marginRight: 'auto' }}>
           <a href='../'>
             SDG Push Diagnostics
           </a>
