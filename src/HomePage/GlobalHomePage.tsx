@@ -72,7 +72,7 @@ export const GlobalHomePage = () => (
           <p className='undp-typography'>
             The methodology for the diagnostics can be found
             {' '}
-            <a className='undp-style' href='https://data.undp.org/sdg-push-diagnostic/data/Diagnostic%20Simulator%20Methodological%20Note%20&%20User%20Guide%20V1.4.pdf' target='_blank' rel='noreferrer'>here</a>
+            <a className='undp-style' href='https://raw.githubusercontent.com/UNDP-Data/SDG-Accelerator-PDFs/main/Methodology.pdf' target='_blank' rel='noreferrer'>here</a>
             .
           </p>
         </FirstColumn>
