@@ -23,7 +23,7 @@ export const FutureScenariosList = (props: Props) => {
   const [data, setData] = useState<any | ScenarioDataType[]>(undefined);
   const [selectedSDG, setSelectedSDG] = useState('SDG 1: No Poverty');
   useEffect(() => {
-    json(`${DATASOURCELINK}/data/ScenarioData/${countryCode}.json`, (err: any, d: ScenarioDataType[]) => {
+    json(`${DATASOURCELINK}/ScenarioData/${countryCode}.json`, (err: any, d: ScenarioDataType[]) => {
       if (err) throw err;
       setData(d);
     });

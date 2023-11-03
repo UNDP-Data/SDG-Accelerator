@@ -88,8 +88,8 @@ export const DetailedReportView = (props: Props) => {
     setError(undefined);
     setPriorityData(null);
     queue()
-      .defer(json, `${DATASOURCELINK}/data/PrioritiesData/${countryCode}.json`)
-      .defer(json, `${DATASOURCELINK}/data/ScenarioData/${countryCode}.json`)
+      .defer(json, `${DATASOURCELINK}/PrioritiesData/${countryCode}.json`)
+      .defer(json, `${DATASOURCELINK}/ScenarioData/${countryCode}.json`)
       .await(
         (
           err: any,

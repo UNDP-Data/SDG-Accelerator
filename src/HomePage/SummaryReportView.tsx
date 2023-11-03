@@ -104,8 +104,8 @@ export const SummaryReportView = (props: Props) => {
   });
   useEffect(() => {
     queue()
-      .defer(json, `${DATASOURCELINK}/data/PrioritiesData/${countryCode}.json`)
-      .defer(json, `${DATASOURCELINK}/data/ScenarioData/${countryCode}.json`)
+      .defer(json, `${DATASOURCELINK}/PrioritiesData/${countryCode}.json`)
+      .defer(json, `${DATASOURCELINK}/ScenarioData/${countryCode}.json`)
       .await(
         (
           err: any,

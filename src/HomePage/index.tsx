@@ -26,8 +26,8 @@ export const HomePage = (props: Props) => {
     setReportData(undefined);
     setError(undefined);
     queue()
-      .defer(json, `${DATASOURCELINK}/data/ReportPages/${countryCode}.json`)
-      .defer(json, `${DATASOURCELINK}/data/CountryData/${countryCode}.json`)
+      .defer(json, `${DATASOURCELINK}/ReportPages/${countryCode}.json`)
+      .defer(json, `${DATASOURCELINK}/CountryData/${countryCode}.json`)
       .await(
         (
           err: any,

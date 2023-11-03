@@ -153,7 +153,7 @@ export const Priorities = (props: Props) => {
   useEffect(() => {
     setCountryFilePresent(undefined);
     setData(undefined);
-    json(`${DATASOURCELINK}/data/PrioritiesData/${countrySelected}.json`, (err: any, d: any) => {
+    json(`${DATASOURCELINK}/PrioritiesData/${countrySelected}.json`, (err: any, d: any) => {
       if (err) {
         setCountryFilePresent(false);
         axios.get(

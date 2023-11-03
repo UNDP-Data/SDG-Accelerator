@@ -28,7 +28,7 @@ export const LandingPage = () => {
   useEffect(() => {
     setStatuses(undefined);
     setError(undefined);
-    json(`${DATASOURCELINK}/data/CountryData/${countryCode}.json`, (err: any, d: CountryDataType) => {
+    json(`${DATASOURCELINK}/CountryData/${countryCode}.json`, (err: any, d: CountryDataType) => {
       if (err) { setError(err); }
       setCountryData(d.tsData.map((el) => (
         {
