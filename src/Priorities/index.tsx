@@ -239,11 +239,10 @@ export const Priorities = (props: Props) => {
                         children: !data && countryFilePresent === false ? (
                           <>
                             <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-                              Countries national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is an improved and cleaned
+                              Countries national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is based on an improved
                               {' '}
                               <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer' className='undp-style'>OSDG Community Dataset</a>
-                              {' '}
-                              from UNDP IICPSD SDG AI Lab. It considers 100k+ terms, including phrases and expressions.
+                              . It considers 100k+ terms, including phrases and expressions.
                               <br />
                               <br />
                               Documents such as
@@ -307,11 +306,10 @@ export const Priorities = (props: Props) => {
                           </>
                         ) : (
                           <h5 className='undp-typography' style={{ color: 'var(--black)', lineHeight: 1.5 }}>
-                            Countries national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is an improved and cleaned
+                            Countries national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is based on an improved
                             {' '}
                             <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer' className='undp-style'>OSDG Community Dataset</a>
-                            {' '}
-                            from UNDP IICPSD SDG AI Lab. It considers 100k+ terms, including phrases and expressions.
+                            . It considers 100k+ terms, including phrases and expressions.
                             <br />
                             <br />
                             Documents such as National Development Plans indicate priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.

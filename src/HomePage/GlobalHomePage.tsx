@@ -262,8 +262,7 @@ export const GlobalHomePage = () => (
                     Current priorities are analysed using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is based on an improved
                     {' '}
                     <a href='https://zenodo.org/record/6831287#.ZGVpKHZBxhZ' target='_blank' rel='noreferrer' className='undp-style'>OSDG Community Dataset</a>
-                    {' '}
-                    from UNDP IICPSD SDG AI Lab. It considers 100k+ terms, including phrases and expressions.
+                    . It considers 100k+ terms, including phrases and expressions.
                     <br />
                     <br />
                     Explore the analysis of these priorities using Machine Learning by country.
