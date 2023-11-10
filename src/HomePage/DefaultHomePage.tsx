@@ -47,7 +47,7 @@ export const DefaultHomePage = (props: Props) => {
               ? COUNTRIES_WITH_REPORT.indexOf(countryCode.replaceAll('WithCountryGovInput', '')) !== -1
                 ? (
                   <a
-                    href={`https://raw.githubusercontent.com/UNDP-Data/SDG-Accelerator-PDFs/main/InsightReports/UNDP%20-%20SDG%20${countryCode.replaceAll('WithCountryGovInput', '')}.pdf`}
+                    href={`https://sdgigeneralstorage.blob.core.windows.net/sdg-push/InsightReports/UNDP%20-%20SDG%20${countryCode.replaceAll('WithCountryGovInput', '')}.pdf`}
                     target='_blank'
                     className='undp-button button-arrow button-primary margin-top-07'
                     style={{ width: 'fit-content', textDecoration: 'none' }}

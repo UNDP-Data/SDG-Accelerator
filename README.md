@@ -18,8 +18,8 @@
 ## Deployment<a name="deployment"></a>
 The branch used for deployment is `production-azure`. The Production site deployed using Azure Static Web App and work flow can be found [here](https://github.com/UNDP-Data/SDG-Accelerator/blob/production-azure/.github/workflows/azure-static-web-apps-gentle-island-066846403.yml)
 
-## Related Repos<a name="section-04"></a>
-* [__SDG-Accelerator-PDFs__](https://github.com/UNDP-Data/SDG-Accelerator-PDFs): This is all the pdfs like insight reports and methodology documents
+## Related Repos & Blob Storage<a name="section-04"></a>
+* [__sdg-push__](https://sdgigeneralstorage.blob.core.windows.net/sdg-push): This is blob storage on Azure where all the pdfs like insight reports and methodology are stored. Contact Mustafa Saifee or Mykola Skrynnyk for access.
 * [__SDG-Accelerator-Data-Repo__](https://github.com/UNDP-Data/SDG-Accelerator-Data-Repo): This is all the data sheets fr all the countries
 * [__stylesheet-for-viz__](https://github.com/UNDP-Data/stylesheets-for-viz): Repo which defines the css settings for the project
 
