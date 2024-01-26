@@ -53,7 +53,7 @@ export const Footer = () => {
                   <a className='undp-footer-link undp-footer-right-link' href='mailto:data@undp.org' target='_blank' rel='noreferrer'>Contact Us</a>
                 </div>
                 <div className='margin-bottom-03'>
-                  <a className='undp-footer-link undp-footer-right-link' href='https://data.undp.org/' target='_blank' rel='noreferrer'>Data Futures Platform</a>
+                  <a className='undp-footer-link undp-footer-right-link' href='https://data.undp.org/' target='_blank' rel='noreferrer'>Data Futures Exchange</a>
                 </div>
                 <div className='margin-bottom-03'>
                   <a className='undp-footer-link undp-footer-right-link' href='https://sdgigeneralstorage.blob.core.windows.net/sdg-push/Methodology.pdf' target='_blank' rel='noreferrer'>Methodology</a>

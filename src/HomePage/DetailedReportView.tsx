@@ -148,7 +148,7 @@ export const DetailedReportView = (props: Props) => {
           }}
         >
           <SectionCard id='section1' cardTitle='SDG Moment' cardDescription='Sets the stage by considering economic growth as a catalyst for the SDG agenda.' cardIcon={IMAGES.iconSnapshot} />
-          <SectionCard id='section2' cardTitle='SDG Trends' cardDescription="Leveraging UNDP's Data Futures Platform infrastructure with official UN statistics as the baseline data, member states can contribute data to generate meaningful insights." cardIcon={IMAGES.iconTrends} />
+          <SectionCard id='section2' cardTitle='SDG Trends' cardDescription="Leveraging UNDP's Data Futures Exchange's infrastructure with official UN statistics as the baseline data, member states can contribute data to generate meaningful insights." cardIcon={IMAGES.iconTrends} />
           <SectionCard id='section3' cardTitle='National Priorities' cardDescription='Utilizing custom-built machine learning, the report analyzes multiple reports and synthesizes the most significant national priorities.' cardIcon={IMAGES.iconPriorities} />
           <SectionCard id='section4' cardTitle='Interlinkages' cardDescription='Through data visualization, this section connects national priorities to the most relevant SDG targets and maps interconnections, aiding countries in considering various pathways.' cardIcon={IMAGES.iconInterlinkages} />
           <SectionCard id='section5' cardTitle='Futures' cardDescription="This section generates 'SDG Futures' using modeling analysis to demonstrate how UNDP's flagship report on SDG Push can enhance medium-term development trajectories." cardIcon={IMAGES.iconFutures} />

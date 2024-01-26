@@ -105,7 +105,7 @@ export const Header = (props: Props) => {
                     ) : null
                 }
                 <AButton href='https://data.undp.org/' target='_blank' className='undp-button button-secondary' style={{ backgroundColor: 'var(--gray-300)', color: 'var(--gray-700)', textDecoration: 'none' }} rel='noreferrer'>
-                  Data Futures Platform
+                  Data Futures Exchange
                 </AButton>
                 <div style={{
                   height: '24px', justifyContent: 'flex-end', textAlign: 'right',
@@ -187,7 +187,7 @@ export const Header = (props: Props) => {
                     }}
                     rel='noreferrer'
                   >
-                    Visit Data Futures Platform
+                    Visit Data Futures Exchange
                   </a>
                 </div>
               </div>
@@ -271,7 +271,7 @@ export const GlobalHeader = () => {
                     className='undp-site-title'
                   >
                     <div className='logo-sub-head'>
-                      Data Futures Platform
+                      Data Futures Exchange
                     </div>
                     <span style={{ color: 'var(--black)' }}>
                       SDG Push Diagnostic
@@ -281,7 +281,7 @@ export const GlobalHeader = () => {
               </NavLink>
               <div className='flex-div flex-vert-align-center nav-top-right'>
                 <a href='https://data.undp.org/' target='_blank' className='undp-button button-secondary' style={{ backgroundColor: 'var(--gray-300)', color: 'var(--gray-700)', textDecoration: 'none' }} rel='noreferrer'>
-                  Data Futures Platform
+                  Data Futures Exchange
                 </a>
                 <div style={{
                   height: '24px', justifyContent: 'flex-end', textAlign: 'right',
