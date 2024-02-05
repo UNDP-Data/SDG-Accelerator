@@ -654,4 +654,5 @@ export const COUNTRIES_WITH_REPORT = [
   'WSM',
   'PNG',
   'TLS',
+  'THA',
 ];
