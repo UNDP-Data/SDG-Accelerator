@@ -932,6 +932,10 @@ export const LinkageData2023 = [
         ],
       },
       {
+        target: '8.10',
+        description: [],
+      },
+      {
         target: '2.1',
         description: [
           '',
@@ -10510,6 +10514,10 @@ export const LinkageData2023 = [
         ],
       },
       {
+        target: '8.10',
+        description: [],
+      },
+      {
         target: '12.4',
         description: [
           '',
@@ -12320,6 +12328,11 @@ export const LinkageData2023 = [
           '',
           'Multiple synergies, including with the development of waste-to-energy systems, for example, with biogas production using human faeces, with examples of research on domestic biogas production and self-sustained nano-membrane toilet.',
         ],
+      },
+      {
+        target: '8.10',
+        description: [
+          'Multiple synergies, for example, where capacity- building of financial institutions intervening in the sanitation sector results in increased household access to sanitation facilities and services (e.g. through loans).'],
       },
       {
         target: '3.3',
@@ -17632,6 +17645,11 @@ export const LinkageData2023 = [
         ],
       },
       {
+        target: '8.10',
+        description: [
+          'Design, manufacture, and installation of renewables and energy efficient technologies can create conditions for new and higherpaying jobs; although some businesses will need to re-tool, and some workers will need to re-train. Strengthened financial institutions in developing country communities are necessary for providing capital, credit, and insurance to local entrepreneurs attempting to enact change.'],
+      },
+      {
         target: '7.3',
         description: [
           'Progress on SDG 7.2 restricts the use of fossil fuels in the CHP plant, energy efficiency gains are realized in line with progress on SDG 7.3.',
@@ -18833,6 +18851,11 @@ export const LinkageData2023 = [
           'Installing standardized treatment system can lead to the modernizing of sewerage plants.',
           'Increased energy use efficiency may reduce the nitrogen emissions from energy use and thus reinforces reducing water pollution from atmospheric nitrogen deposition.',
         ],
+      },
+      {
+        target: '8.10',
+        description: [
+          'Design, manufacture, and installation of renewables and energy efficient technologies can create conditions for new and higherpaying jobs; although some businesses will need to re-tool, and some workers will need to re-train. Strengthened financial institutions in developing country communities are necessary for providing capital, credit, and insurance to local entrepreneurs attempting to enact change.'],
       },
       {
         target: '12.5',
@@ -22450,9 +22473,43 @@ export const LinkageData2023 = [
   },
   {
     id: 'Target 8.10',
-    synergies: [],
-    tradeOffs: [],
-    notSpecified: [],
+    synergies: [
+      {
+        target: '2.3',
+        description: [
+          'Banking, insurance and other services are very important part of improving agricultural productivity, as they enable access to new technologies, machinery and inputs, and they also encourage capital intensive crop and animal production.',
+        ],
+      },
+      {
+        target: '6.2',
+        description: [
+          'Multiple synergies, for example, where capacity- building of financial institutions intervening in the sanitation sector results in increased household access to sanitation facilities and services (e.g. through loans).'],
+      },
+      {
+        target: '7.2',
+        description: [
+          'Design, manufacture, and installation of renewables and energy efficient technologies can create conditions for new and higherpaying jobs; although some businesses will need to re-tool, and some workers will need to re-train. Strengthened financial institutions in developing country communities are necessary for providing capital, credit, and insurance to local entrepreneurs attempting to enact change.'],
+      },
+      {
+        target: '7.3',
+        description: [
+          'Design, manufacture, and installation of renewables and energy efficient technologies can create conditions for new and higherpaying jobs; although some businesses will need to re-tool, and some workers will need to re-train. Strengthened financial institutions in developing country communities are necessary for providing capital, credit, and insurance to local entrepreneurs attempting to enact change.'],
+      }],
+    tradeOffs: [
+      {
+        target: '12.4',
+        description: [
+          'Target 12.4 aims to minimize electronic waste or maximize the amount of e-waste being recycled. However, e-waste is one of the fastestgrowing waste streams globally in terms of volume, and only 17.4% of global e-waste is appropriately recycled. Economic growth and urbanization, mobile devices lead to an exponential generation of electronic equipment.'],
+      }],
+    notSpecified: [
+      {
+        target: '1.3',
+        description: [],
+      },
+      {
+        target: '5.2',
+        description: [],
+      }],
     coordinates: [
       7,
       9,
@@ -30533,6 +30590,11 @@ export const LinkageData2023 = [
           'Overall, a country\u2019s higher level of industrialization is linked with increased E-waste per capita generation \u2013 with average Manufacturing value-added per capita and E-waste per capita much higher for higher income countries. However, the variations across countries are quite substantial. For example, for low-income and upper middle income countries the correlation between industrialization and e-waste is strong and significant, whereas for high-income countries it is negative but statistically insignificant.',
           'Overall, a country\u2019s higher level of industrialization is linked with increased E-waste per capita generation \u2013 with average Manufacturing value-added per capita and E-waste per capita much higher for higher income countries. However, the variations across countries are quite substantial. For example, for low-income and upper middle income countries the correlation between industrialization and e-waste is strong and significant, whereas for high-income countries it is negative but statistically insignificant.',
         ],
+      },
+      {
+        target: '8.10',
+        description: [
+          'Target 12.4 aims to minimize electronic waste or maximize the amount of e-waste being recycled. However, e-waste is one of the fastestgrowing waste streams globally in terms of volume, and only 17.4% of global e-waste is appropriately recycled. Economic growth and urbanization, mobile devices lead to an exponential generation of electronic equipment.'],
       },
       {
         target: '11.6',
