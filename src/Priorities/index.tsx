@@ -335,25 +335,25 @@ export const Priorities = (props: Props) => {
                             <>
                               <div className='margin-top-07'>
                                 {
-                              selectedFileNotAnalyzed.length > 0
-                                ? (
-                                  <div className='flex-div margin-bottom-05 flex-wrap'>
-                                    {
-                                      selectedFileNotAnalyzed.map((d: any, i: number) => (
-                                        <div className='undp-chip-gray undp-chip' key={i}>
-                                          {d.name}
-                                          {' '}
-                                          (
-                                          {(d.size / 1024 / 1024).toFixed(1)}
-                                          {' '}
-                                          MBs)
-                                          <CloseIcon onClick={() => { setSelectedFileNotAnalyzed(selectedFileNotAnalyzed.filter((el: any) => d !== el)); }} />
-                                        </div>
-                                      ))
-                                    }
-                                  </div>
-                                ) : null
-                            }
+                                  selectedFileNotAnalyzed.length > 0
+                                    ? (
+                                      <div className='flex-div margin-bottom-05 flex-wrap'>
+                                        {
+                                          selectedFileNotAnalyzed.map((d: any, i: number) => (
+                                            <div className='undp-chip-gray undp-chip' key={i}>
+                                              {d.name}
+                                              {' '}
+                                              (
+                                              {(d.size / 1024 / 1024).toFixed(1)}
+                                              {' '}
+                                              MBs)
+                                              <CloseIcon onClick={() => { setSelectedFileNotAnalyzed(selectedFileNotAnalyzed.filter((el: any) => d !== el)); }} />
+                                            </div>
+                                          ))
+                                        }
+                                      </div>
+                                    ) : null
+                                }
                                 <UploadEl>
                                   <label htmlFor='file-upload-analyze' className='custom-file-upload'>
                                     <UploadButtonEl>Add Documents</UploadButtonEl>
