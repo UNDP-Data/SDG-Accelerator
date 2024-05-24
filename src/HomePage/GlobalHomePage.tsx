@@ -60,107 +60,6 @@ export const GlobalHomePage = () => (
         Array.from(Array(17).keys()).map((d) => <div key={d} style={{ height: '1rem', backgroundColor: SDG_COLOR_ARRAY[d], flexGrow: 1 }} />)
       }
     </div>
-    <div style={{ backgroundColor: 'var(--gray-100)', padding: '5rem 2rem' }}>
-      <div className='flex-div flex-wrap margin-bottom-09 max-width' style={{ padding: '0 1rem' }}>
-        <SecondColumn className='undp-section-content'>
-          <h2 className='undp-typography'>The Integrated SDG Insight reports</h2>
-        </SecondColumn>
-        <FirstColumn className='undp-section-content large-font'>
-          <p className='undp-typography'>
-            The Diagnostic powers the Integrated SDG Insights which provide a strong evidence-base and relevant insights to support national ambition at the SDG Summit 2023.
-          </p>
-          <p className='undp-typography'>
-            The methodology for the diagnostics can be found
-            {' '}
-            <a className='undp-style' href='https://sdgigeneralstorage.blob.core.windows.net/sdg-push/Methodology.pdf' target='_blank' rel='noreferrer'>here</a>
-            .
-          </p>
-        </FirstColumn>
-      </div>
-      <div className='max-width'>
-        <div className='margin-bottom-05'>
-          <AccordionEl
-            title='What is distinct about the Integrated SDG Insight reports?'
-            body={(
-              <div className='flex-div flex-wrap gap-07' style={{ alignItems: 'stretch' }}>
-                <FirstColumn>
-                  <p className='undp-typography'>
-                    The insights are unique — not a statistical gaps report or evaluation of development impact — but a playbook, showing the policy choices that build SDG pathways.
-                  </p>
-                  <p className='undp-typography'>
-                    UNDP supported 90+ countries to generate these insights to come to the SDG Summit with a high level of ambition — and evidence-based pathways to achieve it. These insights are a result of country-level and government consultation, data analysis, machine learning, interlinkage mapping, and generating futures scenarios.
-                  </p>
-                  <p className='undp-typography margin-bottom-00'>
-                    It also includes national analysis of economic growth pathways and fiscal and financial constraints, providing insights that are grounded in the countries&apos; realities.
-                  </p>
-                </FirstColumn>
-                <SecondColumn style={{ backgroundColor: 'var(--gray-200)', display: 'flex', alignItems: 'center' }}>
-                  <div className='stat-card'>
-                    <h2>
-                      90+
-                    </h2>
-                    <p>Countries supported by UNDP</p>
-                  </div>
-                </SecondColumn>
-              </div>
-            )}
-          />
-        </div>
-        <div className='margin-bottom-05'>
-          <AccordionEl
-            title='How SDG interlinkages helped to chart integrated SDG pathways?'
-            body={(
-              <div className='flex-div flex-wrap' style={{ alignItems: 'stretch' }}>
-                <p className='undp-typography'>
-                  Building from national trends and priorities, SDG interlinkages help to chart integrated SDG pathways that reflect policy choices with the most potential to accelerate the SDGs.
-                </p>
-                <p className='undp-typography'>
-                  SDG interlinkages reveal how actions directed towards one SDG can impact others. Uncovering and understanding these interactions can help to achieve the 2030 Agenda for Sustainable Development and navigating trade-offs.
-                </p>
-              </div>
-            )}
-          />
-        </div>
-      </div>
-    </div>
-    <div style={{ padding: '5rem 2rem' }}>
-      <div>
-        <div className='flex-div flex-wrap margin-bottom-09 max-width' style={{ padding: '0 1rem' }}>
-          <SecondColumn className='undp-section-content'>
-            <h3 className='undp-typography margin-bottom-00'>Emerging Patterns</h3>
-          </SecondColumn>
-          <FirstColumn className='undp-section-content large-font'>
-            Across 90+ reports, common SDG targets emerged as key entry points where investment in one SDG can unlock progress on others. The visuals below show the key SDG targets and the combination of policy choices that can re-balance social, environmental, and economic achievements.
-          </FirstColumn>
-        </div>
-        <div style={{ padding: '0 1rem' }}>
-          <div className='max-width'>
-            <ForceDirectedGraph />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style={{ padding: '0 2rem 5rem 2rem' }}>
-      <div>
-        <div className='flex-div flex-wrap margin-bottom-09 max-width' style={{ padding: '0 1rem' }}>
-          <SecondColumn className='undp-section-content'>
-            <h3 className='undp-typography margin-bottom-00'>Regional and Income Group Comparisons</h3>
-          </SecondColumn>
-          <FirstColumn className='undp-section-content large-font'>
-            <p className='undp-typography'>
-              Explore the full dataset by region and income classification to show unique entry points for integrated SDG pathways.
-            </p>
-            <p className='undp-typography italics'>
-              Explore the secondary targets associated to each primary target by clicking on the primary target bubbles below.
-              Click on the regions or income groups to see more detail of the countries analyzed within each group.
-            </p>
-          </FirstColumn>
-        </div>
-        <div className='max-width'>
-          <InterlinkageOverview />
-        </div>
-      </div>
-    </div>
     <div style={{ backgroundColor: 'var(--blue-600)', padding: '5rem 2rem' }}>
       <div className='max-width'>
         <div className='flex-div flex-wrap margin-bottom-09' style={{ padding: '0 1rem', color: 'var(--white)' }}>
@@ -388,6 +287,107 @@ export const GlobalHomePage = () => (
               </div>
           )}
           />
+        </div>
+      </div>
+    </div>
+    <div style={{ backgroundColor: 'var(--gray-100)', padding: '5rem 2rem' }}>
+      <div className='flex-div flex-wrap margin-bottom-09 max-width' style={{ padding: '0 1rem' }}>
+        <SecondColumn className='undp-section-content'>
+          <h2 className='undp-typography'>The Integrated SDG Insight reports</h2>
+        </SecondColumn>
+        <FirstColumn className='undp-section-content large-font'>
+          <p className='undp-typography'>
+            The Diagnostic powers the Integrated SDG Insights which provide a strong evidence-base and relevant insights to support national ambition at the SDG Summit 2023.
+          </p>
+          <p className='undp-typography'>
+            The methodology for the diagnostics can be found
+            {' '}
+            <a className='undp-style' href='https://sdgigeneralstorage.blob.core.windows.net/sdg-push/Methodology.pdf' target='_blank' rel='noreferrer'>here</a>
+            .
+          </p>
+        </FirstColumn>
+      </div>
+      <div className='max-width'>
+        <div className='margin-bottom-05'>
+          <AccordionEl
+            title='What is distinct about the Integrated SDG Insight reports?'
+            body={(
+              <div className='flex-div flex-wrap gap-07' style={{ alignItems: 'stretch' }}>
+                <FirstColumn>
+                  <p className='undp-typography'>
+                    The insights are unique — not a statistical gaps report or evaluation of development impact — but a playbook, showing the policy choices that build SDG pathways.
+                  </p>
+                  <p className='undp-typography'>
+                    UNDP supported 90+ countries to generate these insights to come to the SDG Summit with a high level of ambition — and evidence-based pathways to achieve it. These insights are a result of country-level and government consultation, data analysis, machine learning, interlinkage mapping, and generating futures scenarios.
+                  </p>
+                  <p className='undp-typography margin-bottom-00'>
+                    It also includes national analysis of economic growth pathways and fiscal and financial constraints, providing insights that are grounded in the countries&apos; realities.
+                  </p>
+                </FirstColumn>
+                <SecondColumn style={{ backgroundColor: 'var(--gray-200)', display: 'flex', alignItems: 'center' }}>
+                  <div className='stat-card'>
+                    <h2>
+                      90+
+                    </h2>
+                    <p>Countries supported by UNDP</p>
+                  </div>
+                </SecondColumn>
+              </div>
+            )}
+          />
+        </div>
+        <div className='margin-bottom-05'>
+          <AccordionEl
+            title='How SDG interlinkages helped to chart integrated SDG pathways?'
+            body={(
+              <div className='flex-div flex-wrap' style={{ alignItems: 'stretch' }}>
+                <p className='undp-typography'>
+                  Building from national trends and priorities, SDG interlinkages help to chart integrated SDG pathways that reflect policy choices with the most potential to accelerate the SDGs.
+                </p>
+                <p className='undp-typography'>
+                  SDG interlinkages reveal how actions directed towards one SDG can impact others. Uncovering and understanding these interactions can help to achieve the 2030 Agenda for Sustainable Development and navigating trade-offs.
+                </p>
+              </div>
+            )}
+          />
+        </div>
+      </div>
+    </div>
+    <div style={{ padding: '5rem 2rem' }}>
+      <div>
+        <div className='flex-div flex-wrap margin-bottom-09 max-width' style={{ padding: '0 1rem' }}>
+          <SecondColumn className='undp-section-content'>
+            <h3 className='undp-typography margin-bottom-00'>Emerging Patterns</h3>
+          </SecondColumn>
+          <FirstColumn className='undp-section-content large-font'>
+            Across 90+ reports, common SDG targets emerged as key entry points where investment in one SDG can unlock progress on others. The visuals below show the key SDG targets and the combination of policy choices that can re-balance social, environmental, and economic achievements.
+          </FirstColumn>
+        </div>
+        <div style={{ padding: '0 1rem' }}>
+          <div className='max-width'>
+            <ForceDirectedGraph />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style={{ padding: '0 2rem 5rem 2rem' }}>
+      <div>
+        <div className='flex-div flex-wrap margin-bottom-09 max-width' style={{ padding: '0 1rem' }}>
+          <SecondColumn className='undp-section-content'>
+            <h3 className='undp-typography margin-bottom-00'>Regional and Income Group Comparisons</h3>
+          </SecondColumn>
+          <FirstColumn className='undp-section-content large-font'>
+            <p className='undp-typography'>
+              Explore the full dataset by region and income classification to show unique entry points for integrated SDG pathways.
+            </p>
+            <p className='undp-typography italics'>
+              Explore the secondary targets associated to each primary target by clicking on the primary target bubbles below.
+              Click on the regions or income groups to see more detail of the countries analyzed within each group.
+            </p>
+          </FirstColumn>
+        </div>
+        <div className='max-width'>
+          <InterlinkageOverview />
         </div>
       </div>
     </div>
