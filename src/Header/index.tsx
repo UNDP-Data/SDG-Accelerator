@@ -4,19 +4,12 @@ import { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Input, Modal } from 'antd';
 import sortBy from 'lodash.sortby';
-import styled from 'styled-components';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 import IMAGES from '../img/images';
 
 interface Props {
   country: string;
 }
-
-const AButton = styled.a`
-  @media (max-width: 1360px) {
-    display: none !important;
-  }
-`;
 
 export const Header = (props: Props) => {
   const {
@@ -104,9 +97,6 @@ export const Header = (props: Props) => {
                       </button>
                     ) : null
                 }
-                <AButton href='https://data.undp.org/' target='_blank' className='undp-button button-secondary' style={{ backgroundColor: 'var(--gray-300)', color: 'var(--gray-700)', textDecoration: 'none' }} rel='noreferrer'>
-                  Data Futures Exchange
-                </AButton>
                 <div style={{
                   height: '24px', justifyContent: 'flex-end', textAlign: 'right',
                 }}
@@ -174,21 +164,6 @@ export const Header = (props: Props) => {
                   >
                     SDG Interlinkages
                   </NavLink>
-                </div>
-                <div>
-                  <a
-                    href='https://data.undp.org/'
-                    className='undp-button button-tertiary button-arrow header-link'
-                    target='_blank'
-                    style={{
-                      color: 'var(--black)',
-                      backgroundColor: 'transparent',
-                      justifyContent: 'flex-start',
-                    }}
-                    rel='noreferrer'
-                  >
-                    Visit Data Futures Exchange
-                  </a>
                 </div>
               </div>
             ) : null
