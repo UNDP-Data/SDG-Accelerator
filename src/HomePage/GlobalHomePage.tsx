@@ -49,6 +49,21 @@ const Button = styled.button`
   border: 0;
 `;
 
+const HeaderTextDiv = styled.div`
+  position: absolute;
+  top: 0;
+  height: calc(100vh - 115px - 1rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 115px;
+  padding-left: var(--spacing-09);
+  padding-right: var(--spacing-09);
+  @media (max-width: 720px) {
+    padding-left: var(--spacing-05);
+    padding-right: var(--spacing-05);
+  }
+`;
 export const GlobalHomePage = () => {
   const [index, setIndex] = useState(0);
   const countriesList = ['Everyone', 'South Africa', 'Kuwait', 'Nepal', 'Sri Lanka', 'Benin', 'Everyone', 'Gabon', 'Cuba', 'Botswana', 'Iran', 'Cabo Verde', 'Everyone', 'Gambia', 'Philippines', 'Iraq', 'Namibia', 'Malawi', 'Everyone', 'Kyrgyzstan', 'Lesotho', 'Senegal', 'Bangladesh', 'Serbia', 'Everyone', 'Cameroon', 'Djibouti', 'Bhutan', 'Egypt', 'Maldives'];
@@ -65,18 +80,8 @@ export const GlobalHomePage = () => {
       <div className='background'>
         <div className='blob blob1' />
         <div className='blob blob2' />
-        <div style={{
-          maxWidth: '65rem',
-          position: 'absolute',
-          top: '0',
-          height: 'calc(100vh - 1rem)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-        >
-          <div className='padding-left-09' style={{ color: 'var(--white)' }}>
+        <HeaderTextDiv>
+          <div style={{ color: 'var(--white)', maxWidth: '65rem' }}>
             <h1 className='undp-typography' style={{ wordBreak: 'break-word', marginBottom: 0 }}>
               How is
             </h1>
@@ -85,11 +90,13 @@ export const GlobalHomePage = () => {
             </h1>
             <h1 className='undp-typography' style={{ wordBreak: 'break-word' }}>doing?</h1>
             <p className='undp-typography'>
-              UNDP&apos;s Integrated SDG Insights explore how to achieve the SDGs by 2030. So that no one is left behind.
+              UNDP&apos;s Integrated SDG Insights explore how to achieve the SDGs by 2030.
+              <br />
+              So that no one is left behind.
             </p>
             <Button onClick={() => { document.getElementById('section-2')?.scrollIntoView(); }} type='button'><img className='margin-top-02' width={24} src='https://design.undp.org/icons/chevron-down.svg' alt='icon' /></Button>
           </div>
-        </div>
+        </HeaderTextDiv>
       </div>
       <div className='flex-div gap-00' style={{ flexGrow: 1 }}>
         {
@@ -407,7 +414,7 @@ export const GlobalHomePage = () => {
         <div>
           <div className='flex-div flex-wrap margin-bottom-09 max-width' style={{ padding: '0 1rem' }}>
             <SecondColumn className='undp-section-content'>
-              <h3 className='undp-typography margin-bottom-00'>Emerging Patterns</h3>
+              <h2 className='undp-typography margin-bottom-00'>Emerging Patterns</h2>
             </SecondColumn>
             <FirstColumn className='undp-section-content large-font'>
               Across 90+ reports, common SDG targets emerged as key entry points where investment in one SDG can unlock progress on others. The visuals below show the key SDG targets and the combination of policy choices that can re-balance social, environmental, and economic achievements.
@@ -420,11 +427,11 @@ export const GlobalHomePage = () => {
           </div>
         </div>
       </div>
-      <div className='padding-top-12 padding-bottom-12 padding-left-07 padding-right-07'>
+      <div className='padding-bottom-12 padding-left-07 padding-right-07'>
         <div>
           <div className='flex-div flex-wrap margin-bottom-09 max-width' style={{ padding: '0 1rem' }}>
             <SecondColumn className='undp-section-content'>
-              <h3 className='undp-typography margin-bottom-00'>Regional and Income Group Comparisons</h3>
+              <h2 className='undp-typography margin-bottom-00'>Regional and Income Group Comparisons</h2>
             </SecondColumn>
             <FirstColumn className='undp-section-content large-font'>
               <p className='undp-typography'>

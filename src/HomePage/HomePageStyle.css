@@ -94,8 +94,9 @@
 
 .background {
   background-color: #293647;
-  height: calc(100vh - 1rem);
+  height: calc(100vh - 115px - 1rem);
   width: 100%;
+  padding-top: 115px;
   overflow: hidden;
 }
 
