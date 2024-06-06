@@ -4,12 +4,19 @@ import { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Input, Modal } from 'antd';
 import sortBy from 'lodash.sortby';
+import styled from 'styled-components';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 import IMAGES from '../img/images';
 
 interface Props {
   country: string;
 }
+const HeaderButton = styled.div`
+  display: flex;
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
 
 export const Header = (props: Props) => {
   const {
@@ -255,9 +262,11 @@ export const GlobalHeader = () => {
                 </div>
               </NavLink>
               <div className='flex-div flex-vert-align-center nav-top-right'>
-                <a href='https://data.undp.org/' target='_blank' className='undp-button button-secondary' style={{ backgroundColor: 'var(--gray-300)', color: 'var(--gray-700)', textDecoration: 'none' }} rel='noreferrer'>
-                  Data Futures Exchange
-                </a>
+                <HeaderButton>
+                  <a href='https://data.undp.org/' target='_blank' className='undp-button button-secondary' style={{ backgroundColor: 'var(--gray-300)', color: 'var(--gray-700)', textDecoration: 'none' }} rel='noreferrer'>
+                    Data Futures Exchange
+                  </a>
+                </HeaderButton>
                 <div style={{
                   height: '24px', justifyContent: 'flex-end', textAlign: 'right',
                 }}
