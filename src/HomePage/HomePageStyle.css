@@ -1,0 +1,104 @@
+@keyframes moveAndChangeColor1 {
+  0% {
+    transform: translateX(50vw) translateY(50%) rotate(0deg);
+    background-color: #56C02B;
+  }
+  14.29% {
+    transform: translateX(75vw) translateY(-50%) rotate(-60deg);
+    background-color: #FD6925;
+  }
+  28.57% {
+    transform: translateX(50vw) translateY(0%) rotate(-120deg);
+    background-color: #E5243B;
+  }
+  42.86% {
+    transform: translateX(35vw) translateY(-50%) rotate(-180deg);
+    background-color: #0A97D9;
+  }
+  57.14% {
+    transform: translateX(50vw) translateY(50%) rotate(-240deg);
+    background-color: #006EB5;
+  }
+  71.43% {
+    transform: translateX(75vw) translateY(-50%) rotate(-300deg);
+    background-color: #006EB5;
+  }
+  85.71% {
+    transform: translateX(20vw) translateY(50%) rotate(-150deg);
+    background-color: #0A97D9;
+  }
+  100% {
+    transform: translateX(50vw) translateY(50%) rotate(0deg);
+    background-color: #56C02B;
+  }
+}
+
+@keyframes moveAndChangeColor2 {
+  0% {
+    transform: translateX(40vw) translateY(0%) rotate(0deg);
+    background-color: #0A97D9;
+  }
+  14.29% {
+    transform: translateX(65vw) translateY(0%) rotate(60deg);
+    background-color: #DD1367;
+  }
+  28.57% {
+    transform: translateX(50vw) translateY(20%) rotate(120deg);
+    background-color: #FD6925;
+  }
+  42.86% {
+    transform: translateX(65vw) translateY(20%) rotate(180deg);
+    background-color: #006EB5;
+  }
+  57.14% {
+    transform: translateX(50vw) translateY(-20%) rotate(240deg);
+    background-color: #56C02B;
+  }
+  71.43% {
+    transform: translateX(35vw) translateY(20%) rotate(300deg);
+    background-color: #0A97D9;
+  }
+  85.71% {
+    transform: translateX(10vw) translateY(70%) rotate(160deg);
+    background-color: #FD6925;
+  }
+  100% {
+    transform: translateX(40vw) translateY(0%) rotate(0deg);
+    background-color: #0A97D9;
+  }
+}
+
+.blob {
+  --speed: 25s;
+  --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+  animation: var(--animation) var(--speed) var(--easing) infinite;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  opacity: 0.75;
+}
+
+.blob1 {
+  --size: 900px;
+  --animation: moveAndChangeColor1;
+  width: calc(var(--size) * 1.2);
+  height: var(--size);
+  filter: blur(calc(var(--size) / 10));
+}
+
+.blob2 {
+  --size: 700px;
+  --animation: moveAndChangeColor2;
+  width: var(--size);
+  height: var(--size);
+  filter: blur(calc(var(--size) / 10));
+}
+
+.background {
+  background-color: #293647;
+  height: calc(100vh - 1rem);
+  width: 100%;
+  overflow: hidden;
+}
+
+* {
+  transition: all 0.5s ease-out;
+}
