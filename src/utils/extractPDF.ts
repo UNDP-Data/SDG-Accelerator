@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 import axios from 'axios';
 import {
   GlobalWorkerOptions,
@@ -65,7 +66,7 @@ async function detectLanguage(text: string) {
 
     return response.data.official;
   } catch (err: any) {
-    throw new Error(`Language detection API failed: ${err.message}`);
+    throw new Error('Language detection failed for this document');
   }
 }
 
@@ -90,7 +91,7 @@ async function extractViaAPI(fileData: File) {
       response.data.pages.length,
     ];
   } catch (err: any) {
-    throw new Error(`Text extraction failed ${err}`);
+    throw new Error('Text extraction failed for this document');
   }
 }
 
@@ -107,9 +108,7 @@ async function pdfToText(file: File) {
     pageCount = numPages;
 
     for (let pageNumber = 1; pageNumber <= numPages; pageNumber += 1) {
-      // eslint-disable-next-line no-await-in-loop
       const page: PDFPageProxy = await pdf.getPage(pageNumber);
-      // eslint-disable-next-line no-await-in-loop
       const textContent = await page.getTextContent();
       const pageText = textContent.items
         .map((item) => ('str' in item ? item.str : ''))
@@ -137,7 +136,7 @@ async function pdfToText(file: File) {
 
   const language = await detectLanguage(extractedText.trim());
   if (language !== 'en') {
-    throw new Error(`Non-English document detected: ${file.name}`);
+    throw new Error('Document contains Non-English content');
   }
 
   return [extractedText.trim(), pageCount];
