@@ -21,6 +21,14 @@ interface Props {
   goalStatuses: GoalStatusType[];
 }
 
+type InvalidFileDetail = {
+  // eslint-disable-next-line camelcase
+  file_name: string;
+  text: string | number | any;
+  pageCount: string | number;
+  error: boolean;
+};
+
 const HeroImageEl = styled.div`
   background: url(${IMAGES.heroImage}) rgba(0, 0, 0, 0.3) no-repeat center;
   background-size: cover;
@@ -88,6 +96,7 @@ export const Priorities = (props: Props) => {
   const [countryVNRs, setCountryVNRs] = useState<any>(null);
   const [strategy, setStrategy] = useState<'equal' | 'proportional'>('equal');
   const [selectedDocument, setSelectedDocument] = useState();
+  const [invalidFilesDetail, setInvalidFilesDetail] = useState<InvalidFileDetail[] | undefined>(undefined);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -152,7 +161,7 @@ export const Priorities = (props: Props) => {
       const validFiles = textsFiles.filter((file) => !file.error && file.text);
       const invalidFiles = textsFiles.filter((file) => file.error || !file.text);
 
-      console.log('error files: ', invalidFiles);
+      setInvalidFilesDetail(invalidFiles);
 
       const plaintextFiles = validFiles.map((file) => {
         const blob = new Blob([file.text], { type: 'text/plain' });
@@ -489,6 +498,7 @@ export const Priorities = (props: Props) => {
                 document={data.mode === 'analyze' ? selectedFile.map((d: any) => d.name) : data.mode === 'defaultDocs' ? data.documents : [`VNR ${vnrYear}`]}
                 defaultDocs={data.mode === 'defaultDocs'}
                 onlyBubbleChart={false}
+                invalidDocuments={invalidFilesDetail}
               />
             )
             : null
