@@ -16,6 +16,7 @@ export const SalienceGraph = (props: Props) => {
     data,
     goalStatuses,
   } = props;
+
   return (
     <>
       <div className='max-width-1440 margin-top-13' style={{ padding: '0 1rem' }}>
@@ -27,19 +28,19 @@ export const SalienceGraph = (props: Props) => {
         </p>
         <div className='flex-div flex-vert-align-center flex-wrap margin-bottom-05' style={{ gap: '1rem' }}>
           <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem' }}>
-            <ColorKeyBox style={{ backgroundColor: 'var(--dark-green' }} />
+            <ColorKeyBox style={{ backgroundColor: 'var(--dark-green)' }} />
             <p className='small-font margin-top-00 margin-bottom-00'>On track</p>
           </div>
           <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem' }}>
-            <ColorKeyBox style={{ backgroundColor: 'var(--dark-yellow' }} />
+            <ColorKeyBox style={{ backgroundColor: 'var(--dark-yellow)' }} />
             <p className='small-font margin-top-00 margin-bottom-00'>For review</p>
           </div>
           <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem' }}>
-            <ColorKeyBox style={{ backgroundColor: 'var(--dark-red' }} />
+            <ColorKeyBox style={{ backgroundColor: 'var(--dark-red)' }} />
             <p className='small-font margin-top-00 margin-bottom-00'>Off Track</p>
           </div>
           <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem' }}>
-            <ColorKeyBox style={{ backgroundColor: 'var(--gray-400' }} />
+            <ColorKeyBox style={{ backgroundColor: 'var(--gray-400)' }} />
             <p className='small-font margin-top-00 margin-bottom-00'>Trend NA</p>
           </div>
         </div>
@@ -104,7 +105,7 @@ export const SalienceGraph = (props: Props) => {
             </text>
           </g>
           {
-            data.map((d:any, i: number) => (
+            data.map((d: any, i: number) => (
               <g
                 key={i}
                 transform={`translate(${i * 75},10)`}
@@ -114,7 +115,7 @@ export const SalienceGraph = (props: Props) => {
                   r={15}
                   cy={400 - (375 * d.importance)}
                   style={{
-                    fill: goalStatuses.findIndex((el) => el.goal === d.sdg) !== -1 ? goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'On Track' ? 'var(--dark-green)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'For Review' ? 'var(--dark-yellow)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'Identified Gap' ? 'var(--dark-red)' : 'var(--gray-500)' : 'var(--gray-500)',
+                    fill: goalStatuses.findIndex((el) => el.goal === d.id) !== -1 ? goalStatuses[goalStatuses.findIndex((el) => el.goal === d.id)].status === 'On Track' ? 'var(--dark-green)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.id)].status === 'For Review' ? 'var(--dark-yellow)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.id)].status === 'Identified Gap' ? 'var(--dark-red)' : 'var(--gray-500)' : 'var(--gray-500)',
                   }}
                 />
                 <line
@@ -125,7 +126,7 @@ export const SalienceGraph = (props: Props) => {
                   y1={400 - (375 * d.importance)}
                   y2={400}
                   style={{
-                    stroke: goalStatuses.findIndex((el) => el.goal === d.sdg) !== -1 ? goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'On Track' ? 'var(--dark-green)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'For Review' ? 'var(--dark-yellow)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'Identified Gap' ? 'var(--dark-red)' : 'var(--gray-500)' : 'var(--gray-500)',
+                    stroke: goalStatuses.findIndex((el) => el.goal === d.id) !== -1 ? goalStatuses[goalStatuses.findIndex((el) => el.goal === d.id)].status === 'On Track' ? 'var(--dark-green)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.id)].status === 'For Review' ? 'var(--dark-yellow)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.id)].status === 'Identified Gap' ? 'var(--dark-red)' : 'var(--gray-500)' : 'var(--gray-500)',
                   }}
                 />
                 <text
@@ -133,7 +134,7 @@ export const SalienceGraph = (props: Props) => {
                   y={400 - (375 * d.importance)}
                   dy={-20}
                   style={{
-                    fill: goalStatuses.findIndex((el) => el.goal === d.sdg) !== -1 ? goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'On Track' ? 'var(--dark-green)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'For Review' ? 'var(--dark-yellow)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status === 'Identified Gap' ? 'var(--dark-red)' : 'var(--gray-500)' : 'var(--gray-500)',
+                    fill: goalStatuses.findIndex((el) => el.goal === d.id) !== -1 ? goalStatuses[goalStatuses.findIndex((el) => el.goal === d.id)].status === 'On Track' ? 'var(--dark-green)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.id)].status === 'For Review' ? 'var(--dark-yellow)' : goalStatuses[goalStatuses.findIndex((el) => el.goal === d.id)].status === 'Identified Gap' ? 'var(--dark-red)' : 'var(--gray-500)' : 'var(--gray-500)',
                   }}
                   fontSize={12}
                   textAnchor='middle'
@@ -150,11 +151,8 @@ export const SalienceGraph = (props: Props) => {
                 >
                   SDG
                   {' '}
-                  {d.sdg}
+                  {d.id}
                 </text>
-                {
-
-                }
               </g>
             ))
           }
