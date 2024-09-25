@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useEffect, useState } from 'react';
-import { Modal } from 'antd';
+import { Button, Modal, Popover } from 'antd';
 import styled from 'styled-components';
 import {
   forceCollide, forceManyBody, forceSimulation, forceX, forceY,
@@ -19,6 +19,7 @@ interface Props {
   document: any;
   defaultDocs: boolean;
   onlyBubbleChart: boolean;
+  invalidDocuments: any;
 }
 
 interface SDGHoveredProps {
@@ -63,6 +64,13 @@ const FileNameChip = styled.div`
   font-weight: bold;
 `;
 
+const FileNameErrorChip = styled.div`
+font-size: 1rem;
+  padding: 0.5rem;
+  background-color: var(--light-red);
+  font-weight: bold;
+`;
+
 export const VNRAnalysis = (props: Props) => {
   const {
     data,
@@ -70,6 +78,7 @@ export const VNRAnalysis = (props: Props) => {
     goalStatuses,
     defaultDocs,
     onlyBubbleChart,
+    invalidDocuments,
   } = props;
   const [selectedSDG, setSelectedSDG] = useState<any>(null);
   const [hoveredSDG, setHoveredSDG] = useState<null | SDGHoveredProps>(null);
@@ -111,15 +120,40 @@ export const VNRAnalysis = (props: Props) => {
             <h2 className='undp-typography margin-bottom-00'>
               National Priorities Based on
             </h2>
-            {defaultDocs ? (
-              <>
-                {document && document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
-              </>
-            ) : document && document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
+            <Popover
+              title='Analysis Based on'
+              content={defaultDocs ? (
+                <>
+                  {document && document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
+                </>
+              )
+                : (
+                  <>
+                    {document && document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
+                    <div style={{ marginTop: '10px' }}>
+                      {invalidDocuments && invalidDocuments.length > 0 && <span><b>Excluded files</b></span>}
+                      {invalidDocuments.map((d: any, i: number) => (
+                        <FileNameErrorChip key={i}>
+                          <Popover content={d.text} placement='right'>
+                            {' '}
+                            {d.file_name}
+                          </Popover>
+                        </FileNameErrorChip>
+                      ))}
+                    </div>
+                  </>
+                )}
+            >
+              <Button>
+                {document.length}
+                {' '}
+                file(s)
+              </Button>
+            </Popover>
           </div>
-          <div onClick={() => setIsApproachModalVisible(true)} style={{ cursor: 'pointer', color: 'var(--gray-600)', textDecoration: 'underline' }}>
+          <span onClick={() => setIsApproachModalVisible(true)} style={{ cursor: 'pointer', color: 'var(--gray-600)', textDecoration: 'underline' }}>
             Read about our approach
-          </div>
+          </span>
           <Modal
             className='undp-modal'
             title='Our approach'
@@ -313,11 +347,36 @@ export const VNRAnalysis = (props: Props) => {
                     <h2 className='undp-typography margin-bottom-00'>
                       Comparing SDG trends and SDG national priorities based on
                     </h2>
-                    {defaultDocs ? (
-                      <>
-                        {document && document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
-                      </>
-                    ) : document && document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
+                    <Popover
+                      title='Analysis Based on'
+                      content={defaultDocs ? (
+                        <>
+                          {document && document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
+                        </>
+                      )
+                        : (
+                          <>
+                            {document && document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
+                            <div style={{ marginTop: '10px' }}>
+                              {invalidDocuments && invalidDocuments.length > 0 && <span><b>Excluded files</b></span>}
+                              {invalidDocuments.map((d: any, i: number) => (
+                                <FileNameErrorChip key={i}>
+                                  <Popover content={d.text} placement='right'>
+                                    {' '}
+                                    {d.file_name}
+                                  </Popover>
+                                </FileNameErrorChip>
+                              ))}
+                            </div>
+                          </>
+                        )}
+                    >
+                      <Button>
+                        {document.length}
+                        {' '}
+                        file(s)
+                      </Button>
+                    </Popover>
                   </div>
                   <p className='undp-typography'>
                     This matrix maps the SDGs along two parameters
