@@ -134,6 +134,10 @@ async function pdfToText(file: File) {
     }
   }
 
+  if (extractedText.trim().length === 0) {
+    throw new Error('Unable to extract text from this document');
+  }
+
   const language = await detectLanguage(extractedText.trim());
   if (language !== 'en') {
     throw new Error('Document contains Non-English content');
