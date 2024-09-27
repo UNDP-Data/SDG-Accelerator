@@ -62,6 +62,7 @@ const FileNameChip = styled.div`
   padding: 0.5rem;
   background-color: var(--gray-300);
   font-weight: bold;
+  margin: 2px;
 `;
 
 const FileNameErrorChip = styled.div`
@@ -69,6 +70,7 @@ font-size: 1rem;
   padding: 0.5rem;
   background-color: var(--light-red);
   font-weight: bold;
+  margin: 2px;
 `;
 
 export const VNRAnalysis = (props: Props) => {
