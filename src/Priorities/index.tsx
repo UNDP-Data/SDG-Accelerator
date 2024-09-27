@@ -95,6 +95,7 @@ export const Priorities = (props: Props) => {
   const [data, setData] = useState<any>(null);
   const [countryVNRs, setCountryVNRs] = useState<any>(null);
   const [strategy, setStrategy] = useState<'equal' | 'proportional'>('equal');
+  const [status, setStatus] = useState<string | null>(null);
   const [selectedDocument, setSelectedDocument] = useState();
   const [invalidFilesDetail, setInvalidFilesDetail] = useState<InvalidFileDetail[] | undefined>(undefined);
 
@@ -156,7 +157,10 @@ export const Priorities = (props: Props) => {
 
   const analyzeDocument = async () => {
     try {
+      setStatus(`Extracting texts and identifying language from ${selectedFileNotAnalyzed.length} documents...`);
       const textsFiles = await extractTextFromMultiplePdfs(selectedFileNotAnalyzed);
+
+      setStatus('Filtering documents...');
 
       const validFiles = textsFiles.filter((file) => !file.error && file.text);
       const invalidFiles = textsFiles.filter((file) => file.error || !file.text);
@@ -174,6 +178,7 @@ export const Priorities = (props: Props) => {
         return;
       }
 
+      setStatus('Analyzing documents...');
       const pagesArray = validFiles.map((file) => Number(file.pageCount));
       const response = await submitDocumentsForAnalysis(
         plaintextFiles,
@@ -185,9 +190,12 @@ export const Priorities = (props: Props) => {
         return new File([file], originalFileName, { type: file.type });
       });
 
+      setStatus('Analysis complete');
+
       setSelectedFile(filesWithoutTxtExtension);
       setData({ mode: 'analyze', data: response.sdgs });
       setLoading(false);
+      setStatus(null);
       setError(null);
     } catch (err) {
       setError(err);
@@ -262,12 +270,12 @@ export const Priorities = (props: Props) => {
                         children: !data && countryFilePresent === false ? (
                           <>
                             <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-                              Countries national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is based on an improved
+                              {/* Countries national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is based on an improved
                               {' '}
                               <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer noopener' className='undp-style'>OSDG Community Dataset</a>
                               . It considers 100k+ terms, including phrases and expressions.
                               <br />
-                              <br />
+                              <br /> */}
                               Documents such as
                               {' '}
                               <a href='https://sustainabledevelopment.un.org/vnrs/' target='_blank' rel='noreferrer noopener' className='undp-style'>Voluntary National Reviews (VNRs)</a>
@@ -510,6 +518,14 @@ export const Priorities = (props: Props) => {
       >
         <div style={{ margin: 'auto' }}>
           <div className='undp-loader' style={{ margin: 'auto' }} />
+        </div>
+        <div style={{
+          display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%',
+        }}
+        >
+          <p>
+            {status}
+          </p>
         </div>
       </Modal>
     </>
