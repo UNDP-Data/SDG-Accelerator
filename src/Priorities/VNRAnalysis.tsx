@@ -64,7 +64,7 @@ const FileNameChip = styled.div`
 `;
 
 const FileNameErrorChip = styled.div`
-font-size: 1rem;
+  font-size: 1rem;
   padding: 0.5rem;
   background-color: var(--light-red);
   font-weight: bold;
@@ -119,36 +119,46 @@ export const VNRAnalysis = (props: Props) => {
             <h2 className='undp-typography margin-bottom-00'>
               National Priorities Based on
             </h2>
-            <Popover
-              title='Analysis Based on'
-              content={defaultDocs ? (
-                <>
-                  {document && document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
-                </>
-              )
-                : (
-                  <>
-                    {document && document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
-                    <div style={{ marginTop: '10px' }}>
-                      {invalidDocuments && invalidDocuments.length > 0 && <span><b>Excluded files</b></span>}
-                      {invalidDocuments.map((d: any, i: number) => (
-                        <FileNameErrorChip key={i}>
-                          <Popover content={d.text} placement='right'>
-                            {' '}
-                            {d.file_name}
-                          </Popover>
-                        </FileNameErrorChip>
-                      ))}
-                    </div>
-                  </>
+            {defaultDocs && document.length === 1 ? (
+              <FileNameChip>
+                {document[0].link ? (
+                  <a href={document[0].link} target='_blank' rel='noreferrer' className='undp-style'>{document[0].name}</a>
+                ) : (
+                  document[0].name
                 )}
-            >
-              <Button>
-                {document.length}
-                {' '}
-                file(s)
-              </Button>
-            </Popover>
+              </FileNameChip>
+            ) : (
+              <Popover
+                title='Analysis Based on'
+                content={defaultDocs ? (
+                  <>
+                    {document && document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
+                  </>
+                )
+                  : (
+                    <>
+                      {document && document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
+                      <div style={{ marginTop: '10px' }}>
+                        {invalidDocuments && invalidDocuments.length > 0 && <span><b>Excluded files</b></span>}
+                        {invalidDocuments.map((d: any, i: number) => (
+                          <FileNameErrorChip key={i}>
+                            <Popover content={d.text} placement='right'>
+                              {' '}
+                              {d.file_name}
+                            </Popover>
+                          </FileNameErrorChip>
+                        ))}
+                      </div>
+                    </>
+                  )}
+              >
+                <Button>
+                  {document.length}
+                  {' '}
+                  file(s)
+                </Button>
+              </Popover>
+            )}
           </div>
           <BubbleChart data={dataWithStatuses} setSelectedSDG={setSelectedSDG} />
         </div>
@@ -324,36 +334,46 @@ export const VNRAnalysis = (props: Props) => {
                     <h2 className='undp-typography margin-bottom-00'>
                       Comparing SDG trends and SDG national priorities based on
                     </h2>
-                    <Popover
-                      title='Analysis Based on'
-                      content={defaultDocs ? (
-                        <>
-                          {document && document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
-                        </>
-                      )
-                        : (
-                          <>
-                            {document && document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
-                            <div style={{ marginTop: '10px' }}>
-                              {invalidDocuments && invalidDocuments.length > 0 && <span><b>Excluded files</b></span>}
-                              {invalidDocuments.map((d: any, i: number) => (
-                                <FileNameErrorChip key={i}>
-                                  <Popover content={d.text} placement='right'>
-                                    {' '}
-                                    {d.file_name}
-                                  </Popover>
-                                </FileNameErrorChip>
-                              ))}
-                            </div>
-                          </>
+                    {defaultDocs && document.length === 1 ? (
+                      <FileNameChip>
+                        {document[0].link ? (
+                          <a href={document[0].link} target='_blank' rel='noreferrer' className='undp-style'>{document[0].name}</a>
+                        ) : (
+                          document[0].name
                         )}
-                    >
-                      <Button>
-                        {document.length}
-                        {' '}
-                        file(s)
-                      </Button>
-                    </Popover>
+                      </FileNameChip>
+                    ) : (
+                      <Popover
+                        title='Analysis Based on'
+                        content={defaultDocs ? (
+                          <>
+                            {document && document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
+                          </>
+                        )
+                          : (
+                            <>
+                              {document && document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
+                              <div style={{ marginTop: '10px' }}>
+                                {invalidDocuments && invalidDocuments.length > 0 && <span><b>Excluded files</b></span>}
+                                {invalidDocuments.map((d: any, i: number) => (
+                                  <FileNameErrorChip key={i}>
+                                    <Popover content={d.text} placement='right'>
+                                      {' '}
+                                      {d.file_name}
+                                    </Popover>
+                                  </FileNameErrorChip>
+                                ))}
+                              </div>
+                            </>
+                          )}
+                      >
+                        <Button>
+                          {document.length}
+                          {' '}
+                          file(s)
+                        </Button>
+                      </Popover>
+                    )}
                   </div>
                   <p className='undp-typography'>
                     This matrix maps the SDGs along two parameters
@@ -420,7 +440,7 @@ export const VNRAnalysis = (props: Props) => {
             >
               <div className='flex-div flex-wrap margin-top-09' style={{ width: '0.75vw', minWidth: '40rem', maxWidth: '60rem' }}>
                 {
-                  selectedSDG.features.length > 0
+                  selectedSDG.features && selectedSDG.features.length > 0
                     ? selectedSDG.features.map((d: any, i: number) => <div key={i} className='undp-chip'>{d}</div>)
                     : 'No words/phrases available'
                 }
