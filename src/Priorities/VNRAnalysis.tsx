@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useEffect, useState } from 'react';
 import { Button, Modal, Popover } from 'antd';
 import styled from 'styled-components';
@@ -86,7 +84,6 @@ export const VNRAnalysis = (props: Props) => {
   const [hoveredSDG, setHoveredSDG] = useState<null | SDGHoveredProps>(null);
   const [nodeData, setNodeData] = useState<any>(null);
   const [showSalienceGraph, setShowSalienceGraph] = useState(false);
-  const [isApproachModalVisible, setIsApproachModalVisible] = useState(false);
 
   const dataWithStatuses = data.map((d: any) => {
     const goalStatus = goalStatuses.find((el) => el.goal === d.id);
@@ -153,28 +150,6 @@ export const VNRAnalysis = (props: Props) => {
               </Button>
             </Popover>
           </div>
-          <span onClick={() => setIsApproachModalVisible(true)} style={{ cursor: 'pointer', color: 'var(--gray-600)', textDecoration: 'underline' }}>
-            Read about our approach
-          </span>
-          <Modal
-            className='undp-modal'
-            title='Our approach'
-            open={isApproachModalVisible}
-            onCancel={() => setIsApproachModalVisible(false)}
-            onOk={() => setIsApproachModalVisible(false)}
-          >
-            <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-              Countries national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification.
-              {' '}
-              <br />
-              <br />
-              {' '}
-              The training data is based on an improved
-              {' '}
-              <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer noopener' className='undp-style'>OSDG Community Dataset</a>
-              . It considers 100k+ terms, including phrases and expressions.
-            </h5>
-          </Modal>
           <BubbleChart data={dataWithStatuses} setSelectedSDG={setSelectedSDG} />
         </div>
       </div>
