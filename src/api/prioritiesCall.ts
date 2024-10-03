@@ -1,8 +1,5 @@
 import axios from 'axios';
-import {
-  DIAGNOSTICS_API_BASE_URL,
-  DIAGNOSTICS_API_ACCESS_TOKEN,
-} from '../Constants';
+import { AIAAS_API_BASE_URL, AIAAS_API_KEY } from '../Constants';
 
 export const fetchMetadata = async (
   iso: string,
@@ -16,26 +13,26 @@ export const fetchMetadata = async (
     language,
     kind,
   };
-  const response = await axios.get(`${DIAGNOSTICS_API_BASE_URL}/metadata`, {
-    params,
-    headers: {
-      accept: 'application/json',
-      api_key: DIAGNOSTICS_API_ACCESS_TOKEN,
+  const response = await axios.get(
+    `${AIAAS_API_BASE_URL}/classification/metadata`,
+    {
+      params,
+      headers: {
+        accept: 'application/json',
+        api_key: AIAAS_API_KEY,
+      },
     },
-  });
+  );
   return response.data;
 };
 
 export const fetchDocumentById = async (id: string) => {
-  const response = await axios.get(
-    `${DIAGNOSTICS_API_BASE_URL}/documents/${id}`,
-    {
-      headers: {
-        accept: 'application/json',
-        api_key: DIAGNOSTICS_API_ACCESS_TOKEN,
-      },
+  const response = await axios.get(`${AIAAS_API_BASE_URL}/classification/diagnostics/${id}`, {
+    headers: {
+      accept: 'application/json',
+      api_key: AIAAS_API_KEY,
     },
-  );
+  });
   return response.data;
 };
 
@@ -47,20 +44,63 @@ export const submitDocumentsForAnalysis = async (
 
   files.forEach((file) => formData.append('files', file));
 
-  const weightParam = weights && weights.length > 0
-    ? `?${weights.map((weight) => `weights=${weight}`).join('&')}`
-    : '';
+  const weightAndFeaturesParam = weights && weights.length > 0
+    ? `?${weights.map((weight) => `weights=${weight}`).join('&')}&features=true`
+    : '?features=true';
 
   const response = await axios.post(
-    `${DIAGNOSTICS_API_BASE_URL}/documents${weightParam}`,
+    `${AIAAS_API_BASE_URL}/classification/diagnostics${weightAndFeaturesParam}`,
     formData,
     {
       headers: {
         'Content-Type': 'multipart/form-data',
-        api_key: DIAGNOSTICS_API_ACCESS_TOKEN,
+        api_key: AIAAS_API_KEY,
       },
     },
   );
 
   return response.data;
 };
+
+export async function detectLanguages(texts: string[]) {
+  try {
+    const response = await axios({
+      method: 'post',
+      url: `${AIAAS_API_BASE_URL}/identification/languages`,
+      data: JSON.stringify({ texts }),
+      headers: {
+        'Content-Type': 'application/json',
+        api_key: AIAAS_API_KEY,
+      },
+    });
+
+    return response.data.map((result: any) => result[0]);
+  } catch (err: any) {
+    throw new Error('Language detection failed for the documents');
+  }
+}
+
+export async function extractViaAPI(fileData: File) {
+  const formData = new FormData();
+  formData.append('file', fileData);
+
+  try {
+    const response = await axios({
+      method: 'post',
+      url: `${AIAAS_API_BASE_URL}/extraction`,
+      data: formData,
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        accept: 'application/json',
+        api_key: AIAAS_API_KEY,
+      },
+    });
+
+    return [
+      response.data.pages.map((page: any) => page.text).join(' '),
+      response.data.pages.length,
+    ];
+  } catch (err: any) {
+    throw new Error('Text extraction failed for this document');
+  }
+}
