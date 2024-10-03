@@ -98,6 +98,7 @@ export const Priorities = (props: Props) => {
   const [status, setStatus] = useState<string | null>(null);
   const [selectedDocument, setSelectedDocument] = useState();
   const [invalidFilesDetail, setInvalidFilesDetail] = useState<InvalidFileDetail[] | undefined>(undefined);
+  const [isApproachModalVisible, setIsApproachModalVisible] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -157,7 +158,7 @@ export const Priorities = (props: Props) => {
 
   const analyzeDocument = async () => {
     try {
-      setStatus(`Extracting texts and identifying language from ${selectedFileNotAnalyzed.length} documents...`);
+      setStatus(`Extracting texts and identifying language from ${selectedFileNotAnalyzed.length} document(s)...`);
       const textsFiles = await extractTextFromMultiplePdfs(selectedFileNotAnalyzed);
 
       setStatus('Filtering documents...');
@@ -270,7 +271,7 @@ export const Priorities = (props: Props) => {
                         children: !data && countryFilePresent === false ? (
                           <>
                             <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-                              {/* Countries national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is based on an improved
+                              {/* Countries&apos; national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is based on an improved
                               {' '}
                               <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer noopener' className='undp-style'>OSDG Community Dataset</a>
                               . It considers 100k+ terms, including phrases and expressions.
@@ -341,12 +342,48 @@ export const Priorities = (props: Props) => {
                           </>
                         ) : (
                           <>
-                            <h5 className='undp-typography' style={{ color: 'var(--black)', lineHeight: 1.5 }}>
+                            <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
                               Documents such as National Development Plans indicate priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.
+                              {' '}
+                              <button
+                                type='button'
+                                onClick={() => setIsApproachModalVisible(true)}
+                                onKeyDown={(e) => {
+                                  if (e.key === 'Enter' || e.key === ' ') {
+                                    setIsApproachModalVisible(true);
+                                    e.preventDefault(); // Prevent scrolling when space is pressed
+                                  }
+                                }}
+                                style={{
+                                  fontSize: 18, cursor: 'pointer', color: 'var(--gray-600)', textDecoration: 'underline', background: 'none', border: 'none', padding: 0,
+                                }}
+                                aria-label='Read about our approach'
+                              >
+                                Read about our approach
+                              </button>
                               <br />
                               <br />
                               Explore the analysis of these priorities using Machine Learning.
                             </h5>
+                            <Modal
+                              className='undp-modal'
+                              title='Our approach'
+                              open={isApproachModalVisible}
+                              onCancel={() => setIsApproachModalVisible(false)}
+                              onOk={() => setIsApproachModalVisible(false)}
+                            >
+                              <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
+                                Countries&apos; national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification.
+                                {' '}
+                                <br />
+                                <br />
+                                {' '}
+                                The training data is based on an improved
+                                {' '}
+                                <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer noopener' className='undp-style'>OSDG Community Dataset</a>
+                                . It considers 100k+ terms, including phrases and expressions.
+                              </h5>
+                            </Modal>
                             <Select
                               className='undp-select margin-bottom-07'
                               placeholder='Select Document'
@@ -370,7 +407,24 @@ export const Priorities = (props: Props) => {
                         children: (
                           <>
                             <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-                              Documents such as National Development Plans indicates priorities of the government that can be mapped to the SDGs. Upload a development plan, to discover which SDGs feature most prominently as a priority.
+                              Documents such as National Development Plans indicate priorities of the government that can be mapped to the SDGs. Upload a development plan, to discover which SDGs feature most prominently as a priority.
+                              {' '}
+                              <button
+                                type='button'
+                                onClick={() => setIsApproachModalVisible(true)}
+                                onKeyDown={(e) => {
+                                  if (e.key === 'Enter' || e.key === ' ') {
+                                    setIsApproachModalVisible(true);
+                                    e.preventDefault(); // Prevent scrolling when space is pressed
+                                  }
+                                }}
+                                style={{
+                                  fontSize: 18, cursor: 'pointer', color: 'var(--gray-600)', textDecoration: 'underline', background: 'none', border: 'none', padding: 0,
+                                }}
+                                aria-label='Read about our approach'
+                              >
+                                Read about our approach
+                              </button>
                               <br />
                               <br />
                               Explore the analysis of these priorities using Machine Learning.
@@ -383,8 +437,27 @@ export const Priorities = (props: Props) => {
                                 documents allowed
                               </span>
                             </h5>
+                            <Modal
+                              className='undp-modal'
+                              title='Our approach'
+                              open={isApproachModalVisible}
+                              onCancel={() => setIsApproachModalVisible(false)}
+                              onOk={() => setIsApproachModalVisible(false)}
+                            >
+                              <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
+                                Countries&apos; national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification.
+                                {' '}
+                                <br />
+                                <br />
+                                {' '}
+                                The training data is based on an improved
+                                {' '}
+                                <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer noopener' className='undp-style'>OSDG Community Dataset</a>
+                                . It considers 100k+ terms, including phrases and expressions.
+                              </h5>
+                            </Modal>
                             <>
-                              <div className='margin-top-07'>
+                              <div className='margin-top-04'>
                                 {
                                   selectedFileNotAnalyzed.length > 0
                                     ? (
@@ -406,13 +479,13 @@ export const Priorities = (props: Props) => {
                                     ) : null
                                 }
                                 <UploadEl>
-                                  <label htmlFor='file-upload-analyze' className='custom-file-upload'>
+                                  <label htmlFor='file-upload-analyze'>
                                     <UploadButtonEl>Add Documents</UploadButtonEl>
                                   </label>
                                   <FileAttachmentButton multiple ref={fileInputRef} id='file-upload-analyze' accept='application/pdf' type='file' onChange={handleFileSelect} />
                                 </UploadEl>
                               </div>
-                              <div className='margin-top-07 margin-bottom-07'>
+                              <div className='margin-top-01 margin-bottom-07'>
                                 <Collapse
                                   className='undp-accordion no-background'
                                   accordion
@@ -421,7 +494,7 @@ export const Priorities = (props: Props) => {
                                   size='small'
                                   expandIconPosition='end'
                                 >
-                                  <Collapse.Panel header='Advanced Options' key='1'>
+                                  <Collapse.Panel header={<span style={{ fontSize: '1rem' }}>Advanced Options</span>} key='1'>
                                     <p className='label'>Document Weighting Strategy</p>
                                     <Radio.Group value={strategy} onChange={(target) => { setStrategy(target.target.value); }}>
                                       <Radio className='undp-radio' value='equal'>Place Equal Weight on All Documents</Radio>
