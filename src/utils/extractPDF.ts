@@ -1,19 +1,12 @@
 /* eslint-disable no-await-in-loop */
-import axios from 'axios';
 import {
   GlobalWorkerOptions,
   getDocument,
   PDFDocumentProxy,
   PDFPageProxy,
 } from 'pdfjs-dist';
-
-import {
-  LANGUAGE_DETECTION_API_BASE_URL,
-  LANGUAGE_DETECTION_API_KEY,
-  PDFJS_DIST_CDNS,
-  TEXT_EXTRACTION_API_BASE_URL,
-  TEXT_EXTRACTION_API_KEY,
-} from '../Constants';
+import { detectLanguages, extractViaAPI } from '../api/prioritiesCall';
+import { PDFJS_DIST_CDNS } from '../Constants';
 
 GlobalWorkerOptions.workerSrc = '';
 
@@ -24,12 +17,12 @@ async function checkCdn(cdn: string, index: number) {
       return cdn;
     }
     console.error(
-      `CDN ${index + 1} down or invalid MIME type: ${response.headers.get(
+      `CDN ${index + 1} down or invalid MIME type of : ${response.headers.get(
         'Content-Type',
       )}`,
     );
   } catch (error) {
-    console.error(`Error checking CDN ${index + 1}:`, error);
+    console.error(`CDN ${index + 1} down: `, error);
   }
   return null;
 }
@@ -49,49 +42,6 @@ async function loadPdfWorker() {
     GlobalWorkerOptions.workerSrc = validCdn;
   } else {
     throw new Error('All CDNs failed');
-  }
-}
-
-async function detectLanguage(text: string) {
-  try {
-    const response = await axios({
-      method: 'post',
-      url: LANGUAGE_DETECTION_API_BASE_URL,
-      data: JSON.stringify({ text }),
-      headers: {
-        'Content-Type': 'application/json',
-        api_key: LANGUAGE_DETECTION_API_KEY,
-      },
-    });
-
-    return response.data.official;
-  } catch (err: any) {
-    throw new Error('Language detection failed for this document');
-  }
-}
-
-async function extractViaAPI(fileData: File) {
-  const formData = new FormData();
-  formData.append('file', fileData);
-
-  try {
-    const response = await axios({
-      method: 'post',
-      url: TEXT_EXTRACTION_API_BASE_URL,
-      data: formData,
-      headers: {
-        'Content-Type': 'multipart/form-data',
-        accept: 'application/json',
-        api_key: TEXT_EXTRACTION_API_KEY,
-      },
-    });
-
-    return [
-      response.data.pages.map((page: any) => page.text).join(' '),
-      response.data.pages.length,
-    ];
-  } catch (err: any) {
-    throw new Error('Text extraction failed for this document');
   }
 }
 
@@ -138,11 +88,6 @@ async function pdfToText(file: File) {
     throw new Error('Unable to extract text from this document');
   }
 
-  const language = await detectLanguage(extractedText.trim());
-  if (language !== 'en') {
-    throw new Error('Document contains Non-English content');
-  }
-
   return [extractedText.trim(), pageCount];
 }
 
@@ -170,5 +115,19 @@ export async function extractTextFromMultiplePdfs(files: File[]) {
     }),
   );
 
-  return texts;
+  const validTexts = texts.filter((t) => !t.error).map((t) => t.text);
+  const languages = await detectLanguages(validTexts);
+
+  const textResults = texts.map((t, index) => {
+    if (!t.error && languages[index].official !== 'en') {
+      return {
+        ...t,
+        error: true,
+        text: `Document contains ${languages[index].name} content that is currently unsupported by the model.`,
+      };
+    }
+    return t;
+  });
+
+  return textResults;
 }
