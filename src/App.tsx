@@ -6,6 +6,7 @@ import { Footer } from './Footer';
 import './App.css';
 import { GlobalHomePage } from './HomePage/GlobalHomePage';
 import { InsightReportLandingPage } from './InsightReportLandingPage';
+import { PrivacyPolicy } from './privacyPolicy';
 // import { InsightReportLandingPage } from './InsightReportLandingPage';
 
 const App = () => (
@@ -35,6 +36,16 @@ const App = () => (
         path='/:country/*'
         element={(
           <LandingPage />
+        )}
+      />
+      <Route
+        path='/privacy-policy'
+        element={(
+          <>
+            <GlobalHeader />
+            <PrivacyPolicy />
+            <Footer />
+          </>
         )}
       />
     </Routes>
