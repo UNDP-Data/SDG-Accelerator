@@ -39,8 +39,8 @@ export const BubbleChart = (props: Props) => {
     forceSimulation(dataTemp)
       .force('charge', forceManyBody().strength(2.25))
       .force('center', forceCenter())
-      .force('x', forceX().strength(1).x(graphOrientation === 'horizontal' ? (d: any) => (d.sdg * 15) : 0))
-      .force('y', forceY().strength(1).y(graphOrientation === 'vertical' ? (d: any) => (d.sdg * 15) : 0))
+      .force('x', forceX().strength(1).x(graphOrientation === 'horizontal' ? (d: any) => (d.id * 15) : 0))
+      .force('y', forceY().strength(1).y(graphOrientation === 'vertical' ? (d: any) => (d.id * 15) : 0))
       .force('collision', forceCollide().radius((d: any) => (d.importance * 50) + 4))
       .tick(10000)
       .on('end', () => { setNodeData(dataTemp); });
@@ -182,13 +182,13 @@ export const BubbleChart = (props: Props) => {
                             cx={0}
                             cy={0}
                             r={d.importance * 50}
-                            fill={SDG_COLOR_ARRAY[d.sdg - 1]}
+                            fill={SDG_COLOR_ARRAY[d.id - 1]}
                           />
                           {
                             d.importance * 50 < 10 ? null
                               : (
                                 <g transform={`translate(${0 - d.importance * 35},${0 - d.importance * 35})`}>
-                                  {getSDGIconSVG(`SDG ${d.sdg}`, d.importance * 70)}
+                                  {getSDGIconSVG(`SDG ${d.id}`, d.importance * 70)}
                                 </g>
                               )
                           }

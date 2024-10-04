@@ -10,6 +10,9 @@ jobs:
   build_and_deploy_job:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
+    env:
+      VITE_AIAAS_API_BASE_URL: ${{secrets.VITE_AIAAS_API_BASE_URL}}
+      VITE_AIAAS_API_KEY: ${{secrets.VITE_AIAAS_API_KEY}}
     steps:
       - uses: actions/checkout@v3
         with:
