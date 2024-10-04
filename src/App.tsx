@@ -6,7 +6,7 @@ import { Footer } from './Footer';
 import './App.css';
 import { GlobalHomePage } from './HomePage/GlobalHomePage';
 import { InsightReportLandingPage } from './InsightReportLandingPage';
-import { PrivacyPolicy } from './privacyPolicy';
+import { PrivacyPolicy } from './PrivacyPolicy';
 // import { InsightReportLandingPage } from './InsightReportLandingPage';
 
 const App = () => (
