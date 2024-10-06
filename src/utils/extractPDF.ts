@@ -116,14 +116,16 @@ export async function extractTextFromMultiplePdfs(files: File[]) {
   );
 
   const validTexts = texts.filter((t) => !t.error).map((t) => t.text);
-  const languages = await detectLanguages(validTexts);
+  const truncatedTexts = validTexts.map((text) => text.slice(0, 50000));
+
+  const languages = await detectLanguages(truncatedTexts);
 
   const textResults = texts.map((t, index) => {
     if (!t.error && languages[index].official !== 'en') {
       return {
         ...t,
         error: true,
-        text: `Document contains ${languages[index].name} content that is currently unsupported by the model.`,
+        text: `Document contains ${languages[index].name} which is unsupported by the model.`,
       };
     }
     return t;
