@@ -58,8 +58,11 @@ export const Footer = () => {
                 <div className='margin-bottom-03'>
                   <a className='undp-footer-link undp-footer-right-link' href='https://sdgigeneralstorage.blob.core.windows.net/sdg-push/Methodology.pdf' target='_blank' rel='noreferrer'>Methodology</a>
                 </div>
-                <div>
+                <div className='margin-bottom-03'>
                   <a className='undp-footer-link undp-footer-right-link' href='https://www.undp.org/copyright-terms-use' target='_blank' rel='noreferrer'>Terms Of Use</a>
+                </div>
+                <div>
+                  <NavLink className='undp-footer-link undp-footer-right-link' to='/privacy-policy'>Privacy Policy</NavLink>
                 </div>
               </div>
             </div>

@@ -1,7 +1,5 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useEffect, useState } from 'react';
-import { Modal } from 'antd';
+import { Button, Modal, Popover } from 'antd';
 import styled from 'styled-components';
 import {
   forceCollide, forceManyBody, forceSimulation, forceX, forceY,
@@ -19,6 +17,7 @@ interface Props {
   document: any;
   defaultDocs: boolean;
   onlyBubbleChart: boolean;
+  invalidDocuments: any;
 }
 
 interface SDGHoveredProps {
@@ -61,6 +60,15 @@ const FileNameChip = styled.div`
   padding: 0.5rem;
   background-color: var(--gray-300);
   font-weight: bold;
+  margin: 2px;
+`;
+
+const FileNameErrorChip = styled.div`
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: var(--light-red);
+  font-weight: bold;
+  margin: 2px;
 `;
 
 export const VNRAnalysis = (props: Props) => {
@@ -70,12 +78,21 @@ export const VNRAnalysis = (props: Props) => {
     goalStatuses,
     defaultDocs,
     onlyBubbleChart,
+    invalidDocuments,
   } = props;
   const [selectedSDG, setSelectedSDG] = useState<any>(null);
   const [hoveredSDG, setHoveredSDG] = useState<null | SDGHoveredProps>(null);
   const [nodeData, setNodeData] = useState<any>(null);
   const [showSalienceGraph, setShowSalienceGraph] = useState(false);
-  const dataWithStatuses = data.map((d: any) => ({ ...d, category: d.importance === 0 ? 'No Mention' : d.category.charAt(0).toUpperCase() + d.category.slice(1), status: goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status || 'Gaps NA' }));
+
+  const dataWithStatuses = data.map((d: any) => {
+    const goalStatus = goalStatuses.find((el) => el.goal === d.id);
+    return {
+      ...d,
+      category: d.importance === 0 ? 'No Mention' : d.category.charAt(0).toUpperCase() + d.category.slice(1),
+      status: goalStatus ? goalStatus.status : 'Gaps NA',
+    };
+  });
   const gridSize = 600;
   const margin = 20;
   const cellSize = (gridSize - margin) / 4;
@@ -93,6 +110,7 @@ export const VNRAnalysis = (props: Props) => {
       .tick(100)
       .on('end', () => { setNodeData(dataTemp); });
   }, [document]);
+
   return (
     <>
       <div className=' margin-top-00' style={{ padding: onlyBubbleChart ? 0 : 'var(--spacing-13) var(--spacing-13) var(--spacing-09) var(--spacing-13)' }}>
@@ -101,12 +119,46 @@ export const VNRAnalysis = (props: Props) => {
             <h2 className='undp-typography margin-bottom-00'>
               National Priorities Based on
             </h2>
-            {defaultDocs ? (
-              <>
-                {document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
-              </>
-            ) : document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
-
+            {defaultDocs && document.length === 1 ? (
+              <FileNameChip>
+                {document[0].link ? (
+                  <a href={document[0].link} target='_blank' rel='noreferrer' className='undp-style'>{document[0].name}</a>
+                ) : (
+                  document[0].name
+                )}
+              </FileNameChip>
+            ) : (
+              <Popover
+                title='Analysis Based on'
+                content={defaultDocs ? (
+                  <>
+                    {document && document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
+                  </>
+                )
+                  : (
+                    <>
+                      {document && document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
+                      <div style={{ marginTop: '10px' }}>
+                        {invalidDocuments && invalidDocuments.length > 0 && <span><b>Excluded files</b></span>}
+                        {invalidDocuments.map((d: any, i: number) => (
+                          <FileNameErrorChip key={i}>
+                            <Popover content={d.text} placement='right'>
+                              {' '}
+                              {d.file_name}
+                            </Popover>
+                          </FileNameErrorChip>
+                        ))}
+                      </div>
+                    </>
+                  )}
+              >
+                <Button>
+                  {document.length}
+                  {' '}
+                  file(s)
+                </Button>
+              </Popover>
+            )}
           </div>
           <BubbleChart data={dataWithStatuses} setSelectedSDG={setSelectedSDG} />
         </div>
@@ -133,7 +185,7 @@ export const VNRAnalysis = (props: Props) => {
                                 fontWeight='bold'
                                 style={{ fill: `${d === 'High' ? 'var(--blue-700)' : d === 'Medium' ? 'var(--blue-400)' : d === 'Low' ? 'var(--blue-200)' : 'var(--gray-400)'}` }}
                               >
-                                { d === 'No Mention'.toUpperCase() ? d : `${d} Priority`.toUpperCase()}
+                                {d === 'No Mention'.toUpperCase() ? d : `${d} Priority`.toUpperCase()}
                               </text>
                             ))
                           }
@@ -238,7 +290,7 @@ export const VNRAnalysis = (props: Props) => {
                                   style={{ cursor: 'default' }}
                                   onMouseEnter={(event) => {
                                     setHoveredSDG({
-                                      sdg: d.sdg,
+                                      sdg: d.id,
                                       xPosition: event.clientX,
                                       yPosition: event.clientY,
                                     });
@@ -249,7 +301,7 @@ export const VNRAnalysis = (props: Props) => {
                                     cx={0}
                                     cy={0}
                                     r={nodeRadius}
-                                    fill={SDG_COLOR_ARRAY[d.sdg - 1]}
+                                    fill={SDG_COLOR_ARRAY[d.id - 1]}
                                   />
                                   <text
                                     fontSize={12}
@@ -259,7 +311,7 @@ export const VNRAnalysis = (props: Props) => {
                                     textAnchor='middle'
                                     fill='#fff'
                                   >
-                                    {d.sdg}
+                                    {d.id}
                                   </text>
                                 </g>
                               ))
@@ -282,11 +334,46 @@ export const VNRAnalysis = (props: Props) => {
                     <h2 className='undp-typography margin-bottom-00'>
                       Comparing SDG trends and SDG national priorities based on
                     </h2>
-                    {defaultDocs ? (
-                      <>
-                        {document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
-                      </>
-                    ) : document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
+                    {defaultDocs && document.length === 1 ? (
+                      <FileNameChip>
+                        {document[0].link ? (
+                          <a href={document[0].link} target='_blank' rel='noreferrer' className='undp-style'>{document[0].name}</a>
+                        ) : (
+                          document[0].name
+                        )}
+                      </FileNameChip>
+                    ) : (
+                      <Popover
+                        title='Analysis Based on'
+                        content={defaultDocs ? (
+                          <>
+                            {document && document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
+                          </>
+                        )
+                          : (
+                            <>
+                              {document && document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
+                              <div style={{ marginTop: '10px' }}>
+                                {invalidDocuments && invalidDocuments.length > 0 && <span><b>Excluded files</b></span>}
+                                {invalidDocuments.map((d: any, i: number) => (
+                                  <FileNameErrorChip key={i}>
+                                    <Popover content={d.text} placement='right'>
+                                      {' '}
+                                      {d.file_name}
+                                    </Popover>
+                                  </FileNameErrorChip>
+                                ))}
+                              </div>
+                            </>
+                          )}
+                      >
+                        <Button>
+                          {document.length}
+                          {' '}
+                          file(s)
+                        </Button>
+                      </Popover>
+                    )}
                   </div>
                   <p className='undp-typography'>
                     This matrix maps the SDGs along two parameters
@@ -302,11 +389,11 @@ export const VNRAnalysis = (props: Props) => {
                     <span className='italics small-font'>
                       Disclaimer: The national priorities identified in the documents may not reflect the actual and complete priorities of the government. They are a starting point for further discussion. The SDG Trends assessment is based on currently available data in the
                       {' '}
-                      <a href='https://unstats.un.org/sdgs/dataportal' className='undp-style' target='_blank' rel='noreferrer'>UN Stats SDG Data Portal</a>
+                      <a href='https://unstats.un.org/sdgs/dataportal' className='undp-style' target='_blank' rel='noreferrer noopener'>UN Stats SDG Data Portal</a>
                       {' '}
                       and methodology as per the
                       {' '}
-                      <a href='https://unstats.un.org/sdgs/report/2022/Progress_Chart_Technical_Note_2022.pdf' className='undp-style' target='_blank' rel='noreferrer'>SDG Progress Chart 2022 Technical Note</a>
+                      <a href='https://unstats.un.org/sdgs/report/2022/Progress_Chart_Technical_Note_2022.pdf' className='undp-style' target='_blank' rel='noreferrer noopener'>SDG Progress Chart 2022 Technical Note</a>
                       .
                       Additional data may be added to address gaps at government request, to provide a comprehensive landscape for identification of SDG policy pathways.
                     </span>
@@ -315,14 +402,14 @@ export const VNRAnalysis = (props: Props) => {
               </div>
             </div>
             {
-          showSalienceGraph
-            ? (
-              <SalienceGraph
-                data={data}
-                goalStatuses={goalStatuses}
-              />
-            ) : null
-        }
+              showSalienceGraph
+                ? (
+                  <SalienceGraph
+                    data={data}
+                    goalStatuses={goalStatuses}
+                  />
+                ) : null
+            }
             <div className='max-width-1440 margin-bottom-13' style={{ padding: '0 1rem' }}>
               <button type='button' className='undp-button button-primary' onClick={() => { setShowSalienceGraph(!showSalienceGraph); }}>{showSalienceGraph ? 'Hide details' : 'Explore in detail '}</button>
             </div>
@@ -348,12 +435,12 @@ export const VNRAnalysis = (props: Props) => {
               className='undp-modal'
               onCancel={() => { setSelectedSDG(null); }}
               onOk={() => { setSelectedSDG(null); }}
-              title={selectedSDG ? `Most common words/phrases for SDG ${selectedSDG.sdg}` : ''}
+              title={selectedSDG ? `Most common words/phrases for SDG ${selectedSDG.id}` : ''}
               open={selectedSDG !== null}
             >
               <div className='flex-div flex-wrap margin-top-09' style={{ width: '0.75vw', minWidth: '40rem', maxWidth: '60rem' }}>
                 {
-                  selectedSDG.features.length > 0
+                  selectedSDG.features && selectedSDG.features.length > 0
                     ? selectedSDG.features.map((d: any, i: number) => <div key={i} className='undp-chip'>{d}</div>)
                     : 'No words/phrases available'
                 }

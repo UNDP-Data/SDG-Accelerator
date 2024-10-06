@@ -19,8 +19,8 @@ export const CompareAnalysis = (props: Props) => {
   const {
     data, goalStatuses, document,
   } = props;
-  const dataDoc1WithStatuses = data[0].map((d: any) => ({ ...d, status: goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status || 'Gaps NA' }));
-  const dataDoc2WithStatuses = data[1].map((d: any) => ({ ...d, status: goalStatuses[goalStatuses.findIndex((el) => el.goal === d.sdg)].status || 'Gaps NA' }));
+  const dataDoc1WithStatuses = data[0].map((d: any) => ({ ...d, status: goalStatuses[goalStatuses.findIndex((el) => el.goal === d.id)].status || 'Gaps NA' }));
+  const dataDoc2WithStatuses = data[1].map((d: any) => ({ ...d, status: goalStatuses[goalStatuses.findIndex((el) => el.goal === d.id)].status || 'Gaps NA' }));
   let similar = 0;
   for (let i = 0; i < dataDoc1WithStatuses.length; i += 1) {
     if (dataDoc1WithStatuses[i].category === dataDoc2WithStatuses[i].category) similar += 1;
@@ -72,15 +72,15 @@ export const CompareAnalysis = (props: Props) => {
                 <div className='undp-table-row' key={i}>
                   <div style={{ width: '33.33%', backgroundColor: `${dataDoc2WithStatuses[i].category !== d.category ? 'var(--gray-300)' : 'var(--white)'}` }} className='undp-table-row-cell'>
                     <div className='flex-div flex-vert-align-center'>
-                      {getSDGIcon(`SDG ${d.sdg}`, 72)}
+                      {getSDGIcon(`SDG ${d.id}`, 72)}
                       <div>
                         <h6 className='undp-typography margin-bottom-02'>
                           SDG
                           {' '}
-                          {d.sdg}
+                          {d.id}
                           :
                           {' '}
-                          {SDGGoalList[SDGGoalList.findIndex((el) => el.Goal === `SDG ${d.sdg}`)]['Goal Name']}
+                          {SDGGoalList[SDGGoalList.findIndex((el) => el.Goal === `SDG ${d.id}`)]['Goal Name']}
                         </h6>
                         <div key={i} className={`undp-chip undp-chip-small ${d.status === 'On Track' ? 'undp-chip-green' : d.status === 'For Review' ? 'undp-chip-yellow' : d.status === 'Identified Gap' ? 'undp-chip-red' : 'undp-chip-gray'}`}>
                           {d.status}
