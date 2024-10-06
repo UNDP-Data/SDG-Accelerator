@@ -93,7 +93,7 @@ export const Priorities = (props: Props) => {
   const [selectYear, setSelectYear] = useState<null | number>(null);
   const [error, setError] = useState<any>(null);
   const [data, setData] = useState<any>(null);
-  const [countryVNRs, setCountryVNRs] = useState<any>([]);
+  const [countryVNRs, setCountryVNRs] = useState<any>(null);
   const [strategy, setStrategy] = useState<'equal' | 'proportional'>('equal');
   const [status, setStatus] = useState<string | null>(null);
   const [selectedDocument, setSelectedDocument] = useState();
@@ -109,6 +109,7 @@ export const Priorities = (props: Props) => {
           setCountryVNRs(metadata);
           setSelectedDocument(metadata[0]._id);
         } else {
+          setCountryVNRs([]);
           setError('No VNRs');
         }
       } catch (err) {
