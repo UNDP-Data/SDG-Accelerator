@@ -663,12 +663,5 @@ export const COUNTRIES_WITH_REPORT = [
   'THA',
 ];
 
-export const PDFJS_DIST_CDNS = [
-  '//cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/build/pdf.worker.min.mjs',
-  '//cdnjs.cloudflare.com/ajax/libs/pdf.js/4.6.82/pdf.worker.min.mjs',
-  '//unpkg.com/browse/pdfjs-dist@4.6.82/build/pdf.worker.min.mjs',
-  '//cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/legacy/build/pdf.worker.min.mjs',
-];
-
 export const AIAAS_API_BASE_URL = import.meta.env.VITE_AIAAS_API_BASE_URL;
 export const AIAAS_API_KEY = import.meta.env.VITE_AIAAS_API_KEY;
