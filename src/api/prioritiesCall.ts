@@ -39,14 +39,15 @@ export const fetchDocumentById = async (id: string) => {
 export const submitDocumentsForAnalysis = async (
   files: File[],
   weights?: number[],
+  version?: number,
 ) => {
   const formData = new FormData();
 
   files.forEach((file) => formData.append('files', file));
 
   const weightAndFeaturesParam = weights && weights.length > 0
-    ? `?${weights.map((weight) => `weights=${weight}`).join('&')}&features=true`
-    : '?features=true';
+    ? `?${weights.map((weight) => `weights=${weight}`).join('&')}&version=${version}&features=true`
+    : `?&version=${version}&features=true`;
 
   const response = await axios.post(
     `${AIAAS_API_BASE_URL}/diagnostic${weightAndFeaturesParam}`,
