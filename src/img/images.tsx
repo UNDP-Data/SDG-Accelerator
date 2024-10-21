@@ -14,6 +14,7 @@ const IMAGES = {
   globeicon: new URL('./globe-icon.svg', import.meta.url).href,
   globeWhite: new URL('./globe-white.svg', import.meta.url).href,
   heroImage: new URL('./UNDP-hero-image.png', import.meta.url).href,
+  blueHeroImage: new URL('./UNDP-blue-hero-image.png', import.meta.url).href,
   iconTrends: new URL('./icons/trends.png', import.meta.url).href,
   iconPriorities: new URL('./icons/priorities.png', import.meta.url).href,
   iconInterlinkages: new URL('./icons/interlinkages.png', import.meta.url).href,
