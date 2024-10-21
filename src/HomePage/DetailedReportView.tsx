@@ -251,7 +251,6 @@ export const DetailedReportView = (props: Props) => {
                   document={priorityData.documents}
                   defaultDocs
                   onlyBubbleChart
-                  invalidDocuments={undefined}
                 />
                 <div style={{ margin: 'var(--spacing-07) 0 0 var(--spacing-05)' }}>
                   <NavLink
