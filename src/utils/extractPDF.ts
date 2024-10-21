@@ -7,28 +7,38 @@ import {
 } from 'pdfjs-dist';
 import workerSrc from 'pdfjs-dist/build/pdf.worker?worker&url';
 import { getLIDModel } from 'fasttext.wasm.js/common';
+import { LanguageIdentificationModel } from 'fasttext.wasm.js/dist/models/language-identification/common.js';
 import { detectLanguageViaAPI, extractTextViaAPI } from '../api/prioritiesCall';
 
 GlobalWorkerOptions.workerSrc = workerSrc;
+let lidModelPromise: Promise<LanguageIdentificationModel> | null = null;
 
 const detectLanguageWithFastText = async (texts: string[]) => {
-  const lidModel = await getLIDModel();
-  await lidModel.load();
-
-  const response = await Promise.all(texts.map(async (text) => {
-    const predictions = await lidModel.identify(text);
-    const results: { official: string; name: string; probability: string }[] = [];
-
-    const { alpha2, refName, possibility } = predictions;
-
-    results.push({
-      official: alpha2 || 'unk',
-      name: refName,
-      probability: possibility.toString(),
+  if (!lidModelPromise) {
+    lidModelPromise = getLIDModel().then(async (model) => {
+      await model.load();
+      return model;
     });
+  }
 
-    return results[0] || { official: null, name: null, probability: '0' };
-  }));
+  const lidModel = await lidModelPromise;
+
+  const response = await Promise.all(
+    texts.map(async (text) => {
+      const predictions = await lidModel.identify(text);
+      const results: { official: string; name: string; probability: string }[] = [];
+
+      const { alpha2, refName, possibility } = predictions;
+
+      results.push({
+        official: alpha2 || 'unk',
+        name: refName,
+        probability: possibility.toString(),
+      });
+
+      return results[0] || { official: null, name: null, probability: '0' };
+    }),
+  );
 
   return response;
 };
@@ -75,7 +85,9 @@ async function pdfToText(file: File) {
   }
 
   if (extractedText.trim().length === 0) {
-    throw new Error('Unable to extract text from this document');
+    throw new Error(
+      'Unable to extract text from this document, might be a scanned file.',
+    );
   }
 
   return [extractedText.trim(), pageCount];
