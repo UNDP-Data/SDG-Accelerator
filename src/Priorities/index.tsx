@@ -3,17 +3,24 @@
 import styled from 'styled-components';
 import {
   Collapse,
+  message,
   Modal,
-  Radio,
+  Popover,
+  Segmented,
   Select, Tabs,
+  Tooltip,
+  Upload,
 } from 'antd';
-import { useEffect, useRef, useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { UploadFile, UploadChangeParam } from 'antd/lib/upload/interface';
+import { useEffect, useState } from 'react';
+import { ChevronDown, ChevronUp, FileUpIcon } from 'lucide-react';
+import { InfoCircleOutlined } from '@ant-design/icons';
 import { VNRAnalysis } from './VNRAnalysis';
 import { GoalStatusType } from '../Types';
 import IMAGES from '../img/images';
 import { fetchDocumentById, fetchMetadata, submitDocumentsForAnalysis } from '../api/prioritiesCall';
-import { extractTextFromMultiplePdfs } from '../utils/extractPDF';
+import { extractTextFromPDFs } from '../utils/extractPDF';
+import './index.css';
 
 interface Props {
   countrySelected: string;
@@ -21,60 +28,13 @@ interface Props {
   goalStatuses: GoalStatusType[];
 }
 
-type InvalidFileDetail = {
-  // eslint-disable-next-line camelcase
-  file_name: string;
-  text: string | number | any;
-  pageCount: string | number;
-  error: boolean;
-};
-
 const HeroImageEl = styled.div`
-  background: url(${IMAGES.heroImage}) rgba(0, 0, 0, 0.3) no-repeat center;
+  background: url(${IMAGES.blueHeroImage}) rgba(0, 0, 0, 0.3) no-repeat center;
   background-size: cover;
   margin-top: 7.1875rem;
 `;
 
-const UploadEl = styled.div`
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  width: fit-content;
-  background-color: var(--gray-300);
-`;
-
-const UploadButtonEl = styled.div`
-  color: var(--black);
-  text-transform: uppercase;
-  cursor:  pointer;
-  justify-content: center;
-  padding: 1rem 0.75rem;
-  align-items: center;
-  display: flex;
-  font-size: 0.875rem;
-  line-height: 1;
-  width: fit-content;
-  font-weight: bold;
-  &:hover{
-    background-color: var(--gray-400);
-  }
-`;
-
-const CloseIcon = styled.div`
-  margin-left: 0.5rem;
-  width: 24px;
-  height: 24px;
-  background-color: var(--dark-red);
-  -webkit-mask-image: url(https://design.undp.org/icons/times.svg);
-  mask-image: url(https://design.undp.org/icons/times.svg);
-  mask-size: 24px;
-`;
-
-const FileAttachmentButton = styled.input`
-  display: none;
-`;
-
-const FILES_LIMIT = 20;
+const FILES_LIMIT = 25;
 
 export const Priorities = (props: Props) => {
   const {
@@ -82,11 +42,8 @@ export const Priorities = (props: Props) => {
     countryFullName,
     goalStatuses,
   } = props;
-  const fileInputRef = useRef<any>(null);
   const [loading, setLoading] = useState(false);
   const [countryFilePresent, setCountryFilePresent] = useState<boolean | undefined>(false);
-  const [totalFileSize, setTotalFileSize] = useState(0);
-  const [noOfFiles, setNoOfFiles] = useState(0);
   const [selectedFile, setSelectedFile] = useState<any>([]);
   const [selectedFileNotAnalyzed, setSelectedFileNotAnalyzed] = useState<any>([]);
   const [vnrYear, setVNRYear] = useState<null | number>(null);
@@ -94,11 +51,14 @@ export const Priorities = (props: Props) => {
   const [error, setError] = useState<any>(null);
   const [data, setData] = useState<any>(null);
   const [countryVNRs, setCountryVNRs] = useState<any>(null);
-  const [strategy, setStrategy] = useState<'equal' | 'proportional'>('equal');
+  const [model, setModel] = useState<'legacy' | 'newer'>('newer');
+  const [strategy, setStrategy] = useState<'equal' | 'proportional' | 'custom'>('equal');
   const [status, setStatus] = useState<string | null>(null);
   const [selectedDocument, setSelectedDocument] = useState();
-  const [invalidFilesDetail, setInvalidFilesDetail] = useState<InvalidFileDetail[] | undefined>(undefined);
-  const [isApproachModalVisible, setIsApproachModalVisible] = useState(false);
+  const [fileNames, setFileNames] = useState(new Set());
+  const [textFiles, setTextFiles] = useState<any[]>([]);
+  const [isExtracting, setisExtracting] = useState(false);
+  const [extractionError, setExtractionError] = useState(new Set<string>());
 
   useEffect(() => {
     const fetchData = async () => {
@@ -135,41 +95,11 @@ export const Priorities = (props: Props) => {
     fetchDocument();
   }, [selectedDocument]);
 
-  const handleFileSelect = (event: any) => {
-    if (event.target.files) {
-      if (event.target.files[0]) {
-        const files: any = [...selectedFileNotAnalyzed].concat([...event.target.files].map((d: any) => d));
-        let totalSize = 0;
-        files.forEach((d: any) => { totalSize += (d.size / 1024 / 1024); });
-        setTotalFileSize(totalSize);
-        setNoOfFiles(files.length);
-        setSelectedFileNotAnalyzed(files);
-      }
-    }
-  };
-
-  const handleFileRemove = (fileToRemove: any) => {
-    const updatedFiles = selectedFileNotAnalyzed.filter((file: any) => file !== fileToRemove);
-    let totalSize = 0;
-    updatedFiles.forEach((file: any) => { totalSize += (file.size / 1024 / 1024); });
-    setTotalFileSize(totalSize);
-    setNoOfFiles(updatedFiles.length);
-    setSelectedFileNotAnalyzed(updatedFiles);
-  };
-
-  const analyzeDocument = async () => {
+  const analyzeDocuments = async (textsFiles: any[]) => {
     try {
-      setStatus(`Extracting texts and identifying language from ${selectedFileNotAnalyzed.length} document(s)...`);
-      const textsFiles = await extractTextFromMultiplePdfs(selectedFileNotAnalyzed);
+      setStatus('Starting analysis...');
 
-      setStatus('Filtering documents...');
-
-      const validFiles = textsFiles.filter((file) => !file.error && file.text);
-      const invalidFiles = textsFiles.filter((file) => file.error || !file.text);
-
-      setInvalidFilesDetail(invalidFiles);
-
-      const plaintextFiles = validFiles.map((file) => {
+      const plaintextFiles = textsFiles.map((file) => {
         const blob = new Blob([file.text], { type: 'text/plain' });
         return new File([blob], `${file.file_name}.txt`, { type: 'text/plain' });
       });
@@ -181,10 +111,12 @@ export const Priorities = (props: Props) => {
       }
 
       setStatus('Analyzing documents...');
-      const pagesArray = validFiles.map((file) => Number(file.pageCount));
+      const pagesArray = textsFiles.map((file) => Number(file.pageCount));
+
       const response = await submitDocumentsForAnalysis(
         plaintextFiles,
         strategy === 'proportional' ? pagesArray : undefined,
+        model === 'newer' ? 2 : 1,
       );
 
       const filesWithoutTxtExtension = plaintextFiles.map((file) => {
@@ -242,7 +174,7 @@ export const Priorities = (props: Props) => {
         <div
           className='max-width-1440'
           style={{
-            backgroundColor: 'var(--white)', color: 'var(--black)', padding: 'var(--spacing-06)', margin: 'auto',
+            backgroundColor: 'var(--white)', color: 'var(--black)', padding: 'var(--spacing-06)', margin: 'auto', cursor: isExtracting ? 'progress' : '',
           }}
         >
           <h1 className='undp-typography'>
@@ -250,7 +182,45 @@ export const Priorities = (props: Props) => {
             {' '}
             {countryFullName}
           </h1>
-          <div className='margin-top-07'>
+          <div className='margin-top-05'>
+            <h5 className='undp-typography margin-bottom-06' style={{ color: 'var(--black)' }}>
+              Documents such as National Development Plans indicate priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country. Upload a development plan, or select from the list of documents to discover which SDGs feature most prominently as a priority.
+              {' '}
+              <br />
+              <br />
+              Explore the analysis of these priorities using
+              {' '}
+              <Popover
+                placement='rightBottom'
+                content={(
+                  <div style={{
+                    maxWidth: '500px', maxHeight: '400px', padding: 25, textAlign: 'justify', overflowY: 'scroll',
+                  }}
+                  >
+                    <h5 className='undp-typography' style={{ color: 'var(--black)', fontSize: 16 }}>
+                      Countries&apos; national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification.
+                      {' '}
+                      <br />
+                      <br />
+                      {' '}
+                      The training data is based on an improved
+                      {' '}
+                      <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer noopener' className='undp-style'>OSDG Community Dataset</a>
+                      . It considers 100k+ terms, including phrases and expressions.
+                    </h5>
+                  </div>
+                )}
+              >
+                <span style={{
+                  fontSize: 22, cursor: 'pointer', color: 'var(--gray-600)', textDecoration: 'underline', textDecorationStyle: 'dotted', textDecorationColor: 'var(--dark-red)', background: 'none', border: 'none', padding: 0,
+                }}
+                >
+                  our machine learning approach
+                  {' '}
+                  <InfoCircleOutlined />
+                </span>
+              </Popover>
+            </h5>
             {
               !data && countryFilePresent === undefined
                 ? (
@@ -263,39 +233,24 @@ export const Priorities = (props: Props) => {
                     defaultActiveKey={!data && countryFilePresent === false ? 'vnrs' : 'nationalPriorities'}
                     className='undp-tabs'
                     onChange={() => {
+                      setModel('newer');
                       setStrategy('equal');
                     }}
                     items={[
                       {
-                        label: !data && countryFilePresent === false ? 'Analyze VNRs' : 'National Priorities',
+                        label: !data && countryFilePresent === false ? 'Select Documents' : 'Select Documents',
                         key: !data && countryFilePresent === false ? 'vnrs' : 'nationalPriorities',
                         children: !data && countryFilePresent === false ? (
                           <>
-                            <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-                              {/* Countries&apos; national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification. The training data is based on an improved
-                              {' '}
-                              <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer noopener' className='undp-style'>OSDG Community Dataset</a>
-                              . It considers 100k+ terms, including phrases and expressions.
-                              <br />
-                              <br /> */}
-                              Documents such as
-                              {' '}
-                              <a href='https://sustainabledevelopment.un.org/vnrs/' target='_blank' rel='noreferrer noopener' className='undp-style'>Voluntary National Reviews (VNRs)</a>
-                              {' '}
-                              indicates priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.
-                              <br />
-                              <br />
-                              Explore the analysis of these priorities using Machine Learning.
-                            </h5>
                             {
                               countryVNRs
                                 ? countryVNRs.length > 0
                                   ? (
                                     <>
-                                      <div className='margin-top-07'>
+                                      <div className='margin-top-00'>
                                         <p className='label undp-typography'>Select year</p>
                                         <Select
-                                          className='undp-select margin-bottom-07'
+                                          className='undp-select margin-bottom-02'
                                           placeholder='Select Year'
                                           value={selectYear}
                                           onChange={(value) => { setSelectYear(value); }}
@@ -318,11 +273,17 @@ export const Priorities = (props: Props) => {
                                       >
                                         Analyze VNR
                                       </button>
+                                      <span style={{
+                                        fontSize: 'smaller', color: 'GrayText', paddingTop: 2, marginTop: 0,
+                                      }}
+                                      >
+                                        Scroll down to explore the analysis
+                                      </span>
                                     </>
                                   )
                                   : (
                                     <>
-                                      <div className='margin-top-07 margin-bottom-07'>
+                                      <div className='margin-bottom-02'>
                                         <Select
                                           className='undp-select'
                                           placeholder='No VNRs Available'
@@ -332,6 +293,12 @@ export const Priorities = (props: Props) => {
                                       <button type='button' className='margin-top-05 undp-button button-primary button-arrow margin-top-07 disabled'>
                                         Analyze VNR
                                       </button>
+                                      <span style={{
+                                        fontSize: 'smaller', color: 'GrayText', paddingTop: 0, marginTop: 0,
+                                      }}
+                                      >
+                                        Upload documents on the next tab, and scroll down to explore the analysis
+                                      </span>
                                     </>
                                   )
                                 : (
@@ -343,50 +310,8 @@ export const Priorities = (props: Props) => {
                           </>
                         ) : (
                           <>
-                            <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-                              Documents such as National Development Plans indicate priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country.
-                              {' '}
-                              <button
-                                type='button'
-                                onClick={() => setIsApproachModalVisible(true)}
-                                onKeyDown={(e) => {
-                                  if (e.key === 'Enter' || e.key === ' ') {
-                                    setIsApproachModalVisible(true);
-                                    e.preventDefault(); // Prevent scrolling when space is pressed
-                                  }
-                                }}
-                                style={{
-                                  fontSize: 18, cursor: 'pointer', color: 'var(--gray-600)', textDecoration: 'underline', background: 'none', border: 'none', padding: 0,
-                                }}
-                                aria-label='Read about our approach'
-                              >
-                                Read about our approach
-                              </button>
-                              <br />
-                              <br />
-                              Explore the analysis of these priorities using Machine Learning.
-                            </h5>
-                            <Modal
-                              className='undp-modal'
-                              title='Our approach'
-                              open={isApproachModalVisible}
-                              onCancel={() => setIsApproachModalVisible(false)}
-                              onOk={() => setIsApproachModalVisible(false)}
-                            >
-                              <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-                                Countries&apos; national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification.
-                                {' '}
-                                <br />
-                                <br />
-                                {' '}
-                                The training data is based on an improved
-                                {' '}
-                                <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer noopener' className='undp-style'>OSDG Community Dataset</a>
-                                . It considers 100k+ terms, including phrases and expressions.
-                              </h5>
-                            </Modal>
                             <Select
-                              className='undp-select margin-bottom-07'
+                              className='undp-select margin-bottom-02'
                               placeholder='Select Document'
                               value={selectedDocument}
                               onChange={(value) => { setSelectedDocument(value); }}
@@ -399,92 +324,116 @@ export const Priorities = (props: Props) => {
                                 ))
                               }
                             </Select>
+                            <span style={{
+                              fontSize: 'smaller', color: 'GrayText', paddingTop: 0, marginTop: 0,
+                            }}
+                            >
+                              Scroll down to explore the analysis
+                            </span>
                           </>
                         ),
                       },
                       {
-                        label: 'Upload documents',
+                        label: 'Analyze Custom Documents',
                         key: 'upload',
                         children: (
                           <>
-                            <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-                              Documents such as National Development Plans indicate priorities of the government that can be mapped to the SDGs. Upload a development plan, to discover which SDGs feature most prominently as a priority.
-                              {' '}
-                              <button
-                                type='button'
-                                onClick={() => setIsApproachModalVisible(true)}
-                                onKeyDown={(e) => {
-                                  if (e.key === 'Enter' || e.key === ' ') {
-                                    setIsApproachModalVisible(true);
-                                    e.preventDefault(); // Prevent scrolling when space is pressed
-                                  }
-                                }}
-                                style={{
-                                  fontSize: 18, cursor: 'pointer', color: 'var(--gray-600)', textDecoration: 'underline', background: 'none', border: 'none', padding: 0,
-                                }}
-                                aria-label='Read about our approach'
-                              >
-                                Read about our approach
-                              </button>
-                              <br />
-                              <br />
-                              Explore the analysis of these priorities using Machine Learning.
-                              {' '}
-                              <span className='italics' style={{ color: 'var(--gray-500)' }}>
-                                Upto
-                                {' '}
-                                {FILES_LIMIT}
-                                {' '}
-                                documents allowed
-                              </span>
-                            </h5>
-                            <Modal
-                              className='undp-modal'
-                              title='Our approach'
-                              open={isApproachModalVisible}
-                              onCancel={() => setIsApproachModalVisible(false)}
-                              onOk={() => setIsApproachModalVisible(false)}
-                            >
-                              <h5 className='undp-typography' style={{ color: 'var(--black)' }}>
-                                Countries&apos; national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification.
-                                {' '}
-                                <br />
-                                <br />
-                                {' '}
-                                The training data is based on an improved
-                                {' '}
-                                <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer noopener' className='undp-style'>OSDG Community Dataset</a>
-                                . It considers 100k+ terms, including phrases and expressions.
-                              </h5>
-                            </Modal>
                             <>
                               <div className='margin-top-04'>
-                                {
-                                  selectedFileNotAnalyzed.length > 0
-                                    ? (
-                                      <div className='flex-div margin-bottom-05 flex-wrap'>
-                                        {
-                                          selectedFileNotAnalyzed.map((d: any, i: number) => (
-                                            <div className='undp-chip-gray undp-chip' key={i}>
-                                              {d.name}
-                                              {' '}
-                                              (
-                                              {(d.size / 1024 / 1024).toFixed(1)}
-                                              {' '}
-                                              MBs)
-                                              <CloseIcon onClick={() => handleFileRemove(d)} />
-                                            </div>
-                                          ))
+                                <Upload.Dragger
+                                  name='file'
+                                  multiple
+                                  accept='.pdf'
+                                  showUploadList
+                                  maxCount={FILES_LIMIT}
+                                  beforeUpload={(file) => {
+                                    const isPDF = file.type === 'application/pdf';
+                                    if (!isPDF) {
+                                      message.error(`${file.name} is not a PDF file`);
+                                      return Upload.LIST_IGNORE;
+                                    }
+
+                                    if (fileNames.has(file.name)) {
+                                      message.error(`${file.name} is a duplicate file`);
+                                      return Upload.LIST_IGNORE;
+                                    }
+
+                                    if (selectedFileNotAnalyzed.length >= FILES_LIMIT) {
+                                      message.error(`You can only upload up to ${FILES_LIMIT} files`);
+                                      return Upload.LIST_IGNORE;
+                                    }
+
+                                    return true;
+                                  }}
+                                  onChange={
+                                    (info: UploadChangeParam<UploadFile>) => {
+                                      const newFileList = info.fileList;
+
+                                      setSelectedFileNotAnalyzed(newFileList);
+
+                                      const newFileNames = new Set(newFileList.map((file) => file.name));
+                                      setFileNames(newFileNames);
+
+                                      const newUploadErrors = new Set<string>();
+                                      newFileList.forEach((file) => {
+                                        if (file.status === 'error') {
+                                          newUploadErrors.add(file.uid);
                                         }
-                                      </div>
-                                    ) : null
-                                }
-                                <UploadEl>
-                                  <label htmlFor='file-upload-analyze'>
-                                    <UploadButtonEl>Add Documents</UploadButtonEl>
-                                  </label>
-                                  <FileAttachmentButton multiple ref={fileInputRef} id='file-upload-analyze' accept='application/pdf' type='file' onChange={handleFileSelect} />
-                                </UploadEl>
+                                      });
+                                      setExtractionError(newUploadErrors);
+                                    }
+                                  }
+                                  onRemove={(file) => {
+                                    setTextFiles((prevTextFiles) => prevTextFiles.filter((textFile) => textFile.file_name !== file.name));
+                                    return true;
+                                  }}
+                                  onDrop={(e) => {
+                                    message.info(`Dropped files: ${e.dataTransfer.files.length}`);
+                                  }}
+                                  customRequest={async ({ file, onSuccess, onError }: any) => {
+                                    setisExtracting(true);
+                                    try {
+                                      const [extractedText] = await extractTextFromPDFs([file]);
+
+                                      if (extractedText.error) {
+                                        throw new Error(extractedText.text);
+                                      }
+
+                                      if (onSuccess) {
+                                        onSuccess('ok');
+                                      }
+
+                                      setSelectedFileNotAnalyzed((prevList: any[]) => prevList.map((f) => (f.uid === file.uid
+                                        ? { ...f, status: 'done', response: 'ok' }
+                                        : f)));
+
+                                      setTextFiles((prevTextFiles) => [...prevTextFiles, extractedText]);
+
+                                      // eslint-disable-next-line no-shadow
+                                    } catch (error: any) {
+                                      if (onError) {
+                                        onError(error);
+                                      }
+
+                                      setSelectedFileNotAnalyzed((prevList: any[]) => prevList.map((f) => (f.uid === file.uid
+                                        ? { ...f, status: 'error', error: error.message }
+                                        : f)));
+                                    } finally {
+                                      setisExtracting(false);
+                                    }
+                                  }}
+                                >
+                                  <FileUpIcon />
+                                  <p className='ant-upload-text'>Click or drag file(s) to this area then click Analyze Documents</p>
+                                  <p className='ant-upload-hint'>
+                                    Up to
+                                    {' '}
+                                    {FILES_LIMIT}
+                                    {' '}
+                                    PDFs allowed. Only English language is currently supported by the model
+                                  </p>
+                                </Upload.Dragger>
+
                               </div>
                               <div className='margin-top-01 margin-bottom-07'>
                                 <Collapse
@@ -493,50 +442,66 @@ export const Priorities = (props: Props) => {
                                   bordered={false}
                                   expandIcon={({ isActive }) => (isActive ? (<ChevronUp size={32} strokeWidth={1} stroke='var(--red)' />) : (<ChevronDown size={32} strokeWidth={1} stroke='var(--red)' />))}
                                   size='small'
-                                  expandIconPosition='end'
+                                  expandIconPosition='start'
                                 >
                                   <Collapse.Panel header={<span style={{ fontSize: '1rem' }}>Advanced Options</span>} key='1'>
-                                    <p className='label'>Document Weighting Strategy</p>
-                                    <Radio.Group value={strategy} onChange={(target) => { setStrategy(target.target.value); }}>
-                                      <Radio className='undp-radio' value='equal'>Place Equal Weight on All Documents</Radio>
-                                      <br />
-                                      <Radio className='undp-radio' value='proportional'>Place More Weight on Longer Documents</Radio>
-                                    </Radio.Group>
+                                    <p className='undp-typography label'>
+                                      Model Selection
+                                      {' '}
+                                      <Tooltip title='Select which machine learning model version to use' placement='topRight'>
+                                        <InfoCircleOutlined />
+                                      </Tooltip>
+                                    </p>
+                                    <Segmented
+                                      className='undp-segmented-small'
+                                      options={[
+                                        { label: 'Legacy Model', value: 'legacy' },
+                                        { label: 'Newer Model', value: 'newer' },
+                                      ]}
+                                      value={model}
+                                      onChange={(value: 'legacy' | 'newer') => setModel(value)}
+                                    />
+
+                                    <p className='undp-typography label margin-top-05'>
+                                      Document Weighting Strategy
+                                      {' '}
+                                      <Tooltip title='Are some documents more important than others?' placement='topLeft'>
+                                        <InfoCircleOutlined />
+                                      </Tooltip>
+                                    </p>
+                                    <Segmented
+                                      className='undp-segmented-small'
+                                      options={[
+                                        { label: 'Equal', value: 'equal' },
+                                        { label: 'Length-based', value: 'proportional' },
+                                        { label: 'Custom', value: 'custom', disabled: true },
+                                      ]}
+                                      value={strategy}
+                                      onChange={(value: 'equal' | 'proportional' | 'custom') => setStrategy(value)}
+                                    />
                                   </Collapse.Panel>
                                 </Collapse>
                               </div>
-                              {
-                                selectedFileNotAnalyzed.length > 0 && noOfFiles <= FILES_LIMIT && totalFileSize <= 150
-                                  ? (
-                                    <button
-                                      type='button'
-                                      className='margin-top-05 undp-button button-primary button-arrow margin-top-07'
-                                      onClick={() => {
-                                        setLoading(true);
-                                        analyzeDocument();
-                                      }}
-                                    >
-                                      Analyze Document
-                                    </button>
-                                  )
-                                  : (
-                                    <button type='button' className='margin-top-05 undp-button button-primary button-arrow margin-top-07 disabled'>
-                                      Analyze Document
-                                    </button>
-                                  )
-                              }
-                              {
-                                noOfFiles > FILES_LIMIT || totalFileSize > 150 ? (
-                                  <p className='undp-typography small-font italics margin-top-05' style={{ color: 'var(--dark-red)' }}>
-                                    {
-                                      noOfFiles > FILES_LIMIT ? `You have exceeded the limit of ${FILES_LIMIT} files. Please remove ${noOfFiles - FILES_LIMIT} file(s)). ` : ''
-                                    }
-                                    {
-                                      totalFileSize > 150 ? 'Maximum total file size allowed is 200Mbs' : ''
-                                    }
-                                  </p>
-                                ) : null
-                              }
+                              <>
+                                <button
+                                  type='button'
+                                  className='margin-top-05 undp-button button-primary button-arrow margin-top-07'
+                                  style={{ backgroundColor: textFiles.length === 0 || textFiles.length > FILES_LIMIT || isExtracting || extractionError.size > 0 ? 'gray' : '' }}
+                                  onClick={() => {
+                                    setLoading(true);
+                                    analyzeDocuments(textFiles);
+                                  }}
+                                  disabled={textFiles.length === 0 || textFiles.length > FILES_LIMIT || isExtracting || extractionError.size > 0}
+                                >
+                                  Analyze Documents
+                                </button>
+                                <span style={{
+                                  fontSize: 'smaller', color: 'GrayText', paddingTop: 2, marginTop: 0,
+                                }}
+                                >
+                                  Scroll down to explore the analysis
+                                </span>
+                              </>
                             </>
                           </>
                         ),
@@ -580,7 +545,6 @@ export const Priorities = (props: Props) => {
                 document={data.mode === 'analyze' ? selectedFile.map((d: any) => d.name) : data.mode === 'defaultDocs' ? data.documents : [`VNR ${vnrYear}`]}
                 defaultDocs={data.mode === 'defaultDocs'}
                 onlyBubbleChart={false}
-                invalidDocuments={invalidFilesDetail}
               />
             )
             : null
