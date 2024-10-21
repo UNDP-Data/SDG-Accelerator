@@ -17,7 +17,6 @@ interface Props {
   document: any;
   defaultDocs: boolean;
   onlyBubbleChart: boolean;
-  invalidDocuments: any;
 }
 
 interface SDGHoveredProps {
@@ -63,14 +62,6 @@ const FileNameChip = styled.div`
   margin: 2px;
 `;
 
-const FileNameErrorChip = styled.div`
-  font-size: 1rem;
-  padding: 0.5rem;
-  background-color: var(--light-red);
-  font-weight: bold;
-  margin: 2px;
-`;
-
 export const VNRAnalysis = (props: Props) => {
   const {
     data,
@@ -78,7 +69,6 @@ export const VNRAnalysis = (props: Props) => {
     goalStatuses,
     defaultDocs,
     onlyBubbleChart,
-    invalidDocuments,
   } = props;
   const [selectedSDG, setSelectedSDG] = useState<any>(null);
   const [hoveredSDG, setHoveredSDG] = useState<null | SDGHoveredProps>(null);
@@ -129,28 +119,20 @@ export const VNRAnalysis = (props: Props) => {
               </FileNameChip>
             ) : (
               <Popover
-                title='Analysis Based on'
-                content={defaultDocs ? (
-                  <>
-                    {document && document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
-                  </>
-                )
-                  : (
-                    <>
-                      {document && document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
-                      <div style={{ marginTop: '10px' }}>
-                        {invalidDocuments && invalidDocuments.length > 0 && <span><b>Excluded files</b></span>}
-                        {invalidDocuments.map((d: any, i: number) => (
-                          <FileNameErrorChip key={i}>
-                            <Popover content={d.text} placement='right'>
-                              {' '}
-                              {d.file_name}
-                            </Popover>
-                          </FileNameErrorChip>
-                        ))}
+                title='Analysis based on the following files'
+                placement='topRight'
+                content={(
+                  defaultDocs ? (
+                    <div style={{ maxHeight: '200px', overflowY: 'scroll' }}>
+                      {document && document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
+                    </div>
+                  )
+                    : (
+                      <div style={{ maxHeight: '200px', overflowY: 'scroll' }}>
+                        {document && document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
                       </div>
-                    </>
-                  )}
+                    )
+                )}
               >
                 <Button>
                   {document.length}
@@ -344,28 +326,20 @@ export const VNRAnalysis = (props: Props) => {
                       </FileNameChip>
                     ) : (
                       <Popover
-                        title='Analysis Based on'
-                        content={defaultDocs ? (
-                          <>
-                            {document && document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
-                          </>
-                        )
-                          : (
-                            <>
-                              {document && document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
-                              <div style={{ marginTop: '10px' }}>
-                                {invalidDocuments && invalidDocuments.length > 0 && <span><b>Excluded files</b></span>}
-                                {invalidDocuments.map((d: any, i: number) => (
-                                  <FileNameErrorChip key={i}>
-                                    <Popover content={d.text} placement='right'>
-                                      {' '}
-                                      {d.file_name}
-                                    </Popover>
-                                  </FileNameErrorChip>
-                                ))}
+                        title='Analysis based on the following files'
+                        placement='bottomLeft'
+                        content={(
+                          defaultDocs ? (
+                            <div style={{ maxHeight: '200px', overflowY: 'scroll' }}>
+                              {document && document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
+                            </div>
+                          )
+                            : (
+                              <div style={{ maxHeight: '200px', overflowY: 'scroll' }}>
+                                {document && document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
                               </div>
-                            </>
-                          )}
+                            )
+                        )}
                       >
                         <Button>
                           {document.length}
