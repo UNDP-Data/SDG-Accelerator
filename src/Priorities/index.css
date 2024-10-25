@@ -19,3 +19,20 @@
     font-weight: normal !important;
     text-transform: uppercase !important;
 }
+
+.ant-upload-list {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 20 !important;
+}
+
+/* todo: fix this, not working */
+/* .ant-tooltip-hidden, */
+/* .ant-tooltip-open,  */
+/* .ant-upload-list-item .ant-tooltip {
+    inset: 131px auto auto 575px !important;
+} */
+
+.ant-tooltip-placement-bottom {
+    position: relative !important;
+}
