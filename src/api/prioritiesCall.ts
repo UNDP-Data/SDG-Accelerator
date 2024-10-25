@@ -67,7 +67,7 @@ export async function detectLanguageViaAPI(texts: string[]) {
   try {
     const response = await axios({
       method: 'post',
-      url: `${AIAAS_API_BASE_URL}/identification/languages`,
+      url: `${AIAAS_API_BASE_URL}/identification`,
       data: JSON.stringify({ texts }),
       headers: {
         'Content-Type': 'application/json',
