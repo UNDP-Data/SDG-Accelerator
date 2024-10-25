@@ -1,19 +1,22 @@
+/* eslint-disable camelcase */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import styled from 'styled-components';
 import {
-  Collapse,
+  Alert,
   message,
   Modal,
   Popover,
   Segmented,
-  Select, Tabs,
+  Select,
+  Table,
+  Tabs,
   Tooltip,
   Upload,
 } from 'antd';
 import { UploadFile, UploadChangeParam } from 'antd/lib/upload/interface';
 import { useEffect, useState } from 'react';
-import { ChevronDown, ChevronUp, FileUpIcon } from 'lucide-react';
+import { FileUpIcon } from 'lucide-react';
 import { InfoCircleOutlined } from '@ant-design/icons';
 import { VNRAnalysis } from './VNRAnalysis';
 import { GoalStatusType } from '../Types';
@@ -34,7 +37,7 @@ const HeroImageEl = styled.div`
   margin-top: 7.1875rem;
 `;
 
-const FILES_LIMIT = 25;
+const FILES_LIMIT = 30;
 
 export const Priorities = (props: Props) => {
   const {
@@ -59,6 +62,8 @@ export const Priorities = (props: Props) => {
   const [textFiles, setTextFiles] = useState<any[]>([]);
   const [isExtracting, setisExtracting] = useState(false);
   const [extractionError, setExtractionError] = useState(new Set<string>());
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+  const [customWeights, setCustomWeights] = useState<{ [key: string]: number }>({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -110,12 +115,13 @@ export const Priorities = (props: Props) => {
         return;
       }
 
-      setStatus('Analyzing documents...');
+      setStatus(`Analyzing ${textFiles.length} document(s)...`);
       const pagesArray = textsFiles.map((file) => Number(file.pageCount));
+      const customWeightsArray = textsFiles.map((file) => customWeights[file.file_name] || 1);
 
       const response = await submitDocumentsForAnalysis(
         plaintextFiles,
-        strategy === 'proportional' ? pagesArray : undefined,
+        strategy === 'proportional' ? pagesArray : strategy === 'custom' ? customWeightsArray : undefined,
         model === 'newer' ? 2 : 1,
       );
 
@@ -153,6 +159,25 @@ export const Priorities = (props: Props) => {
     } catch (err) {
       setError(err);
     }
+  };
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCustomWeightChange = (fileName: string, value: number) => {
+    setCustomWeights((prevWeights) => ({
+      ...prevWeights,
+      [fileName]: value,
+    }));
   };
 
   return (
@@ -422,6 +447,22 @@ export const Priorities = (props: Props) => {
                                       setisExtracting(false);
                                     }
                                   }}
+                                  itemRender={(originNode) => (
+                                    <div>
+                                      <div
+                                        style={{
+                                          flexGrow: 0,
+                                          flexShrink: 1,
+                                          minWidth: '205px',
+                                          maxWidth: '205px',
+                                          overflow: 'hidden',
+                                          textOverflow: 'ellipsis',
+                                        }}
+                                      >
+                                        {originNode}
+                                      </div>
+                                    </div>
+                                  )}
                                 >
                                   <FileUpIcon />
                                   <p className='ant-upload-text'>Click or drag file(s) to this area then click Analyze Documents</p>
@@ -431,70 +472,175 @@ export const Priorities = (props: Props) => {
                                     {FILES_LIMIT}
                                     {' '}
                                     PDFs allowed. Only English language is currently supported by the model
+                                    {' '}
+                                    <br />
+                                    <b>Note:</b>
+                                    {' '}
+                                    Documents are not persisted after analysis, you will not be able to access the raw document later
                                   </p>
                                 </Upload.Dragger>
-
-                              </div>
-                              <div className='margin-top-01 margin-bottom-07'>
-                                <Collapse
-                                  className='undp-accordion no-background'
-                                  accordion
-                                  bordered={false}
-                                  expandIcon={({ isActive }) => (isActive ? (<ChevronUp size={32} strokeWidth={1} stroke='var(--red)' />) : (<ChevronDown size={32} strokeWidth={1} stroke='var(--red)' />))}
-                                  size='small'
-                                  expandIconPosition='start'
-                                >
-                                  <Collapse.Panel header={<span style={{ fontSize: '1rem' }}>Advanced Options</span>} key='1'>
-                                    <p className='undp-typography label'>
-                                      Model Selection
-                                      {' '}
-                                      <Tooltip title='Select which machine learning model version to use' placement='topRight'>
-                                        <InfoCircleOutlined />
-                                      </Tooltip>
-                                    </p>
-                                    <Segmented
-                                      className='undp-segmented-small'
-                                      options={[
-                                        { label: 'Legacy Model', value: 'legacy' },
-                                        { label: 'Newer Model', value: 'newer' },
-                                      ]}
-                                      value={model}
-                                      onChange={(value: 'legacy' | 'newer') => setModel(value)}
-                                    />
-
-                                    <p className='undp-typography label margin-top-05'>
-                                      Document Weighting Strategy
-                                      {' '}
-                                      <Tooltip title='Are some documents more important than others?' placement='topLeft'>
-                                        <InfoCircleOutlined />
-                                      </Tooltip>
-                                    </p>
-                                    <Segmented
-                                      className='undp-segmented-small'
-                                      options={[
-                                        { label: 'Equal', value: 'equal' },
-                                        { label: 'Length-based', value: 'proportional' },
-                                        { label: 'Custom', value: 'custom', disabled: true },
-                                      ]}
-                                      value={strategy}
-                                      onChange={(value: 'equal' | 'proportional' | 'custom') => setStrategy(value)}
-                                    />
-                                  </Collapse.Panel>
-                                </Collapse>
                               </div>
                               <>
-                                <button
-                                  type='button'
-                                  className='margin-top-05 undp-button button-primary button-arrow margin-top-07'
-                                  style={{ backgroundColor: textFiles.length === 0 || textFiles.length > FILES_LIMIT || isExtracting || extractionError.size > 0 ? 'gray' : '' }}
-                                  onClick={() => {
-                                    setLoading(true);
-                                    analyzeDocuments(textFiles);
-                                  }}
-                                  disabled={textFiles.length === 0 || textFiles.length > FILES_LIMIT || isExtracting || extractionError.size > 0}
-                                >
-                                  Analyze Documents
-                                </button>
+                                {extractionError.size > 0 && <Alert style={{ marginTop: 20 }} type='error' message='Remove invalid documents to proceed with analysis. Hover on each file to understand why a file is invalid' />}
+
+                                <div className='margin-top-07 margin-bottom-04' style={{ display: 'flex', flexDirection: 'row', gap: 20 }}>
+
+                                  <div>
+                                    <button
+                                      type='button'
+                                      className='undp-button button-primary button-arrow'
+                                      style={{ backgroundColor: textFiles.length === 0 || textFiles.length > FILES_LIMIT || isExtracting || extractionError.size > 0 ? 'gray' : '' }}
+                                      onClick={() => {
+                                        setLoading(true);
+                                        analyzeDocuments(textFiles);
+                                      }}
+                                      disabled={textFiles.length === 0 || textFiles.length > FILES_LIMIT || isExtracting || extractionError.size > 0}
+                                    >
+                                      Analyze Documents
+                                    </button>
+                                  </div>
+
+                                  <div>
+                                    <button
+                                      type='button'
+                                      className='undp-button button-secondary'
+                                      style={{ backgroundColor: 'white', color: 'black' }}
+                                      onClick={showModal}
+                                    >
+                                      Advanced Options
+                                    </button>
+                                    <Modal
+                                      className='undp-modal'
+                                      title='Advanced Options'
+                                      open={isModalVisible}
+                                      onOk={handleOk}
+                                      onCancel={handleCancel}
+                                    >
+                                      <p className='undp-typography label'>
+                                        Model Selection
+                                        {' '}
+                                        <Tooltip title='Select which machine learning model version to use' placement='topRight'>
+                                          <InfoCircleOutlined />
+                                        </Tooltip>
+                                      </p>
+                                      <Segmented
+                                        className='undp-segmented-small'
+                                        options={[
+                                          { label: 'Legacy Model', value: 'legacy' },
+                                          { label: 'Newer Model', value: 'newer' },
+                                        ]}
+                                        value={model}
+                                        onChange={(value: 'legacy' | 'newer') => setModel(value)}
+                                      />
+
+                                      <p className='undp-typography label margin-top-05'>
+                                        Document Weighting Strategy
+                                        {' '}
+                                        <Tooltip title='Are some documents more important than others?' placement='topLeft'>
+                                          <InfoCircleOutlined />
+                                        </Tooltip>
+                                      </p>
+                                      <Segmented
+                                        className='undp-segmented-small'
+                                        options={[
+                                          { label: 'Equal', value: 'equal' },
+                                          { label: 'Length-based', value: 'proportional' },
+                                          { label: 'Custom', value: 'custom' },
+                                        ]}
+                                        value={strategy}
+                                        onChange={(value: 'equal' | 'proportional' | 'custom') => setStrategy(value)}
+                                      />
+
+                                      {strategy === 'proportional' && (
+                                        <div style={{ marginTop: '1rem' }}>
+                                          <Table
+                                            columns={[
+                                              {
+                                                title: 'Documents',
+                                                dataIndex: 'name',
+                                                key: 'name',
+                                              },
+                                              {
+                                                title: 'Pages',
+                                                dataIndex: 'pageCount',
+                                                key: 'pageCount',
+                                              },
+                                              {
+                                                title: (
+                                                  <>
+                                                    Importance Rank
+                                                    {' '}
+                                                    <Tooltip title='Rank based on the length of the document' placement='topRight'>
+                                                      <InfoCircleOutlined />
+                                                    </Tooltip>
+                                                  </>
+                                                ),
+                                                dataIndex: 'importanceRank',
+                                                key: 'importanceRank',
+                                              },
+                                            ]}
+                                            dataSource={textFiles
+                                              .map((file) => ({
+                                                key: file.file_name,
+                                                name: file.file_name,
+                                                pageCount: file.pageCount,
+                                              }))
+                                              .sort((a, b) => b.pageCount - a.pageCount)
+                                              .map((file, index) => ({
+                                                ...file,
+                                                importanceRank: index + 1,
+                                              }))}
+                                            pagination={false}
+                                          />
+                                        </div>
+                                      )}
+
+                                      {strategy === 'custom' && (
+                                        <div style={{ marginTop: '1rem' }}>
+                                          <Table
+                                            columns={[
+                                              {
+                                                title: 'Documents',
+                                                dataIndex: 'name',
+                                                key: 'name',
+                                              },
+                                              {
+                                                title: (
+                                                  <>
+                                                    Importance Weight
+                                                    {' '}
+                                                    <Tooltip title='Set custom importance weight for each document' placement='topRight'>
+                                                      <InfoCircleOutlined />
+                                                    </Tooltip>
+                                                  </>
+                                                ),
+                                                dataIndex: 'customWeight',
+                                                key: 'customWeight',
+                                                render: (text, record) => (
+                                                  <Segmented
+                                                    className='undp-segmented-small'
+                                                    options={[1, 2, 3, 4, 5].map((val) => ({ label: val.toString(), value: val }))}
+                                                    value={customWeights[record.name] || 3}
+                                                    onChange={(value) => handleCustomWeightChange(record.name, value)}
+                                                    placeholder='Set custom weight'
+                                                  />
+                                                ),
+                                              },
+                                            ]}
+                                            dataSource={textFiles.map((file) => ({
+                                              key: file.file_name,
+                                              name: file.file_name,
+                                              customWeight: customWeights[file.file_name] || 1,
+                                            }))}
+                                            pagination={false}
+                                          />
+                                        </div>
+                                      )}
+                                    </Modal>
+                                  </div>
+
+                                </div>
+
                                 <span style={{
                                   fontSize: 'smaller', color: 'GrayText', paddingTop: 2, marginTop: 0,
                                 }}
