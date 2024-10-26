@@ -9,11 +9,12 @@ import workerSrc from 'pdfjs-dist/build/pdf.worker?worker&url';
 import { getLIDModel } from 'fasttext.wasm.js/common';
 import { LanguageIdentificationModel } from 'fasttext.wasm.js/dist/models/language-identification/common.js';
 import { detectLanguageViaAPI, extractTextViaAPI } from '../api/prioritiesCall';
+import { LanguageExtractionResult } from '../Types';
 
 GlobalWorkerOptions.workerSrc = workerSrc;
 let lidModelPromise: Promise<LanguageIdentificationModel> | null = null;
 
-const detectLanguageWithFastText = async (texts: string[]) => {
+const detectLanguageWithFastText = async (texts: string[]): Promise<LanguageExtractionResult[]> => {
   if (!lidModelPromise) {
     lidModelPromise = getLIDModel().then(async (model) => {
       await model.load();
@@ -123,7 +124,7 @@ export async function extractTextFromPDFs(files: File[]) {
     .replace(/\s+/g, ' ')
     .trim());
 
-  let languages = null;
+  let languages: LanguageExtractionResult[] | null = null;
   try {
     languages = await detectLanguageWithFastText(truncatedTexts);
   } catch (error) {
@@ -131,7 +132,7 @@ export async function extractTextFromPDFs(files: File[]) {
   }
 
   const textResults = texts.map((t, index) => {
-    if (!t.error && languages[index].official !== 'en') {
+    if (!t.error && languages && languages[index].official !== 'en') {
       return {
         ...t,
         error: true,
