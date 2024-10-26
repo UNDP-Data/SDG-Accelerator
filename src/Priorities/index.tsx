@@ -519,7 +519,7 @@ export const Priorities = (props: Props) => {
                                       <p className='undp-typography label'>
                                         Model Selection
                                         {' '}
-                                        <Tooltip title='Select which machine learning model version to use' placement='topRight'>
+                                        <Tooltip title='Select which machine learning model version to use' placement='topLeft'>
                                           <InfoCircleOutlined />
                                         </Tooltip>
                                       </p>
