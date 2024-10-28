@@ -551,6 +551,12 @@ export const Priorities = (props: Props) => {
                                         onChange={(value: 'equal' | 'proportional' | 'custom') => setStrategy(value)}
                                       />
 
+                                      {strategy === 'equal' && (
+                                        <div style={{ marginTop: '1rem' }}>
+                                          <h4>The model treats all documents to have equal importance.</h4>
+                                        </div>
+                                      )}
+
                                       {strategy === 'proportional' && (
                                         <div style={{ marginTop: '1rem' }}>
                                           <Table
@@ -561,22 +567,17 @@ export const Priorities = (props: Props) => {
                                                 key: 'name',
                                               },
                                               {
-                                                title: 'Pages',
-                                                dataIndex: 'pageCount',
-                                                key: 'pageCount',
-                                              },
-                                              {
                                                 title: (
                                                   <>
-                                                    Importance Rank
+                                                    Pages
                                                     {' '}
-                                                    <Tooltip title='Rank based on the length of the document' placement='topRight'>
+                                                    <Tooltip title='The importance of each document is determined by the number of pages' placement='topRight'>
                                                       <InfoCircleOutlined />
                                                     </Tooltip>
                                                   </>
                                                 ),
-                                                dataIndex: 'importanceRank',
-                                                key: 'importanceRank',
+                                                dataIndex: 'pageCount',
+                                                key: 'pageCount',
                                               },
                                             ]}
                                             dataSource={textFiles
@@ -585,11 +586,7 @@ export const Priorities = (props: Props) => {
                                                 name: file.file_name,
                                                 pageCount: file.pageCount,
                                               }))
-                                              .sort((a, b) => b.pageCount - a.pageCount)
-                                              .map((file, index) => ({
-                                                ...file,
-                                                importanceRank: index + 1,
-                                              }))}
+                                              .sort((a, b) => b.pageCount - a.pageCount)}
                                             pagination={false}
                                           />
                                         </div>
@@ -609,7 +606,7 @@ export const Priorities = (props: Props) => {
                                                   <>
                                                     Importance Weight
                                                     {' '}
-                                                    <Tooltip title='Set custom importance weight for each document' placement='topRight'>
+                                                    <Tooltip title='Set relative importance weight for each document' placement='topRight'>
                                                       <InfoCircleOutlined />
                                                     </Tooltip>
                                                   </>
@@ -627,11 +624,13 @@ export const Priorities = (props: Props) => {
                                                 ),
                                               },
                                             ]}
-                                            dataSource={textFiles.map((file) => ({
-                                              key: file.file_name,
-                                              name: file.file_name,
-                                              customWeight: customWeights[file.file_name] || 1,
-                                            }))}
+                                            dataSource={textFiles
+                                              .map((file) => ({
+                                                key: file.file_name,
+                                                name: file.file_name,
+                                                customWeight: customWeights[file.file_name] || 1,
+                                              }))
+                                              .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }))}
                                             pagination={false}
                                           />
                                         </div>
