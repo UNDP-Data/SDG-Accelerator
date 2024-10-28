@@ -237,7 +237,7 @@ export const Priorities = (props: Props) => {
                 )}
               >
                 <span style={{
-                  fontSize: 22, cursor: 'pointer', color: 'var(--gray-600)', textDecoration: 'underline', textDecorationStyle: 'dotted', textDecorationColor: 'var(--dark-red)', background: 'none', border: 'none', padding: 0,
+                  cursor: 'pointer', textDecoration: 'underline', textDecorationStyle: 'dotted', textDecorationColor: 'var(--dark-red)', background: 'none', border: 'none', padding: 0,
                 }}
                 >
                   our machine learning approach
