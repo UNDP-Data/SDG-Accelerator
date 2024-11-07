@@ -12,17 +12,28 @@ import { detectLanguageViaAPI, extractTextViaAPI } from '../api/prioritiesCall';
 import { LanguageExtractionResult } from '../Types';
 
 GlobalWorkerOptions.workerSrc = workerSrc;
+
 let lidModelPromise: Promise<LanguageIdentificationModel> | null = null;
 
-const detectLanguageWithFastText = async (texts: string[]): Promise<LanguageExtractionResult[]> => {
+export const initializeModel = () => {
   if (!lidModelPromise) {
     lidModelPromise = getLIDModel().then(async (model) => {
       await model.load();
       return model;
     });
   }
+  return lidModelPromise;
+};
 
-  const lidModel = await lidModelPromise;
+export const getModel = () => {
+  if (!lidModelPromise) {
+    throw new Error('Model not initialized. Call initializeModel first.');
+  }
+  return lidModelPromise;
+};
+
+const detectLanguageWithFastText = async (texts: string[]): Promise<LanguageExtractionResult[]> => {
+  const lidModel = await getModel();
 
   const response = await Promise.all(
     texts.map(async (text) => {
