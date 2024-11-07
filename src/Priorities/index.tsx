@@ -16,7 +16,7 @@ import {
 } from 'antd';
 import { UploadFile, UploadChangeParam } from 'antd/lib/upload/interface';
 import { useEffect, useState } from 'react';
-import { FileUpIcon } from 'lucide-react';
+import { FileUpIcon, InfoIcon } from 'lucide-react';
 import { InfoCircleOutlined } from '@ant-design/icons';
 import { VNRAnalysis } from './VNRAnalysis';
 import { GoalStatusType } from '../Types';
@@ -54,7 +54,7 @@ export const Priorities = (props: Props) => {
   const [error, setError] = useState<any>(null);
   const [data, setData] = useState<any>(null);
   const [countryVNRs, setCountryVNRs] = useState<any>(null);
-  const [model, setModel] = useState<'legacy' | 'newer'>('newer');
+  const [model, setModel] = useState<'legacy' | 'newer'>('legacy');
   const [strategy, setStrategy] = useState<'equal' | 'proportional' | 'custom'>('equal');
   const [status, setStatus] = useState<string | null>(null);
   const [selectedDocument, setSelectedDocument] = useState();
@@ -199,12 +199,12 @@ export const Priorities = (props: Props) => {
         <div
           className='max-width-1440'
           style={{
-            backgroundColor: 'var(--white)', color: 'var(--black)', padding: 'var(--spacing-06)', margin: 'auto', cursor: isExtracting ? 'progress' : '',
+            backgroundColor: 'var(--white)', color: 'var(--black)', padding: 'var(--spacing-06)', margin: 'auto', cursor: isExtracting ? 'progress' : 'default',
           }}
         >
           <h1 className='undp-typography'>
-            National Priorities For
-            {' '}
+            National Priorities:
+            <br />
             {countryFullName}
           </h1>
           <div className='margin-top-05'>
@@ -242,7 +242,7 @@ export const Priorities = (props: Props) => {
                 >
                   our machine learning approach
                   {' '}
-                  <InfoCircleOutlined />
+                  <InfoIcon size={20} />
                 </span>
               </Popover>
             </h5>
@@ -258,7 +258,7 @@ export const Priorities = (props: Props) => {
                     defaultActiveKey={!data && countryFilePresent === false ? 'vnrs' : 'nationalPriorities'}
                     className='undp-tabs'
                     onChange={() => {
-                      setModel('newer');
+                      setModel('legacy');
                       setStrategy('equal');
                     }}
                     items={[
@@ -448,19 +448,17 @@ export const Priorities = (props: Props) => {
                                     }
                                   }}
                                   itemRender={(originNode) => (
-                                    <div>
-                                      <div
-                                        style={{
-                                          flexGrow: 0,
-                                          flexShrink: 1,
-                                          minWidth: '205px',
-                                          maxWidth: '205px',
-                                          overflow: 'hidden',
-                                          textOverflow: 'ellipsis',
-                                        }}
-                                      >
-                                        {originNode}
-                                      </div>
+                                    <div
+                                      style={{
+                                        flexGrow: 0,
+                                        flexShrink: 1,
+                                        minWidth: '210px',
+                                        maxWidth: '210px',
+                                        // overflow: 'hidden',
+                                        // textOverflow: 'ellipsis',
+                                      }}
+                                    >
+                                      {originNode}
                                     </div>
                                   )}
                                 >
@@ -527,7 +525,7 @@ export const Priorities = (props: Props) => {
                                         className='undp-segmented-small'
                                         options={[
                                           { label: 'Legacy Model', value: 'legacy' },
-                                          { label: 'Newer Model', value: 'newer' },
+                                          { label: 'Newer Model (Coming Soon)', value: 'newer', disabled: true },
                                         ]}
                                         value={model}
                                         onChange={(value: 'legacy' | 'newer') => setModel(value)}

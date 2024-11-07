@@ -27,10 +27,13 @@
 }
 
 /* todo: fix this, not working */
-/* .ant-tooltip-hidden, */
-/* .ant-tooltip-open,  */
-/* .ant-upload-list-item .ant-tooltip {
-    inset: 131px auto auto 575px !important;
+.ant-upload-list-item-error {
+    max-width: none !important;
+}
+
+/* .ant-tooltip-placement-bottom {
+    max-width: none !important;
+    position: absolute !important;
 } */
 
 .ant-tooltip-placement-bottom {
