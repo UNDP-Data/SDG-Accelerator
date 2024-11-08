@@ -14,7 +14,7 @@ export const fetchMetadata = async (
     kind,
   };
   const response = await axios.get(
-    `${AIAAS_API_BASE_URL}/classification/metadata`,
+    `${AIAAS_API_BASE_URL}/diagnostic/metadata`,
     {
       params,
       headers: {
@@ -27,7 +27,7 @@ export const fetchMetadata = async (
 };
 
 export const fetchDocumentById = async (id: string) => {
-  const response = await axios.get(`${AIAAS_API_BASE_URL}/classification/diagnostics/${id}`, {
+  const response = await axios.get(`${AIAAS_API_BASE_URL}/diagnostic/${id}`, {
     headers: {
       accept: 'application/json',
       api_key: AIAAS_API_KEY,
@@ -39,17 +39,18 @@ export const fetchDocumentById = async (id: string) => {
 export const submitDocumentsForAnalysis = async (
   files: File[],
   weights?: number[],
+  version?: number,
 ) => {
   const formData = new FormData();
 
   files.forEach((file) => formData.append('files', file));
 
   const weightAndFeaturesParam = weights && weights.length > 0
-    ? `?${weights.map((weight) => `weights=${weight}`).join('&')}&features=true`
-    : '?features=true';
+    ? `?${weights.map((weight) => `weights=${weight}`).join('&')}&version=${version}&features=true`
+    : `?&version=${version}&features=true`;
 
   const response = await axios.post(
-    `${AIAAS_API_BASE_URL}/classification/diagnostics${weightAndFeaturesParam}`,
+    `${AIAAS_API_BASE_URL}/diagnostic${weightAndFeaturesParam}`,
     formData,
     {
       headers: {
@@ -62,11 +63,11 @@ export const submitDocumentsForAnalysis = async (
   return response.data;
 };
 
-export async function detectLanguages(texts: string[]) {
+export async function detectLanguageViaAPI(texts: string[]) {
   try {
     const response = await axios({
       method: 'post',
-      url: `${AIAAS_API_BASE_URL}/identification/languages`,
+      url: `${AIAAS_API_BASE_URL}/identification`,
       data: JSON.stringify({ texts }),
       headers: {
         'Content-Type': 'application/json',
@@ -80,7 +81,7 @@ export async function detectLanguages(texts: string[]) {
   }
 }
 
-export async function extractViaAPI(fileData: File) {
+export async function extractTextViaAPI(fileData: File) {
   const formData = new FormData();
   formData.append('file', fileData);
 

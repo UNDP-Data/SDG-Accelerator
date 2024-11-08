@@ -22,7 +22,7 @@ interface Props {
 }
 
 const HeroImageEl = styled.div`
-background: url(${IMAGES.heroImage}) rgba(0, 0, 0, 0.3) no-repeat center;
+background: url(${IMAGES.orangeHeroImage}) rgba(0, 0, 0, 0.3) no-repeat center;
   background-size: cover;
   margin-top: 7.1875rem;
 `;
@@ -76,8 +76,8 @@ export const Interlinkages = (props: Props) => {
             </span>
           </div>
           <h1 className='undp-typography'>
-            SDG Interlinkages For
-            {' '}
+            SDG Interlinkages:
+            <br />
             {countryFullName}
           </h1>
         </div>

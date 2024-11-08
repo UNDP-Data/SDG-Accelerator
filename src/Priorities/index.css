@@ -1,0 +1,27 @@
+.undp-accordion.no-background .ant-collapse-item {
+    border: 0 !important;
+    background-color: transparent !important;
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+}
+
+.undp-accordion.no-background .ant-collapse-item .ant-collapse-header {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.undp-accordion.no-background .ant-collapse-item .ant-collapse-header {
+    align-items: center !important;
+}
+
+.undp-accordion.no-background .ant-collapse-item .ant-collapse-header-text {
+    font-size: 1.563rem !important;
+    font-weight: normal !important;
+    text-transform: uppercase !important;
+}
+
+.ant-upload-list {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 20 !important;
+}

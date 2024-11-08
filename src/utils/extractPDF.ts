@@ -5,45 +5,55 @@ import {
   PDFDocumentProxy,
   PDFPageProxy,
 } from 'pdfjs-dist';
-import { detectLanguages, extractViaAPI } from '../api/prioritiesCall';
-import { PDFJS_DIST_CDNS } from '../Constants';
+import workerSrc from 'pdfjs-dist/build/pdf.worker?worker&url';
+import { getLIDModel } from 'fasttext.wasm.js/common';
+import { LanguageIdentificationModel } from 'fasttext.wasm.js/dist/models/language-identification/common.js';
+import { detectLanguageViaAPI, extractTextViaAPI } from '../api/prioritiesCall';
+import { LanguageExtractionResult } from '../Types';
 
-GlobalWorkerOptions.workerSrc = '';
+GlobalWorkerOptions.workerSrc = workerSrc;
 
-async function checkCdn(cdn: string, index: number) {
-  try {
-    const response = await fetch(cdn, { method: 'HEAD' });
-    if (response.ok) {
-      return cdn;
-    }
-    console.error(
-      `CDN ${index + 1} down or invalid MIME type of : ${response.headers.get(
-        'Content-Type',
-      )}`,
-    );
-  } catch (error) {
-    console.error(`CDN ${index + 1} down: `, error);
+let lidModelPromise: Promise<LanguageIdentificationModel> | null = null;
+
+export const initializeModel = () => {
+  if (!lidModelPromise) {
+    lidModelPromise = getLIDModel().then(async (model) => {
+      await model.load();
+      return model;
+    });
   }
-  return null;
-}
+  return lidModelPromise;
+};
 
-async function loadPdfWorker() {
-  const validCdn = await PDFJS_DIST_CDNS.reduce(
-    async (accPromise, cdn, index) => {
-      const acc = await accPromise;
-      if (acc) return acc;
+export const getModel = () => {
+  if (!lidModelPromise) {
+    throw new Error('Model not initialized. Call initializeModel first.');
+  }
+  return lidModelPromise;
+};
 
-      return checkCdn(cdn, index);
-    },
-    Promise.resolve(null as string | null),
+const detectLanguageWithFastText = async (texts: string[]): Promise<LanguageExtractionResult[]> => {
+  const lidModel = await getModel();
+
+  const response = await Promise.all(
+    texts.map(async (text) => {
+      const predictions = await lidModel.identify(text);
+      const results: { official: string; name: string; probability: string }[] = [];
+
+      const { alpha2, refName, possibility } = predictions;
+
+      results.push({
+        official: alpha2 || 'unk',
+        name: refName,
+        probability: possibility.toString(),
+      });
+
+      return results[0] || { official: null, name: null, probability: '0' };
+    }),
   );
 
-  if (validCdn) {
-    GlobalWorkerOptions.workerSrc = validCdn;
-  } else {
-    throw new Error('All CDNs failed');
-  }
-}
+  return response;
+};
 
 async function pdfToText(file: File) {
   const blobUrl = URL.createObjectURL(file);
@@ -74,7 +84,9 @@ async function pdfToText(file: File) {
 
   if (hadParsingError) {
     try {
-      const [extractedTextViaAPI, pageCountViaAPI] = await extractViaAPI(file);
+      const [extractedTextViaAPI, pageCountViaAPI] = await extractTextViaAPI(
+        file,
+      );
       extractedText = extractedTextViaAPI;
       pageCount = pageCountViaAPI;
     } catch (error: any) {
@@ -85,15 +97,15 @@ async function pdfToText(file: File) {
   }
 
   if (extractedText.trim().length === 0) {
-    throw new Error('Unable to extract text from this document');
+    throw new Error(
+      'Unable to extract text from this document, might be a scanned file.',
+    );
   }
 
   return [extractedText.trim(), pageCount];
 }
 
-export async function extractTextFromMultiplePdfs(files: File[]) {
-  await loadPdfWorker();
-
+export async function extractTextFromPDFs(files: File[]) {
   const texts = await Promise.all(
     files.map(async (file) => {
       try {
@@ -116,12 +128,22 @@ export async function extractTextFromMultiplePdfs(files: File[]) {
   );
 
   const validTexts = texts.filter((t) => !t.error).map((t) => t.text);
-  const truncatedTexts = validTexts.map((text) => text.slice(0, 50000));
 
-  const languages = await detectLanguages(truncatedTexts);
+  const truncatedTexts = validTexts.map((text) => text
+    .slice(0, 50000)
+    .replace(/[\r\n]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim());
+
+  let languages: LanguageExtractionResult[] | null = null;
+  try {
+    languages = await detectLanguageWithFastText(truncatedTexts);
+  } catch (error) {
+    languages = await detectLanguageViaAPI(truncatedTexts);
+  }
 
   const textResults = texts.map((t, index) => {
-    if (!t.error && languages[index].official !== 'en') {
+    if (!t.error && languages && languages[index].official !== 'en') {
       return {
         ...t,
         error: true,

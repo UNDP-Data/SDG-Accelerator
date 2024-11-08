@@ -12,10 +12,21 @@ interface Props {
   countryFullName?: string;
 }
 
-const HeroImageEl = styled.div`
-  background: url(${IMAGES.heroImage}) no-repeat center;
-  background-size: cover;
-  margin-top: 7.1875rem;
+const HeaderTextDiv = styled.div`
+  position: absolute;
+  top: 0;
+  height: calc(100vh - 240px - 1rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 50px;
+  padding-left: var(--spacing-09);
+  padding-right: var(--spacing-09);
+  color: white;
+  @media (max-width: 720px) {
+    padding-left: var(--spacing-05);
+    padding-right: var(--spacing-05);
+  }
 `;
 
 const H2 = styled.h2`
@@ -32,48 +43,52 @@ export const DefaultHomePage = (props: Props) => {
   } = props;
   return (
     <>
-      <HeroImageEl className='undp-hero-image'>
-        <div className='max-width'>
-          <h1 className='undp-typography'>
+      <div className='background' style={{ height: 'calc(100vh - 240px - 1rem)', paddingTop: 0 }}>
+        <div className='blob blob1' />
+        <div className='blob blob2' />
+        <HeaderTextDiv>
+          <div className='max-width'>
+            <h1 className='undp-typography'>
+              {
+                countryFullName ? `SDG Push Diagnostic for ${countryFullName}` : 'SDG Push Diagnostic'
+              }
+            </h1>
+            <h5 className='undp-typography'>
+              SDG Push reimagines and recalibrates how we determine, interrogate and advance development interventions that put countries on more stable footing. The Diagnostic powers &lsquo;Integrated SDG Insights&lsquo; reports which provide a strong evidence-base and relevant insights to support national ambition at the SDG Summit 2023.
+            </h5>
             {
-              countryFullName ? `SDG Push Diagnostic for ${countryFullName}` : 'SDG Push Diagnostic'
-            }
-          </h1>
-          <h5 className='undp-typography'>
-            SDG Push reimagines and recalibrates how we determine, interrogate and advance development interventions that put countries on more stable footing. The Diagnostic powers &lsquo;Integrated SDG Insights&lsquo; reports which provide a strong evidence-base and relevant insights to support national ambition at the SDG Summit 2023.
-          </h5>
-          {
-            countryCode
-              ? COUNTRIES_WITH_REPORT.indexOf(countryCode.replaceAll('WithCountryGovInput', '')) !== -1
-                ? (
-                  <a
-                    href={`https://sdgigeneralstorage.blob.core.windows.net/sdg-push/InsightReports/UNDP%20-%20SDG%20${countryCode.replaceAll('WithCountryGovInput', '')}.pdf`}
-                    target='_blank'
-                    className='undp-button button-arrow button-primary margin-top-07'
-                    style={{ width: 'fit-content', textDecoration: 'none' }}
-                    rel='noreferrer'
-                  >
-                    Read the Integrated SDG Insights Report
-                  </a>
-                ) : null : (
-                  <div className='margin-top-09'>
-                    <p className='label margin-bottom-03'>Select a country to find out more</p>
-                    <Select
-                      className='undp-select'
-                      placeholder='Select a country to find out more'
-                      showSearch
-                      onChange={(value) => { window.open(`../../${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
-                      style={{ flexGrow: 1 }}
+              countryCode
+                ? COUNTRIES_WITH_REPORT.indexOf(countryCode.replaceAll('WithCountryGovInput', '')) !== -1
+                  ? (
+                    <a
+                      href={`https://sdgigeneralstorage.blob.core.windows.net/sdg-push/InsightReports/UNDP%20-%20SDG%20${countryCode.replaceAll('WithCountryGovInput', '')}.pdf`}
+                      target='_blank'
+                      className='undp-button button-arrow button-primary margin-top-07'
+                      style={{ width: 'fit-content', textDecoration: 'none' }}
+                      rel='noreferrer'
                     >
-                      {
-                    sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
-                  }
-                    </Select>
-                  </div>
-              )
-          }
-        </div>
-      </HeroImageEl>
+                      Read the Integrated SDG Insights Report
+                    </a>
+                  ) : null : (
+                    <div className='margin-top-09'>
+                      <p className='label margin-bottom-03'>Select a country to find out more</p>
+                      <Select
+                        className='undp-select'
+                        placeholder='Select a country to find out more'
+                        showSearch
+                        onChange={(value) => { window.open(`../../${CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1'] === 'IDN' ? 'IDNWithCountryGovInput' : CountryTaxonomy[CountryTaxonomy.findIndex((d) => d['Country or Area'] === value)]['Alpha-3 code-1']}/sdg-trends`, '_self'); }}
+                        style={{ flexGrow: 1 }}
+                      >
+                        {
+                        sortBy(CountryTaxonomy, 'Country or Area').map((d, i: number) => <Select.Option key={i} className='undp-select-option' value={d['Country or Area']}>{d['Country or Area']}</Select.Option>)
+                      }
+                      </Select>
+                    </div>
+                )
+            }
+          </div>
+        </HeaderTextDiv>
+      </div>
       {
         countryCode ? null
           : (
