@@ -25,17 +25,3 @@
     flex-wrap: wrap !important;
     gap: 20 !important;
 }
-
-/* todo: fix this, not working */
-.ant-upload-list-item-error {
-    max-width: none !important;
-}
-
-/* .ant-tooltip-placement-bottom {
-    max-width: none !important;
-    position: absolute !important;
-} */
-
-.ant-tooltip-placement-bottom {
-    position: relative !important;
-}
