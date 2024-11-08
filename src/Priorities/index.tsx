@@ -1,6 +1,5 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import styled from 'styled-components';
 import {
   Alert,
@@ -60,6 +59,7 @@ export const Priorities = (props: Props) => {
   const [selectedDocument, setSelectedDocument] = useState();
   const [fileNames, setFileNames] = useState(new Set());
   const [textFiles, setTextFiles] = useState<any[]>([]);
+  const [processingCount, setProcessingCount] = useState<number>(0);
   const [isExtracting, setisExtracting] = useState(false);
   const [extractionError, setExtractionError] = useState(new Set<string>());
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
@@ -99,6 +99,12 @@ export const Priorities = (props: Props) => {
 
     fetchDocument();
   }, [selectedDocument]);
+
+  useEffect(() => {
+    if (processingCount === 0) {
+      setisExtracting(false);
+    }
+  }, [processingCount]);
 
   const analyzeDocuments = async (textsFiles: any[]) => {
     try {
@@ -196,56 +202,55 @@ export const Priorities = (props: Props) => {
             National Priorities
           </span>
         </div>
-        <div
-          className='max-width-1440'
-          style={{
-            backgroundColor: 'var(--white)', color: 'var(--black)', padding: 'var(--spacing-06)', margin: 'auto', cursor: isExtracting ? 'progress' : 'default',
-          }}
-        >
-          <h1 className='undp-typography'>
-            National Priorities:
-            <br />
-            {countryFullName}
-          </h1>
-          <div className='margin-top-05'>
-            <h5 className='undp-typography margin-bottom-06' style={{ color: 'var(--black)' }}>
-              Documents such as National Development Plans indicate priorities of the government that can be mapped to the SDGs. These priorities are important as we develop the SDG Push interventions by country. Upload a development plan, or select from the list of documents to discover which SDGs feature most prominently as a priority.
-              {' '}
-              <br />
-              <br />
-              Explore the analysis of these priorities using
-              {' '}
-              <Popover
-                placement='rightBottom'
-                content={(
-                  <div style={{
-                    maxWidth: '500px', maxHeight: '400px', padding: 25, textAlign: 'justify', overflowY: 'scroll',
-                  }}
-                  >
-                    <h5 className='undp-typography' style={{ color: 'var(--black)', fontSize: 16 }}>
-                      Countries&apos; national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification.
-                      {' '}
-                      <br />
-                      <br />
-                      {' '}
-                      The training data is based on an improved
-                      {' '}
-                      <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer noopener' className='undp-style'>OSDG Community Dataset</a>
-                      . It considers 100k+ terms, including phrases and expressions.
-                    </h5>
-                  </div>
-                )}
-              >
-                <span style={{
-                  cursor: 'pointer', textDecoration: 'underline', textDecorationStyle: 'dotted', textDecorationColor: 'var(--dark-red)', background: 'none', border: 'none', padding: 0,
+
+        <h1 className='undp-typography'>
+          National Priorities:
+          <br />
+          {countryFullName}
+        </h1>
+        <div className='margin-top-05'>
+          <h5 className='undp-typography margin-bottom-06'>
+            Policy documents, such as Voluntary National Reviews (VNRs) and National Development Plans (NDPs), provide an insight into the priorities of the country in terms of SDGs.
+            {' '}
+            <Popover
+              placement='rightBottom'
+              content={(
+                <div style={{
+                  maxWidth: '500px', maxHeight: '400px', padding: 25, textAlign: 'justify', overflowY: 'scroll',
                 }}
                 >
-                  our machine learning approach
-                  {' '}
-                  <InfoIcon size={20} />
-                </span>
-              </Popover>
-            </h5>
+                  <h5 className='undp-typography' style={{ color: 'var(--black)', fontSize: 16 }}>
+                    Countries&apos; national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification.
+                    {' '}
+                    <br />
+                    <br />
+                    {' '}
+                    The training data is based on an improved
+                    {' '}
+                    <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer noopener' className='undp-style'>OSDG Community Dataset</a>
+                    . It considers 100k+ terms, including phrases and expressions.
+                  </h5>
+                </div>
+              )}
+            >
+              <span style={{
+                cursor: 'pointer', textDecoration: 'underline', textDecorationStyle: 'dotted', textDecorationColor: 'var(--dark-red)', background: 'none', border: 'none', padding: 0,
+              }}
+              >
+                Our machine learning approach
+              </span>
+            </Popover>
+            {' '}
+            allows you to uncover these priorities in such documents. Select an existing document to explore or upload documents to analyze.
+            {' '}
+            <Tooltip title="The documents you upload are not stored in our system. The results you obtain are not shown to other users. For more robust results, use the documents that offer a comprehensive account of the country&apos;s activities and policies rather than thematic, narrowly-scoped or sectoral documents" placement='bottom'><InfoIcon size={20} /></Tooltip>
+          </h5>
+          <div
+            className='max-width-1440'
+            style={{
+              backgroundColor: 'var(--white)', color: 'var(--black)', padding: 'var(--spacing-06)', margin: 'auto', cursor: isExtracting ? 'progress' : 'default',
+            }}
+          >
             {
               !data && countryFilePresent === undefined
                 ? (
@@ -263,7 +268,7 @@ export const Priorities = (props: Props) => {
                     }}
                     items={[
                       {
-                        label: !data && countryFilePresent === false ? 'Select Documents' : 'Select Documents',
+                        label: !data && countryFilePresent === false ? 'Explore Documents' : 'Explore Documents',
                         key: !data && countryFilePresent === false ? 'vnrs' : 'nationalPriorities',
                         children: !data && countryFilePresent === false ? (
                           <>
@@ -359,7 +364,7 @@ export const Priorities = (props: Props) => {
                         ),
                       },
                       {
-                        label: 'Analyze Custom Documents',
+                        label: 'Analyze Documents',
                         key: 'upload',
                         children: (
                           <>
@@ -379,12 +384,12 @@ export const Priorities = (props: Props) => {
                                     }
 
                                     if (fileNames.has(file.name)) {
-                                      message.error(`${file.name} is a duplicate file`);
+                                      message.error(`${file.name} is a duplicate file`, 5);
                                       return Upload.LIST_IGNORE;
                                     }
 
                                     if (selectedFileNotAnalyzed.length >= FILES_LIMIT) {
-                                      message.error(`You can only upload up to ${FILES_LIMIT} files`);
+                                      message.error(`You can only upload up to ${FILES_LIMIT} files`, 8);
                                       return Upload.LIST_IGNORE;
                                     }
 
@@ -416,6 +421,7 @@ export const Priorities = (props: Props) => {
                                     message.info(`Dropped files: ${e.dataTransfer.files.length}`);
                                   }}
                                   customRequest={async ({ file, onSuccess, onError }: any) => {
+                                    setProcessingCount((prev: number) => prev + 1);
                                     setisExtracting(true);
                                     try {
                                       const [extractedText] = await extractTextFromPDFs([file]);
@@ -433,18 +439,16 @@ export const Priorities = (props: Props) => {
                                         : f)));
 
                                       setTextFiles((prevTextFiles) => [...prevTextFiles, extractedText]);
-
                                       // eslint-disable-next-line no-shadow
                                     } catch (error: any) {
                                       if (onError) {
                                         onError(error);
                                       }
-
                                       setSelectedFileNotAnalyzed((prevList: any[]) => prevList.map((f) => (f.uid === file.uid
                                         ? { ...f, status: 'error', error: error.message }
                                         : f)));
                                     } finally {
-                                      setisExtracting(false);
+                                      setProcessingCount((prev: number) => prev - 1);
                                     }
                                   }}
                                   itemRender={(originNode) => (
@@ -454,8 +458,6 @@ export const Priorities = (props: Props) => {
                                         flexShrink: 1,
                                         minWidth: '210px',
                                         maxWidth: '210px',
-                                        // overflow: 'hidden',
-                                        // textOverflow: 'ellipsis',
                                       }}
                                     >
                                       {originNode}
@@ -469,17 +471,59 @@ export const Priorities = (props: Props) => {
                                     {' '}
                                     {FILES_LIMIT}
                                     {' '}
-                                    PDFs allowed. Only English language is currently supported by the model
+                                    PDF files allowed.
                                     {' '}
-                                    <br />
-                                    <b>Note:</b>
+                                    <b>Note</b>
+                                    : Only English language is currently supported by the model
                                     {' '}
-                                    Documents are not persisted after analysis, you will not be able to access the raw document later
                                   </p>
                                 </Upload.Dragger>
                               </div>
                               <>
-                                {extractionError.size > 0 && <Alert style={{ marginTop: 20 }} type='error' message='Remove invalid documents to proceed with analysis. Hover on each file to understand why a file is invalid' />}
+                                {extractionError.size > 0 && (
+                                  <Alert
+                                    style={{ marginTop: 20 }}
+                                    type='error'
+                                    message='Remove invalid documents to proceed with analysis. Hover on each file to understand why a file is invalid, or click below to auto remove all invalid files.'
+                                  />
+                                )}
+
+                                {extractionError.size > 0 && !isExtracting
+                                  && (
+                                    <button
+                                      type='button'
+                                      style={{
+                                        backgroundColor: 'white', border: 'none', fontSize: 'small', textDecoration: 'underline', cursor: 'pointer',
+                                      }}
+                                      onClick={() => {
+                                        const updatedSelectedFileNotAnalyzed = selectedFileNotAnalyzed.filter(
+                                          (file: { uid: string; }) => !extractionError.has(file.uid),
+                                        );
+
+                                        setSelectedFileNotAnalyzed(updatedSelectedFileNotAnalyzed);
+                                        setExtractionError(new Set());
+
+                                        const uploadComponent = document.querySelector('.ant-upload-list');
+                                        if (uploadComponent) {
+                                          const fileItems = uploadComponent.querySelectorAll('.ant-upload-list-item');
+                                          fileItems.forEach((item) => {
+                                            const fileName = item.querySelector('.ant-upload-list-item-name')?.textContent;
+                                            if (fileName && !updatedSelectedFileNotAnalyzed.some((file: { name: string; }) => file.name === fileName)) {
+                                              const deleteButton = item.querySelector('.ant-upload-list-item-actions button') as HTMLButtonElement;
+                                              if (deleteButton) {
+                                                setTimeout(() => {
+                                                  deleteButton.click();
+                                                  item.remove();
+                                                }, 5);
+                                              }
+                                            }
+                                          });
+                                        }
+                                      }}
+                                    >
+                                      Remove all invalid files
+                                    </button>
+                                  )}
 
                                 <div className='margin-top-07 margin-bottom-04' style={{ display: 'flex', flexDirection: 'row', gap: 20 }}>
 
@@ -515,7 +559,7 @@ export const Priorities = (props: Props) => {
                                       onCancel={handleCancel}
                                     >
                                       <p className='undp-typography label'>
-                                        Model Selection
+                                        Model Type
                                         {' '}
                                         <Tooltip title='Select which machine learning model version to use' placement='topLeft'>
                                           <InfoCircleOutlined />
@@ -532,9 +576,9 @@ export const Priorities = (props: Props) => {
                                       />
 
                                       <p className='undp-typography label margin-top-05'>
-                                        Document Weighting Strategy
+                                        Document Weights
                                         {' '}
-                                        <Tooltip title='Are some documents more important than others?' placement='topLeft'>
+                                        <Tooltip title='Select how the results are aggregated across the documents.' placement='topLeft'>
                                           <InfoCircleOutlined />
                                         </Tooltip>
                                       </p>
@@ -543,7 +587,7 @@ export const Priorities = (props: Props) => {
                                         options={[
                                           { label: 'Equal', value: 'equal' },
                                           { label: 'Length-based', value: 'proportional' },
-                                          { label: 'Custom', value: 'custom' },
+                                          { label: 'Manual', value: 'custom' },
                                         ]}
                                         value={strategy}
                                         onChange={(value: 'equal' | 'proportional' | 'custom') => setStrategy(value)}
@@ -551,23 +595,54 @@ export const Priorities = (props: Props) => {
 
                                       {strategy === 'equal' && (
                                         <div style={{ marginTop: '1rem' }}>
-                                          <h4>The model treats all documents to have equal importance.</h4>
-                                        </div>
-                                      )}
-
-                                      {strategy === 'proportional' && (
-                                        <div style={{ marginTop: '1rem' }}>
+                                          <p style={{ fontSize: 'smaller' }}>Equal weights assigns uniform weights to all documents. This means that shorter documents contribute to the result as much as longer ones. Select this if the shorter documents in your set are conceptually and practically equally important to the longer ones.</p>
                                           <Table
                                             columns={[
                                               {
-                                                title: 'Documents',
+                                                title: 'Document',
                                                 dataIndex: 'name',
                                                 key: 'name',
                                               },
                                               {
                                                 title: (
                                                   <>
-                                                    Pages
+                                                    Weight
+                                                    {' '}
+                                                    <Tooltip title='All documents have equal importance' placement='topRight'>
+                                                      <InfoCircleOutlined />
+                                                    </Tooltip>
+                                                  </>
+                                                ),
+                                                dataIndex: 'value',
+                                                key: 'value',
+                                              },
+                                            ]}
+                                            dataSource={textFiles
+                                              .map((file) => ({
+                                                key: file.file_name,
+                                                name: file.file_name,
+                                                value: 1,
+                                              }))
+                                              .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }))}
+                                            pagination={false}
+                                          />
+                                        </div>
+                                      )}
+
+                                      {strategy === 'proportional' && (
+                                        <div style={{ marginTop: '1rem' }}>
+                                          <p style={{ fontSize: 'smaller' }}>Length-based weights assigns more weight to longer documents, measured in terms of tokens (words). This means shorter documents contribute less to the result that longer ones. Select this if the shorter documents in your set are conceptually and practically less important than the longer ones.</p>
+                                          <Table
+                                            columns={[
+                                              {
+                                                title: 'Document',
+                                                dataIndex: 'name',
+                                                key: 'name',
+                                              },
+                                              {
+                                                title: (
+                                                  <>
+                                                    Weight
                                                     {' '}
                                                     <Tooltip title='The importance of each document is determined by the number of pages' placement='topRight'>
                                                       <InfoCircleOutlined />
@@ -592,17 +667,18 @@ export const Priorities = (props: Props) => {
 
                                       {strategy === 'custom' && (
                                         <div style={{ marginTop: '1rem' }}>
+                                          <p style={{ fontSize: 'smaller' }}>Manual weights enables you to specify the weight of each document on a 5-point scale. Larger weight means that the document will have a larger contribution to the end result. Select this is the importance of documents cannot be measured in terms of their lengths alone.</p>
                                           <Table
                                             columns={[
                                               {
-                                                title: 'Documents',
+                                                title: 'Document',
                                                 dataIndex: 'name',
                                                 key: 'name',
                                               },
                                               {
                                                 title: (
                                                   <>
-                                                    Importance Weight
+                                                    Weight
                                                     {' '}
                                                     <Tooltip title='Set relative importance weight for each document' placement='topRight'>
                                                       <InfoCircleOutlined />
