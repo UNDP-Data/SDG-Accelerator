@@ -480,11 +480,11 @@ export const Priorities = (props: Props) => {
                                 </Upload.Dragger>
                               </div>
                               <>
-                                {extractionError.size > 0 && (
+                                {extractionError.size > 0 && !isExtracting && (
                                   <Alert
                                     style={{ marginTop: 20 }}
                                     type='error'
-                                    message='Remove invalid documents to proceed with analysis. Hover on each file to understand why a file is invalid, or click below to auto remove all invalid files.'
+                                    message='Remove invalid documents to proceed with analysis. Hover on each file to understand why a file is invalid, or click below to auto remove all invalid files once processing is finished.'
                                   />
                                 )}
 
@@ -501,8 +501,6 @@ export const Priorities = (props: Props) => {
                                         );
 
                                         setSelectedFileNotAnalyzed(updatedSelectedFileNotAnalyzed);
-                                        setExtractionError(new Set());
-
                                         const uploadComponent = document.querySelector('.ant-upload-list');
                                         if (uploadComponent) {
                                           const fileItems = uploadComponent.querySelectorAll('.ant-upload-list-item');
@@ -513,12 +511,13 @@ export const Priorities = (props: Props) => {
                                               if (deleteButton) {
                                                 setTimeout(() => {
                                                   deleteButton.click();
-                                                  item.remove();
-                                                }, 5);
+                                                  // item.remove();
+                                                }, 0);
                                               }
                                             }
                                           });
                                         }
+                                        setExtractionError(new Set());
                                       }}
                                     >
                                       Remove all invalid files
