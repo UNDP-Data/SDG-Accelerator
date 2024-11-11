@@ -13,7 +13,7 @@ interface Props {
 }
 
 const HeroImageEl = styled.div`
-  background: url(${IMAGES.heroImage}) rgba(0, 0, 0, 0.3) no-repeat center;
+  background: url(${IMAGES.yellowHeroImage}) rgba(0, 0, 0, 0.3) no-repeat center;
   background-size: cover;
   margin-top: 7.1875rem;
 `;
@@ -46,8 +46,8 @@ export const FutureScenariosList = (props: Props) => {
             </span>
           </div>
           <h1 className='undp-typography'>
-            Showing Future Scenario for
-            {' '}
+            Future Scenario:
+            <br />
             {countryFullName}
           </h1>
           <h5 className='undp-typography'>

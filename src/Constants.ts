@@ -32,12 +32,14 @@ export const FUTURESCENARIOINDICATORS = [
   {
     Goal: 'SDG 1',
     Indicator: 'Female poverty head count (number of people)',
-    RelatedIndicator: 'Sex difference poverty headcount, age 25-34 (females minus males, number of people)',
+    RelatedIndicator:
+      'Sex difference poverty headcount, age 25-34 (females minus males, number of people)',
     ID: 'indicator_1_3',
   },
   {
     Goal: 'SDG 1',
-    Indicator: 'Sex difference poverty headcount, age 25-34 (females minus males, number of people)',
+    Indicator:
+      'Sex difference poverty headcount, age 25-34 (females minus males, number of people)',
     RelatedIndicator: 'Female poverty head count (number of people)',
     ID: 'indicator_1_4',
   },
@@ -115,7 +117,13 @@ export const FUTURESCENARIOINDICATORS = [
   },
 ];
 
-export const COLORSCALE = ['#ffeda0', '#feb24c', '#fc4e2a', '#bd0026', '#800026'];
+export const COLORSCALE = [
+  '#ffeda0',
+  '#feb24c',
+  '#fc4e2a',
+  '#bd0026',
+  '#800026',
+];
 
 export const SDGGOALS = [
   'SDG 1: No Poverty',
@@ -519,8 +527,6 @@ export const FIVE_P = [
   },
 ];
 
-export const API_ACCESS_TOKEN = 'ph92BXomD13M0qS9';
-
 export const REGION_FULL_NAME = [
   {
     id: 'Global',
@@ -656,3 +662,6 @@ export const COUNTRIES_WITH_REPORT = [
   'TLS',
   'THA',
 ];
+
+export const AIAAS_API_BASE_URL = import.meta.env.VITE_AIAAS_API_BASE_URL;
+export const AIAAS_API_KEY = import.meta.env.VITE_AIAAS_API_KEY;

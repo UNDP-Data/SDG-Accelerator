@@ -293,3 +293,9 @@ export interface EdgeData {
   target: string;
   sourceHandle: 'a',
 }
+
+export interface LanguageExtractionResult {
+  official: string;
+  name: string;
+  probability: string;
+}

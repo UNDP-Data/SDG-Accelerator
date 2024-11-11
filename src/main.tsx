@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { ScrollToTop } from './ScrollToTop';
+import { initializeModel } from './utils/extractPDF';
 
 const getEl = (embedSelector: string) => {
   if (typeof embedSelector === 'string') {
@@ -17,6 +18,8 @@ const getEl = (embedSelector: string) => {
   }
   return embedSelector;
 };
+
+initializeModel();
 
 ReactDOM.createRoot(getEl('[data-bucket-embed]') as HTMLElement).render(
   <React.StrictMode>

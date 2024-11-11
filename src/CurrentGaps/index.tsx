@@ -24,7 +24,7 @@ interface Props {
 }
 
 const HeroImageEl = styled.div`
-  background: url(${IMAGES.heroImage}) rgba(0, 0, 0, 0.3) no-repeat center;
+  background: url(${IMAGES.greenHeroImage}) rgba(0, 0, 0, 0.3) no-repeat center;
   background-size: cover;
   background-blend-mode: multiply;
   margin-top: 7.1875rem;
@@ -66,8 +66,8 @@ export const CurrentGaps = (props: Props) => {
             </span>
           </div>
           <h1 className='undp-typography'>
-            SDG Trends for
-            {' '}
+            SDG Trends:
+            <br />
             {countryFullName}
           </h1>
           <h5 className='undp-typography'>

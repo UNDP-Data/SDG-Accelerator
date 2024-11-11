@@ -360,8 +360,8 @@ export const DetailedReportView = (props: Props) => {
                                   }}
                                   >
                                     {
-                                    interlinkage.LinkageType[0] === 'synergies' ? 'Synergies' : interlinkage.LinkageType[0] === 'tradeOffs' ? 'Trade-Offs' : 'Not Specified'
-                                  }
+                                      interlinkage.LinkageType[0] === 'synergies' ? 'Synergies' : interlinkage.LinkageType[0] === 'tradeOffs' ? 'Trade-Offs' : 'Not Specified'
+                                    }
                                   </div>
                                   <div style={{ padding: 'var(--spacing-05)' }}>
                                     <InterlinkagesViz
