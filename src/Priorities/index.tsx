@@ -202,56 +202,61 @@ export const Priorities = (props: Props) => {
             National Priorities
           </span>
         </div>
-
-        <h1 className='undp-typography'>
-          National Priorities:
-          <br />
-          {countryFullName}
-        </h1>
-        <div className='margin-top-05'>
-          <h5 className='undp-typography margin-bottom-06'>
-            Policy documents, such as Voluntary National Reviews (VNRs) and National Development Plans (NDPs), provide an insight into the priorities of the country in terms of SDGs.
-            {' '}
-            <Popover
-              placement='rightBottom'
-              content={(
-                <div style={{
-                  maxWidth: '500px', maxHeight: '400px', padding: 25, textAlign: 'justify', overflowY: 'scroll',
+        <div className='max-width'>
+          <h1 className='undp-typography'>
+            National Priorities:
+            <br />
+            {countryFullName}
+          </h1>
+          <div className='margin-top-05'>
+            <h5 className='undp-typography margin-bottom-06'>
+              Policy documents, such as Voluntary National Reviews (VNRs) and National Development Plans (NDPs), provide an insight into the priorities of the country in terms of SDGs.
+              {' '}
+              <Popover
+                placement='top'
+                content={(
+                  <div style={{
+                    maxWidth: '500px',
+                    maxHeight: '400px',
+                    padding: '0.25rem',
+                    textAlign: 'justify',
+                    overflowY: 'auto',
+                    borderRadius: 0,
+                  }}
+                  >
+                    <p className='undp-typography margin-bottom-00' style={{ color: 'var(--black)' }}>
+                      Countries&apos; national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification.
+                      {' '}
+                      <br />
+                      <br />
+                      {' '}
+                      The training data is based on an improved
+                      {' '}
+                      <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer noopener' className='undp-style'>OSDG Community Dataset</a>
+                      . It considers 100k+ terms, including phrases and expressions.
+                    </p>
+                  </div>
+              )}
+              >
+                <span style={{
+                  cursor: 'pointer', textDecoration: 'underline', textDecorationStyle: 'dotted', textDecorationColor: 'var(--dark-red)', background: 'none', border: 'none', padding: 0,
                 }}
                 >
-                  <h5 className='undp-typography' style={{ color: 'var(--black)', fontSize: 16 }}>
-                    Countries&apos; national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification.
-                    {' '}
-                    <br />
-                    <br />
-                    {' '}
-                    The training data is based on an improved
-                    {' '}
-                    <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer noopener' className='undp-style'>OSDG Community Dataset</a>
-                    . It considers 100k+ terms, including phrases and expressions.
-                  </h5>
-                </div>
-              )}
-            >
-              <span style={{
-                cursor: 'pointer', textDecoration: 'underline', textDecorationStyle: 'dotted', textDecorationColor: 'var(--dark-red)', background: 'none', border: 'none', padding: 0,
+                  Our machine learning approach
+                </span>
+              </Popover>
+              {' '}
+              allows you to uncover these priorities in such documents. Select an existing document to explore or upload documents to analyze.
+              {' '}
+              <Tooltip title="The documents you upload are not stored in our system. The results you obtain are not shown to other users. For more robust results, use the documents that offer a comprehensive account of the country&apos;s activities and policies rather than thematic, narrowly-scoped or sectoral documents" placement='bottom'><InfoIcon size={20} /></Tooltip>
+            </h5>
+            <div
+              className='max-width-1440'
+              style={{
+                backgroundColor: 'var(--white)', color: 'var(--black)', padding: 'var(--spacing-06)', margin: 'auto', cursor: isExtracting ? 'progress' : 'default',
               }}
-              >
-                Our machine learning approach
-              </span>
-            </Popover>
-            {' '}
-            allows you to uncover these priorities in such documents. Select an existing document to explore or upload documents to analyze.
-            {' '}
-            <Tooltip title="The documents you upload are not stored in our system. The results you obtain are not shown to other users. For more robust results, use the documents that offer a comprehensive account of the country&apos;s activities and policies rather than thematic, narrowly-scoped or sectoral documents" placement='bottom'><InfoIcon size={20} /></Tooltip>
-          </h5>
-          <div
-            className='max-width-1440'
-            style={{
-              backgroundColor: 'var(--white)', color: 'var(--black)', padding: 'var(--spacing-06)', margin: 'auto', cursor: isExtracting ? 'progress' : 'default',
-            }}
-          >
-            {
+            >
+              {
               !data && countryFilePresent === undefined
                 ? (
                   <div style={{ margin: '10rem auto 3rem auto', minHeight: '5rem' }}>
@@ -728,6 +733,7 @@ export const Priorities = (props: Props) => {
                   />
                 )
             }
+            </div>
           </div>
         </div>
       </HeroImageEl>

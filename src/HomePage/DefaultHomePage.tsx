@@ -15,6 +15,8 @@ interface Props {
 const HeaderTextDiv = styled.div`
   position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
   height: calc(100vh - 240px - 1rem);
   display: flex;
   flex-direction: column;
