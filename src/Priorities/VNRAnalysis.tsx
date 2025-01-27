@@ -13,7 +13,7 @@ import { BubbleChart } from './BubbleChart';
 
 interface Props {
   data: any;
-  goalStatuses: GoalStatusType[];
+  goalStatuses?: GoalStatusType[];
   document: any;
   defaultDocs: boolean;
   onlyBubbleChart: boolean;
@@ -76,7 +76,7 @@ export const VNRAnalysis = (props: Props) => {
   const [showSalienceGraph, setShowSalienceGraph] = useState(false);
 
   const dataWithStatuses = data.map((d: any) => {
-    const goalStatus = goalStatuses.find((el) => el.goal === d.id);
+    const goalStatus = goalStatuses?.find((el) => el.goal === d.id);
     return {
       ...d,
       category: d.importance === 0 ? 'No Mention' : d.category.charAt(0).toUpperCase() + d.category.slice(1),
@@ -142,7 +142,7 @@ export const VNRAnalysis = (props: Props) => {
               </Popover>
             )}
           </div>
-          <BubbleChart data={dataWithStatuses} setSelectedSDG={setSelectedSDG} />
+          <BubbleChart statusAvailable={goalStatuses !== undefined} data={dataWithStatuses} setSelectedSDG={setSelectedSDG} />
         </div>
       </div>
       {
@@ -376,7 +376,7 @@ export const VNRAnalysis = (props: Props) => {
               </div>
             </div>
             {
-              showSalienceGraph
+              showSalienceGraph && goalStatuses
                 ? (
                   <SalienceGraph
                     data={data}

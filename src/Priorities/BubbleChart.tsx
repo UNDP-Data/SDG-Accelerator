@@ -14,12 +14,14 @@ interface Props {
   data: any;
   // eslint-disable-next-line no-unused-vars
   setSelectedSDG: (_d: any) => void;
+  statusAvailable: boolean;
 }
 
 export const BubbleChart = (props: Props) => {
   const {
     data,
     setSelectedSDG,
+    statusAvailable,
   } = props;
   const [nodeData, setNodeData] = useState<any>(null);
   const [graphOrientation, setGraphOrientation] = useState<'horizontal' | 'vertical'>(window.innerWidth < 720 ? 'vertical' : 'horizontal');
@@ -90,51 +92,57 @@ export const BubbleChart = (props: Props) => {
               Low
             </Checkbox>
           </div>
-          <p className='undp-typography label margin-bottom-02'>
-            Highlight SDGs by Trends
-          </p>
-          <div className='margin-bottom-05 flex-div flex-wrap'>
-            <Checkbox
-              className='undp-checkbox'
-              checked={highlightSettings['On Track']}
-              onChange={(e) => {
-                setHighlightSettings({ ...highlightSettings, 'On Track': e.target.checked });
-              }}
-              style={{ marginInlineStart: 0 }}
-            >
-              On Track
-            </Checkbox>
-            <Checkbox
-              className='undp-checkbox'
-              checked={highlightSettings['For Review']}
-              onChange={(e) => {
-                setHighlightSettings({ ...highlightSettings, 'For Review': e.target.checked });
-              }}
-              style={{ marginInlineStart: 0 }}
-            >
-              For Review
-            </Checkbox>
-            <Checkbox
-              className='undp-checkbox'
-              checked={highlightSettings['Identified Gap']}
-              onChange={(e) => {
-                setHighlightSettings({ ...highlightSettings, 'Identified Gap': e.target.checked });
-              }}
-              style={{ marginInlineStart: 0 }}
-            >
-              Off Track
-            </Checkbox>
-            <Checkbox
-              className='undp-checkbox'
-              checked={highlightSettings['Gaps NA']}
-              onChange={(e) => {
-                setHighlightSettings({ ...highlightSettings, 'Gaps NA': e.target.checked });
-              }}
-              style={{ marginInlineStart: 0 }}
-            >
-              Trend NA
-            </Checkbox>
-          </div>
+          {
+            statusAvailable ? (
+              <>
+                <p className='undp-typography label margin-bottom-02'>
+                  Highlight SDGs by Trends
+                </p>
+                <div className='margin-bottom-05 flex-div flex-wrap'>
+                  <Checkbox
+                    className='undp-checkbox'
+                    checked={highlightSettings['On Track']}
+                    onChange={(e) => {
+                      setHighlightSettings({ ...highlightSettings, 'On Track': e.target.checked });
+                    }}
+                    style={{ marginInlineStart: 0 }}
+                  >
+                    On Track
+                  </Checkbox>
+                  <Checkbox
+                    className='undp-checkbox'
+                    checked={highlightSettings['For Review']}
+                    onChange={(e) => {
+                      setHighlightSettings({ ...highlightSettings, 'For Review': e.target.checked });
+                    }}
+                    style={{ marginInlineStart: 0 }}
+                  >
+                    For Review
+                  </Checkbox>
+                  <Checkbox
+                    className='undp-checkbox'
+                    checked={highlightSettings['Identified Gap']}
+                    onChange={(e) => {
+                      setHighlightSettings({ ...highlightSettings, 'Identified Gap': e.target.checked });
+                    }}
+                    style={{ marginInlineStart: 0 }}
+                  >
+                    Off Track
+                  </Checkbox>
+                  <Checkbox
+                    className='undp-checkbox'
+                    checked={highlightSettings['Gaps NA']}
+                    onChange={(e) => {
+                      setHighlightSettings({ ...highlightSettings, 'Gaps NA': e.target.checked });
+                    }}
+                    style={{ marginInlineStart: 0 }}
+                  >
+                    Trend NA
+                  </Checkbox>
+                </div>
+              </>
+            ) : null
+          }
           <div className='margin-bottom-07'>
             <p className='undp-typography label margin-bottom-02'>
               Choose orientation

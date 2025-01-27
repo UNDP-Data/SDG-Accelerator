@@ -1,15 +1,24 @@
 import styled from 'styled-components';
-import { Select } from 'antd';
+import {
+  Alert,
+  message, Modal, Popover, Segmented, Select, Table, Tooltip, Upload, UploadFile,
+} from 'antd';
 import sortBy from 'lodash.sortby';
 import TextTransition, { presets } from 'react-text-transition';
 import { useState, useEffect } from 'react';
+import { UploadChangeParam } from 'antd/es/upload/interface';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { FileUpIcon, InfoIcon } from 'lucide-react';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 import IMAGES from '../img/images';
 import { InterlinkageOverview } from './InterlinkageOverview';
-import { SDG_COLOR_ARRAY } from '../Constants';
+import { FILES_LIMIT, SDG_COLOR_ARRAY } from '../Constants';
 import { AccordionEl } from './Accordion';
 import { ForceDirectedGraph } from './InterlinkageOverview/FDG';
 import './HomePageStyle.css';
+import { extractTextFromPDFs } from '../utils/extractPDF';
+import { submitDocumentsForAnalysis } from '../api/prioritiesCall';
+import { VNRAnalysis } from '../Priorities/VNRAnalysis';
 
 const FirstColumn = styled.div`
   width: 100%;
@@ -68,6 +77,21 @@ export const GlobalHomePage = () => {
   const [index, setIndex] = useState(0);
   const countriesList = ['Everyone', 'South Africa', 'Kuwait', 'Nepal', 'Sri Lanka', 'Benin', 'Everyone', 'Gabon', 'Cuba', 'Botswana', 'Iran', 'Cabo Verde', 'Everyone', 'Gambia', 'Philippines', 'Iraq', 'Namibia', 'Malawi', 'Everyone', 'Kyrgyzstan', 'Lesotho', 'Senegal', 'Bangladesh', 'Serbia', 'Everyone', 'Cameroon', 'Djibouti', 'Bhutan', 'Egypt', 'Maldives'];
 
+  const [fileNames, setFileNames] = useState(new Set());
+  const [model, setModel] = useState<'legacy' | 'newer'>('legacy');
+  const [strategy, setStrategy] = useState<'equal' | 'proportional' | 'custom'>('equal');
+  const [textFiles, setTextFiles] = useState<any[]>([]);
+  const [processingCount, setProcessingCount] = useState<number>(0);
+  const [isExtracting, setIsExtracting] = useState(false);
+  const [extractionError, setExtractionError] = useState(new Set<string>());
+  const [selectedFileNotAnalyzed, setSelectedFileNotAnalyzed] = useState<any>([]);
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+  const [customWeights, setCustomWeights] = useState<{ [key: string]: number }>({});
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<string | null>(null);
+  const [error, setError] = useState<any>(null);
+  const [selectedFile, setSelectedFile] = useState<any>([]);
+  const [data, setData] = useState<any>(null);
   useEffect(() => {
     const intervalId = setInterval(
       () => setIndex((indx) => indx + 1),
@@ -75,6 +99,74 @@ export const GlobalHomePage = () => {
     );
     return () => clearTimeout(intervalId);
   }, []);
+
+  useEffect(() => {
+    if (processingCount === 0) {
+      setIsExtracting(false);
+    }
+  }, [processingCount]);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCustomWeightChange = (fileName: string, value: number) => {
+    setCustomWeights((prevWeights) => ({
+      ...prevWeights,
+      [fileName]: value,
+    }));
+  };
+
+  const analyzeDocuments = async (textsFiles: any[]) => {
+    try {
+      setStatus('Starting analysis...');
+
+      const plaintextFiles = textsFiles.map((file) => {
+        const blob = new Blob([file.text], { type: 'text/plain' });
+        return new File([blob], `${file.file_name}.txt`, { type: 'text/plain' });
+      });
+
+      if (plaintextFiles.length === 0) {
+        setError('No valid text files to submit for analysis.');
+        setLoading(false);
+        return;
+      }
+
+      setStatus(`Analyzing ${textFiles.length} document(s)...`);
+      const pagesArray = textsFiles.map((file) => Number(file.pageCount));
+      const customWeightsArray = textsFiles.map((file) => customWeights[file.file_name] || 1);
+
+      const response = await submitDocumentsForAnalysis(
+        plaintextFiles,
+        strategy === 'proportional' ? pagesArray : strategy === 'custom' ? customWeightsArray : undefined,
+        model === 'newer' ? 2 : 1,
+      );
+
+      const filesWithoutTxtExtension = plaintextFiles.map((file) => {
+        const originalFileName = file.name.replace(/\.txt$/, '');
+        return new File([file], originalFileName, { type: file.type });
+      });
+
+      setStatus('Analysis complete');
+
+      setSelectedFile(filesWithoutTxtExtension);
+      setData({ mode: 'analyze', data: response.sdgs });
+      setLoading(false);
+      setStatus(null);
+      setError(null);
+    } catch (err) {
+      setError(err);
+      setLoading(false);
+    }
+  };
   return (
     <>
       <div className='background'>
@@ -427,7 +519,444 @@ export const GlobalHomePage = () => {
           </div>
         </div>
       </div>
-      <div className='padding-bottom-12 padding-left-07 padding-right-07'>
+      <div className='padding-top-12 padding-bottom-12 padding-left-07 padding-right-07' style={{ backgroundColor: 'var(--gray-100)' }}>
+        <div>
+          <div className='flex-div flex-wrap margin-bottom-09 max-width' style={{ padding: '0 1rem' }}>
+            <SecondColumn className='undp-section-content'>
+              <h2 className='undp-typography margin-bottom-00'>Explore National Priorities</h2>
+            </SecondColumn>
+            <div className='undp-section-content large-font'>
+              <h5 className='undp-typography margin-bottom-06'>
+                Policy documents, such as Voluntary National Reviews (VNRs) and National Development Plans (NDPs), provide an insight into the priorities of the country in terms of SDGs.
+                {' '}
+                <Popover
+                  placement='top'
+                  content={(
+                    <div style={{
+                      maxWidth: '500px',
+                      maxHeight: '400px',
+                      padding: '0.25rem',
+                      textAlign: 'justify',
+                      overflowY: 'auto',
+                      borderRadius: 0,
+                    }}
+                    >
+                      <p className='undp-typography margin-bottom-00' style={{ color: 'var(--black)' }}>
+                        Countries&apos; national priorities are generated using machine learning to reveal the most prominent SDGs referenced in national policy documents. This analysis uses a custom-built model for SDG classification.
+                        {' '}
+                        <br />
+                        <br />
+                        {' '}
+                        The training data is based on an improved
+                        {' '}
+                        <a href='https://zenodo.org/record/6831287#.ZGVKt3ZBxhZ' target='_blank' rel='noreferrer noopener' className='undp-style'>OSDG Community Dataset</a>
+                        . It considers 100k+ terms, including phrases and expressions.
+                      </p>
+                    </div>
+              )}
+                >
+                  <span style={{
+                    cursor: 'pointer', textDecoration: 'underline', textDecorationStyle: 'dotted', textDecorationColor: 'var(--dark-red)', background: 'none', border: 'none', padding: 0,
+                  }}
+                  >
+                    Our machine learning approach
+                  </span>
+                </Popover>
+                {' '}
+                allows you to uncover these priorities in such documents. Select an existing document to explore or upload documents to analyze.
+                {' '}
+                <Tooltip title="The documents you upload are not stored in our system. The results you obtain are not shown to other users. For more robust results, use the documents that offer a comprehensive account of the country&apos;s activities and policies rather than thematic, narrowly-scoped or sectoral documents" placement='bottom'><InfoIcon size={20} /></Tooltip>
+              </h5>
+              <div
+                className='max-width-1440'
+                style={{
+                  backgroundColor: 'var(--white)',
+                  color: 'var(--black)',
+                  padding: 'var(--spacing-06)',
+                  margin: 'auto',
+                  cursor: isExtracting ? 'progress' : 'default',
+                }}
+              >
+                <div className='margin-top-04'>
+                  <Upload.Dragger
+                    name='file'
+                    multiple
+                    accept='.pdf'
+                    showUploadList
+                    maxCount={FILES_LIMIT}
+                    beforeUpload={(file) => {
+                      const isPDF = file.type === 'application/pdf';
+                      if (!isPDF) {
+                        message.error(`${file.name} is not a PDF file`);
+                        return Upload.LIST_IGNORE;
+                      }
+
+                      if (fileNames.has(file.name)) {
+                        message.error(`${file.name} is a duplicate file`, 5);
+                        return Upload.LIST_IGNORE;
+                      }
+
+                      if (selectedFileNotAnalyzed.length >= FILES_LIMIT) {
+                        message.error(`You can only upload up to ${FILES_LIMIT} files`, 8);
+                        return Upload.LIST_IGNORE;
+                      }
+
+                      return true;
+                    }}
+                    onChange={
+                        (info: UploadChangeParam<UploadFile>) => {
+                          const newFileList = info.fileList;
+
+                          setSelectedFileNotAnalyzed(newFileList);
+
+                          const newFileNames = new Set(newFileList.map((file) => file.name));
+                          setFileNames(newFileNames);
+
+                          const newUploadErrors = new Set<string>();
+                          newFileList.forEach((file) => {
+                            if (file.status === 'error') {
+                              newUploadErrors.add(file.uid);
+                            }
+                          });
+                          setExtractionError(newUploadErrors);
+                        }
+                      }
+                    onRemove={(file) => {
+                      setTextFiles((prevTextFiles) => prevTextFiles.filter((textFile) => textFile.file_name !== file.name));
+                      return true;
+                    }}
+                    onDrop={(e) => {
+                      message.info(`Dropped files: ${e.dataTransfer.files.length}`);
+                    }}
+                    customRequest={async ({ file, onSuccess, onError }: any) => {
+                      setProcessingCount((prev: number) => prev + 1);
+                      setIsExtracting(true);
+                      try {
+                        const [extractedText] = await extractTextFromPDFs([file]);
+
+                        if (extractedText.error) {
+                          throw new Error(extractedText.text);
+                        }
+
+                        if (onSuccess) {
+                          onSuccess('ok');
+                        }
+
+                        setSelectedFileNotAnalyzed((prevList: any[]) => prevList.map((f) => (f.uid === file.uid
+                          ? { ...f, status: 'done', response: 'ok' }
+                          : f)));
+
+                        setTextFiles((prevTextFiles) => [...prevTextFiles, extractedText]);
+                        // eslint-disable-next-line no-shadow
+                      } catch (error: any) {
+                        if (onError) {
+                          onError(error);
+                        }
+                        setSelectedFileNotAnalyzed((prevList: any[]) => prevList.map((f) => (f.uid === file.uid
+                          ? { ...f, status: 'error', error: error.message }
+                          : f)));
+                      } finally {
+                        setProcessingCount((prev: number) => prev - 1);
+                      }
+                    }}
+                    itemRender={(originNode) => (
+                      <div
+                        style={{
+                          flexGrow: 0,
+                          flexShrink: 1,
+                          minWidth: '210px',
+                          maxWidth: '210px',
+                        }}
+                      >
+                        {originNode}
+                      </div>
+                    )}
+                  >
+                    <FileUpIcon />
+                    <p className='ant-upload-text'>Click or drag file(s) to this area then click Analyze Documents</p>
+                    <p className='ant-upload-hint'>
+                      Up to
+                      {' '}
+                      {FILES_LIMIT}
+                      {' '}
+                      PDF files allowed.
+                      {' '}
+                      <b>Note</b>
+                      : Only English language is currently supported by the model
+                      {' '}
+                    </p>
+                  </Upload.Dragger>
+                </div>
+                {extractionError.size > 0 && !isExtracting && (
+                <Alert
+                  style={{ marginTop: 20 }}
+                  type='error'
+                  message='Remove invalid documents to proceed with analysis. Hover on each file to understand why a file is invalid, or click below to auto remove all invalid files once processing is finished.'
+                />
+                )}
+
+                {extractionError.size > 0 && !isExtracting
+                      && (
+                        <button
+                          type='button'
+                          style={{
+                            backgroundColor: 'white',
+                            border: 'none',
+                            fontSize: 'small',
+                            textDecoration: 'underline',
+                            cursor: 'pointer',
+                          }}
+                          onClick={() => {
+                            const updatedSelectedFileNotAnalyzed = selectedFileNotAnalyzed.filter(
+                              (file: { uid: string; }) => !extractionError.has(file.uid),
+                            );
+
+                            setSelectedFileNotAnalyzed(updatedSelectedFileNotAnalyzed);
+                            const uploadComponent = document.querySelector('.ant-upload-list');
+                            if (uploadComponent) {
+                              const fileItems = uploadComponent.querySelectorAll('.ant-upload-list-item');
+                              fileItems.forEach((item) => {
+                                const fileName = item.querySelector('.ant-upload-list-item-name')?.textContent;
+                                if (fileName && !updatedSelectedFileNotAnalyzed.some((file: { name: string; }) => file.name === fileName)) {
+                                  const deleteButton = item.querySelector('.ant-upload-list-item-actions button') as HTMLButtonElement;
+                                  if (deleteButton) {
+                                    setTimeout(() => {
+                                      deleteButton.click();
+                                      // item.remove();
+                                    }, 0);
+                                  }
+                                }
+                              });
+                            }
+                            setExtractionError(new Set());
+                          }}
+                        >
+                          Remove all invalid files
+                        </button>
+                      )}
+                <div className='margin-top-07 margin-bottom-04' style={{ display: 'flex', flexDirection: 'row', gap: 20 }}>
+
+                  <div>
+                    <button
+                      type='button'
+                      className='undp-button button-primary button-arrow'
+                      style={{ backgroundColor: textFiles.length === 0 || textFiles.length > FILES_LIMIT || isExtracting || extractionError.size > 0 ? 'gray' : '' }}
+                      onClick={() => {
+                        setLoading(true);
+                        analyzeDocuments(textFiles);
+                      }}
+                      disabled={textFiles.length === 0 || textFiles.length > FILES_LIMIT || isExtracting || extractionError.size > 0}
+                    >
+                      Analyze Documents
+                    </button>
+                  </div>
+
+                  <div>
+                    <button
+                      type='button'
+                      className='undp-button button-secondary'
+                      style={{ backgroundColor: 'white', color: 'black' }}
+                      onClick={showModal}
+                    >
+                      Advanced Options
+                    </button>
+                    <Modal
+                      className='undp-modal'
+                      title='Advanced Options'
+                      open={isModalVisible}
+                      onOk={handleOk}
+                      onCancel={handleCancel}
+                    >
+                      <p className='undp-typography label'>
+                        Model Type
+                        {' '}
+                        <Tooltip title='Select which machine learning model version to use' placement='topLeft'>
+                          <InfoCircleOutlined />
+                        </Tooltip>
+                      </p>
+                      <Segmented
+                        className='undp-segmented-small'
+                        options={[
+                          { label: 'Legacy Model', value: 'legacy' },
+                          { label: 'Newer Model (Coming Soon)', value: 'newer', disabled: true },
+                        ]}
+                        value={model}
+                        onChange={(value: 'legacy' | 'newer') => setModel(value)}
+                      />
+
+                      <p className='undp-typography label margin-top-05'>
+                        Document Weights
+                        {' '}
+                        <Tooltip title='Select how the results are aggregated across the documents.' placement='topLeft'>
+                          <InfoCircleOutlined />
+                        </Tooltip>
+                      </p>
+                      <Segmented
+                        className='undp-segmented-small'
+                        options={[
+                          { label: 'Equal', value: 'equal' },
+                          { label: 'Length-based', value: 'proportional' },
+                          { label: 'Manual', value: 'custom' },
+                        ]}
+                        value={strategy}
+                        onChange={(value: 'equal' | 'proportional' | 'custom') => setStrategy(value)}
+                      />
+
+                      {strategy === 'equal' && (
+                      <div style={{ marginTop: '1rem' }}>
+                        <p style={{ fontSize: 'smaller' }}>Equal weights assigns uniform weights to all documents. This means that shorter documents contribute to the result as much as longer ones. Select this if the shorter documents in your set are conceptually and practically equally important to the longer ones.</p>
+                        <Table
+                          columns={[
+                            {
+                              title: 'Document',
+                              dataIndex: 'name',
+                              key: 'name',
+                            },
+                            {
+                              title: (
+                                <>
+                                  Weight
+                                  {' '}
+                                  <Tooltip title='All documents have equal importance' placement='topRight'>
+                                    <InfoCircleOutlined />
+                                  </Tooltip>
+                                </>
+                              ),
+                              dataIndex: 'value',
+                              key: 'value',
+                            },
+                          ]}
+                          dataSource={textFiles
+                            .map((file) => ({
+                              key: file.file_name,
+                              name: file.file_name,
+                              value: 1,
+                            }))
+                            .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }))}
+                          pagination={false}
+                        />
+                      </div>
+                      )}
+
+                      {strategy === 'proportional' && (
+                      <div style={{ marginTop: '1rem' }}>
+                        <p style={{ fontSize: 'smaller' }}>Length-based weights assigns more weight to longer documents, measured in terms of tokens (words). This means shorter documents contribute less to the result that longer ones. Select this if the shorter documents in your set are conceptually and practically less important than the longer ones.</p>
+                        <Table
+                          columns={[
+                            {
+                              title: 'Document',
+                              dataIndex: 'name',
+                              key: 'name',
+                            },
+                            {
+                              title: (
+                                <>
+                                  Weight
+                                  {' '}
+                                  <Tooltip title='The importance of each document is determined by the number of pages' placement='topRight'>
+                                    <InfoCircleOutlined />
+                                  </Tooltip>
+                                </>
+                              ),
+                              dataIndex: 'pageCount',
+                              key: 'pageCount',
+                            },
+                          ]}
+                          dataSource={textFiles
+                            .map((file) => ({
+                              key: file.file_name,
+                              name: file.file_name,
+                              pageCount: file.pageCount,
+                            }))
+                            .sort((a, b) => b.pageCount - a.pageCount)}
+                          pagination={false}
+                        />
+                      </div>
+                      )}
+
+                      {strategy === 'custom' && (
+                      <div style={{ marginTop: '1rem' }}>
+                        <p style={{ fontSize: 'smaller' }}>Manual weights enables you to specify the weight of each document on a 5-point scale. Larger weight means that the document will have a larger contribution to the end result. Select this is the importance of documents cannot be measured in terms of their lengths alone.</p>
+                        <Table
+                          columns={[
+                            {
+                              title: 'Document',
+                              dataIndex: 'name',
+                              key: 'name',
+                            },
+                            {
+                              title: (
+                                <>
+                                  Weight
+                                  {' '}
+                                  <Tooltip title='Set relative importance weight for each document' placement='topRight'>
+                                    <InfoCircleOutlined />
+                                  </Tooltip>
+                                </>
+                              ),
+                              dataIndex: 'customWeight',
+                              key: 'customWeight',
+                              render: (text, record) => (
+                                <Segmented
+                                  className='undp-segmented-small'
+                                  options={[1, 2, 3, 4, 5].map((val) => ({ label: val.toString(), value: val }))}
+                                  value={customWeights[record.name] || 3}
+                                  onChange={(value) => handleCustomWeightChange(record.name, value)}
+                                  placeholder='Set custom weight'
+                                />
+                              ),
+                            },
+                          ]}
+                          dataSource={textFiles
+                            .map((file) => ({
+                              key: file.file_name,
+                              name: file.file_name,
+                              customWeight: customWeights[file.file_name] || 1,
+                            }))
+                            .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }))}
+                          pagination={false}
+                        />
+                      </div>
+                      )}
+                    </Modal>
+                  </div>
+
+                </div>
+
+                {
+                  error
+                    ? (
+                      <div
+                        className='margin-top-07 max-width'
+                        style={{
+                          padding: 'var(--spacing-09)', backgroundColor: 'var(--gray-200)', width: 'calc(100% - 6rem)', textAlign: 'center',
+                        }}
+                      >
+                        <h6 className='undp-typography margin-bottom-00' style={{ color: 'var(--dark-red)' }}>
+                          We are sorry! Something went wrong in the analysis.
+                          <br />
+                          <br />
+                          Please try again later after sometime and make sure you are uploading a PDF document
+                        </h6>
+                      </div>
+                    )
+                    : data
+                      ? (
+                        <VNRAnalysis
+                          data={data.mode === 'analyze' || data.mode === 'defaultDocs' ? data.data : data}
+                          document={selectedFile.map((d: any) => d.name)}
+                          defaultDocs={false}
+                          onlyBubbleChart
+                        />
+                      )
+                      : null
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='padding-top-12 padding-bottom-12 padding-left-07 padding-right-07'>
         <div>
           <div className='flex-div flex-wrap margin-bottom-09 max-width' style={{ padding: '0 1rem' }}>
             <SecondColumn className='undp-section-content'>
@@ -485,6 +1014,23 @@ export const GlobalHomePage = () => {
         <h6 className='undp-typography margin-bottom-07'>With the support of the German Federal Ministry for Economic Cooperation and Development</h6>
         <img alt='giz logo' src={IMAGES.gizLogo} style={{ width: '250px', margin: 'auto' }} />
       </div>
+      <Modal
+        className='undp-modal undp-loading-modal'
+        title=''
+        open={loading}
+      >
+        <div style={{ margin: 'auto' }}>
+          <div className='undp-loader' style={{ margin: 'auto' }} />
+        </div>
+        <div style={{
+          display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%',
+        }}
+        >
+          <p>
+            {status}
+          </p>
+        </div>
+      </Modal>
     </>
   );
 };

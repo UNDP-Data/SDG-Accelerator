@@ -665,3 +665,5 @@ export const COUNTRIES_WITH_REPORT = [
 
 export const AIAAS_API_BASE_URL = import.meta.env.VITE_AIAAS_API_BASE_URL;
 export const AIAAS_API_KEY = import.meta.env.VITE_AIAAS_API_KEY;
+
+export const FILES_LIMIT = 30;
