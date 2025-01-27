@@ -17,6 +17,7 @@ interface Props {
   document: any;
   defaultDocs: boolean;
   onlyBubbleChart: boolean;
+  hideTitle?: boolean;
 }
 
 interface SDGHoveredProps {
@@ -69,6 +70,7 @@ export const VNRAnalysis = (props: Props) => {
     goalStatuses,
     defaultDocs,
     onlyBubbleChart,
+    hideTitle,
   } = props;
   const [selectedSDG, setSelectedSDG] = useState<any>(null);
   const [hoveredSDG, setHoveredSDG] = useState<null | SDGHoveredProps>(null);
@@ -105,43 +107,48 @@ export const VNRAnalysis = (props: Props) => {
     <>
       <div className=' margin-top-00' style={{ padding: onlyBubbleChart ? 0 : 'var(--spacing-13) var(--spacing-13) var(--spacing-09) var(--spacing-13)' }}>
         <div className='max-width-1440'>
-          <div className='flex-div flex-vert-align-center flex-wrap'>
-            <h2 className='undp-typography margin-bottom-00'>
-              National Priorities Based on
-            </h2>
-            {defaultDocs && document.length === 1 ? (
-              <FileNameChip>
-                {document[0].link ? (
-                  <a href={document[0].link} target='_blank' rel='noreferrer' className='undp-style'>{document[0].name}</a>
-                ) : (
-                  document[0].name
-                )}
-              </FileNameChip>
-            ) : (
-              <Popover
-                title='Analysis based on the following files'
-                placement='topRight'
-                content={(
-                  defaultDocs ? (
-                    <div style={{ maxHeight: '200px', overflowY: 'scroll' }}>
-                      {document && document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
-                    </div>
-                  )
-                    : (
+          {
+            hideTitle ? null
+              : (
+                <div className='flex-div flex-vert-align-center flex-wrap'>
+                  <h2 className='undp-typography margin-bottom-00'>
+                    National Priorities Based on
+                  </h2>
+                  {defaultDocs && document.length === 1 ? (
+                    <FileNameChip>
+                      {document[0].link ? (
+                        <a href={document[0].link} target='_blank' rel='noreferrer' className='undp-style'>{document[0].name}</a>
+                      ) : (
+                        document[0].name
+                      )}
+                    </FileNameChip>
+                  ) : (
+                    <Popover
+                      title='Analysis based on the following files'
+                      placement='topRight'
+                      content={(
+                    defaultDocs ? (
                       <div style={{ maxHeight: '200px', overflowY: 'scroll' }}>
-                        {document && document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
+                        {document && document.map((d: any, i: number) => (d.link ? <FileNameChip key={i}><a href={d.link} target='_blank' rel='noreferrer' className='undp-style'>{d.name}</a></FileNameChip> : <FileNameChip key={i}>{d.name}</FileNameChip>))}
                       </div>
                     )
-                )}
-              >
-                <Button>
-                  {document.length}
-                  {' '}
-                  file(s)
-                </Button>
-              </Popover>
-            )}
-          </div>
+                      : (
+                        <div style={{ maxHeight: '200px', overflowY: 'scroll' }}>
+                          {document && document.map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
+                        </div>
+                      )
+                  )}
+                    >
+                      <Button>
+                        {document.length}
+                        {' '}
+                        file(s)
+                      </Button>
+                    </Popover>
+                  )}
+                </div>
+              )
+          }
           <BubbleChart statusAvailable={goalStatuses !== undefined} data={dataWithStatuses} setSelectedSDG={setSelectedSDG} />
         </div>
       </div>

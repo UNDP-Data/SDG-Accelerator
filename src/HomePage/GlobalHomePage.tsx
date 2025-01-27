@@ -58,6 +58,14 @@ const Button = styled.button`
   border: 0;
 `;
 
+const FileNameChip = styled.div`
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: var(--gray-300);
+  font-weight: bold;
+  margin: 2px;
+`;
+
 const HeaderTextDiv = styled.div`
   position: absolute;
   top: 0;
@@ -942,12 +950,47 @@ export const GlobalHomePage = () => {
                     )
                     : data
                       ? (
-                        <VNRAnalysis
-                          data={data.mode === 'analyze' || data.mode === 'defaultDocs' ? data.data : data}
-                          document={selectedFile.map((d: any) => d.name)}
-                          defaultDocs={false}
-                          onlyBubbleChart
-                        />
+                        <div
+                          className='margin-top-11'
+                        >
+                          <div className='flex-div flex-vert-align-center flex-wrap'>
+                            <h5 className='undp-typography margin-bottom-00'>
+                              National Priorities Based on
+                            </h5>
+                            {selectedFile.map((d: any) => d.name).length === 1 ? (
+                              <FileNameChip>
+                                {selectedFile.link ? (
+                                  <a href={selectedFile[0].link} target='_blank' rel='noreferrer' className='undp-style'>{selectedFile[0].name}</a>
+                                ) : (
+                                  selectedFile[0].name
+                                )}
+                              </FileNameChip>
+                            ) : (
+                              <Popover
+                                title='Analysis based on the following files'
+                                placement='topRight'
+                                content={(
+                                  <div style={{ maxHeight: '200px', overflowY: 'scroll' }}>
+                                    {selectedFile.map((d: any) => d.name) && selectedFile.map((d: any) => d.name).map((d: any, i: number) => <FileNameChip key={i}>{d}</FileNameChip>)}
+                                  </div>
+                            )}
+                              >
+                                <Button>
+                                  {selectedFile.map((d: any) => d.name).length}
+                                  {' '}
+                                  file(s)
+                                </Button>
+                              </Popover>
+                            )}
+                          </div>
+                          <VNRAnalysis
+                            data={data.mode === 'analyze' || data.mode === 'defaultDocs' ? data.data : data}
+                            document={selectedFile.map((d: any) => d.name)}
+                            defaultDocs={false}
+                            onlyBubbleChart
+                            hideTitle
+                          />
+                        </div>
                       )
                       : null
                 }

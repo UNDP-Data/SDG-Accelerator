@@ -49,7 +49,7 @@ export const BubbleChart = (props: Props) => {
   }, [data, graphOrientation]);
   return (
     <>
-      <div className='max-width-1440 margin-top-09 flex-div flex-wrap' style={{ padding: '0 1rem', gap: 'var(--spacing-05)' }}>
+      <div className='max-width-1440 margin-top-09 flex-div flex-wrap' style={{ padding: !statusAvailable ? 0 : '0 1rem', gap: 'var(--spacing-05)' }}>
         <div style={{
           width: 'calc(25% - 1rem)',
           minWidth: '20rem',
