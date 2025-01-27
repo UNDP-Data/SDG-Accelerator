@@ -527,9 +527,9 @@ export const GlobalHomePage = () => {
           </div>
         </div>
       </div>
-      <div className='padding-top-12 padding-bottom-12 padding-left-07 padding-right-07' style={{ backgroundColor: 'var(--gray-100)' }}>
+      <div className='padding-top-12 padding-bottom-12 padding-left-07 padding-right-07' style={{ backgroundColor: 'var(--blue-600)' }}>
         <div>
-          <div className='flex-div flex-wrap margin-bottom-09 max-width' style={{ padding: '0 1rem' }}>
+          <div className='flex-div flex-wrap margin-bottom-09 max-width' style={{ padding: '0 1rem', color: 'white' }}>
             <SecondColumn className='undp-section-content'>
               <h2 className='undp-typography margin-bottom-00'>Explore National Priorities</h2>
             </SecondColumn>
