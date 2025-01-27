@@ -535,7 +535,7 @@ export const GlobalHomePage = () => {
             </SecondColumn>
             <div className='undp-section-content large-font'>
               <h5 className='undp-typography margin-bottom-06'>
-                Policy documents, such as Voluntary National Reviews (VNRs) and National Development Plans (NDPs), provide an insight into the priorities of the country in terms of SDGs.
+                One of the significant contributions of SDG Push Diagnostics is the Machine Learning algorithm that helps classify national documents based on the SDGs.
                 {' '}
                 <Popover
                   placement='top'
@@ -567,11 +567,11 @@ export const GlobalHomePage = () => {
                     cursor: 'pointer', textDecoration: 'underline', textDecorationStyle: 'dotted', textDecorationColor: 'var(--dark-red)', background: 'none', border: 'none', padding: 0,
                   }}
                   >
-                    Our machine learning approach
+                    This methodology
                   </span>
                 </Popover>
                 {' '}
-                allows you to uncover these priorities in such documents. Select an existing document to explore or upload documents to analyze.
+                can be applied to any document you may want to classify into SDGs. Explore here and analyze any document of your choice.
                 {' '}
                 <Tooltip title="The documents you upload are not stored in our system. The results you obtain are not shown to other users. For more robust results, use the documents that offer a comprehensive account of the country&apos;s activities and policies rather than thematic, narrowly-scoped or sectoral documents" placement='bottom'><InfoIcon size={20} /></Tooltip>
               </h5>
