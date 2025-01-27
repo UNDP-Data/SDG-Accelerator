@@ -688,10 +688,9 @@ export const GlobalHomePage = () => {
                       {FILES_LIMIT}
                       {' '}
                       PDF files allowed.
-                      {' '}
+                      <br />
                       <b>Note</b>
-                      : Only English language is currently supported by the model
-                      {' '}
+                      : Only English language is currently supported by the model. If your document is not in English please use Google Translate to translate the document in English and then upload the document.
                     </p>
                   </Upload.Dragger>
                 </div>
