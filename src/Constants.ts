@@ -661,6 +661,7 @@ export const COUNTRIES_WITH_REPORT = [
   'PNG',
   'TLS',
   'THA',
+  'GTM',
 ];
 
 export const AIAAS_API_BASE_URL = import.meta.env.VITE_AIAAS_API_BASE_URL;
